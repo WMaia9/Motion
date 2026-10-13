@@ -1,0 +1,26 @@
+{
+  "complete_repetitions": 20,
+  "statistics": {
+    "FID": {
+      "raw_mean": 0.4550069273728738,
+      "canonical_mean": 0.4503746062090606,
+      "paired_gap": 0.004632321163813203,
+      "family10_CI": [
+        0.0034755550187730855,
+        0.00578908730885332
+      ],
+      "raw_native95halfwidth": 0.02975908983323601
+    },
+    "R1": {
+      "raw_mean": 0.4115234375,
+      "canonical_mean": 0.411474609375,
+      "paired_gap": 4.8828125e-05,
+      "family10_CI": [
+        -0.0016852142130434839,
+        0.001782870463043484
+      ],
+      "raw_native95halfwidth": 0.005372006598564408
+    }
+  },
+  "small_natural_difference_not_targeted_exploitation": true
+}

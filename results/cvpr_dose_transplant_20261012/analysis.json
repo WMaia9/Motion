@@ -1,0 +1,363 @@
+{
+  "split": "DEV",
+  "clips": 519,
+  "conditions": {
+    "geodesic_raw_w1/epoch20": {
+      "baseline_wrong_target_per_seed": [
+        0.6988836405134359,
+        1.094552855334461,
+        0.9051408285191311
+      ],
+      "after_wrong_target_per_seed": [
+        1.1188654887501348,
+        1.1003842440898712,
+        0.9726684830635058
+      ],
+      "wrong_target_gain": 0.16444696384549462,
+      "paired_clip_ci95": [
+        -0.052420765236472495,
+        0.49936510178382426
+      ],
+      "seed_and_clip_ci95": [
+        -0.14965096016020954,
+        0.7282944128617791
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.39274276518908796,
+        1.01363552581642
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          6.557166717551577,
+          4.356505326398611
+        ],
+        [
+          4.803831518727531,
+          3.2861592128959476
+        ],
+        [
+          4.944617369378495,
+          3.4551061922123347
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_raw_w1/epoch40": {
+      "baseline_wrong_target_per_seed": [
+        0.4497054228180401,
+        0.49167495620937285,
+        0.9383734831634407
+      ],
+      "after_wrong_target_per_seed": [
+        0.5878146956859732,
+        0.9959666263689729,
+        1.1263875318505598
+      ],
+      "wrong_target_gain": 0.27680499723821744,
+      "paired_clip_ci95": [
+        -0.09903574622543312,
+        0.6807395159606552
+      ],
+      "seed_and_clip_ci95": [
+        -0.3336400493028103,
+        0.8673992978509178
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.588529073235103,
+        1.1264563189092176
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          4.859488089873075,
+          3.4148384082110894
+        ],
+        [
+          5.486558889625695,
+          4.715942466106038
+        ],
+        [
+          7.773465133159156,
+          5.390396732415887
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_raw_w3/epoch20": {
+      "baseline_wrong_target_per_seed": [
+        0.6715840156322256,
+        0.7933613909120999,
+        1.065044853731266
+      ],
+      "after_wrong_target_per_seed": [
+        1.3047501767027025,
+        0.9742486654296374,
+        0.9510591426546557
+      ],
+      "wrong_target_gain": 0.23335590817046806,
+      "paired_clip_ci95": [
+        -0.1714290600845719,
+        0.6749819528117286
+      ],
+      "seed_and_clip_ci95": [
+        -0.3354147296473873,
+        1.0651320750112927
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.6650967219530691,
+        1.5055253221372402
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          5.673444133837371,
+          3.7036146587452725
+        ],
+        [
+          4.35574605019729,
+          3.3126215346510715
+        ],
+        [
+          4.515761723953622,
+          3.722455955545124
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_raw_w3/epoch40": {
+      "baseline_wrong_target_per_seed": [
+        0.4897358554315997,
+        0.5817467169533439,
+        1.1775340761600976
+      ],
+      "after_wrong_target_per_seed": [
+        0.528355900982616,
+        0.9869151017616871,
+        0.9800126203046406
+      ],
+      "wrong_target_gain": 0.08208899150130082,
+      "paired_clip_ci95": [
+        -0.40703594950674676,
+        0.5662588335508294
+      ],
+      "seed_and_clip_ci95": [
+        -0.5599360782807351,
+        0.8459820533138442
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.7238079217823009,
+        1.2330225125524752
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          4.423782241987768,
+          3.6709054416921365
+        ],
+        [
+          4.696783667186587,
+          3.3185216981481993
+        ],
+        [
+          6.567504751096143,
+          3.9760229400903073
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_raw_w10/epoch20": {
+      "baseline_wrong_target_per_seed": [
+        0.5172534561403821,
+        0.6290098060126822,
+        0.59666845666564
+      ],
+      "after_wrong_target_per_seed": [
+        1.1077060969339967,
+        0.9954506803200001,
+        1.2230419070054699
+      ],
+      "wrong_target_gain": 0.5277556551469208,
+      "paired_clip_ci95": [
+        0.05270321126175819,
+        1.1440564364196992
+      ],
+      "seed_and_clip_ci95": [
+        -0.028073857944283135,
+        1.2712803078804455
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.4371512943500808,
+        1.514074045488194
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          5.781270226593594,
+          4.253576474545297
+        ],
+        [
+          4.296571614593776,
+          4.021598897778053
+        ],
+        [
+          4.598609689670583,
+          3.9095261577415013
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_raw_w10/epoch40": {
+      "baseline_wrong_target_per_seed": [
+        0.7107397354417092,
+        0.0,
+        1.1275605165358764
+      ],
+      "after_wrong_target_per_seed": [
+        0.673644656385821,
+        0.6226704031148427,
+        1.0812514338289048
+      ],
+      "wrong_target_gain": 0.1797554137839943,
+      "paired_clip_ci95": [
+        -0.3543645344159869,
+        0.5108698452784501
+      ],
+      "seed_and_clip_ci95": [
+        -0.573726277600249,
+        0.6870535465418348
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.8431008348284206,
+        0.8775583090170045
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          4.025022662675829,
+          3.0598263977657565
+        ],
+        [
+          4.9259524686202125,
+          3.136771068288118
+        ],
+        [
+          6.252148364802213,
+          3.6068778009541904
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_none_w0/epoch20": {
+      "baseline_wrong_target_per_seed": [
+        1.3510520501027576,
+        0.6598479484900882,
+        0.9494209047021941
+      ],
+      "after_wrong_target_per_seed": [
+        1.002646165553477,
+        0.916289943542009,
+        1.236870942515749
+      ],
+      "wrong_target_gain": 0.06516204943873168,
+      "paired_clip_ci95": [
+        -0.37904049513578436,
+        0.5475698215986468
+      ],
+      "seed_and_clip_ci95": [
+        -0.6777152539162798,
+        0.8946437760096119
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -1.080440455531673,
+        1.2409653165445416
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          2.4286801260472837,
+          2.651652780263905
+        ],
+        [
+          2.84119264084667,
+          3.584944135538859
+        ],
+        [
+          2.1707760072882576,
+          2.0863710763100896
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    },
+    "geodesic_canonical_w1/epoch20": {
+      "baseline_wrong_target_per_seed": [
+        0.6567336942865442,
+        0.3856467642857719,
+        0.81818762638189
+      ],
+      "after_wrong_target_per_seed": [
+        0.8951300174900954,
+        0.42232567464441045,
+        0.8535383150178508
+      ],
+      "wrong_target_gain": 0.10347530739938353,
+      "paired_clip_ci95": [
+        -0.31900971493361885,
+        0.479317973752171
+      ],
+      "seed_and_clip_ci95": [
+        -0.46135883370217967,
+        0.6059010838694505
+      ],
+      "family_adjusted_seed_and_clip_ci95_eight_conditions": [
+        -0.7182855528208588,
+        0.8976026946923713
+      ],
+      "actual_caption_before_after_per_seed": [
+        [
+          3.422566232444666,
+          2.765833591192953
+        ],
+        [
+          2.042495163822711,
+          1.3568155778382291
+        ],
+        [
+          3.21806399177671,
+          4.14936979127054
+        ]
+      ],
+      "canonical_hypothesis_changes": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "replicates": 20000,
+  "all_grid_conditions_reported": true,
+  "registered_before_new_dose_BLEU_results": true,
+  "no_per_clip_gradient_or_extra_trained_module": true,
+  "not_TEST_confirmation": true
+}

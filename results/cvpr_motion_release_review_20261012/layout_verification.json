@@ -1,0 +1,40 @@
+{
+  "main": {
+    "pdf_sha256": "a962699978979fd86a6817a5825e4428b1032642278286bdb9230ab7fc8d5a08",
+    "total_pages": 10,
+    "content_pages": 8,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 6124,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "supplement": {
+    "pdf_sha256": "2d7c04b33605fa440164d80c2bbd392508f289e5a34bd0ac90e1feff5e96aadf",
+    "total_pages": 16,
+    "content_pages": 15,
+    "reference_pages": 1,
+    "body_words_checked_for_margin_overflow": 9897,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "visual_inspection": {
+    "passed": true,
+    "main_pages": 10,
+    "supplement_pages": 16,
+    "all_pages_rendered_and_inspected": true,
+    "figures_and_tables_checked_for_overlap": true,
+    "main_conclusion_no_longer_split_across_pages": true,
+    "previews_scope": "Contact sheets in previews; latest main pages6-8 separately retained."
+  },
+  "teaser_caption_warning": "hypcap is unavailable for captionof outside floats; hyperlink target checked, layout unaffected",
+  "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+  "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404"
+}

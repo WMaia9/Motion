@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "conditions": 28,
+  "independently_verified_rotation_pairs": 28281,
+  "max_rotation_error_deg": 0.00013341327258921848,
+  "max_layer_reconstruction_error": 4.76837158203125e-07,
+  "canonical_layer_hypothesis_changes": 0,
+  "standalone_BLEU_sentence_evaluations": 56562,
+  "registered_weight_hashes_unchanged": true,
+  "no_TEST_fitting_or_selection": true,
+  "ordinary_generator_physical_outputs_may_differ_between_arms": true
+}

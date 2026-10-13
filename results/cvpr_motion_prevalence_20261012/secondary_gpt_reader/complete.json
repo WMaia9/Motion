@@ -1,0 +1,11 @@
+{
+  "methods": [
+    "mdm50",
+    "mld",
+    "motionlcm_v1",
+    "t2mgpt",
+    "t2m"
+  ],
+  "replications_each": 20,
+  "distinct_checkpoint_same_architecture": true
+}

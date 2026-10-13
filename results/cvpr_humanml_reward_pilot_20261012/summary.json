@@ -1,0 +1,105 @@
+{
+  "conditions": {
+    "mse_only": {
+      "FID": {
+        "raw_mean": 0.6024028400861852,
+        "canonical_mean": 0.6021212416185951,
+        "paired_gap_mean": 0.0002815984675900533,
+        "paired_gap_seeds": [
+          -0.001621652806846896,
+          0.0010891150722756038,
+          0.0013773331373414521
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.010117189790070511,
+          0.010680386725250617
+        ],
+        "generation_seed_count": 1
+      },
+      "R1": {
+        "raw_mean": 0.4104817708333333,
+        "canonical_mean": 0.408203125,
+        "paired_gap_mean": 0.0022786458333333335,
+        "paired_gap_seeds": [
+          0.001953125,
+          -0.001953125,
+          0.0068359375
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.025397570388762076,
+          0.02995486205542874
+        ],
+        "generation_seed_count": 1
+      }
+    },
+    "raw_reward": {
+      "FID": {
+        "raw_mean": 3.3201358348026226,
+        "canonical_mean": 2.8036647994500945,
+        "paired_gap_mean": 0.5164710353525285,
+        "paired_gap_seeds": [
+          0.42989606326810303,
+          0.6126313623681057,
+          0.5068856804213766
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.060135986355979276,
+          1.0930780570610361
+        ],
+        "generation_seed_count": 1
+      },
+      "R1": {
+        "raw_mean": 0.3577473958333333,
+        "canonical_mean": 0.3639322916666667,
+        "paired_gap_mean": -0.006184895833333333,
+        "paired_gap_seeds": [
+          -0.0009765625,
+          -0.0078125,
+          -0.009765625
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.035190318523891824,
+          0.022820526857225156
+        ],
+        "generation_seed_count": 1
+      }
+    },
+    "canonical_reward": {
+      "FID": {
+        "raw_mean": 3.495236602659517,
+        "canonical_mean": 3.687257895547257,
+        "paired_gap_mean": -0.19202129288773997,
+        "paired_gap_seeds": [
+          -0.16226420766570016,
+          -0.19060461195986989,
+          -0.2231950590376499
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.3836504154758552,
+          -0.00039217029962473893
+        ],
+        "generation_seed_count": 1
+      },
+      "R1": {
+        "raw_mean": 0.3551432291666667,
+        "canonical_mean": 0.3544921875,
+        "paired_gap_mean": 0.0006510416666666666,
+        "paired_gap_seeds": [
+          0.0009765625,
+          0.0029296875,
+          -0.001953125
+        ],
+        "family6_seed_only_t2_CI95": [
+          -0.014795049643812556,
+          0.01609713297714589
+        ],
+        "generation_seed_count": 1
+      }
+    }
+  },
+  "training_seeds": 3,
+  "generation_seed_per_fit": 1,
+  "pilot_not_20repetition_protocol": true,
+  "retrieval_inflation_not_confirmed": true,
+  "sampling_quality_worsened_under_both_reward_conditions": true
+}

@@ -1,0 +1,58 @@
+{
+  "ctc": {
+    "train_dev_overlap": 0,
+    "checkpoint_replay_all_dev_exact": true,
+    "original_wer": 50.34013605442177,
+    "best_epoch": 21,
+    "attacks": {
+      "correct_gloss": {
+        "poses_verified": 519,
+        "max_angle_deg": 5.370165049441079e-06,
+        "max_gauge_coefficient": 0.3464609682559967,
+        "left_unchanged": true,
+        "canonical_changed_sentences": 0
+      },
+      "rolled_wrong_gloss": {
+        "poses_verified": 519,
+        "max_angle_deg": 5.72483259690661e-06,
+        "max_gauge_coefficient": 0.34708428382873535,
+        "left_unchanged": true,
+        "canonical_changed_sentences": 0
+      }
+    }
+  },
+  "generator": {
+    "PHOENIX-2014T": {
+      "text_duration": {
+        "verified_generated_clips": 128,
+        "max_angle_deg": 3.2924179278863284e-06,
+        "hypothesis_changes_checked": true,
+        "no_target_optimization": true
+      },
+      "oracle_keyframes": {
+        "verified_generated_clips": 128,
+        "max_angle_deg": 3.0902298605954607e-06,
+        "hypothesis_changes_checked": true,
+        "no_target_optimization": true
+      }
+    },
+    "How2Sign": {
+      "text_duration": {
+        "verified_generated_clips": 128,
+        "max_angle_deg": 3.097674234237662e-06,
+        "hypothesis_changes_checked": true,
+        "no_target_optimization": true
+      },
+      "oracle_keyframes": {
+        "verified_generated_clips": 128,
+        "max_angle_deg": 3.2015568375335715e-06,
+        "hypothesis_changes_checked": true,
+        "no_target_optimization": true
+      }
+    }
+  },
+  "pinned_downloads_verified": 9,
+  "protocol_and_selections_unchanged": true,
+  "TEST_used": false,
+  "mesh_rendered": false
+}

@@ -1,0 +1,14 @@
+\begin{table}[t]\centering\small
+\caption{\textbf{HumanML3D attack and canonical-loss controls.} Full fixed TEST subset, 1,024 clips per source. R1/MM use the row's target (source caption for Source/Actual; shifted caption for Shifted/Can. loss). FID always uses the fixed real-motion reference. The target-caption attack improves retrieval while worsening FID.}
+\label{tab:humanmlfull}
+\begin{tabular}{llrrr}\toprule
+Source&Target/loss&R1&MM&FID\\\midrule
+Real&Source&0.462&3.200&0.000\\
+Real&Actual&0.996&0.613&1.311\\
+Real&Shifted&0.839&1.479&2.247\\
+Real&Can. loss&0.028&9.599&0.000\\
+MDM50&Source&0.397&3.582&0.369\\
+MDM50&Actual&0.993&0.659&1.287\\
+MDM50&Shifted&0.787&1.821&2.352\\
+MDM50&Can. loss&0.033&9.741&0.369\\
+\bottomrule\end{tabular}\end{table}

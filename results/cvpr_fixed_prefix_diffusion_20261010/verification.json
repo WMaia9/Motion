@@ -1,0 +1,75 @@
+{
+  "train_dev_overlap": 0,
+  "new_training_arms": 5,
+  "epochs_per_arm": 5,
+  "new_generated_clips": 768,
+  "first_epoch_stochastic_audits_equal": true,
+  "negative_pairs_reconstructed_from_TRAIN_only": true,
+  "negative_interpolation_independently_checked": true,
+  "negative_gradient_paths_confirmed": true,
+  "gradient_audits": {
+    "physical_ce": {
+      "physical_input": true,
+      "positive": {
+        "gradient_norm": 0.13851279020309448,
+        "maximum_vertical_dot": 2.561137080192566e-09
+      },
+      "negative_receives_gradient": false,
+      "negative": null,
+      "same_batch_prefix_target_masks": true
+    },
+    "physical_real_near": {
+      "physical_input": true,
+      "positive": {
+        "gradient_norm": 0.17594917118549347,
+        "maximum_vertical_dot": 2.3865140974521637e-09
+      },
+      "negative_receives_gradient": false,
+      "negative": null,
+      "same_batch_prefix_target_masks": true
+    },
+    "physical_generated_cyclic": {
+      "physical_input": true,
+      "positive": {
+        "gradient_norm": 0.14560671150684357,
+        "maximum_vertical_dot": 2.0372681319713593e-09
+      },
+      "negative_receives_gradient": true,
+      "negative": {
+        "gradient_norm": 0.045175619423389435,
+        "maximum_vertical_dot": 1.4983925211708993e-10
+      },
+      "same_batch_prefix_target_masks": true
+    },
+    "physical_generated_near": {
+      "physical_input": true,
+      "positive": {
+        "gradient_norm": 0.1777491271495819,
+        "maximum_vertical_dot": 3.3178366720676422e-09
+      },
+      "negative_receives_gradient": true,
+      "negative": {
+        "gradient_norm": 0.08084197342395782,
+        "maximum_vertical_dot": 5.238689482212067e-10
+      },
+      "same_batch_prefix_target_masks": true
+    },
+    "raw_generated_near": {
+      "physical_input": false,
+      "positive": {
+        "gradient_norm": 0.19743402302265167,
+        "maximum_vertical_dot": 0.022685645148158073
+      },
+      "negative_receives_gradient": true,
+      "negative": {
+        "gradient_norm": 0.07621513307094574,
+        "maximum_vertical_dot": 0.0028446766082197428
+      },
+      "same_batch_prefix_target_masks": true
+    }
+  },
+  "previous_frozen_report_verified_files": 57,
+  "TEST_used": false,
+  "multiple_train_seeds": false,
+  "mesh_rendered": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "outputs": 10240,
+  "native_FK_pairs": 20,
+  "protected_channels_bitwise_equal": true,
+  "max_rotation_error_deg": 3.419296677253684e-06,
+  "max_native_converter_error": 2.8014183044433594e-06,
+  "max_native_FK_error": 4.76837158203125e-07,
+  "saved_metric_endpoints_recomputed": 40,
+  "max_saved_FID_error": 6.552056674991036e-10,
+  "code_sha256": "382fec47b98774a95af636a1e20a85436a61d7939b93df1062ad9ea95ad467e6"
+}

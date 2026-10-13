@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "fits": 9,
+  "TEST_clips_per_fit": 1024,
+  "raw_canonical_pairs": 9216,
+  "native_converter_max_error": 7.003545761108398e-07,
+  "max_rotation_error_deg": 3.429432323253951e-06,
+  "protected_channels_bitwise_equal": true,
+  "all9weights_hashed_before_TEST_generation": true,
+  "mtime_order_consistent_with_seal": true,
+  "native_metrics_recomputed_from_saved_embeddings": true,
+  "no_reward_claim_from_author_MotionRFT": true,
+  "source_sha256": "2e1b1bc096ba63c8cc0d8db3c469d63cf74c819b1df9793b3b34a5a0eafb0b9e"
+}

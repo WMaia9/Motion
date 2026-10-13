@@ -1,0 +1,23 @@
+# Observed working Python3.10/Linux environment on 2026-10-12.
+# CUDA12.8 wheels; do not merge these two environments.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+numpy==1.24.3
+scipy==1.15.3
+torch==2.11.0+cu128
+pandas==1.5.3
+PyYAML==6.0.1
+matplotlib==3.8.2
+pillow==12.2.0
+lmdb==3.0.0
+jieba==0.42.1
+tqdm==4.67.3
+requests==2.34.2
+beautifulsoup4==4.14.3
+wandb==0.16.2
+transformers==4.35.2
+tokenizers==0.15.2
+huggingface_hub==0.36.2
+sentencepiece==0.1.99
+einops==0.7.0
+scikit-learn==1.7.2

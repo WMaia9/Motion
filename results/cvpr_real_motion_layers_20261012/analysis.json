@@ -1,0 +1,184 @@
+{
+  "results": {
+    "How2Sign": {
+      "DEV_clips": 1650,
+      "bootstrap_unit": "VIDEO_ID",
+      "groups": 115,
+      "baseline_raw": 4.271515006245091,
+      "baseline_canonical": 4.009699360074175,
+      "arms": {
+        "text_raw": {
+          "seeds": [
+            42,
+            123,
+            777
+          ],
+          "raw_per_seed": [
+            7.0338208874117125,
+            7.057384126691669,
+            7.245865773918735
+          ],
+          "raw_mean": 7.112356929340705,
+          "canonical_per_seed": [
+            4.009699360074175,
+            4.009699360074175,
+            4.009699360074175
+          ],
+          "raw_gain_mean": 2.8408419230956143,
+          "gain_ci95_conditional": [
+            2.4560966070308576,
+            3.235933866036761
+          ],
+          "gain_ci95_seed_and_group": [
+            2.4252686048332976,
+            3.267206516424032
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 7.070171456403346e-05,
+          "RMS_change_mean": 0.15620117813649803
+        },
+        "motion_raw": {
+          "seeds": [
+            42
+          ],
+          "raw_per_seed": [
+            3.9918548188089327
+          ],
+          "raw_mean": 3.9918548188089327,
+          "canonical_per_seed": [
+            4.009699360074175
+          ],
+          "raw_gain_mean": -0.27966018743615795,
+          "gain_ci95_conditional": [
+            -0.5523465708256049,
+            -0.022428476392210326
+          ],
+          "gain_ci95_seed_and_group": [
+            -0.5523465708256049,
+            -0.022428476392210326
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 0.00011654080857619946,
+          "RMS_change_mean": 0.1323173801465468
+        },
+        "text_canonical": {
+          "seeds": [
+            42
+          ],
+          "raw_per_seed": [
+            4.058819268320554
+          ],
+          "raw_mean": 4.058819268320554,
+          "canonical_per_seed": [
+            4.009699360074175
+          ],
+          "raw_gain_mean": -0.21269573792453667,
+          "gain_ci95_conditional": [
+            -0.39999817445838004,
+            -0.03756758614850802
+          ],
+          "gain_ci95_seed_and_group": [
+            -0.39999817445838004,
+            -0.03756758614850802
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 5.745068403850735e-05,
+          "RMS_change_mean": 0.015185986708736781
+        }
+      }
+    },
+    "CSL-Daily": {
+      "DEV_clips": 1064,
+      "bootstrap_unit": "clip",
+      "groups": 1064,
+      "baseline_raw": 6.19561226887513,
+      "baseline_canonical": 6.77343043775129,
+      "arms": {
+        "text_raw": {
+          "seeds": [
+            42,
+            123,
+            777
+          ],
+          "raw_per_seed": [
+            7.208061836945941,
+            7.093346631718725,
+            6.8230618679188675
+          ],
+          "raw_mean": 7.04149011219451,
+          "canonical_per_seed": [
+            6.77343043775129,
+            6.77343043775129,
+            6.77343043775129
+          ],
+          "raw_gain_mean": 0.8458778433193803,
+          "gain_ci95_conditional": [
+            0.31546019632263134,
+            1.4268504248249956
+          ],
+          "gain_ci95_seed_and_group": [
+            0.2828727958921825,
+            1.4636742658108741
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 2.1796421729374356e-05,
+          "RMS_change_mean": 0.14866223890231667
+        },
+        "motion_raw": {
+          "seeds": [
+            42
+          ],
+          "raw_per_seed": [
+            6.502671810248873
+          ],
+          "raw_mean": 6.502671810248873,
+          "canonical_per_seed": [
+            6.77343043775129
+          ],
+          "raw_gain_mean": 0.3070595413737429,
+          "gain_ci95_conditional": [
+            -0.20465333016312492,
+            0.869406836260709
+          ],
+          "gain_ci95_seed_and_group": [
+            -0.20465333016312492,
+            0.869406836260709
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 1.2258511074028692e-05,
+          "RMS_change_mean": 0.14259895010102064
+        },
+        "text_canonical": {
+          "seeds": [
+            42
+          ],
+          "raw_per_seed": [
+            6.1549005267157915
+          ],
+          "raw_mean": 6.1549005267157915,
+          "canonical_per_seed": [
+            6.77343043775129
+          ],
+          "raw_gain_mean": -0.04071174215933837,
+          "gain_ci95_conditional": [
+            -0.1494960566461956,
+            0.0452484036284269
+          ],
+          "gain_ci95_seed_and_group": [
+            -0.1494960566461956,
+            0.0452484036284269
+          ],
+          "canonical_hypothesis_changes": 0,
+          "max_rotation_error_deg": 1.2216615550184473e-05,
+          "RMS_change_mean": 0.002151075942609004
+        }
+      }
+    }
+  },
+  "replicates": 20000,
+  "source_text_input_disclosed": true,
+  "not_spontaneous_exploitation": true,
+  "all_conditions_reported": true,
+  "new_TEST_use": false,
+  "source_encoder_differs_from_generator_layer_disclosed": true
+}

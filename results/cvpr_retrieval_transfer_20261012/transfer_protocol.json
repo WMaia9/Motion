@@ -1,0 +1,17 @@
+{
+  "purpose": "no-fit transfer of all three native CSL real-motion source-text layer seeds to public retrieval-generated DEV128 motion",
+  "no_training": true,
+  "no_per_clip_optimization": true,
+  "source_caption_is_layer_input": true,
+  "weights_fixed_before_transfer": true,
+  "input_SHA256": {
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed42/text_raw/layer.pt": "a28e682491bc6ad96079d61aa69f88aa31cdb7e188845a35eba6978ce6196a1a",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed123/text_raw/layer.pt": "810bdb8502f4e175c963cb39e5be3c2fac958ce218ec0ad4105a006edbfb57db",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed777/text_raw/layer.pt": "3959a672589cc44736e80c18af57e11c4b93c1b519f326e151940f64cadffe97",
+    "reports/cvpr_real_motion_layers_20261012/manifest_sha256.json": "0591658a63713095387c0d217685bc81a49d68b557d068155d4a55425b8ed282",
+    "reports/cvpr_retrieval_transfer_20261012/generated/poses.npz": "58b267c81fac23a7b504bfee22d7b7d5474767b6cd2c2a7183ff17261d12c522",
+    "reports/cvpr_retrieval_transfer_20261012/evaluation/generated_raw.json": "ebb391df336c71ea877105621721ea0465f3dedbe9fe46e31115001c6506f150",
+    "reports/cvpr_retrieval_transfer_20261012/evaluation/generated_canonical.json": "890a7eca43f65586ed64bbd9601ef0be9648a1d985737a8c7d1338f29d9d58e3"
+  },
+  "source_code_sha256": "15b17ab1038b5504cfa1558effb8cf5bac5fd56645bbf0d90a9e77024f6221b7"
+}

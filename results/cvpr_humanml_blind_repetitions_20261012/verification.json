@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "new_cohorts": {
+    "cohort_1": {
+      "passed": true,
+      "pairs": 5760,
+      "native_FK_pairs": 48,
+      "max_rotation_error_deg": 0.00016561490203032822,
+      "max_rotation_matrix_error": 2.307722540950685e-06,
+      "max_coefficient_reconstruction_error": 2.635893907587672e-07,
+      "native_RIC_positions_bitwise_unchanged": true,
+      "other_feature_channels_bitwise_unchanged": true,
+      "max_native_FK_position_error": 7.152557373046875e-07,
+      "max_canonical_embedding_change": 7.152557373046875e-07,
+      "transport_targets_reconstructed_independently": true,
+      "native_metrics_verified": true,
+      "attack_arrays_hashed_before_TEST_reference_encoding": true,
+      "TEST_group_overlap_with_previous_audit": 0,
+      "TRAIN_TEST_group_overlap": 0,
+      "preflight_hash_only_reads_of_TEST_files_disclosed": true,
+      "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2"
+    },
+    "cohort_2": {
+      "passed": true,
+      "pairs": 5760,
+      "native_FK_pairs": 48,
+      "max_rotation_error_deg": 7.758705140429056e-05,
+      "max_rotation_matrix_error": 1.2709440905256386e-06,
+      "max_coefficient_reconstruction_error": 2.6455480894860273e-07,
+      "native_RIC_positions_bitwise_unchanged": true,
+      "other_feature_channels_bitwise_unchanged": true,
+      "max_native_FK_position_error": 4.76837158203125e-07,
+      "max_canonical_embedding_change": 7.152557373046875e-07,
+      "transport_targets_reconstructed_independently": true,
+      "native_metrics_verified": true,
+      "attack_arrays_hashed_before_TEST_reference_encoding": true,
+      "TEST_group_overlap_with_previous_audit": 0,
+      "TRAIN_TEST_group_overlap": 0,
+      "preflight_hash_only_reads_of_TEST_files_disclosed": true,
+      "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2"
+    }
+  },
+  "original_frozen_cohort": "reports/cvpr_humanml3d_blind_fid_20261012",
+  "not_independent_clip_samples": true,
+  "all_registered_inputs_and_sources_match": true
+}

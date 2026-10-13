@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/blind_OT_bound010.npz": "17d999c45d76dc5798c52ce7d7776770fc44a8dfeee9b99a00e6b0646d023093",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/blind_OT_bound035.npz": "9d1af4ae10397737968843bb1d4c28df073f80b06ab35e53dc7f9aac5be94e17",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/canonical.npz": "06889fa505a49069beae390584c6f8062a13d330980ebb9eaccd065d3e5308a7",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/canonical_reader_OT_bound035.npz": "d213ba4c5cebd2cd76be5e201a0795da6ffe781dcd31a12cc225490862c6d845",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/identity.npz": "cb7fa0025f0f09929ec05f9f42b00fad3839847d29b3d84d038f0459367d45f8",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attacks/random_bound035_seed42.npz": "5adfb0f7479c2f92fbb1811272cf5694df40ab9f56b4de01834625db858562d4"
+  },
+  "TEST_reference_not_loaded": true,
+  "text_encoder_never_called_by_attack": true,
+  "TEST_scores_not_observed": true,
+  "all_conditions_completed": true
+}

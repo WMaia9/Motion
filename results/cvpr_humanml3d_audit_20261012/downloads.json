@@ -1,0 +1,36 @@
+{
+  "code_sha256": "f2b824c6808730b8f2df9152f52f7e46c1d5306ecbb3732d7961e852df096620",
+  "files": [
+    {
+      "path": "models/humanml3d_audit/new_joint_vecs.rar",
+      "url": "https://drive.google.com/uc?id=14HIdUa_LPGEh-M1ICDZJp0tLJftewnAX",
+      "provenance": "MDM author-linked processed HumanML3D folder",
+      "downloaded": false,
+      "error": "Failed to retrieve file url:\n\n\tToo many users have viewed or downloaded this file recently. Please\n\ttry accessing the file again later. If the file you are trying to\n\taccess is particularly large or is shared with many people, it may\n\ttake up to 24 hours to be able to view or download the file. If you\n\tstill can't access a file after 24 hours, contact your domain\n\tadministrator.\n\nYou may still be able to access the file from the browser:\n\n\thttps://drive.google.com/uc?id=14HIdUa_LPGEh-M1ICDZJp0tLJftewnAX\n\nbut Gdown can't. Please check connections and permissions."
+    },
+    {
+      "path": "models/humanml3d_audit/t2m.zip",
+      "url": "https://drive.google.com/uc?id=1O_GUHgjDbl2tgbyfSwZOUYXDACnk25Kb",
+      "provenance": "MDM prepare/download_t2m_evaluators.sh",
+      "bytes": 705835605,
+      "sha256": "6a4cb1dbdf933e653273694937cf01c6a13049fabf2601dc11b21059481025e4",
+      "downloaded": true
+    },
+    {
+      "path": "models/humanml3d_audit/glove.zip",
+      "url": "https://drive.google.com/uc?id=1cmXKUT31pqd7_XpJAiWEo1K81TMYHA5n",
+      "provenance": "MDM prepare/download_glove.sh",
+      "bytes": 6188336,
+      "sha256": "84c76def53f7a7f30d081b78c4668c1c44948c01ac5275384f28eaecbecd5b7b",
+      "downloaded": true
+    },
+    {
+      "path": "models/humanml3d_audit/mdm50.zip",
+      "url": "https://drive.google.com/uc?id=1cfadR1eZ116TIdXK7qDX1RugAerEiJXr",
+      "provenance": "MDM README released 50-step checkpoint",
+      "bytes": 206513256,
+      "sha256": "4d87cd647b89752d16867f25972e30e561ea7e3e138098abb1d333ddb3d157ac",
+      "downloaded": true
+    }
+  ]
+}

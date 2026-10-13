@@ -1,0 +1,21 @@
+{
+  "How2Sign/correct_caption.json": "70d0f7226010dea9ca7e5d06ae87995b05d38a9a1297cc6db625ad2d2234bc62",
+  "How2Sign/correct_caption_poses.npz": "eb41ce2dfd326b6731e60b8648ab441ed6afff4361ccad78eb8ef84cc41ab9d7",
+  "How2Sign/rolled_wrong_caption.json": "2f10988e55f6631d7e8296777d9fd3ef5ffa7daa7393f699feaacb1b7226ed5a",
+  "How2Sign/rolled_wrong_caption_poses.npz": "67207a8d730c693627a66ad8cd79849e757edf03755cd1226b1e678e2ee4317e",
+  "How2Sign/selection.json": "803b9e46ab6af042372581acd8a71df44313208cb3082066bbefa94e22791626",
+  "How2Sign/summary.json": "2557044ad1f51e1b329bcd1b67c240dec470a7383ac2ac0746df39ec6db1d0b6",
+  "PHOENIX-2014T/correct_caption.json": "7334e3c2e8b92c7fa3cd81219a9e9e8349cc9537fd911ede3e4e573cd8bfdb24",
+  "PHOENIX-2014T/correct_caption_poses.npz": "a06d1a678fc6357b091e0976ddd4b628c867782b2fe7a3177a0e4af802f1b212",
+  "PHOENIX-2014T/rolled_wrong_caption.json": "a7f03fc6e8d1fd214d582b70bc39e068553137002639ef58ed079e615a997f78",
+  "PHOENIX-2014T/rolled_wrong_caption_poses.npz": "85e2f78792597bedb382cb2e5cdd411e96ccffc84b0cdb27745222cad9658208",
+  "PHOENIX-2014T/selection.json": "3f2feb698b0ffd1a35f3bce17348e4262df57b03c233684b1111237576342372",
+  "PHOENIX-2014T/summary.json": "fc62ab6ae968b26e73a174ae5e79177ed5c911a42f9f2ff11e2ec83853390716",
+  "README.md": "77f0d705b99b692517fa40728f0e6ff667b165e71635120bf3853e29fcb80f3c",
+  "RESULTADOS.md": "22936f6a49bd134e0c302854a11475db6a283e75b7dc0f5f7b416795abb40b25",
+  "how2sign.log": "7157c6fc9a338a3e8da86aa4d4460418e70acd1e914ae81746dca83a195d5b1b",
+  "phoenix.log": "6aaaefd06570e2f27721c556885106a8e8fb0b90be36b1c570ca751f9816520e",
+  "plan.json": "c7536693a71aaa871c2a51d093f7e7f904d80f0cce34fcb1d6543a1dfd7f564d",
+  "scripts/run_signspark_gauge_attack.py": "f3fac85308bee46cb852d97fe29ed8a14e7f0672b0f94cee7786c9acef67fbc5",
+  "verification.json": "436fe01dafd5cbe9e28cda96a648815f12feef1304cd74f570fe3de1a79f1173"
+}

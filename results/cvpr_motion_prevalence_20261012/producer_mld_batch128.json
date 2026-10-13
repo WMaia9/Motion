@@ -1,0 +1,19 @@
+{
+  "method": "mld",
+  "sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motion_release_mld_batched.py": "882e178dc2e3a1857995c77f0b38af1d051ed05bb1c1eced8909a2b20846e12e",
+    "scripts/motion_release_native_adapters.py": "7247fcc0829f360bbe0789b0c0855edb7fedb2e82f6dd87f15c7da82bbc7a04e",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514"
+  },
+  "initial_valid_batch32_repetitions": [
+    0,
+    1
+  ],
+  "remaining_generation_batch_size": 128,
+  "evaluation_batch_size": 32,
+  "output_count_and_full_reference_unchanged": true,
+  "conditional_sampler_and_parameters_unchanged": true,
+  "RNG_draw_order_and_float32_batching_change": true,
+  "purpose": "execution throughput; no model or metric condition removed or selected"
+}

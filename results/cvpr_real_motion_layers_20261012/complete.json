@@ -1,0 +1,9 @@
+{
+  "corpora": [
+    "How2Sign",
+    "CSL-Daily"
+  ],
+  "fits": 10,
+  "all_first_epoch_batches_matched_within_seed": true,
+  "no_TEST_use": true
+}

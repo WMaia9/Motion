@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "independent_saved_rotation_pairs": 7704,
+  "max_rotation_error_deg": 6.36329234414374e-06,
+  "max_coefficient_reconstruction_error": 4.76837158203125e-07,
+  "standalone_BLEU_sentence_evaluations": 62238,
+  "canonical_reader_fixed_gauge_hypothesis_pairs": 10035,
+  "unchanged_checkpoints": 21,
+  "no_evaluation_optimization": true,
+  "all_canonical_hypotheses_unchanged": true,
+  "prior_project_TEST_use_disclosed": true
+}

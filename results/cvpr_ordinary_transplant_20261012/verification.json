@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "independently_reconstructed_rotation_pairs": 4671,
+  "max_rotation_error_deg": 0.0004737614092275823,
+  "max_reconstruction_error": 4.7671695924123014e-07,
+  "canonical_hypothesis_changes": 0,
+  "standalone_BLEU_sentence_evaluations": 9342,
+  "exploratory_after_training": true,
+  "no_TEST_use": true
+}

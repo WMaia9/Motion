@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "independently_reconstructed_pairs": 7704,
+  "standalone_BLEU_sentence_evaluations": 15408,
+  "max_reconstruction_error": 7.029931710089699e-07,
+  "max_rotation_error_deg": 8.955816230419046e-05,
+  "max_canonical_distance_squared_error": 1.1664915086084804e-06,
+  "max_circle_6D_squared_norm_error": 1.35693501412959e-06,
+  "canonical_hypotheses_unchanged": true,
+  "not_amortized_or_ordinary_training": true,
+  "not_general_detector_evasion": true,
+  "TEST_confirmation": true
+}

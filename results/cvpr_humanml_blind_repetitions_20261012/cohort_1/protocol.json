@@ -1,0 +1,52 @@
+{
+  "scope": "Caption-blind replication cohort, fixed new generation seed; source groups overlap previous blind study and may overlap each other; no global uninspected-TEST claim",
+  "TRAIN_reference_clips": 2048,
+  "TEST_clips": 960,
+  "selection_seed": 20261021,
+  "TEST_group_overlap_with_previous_audit": 0,
+  "TRAIN_TEST_group_overlap": 0,
+  "generation": {
+    "model": "official MDM50 checkpoint",
+    "steps": 50,
+    "CFG": 2.5,
+    "seed": 4242,
+    "batch": 32,
+    "source_caption_supplied_only_to_generator": true,
+    "reference_poses_not_supplied": true
+  },
+  "attack_access": "Generated motion arrays, frozen evaluator gradients and 2048 TRAIN motion embeddings. No captions, tokens, text embeddings, TEST real poses or TEST real embeddings accessed by attack.",
+  "target_map": "Gaussian optimal-transport affine map between generated-output and TRAIN-reference embedding means/covariances; fixed ridge 1e-4 * trace(cov)/512; no TEST reference moments.",
+  "conditions": [
+    "identity",
+    "canonical",
+    "blind_OT_bound010",
+    "blind_OT_bound035",
+    "canonical_reader_OT_bound035",
+    "random_bound035_seed42"
+  ],
+  "optimizer": "Zero initialized per-clip coefficients, c=b*tanh(q), 80 Adam steps lr0.1, fixed final iterate; no FID-based iterate selection.",
+  "primary": "Same fixed blind-OT conditions; FID scored after attack seals. Both bounds retained, no post-hoc seed/cohort selection. Across-cohort summaries descriptive, not independent clip CIs.",
+  "secondary": "R1/MM actual captions only after attack; canonicalized embedding invariance, position and rotation controls.",
+  "generator_and_attack_frozen_without_TEST_score_selection": true,
+  "not_natural_generator_training": true,
+  "not_general_detector_evasion": true,
+  "inputs_sha256": {
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/test_real.npz": "1003e2985fbf8c36f87e7256f411603ad83bf399efa6e68dfe10ecbbe0363f12",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/test_selection.json": "88deadd13c2e51bd18a78b7133e7a040312f14da672b8519449bf392b56094cc",
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca"
+  },
+  "scientific_sources_sha256": {
+    "scripts/prepare_humanml_blind_repetitions.py": "4036b761165db9c546a220b7129156e4c6f0c9de40468dcab62aa48101fbd78f",
+    "scripts/run_humanml_blind_repetitions.py": "863cf3f039ba236030dac993f5e5dbff28b64b20de728be6c140965ee18e4d71",
+    "scripts/run_humanml_blind_fid.py": "4b0bbac4d192e7fb77adf0be163684a1448be6620363e92ae05df1abb155f66d",
+    "scripts/score_humanml_blind_fid.py": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b"
+  },
+  "TEST_group_overlap_with_previous_blind": 494,
+  "TEST_previously_encoded_by_separate_prevalence_audit": true
+}

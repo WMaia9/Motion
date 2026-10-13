@@ -1,0 +1,29 @@
+{
+  "bounds": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "epochs": 20,
+  "batch_size": 64,
+  "optimizer": "AdamW lr.001 wd.0001 clip1",
+  "model": "same frozen generator text encoder and same output-layer architecture as bound.35 study",
+  "source": "identical cached TRAIN7096 and DEV519 canonicalized generated motions",
+  "loss": "mean per-clip raw-reader CE",
+  "selection": "last checkpoint, no score selection",
+  "baseline_bound035": "existing frozen three-seed results, no fitting changes",
+  "natural_comparison": "raw motions from same frozen geometry generator; paired RMS-to-canonical perclip; simple threshold separability via ROC AUC",
+  "no_TEST_use": true,
+  "inputs": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/geometry.pt": "c78566bace1113358eacde2aeed47cc4f157bb83eb3d8bfb22b1d325d9b9f66d",
+    "reports/cvpr_learned_equivalence_20261011/manifest_sha256.json": "3360f78373db5172e50828f4d86552d329ec75e4c14ceba9231e81296a8912ea",
+    "reports/cvpr_learned_equivalence_20261011/data_audit.json": "727e9d4134f8593063ed99026ecdfda2cf074ae7286195218365d7abfd0f8bc5",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279"
+  },
+  "code_sha256": "99b9d2855ecc2947bd8d01645ba08a066dde7b12f88c0eb097be181e116cc6ce"
+}

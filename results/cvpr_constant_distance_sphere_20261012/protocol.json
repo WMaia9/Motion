@@ -1,0 +1,31 @@
+{
+  "purpose": "relax stricter circle control to full sphere, while exactly fixing per-joint distance to canonical",
+  "exploratory_after_circle_study": true,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "text_raw",
+    "motion_raw",
+    "text_canonical"
+  ],
+  "epochs": 20,
+  "batch_size": 64,
+  "optimizer": "AdamW lr.001 wd.0001 clip1",
+  "angle_coeff_bound": 1.0,
+  "safety": "identity for radius>=.95",
+  "total_raw_6D_norm_not_fixed": true,
+  "per_frame_joint_canonical_distance_fixed": true,
+  "frozen_source_sampling_reused": true,
+  "no_TEST_use": true,
+  "selection": "last epoch; all outcomes retained",
+  "input_SHA256": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/geometry.pt": "c78566bace1113358eacde2aeed47cc4f157bb83eb3d8bfb22b1d325d9b9f66d",
+    "reports/cvpr_constant_noncanonicity_20261012/generated/train/poses.npz": "e80159b7fece3873278730155589e3e0a3dc369953e4a3aae0b7e8538db5ad6c",
+    "reports/cvpr_constant_noncanonicity_20261012/generated/dev/poses.npz": "c874768909bf18b55df40b2eb75354ec90337a4411e97a12658446ca5e2f9118",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279"
+  },
+  "source_code_sha256": "388fa4a8c1e5fc39f9654291117275bf279fc88a61c248cec0c131b83309c3ae"
+}

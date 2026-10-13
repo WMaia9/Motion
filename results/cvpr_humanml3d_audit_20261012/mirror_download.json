@@ -1,0 +1,14 @@
+{
+  "url": "https://huggingface.co/datasets/NamYeongCho/HumanML3D/resolve/2bf72a85f0a174123aa85acf19f89661677719b3/new_joint_vecs-003.rar",
+  "revision": "2bf72a85f0a174123aa85acf19f89661677719b3",
+  "path": "models/humanml3d_audit/new_joint_vecs.rar",
+  "bytes": 4297557992,
+  "sha256": "f38ac48c61adb8e65b3d13e1bed68118698d64acc55af5ae62b321821913f65b",
+  "HF_LFS_hash_verified": true,
+  "source": "public third-party mirror, not an author release",
+  "author_linked_Drive_expected_size_matches": true,
+  "original_Drive_bytes_unavailable_for_full_hash_comparison": true,
+  "must_verify_author_example_and_statistics_after_extraction": true,
+  "elapsed_seconds": 97.88113424507901,
+  "code_sha256": "d4b9925fedd4a8d4fa37509aba4f4d05042cc99eea2e453bacd4d28b58285759"
+}

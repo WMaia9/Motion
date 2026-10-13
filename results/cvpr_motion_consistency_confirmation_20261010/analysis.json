@@ -1,0 +1,194 @@
+{
+  "ctc": {
+    "canonical": {
+      "delta_wer_points": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "reverse_time": {
+      "delta_wer_points": 41.35487528344671,
+      "ci95": [
+        39.29751576494854,
+        43.38402535642819
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "identity_hands": {
+      "delta_wer_points": 43.99092970521542,
+      "ci95": [
+        41.66654969118473,
+        46.08762483607384
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "scale09": {
+      "delta_wer_points": 35.430839002267575,
+      "ci95": [
+        33.418810921156975,
+        37.40664921953389
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "scale11": {
+      "delta_wer_points": 17.772108843537413,
+      "ci95": [
+        16.11415989807294,
+        19.52520123086082
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "shear01": {
+      "delta_wer_points": 1.9841269841269842,
+      "ci95": [
+        0.8890917251183162,
+        3.11528470858396
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "transfer_transformer_correct_caption": {
+      "delta_wer_points": 32.85147392290249,
+      "ci95": [
+        30.88403066167589,
+        34.79565672867582
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "transfer_transformer_rolled_wrong_caption": {
+      "delta_wer_points": 41.35487528344671,
+      "ci95": [
+        39.08866969576492,
+        43.576815043430265
+      ],
+      "replicates": 2000,
+      "seed": 42,
+      "unit": "DEV clip, not signer",
+      "exploratory": true
+    },
+    "correct_gloss": {
+      "target": {
+        "delta_wer_points": -50.34013605442177,
+        "ci95": [
+          -52.428739031171645,
+          -48.45201628710013
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "actual_reference": {
+        "delta_wer_points": -50.34013605442177,
+        "ci95": [
+          -52.428739031171645,
+          -48.45201628710013
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    },
+    "rolled_wrong_gloss": {
+      "target": {
+        "delta_wer_points": -109.72222222222223,
+        "ci95": [
+          -113.71297312310973,
+          -105.90263553734879
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "actual_reference": {
+        "delta_wer_points": 65.1360544217687,
+        "ci95": [
+          61.676782830740784,
+          68.68838771308816
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    }
+  },
+  "generator": {
+    "PHOENIX-2014T": {
+      "text_duration": {
+        "delta_bleu4": -0.04677096940316061,
+        "ci95": [
+          -0.19980745542480727,
+          0.08148103265438052
+        ],
+        "clusters": 128,
+        "unit": "clip, not signer",
+        "replicates": 2000,
+        "seed": 42,
+        "exploratory": true
+      },
+      "oracle_keyframes": {
+        "delta_bleu4": 0.6417537976971968,
+        "ci95": [
+          -0.14836024647335289,
+          1.5943836593947773
+        ],
+        "clusters": 128,
+        "unit": "clip, not signer",
+        "replicates": 2000,
+        "seed": 42,
+        "exploratory": true
+      }
+    },
+    "How2Sign": {
+      "text_duration": {
+        "delta_bleu4": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "clusters": 78,
+        "unit": "official VIDEO_ID",
+        "replicates": 2000,
+        "seed": 42,
+        "exploratory": true
+      },
+      "oracle_keyframes": {
+        "delta_bleu4": 0.13187914750352014,
+        "ci95": [
+          -0.514322051500343,
+          0.6617309770891802
+        ],
+        "clusters": 78,
+        "unit": "official VIDEO_ID",
+        "replicates": 2000,
+        "seed": 42,
+        "exploratory": true
+      }
+    }
+  }
+}

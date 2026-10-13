@@ -1,0 +1,203 @@
+{
+  "clips": 960,
+  "TRAIN_reference_clips": 2048,
+  "TEST_original_mirror_groups": 761,
+  "fresh_TEST_group_overlap": 0,
+  "conditions": {
+    "identity": {
+      "raw": {
+        "R_precision_top1": 0.43125,
+        "R_precision_repetitions": [
+          0.415625,
+          0.4510416666666667,
+          0.4322916666666667,
+          0.434375,
+          0.42291666666666666
+        ],
+        "MM_distance": 3.4227519035339355,
+        "FID": 0.32675750017222477,
+        "mean_embedding_distance_to_reference_clip": 3.289076805114746
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586420059204,
+        "FID": 0.32437825626693045,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 0.0,
+      "FID_change": 0.0,
+      "relative_FID_reduction": 0.0
+    },
+    "canonical": {
+      "raw": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586420059204,
+        "FID": 0.32437825626693045,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586420059204,
+        "FID": 0.32437828426847326,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": -0.002379243905294315,
+      "relative_FID_reduction": 0.00728137503818671
+    },
+    "blind_OT_bound010": {
+      "raw": {
+        "R_precision_top1": 0.43666666666666665,
+        "R_precision_repetitions": [
+          0.421875,
+          0.459375,
+          0.440625,
+          0.43020833333333336,
+          0.43125
+        ],
+        "MM_distance": 3.4224603176116943,
+        "FID": 0.1986784987439526,
+        "mean_embedding_distance_to_reference_clip": 3.3597137928009033
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586658477783,
+        "FID": 0.3243782545504893,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 4.76837158203125e-07,
+      "FID_change": -0.12807900142827217,
+      "relative_FID_reduction": 0.39196958405167526
+    },
+    "blind_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.43145833333333333,
+        "R_precision_repetitions": [
+          0.4166666666666667,
+          0.44895833333333335,
+          0.43125,
+          0.43020833333333336,
+          0.43020833333333336
+        ],
+        "MM_distance": 3.59859561920166,
+        "FID": 1.429231983827405,
+        "mean_embedding_distance_to_reference_clip": 3.6016907691955566
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586420059204,
+        "FID": 0.324378263225917,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": 1.1024744836551803,
+      "relative_FID_reduction": -3.373983712918897
+    },
+    "canonical_reader_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.43125,
+        "R_precision_repetitions": [
+          0.415625,
+          0.4510416666666667,
+          0.4322916666666667,
+          0.434375,
+          0.42291666666666666
+        ],
+        "MM_distance": 3.4227519035339355,
+        "FID": 0.3267578695141845,
+        "mean_embedding_distance_to_reference_clip": 3.289076566696167
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586658477783,
+        "FID": 0.3243782628888114,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": 3.6934195973836736e-07,
+      "relative_FID_reduction": -1.1303243523386186e-06
+    },
+    "random_bound035_seed42": {
+      "raw": {
+        "R_precision_top1": 0.4320833333333334,
+        "R_precision_repetitions": [
+          0.415625,
+          0.4510416666666667,
+          0.43645833333333334,
+          0.43645833333333334,
+          0.42083333333333334
+        ],
+        "MM_distance": 3.4271366596221924,
+        "FID": 0.3010645720677641,
+        "mean_embedding_distance_to_reference_clip": 3.2881884574890137
+      },
+      "canonical": {
+        "R_precision_top1": 0.43291666666666667,
+        "R_precision_repetitions": [
+          0.4197916666666667,
+          0.453125,
+          0.43333333333333335,
+          0.43333333333333335,
+          0.425
+        ],
+        "MM_distance": 3.419586420059204,
+        "FID": 0.32437825304141404,
+        "mean_embedding_distance_to_reference_clip": 3.286217451095581
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": -0.025692928104460666,
+      "relative_FID_reduction": 0.07862995674443174
+    }
+  },
+  "FID_descriptive_only": true,
+  "not_generator_quality_improvement": true,
+  "not_training_exploitation": true,
+  "one_MDM_generation_seed": 7777,
+  "attack_caption_content_and_TEST_reference_not_numerically_used": true,
+  "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2",
+  "TEST_overlap_previous_blind_groups": 496,
+  "TEST_previously_encoded_by_separate_prevalence_audit": true,
+  "global_uninspected_TEST_claim": false
+}

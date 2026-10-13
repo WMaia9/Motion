@@ -1,0 +1,194 @@
+{
+  "DEV_clips": 519,
+  "TRAIN_clips": 7096,
+  "baseline_canonical_bleu4": 6.087092588914921,
+  "replicates": 20000,
+  "bootstrap_seed": 42,
+  "training_seeds": [
+    42,
+    123,
+    777
+  ],
+  "no_TEST_use": true,
+  "no_eval_optimization": true,
+  "physical_generator_frozen": true,
+  "systems": {
+    "text_raw": {
+      "scores_per_seed": [
+        14.073579582439336,
+        14.027801466052699,
+        14.619726662182229
+      ],
+      "mean_bleu4": 14.240369236891423,
+      "mean_gain_bleu4": 8.1532766479765,
+      "gain_ci95_conditional_on_seeds": [
+        7.099212757876954,
+        9.269508223870899
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        7.021438457696664,
+        9.357965977968533
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+      "canonical_scores_per_seed": [
+        6.087092588914921,
+        6.087092588914921,
+        6.087092588914921
+      ],
+      "canonical_changes_per_seed": [
+        0,
+        0,
+        0
+      ],
+      "max_rotation_error_deg": 6.132730488556216e-06
+    },
+    "text_canonical": {
+      "scores_per_seed": [
+        6.04803811761506,
+        6.284219557633169,
+        5.946462774671549
+      ],
+      "mean_bleu4": 6.092906816639926,
+      "mean_gain_bleu4": 0.005814227725004173,
+      "gain_ci95_conditional_on_seeds": [
+        -0.2942224312890703,
+        0.27464105958978463
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        -0.33436566505758963,
+        0.35547488134932226
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+      "canonical_scores_per_seed": [
+        6.087092588914921,
+        6.087092588914921,
+        6.087092588914921
+      ],
+      "canonical_changes_per_seed": [
+        0,
+        0,
+        0
+      ],
+      "max_rotation_error_deg": 4.752207631343447e-06
+    },
+    "motion_raw": {
+      "scores_per_seed": [
+        7.2526160625216125,
+        7.0872191300226275,
+        7.0463579865691495
+      ],
+      "mean_bleu4": 7.128731059704463,
+      "mean_gain_bleu4": 1.0416384707895414,
+      "gain_ci95_conditional_on_seeds": [
+        0.2919205467115881,
+        1.780412845616706
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        0.25155416223891996,
+        1.8215009653607164
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+      "canonical_scores_per_seed": [
+        6.087092588914921,
+        6.087092588914921,
+        6.087092588914921
+      ],
+      "canonical_changes_per_seed": [
+        0,
+        0,
+        0
+      ],
+      "max_rotation_error_deg": 6.602423235982159e-06
+    }
+  },
+  "caption_counterfactual": {
+    "different_captions": 519,
+    "baseline_wrong_caption_bleu4": 1.333073616927494,
+    "versus_wrong_caption": {
+      "scores_per_seed": [
+        9.529846857934137,
+        9.168839840909577,
+        8.53892490545603
+      ],
+      "mean_bleu4": 9.079203868099915,
+      "mean_gain_bleu4": 7.7461302511724215,
+      "gain_ci95_conditional_on_seeds": [
+        6.53310790006484,
+        9.0461052821304
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        6.4321287694358675,
+        9.17285839555508
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+    },
+    "versus_actual_caption": {
+      "scores_per_seed": [
+        3.4716923733542355,
+        3.9338283281020177,
+        3.2682633548489326
+      ],
+      "mean_bleu4": 3.5579280187683953,
+      "mean_gain_bleu4": -2.529164570146526,
+      "gain_ci95_conditional_on_seeds": [
+        -3.542582982545385,
+        -1.5900209044069138
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        -3.610379309312865,
+        -1.5089554187988705
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+    },
+    "interpretation": "only adapter source text changed; base rotations unchanged; not a new training arm"
+  },
+  "unseen_exact_captions": {
+    "DEV_clips": 494,
+    "excluded_exact_TRAIN_caption_matches": 25,
+    "baseline_bleu4": 5.2698600857886,
+    "scores_per_seed": [
+      13.17706341188625,
+      12.869663957820714,
+      13.518884875208387
+    ],
+    "mean_bleu4": 13.188537414971783,
+    "mean_gain_bleu4": 7.918677329183184,
+    "gain_ci95_conditional_on_seeds": [
+      6.866647525330543,
+      9.017373166272133
+    ],
+    "exploratory_seed_and_clip_gain_ci95": [
+      6.78335506164943,
+      9.114365248038046
+    ],
+    "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+  },
+  "public_transfer": {
+    "generator": "public SignSparK, native text-duration replay",
+    "DEV_clips": 128,
+    "no_new_training": true,
+    "baseline_canonical_bleu4": 0.7380990681333547,
+    "canonical_changes_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "scores_per_seed": [
+      12.433014192656469,
+      11.935878522195573,
+      13.567845566954881
+    ],
+    "mean_bleu4": 12.645579427268975,
+    "mean_gain_bleu4": 11.90748035913562,
+    "gain_ci95_conditional_on_seeds": [
+      8.777170534154994,
+      15.606152772540085
+    ],
+    "exploratory_seed_and_clip_gain_ci95": [
+      8.611069984701809,
+      15.718994358216186
+    ],
+    "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+    "caution": "the local replay is weak; no claim to reproduce published SOTA generator scores"
+  }
+}

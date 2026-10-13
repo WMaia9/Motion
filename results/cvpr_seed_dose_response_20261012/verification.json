@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "fits": 23,
+  "new_seed_primary_fits": 7,
+  "new_seed_matched_control_fits": 7,
+  "dose_response_fits": 9,
+  "independent_raw_canonical_pairs": 37152,
+  "standalone_BLEU_sentence_evaluations": 74304,
+  "max_rotation_error_deg": 3.5532500932992445e-06,
+  "all_checkpoints_hashed_before_TEST": true,
+  "matched_stochastic_inputs_checked": true,
+  "historical_first_epoch_replayed": true,
+  "one_shared_pretrain": true,
+  "not_pristine_public_TEST": true
+}

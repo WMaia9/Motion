@@ -1,0 +1,36 @@
+{
+  "purpose": "test score gains while rotations and per-frame/joint RMS-to-canonical distance are held fixed",
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "text_raw",
+    "motion_raw",
+    "text_canonical"
+  ],
+  "epochs": 20,
+  "batch_size": 64,
+  "optimizer": "AdamW lr.001 wd.0001 clip1",
+  "source": "raw outputs of same frozen generator, not canonicalized before layer",
+  "auxiliary_angle_coeff_bound": 1.0,
+  "safety": "identity where redundant-radius>=.95; guarantees rho,sigma positive elsewhere",
+  "left_joint_mask": "10:25 unchanged",
+  "mathematics": "s=(rho-1,sigma-1,tau); rotation about axis(1,1,0) preserves squared distance to canonical AND total 6D norm for each frame/joint; not physical kinetic energy",
+  "sampling": "TRAIN7096/DEV519, DDIM50 CFG3 seed102 source text and reference durations; no reference poses",
+  "selection": "last epoch; no TEST use or score selection",
+  "claim_scope": "not general steganographic security or invisible to all detectors; only declared scalar budget is fixed",
+  "inputs": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/geometry.pt": "c78566bace1113358eacde2aeed47cc4f157bb83eb3d8bfb22b1d325d9b9f66d",
+    "reports/cvpr_learned_equivalence_20261011/manifest_sha256.json": "3360f78373db5172e50828f4d86552d329ec75e4c14ceba9231e81296a8912ea",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279"
+  },
+  "code_sha256": "fe6325c77939d14a3c86a62eb93adebb682a8003b997b2f3c9608edc56966ab0",
+  "auxiliary_phase_bound_radians": 3.141592653589793,
+  "auxiliary_axis": [
+    0.7071067811865475,
+    0.7071067811865475,
+    0.0
+  ]
+}

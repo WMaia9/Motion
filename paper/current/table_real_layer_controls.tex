@@ -1,0 +1,13 @@
+\begin{table*}[t]
+\centering\small
+\caption{Native real-motion TEST layers and every control. Controls use one seed, so their intervals do not estimate seed variation. All canonical predictions stay fixed.}
+\label{tab:realcontrols}
+\begin{tabular}{llrrrrr}\toprule
+Corpus&Objective&Seeds&Raw&Gain&Paired95\%&Seed+group95\%\\\midrule
+How2Sign&Text / raw CE&3&6.11&2.64&$[2.27,3.03]$&$[2.24,3.06]$\\
+How2Sign&Motion / raw CE&1&3.33&-0.14&$[-0.35,0.06]$&$[-0.35,0.06]$\\
+How2Sign&Text / canonical CE&1&3.48&0.00&$[-0.18,0.20]$&$[-0.18,0.20]$\\
+CSL-Daily&Text / raw CE&3&7.43&0.54&$[0.14,0.97]$&$[0.11,1.00]$\\
+CSL-Daily&Motion / raw CE&1&6.74&-0.16&$[-0.64,0.29]$&$[-0.64,0.29]$\\
+CSL-Daily&Text / canonical CE&1&6.79&-0.10&$[-0.40,0.09]$&$[-0.40,0.09]$\\
+\bottomrule\end{tabular}\end{table*}

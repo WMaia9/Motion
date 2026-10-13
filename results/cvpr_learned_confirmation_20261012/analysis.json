@@ -1,0 +1,267 @@
+{
+  "learned": {
+    "TEST_clips": 642,
+    "baseline_canonical_bleu4": 6.390467225796576,
+    "systems": {
+      "text_raw": {
+        "scores_per_seed": [
+          15.018967752766827,
+          15.196431049222356,
+          15.40054343719621
+        ],
+        "mean_bleu4": 15.205314079728465,
+        "mean_gain_bleu4": 8.81484685393189,
+        "gain_ci95_conditional_on_seeds": [
+          7.819637389419786,
+          9.87056350703206
+        ],
+        "exploratory_seed_and_clip_gain_ci95": [
+          7.77565180039535,
+          9.943163747506757
+        ],
+        "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+        "canonical_scores_per_seed": [
+          6.390467225796576,
+          6.390467225796576,
+          6.390467225796576
+        ],
+        "canonical_hypothesis_changes": 0,
+        "max_rotation_error_deg": 6.233707044654253e-06
+      },
+      "text_canonical": {
+        "scores_per_seed": [
+          6.28931814818259,
+          6.382709458452198,
+          6.095127399396974
+        ],
+        "mean_bleu4": 6.255718335343921,
+        "mean_gain_bleu4": -0.1347488904526548,
+        "gain_ci95_conditional_on_seeds": [
+          -0.31791037451668486,
+          0.04037561582233407
+        ],
+        "exploratory_seed_and_clip_gain_ci95": [
+          -0.3716458933104165,
+          0.10666698732750957
+        ],
+        "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+        "canonical_scores_per_seed": [
+          6.390467225796576,
+          6.390467225796576,
+          6.390467225796576
+        ],
+        "canonical_hypothesis_changes": 0,
+        "max_rotation_error_deg": 4.960515155773019e-06
+      },
+      "motion_raw": {
+        "scores_per_seed": [
+          7.366271416073356,
+          7.85732073674608,
+          7.574967709577142
+        ],
+        "mean_bleu4": 7.599519954132192,
+        "mean_gain_bleu4": 1.2090527283356156,
+        "gain_ci95_conditional_on_seeds": [
+          0.6577100242237046,
+          1.7647576952711523
+        ],
+        "exploratory_seed_and_clip_gain_ci95": [
+          0.586766901672321,
+          1.8651436440051163
+        ],
+        "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability",
+        "canonical_scores_per_seed": [
+          6.390467225796576,
+          6.390467225796576,
+          6.390467225796576
+        ],
+        "canonical_hypothesis_changes": 0,
+        "max_rotation_error_deg": 6.36329234414374e-06
+      }
+    },
+    "caption_counterfactual": {
+      "different_captions": 642,
+      "baseline_wrong_caption_bleu4": 0.8310177853143556,
+      "versus_wrong_caption": {
+        "scores_per_seed": [
+          9.72899985164857,
+          9.338475520077651,
+          9.720860827315422
+        ],
+        "mean_bleu4": 9.596112066347215,
+        "mean_gain_bleu4": 8.76509428103286,
+        "gain_ci95_conditional_on_seeds": [
+          7.601195477710633,
+          10.07134235046922
+        ],
+        "exploratory_seed_and_clip_gain_ci95": [
+          7.55413312153743,
+          10.107850699743135
+        ],
+        "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+      },
+      "versus_actual_caption": {
+        "scores_per_seed": [
+          4.214737930516499,
+          4.481621636409857,
+          4.076605459164398
+        ],
+        "mean_bleu4": 4.257655008696918,
+        "mean_gain_bleu4": -2.1328122170996586,
+        "gain_ci95_conditional_on_seeds": [
+          -3.031696834678533,
+          -1.251890445916433
+        ],
+        "exploratory_seed_and_clip_gain_ci95": [
+          -3.070810719990244,
+          -1.2125385350798208
+        ],
+        "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+      }
+    },
+    "TRAIN_clip_overlap": 0,
+    "DEV_clip_overlap": 0,
+    "eval_optimization_steps": 0,
+    "unseen_exact_captions": {
+      "clips": 610,
+      "excluded_seen_captions": 32,
+      "baseline_bleu4": 6.129435210719277,
+      "scores_per_seed": [
+        14.359176268253739,
+        14.286418638770677,
+        14.866233980861999
+      ],
+      "mean_bleu4": 14.503942962628805,
+      "mean_gain_bleu4": 8.37450775190953,
+      "gain_ci95_conditional_on_seeds": [
+        7.394569830753952,
+        9.400604922303156
+      ],
+      "exploratory_seed_and_clip_gain_ci95": [
+        7.322729973139577,
+        9.47836349150919
+      ],
+      "uncertainty_scope": "three output-layer training seeds; one frozen generator/reader; no pretraining variability"
+    }
+  },
+  "readers": {
+    "How2Sign": {
+      "TEST_clips": 2183,
+      "bootstrap_unit": "VIDEO_ID",
+      "clusters": 149,
+      "public_raw": 3.4778651049853475,
+      "public_canonical": 3.484024341098461,
+      "raw_fine_scores": [
+        3.4920458877992564,
+        3.3878176080537767,
+        3.2413666252108944
+      ],
+      "canonical_fine_scores": [
+        3.527355022300892,
+        3.5161942367708963,
+        3.374970004398316
+      ],
+      "comparisons": {
+        "canonical_vs_paired_raw": {
+          "mean_delta_bleu4": 0.09909638080205892,
+          "per_seed_deltas": [
+            0.03530913450163542,
+            0.12837662871711952,
+            0.13360337918742182
+          ],
+          "conditional_group_ci95": [
+            -0.008354107901957904,
+            0.21406744336837277
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.03322545800827425,
+            0.24932346397167482
+          ],
+          "exploratory_margin": 0.2,
+          "lower_interval_exceeds_negative_margin": true
+        },
+        "canonical_vs_public_raw": {
+          "mean_delta_bleu4": -0.0050253504953127566,
+          "per_seed_deltas": [
+            0.04948991731554431,
+            0.03832913178554875,
+            -0.10289510058703133
+          ],
+          "conditional_group_ci95": [
+            -0.19949404432037332,
+            0.18505556029201256
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.23238551154817835,
+            0.21261696993734555
+          ],
+          "exploratory_margin": 0.2,
+          "lower_interval_exceeds_negative_margin": false
+        }
+      },
+      "fixed_gauge_canonical_hypotheses_changed": 0
+    },
+    "CSL-Daily": {
+      "TEST_clips": 1162,
+      "bootstrap_unit": "clip",
+      "clusters": 1162,
+      "public_raw": 6.890703639155908,
+      "public_canonical": 7.066195806279564,
+      "raw_fine_scores": [
+        7.304564656910458,
+        7.144912901606409,
+        7.263755895189328
+      ],
+      "canonical_fine_scores": [
+        7.230544333832769,
+        7.188299631435238,
+        7.229188800822359
+      ],
+      "comparisons": {
+        "canonical_vs_paired_raw": {
+          "mean_delta_bleu4": -0.0217335625386094,
+          "per_seed_deltas": [
+            -0.07402032307768902,
+            0.043386729828829296,
+            -0.034567094366968476
+          ],
+          "conditional_group_ci95": [
+            -0.19283420809434343,
+            0.14877590219490833
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.22609586231647813,
+            0.18587529062475971
+          ],
+          "exploratory_margin": 0.3,
+          "lower_interval_exceeds_negative_margin": true
+        },
+        "canonical_vs_public_raw": {
+          "mean_delta_bleu4": 0.325307282874214,
+          "per_seed_deltas": [
+            0.3398406946768606,
+            0.2975959922793301,
+            0.33848516166645126
+          ],
+          "conditional_group_ci95": [
+            -0.18599746483807236,
+            0.7888502705317184
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.191344039150842,
+            0.7967784335538906
+          ],
+          "exploratory_margin": 0.3,
+          "lower_interval_exceeds_negative_margin": true
+        }
+      },
+      "fixed_gauge_canonical_hypotheses_changed": 0
+    }
+  },
+  "replicates": 20000,
+  "bootstrap_seed": 42,
+  "models_frozen_before_TEST_inference": true,
+  "new_training_or_selection": false,
+  "project_TEST_use_history_disclosed": true,
+  "pretraining_variance_not_estimated": true
+}

@@ -1,0 +1,164 @@
+{
+  "PHOENIX-2014T": {
+    "clips": 519,
+    "cluster_unit": "clip; signer not authenticated",
+    "clusters": 519,
+    "bootstrap_replicates": 2000,
+    "seed": 42,
+    "scores_verified_against_native": true,
+    "paired_comparisons": {
+      "sparse_stride10_slerp minus sparse_stride10_projected6d": {
+        "delta_bleu4": -0.2202032261412512,
+        "ci95": [
+          -0.5425887949412695,
+          0.09891611319803592
+        ]
+      },
+      "sparse_stride10_projected6d minus sparse_stride10_linear6d": {
+        "delta_bleu4": 0.29543426750774415,
+        "ci95": [
+          -0.19666710685528033,
+          0.7960800035575407
+        ]
+      },
+      "adaptive_all_slerp minus sparse_stride10_slerp": {
+        "delta_bleu4": 0.967355788230444,
+        "ci95": [
+          0.059224578768174795,
+          1.8491811858125555
+        ]
+      },
+      "adaptive_all_slerp minus sparse_stride10_projected6d": {
+        "delta_bleu4": 0.7471525620891928,
+        "ci95": [
+          -0.16833457088062592,
+          1.6332925773763665
+        ]
+      },
+      "adaptive_body_slerp minus adaptive_hands_slerp": {
+        "delta_bleu4": 0.13557041788555324,
+        "ci95": [
+          -0.8270251774086789,
+          1.1100099144987543
+        ]
+      },
+      "so3_roundtrip minus original": {
+        "delta_bleu4": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "reverse_time minus original": {
+        "delta_bleu4": -8.818484708180847,
+        "ci95": [
+          -10.499959224237482,
+          -7.220166166539238
+        ]
+      },
+      "identity_hands minus original": {
+        "delta_bleu4": -12.364703403645086,
+        "ci95": [
+          -14.351465079776098,
+          -10.495736513943488
+        ]
+      }
+    },
+    "same_hypotheses_as_original": {
+      "original": 519,
+      "so3_roundtrip": 519,
+      "fp16_roundtrip": 518,
+      "reverse_time": 7,
+      "identity_hands": 8,
+      "sparse_stride10_linear6d": 80,
+      "sparse_stride10_projected6d": 77,
+      "sparse_stride10_slerp": 78,
+      "adaptive_all_slerp": 91,
+      "adaptive_body_slerp": 86,
+      "adaptive_hands_slerp": 79
+    },
+    "adaptive_anchor_counts_exactly_matched": true,
+    "anchor_fraction_mean": 0.11569363391357305
+  },
+  "How2Sign": {
+    "clips": 1650,
+    "cluster_unit": "official VIDEO_ID",
+    "clusters": 115,
+    "bootstrap_replicates": 2000,
+    "seed": 42,
+    "scores_verified_against_native": true,
+    "paired_comparisons": {
+      "sparse_stride10_slerp minus sparse_stride10_projected6d": {
+        "delta_bleu4": -0.049363965805095056,
+        "ci95": [
+          -0.1793582162310928,
+          0.07898038925155688
+        ]
+      },
+      "sparse_stride10_projected6d minus sparse_stride10_linear6d": {
+        "delta_bleu4": -0.02981796875831444,
+        "ci95": [
+          -0.23085927117196708,
+          0.16801992917825115
+        ]
+      },
+      "adaptive_all_slerp minus sparse_stride10_slerp": {
+        "delta_bleu4": 0.1869069413331883,
+        "ci95": [
+          -0.062221011715608406,
+          0.4677386043165716
+        ]
+      },
+      "adaptive_all_slerp minus sparse_stride10_projected6d": {
+        "delta_bleu4": 0.13754297552809325,
+        "ci95": [
+          -0.11276143689434799,
+          0.40473056977613786
+        ]
+      },
+      "adaptive_body_slerp minus adaptive_hands_slerp": {
+        "delta_bleu4": 0.15528447643038046,
+        "ci95": [
+          -0.14716636674951378,
+          0.49884678473202754
+        ]
+      },
+      "so3_roundtrip minus original": {
+        "delta_bleu4": -0.26181564617091535,
+        "ci95": [
+          -0.48243305729738073,
+          -0.04452039292205845
+        ]
+      },
+      "reverse_time minus original": {
+        "delta_bleu4": -2.6899363630808653,
+        "ci95": [
+          -3.216498610900387,
+          -2.2049416218402267
+        ]
+      },
+      "identity_hands minus original": {
+        "delta_bleu4": -3.5946344049341197,
+        "ci95": [
+          -4.228717522059929,
+          -3.0253016081117283
+        ]
+      }
+    },
+    "same_hypotheses_as_original": {
+      "original": 1650,
+      "so3_roundtrip": 516,
+      "fp16_roundtrip": 1643,
+      "reverse_time": 11,
+      "identity_hands": 1,
+      "sparse_stride10_linear6d": 184,
+      "sparse_stride10_projected6d": 142,
+      "sparse_stride10_slerp": 135,
+      "adaptive_all_slerp": 201,
+      "adaptive_body_slerp": 172,
+      "adaptive_hands_slerp": 189
+    },
+    "adaptive_anchor_counts_exactly_matched": true,
+    "anchor_fraction_mean": 0.11255117650551896
+  }
+}

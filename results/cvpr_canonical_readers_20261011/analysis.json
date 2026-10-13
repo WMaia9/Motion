@@ -1,0 +1,176 @@
+{
+  "results": {
+    "How2Sign": {
+      "TRAIN_clips": 29630,
+      "DEV_clips": 1650,
+      "bootstrap_unit": "VIDEO_ID",
+      "clusters": 115,
+      "seed_count": 3,
+      "public_raw": 4.271515006245091,
+      "public_canonical": 4.009699360074175,
+      "raw_fine_scores": [
+        4.117325352397165,
+        4.0957148454837595,
+        4.01810396346413
+      ],
+      "raw_fine_canonical_scores": [
+        3.930044394639252,
+        3.8432240275678273,
+        3.8544299578079024
+      ],
+      "canonical_fine_scores": [
+        4.0495028658957,
+        4.040056602936682,
+        3.9554585500835233
+      ],
+      "comparisons": {
+        "canonical_fine_vs_raw_fine": {
+          "mean_delta_bleu4": -0.0620420474763829,
+          "per_seed_deltas": [
+            -0.0678224865014645,
+            -0.05565824254707774,
+            -0.06264541338060647
+          ],
+          "conditional_group_ci95": [
+            -0.2407373334890824,
+            0.12081984871965325
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.2646355565414151,
+            0.14239459105054175
+          ],
+          "exploratory_margin_bleu4": 0.2,
+          "lower_interval_exceeds_negative_margin": false
+        },
+        "canonical_fine_vs_public_raw": {
+          "mean_delta_bleu4": -0.25650899993978876,
+          "per_seed_deltas": [
+            -0.2220121403493902,
+            -0.23145840330840883,
+            -0.3160564561615673
+          ],
+          "conditional_group_ci95": [
+            -0.4945884500594067,
+            -0.017356251061709443
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.514319552324213,
+            0.006571749186026744
+          ],
+          "exploratory_margin_bleu4": 0.2,
+          "lower_interval_exceeds_negative_margin": false
+        },
+        "posthoc_canonical_raw_fine_vs_raw_fine": {
+          "mean_delta_bleu4": -0.2011485937766908,
+          "per_seed_deltas": [
+            -0.18728095775791287,
+            -0.2524908179159322,
+            -0.16367400565622736
+          ],
+          "conditional_group_ci95": [
+            -0.43691539545379143,
+            0.00032001702589579855
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.45312109483267426,
+            0.022703626689236023
+          ],
+          "exploratory_margin_bleu4": 0.2,
+          "lower_interval_exceeds_negative_margin": false
+        }
+      },
+      "noninferiority_scope": "exploratory DEV margins; no clinical/linguistic threshold claim"
+    },
+    "CSL-Daily": {
+      "TRAIN_clips": 18201,
+      "DEV_clips": 1064,
+      "bootstrap_unit": "clip",
+      "clusters": 1064,
+      "seed_count": 3,
+      "public_raw": 6.19561226887513,
+      "public_canonical": 6.77343043775129,
+      "raw_fine_scores": [
+        7.029858884192827,
+        6.985052480504368,
+        6.992071687290503
+      ],
+      "raw_fine_canonical_scores": [
+        7.00200632324973,
+        7.012035136217861,
+        6.972682673439905
+      ],
+      "canonical_fine_scores": [
+        7.191467095880303,
+        7.092683031172968,
+        7.1959588173906015
+      ],
+      "comparisons": {
+        "canonical_fine_vs_raw_fine": {
+          "mean_delta_bleu4": 0.15770863081872477,
+          "per_seed_deltas": [
+            0.16160821168747574,
+            0.10763055066859994,
+            0.20388713010009862
+          ],
+          "conditional_group_ci95": [
+            -0.1275040552880892,
+            0.5157036937177171
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.1529473837880946,
+            0.5316431424034732
+          ],
+          "exploratory_margin_bleu4": 0.3,
+          "lower_interval_exceeds_negative_margin": true
+        },
+        "canonical_fine_vs_public_raw": {
+          "mean_delta_bleu4": 0.9644240459394945,
+          "per_seed_deltas": [
+            0.9958548270051732,
+            0.8970707622978384,
+            1.0003465485154717
+          ],
+          "conditional_group_ci95": [
+            0.45333700058330234,
+            1.5432080810494542
+          ],
+          "exploratory_seed_and_group_ci95": [
+            0.4444469362532487,
+            1.5541290388989295
+          ],
+          "exploratory_margin_bleu4": 0.3,
+          "lower_interval_exceeds_negative_margin": true
+        },
+        "posthoc_canonical_raw_fine_vs_raw_fine": {
+          "mean_delta_bleu4": -0.006752973026734092,
+          "per_seed_deltas": [
+            -0.027852560943097515,
+            0.026982655713492676,
+            -0.019389013850597436
+          ],
+          "conditional_group_ci95": [
+            -0.3458512475872314,
+            0.37964699382665706
+          ],
+          "exploratory_seed_and_group_ci95": [
+            -0.3799821551617034,
+            0.40597699278822713
+          ],
+          "exploratory_margin_bleu4": 0.3,
+          "lower_interval_exceeds_negative_margin": false
+        }
+      },
+      "noninferiority_scope": "exploratory DEV margins; no clinical/linguistic threshold claim"
+    }
+  },
+  "replicates": 20000,
+  "bootstrap_seed": 42,
+  "training_seeds": [
+    42,
+    123,
+    777
+  ],
+  "heldout_split": "DEV; already inspected in this project",
+  "no_TEST_use": true,
+  "no_full_pretraining_seed_variance": true
+}

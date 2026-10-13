@@ -1,0 +1,15 @@
+{
+  "train_dev_overlap": 0,
+  "shared_epochs": 20,
+  "epochs_per_arm": 5,
+  "selected_shared_epoch": 20,
+  "selected_shared_dev_mse": 0.1621222274554572,
+  "generated_clips": 512,
+  "canonical_semantic_input_gauge_jvp_max": 6.201286205864882e-15,
+  "student_parameters": 1436016,
+  "post_result_teacher_probe_clips": 128,
+  "ground_truth_independent_wer": 48.74429223744292,
+  "TEST_used": false,
+  "mesh_rendered": false,
+  "no_claim_of_SOTA": true
+}

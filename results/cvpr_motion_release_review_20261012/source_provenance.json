@@ -1,0 +1,32 @@
+{
+  "producers": [
+    "plot_motion_release_story",
+    "plot_motion_consistency_contract",
+    "build_motion_release_presentation",
+    "build_motion_reward_tables",
+    "audit_current_motion_layout",
+    "finalize_motion_release_delivery"
+  ],
+  "import_closure": [
+    "audit_current_motion_layout",
+    "build_motion_release_presentation",
+    "build_motion_reward_tables",
+    "finalize_motion_release_delivery",
+    "motion_release_audit_common",
+    "plot_motion_consistency_contract",
+    "plot_motion_release_story",
+    "verify_signspark_studies"
+  ],
+  "current_working_source": "paper/current",
+  "snapshot_is_immutable_delivery_not_working_location": true,
+  "archived_script_sha256": {
+    "audit_current_motion_layout": "65639c83faf86e9c63a429692395143de5b640e9ea7c74ce07c530109e58d297",
+    "build_motion_release_presentation": "d909fd0961df0688dccbf8876875242d5e431f04b4c7f601b65a778ce2e84e73",
+    "build_motion_reward_tables": "3d7d3e729724fc0e7aefe00ade99802306af2a01666f266cd2cfeab740b4fc84",
+    "finalize_motion_release_delivery": "39a67071665ecb974899a9974a912c3e87c3bfb4037f9e76622a936f11460f66",
+    "motion_release_audit_common": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "plot_motion_consistency_contract": "9eb1478ae43a53343df7d9f43642b9b44d95aeada1ffa540a495a963de5b225c",
+    "plot_motion_release_story": "108ac9329e45f939f691590a96dde5a6afadd41056c8771680175e835a669f51",
+    "verify_signspark_studies": "8239348c83442d006ae1e9dfb2d20e7fed301127c81318ec9022192d6e8ebb50"
+  }
+}

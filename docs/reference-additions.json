@@ -1,0 +1,54 @@
+{
+  "new_entries": {
+    "uap2017": {
+      "source": "sources/uap2017.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "gap2018": {
+      "source": "sources/gap2018.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "fang2025": {
+      "source": "sources/fang2025.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "solireward2026": {
+      "source": "sources/solireward2026.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "rigmo2026": {
+      "source": "sources/rigmo2026.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "draft2024": {
+      "source": "sources/draft2024.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "rsgm2022": {
+      "source": "sources/rsgm2022.bib",
+      "native_publisher_BibTeX_used": true,
+      "PDF_source_archived": true
+    },
+    "atn2018": {
+      "source": "atn2018.pdf",
+      "title_all_authors_checked": true,
+      "publisher_DOI_checked": true,
+      "camera_ready_ICLR2026_checked": false
+    },
+    "xu2026": {
+      "source": "quotient2026.pdf",
+      "title_all_authors_checked": true,
+      "publisher_DOI_checked": false,
+      "camera_ready_ICLR2026_checked": true
+    }
+  },
+  "total_entries": 36,
+  "unchanged_original_entries": 27,
+  "only_relevant_antecedents_added": true
+}

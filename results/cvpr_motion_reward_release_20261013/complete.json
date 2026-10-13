@@ -1,0 +1,6 @@
+{
+  "two_checkpoints": true,
+  "generation_seeds": 5,
+  "readers": 2,
+  "all_raw_canonical_endpoints_retained": true
+}

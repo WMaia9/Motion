@@ -1,0 +1,34 @@
+{
+  "purpose": "test whether ordinary generators carry caption-specific information in rotation-redundant coordinates",
+  "exploratory_after_training_analysis": true,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "geodesic_none_w0",
+    "geodesic_raw_w1",
+    "geodesic_canonical_w1"
+  ],
+  "source": "saved full DEV519 outputs of each model",
+  "alternative": "same noise and source duration, next different source caption supplied to same generator",
+  "operation": "keep source canonical u,v; replace rho,sigma,tau with alternate-output scalars; protect original left stream",
+  "no_added_trained_module": true,
+  "no_per_clip_gradient_optimization": true,
+  "no_TEST_use": true,
+  "trained_models_frozen_before_diagnostic": true,
+  "input_SHA256": {
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_none_w0/epoch20.pt": "46f17d5197c9080636d4fa9aa4d6c39382f349a41f4ca3efb0a61402e041bd01",
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_raw_w1/epoch20.pt": "5b9cecdab37e25fe12d9d9b92f2f67d0ef4d758d2129075a08f5c94f9a7a02a6",
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_canonical_w1/epoch20.pt": "ba232bee9a07c93d20843bbbee0249e930420dbe5e3009f7ebf3d0608adf82f5",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_none_w0/epoch20.pt": "3d0d4f1a7def77f922632698beefb5a734e43c605d48f05f9cbd91f4cd0aa343",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_raw_w1/epoch20.pt": "383db65a6e59759644c2845e20129bb6ec2a505fb169ad413a184fba670545c8",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_canonical_w1/epoch20.pt": "a16b51ef36b5e2935e0896622a54e25fe512ccf69e6b1256b247b91583627236",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_none_w0/epoch20.pt": "cd1048ed5747237909b4c398ff2b7c9cfa510044e54d40a4f00dfbfb876b1881",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_raw_w1/epoch20.pt": "33fe5b660b918f069e28f311afb7b06cd1ad7292c0f5779f52b01ac959066039",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_canonical_w1/epoch20.pt": "fd3fce7e429cdc4c896c14dd110d3bf9d1d813581367de9e06181431166ce4e9",
+    "reports/cvpr_quotient_training_20261012/manifest_sha256.json": "d0725a7a9ec3e886fae423e448518620b3aa9418772c9b64e15c9e3fd5dcf37f"
+  },
+  "source_code_sha256": "482ad23a275238bcee69b0b48504dc744294347bc8ff4b41cd4ead5f55c87d66"
+}

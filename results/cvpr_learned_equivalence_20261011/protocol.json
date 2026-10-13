@@ -1,0 +1,39 @@
+{
+  "corpus": "PHOENIX-2014T",
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "text_raw",
+    "text_canonical",
+    "motion_raw"
+  ],
+  "epochs": 20,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "coefficient_bound": 0.35,
+  "left_hand_unchanged": true,
+  "selection": "last epoch; no DEV/BLEU checkpoint selection",
+  "loss": "mean per-clip TRAIN caption CE through frozen BT; no physical/MSE term needed",
+  "generation": "frozen DDPM, DDIM50, CFG3, sampling seed102; source text and duration only",
+  "adapter": "temporal Conv/MHA; frozen generator text encoder; zero-initialized coefficient head",
+  "frame_cap": 300,
+  "adapter_token_cap": 64,
+  "caption_drop": false,
+  "no_new_TEST_use": true,
+  "eval_optimization_steps": 0,
+  "clip_ID_is_model_input": false,
+  "TRAIN_clips": 7096,
+  "DEV_clips": 519,
+  "causal_scope": "purpose-built learned output layer; not spontaneous exploitation by ordinary DDPM fine-tuning",
+  "inputs": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/geometry.pt": "c78566bace1113358eacde2aeed47cc4f157bb83eb3d8bfb22b1d325d9b9f66d",
+    "reports/cvpr_physical_semantic_ddpm_20261010/data_audit.json": "708cf93f2f531c9b7698c7c128da6c940a6c90bde3c3717dc7e5dbcab9cf1342",
+    "reports/cvpr_physical_semantic_ddpm_20261010/normalization.npz": "bfe5912b57a1b0cfc46c981ae1b7545c1700bfa59b25c980fdea7c39a8f9ee00",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279"
+  },
+  "code_sha256": "1c1cf3ede70cf1f0705cd3ce15a106a46729979d295744c23495b9cd6bbaba91"
+}

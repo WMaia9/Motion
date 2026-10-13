@@ -1,0 +1,35 @@
+{
+  "replications": 20,
+  "clips_each": 4640,
+  "full_native_test_reference": true,
+  "FID": {
+    "identity": {
+      "FID_mean": 0.0009903281037722423,
+      "native95_halfwidth": 2.0422628774118965e-05
+    },
+    "canonical": {
+      "FID_mean": 0.0009903280538686942,
+      "native95_halfwidth": 2.0422596945847288e-05
+    },
+    "global_plus010": {
+      "FID_mean": 0.06128773276872508,
+      "native95_halfwidth": 0.0005652000581192607
+    },
+    "global_minus010": {
+      "FID_mean": 0.08336187004768689,
+      "native95_halfwidth": 0.0005538832713506749
+    },
+    "global_plus035": {
+      "FID_mean": 2.002612789066024,
+      "native95_halfwidth": 0.003287896299281538
+    },
+    "global_minus035": {
+      "FID_mean": 3.6385246878496225,
+      "native95_halfwidth": 0.004323777875672357
+    },
+    "random035_seed42": {
+      "FID_mean": 0.026277078956005794,
+      "native95_halfwidth": 0.0004412503989677887
+    }
+  }
+}

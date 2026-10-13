@@ -1,0 +1,10 @@
+{
+  "byte_identical": false,
+  "source_dtype": "float32",
+  "mirror_dtype": "float64",
+  "max_absolute_difference": 1.9431114196777344e-05,
+  "RMS_difference": 7.66720981327515e-07,
+  "author_example_sha256": "6e6fc0204ea9e48abdf94f84e8be22b19a1f1e955c7b98e025b1d702f6fe96a0",
+  "mirror_example_sha256": "eabaae8721f77fddb16405ebbd331201f1ecd4c8de2473eb4263b98a10eb3c6e",
+  "not_a_full_archive_identity_proof": true
+}

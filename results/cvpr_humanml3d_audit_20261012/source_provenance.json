@@ -1,0 +1,22 @@
+{
+  "producers": [
+    "download_humanml_audit",
+    "download_humanml_mirror",
+    "prepare_humanml_audit",
+    "generate_humanml_mdm",
+    "run_humanml_audit",
+    "analyze_humanml_audit",
+    "verify_humanml_audit"
+  ],
+  "import_closure": [
+    "analyze_humanml_audit",
+    "download_humanml_audit",
+    "download_humanml_mirror",
+    "generate_humanml_mdm",
+    "humanml_audit_common",
+    "prepare_humanml_audit",
+    "run_humanml_audit",
+    "verify_humanml_audit"
+  ],
+  "all_archived_scripts_match_live": true
+}

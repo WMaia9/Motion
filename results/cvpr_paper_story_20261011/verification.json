@@ -1,0 +1,194 @@
+{
+  "layout": {
+    "main": {
+      "pdf_sha256": "67fed758e9b4385670a39db9466fb820848bb35aa4011a3928cdb671a511d16a",
+      "total_pages": 9,
+      "content_pages": 7,
+      "reference_pages": 2,
+      "body_words_checked_for_margin_overflow": 5147,
+      "all_fonts_embedded": true,
+      "Times_text_font_from_unmodified_CVPR_style": true,
+      "no_Type3_fonts": true,
+      "no_font_substitution_or_missing_glyphs": true,
+      "ghostscript_integrity_passed": true,
+      "latex_reference_and_box_checks_passed": true
+    },
+    "supplement": {
+      "pdf_sha256": "dc4ddd96d76d18c37c084aaa4a85358a171de24c1fa39b98dba9a7cae074dd01",
+      "total_pages": 9,
+      "content_pages": 8,
+      "reference_pages": 1,
+      "body_words_checked_for_margin_overflow": 5109,
+      "all_fonts_embedded": true,
+      "Times_text_font_from_unmodified_CVPR_style": true,
+      "no_Type3_fonts": true,
+      "no_font_substitution_or_missing_glyphs": true,
+      "ghostscript_integrity_passed": true,
+      "latex_reference_and_box_checks_passed": true
+    },
+    "visual_inspection": "All 9 main and 9 supplement pages rendered and reviewed after final build, including opening example, equations, all tables, fonts and references; source frame provenance checked separately.",
+    "teaser_caption_warning": "hypcap is unavailable for captionof outside floats; hyperlink target checked, layout unaffected",
+    "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+    "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404"
+  },
+  "references": {
+    "passed": true,
+    "total_entries": 27,
+    "all_entries_cited": true,
+    "no_undefined_citation_keys": true,
+    "references": {
+      "zhou2019": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "camgoz2020": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "camgoz2018": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "duarte2021": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "zhou2021": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "low2026": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "signsparkbt": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "cory2026": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "yin2024": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "symeonidis2026": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "m3trepo": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "walsh2025": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "slrtprepo": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "saunders2020": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "li2023": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "liu2024": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "papineni2002": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "post2018": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "graves2006": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "ho2020": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "song2021": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "ho2022": {
+        "unchanged_from_verified_reference": true,
+        "prior_primary_verification": "reports/cvpr_manuscript_review_20261011/reference_verification.json"
+      },
+      "imai2025": {
+        "publisher_BibTeX_fields_verified": true,
+        "source": "silver.bib",
+        "sha256": "4d1ff0c3449f48136066897d392cc2b4796ff9499617c13ecd39ab99384d4806"
+      },
+      "levinson2020": {
+        "publisher_BibTeX_fields_verified": true,
+        "source": "svd.bib",
+        "sha256": "52d2c70c244977076142665deb8594c6911d1baab6270d64808650487059d65e"
+      },
+      "stein2023": {
+        "publisher_BibTeX_fields_verified": true,
+        "source": "stein.bib",
+        "sha256": "5b92286a9f4e73559e7d032f8900f28b3f3019c6a454507530f7325b14aea84c"
+      },
+      "huang2023": {
+        "publisher_BibTeX_fields_verified": true,
+        "source": "mt_robustness.bib",
+        "sha256": "5158a0b8a85ed666dcb3e24b3a206265bd32bc8c6edffb59752adff7a592d01f"
+      },
+      "tan2026": {
+        "title_all_authors_and_ICLR2026_match_primary_PDF": true,
+        "source": "easytune.pdf",
+        "sha256": "98d2b762921c3ba527a4062aee98201782757bef9abfebdc6cfea7e2a6469303"
+      }
+    },
+    "scope": "primary metadata check plus detailed prior source audit; not a guarantee of exhaustive novelty search",
+    "SiLVER_updated_to_published_RANLP2025": true,
+    "SVD_correctly_NeurIPS2020_not_CVPR": true
+  },
+  "evidence": {
+    "passed": true,
+    "primary_TEST_clips": 642,
+    "primary_BLEU_baseline": 6.390467225796576,
+    "primary_mean_raw_BLEU": 15.205314079728465,
+    "primary_gain_CI": [
+      7.819637389419786,
+      9.87056350703206
+    ],
+    "unseen_exact_caption_clips": 610,
+    "all_canonical_hypotheses_unchanged": true,
+    "canonical_reader_TEST_pairs": 10035,
+    "new_weight_count": 21,
+    "negative_conventional_result_preserved": true,
+    "teaser_source_frames_unaltered": true,
+    "no_rendered_mesh_claim": true,
+    "three_language_readers_one_family_disclosed": true,
+    "public_generator_low_replay_baseline_disclosed": true,
+    "prior_TEST_use_disclosed": true,
+    "numeric_macros_match_source_map": true,
+    "report_manifests": {
+      "cvpr_learned_equivalence_20261011": "3360f78373db5172e50828f4d86552d329ec75e4c14ceba9231e81296a8912ea",
+      "cvpr_canonical_readers_20261011": "76336e84098e6d69c26ee3610624e52052b234e69c322b2ec188f46741bc3fff",
+      "cvpr_learned_confirmation_20261012": "14051ce61f445f03567001d90c6b4771de401abc71885a11c5994d1b96966bbb",
+      "cvpr_reviewer_followup_20261011": "3471408180aa934aaa93eb6a11a6eb437fcbdf05439fead583405ccab6bb66f9"
+    }
+  },
+  "prior_frozen_report_files_verified": 2066,
+  "old_manuscript_PDFs_unchanged": true,
+  "source_ZIP_CRC_passed": true,
+  "source_ZIP_entries": 27,
+  "source_ZIP_sha256": "500654acadf7ab569371f7f8bdf1fde0a93bb3045cebe16bd9e627da0bcc0a0f",
+  "new_experiments_completed_and_frozen_separately": true,
+  "new_editorial_model_inference": false,
+  "no_external_submission_or_publication": true,
+  "all_writers_closed_before_manifest": true
+}

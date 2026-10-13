@@ -1,0 +1,11 @@
+\begin{table*}[t]\centering\small
+\caption{\textbf{Same-output TEST gaps under ordinary-denoiser objectives.} All fits use geodesic motion loss, without an attack head. Seven new seeds define replication; ten pool historical/new runs. Stress endpoints use the three historical seeds, with eleven-comparison-adjusted seed+clip intervals. New-seed/pooled intervals are nominal. Physical motions differ across fitted models; raw/canonical pairs share one output.}
+\label{tab:ordinaryreplication}
+\begin{tabular}{lrrrrr}\toprule
+Endpoint & Seeds & Raw & Canonical & Gap & Seed+clip 95\% interval\\\midrule
+CE1/20, new & 7 & 5.81 & 5.68 & 0.13 & [-0.57, 0.81]\\
+CE1/20, pooled & 10 & 5.60 & 5.41 & 0.20 & [-0.43, 0.80]\\
+CE1/40, stress & 3 & 6.62 & 5.83 & 0.79 & [-0.75, 2.30]\\
+CE3/40, stress & 3 & 6.07 & 4.11 & 1.97 & [0.26, 3.64]\\
+CE10/40, stress & 3 & 5.39 & 3.40 & 1.99 & [0.59, 3.59]\\
+\bottomrule\end{tabular}\end{table*}

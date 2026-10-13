@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "max_embedding_error": 3.5762786865234375e-07,
+  "clips": 32,
+  "native_MDM_wrapper": true
+}

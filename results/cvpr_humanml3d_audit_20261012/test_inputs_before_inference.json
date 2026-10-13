@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-12",
+  "UTC_timestamp": "2026-10-13T04:58:04.034951+00:00",
+  "inputs_sha256": {
+    "reports/cvpr_humanml3d_audit_20261012/protocol.json": "7c669c83e4cb1ac677c31ca9f6010f14e1a14fb565d3efb4e540e2db44be71bb",
+    "reports/cvpr_humanml3d_audit_20261012/test_real.npz": "f509dd248e34b2f70bd97b7365e29cee54caa603509f41eaaea52f7f9ef03bd9",
+    "reports/cvpr_humanml3d_audit_20261012/test_mdm.npz": "5a26bb85902ae906f3c746cf795907f63bafa1401aefacd8408eebe9fe797579",
+    "reports/cvpr_humanml3d_audit_20261012/test_selection.json": "6ff5139515900cd97fcde0db7f3048131f569b4cf7a658312ac84805d12efb6d",
+    "reports/cvpr_humanml3d_audit_20261012/val_analysis.json": "fc4cb8f8528db9cb613f8229d52f9c412fda2fe8cb8caac1c0de858664e4b448",
+    "reports/cvpr_humanml3d_audit_20261012/native_adapter_pre_TEST.json": "74033d38832a7b6872c22758631a7fc8e91f9f96101b1184799fae29a0e97973",
+    "reports/cvpr_humanml3d_audit_20261012/DEV_manifest_sha256.json": "ecaef16b3c83ba6c1f010e0389820066ddcf7c00d2cdc9781b3e06c217b6b1c6"
+  },
+  "all_fixed_and_adaptive_conditions_to_be_run": true,
+  "DEV_all_conditions_kept": true,
+  "no_TEST_evaluator_scores_observed": true,
+  "no_reference_poses_supplied_to_MDM": true
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "independently_reconstructed_pairs": 4671,
+  "max_rotation_error_deg": 2.494467579750473e-05,
+  "max_reconstruction_error": 7.049259826974463e-07,
+  "per_joint_distance_squared_max_error": 1.3168491643789082e-06,
+  "per_joint_6D_squared_norm_max_difference": 1.3669061749155276e-06,
+  "total_6D_norm_is_declared_invariant": true,
+  "standalone_BLEU_sentence_evaluations": 9342,
+  "all_canonical_hypotheses_unchanged": true,
+  "no_general_stealth_claim": true,
+  "no_TEST_use": true
+}

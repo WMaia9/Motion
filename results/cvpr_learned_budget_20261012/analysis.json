@@ -1,0 +1,130 @@
+{
+  "DEV_clips": 519,
+  "baseline_canonical": 6.087092588914921,
+  "natural_generator_mean_RMS": 0.10499362536994938,
+  "results": {
+    "0.01": {
+      "raw_per_seed": [
+        6.0635851889845265,
+        6.080253628842791,
+        6.092464526816456
+      ],
+      "raw_mean": 6.078767781547924,
+      "baseline_canonical": 6.087092588914921,
+      "mean_gain": -0.008324807366997256,
+      "paired_gain_ci95": [
+        -0.4151192343215702,
+        0.259822043525293
+      ],
+      "seed_and_clip_gain_ci95": [
+        -0.4162676201260463,
+        0.2652493492486416
+      ],
+      "mean_RMS_to_canonical_per_seed": [
+        0.005594002233678206,
+        0.00559400548343771,
+        0.005591024737984574
+      ],
+      "RMS_detector_best_orientation_AUC_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "canonical_changes": 0,
+      "max_rotation_error_deg": 4.780801537700494e-06
+    },
+    "0.05": {
+      "raw_per_seed": [
+        7.1556619883755,
+        7.257554542333778,
+        6.392094930049383
+      ],
+      "raw_mean": 6.935103820252887,
+      "baseline_canonical": 6.087092588914921,
+      "mean_gain": 0.8480112313379653,
+      "paired_gain_ci95": [
+        0.4452632215862887,
+        1.259295964255163
+      ],
+      "seed_and_clip_gain_ci95": [
+        0.23783911114212133,
+        1.4668961373484786
+      ],
+      "mean_RMS_to_canonical_per_seed": [
+        0.027165880114529174,
+        0.02717109840284308,
+        0.02798306133763179
+      ],
+      "RMS_detector_best_orientation_AUC_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "canonical_changes": 0,
+      "max_rotation_error_deg": 5.281813760621336e-06
+    },
+    "0.1": {
+      "raw_per_seed": [
+        8.557912148275475,
+        8.451092715110487,
+        6.111395963199552
+      ],
+      "raw_mean": 7.706800275528504,
+      "baseline_canonical": 6.087092588914921,
+      "mean_gain": 1.6197076866135829,
+      "paired_gain_ci95": [
+        1.102195971936753,
+        2.1648865695617587
+      ],
+      "seed_and_clip_gain_ci95": [
+        0.1471920556932259,
+        2.8848541331793256
+      ],
+      "mean_RMS_to_canonical_per_seed": [
+        0.054150601637214135,
+        0.05425338274108422,
+        0.05593578135576781
+      ],
+      "RMS_detector_best_orientation_AUC_per_seed": [
+        0.9227282345996637,
+        0.9214140131644892,
+        0.9017341040462428
+      ],
+      "canonical_changes": 0,
+      "max_rotation_error_deg": 5.097428065032411e-06
+    },
+    "0.35": {
+      "raw_per_seed": [
+        14.073579582439336,
+        14.027801466052699,
+        14.619726662182229
+      ],
+      "raw_mean": 14.240369236891423,
+      "baseline_canonical": 6.087092588914921,
+      "mean_gain": 8.1532766479765,
+      "paired_gain_ci95": [
+        7.099212757876954,
+        9.269508223870899
+      ],
+      "seed_and_clip_gain_ci95": [
+        7.021438457696664,
+        9.357965977968533
+      ],
+      "mean_RMS_to_canonical_per_seed": [
+        0.18576601558223166,
+        0.18632460556393185,
+        0.18572124861798076
+      ],
+      "RMS_detector_best_orientation_AUC_per_seed": [
+        0.9246067545041784,
+        0.9255571519262255,
+        0.924502804786142
+      ],
+      "canonical_changes": 0,
+      "max_rotation_error_deg": 6.132730488556216e-06
+    }
+  },
+  "replicates": 20000,
+  "detection_scope": "one-dimensional clip RMS compared to raw same-generator output; no general stealth claim",
+  "no_TEST_use": true
+}

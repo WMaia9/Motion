@@ -1,0 +1,70 @@
+{
+  "main": {
+    "total_pages": 9,
+    "content_pages": 7,
+    "reference_pages": 2,
+    "no_overfull_underfull_or_undefined_references": true,
+    "no_Type3_fonts": true,
+    "page_character_counts": [
+      3441,
+      5432,
+      5271,
+      4309,
+      3960,
+      4362,
+      4375,
+      6417,
+      3618
+    ],
+    "PDF_sha256": "6a93059656776bb2f48c258027645555dc6a8d904e866a534ead07c1966a21e2",
+    "visual_review": {
+      "all_pages_reviewed": true,
+      "pages_reviewed": 9,
+      "contact_sheet": "preview/main_contact.png",
+      "review_date": "2026-10-12",
+      "scope": "Layout and rendered figures; scientific checks are recorded separately."
+    }
+  },
+  "supplement": {
+    "total_pages": 10,
+    "content_pages": 9,
+    "reference_pages": 1,
+    "no_overfull_underfull_or_undefined_references": true,
+    "no_Type3_fonts": true,
+    "page_character_counts": [
+      4285,
+      4220,
+      5284,
+      5115,
+      3930,
+      3878,
+      4796,
+      4821,
+      5095,
+      3055
+    ],
+    "PDF_sha256": "54bb3e15f94da5920e456a25ced6d5bb938f6f317d09c9c94a008bf59714fb66",
+    "visual_review": {
+      "all_pages_reviewed": true,
+      "pages_reviewed": 10,
+      "contact_sheet": "preview/supplement_contact.png",
+      "review_date": "2026-10-12",
+      "scope": "Layout and rendered figures; scientific checks are recorded separately."
+    }
+  },
+  "references": {
+    "entries": 39,
+    "cited_union": 39,
+    "new_primary_verified_keys": [
+      "tramer2020adaptive",
+      "colas2018",
+      "motionrft2026"
+    ]
+  },
+  "format": {
+    "style": "unmodified official CVPR2026 kit; target2027 provisional",
+    "authors": "anonymous",
+    "submission_ID": "DRAFT",
+    "no_external_submission": true
+  }
+}

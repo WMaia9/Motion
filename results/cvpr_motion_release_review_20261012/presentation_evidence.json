@@ -1,0 +1,28 @@
+{
+  "primary_analysis": "reports/cvpr_motion_prevalence_20261012/analysis.json",
+  "fixed_control_inputs": [
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_00/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_01/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_02/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_03/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_04/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_05/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_06/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_07/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_08/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_09/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_10/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_11/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_12/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_13/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_14/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_15/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_16/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_17/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_18/metrics.json",
+    "reports/cvpr_motion_prevalence_20261012/real_controls/rep_19/metrics.json"
+  ],
+  "blind_analysis": "reports/cvpr_humanml_blind_repetitions_20261012/analysis.json",
+  "no_hidden_conditions_or_sample_selection": true,
+  "figure_scope": "native real fixed encodings and caption-blind cohorts; not generated-quality improvements"
+}

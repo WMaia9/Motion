@@ -1,0 +1,697 @@
+{
+  "replications": 20,
+  "methods": {
+    "mdm50": {
+      "FID": {
+        "raw_mean": 0.4550069273728738,
+        "canonical_mean": 0.4503746062090606,
+        "raw_native95_halfwidth": 0.02975908983323601,
+        "canonical_native95_halfwidth": 0.029460267890230395,
+        "paired_raw_minus_canonical": 0.004632321163813203,
+        "paired_CI95": [
+          0.003869451121578334,
+          0.005395191206048071
+        ],
+        "paired_family_CI95": [
+          0.0034755550187730855,
+          0.00578908730885332
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.010180770632568985
+      },
+      "R1": {
+        "raw_mean": 0.4115234375,
+        "canonical_mean": 0.411474609375,
+        "raw_native95_halfwidth": 0.005372006598564408,
+        "canonical_native95_halfwidth": 0.005488179961114932,
+        "paired_raw_minus_canonical": 4.8828125e-05,
+        "paired_CI95": [
+          -0.0010947469677983852,
+          0.0011924032177983853
+        ],
+        "paired_family_CI95": [
+          -0.0016852142130434839,
+          0.001782870463043484
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.00011865211200759375
+      },
+      "MM_distance": {
+        "raw_mean": 3.506773068755865,
+        "canonical_mean": 3.5043869953602553,
+        "raw_native95_halfwidth": 0.020045075209521087,
+        "canonical_native95_halfwidth": 0.020095132127039308,
+        "paired_raw_minus_canonical": 0.0023860733956098555,
+        "paired_CI95": [
+          0.0018683834879261955,
+          0.0029037633032935155
+        ],
+        "paired_family_CI95": [
+          0.0016784480010604498,
+          0.003093698790159261
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": 0.0006804185354532759
+      }
+    },
+    "mld": {
+      "FID": {
+        "raw_mean": 0.4452866295698271,
+        "canonical_mean": 0.4490647551326695,
+        "raw_native95_halfwidth": 0.00993007998283025,
+        "canonical_native95_halfwidth": 0.010066381694118757,
+        "paired_raw_minus_canonical": -0.003778125562842405,
+        "paired_CI95": [
+          -0.004706402231462652,
+          -0.0028498488942221576
+        ],
+        "paired_family_CI95": [
+          -0.005185703477875973,
+          -0.002370547647808837
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.00848470470917192
+      },
+      "R1": {
+        "raw_mean": 0.4118103448275862,
+        "canonical_mean": 0.41051724137931034,
+        "raw_native95_halfwidth": 0.0026209405789583353,
+        "canonical_native95_halfwidth": 0.0024501092425109985,
+        "paired_raw_minus_canonical": 0.0012931034482758675,
+        "paired_CI95": [
+          0.0006264448468321794,
+          0.0019597620497195556
+        ],
+        "paired_family_CI95": [
+          0.00028222602780373436,
+          0.0023039808687480004
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0031400460540088053
+      },
+      "MM_distance": {
+        "raw_mean": 3.573399368894512,
+        "canonical_mean": 3.5799457959471077,
+        "raw_native95_halfwidth": 0.010838098883030462,
+        "canonical_native95_halfwidth": 0.010835736237566784,
+        "paired_raw_minus_canonical": -0.006546427052596537,
+        "paired_CI95": [
+          -0.007252330437519001,
+          -0.005840523667674073
+        ],
+        "paired_family_CI95": [
+          -0.007511319653081137,
+          -0.005581534452111937
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -0.0018319886407272127
+      }
+    },
+    "motionlcm_v1": {
+      "FID": {
+        "raw_mean": 0.5746987185498093,
+        "canonical_mean": 0.6061712198238347,
+        "raw_native95_halfwidth": 0.011680858321113681,
+        "canonical_native95_halfwidth": 0.012878230713412459,
+        "paired_raw_minus_canonical": -0.031472501274025434,
+        "paired_CI95": [
+          -0.03361754880366664,
+          -0.029327453744384228
+        ],
+        "paired_family_CI95": [
+          -0.03472511079388773,
+          -0.02821989175416314
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.054763479120752044
+      },
+      "R1": {
+        "raw_mean": 0.4374353448275861,
+        "canonical_mean": 0.43504310344827585,
+        "raw_native95_halfwidth": 0.002291589961062684,
+        "canonical_native95_halfwidth": 0.0019256695408966754,
+        "paired_raw_minus_canonical": 0.002392241379310339,
+        "paired_CI95": [
+          0.0011625916807828252,
+          0.003621891077837853
+        ],
+        "paired_family_CI95": [
+          0.0005276811491715756,
+          0.0042568016094491025
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.005468788490909975
+      },
+      "MM_distance": {
+        "raw_mean": 3.3618181588731963,
+        "canonical_mean": 3.3759331718806562,
+        "raw_native95_halfwidth": 0.008221270056712396,
+        "canonical_native95_halfwidth": 0.008459724523481286,
+        "paired_raw_minus_canonical": -0.01411501300746001,
+        "paired_CI95": [
+          -0.015076526106246872,
+          -0.013153499908673146
+        ],
+        "paired_family_CI95": [
+          -0.015429296086567738,
+          -0.01280072992835228
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -0.004198624773979755
+      }
+    },
+    "t2mgpt": {
+      "FID": {
+        "raw_mean": 0.18280881136608543,
+        "canonical_mean": 0.14883445835333048,
+        "raw_native95_halfwidth": 0.005811105552583917,
+        "canonical_native95_halfwidth": 0.005164845781899753,
+        "paired_raw_minus_canonical": 0.033974353012754935,
+        "paired_CI95": [
+          0.033028226936242654,
+          0.034920479089267216
+        ],
+        "paired_family_CI95": [
+          0.03253970942517506,
+          0.03540899660033481
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.18584636461925946
+      },
+      "R1": {
+        "raw_mean": 0.4225754310344828,
+        "canonical_mean": 0.4240086206896552,
+        "raw_native95_halfwidth": 0.002416427509068795,
+        "canonical_native95_halfwidth": 0.0022208683867354557,
+        "paired_raw_minus_canonical": -0.001433189655172412,
+        "paired_CI95": [
+          -0.002485629912623139,
+          -0.00038074939772168533
+        ],
+        "paired_family_CI95": [
+          -0.0030290411004982604,
+          0.0001626617901534361
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.0033915593522886606
+      },
+      "MM_distance": {
+        "raw_mean": 3.4736939479564803,
+        "canonical_mean": 3.4647343145567797,
+        "raw_native95_halfwidth": 0.01071863777509783,
+        "canonical_native95_halfwidth": 0.01058717143305227,
+        "paired_raw_minus_canonical": 0.008959633399700318,
+        "paired_CI95": [
+          0.008395975437458719,
+          0.009523291361941917
+        ],
+        "paired_family_CI95": [
+          0.008189174710044244,
+          0.009730092089356391
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": 0.0025792811727040977
+      }
+    },
+    "t2m": {
+      "FID": {
+        "raw_mean": 1.393499778350855,
+        "canonical_mean": 1.347141590000917,
+        "raw_native95_halfwidth": 0.023416765482924325,
+        "canonical_native95_halfwidth": 0.023685846676732947,
+        "paired_raw_minus_canonical": 0.04635818834993799,
+        "paired_CI95": [
+          0.044895047573834466,
+          0.04782132912604151
+        ],
+        "paired_family_CI95": [
+          0.04413957754924908,
+          0.0485767991506269
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.03326745297713707
+      },
+      "R1": {
+        "raw_mean": 0.3933405172413793,
+        "canonical_mean": 0.3929525862068966,
+        "raw_native95_halfwidth": 0.002029763109409827,
+        "canonical_native95_halfwidth": 0.0018574442789503723,
+        "paired_raw_minus_canonical": 0.00038793103448276077,
+        "paired_CI95": [
+          -0.00046203702709562093,
+          0.0012378990960611425
+        ],
+        "paired_family_CI95": [
+          -0.0009009048399983854,
+          0.001676766908963907
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0009862473289134898
+      },
+      "MM_distance": {
+        "raw_mean": 3.6923295025167797,
+        "canonical_mean": 3.694685722055106,
+        "raw_native95_halfwidth": 0.012802967907260711,
+        "canonical_native95_halfwidth": 0.012911223699401677,
+        "paired_raw_minus_canonical": -0.002356219538326898,
+        "paired_CI95": [
+          -0.002794303723746551,
+          -0.001918135352907245
+        ],
+        "paired_family_CI95": [
+          -0.0029550326307831365,
+          -0.0017574064458706594
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -0.0006381390221866284
+      }
+    }
+  },
+  "real_fixed_controls": {
+    "replications": 20,
+    "clips_each": 4640,
+    "full_native_test_reference": true,
+    "FID": {
+      "identity": {
+        "FID_mean": 0.0009903281037722423,
+        "native95_halfwidth": 2.0422628774118965e-05
+      },
+      "canonical": {
+        "FID_mean": 0.0009903280538686942,
+        "native95_halfwidth": 2.0422596945847288e-05
+      },
+      "global_plus010": {
+        "FID_mean": 0.06128773276872508,
+        "native95_halfwidth": 0.0005652000581192607
+      },
+      "global_minus010": {
+        "FID_mean": 0.08336187004768689,
+        "native95_halfwidth": 0.0005538832713506749
+      },
+      "global_plus035": {
+        "FID_mean": 2.002612789066024,
+        "native95_halfwidth": 0.003287896299281538
+      },
+      "global_minus035": {
+        "FID_mean": 3.6385246878496225,
+        "native95_halfwidth": 0.004323777875672357
+      },
+      "random035_seed42": {
+        "FID_mean": 0.026277078956005794,
+        "native95_halfwidth": 0.0004412503989677887
+      }
+    }
+  },
+  "FID_ranking": {
+    "raw": [
+      "t2mgpt",
+      "mld",
+      "mdm50",
+      "motionlcm_v1",
+      "t2m"
+    ],
+    "canonical": [
+      "t2mgpt",
+      "mld",
+      "mdm50",
+      "motionlcm_v1",
+      "t2m"
+    ]
+  },
+  "FID_rank_order_changed": false,
+  "same_output_comparisons_not_intentional_reward_exploitation": true,
+  "evaluation_candidate_batch": 32,
+  "MDM_generated_cap": 1024,
+  "other_generated_and_all_reference_clips": 4640,
+  "no_exact_published_score_reproduction_claim": true,
+  "source_sha256": {
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_00/metrics.json": "babee6c03c33e878a771caeb69f79ab12d7ac6b5ff0cf5defd2d63e43447bb6a",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_01/metrics.json": "fafb8e83df1c2a0beef61954f194ed0297a0b9af13b7e7f3fba2bd734b0f20db",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_02/metrics.json": "98f477ea66cd0d07c4822d113f2c6f485bde5aa5ed013e82da4e21f17075aabd",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_03/metrics.json": "5406d759a8519fcaa784c69f3aeb19eaf7b3cf5d84947a06066c130281105bf4",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_04/metrics.json": "b5edb665ec0dbd6d8ebd9eb2963068ddf189ad9c35991c9f5efd06dfbb0dcc0b",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_05/metrics.json": "5c86ca08bca6c195ce0eba3eed63f1a77fe97497468ec760c264773bda3eef4d",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_06/metrics.json": "60012565dfa8479d0492e7ad183bd5dd036e2d6a6b0387dd5cf689e6ec6f2b61",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_07/metrics.json": "6d20a89ab78227cc20731900cef178f42636454137656443474d538bee79fe5b",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_08/metrics.json": "9ee112211d6ed5fdfdfae0305599530f4b9f7e163dd36401290354bb9e6cca65",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_09/metrics.json": "0fcb8132826097bcfef6fa2eb6b8cf05b060c647c809b13c21160935c670b214",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_10/metrics.json": "9aa9cfec2344e14127077c95dbf6486c5b1b22b72efe3ff0572a13279b42c0f6",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_11/metrics.json": "454c53e620ab7db9ec97859409bd404b50226a942ac86ef106365b355c952801",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_12/metrics.json": "e4545be4eaaf056fa9575a9d878f2d70e6e4725fd7d23251bb73fc8a75c20300",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_13/metrics.json": "febf9d65651ce2821fe025cb2f9366a4d96c03c3ebc0824378c49080ef46b8c8",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_14/metrics.json": "2ddf2c24ddfa9539b03c2f7438fe116324e8535e197070333c5db9d0f2732052",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_15/metrics.json": "b784db56a0ef0c591492d443175184bacf0cd9b184fe948533023eeb48b0a94b",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_16/metrics.json": "65cdaa3d47abbe699c69d0c8e05e94bc09a458480f717bf37fb457a0b51fbe04",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_17/metrics.json": "24affeec86dab7c2739ce1aa7cd2c263fdcf402465da455fa38be385de79c668",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_18/metrics.json": "de8497097875796a306cd79657ecac38a4eef082151099ae7bcc142027d696e1",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_19/metrics.json": "28386260419e7f418856fb68d693de27aaa91bff2c686e56dc083d3c21a1de1e",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_00/metrics.json": "822e826c33691a4bb5f6f8ce9372010351a0094967ae3e09debdc01921fc57cc",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_01/metrics.json": "2e0e86aef5fc5513bace628bd81b40198fbd9853bf33221ccfa7993a2292ebf9",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_02/metrics.json": "b5da787636fc146b2361a50e3b3a7823d8d6e620e6833e8463bc566e30a14b29",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_03/metrics.json": "ac79631fb53e4aabc3306dd5aaf6bbe362d62ad23f0c55090a929722caef5dde",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_04/metrics.json": "691c1c93527bded4db9fab00a95017b540e1dadf66603ed1229b3819cdae65e7",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_05/metrics.json": "966079396e94a501e0da609c5c6a1eeaea86f84391b99d635c1404e7e18e01ea",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_06/metrics.json": "516ed7124313d24ccb11f46ba37c97611a547e8283267df196ca80dbe1fcb338",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_07/metrics.json": "809ec46c1c5b0981b6b1582faf73721cb7acae259207c89add337ad8a87a040b",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_08/metrics.json": "36c781c5303c7c69cf64585ebc8747b6b371c2ea3416dadf1beea2c0fb25e1bf",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_09/metrics.json": "436dd37bb7cec4d9d584c1016a4091fa886d641ee35585c849f220809b62b070",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_10/metrics.json": "bcd0f40e6df08fe603becb6690e774dc48d20ed711a7cb1f012129ab99931983",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_11/metrics.json": "e87e75f4cf0a9754cb5a56c14c4b4b7c2582302f5bb918dfc54f62899c67f70d",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_12/metrics.json": "d0d446467066bbcc3a97b87ce0fca6a003c4bd33a507bb05c9ac7775e60349d2",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_13/metrics.json": "13ced3cd31d5caaa8e88cff6913437db0d109965df57773d8214e2be199abd1e",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_14/metrics.json": "245f6895e1d617642615458c83930b1cb430ae35d2cd1d87135f4f9397a6adfd",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_15/metrics.json": "00bc57d71c3e584f06a21354ee70e0dbb0d25fbc79308e089372819bbed31fa0",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_16/metrics.json": "118add8232f3d4d4a80402e03ad202008772c0f4229e6eb3a7826658458cf4e1",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_17/metrics.json": "ec886764bcf46d6d06141b72e838dbe190dd3725ae5e1063269dcc0f11808103",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_18/metrics.json": "cfccb61a98515c53565ae3301ad32e40da69356a9caa68be975048216b5901db",
+    "reports/cvpr_motion_prevalence_20261012/mld/rep_19/metrics.json": "b56a1762474200d58f33d00431f3884b4b168d286e60c2690f93c8b2f30e0c56",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_00/metrics.json": "ab5889ee1291ddad21f62bfce39a62edd443581e16860cae0a41d1c24f38602e",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_01/metrics.json": "c689b53758e275472260c2acd9e11af38501e221055cddfc5ba198f570dd8780",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_02/metrics.json": "8003ca9fda5437bb26be160983a7540212f52244c51321836a4d0dd79111b9aa",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_03/metrics.json": "176041a5a915c915356be34af7a934a069e0942d7709572dbbe8c1f2cb786002",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_04/metrics.json": "6d613cf1bd4096dfcbae71dba6c0d7bfacde72ad42f00af4b37ea9d49cc24579",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_05/metrics.json": "e9cf48064424ac97ac0a087703cee3957b89659d8454044c1e1002236d02193a",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_06/metrics.json": "455ad7f0f676193fc19ce07deb608d886a9d11b3d81c58afaed75fb195ea0ebb",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_07/metrics.json": "0221a3825e6ea515ee635a195463759b89905625625849dcffe807ac3ef5515a",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_08/metrics.json": "2dc63988fce02e0be380ce7f6e6be0d12275db7d8797bfc6b56966d38b35f333",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_09/metrics.json": "831b34ad71c0f81f361270c587a849c7b5c22bfaa9ff4778a1fe31ccd8b50dc1",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_10/metrics.json": "550bdede55478a9f52b32785f479aa4bc65bef549156586ef20de61ad0c0c635",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_11/metrics.json": "1956ff43df947118d3e6b91731353f8079e8b937c647f38de9ea6f75e9d75905",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_12/metrics.json": "1ce7ce8beb1206cc727ef0d21b12a181b60c9cf4069e47e602da9c376081fadd",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_13/metrics.json": "f6fa37e5fff33e1dac9c496a1a2bc82e71fed672f91a41d4f77b6351730d3f75",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_14/metrics.json": "9da2f3c095646a8dbbbec2159ac7e72bba82e930f6d88e4226876ffe63c3ae15",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_15/metrics.json": "5709ddee50eaf1bd51433f7fda8f69f29fd4d6e2963672fad6f60ea679d8f5d4",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_16/metrics.json": "b44fe16d7158b29e788f09bcda340a941d26c9521f5c0b66f5ce44c0308583c6",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_17/metrics.json": "b7cc887a88cbbf3a32d3d33dd9828341ec240a713f506aff68da0c17cc2a091d",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_18/metrics.json": "f6ae314de5a78a14c07ba38548e25f433261c6779e1b9538ee3eb35f659c302b",
+    "reports/cvpr_motion_prevalence_20261012/motionlcm_v1/rep_19/metrics.json": "c1d6db7e779ada42ab72076a8b444c2ecf29b8ba05b0e5046174f4ebb55b0227",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_00/metrics.json": "03ad36f00b889d2b8f8400174f1f496ec314b04f1e4bd3946e719f47ee318e65",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_01/metrics.json": "8c40f916f12222970ae51c110d6f8ed481f945eeecdfa07b1c5b1b41c2861854",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_02/metrics.json": "81ff8957fe273102ffa41b03722e51047b75807d66684d174a82f8e13ea7b1c1",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_03/metrics.json": "e3eef96830e01ee659ecd70a47415ac84a54a083dbd9a3ffa2f4878e98e95fa3",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_04/metrics.json": "d5eb2841c4fb9dd83da0a8b71a3709e0e0a2875a3219602c12d75310550ef5a4",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_05/metrics.json": "c256f0b1cb044efe73422d43e9f77867577af5320963962a9bac8534a108986a",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_06/metrics.json": "07ddf62cb7b6dfcae3b7ed6aaa9a4839650eb2be1725ae7e3848f2559be8994a",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_07/metrics.json": "5362e02907c33035a60d8efe1f9c90f105527edb77735aebdefb4634e23782da",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_08/metrics.json": "d3e18be040c49062bbb8f230996f4c5dd2298331a7838c93c73092438e615c69",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_09/metrics.json": "d4e95b0ad5aeacc7292c619033b19ac528336b8ece15fde9f66788ba407f5cd3",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_10/metrics.json": "a576363bec3adf6fcf0f3da932f01b39def2bc717c4f10c5076dec4c45cfb5f5",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_11/metrics.json": "e8605dd62ca9c36c3d6e8b68bf8be209500c6225d5d69c63631343408d9d2a57",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_12/metrics.json": "67ffc8ef967d492f4a85c5ffef11944bcaaae24287390803f1112a4ba95848e1",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_13/metrics.json": "5ef8f59a30b7de1df6c3bc145252a306251a68ee92dd2e1093b146e00911c992",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_14/metrics.json": "8ddfc0cec29de4cae98c55c83a6208f3e39b72be3801b302b5415f431a6aa077",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_15/metrics.json": "76e4d761716ea11c8405b872c451276239d2c31d5d49b6241760b9b320ad6c1e",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_16/metrics.json": "6ffb0325be72a2fcdd08b2aa54c3d5a18b057408a13699cf555cd70df00dd6f8",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_17/metrics.json": "dc7a17591880cc5a4f7f0e2e5202206c29b4ce53a72f39d8e71651f1fa09281b",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_18/metrics.json": "e1e82b909a089884170cef918aa935e79d26d0aa88d34942aecbc2e5cf13cab4",
+    "reports/cvpr_motion_prevalence_20261012/t2mgpt/rep_19/metrics.json": "618d98ae8a6e583bf834e541cd22016c94e326927f991352c70a1f3d0b496185",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_00/metrics.json": "4c049feaf5e1b1b8a957c3faae48aa87d44bbda0adc425b0ad9e46412a72fbc6",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_01/metrics.json": "7d76653e77c6b59bc9c266dd16e634d1d7a455f6bab0c2a179f6ec3650bac47a",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_02/metrics.json": "af6ab6eb8bf5d3c8718ca0fa37a610e18a4446a2c1c407808ef7467266f13a11",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_03/metrics.json": "320ccd613789f160efd235e9d36dbe7e7f3ce37515ba31e764e6f78efbb0adbd",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_04/metrics.json": "776caaa6bf2a227f36fe6da5bccd152f3b2ae7f0beec342cfa8b87858655b534",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_05/metrics.json": "c92878305b020c6d5e6761a7f68a631032026dbbbca3da333ebf33496bdc77f1",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_06/metrics.json": "dc2c96caba7036acef289b27611321d2e368d343ff070311b06a156286ec6f29",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_07/metrics.json": "b7093e69e5d626793622f16e678253b2dc8bd1746d99b5c65eaf59147c482cdb",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_08/metrics.json": "7af5d11b34893ed04534b3f9ed8a60555c05b580351b8bdddf03a0dc2a1c38c0",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_09/metrics.json": "32102263cb481c5541059c5681a60f7da434be9cdeb5eb91afe0cbd58c4e971c",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_10/metrics.json": "1ec1df14295c829bc6ec1553baca0c00da4300bd1d2a59d769b6d8fc3a34a8e3",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_11/metrics.json": "4659b466f8742507b858b1cfe606f8f18e7154da030d8bb27b317665dd544c35",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_12/metrics.json": "822557cbd83aaab1be2546a5ef40c45cb8c3febff7011ee5e25017086d3bbcd3",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_13/metrics.json": "ad6cf455c0a7704ef13a2f064924d04fb2729dbcb1b984e3303e05ad4faa5258",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_14/metrics.json": "16d3d671218249d066b8eba787997cda6a0a6282109afdcc84ee4a891e92eb92",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_15/metrics.json": "c5c3c0c2ae010f6382e8ecaaec0756e96239e1bb8833acfc6889ed83f0e0ca7d",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_16/metrics.json": "5f09964a0cf22cc3cdb1a4d4a3fa3664e6993c8abae2a6169f16cfeb590a6318",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_17/metrics.json": "e362b9a4d229d7485de1f4b89354d647efec45655d3f868f68b8773eb15a2f7d",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_18/metrics.json": "b121123b8e67d8168c4122a9271b8c917155d170be20c9bd8819898b45d816bc",
+    "reports/cvpr_motion_prevalence_20261012/t2m/rep_19/metrics.json": "392bab7d57269f5daaefb3b6c528e07a2bd422858fbc2d0b49000570b85b6af1"
+  },
+  "analysis_code_sha256": "2c849457bbc7b5a37ab98be3286e632ab42339a735913ff06c05ed52cac4f4d8",
+  "secondary_official_GPT_checkpoint_same_architecture": {
+    "mdm50": {
+      "FID": {
+        "raw_mean": 0.5129370617945866,
+        "canonical_mean": 0.5103612047058868,
+        "raw_native95_halfwidth": 0.026899149765123493,
+        "canonical_native95_halfwidth": 0.026439464148780095,
+        "paired_raw_minus_canonical": 0.0025758570886999623,
+        "paired_CI95": [
+          0.0016520188447111156,
+          0.003499695332688809
+        ],
+        "paired_family_CI95": [
+          0.0011750093099499946,
+          0.00397670486744993
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.005021780020511567
+      },
+      "R1": {
+        "raw_mean": 0.458642578125,
+        "canonical_mean": 0.458447265625,
+        "raw_native95_halfwidth": 0.0064771645922965925,
+        "canonical_native95_halfwidth": 0.006536565473876544,
+        "paired_raw_minus_canonical": 0.0001953125,
+        "paired_CI95": [
+          -0.0009300921471503366,
+          0.0013207171471503365
+        ],
+        "paired_family_CI95": [
+          -0.0015111773648799314,
+          0.0019018023648799314
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0004258490365165549
+      },
+      "MM_distance": {
+        "raw_mean": 3.2961388248950243,
+        "canonical_mean": 3.2962829027324916,
+        "raw_native95_halfwidth": 0.027348003105874083,
+        "canonical_native95_halfwidth": 0.027403047862799474,
+        "paired_raw_minus_canonical": -0.0001440778374671936,
+        "paired_CI95": [
+          -0.0007984291875229229,
+          0.0005102735125885356
+        ],
+        "paired_family_CI95": [
+          -0.0010385044534484051,
+          0.0007503487785140179
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -4.371109504824397e-05
+      }
+    },
+    "mld": {
+      "FID": {
+        "raw_mean": 0.420599841123763,
+        "canonical_mean": 0.421635381767009,
+        "raw_native95_halfwidth": 0.010105793047021173,
+        "canonical_native95_halfwidth": 0.010088005566325777,
+        "paired_raw_minus_canonical": -0.00103554064324598,
+        "paired_CI95": [
+          -0.0018484181145589718,
+          -0.00022266317193298836
+        ],
+        "paired_family_CI95": [
+          -0.0022681347770069577,
+          0.0001970534905149973
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.0024620566676373723
+      },
+      "R1": {
+        "raw_mean": 0.4668857758620689,
+        "canonical_mean": 0.46662715517241377,
+        "raw_native95_halfwidth": 0.0024251619792029513,
+        "canonical_native95_halfwidth": 0.0023371119155385094,
+        "paired_raw_minus_canonical": 0.0002586206896551674,
+        "paired_CI95": [
+          -0.000719084408513114,
+          0.0012363257878234488
+        ],
+        "paired_family_CI95": [
+          -0.001223907257150736,
+          0.0017411486364610708
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0005539271124241128
+      },
+      "MM_distance": {
+        "raw_mean": 3.2699094437730722,
+        "canonical_mean": 3.2696135592460633,
+        "raw_native95_halfwidth": 0.0110960017841307,
+        "canonical_native95_halfwidth": 0.010941786668984713,
+        "paired_raw_minus_canonical": 0.00029588452700912704,
+        "paired_CI95": [
+          -0.000407292680351205,
+          0.0009990617343694592
+        ],
+        "paired_family_CI95": [
+          -0.0006652816873814376,
+          0.0012570507413996916
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": 9.048707069627983e-05
+      }
+    },
+    "motionlcm_v1": {
+      "FID": {
+        "raw_mean": 0.4195152792520851,
+        "canonical_mean": 0.42943343925485633,
+        "raw_native95_halfwidth": 0.011844037141424199,
+        "canonical_native95_halfwidth": 0.013145132787094949,
+        "paired_raw_minus_canonical": -0.00991816000277126,
+        "paired_CI95": [
+          -0.012500901978895973,
+          -0.007335418026646545
+        ],
+        "paired_family_CI95": [
+          -0.013834460701383914,
+          -0.0060018593041586046
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.02364195177933311
+      },
+      "R1": {
+        "raw_mean": 0.5041594827586208,
+        "canonical_mean": 0.5026400862068965,
+        "raw_native95_halfwidth": 0.003266968593607404,
+        "canonical_native95_halfwidth": 0.002833775610975945,
+        "paired_raw_minus_canonical": 0.0015193965517241365,
+        "paired_CI95": [
+          0.000245862701583199,
+          0.002792930401865074
+        ],
+        "paired_family_CI95": [
+          -0.00041170673041533387,
+          0.0034504998338636067
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0030137220536057764
+      },
+      "MM_distance": {
+        "raw_mean": 2.996503421027085,
+        "canonical_mean": 3.0009754878899146,
+        "raw_native95_halfwidth": 0.010528596591981586,
+        "canonical_native95_halfwidth": 0.010699820933678923,
+        "paired_raw_minus_canonical": -0.004472066862829726,
+        "paired_CI95": [
+          -0.0055185152039417245,
+          -0.003425618521717728
+        ],
+        "paired_family_CI95": [
+          -0.005902447114143097,
+          -0.003041686611516356
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -0.001492428418885928
+      }
+    },
+    "t2mgpt": {
+      "FID": {
+        "raw_mean": 0.12040599869189421,
+        "canonical_mean": 0.11146439116637694,
+        "raw_native95_halfwidth": 0.0039635506394693565,
+        "canonical_native95_halfwidth": 0.004016145347510456,
+        "paired_raw_minus_canonical": 0.00894160752551727,
+        "paired_CI95": [
+          0.008049063729600413,
+          0.009834151321434125
+        ],
+        "paired_family_CI95": [
+          0.007588212597257202,
+          0.010295002453777338
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.07426214327076731
+      },
+      "R1": {
+        "raw_mean": 0.4908943965517242,
+        "canonical_mean": 0.4897952586206896,
+        "raw_native95_halfwidth": 0.002575836743040684,
+        "canonical_native95_halfwidth": 0.002592821661009421,
+        "paired_raw_minus_canonical": 0.0010991379310344774,
+        "paired_CI95": [
+          8.418850828561912e-05,
+          0.0021140873537833357
+        ],
+        "paired_family_CI95": [
+          -0.0004398648691337141,
+          0.002638140731202669
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.002239051695752376
+      },
+      "MM_distance": {
+        "raw_mean": 3.1253359816403226,
+        "canonical_mean": 3.116895886084129,
+        "raw_native95_halfwidth": 0.010599214024106723,
+        "canonical_native95_halfwidth": 0.010521293168876476,
+        "paired_raw_minus_canonical": 0.008440095556193294,
+        "paired_CI95": [
+          0.007722595469003602,
+          0.009157595643382987
+        ],
+        "paired_family_CI95": [
+          0.007459351534045797,
+          0.009420839578340792
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": 0.0027005402317620704
+      }
+    },
+    "t2m": {
+      "FID": {
+        "raw_mean": 1.0836264015548551,
+        "canonical_mean": 1.0917218263924453,
+        "raw_native95_halfwidth": 0.022405674152539194,
+        "canonical_native95_halfwidth": 0.022538816611859153,
+        "paired_raw_minus_canonical": -0.008095424837590315,
+        "paired_CI95": [
+          -0.010084445580224057,
+          -0.006106404094956573
+        ],
+        "paired_family_CI95": [
+          -0.011111445561278528,
+          -0.005079404113902102
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": -0.007470678848332315
+      },
+      "R1": {
+        "raw_mean": 0.4547198275862069,
+        "canonical_mean": 0.4540193965517242,
+        "raw_native95_halfwidth": 0.002856513739101664,
+        "canonical_native95_halfwidth": 0.00256983772764312,
+        "paired_raw_minus_canonical": 0.0007004310344827485,
+        "paired_CI95": [
+          -0.00022856375927884118,
+          0.0016294258282443382
+        ],
+        "paired_family_CI95": [
+          -0.0007082357984600522,
+          0.0021090978674255492
+        ],
+        "family_size": 10,
+        "relative_raw_minus_canonical_over_raw": 0.0015403573629081725
+      },
+      "MM_distance": {
+        "raw_mean": 3.347851067658129,
+        "canonical_mean": 3.3500056222389483,
+        "raw_native95_halfwidth": 0.013461402810259189,
+        "canonical_native95_halfwidth": 0.013396885750941235,
+        "paired_raw_minus_canonical": -0.002154554580819967,
+        "paired_CI95": [
+          -0.0030245274666875813,
+          -0.001284581694952353
+        ],
+        "paired_family_CI95": [
+          -0.0033437122164475365,
+          -0.000965396945192398
+        ],
+        "family_size": 5,
+        "relative_raw_minus_canonical_over_raw": -0.0006435634492925965
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "PHOENIX-2014T": {
+    "clips": 519,
+    "clusters": 519,
+    "cluster_unit": "clip, not signer",
+    "replicates": 2000,
+    "seed": 42,
+    "multiple_testing_adjustment": false,
+    "inference_is_exploratory_DEV": true,
+    "comparisons": {
+      "correct_caption": {
+        "target_after minus target_before": {
+          "delta_bleu4": 75.37577237622192,
+          "ci95": [
+            72.76480433123083,
+            77.98384755003913
+          ]
+        },
+        "canonical_after minus canonical_before": {
+          "delta_bleu4": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "rolled_wrong_caption": {
+        "target_after minus target_before": {
+          "delta_bleu4": 85.08327309919287,
+          "ci95": [
+            82.54733403272141,
+            87.60359295086712
+          ]
+        },
+        "canonical_after minus canonical_before": {
+          "delta_bleu4": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "How2Sign": {
+    "clips": 1650,
+    "clusters": 115,
+    "cluster_unit": "official VIDEO_ID",
+    "replicates": 2000,
+    "seed": 42,
+    "multiple_testing_adjustment": false,
+    "inference_is_exploratory_DEV": true,
+    "comparisons": {
+      "correct_caption": {
+        "target_after minus target_before": {
+          "delta_bleu4": 47.73400736288643,
+          "ci95": [
+            44.77655072660097,
+            50.66388498010902
+          ]
+        },
+        "canonical_after minus canonical_before": {
+          "delta_bleu4": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "rolled_wrong_caption": {
+        "target_after minus target_before": {
+          "delta_bleu4": 44.97337413139213,
+          "ci95": [
+            42.458105175787836,
+            47.50575091847537
+          ]
+        },
+        "canonical_after minus canonical_before": {
+          "delta_bleu4": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  }
+}

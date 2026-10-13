@@ -1,0 +1,64 @@
+{
+  "purpose": "fixed confirmation after freezing development results; no new fitting or selection",
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "splits": [
+    "PHOENIX-2014T TEST",
+    "How2Sign TEST",
+    "CSL-Daily TEST"
+  ],
+  "generator": "same frozen local DDPM; replay existing stored TEST motions",
+  "learned_conditions": [
+    "text_raw/source_text",
+    "text_raw/rolled_adapter_text",
+    "text_canonical/source_text",
+    "motion_raw/source_text"
+  ],
+  "reader_conditions": [
+    "raw fine-tune/native",
+    "raw fine-tune/canonical",
+    "canonical fine-tune/canonical",
+    "canonical fine-tune/fixed equivalent encoding"
+  ],
+  "fixed_gauge": {
+    "alpha": 1.1,
+    "beta": 1.1,
+    "gamma": 0.1,
+    "left_hand_unchanged": true
+  },
+  "no_optimizer": true,
+  "no_checkpoint_or_hyperparameter_selection": true,
+  "discovery_manifest_hashes": {
+    "reports/cvpr_learned_equivalence_20261011": "3360f78373db5172e50828f4d86552d329ec75e4c14ceba9231e81296a8912ea",
+    "reports/cvpr_canonical_readers_20261011": "76336e84098e6d69c26ee3610624e52052b234e69c322b2ec188f46741bc3fff"
+  },
+  "checkpoint_hashes": {
+    "reports/cvpr_learned_equivalence_20261011/training/seed42/text_raw.pt": "bae57be650d50c2dd77ae94da0aa8f427307de67e4463df1a50f7e3a8ae301a5",
+    "reports/cvpr_learned_equivalence_20261011/training/seed42/text_canonical.pt": "8577454e4b661769777765ee5f45cb737fd4665231292f97be0c9a167f1c9197",
+    "reports/cvpr_learned_equivalence_20261011/training/seed42/motion_raw.pt": "a0a61fffc1a0bc965a84f26eb79eab22eb2735abfdebb4187ab23a88ab1c174c",
+    "reports/cvpr_learned_equivalence_20261011/training/seed123/text_raw.pt": "f640c4cfbbabb8862fde9663894f747f26fe37a62d15fd3f4c75cb6a77b2fcd0",
+    "reports/cvpr_learned_equivalence_20261011/training/seed123/text_canonical.pt": "9d7c7b57f50fec28c1cca671fc43b6bc8c9fa69101be5249a1aee309a39b7b04",
+    "reports/cvpr_learned_equivalence_20261011/training/seed123/motion_raw.pt": "4e3253297c76daf9da169f33bae4676519b9ea07a099f7289ad6ff3bd0a0ae2a",
+    "reports/cvpr_learned_equivalence_20261011/training/seed777/text_raw.pt": "ae900170d7c092ac169245a2a69e236dea90097cbe6de1dadb87c138520a1404",
+    "reports/cvpr_learned_equivalence_20261011/training/seed777/text_canonical.pt": "6a96a067d1962052c0180eb81f665407523ecac5f26fe16f25b6d9e506f6fb27",
+    "reports/cvpr_learned_equivalence_20261011/training/seed777/motion_raw.pt": "c0b7e4f462464f3c3a60c05329157c7a60b6bcb55d40471852e7dea2eb757117",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed42/raw/reader.ckpt": "5e2194a3f20bdb3d5feda3335f5596cec42981838178e164454da8360121813b",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed42/canonical/reader.ckpt": "cb1b317e208f565782b7cd34b9e2aac0ea058334fa9cab9dd6e4c80c7f070837",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed123/raw/reader.ckpt": "76c00b19c7db29c1a52f6545a96be8339d9ad40e1fee9b75d781d2e7a3363b11",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed123/canonical/reader.ckpt": "8a95f3e2d6b335a9d9068072f6d58e0c7fe914c18d4f18eaa8c27674cf82a815",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed777/raw/reader.ckpt": "05709f2b68b850e99cda1c619e9016667f1331250662acf0710ee496b062e8f8",
+    "reports/cvpr_canonical_readers_20261011/How2Sign/seed777/canonical/reader.ckpt": "06a2276448171badcda0c78dac89a60e24670673bc1bac4c934ac28389603503",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed42/raw/reader.ckpt": "7bdbde8253f695601408afeade787a69230dfaf1cc541dd63ca6508dee0de6c7",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed42/canonical/reader.ckpt": "3ab053c53500f17a739a8a71cfccdc0c663078e10f1cede0b8920ec162db2832",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed123/raw/reader.ckpt": "8a358e8edfc7518e5666992a29a82e74a2af49fccd2d50fb1a67291994debd96",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed123/canonical/reader.ckpt": "2889deb0128d3652c327d7632135910a00affba33d35a396dd31f6b6346ba558",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed777/raw/reader.ckpt": "1a999b71beb30925228387bd7db1d81f49610de7e1baf83d6aadf75237d3963c",
+    "reports/cvpr_canonical_readers_20261011/CSL-Daily/seed777/canonical/reader.ckpt": "8cbe448742c10115c36ee3a5390be0e0b3b1caed1e089aa857a5119546a9d917"
+  },
+  "frozen_TEST_motion_sha256": "f2778f1f7f44c415bb7e48151dc50ef2454902d3b51bd12373274719fc749c0c",
+  "project_TEST_history": "public splits already used in earlier project experiments; not pristine project-wide holdouts",
+  "code_sha256": "33113eb622ba14ff98d111777a9baeb78bf8feb3b263b93584a526f36bdcc1c2"
+}

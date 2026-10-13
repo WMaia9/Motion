@@ -1,0 +1,24 @@
+{
+  "scope": "post-hoc diagnostic after positive TEST attack scores; no new attack optimization or TEST-fitted threshold; not pristine confirmation",
+  "features": [
+    "canonical_RMS",
+    "mean_squared_6D_norm",
+    "mean_abs_tau",
+    "mean_abs_rho_minus_sigma",
+    "mean_rho",
+    "mean_sigma",
+    "std_rho",
+    "std_sigma",
+    "std_tau"
+  ],
+  "conditions": [
+    "circle_correct_step200",
+    "sphere_correct_step200"
+  ],
+  "threshold_selection": "maximum DEV balanced accuracy; orientation and threshold fixed before applying to TEST; all features retained",
+  "inputs_sha256": {
+    "reports/cvpr_adaptive_distance_attack_20261012/manifest_sha256.json": "0c8d08e7894d3165e660000c924a0bea9335ffbfc634365f0e26b55714f41916",
+    "reports/cvpr_adaptive_distance_confirmation_20261012/manifest_sha256.json": "78664a66f84f5f6f35ee2793d34ca72b8cd56dbb1779434a96e4d4d0d651df85",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/audit_adaptive_detectors.py": "f145662af91f3bd4a29c4a962584b376304a952e9a9b068cedecc9bb100e9352"
+  }
+}

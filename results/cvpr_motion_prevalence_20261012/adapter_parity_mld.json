@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "synthetic_inputs_only": true,
+  "errors": {
+    "native_reverse_and_decoder_unnormalized_output": 0.0,
+    "native_reverse_source_sha256": "5fc19bc0c45e1929df525972601f5de0ee0aaeed8596a27cab2deb385f6ca850"
+  },
+  "producer_sha256": "49055197f750f8d5679b3786f9625627e8daddafaa9e7087230f3a7cab90c1f8",
+  "raw_array_pipeline_source": "scripts/run_motion_release_audit.py",
+  "Torch": "2.11.0+cu128"
+}

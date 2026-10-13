@@ -1,0 +1,46 @@
+{
+  "checked_date": "2026-10-13",
+  "primary_sources": [
+    {
+      "key": "mld2023",
+      "primary": "https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Executing_Your_Commands_via_Motion_Diffusion_in_Latent_Space_CVPR_2023_paper.html",
+      "verified": "CVF final7authors, CVPR2023,18000-18010; arXiv initial8-author list differs"
+    },
+    {
+      "key": "t2mgpt2023",
+      "primary": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Generating_Human_Motion_From_Textual_Descriptions_With_Discrete_Representations_CVPR_2023_paper.html",
+      "verified": "CVF final includes Ying Shan and excludes Shaoli Huang from initial arXiv/README;14730-14740"
+    },
+    {
+      "key": "motionlcm2024",
+      "primary": "https://link.springer.com/chapter/10.1007/978-3-031-72640-8_22",
+      "verified": "ECCV2024, first online29Oct2024,390-408; publisher official citation/copyright year2025, matching README Bib. Use publisher citation year2025."
+    },
+    {
+      "key": "native_MDM_protocol",
+      "primary": "https://github.com/GuyTevet/motion-diffusion-model/blob/main/eval/eval_humanml.py",
+      "verified": "wo_mm20reps, nominal1000outputs yields1024batch32; full reference loader"
+    },
+    {
+      "key": "MotionRFT_reward",
+      "primary": "https://github.com/Xiaofeng-Tan/MotionRFT/blob/main/RFT_MLD/mld/models/modeltype/mld.py",
+      "verified": "raw decoded features consumed by own MotionReward; not Guo standard reader; no transfer vulnerability claimed"
+    },
+    {
+      "key": "MotionRFT_paper",
+      "primary": "https://arxiv.org/abs/2603.27185",
+      "verified": "preprint reference retained; authorrepo TPAMIclaim not independently established"
+    },
+    {
+      "key": "CVPR2027_dates",
+      "primary": "https://cvpr.thecvf.com/Conferences/2027/Dates",
+      "verified": "Registration10Nov2026AoE, submission16Nov2026AoE, supplement23Nov2026AoE; checked13Oct2026"
+    },
+    {
+      "key": "CVPR2027_call",
+      "primary": "https://cvpr.thecvf.com/Conferences/2027/CallForPapers",
+      "verified": "Official scope/deadlines; AuthorGuidelines unavailable at current recordedcheck, available kit remains2026"
+    }
+  ],
+  "technical_sources_primary_only": true
+}

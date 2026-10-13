@@ -1,0 +1,45 @@
+{
+  "new_training_arms": 4,
+  "epochs_per_arm": 5,
+  "new_generated_clips": 640,
+  "reused_control_clips": 256,
+  "total_scored_clips": 896,
+  "matched_first_epoch_order_t_drop_noise_with_old_baseline": true,
+  "matched_auxiliary_segment_counts_by_epoch": [
+    11966,
+    12009,
+    11936,
+    11992,
+    11875
+  ],
+  "TRAIN_DEV_overlap": 0,
+  "TRAIN_partition_clips": 7096,
+  "partition_clips_different_from_uniform": 7046,
+  "mean_absolute_interior_boundary_shift_frames": 7.747701353126368,
+  "reused_control_artifacts_equal": {
+    "geometry_replay": true,
+    "physical_velocity": true
+  },
+  "math_checks": {
+    "exhaustive_CTC_cases": 36,
+    "viterbi_max_score_error": 0.0,
+    "numpy_double_sum_local_signature_max_error": 9.020562075079397e-16,
+    "gauge_invariance_max_error": 1.2878587085651816e-14,
+    "vertical_jvp_max_error": 9.939037162541567e-15,
+    "partition_clamping_cases": 67500,
+    "known_CTC_and_Chen_math_not_new_algorithms": true
+  },
+  "alignment_replay": {
+    "replayed_TRAIN_alignments": 448,
+    "exact_boundary_replay": true,
+    "max_logp_difference": 0.0
+  },
+  "BT_independent_of_new_loss": true,
+  "shuffled_zero_BLEU_explained_by_zero_matching_fourgrams_not_empty_hypotheses": true,
+  "CTC_is_alignment_source_not_independent": true,
+  "training_uses_gloss_supervision": true,
+  "inference_inputs_text_and_real_duration": true,
+  "TEST_used": false,
+  "mesh_rendered": false,
+  "human_evaluation": false
+}

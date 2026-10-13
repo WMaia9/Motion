@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "rotation_preserving_pairs_reconstructed": 6612,
+  "maximum_coefficient_reconstruction_error": 4.76837158203125e-07,
+  "max_rotation_error_deg_independent": 6.602423235982159e-06,
+  "standalone_BLEU_sentence_evaluations": 13224,
+  "frozen_generator_and_teacher_hashes_match": true,
+  "all_canonical_hypotheses_unchanged": true,
+  "new_TEST_use": false
+}

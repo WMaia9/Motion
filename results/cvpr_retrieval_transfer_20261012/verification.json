@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "independently_reconstructed_layer_pairs": 384,
+  "max_rotation_error_deg": 6.010223667035567e-06,
+  "max_reconstruction_error": 4.76837158203125e-07,
+  "standalone_BLEU_sentence_evaluations": 1280,
+  "canonical_hypothesis_changes": 0,
+  "native_retrieval_not_SOTA_reproduction": true,
+  "no_TEST_use": true
+}

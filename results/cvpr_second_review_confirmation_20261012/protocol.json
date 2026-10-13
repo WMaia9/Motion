@@ -1,0 +1,75 @@
+{
+  "purpose": "fixed TEST confirmation; no fitting, score-based selection or new optimization",
+  "generator_seeds": [
+    42,
+    123,
+    777
+  ],
+  "ordinary_generator_arms": [
+    "geodesic_none_w0",
+    "geodesic_raw_w1",
+    "geodesic_canonical_w1"
+  ],
+  "ordinary_generator_epoch": 20,
+  "ordinary_generator_PRIMARY": "raw-reader CE weight1 vs no CE and canonical-reader CE weight1; three declared gap contrasts",
+  "sampling": "50 DDIM, CFG3, seed102; text and prescribed reference duration metadata only; no reference poses supplied to sampler",
+  "real_motion_layer_primary_seeds": [
+    42,
+    123,
+    777
+  ],
+  "real_motion_layer_exploratory_controls_seeds": [
+    42
+  ],
+  "bounds": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "conditions": 28,
+  "source_of_layers": "source captions are inputs; constructed amortized attacks, distinct from ordinary generator training",
+  "development_manifests": {
+    "reports/cvpr_quotient_training_20261012": "d0725a7a9ec3e886fae423e448518620b3aa9418772c9b64e15c9e3fd5dcf37f",
+    "reports/cvpr_real_motion_layers_20261012": "0591658a63713095387c0d217685bc81a49d68b557d068155d4a55425b8ed282",
+    "reports/cvpr_learned_budget_20261012": "fd2200847472c2831293a6ddc4598578ae0ba2b678e367ef4e82b503607d262a"
+  },
+  "input_SHA256": {
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_none_w0/epoch20.pt": "46f17d5197c9080636d4fa9aa4d6c39382f349a41f4ca3efb0a61402e041bd01",
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_raw_w1/epoch20.pt": "5b9cecdab37e25fe12d9d9b92f2f67d0ef4d758d2129075a08f5c94f9a7a02a6",
+    "reports/cvpr_quotient_training_20261012/training/seed42/geodesic_canonical_w1/epoch20.pt": "ba232bee9a07c93d20843bbbee0249e930420dbe5e3009f7ebf3d0608adf82f5",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_none_w0/epoch20.pt": "3d0d4f1a7def77f922632698beefb5a734e43c605d48f05f9cbd91f4cd0aa343",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_raw_w1/epoch20.pt": "383db65a6e59759644c2845e20129bb6ec2a505fb169ad413a184fba670545c8",
+    "reports/cvpr_quotient_training_20261012/training/seed123/geodesic_canonical_w1/epoch20.pt": "a16b51ef36b5e2935e0896622a54e25fe512ccf69e6b1256b247b91583627236",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_none_w0/epoch20.pt": "cd1048ed5747237909b4c398ff2b7c9cfa510044e54d40a4f00dfbfb876b1881",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_raw_w1/epoch20.pt": "33fe5b660b918f069e28f311afb7b06cd1ad7292c0f5779f52b01ac959066039",
+    "reports/cvpr_quotient_training_20261012/training/seed777/geodesic_canonical_w1/epoch20.pt": "fd3fce7e429cdc4c896c14dd110d3bf9d1d813581367de9e06181431166ce4e9",
+    "reports/cvpr_real_motion_layers_20261012/How2Sign/training/seed42/text_raw/layer.pt": "f666b5ab276be61a82aa17ad327a0fdd4588218672b55f9989022d9644bf9327",
+    "reports/cvpr_real_motion_layers_20261012/How2Sign/training/seed123/text_raw/layer.pt": "4210055f9df3ab91a6d05079505ce0dd56539c33308d2ded4113458ce4398e03",
+    "reports/cvpr_real_motion_layers_20261012/How2Sign/training/seed777/text_raw/layer.pt": "085f287d4b89077ca15c96331436a77546061f97bf51db0cb63f0f2a12d11fbf",
+    "reports/cvpr_real_motion_layers_20261012/How2Sign/training/seed42/motion_raw/layer.pt": "fa64182f9416407c0696791d55ed7aed85551ce815d67551836945a6d1e13ab0",
+    "reports/cvpr_real_motion_layers_20261012/How2Sign/training/seed42/text_canonical/layer.pt": "6323fd99b8c15370a3241d1ba976ef9bdf541cc8dafd369bba34a80952b99ab2",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed42/text_raw/layer.pt": "a28e682491bc6ad96079d61aa69f88aa31cdb7e188845a35eba6978ce6196a1a",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed123/text_raw/layer.pt": "810bdb8502f4e175c963cb39e5be3c2fac958ce218ec0ad4105a006edbfb57db",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed777/text_raw/layer.pt": "3959a672589cc44736e80c18af57e11c4b93c1b519f326e151940f64cadffe97",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed42/motion_raw/layer.pt": "1f24812ebdf10f8365e0d07c52f2b98d4b8eabf7c7dc9e9f901581d943348e55",
+    "reports/cvpr_real_motion_layers_20261012/CSL-Daily/training/seed42/text_canonical/layer.pt": "f827222917f626dfe131f7bf4496013036dfecfaebdcc9d64b8744aa6d599041",
+    "reports/cvpr_learned_budget_20261012/training/seed42/bound0.01/layer.pt": "1c991d8f40f8a3cd46a35c0d7833a3d0090941dc6f083665688edbfc247f49a1",
+    "reports/cvpr_learned_budget_20261012/training/seed42/bound0.05/layer.pt": "41f26e6f1e4cc30b0923eb13e7eda8829a092dd2558efeda47aa0d441a83a02e",
+    "reports/cvpr_learned_budget_20261012/training/seed42/bound0.1/layer.pt": "0e2924b6f14f936708d7c5fd0396a8b6743931474a17de78746b6cfd48c29854",
+    "reports/cvpr_learned_budget_20261012/training/seed123/bound0.01/layer.pt": "a762d9a9bf4af630037a2575040d59e5dca11ffa68c444af5c312961b94495b8",
+    "reports/cvpr_learned_budget_20261012/training/seed123/bound0.05/layer.pt": "67647f5dc69327d79c1837d1cce897723126998fdf4f468ed7c129b5d40c28cd",
+    "reports/cvpr_learned_budget_20261012/training/seed123/bound0.1/layer.pt": "b745bc1b927f37e7689c64ec69ccd2a0889d51314d40e5cb9bb5aabdfe7f95f9",
+    "reports/cvpr_learned_budget_20261012/training/seed777/bound0.01/layer.pt": "7b7446956fced90d93d5f7630c3b13c7195ced62a628811bb0d40f6c2d5b6ca4",
+    "reports/cvpr_learned_budget_20261012/training/seed777/bound0.05/layer.pt": "b75eca5dbe654ead17899561f564afa804088c76a796cbbf14ec6eaafbef8527",
+    "reports/cvpr_learned_budget_20261012/training/seed777/bound0.1/layer.pt": "c0a9204099616de88435d129bfae2939a904243c2d8493b32ac47c8482432228",
+    "reports/cvpr_quotient_training_20261012/manifest_sha256.json": "d0725a7a9ec3e886fae423e448518620b3aa9418772c9b64e15c9e3fd5dcf37f",
+    "reports/cvpr_real_motion_layers_20261012/manifest_sha256.json": "0591658a63713095387c0d217685bc81a49d68b557d068155d4a55425b8ed282",
+    "reports/cvpr_learned_budget_20261012/manifest_sha256.json": "fd2200847472c2831293a6ddc4598578ae0ba2b678e367ef4e82b503607d262a",
+    "reports/cvpr_physical_semantic_ddpm_20261010/geometry.pt": "c78566bace1113358eacde2aeed47cc4f157bb83eb3d8bfb22b1d325d9b9f66d",
+    "reports/cvpr_physical_semantic_ddpm_20261010/normalization.npz": "bfe5912b57a1b0cfc46c981ae1b7545c1700bfa59b25c980fdea7c39a8f9ee00",
+    "reports/cvpr_physical_semantic_ddpm_20261010/data_audit.json": "708cf93f2f531c9b7698c7c128da6c940a6c90bde3c3717dc7e5dbcab9cf1342",
+    "reports/cvpr_evaluation_confirmation_20261011/rankings/geometry/poses.npz": "f2778f1f7f44c415bb7e48151dc50ef2454902d3b51bd12373274719fc749c0c"
+  },
+  "TEST_history": "public TEST splits were evaluated during this project; all present model weights and settings fixed before this confirmation, TRAIN/TEST IDs disjoint; no claim of project-wide untouched holdouts",
+  "source_code_sha256": "b31d307118f2604bfd87571b4860f25381d8fe984608bbda22063ff8676fcf54"
+}

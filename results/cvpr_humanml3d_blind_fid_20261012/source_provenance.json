@@ -1,0 +1,19 @@
+{
+  "producers": [
+    "prepare_humanml_blind_fid",
+    "resume_humanml_blind_generation",
+    "run_humanml_blind_fid",
+    "score_humanml_blind_fid",
+    "bootstrap_humanml_blind_fid"
+  ],
+  "import_closure": [
+    "bootstrap_humanml_blind_fid",
+    "generate_humanml_mdm",
+    "humanml_audit_common",
+    "prepare_humanml_blind_fid",
+    "resume_humanml_blind_generation",
+    "run_humanml_blind_fid",
+    "score_humanml_blind_fid"
+  ],
+  "all_archived_scripts_match_live": true
+}

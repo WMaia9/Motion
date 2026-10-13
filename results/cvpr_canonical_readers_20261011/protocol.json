@@ -1,0 +1,48 @@
+{
+  "corpora": [
+    "How2Sign",
+    "CSL-Daily"
+  ],
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "raw",
+    "canonical"
+  ],
+  "epochs": 5,
+  "lr": 1e-05,
+  "batch_size": 64,
+  "weight_decay": 0.0001,
+  "selection": "last epoch; no DEV/BLEU model selection",
+  "objective": "token CE; CTC disabled",
+  "training": "full available TRAIN, native max_sent_length filter, max_sgn_length300",
+  "fine_tuning_not_training_from_scratch": true,
+  "init": "same public pretrained checkpoint in each paired arm",
+  "no_TEST_use": true,
+  "attack": {
+    "subset": 64,
+    "split": "DEV",
+    "selection_seed": 2027,
+    "target": "rolled next selected caption",
+    "steps": 80,
+    "lr": 0.1,
+    "coefficient_bound": 0.35,
+    "left_hand_unchanged": true
+  },
+  "accuracy_comparisons": "canonical fine-tune versus paired raw fine-tune and public raw baseline",
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 42,
+  "exploratory_noninferiority_margins_BLEU4": {
+    "How2Sign": 0.2,
+    "CSL-Daily": 0.3
+  },
+  "noninferiority_status": "exploratory DEV margins, not validated linguistic clinical thresholds",
+  "checkpoints": {
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/best.ckpt": "acf8794c594f9b58701c85c390264cf30807d89f399960768f30c7a9e637e01f",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/best.ckpt": "5ea787537b11d7b3e14e6a5c3ae711931b8abf939f6a7f25e5a9b8dd3e91a2c0"
+  },
+  "code_sha256": "d8dc98303c828ff4eebbee3830da516607457638d616111cf519a625b2dbf747"
+}

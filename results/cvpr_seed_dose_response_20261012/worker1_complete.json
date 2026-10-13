@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "seed": 2718,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 42,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    },
+    {
+      "seed": 123,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    },
+    {
+      "seed": 777,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    }
+  ],
+  "worker_code_sha256": "4c0fd91cb1c34fedf1652ae96c72b69586aa9677bebf2adcf72bc85ed73194a3",
+  "unmodified_fitting_source_sha256": "a4a1b015a4a4b97545de5248b16095b1885112acd68e2f2875a4890baff6a17f"
+}

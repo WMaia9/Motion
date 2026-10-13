@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{\textbf{Two official checkpoints, one evaluator architecture.} All five releases and 20 repetitions are retained. R1 uses native 32-candidate batches. Each reader uses a ten-endpoint FID/R1 interval family; these families are reported separately. GPT weights differ from the MDM-linked weights; the samples and normalization are shared. Intervals describe raw$-C$.}
+\label{tab:releasereaders}
+\begin{tabular}{llrrrrrr}\toprule
+Reader&Release&Raw FID&$C$ FID&FID gap interval&Raw R1&$C$ R1&R1 gap interval\\\midrule
+MDM&MDM50&0.4550&0.4504&$[+0.0035,+0.0058]$&0.4115&0.4115&$[-0.0017,+0.0018]$\\
+MDM&MLD&0.4453&0.4491&$[-0.0052,-0.0024]$&0.4118&0.4105&$[+0.0003,+0.0023]$\\
+MDM&MotionLCM-v1&0.5747&0.6062&$[-0.0347,-0.0282]$&0.4374&0.4350&$[+0.0005,+0.0043]$\\
+MDM&T2M-GPT&0.1828&0.1488&$[+0.0325,+0.0354]$&0.4226&0.4240&$[-0.0030,+0.0002]$\\
+MDM&T2M&1.3935&1.3471&$[+0.0441,+0.0486]$&0.3933&0.3930&$[-0.0009,+0.0017]$\\
+GPT&MDM50&0.5129&0.5104&$[+0.0012,+0.0040]$&0.4586&0.4584&$[-0.0015,+0.0019]$\\
+GPT&MLD&0.4206&0.4216&$[-0.0023,+0.0002]$&0.4669&0.4666&$[-0.0012,+0.0017]$\\
+GPT&MotionLCM-v1&0.4195&0.4294&$[-0.0138,-0.0060]$&0.5042&0.5026&$[-0.0004,+0.0035]$\\
+GPT&T2M-GPT&0.1204&0.1115&$[+0.0076,+0.0103]$&0.4909&0.4898&$[-0.0004,+0.0026]$\\
+GPT&T2M&1.0836&1.0917&$[-0.0111,-0.0051]$&0.4547&0.4540&$[-0.0007,+0.0021]$\\
+\bottomrule\end{tabular}\end{table*}

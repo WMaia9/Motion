@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "synthetic_inputs_only": true,
+  "errors": {
+    "equal_caption_and_motion_length": 6.4849853515625e-05,
+    "excluded_unequal_caption_support_difference": 1.8790397644042969
+  },
+  "producer_sha256": "49055197f750f8d5679b3786f9625627e8daddafaa9e7087230f3a7cab90c1f8",
+  "raw_array_pipeline_source": "scripts/run_motion_release_audit.py",
+  "Torch": "2.11.0+cu128"
+}

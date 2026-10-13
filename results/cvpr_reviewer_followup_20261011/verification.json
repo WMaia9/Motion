@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "independent_unsmoothed_BLEU_sentence_evaluations": 19354,
+  "budget_pairs_reconstructed": 3840,
+  "max_rotation_error_deg": 6.103678292390946e-06,
+  "maximum_reconstruction_error": 2.384185791015625e-07,
+  "three_seeds_training_inputs_matched": true,
+  "canonical_reader_wrong_target_hypotheses_unchanged": true,
+  "all_registered_input_hashes_match": true,
+  "independent_verification_is_saved_output_analysis": true
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "Prospective caption-blind distribution attack after earlier target-aware HumanML3D study; fresh TEST source groups. No model fitting.",
+  "TRAIN_reference_clips": 2048,
+  "TEST_clips": 960,
+  "selection_seed": 20261013,
+  "TEST_group_overlap_with_previous_audit": 0,
+  "TRAIN_TEST_group_overlap": 0,
+  "generation": {
+    "model": "official MDM50 checkpoint",
+    "steps": 50,
+    "CFG": 2.5,
+    "seed": 42,
+    "batch": 32,
+    "source_caption_supplied_only_to_generator": true,
+    "reference_poses_not_supplied": true
+  },
+  "attack_access": "Generated motion arrays, frozen evaluator gradients and 2048 TRAIN motion embeddings. No captions, tokens, text embeddings, TEST real poses or TEST real embeddings accessed by attack.",
+  "target_map": "Gaussian optimal-transport affine map between generated-output and TRAIN-reference embedding means/covariances; fixed ridge 1e-4 * trace(cov)/512; no TEST reference moments.",
+  "conditions": [
+    "identity",
+    "canonical",
+    "blind_OT_bound010",
+    "blind_OT_bound035",
+    "canonical_reader_OT_bound035",
+    "random_bound035_seed42"
+  ],
+  "optimizer": "Zero initialized per-clip coefficients, c=b*tanh(q), 80 Adam steps lr0.1, fixed final iterate; no FID-based iterate selection.",
+  "primary": "FID against withheld TEST real embeddings after attack arrays and hashes are saved. Two bound endpoints, descriptive dataset-level FID (no calibrated fitting-seed CI).",
+  "secondary": "R1/MM actual captions only after attack; canonicalized embedding invariance, position and rotation controls.",
+  "generator_and_attack_frozen_without_TEST_score_selection": true,
+  "not_natural_generator_training": true,
+  "not_general_detector_evasion": true,
+  "inputs_sha256": {
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/meta/mean.npy": "0bdb5ba69a3a9e34d71990db15bc535ebc024c8d95ddb5574196f96058faa7d3",
+    "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/meta/std.npy": "6a5f7d60301c9465972fc225f8ad0ee8f957e7720431189123eb6d15873a9557",
+    "reports/cvpr_humanml3d_audit_20261012/protocol.json": "7c669c83e4cb1ac677c31ca9f6010f14e1a14fb565d3efb4e540e2db44be71bb",
+    "reports/cvpr_humanml3d_audit_20261012/test_selection.json": "6ff5139515900cd97fcde0db7f3048131f569b4cf7a658312ac84805d12efb6d",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "reports/cvpr_humanml3d_blind_fid_20261012/test_selection.json": "307b921bb33752b202a4ad35edbba917d9b6911315a6643c99058f700b608bbe",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "reports/cvpr_humanml3d_blind_fid_20261012/test_real.npz": "2ae6e95bcff778e7fb9ef270feb53121169205b45db2fd43f6f10c4189ef42ff"
+  },
+  "scientific_sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/prepare_humanml_blind_fid.py": "2488b7777f2faa7c7ad732c9fb768ca9fd964c21ae59a59661e7eab28499f23d",
+    "scripts/run_humanml_blind_fid.py": "4b0bbac4d192e7fb77adf0be163684a1448be6620363e92ae05df1abb155f66d",
+    "scripts/generate_humanml_mdm.py": "994a6bc54eb121c1fdd1e80dfa23d35000e7b759cf543203f8c8675bb43bbdab",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b"
+  }
+}

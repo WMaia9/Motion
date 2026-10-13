@@ -1,0 +1,200 @@
+{
+  "clips": 960,
+  "TRAIN_reference_clips": 2048,
+  "TEST_original_mirror_groups": 767,
+  "fresh_TEST_group_overlap": 0,
+  "conditions": {
+    "identity": {
+      "raw": {
+        "R_precision_top1": 0.4133333333333333,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.409375,
+          0.42604166666666665,
+          0.4083333333333333
+        ],
+        "MM_distance": 3.465104579925537,
+        "FID": 0.38385375429853597,
+        "mean_embedding_distance_to_reference_clip": 3.446293592453003
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.3799402661145651,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 0.0,
+      "FID_change": 0.0,
+      "relative_FID_reduction": 0.0
+    },
+    "canonical": {
+      "raw": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.3799402661145651,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.3799402780258843,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 5.960464477539062e-07,
+      "FID_change": -0.003913488183970859,
+      "relative_FID_reduction": 0.010195258324677492
+    },
+    "blind_OT_bound010": {
+      "raw": {
+        "R_precision_top1": 0.41125,
+        "R_precision_repetitions": [
+          0.4010416666666667,
+          0.4125,
+          0.409375,
+          0.42604166666666665,
+          0.40729166666666666
+        ],
+        "MM_distance": 3.467252492904663,
+        "FID": 0.20989127279846825,
+        "mean_embedding_distance_to_reference_clip": 3.525064706802368
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.37994028902325183,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 4.76837158203125e-07,
+      "FID_change": -0.1739624815000677,
+      "relative_FID_reduction": 0.45319989592903975
+    },
+    "blind_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.41729166666666667,
+        "R_precision_repetitions": [
+          0.4041666666666667,
+          0.41770833333333335,
+          0.41354166666666664,
+          0.434375,
+          0.4166666666666667
+        ],
+        "MM_distance": 3.6051993370056152,
+        "FID": 1.085035042445307,
+        "mean_embedding_distance_to_reference_clip": 3.733036518096924
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.3799402941516007,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 5.960464477539062e-07,
+      "FID_change": 0.701181288146771,
+      "relative_FID_reduction": -1.826688628923605
+    },
+    "canonical_reader_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.4133333333333333,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.409375,
+          0.42604166666666665,
+          0.4083333333333333
+        ],
+        "MM_distance": 3.465104579925537,
+        "FID": 0.3838544070722155,
+        "mean_embedding_distance_to_reference_clip": 3.446293592453003
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.37994027741336345,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": 6.527736795547412e-07,
+      "relative_FID_reduction": -1.7005791197455267e-06
+    },
+    "random_bound035_seed42": {
+      "raw": {
+        "R_precision_top1": 0.4091666666666667,
+        "R_precision_repetitions": [
+          0.396875,
+          0.41041666666666665,
+          0.40208333333333335,
+          0.425,
+          0.4114583333333333
+        ],
+        "MM_distance": 3.4673264026641846,
+        "FID": 0.3525708873664379,
+        "mean_embedding_distance_to_reference_clip": 3.4329516887664795
+      },
+      "canonical": {
+        "R_precision_top1": 0.41229166666666667,
+        "R_precision_repetitions": [
+          0.39791666666666664,
+          0.425,
+          0.40625,
+          0.42604166666666665,
+          0.40625
+        ],
+        "MM_distance": 3.4620254039764404,
+        "FID": 0.37994032038739645,
+        "mean_embedding_distance_to_reference_clip": 3.4438812732696533
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": -0.031282866932098086,
+      "relative_FID_reduction": 0.08149683722454448
+    }
+  },
+  "FID_descriptive_only": true,
+  "not_generator_quality_improvement": true,
+  "not_training_exploitation": true,
+  "one_MDM_generation_seed": 42,
+  "attack_caption_content_and_TEST_reference_not_numerically_used": true,
+  "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2"
+}

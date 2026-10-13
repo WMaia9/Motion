@@ -1,0 +1,134 @@
+{
+  "scientific_audit": {
+    "attacks": {
+      "ctc_TEST": {
+        "correct_gloss": {
+          "clips": 128,
+          "canonical_changes": 0,
+          "rotation_max_deg": 5.021845198437048e-06,
+          "coefficient_bound": 0.34681111574172974,
+          "reconstruction_max_abs": 3.5762786865234375e-07,
+          "minimum_nondegenerate_norm": 0.7097424152920472,
+          "left_preserved_bitwise": true,
+          "different_targets": 0
+        },
+        "rolled_wrong_gloss": {
+          "clips": 128,
+          "canonical_changes": 0,
+          "rotation_max_deg": 5.4677741461715585e-06,
+          "coefficient_bound": 0.34819495677948,
+          "reconstruction_max_abs": 3.5762786865234375e-07,
+          "minimum_nondegenerate_norm": 0.7072791249598795,
+          "left_preserved_bitwise": true,
+          "different_targets": 128
+        }
+      },
+      "CSL-Daily": {
+        "correct_caption": {
+          "clips": 128,
+          "canonical_changes": 0,
+          "rotation_max_deg": 9.387061139906155e-06,
+          "coefficient_bound": 0.34973379969596863,
+          "reconstruction_max_abs": 3.5762786865234375e-07,
+          "minimum_nondegenerate_norm": 0.02413313698467829,
+          "left_preserved_bitwise": true,
+          "different_targets": 0
+        },
+        "rolled_wrong_caption": {
+          "clips": 128,
+          "canonical_changes": 0,
+          "rotation_max_deg": 6.303876081246712e-06,
+          "coefficient_bound": 0.3496318757534027,
+          "reconstruction_max_abs": 3.5762786865234375e-07,
+          "minimum_nondegenerate_norm": 0.026715293463428737,
+          "left_preserved_bitwise": true,
+          "different_targets": 125
+        }
+      }
+    },
+    "new_attack_pairs_verified": 512,
+    "all_attack_pairs_including_prior": 1024,
+    "metric_sentences_recomputed": 7708,
+    "ctc_metric_verification": "independent full matrix edit-distance DP",
+    "official_converter_max_abs_difference": 4.440892098500626e-16,
+    "empty_gloss_annotations_retained": {
+      "full": 2,
+      "subset": 1
+    },
+    "prior_frozen_reports": {
+      "reports/cvpr_evaluation_confirmation_20261011": {
+        "files": 174,
+        "manifest_sha256": "40dde2d262a58516238a1a69e27079f50097a4ece5b75e08ccc3eff8157f5baf"
+      },
+      "reports/cvpr_motion_consistency_confirmation_20261010": {
+        "files": 163,
+        "manifest_sha256": "f8aa74559b2f76d2af01d935d7a6a19b577cb23ec346901d0a176b50f1fb0889"
+      }
+    },
+    "new_training_runs": 0,
+    "rendered_meshes": false,
+    "independent_published_BT_replication": false,
+    "public_card_ASL_CSL_exact_match": false
+  },
+  "manuscript_audit": {
+    "compiled": {
+      "main": {
+        "pdf_sha256": "83f468cb489500364e636e9beb234e96e5de1e1b872fd38887c2b9d7fb1ba244",
+        "pages": 8,
+        "log_sha256": "77bcb90950e83ae643288ce59efb5726960961da7a74e102e288541bee50e5ee"
+      },
+      "supplement": {
+        "pdf_sha256": "d5605ad068acaf0cd08304fe548e0c1da2f4cc62756c36ce37ba9012ff0d6367",
+        "pages": 3,
+        "log_sha256": "2846d4c316e86cf22531fc85910f638537f6fc48310b12aed607f4da9a3bf059"
+      }
+    },
+    "main_content_pages": 7,
+    "main_reference_pages": 1,
+    "supplement_pages": 3,
+    "bibliography_entries": 14,
+    "cited_entries": 14,
+    "figure_files": [
+      "figures/mechanism.pdf",
+      "figures/attacks.pdf",
+      "figures/rankings.pdf"
+    ],
+    "unresolved_citations_or_box_overflows": false,
+    "upstream_style_bytes_preserved": true,
+    "remaining_template_warning": "lineno.sty:296 invalid UTF-8 comment sequence in external TeX package",
+    "template_2027_status": "provisional upstream 2026",
+    "real_submission_ID_or_authors_filled": false,
+    "conference_submission_sent": false,
+    "visual_review": "all seven main content pages, reference page and all three supplement pages inspected as rendered PNGs"
+  },
+  "math_verification": {
+    "random_non_degenerate_examples": 4096,
+    "fiber_reconstruction_max_abs": 4.6074255521944e-15,
+    "canonical_invariance_max_abs": 4.884981308350689e-15,
+    "vertical_JVP_max_abs": {
+      "scale_a": 2.949476157769098e-14,
+      "scale_b": 5.619172493545829e-16,
+      "shear": 1.0735530109322276e-14
+    },
+    "invalid_input_rejection_checks": 4,
+    "known_geometry_not_new_mathematics": true
+  },
+  "archived_script_count": 18,
+  "external_commits": {
+    "SignSparK_BT": {
+      "commit": "8dd7cdf533cd0ee5021c2c350ab4a54e6d2f4cf4",
+      "tracked_status": ""
+    },
+    "SignSparK": {
+      "commit": "916402d0ecd6322fb4a9e5f513229a94a57bf4b6",
+      "tracked_status": ""
+    },
+    "SLRTP_Evaluation_20261011": {
+      "commit": "db35105a94e126feb04619d56f6103ba8369d382",
+      "tracked_status": ""
+    }
+  },
+  "no_old_reports_edited": true,
+  "no_conference_submission": true,
+  "all_writers_closed_before_manifest": true
+}

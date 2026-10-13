@@ -1,0 +1,22 @@
+{
+  "review_date": "2026-10-13",
+  "title": "Same Motion, Different Scores: Auditing Representation Consistency",
+  "main_content_pages": 8,
+  "main_reference_pages": 2,
+  "supplement_content_pages": 15,
+  "bibliography_entries": 46,
+  "five_public_methods20native_repetitions_complete": true,
+  "two_official_readers_same_architecture": true,
+  "primary_FID_mean_ranking_unchanged": true,
+  "caption_blind_cohorts": 3,
+  "ordinary_reward_pilot_does_not_confirm_retrieval_inflation": true,
+  "released_reward_gains_survive_canonicalization": true,
+  "no_new_working_manuscript_directory": true,
+  "study_manifests_sha256": {
+    "cvpr_motion_prevalence_20261012": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1",
+    "cvpr_humanml_blind_repetitions_20261012": "7345f55aa953ad286f2efd9380517f4a93996279ec1e485bdbc7f63598d2ce89",
+    "cvpr_humanml_reward_pilot_20261012": "492aa4c6eef3a52bad1420dee3b5aaf7b0292265c957f25dfc066720814cb188",
+    "cvpr_motion_reward_release_20261013": "485c0b4f25c15f43e97c3a5ee94037ffb73d8bd3736596bb8f9b3f8ab007c212"
+  },
+  "submission_or_commit_performed": false
+}

@@ -1,0 +1,87 @@
+{
+  "reference_pose_not_used_by_new_sampler": true,
+  "new_training_runs": 0,
+  "rendered_meshes": false,
+  "attacks": {
+    "PHOENIX-2014T": {
+      "correct_caption": {
+        "clips": 128,
+        "rotation_max_deg": 5.1537921205839326e-06,
+        "gauge_reconstruction_max_abs": 3.5762786865234375e-07,
+        "gauge_bound_max": 0.34920328855514526,
+        "minimum_nonzero_vector_norm": 0.7054173864149403,
+        "canonical_changes": 0,
+        "left_hand_bitwise_preserved": true
+      },
+      "rolled_wrong_caption": {
+        "clips": 128,
+        "rotation_max_deg": 5.397056124701529e-06,
+        "gauge_reconstruction_max_abs": 3.5762786865234375e-07,
+        "gauge_bound_max": 0.34926745295524597,
+        "minimum_nonzero_vector_norm": 0.7053249693725934,
+        "canonical_changes": 0,
+        "left_hand_bitwise_preserved": true
+      }
+    },
+    "How2Sign": {
+      "correct_caption": {
+        "clips": 128,
+        "rotation_max_deg": 5.215689653437936e-06,
+        "gauge_reconstruction_max_abs": 3.5762786865234375e-07,
+        "gauge_bound_max": 0.3498958647251129,
+        "minimum_nonzero_vector_norm": 0.07732404631164937,
+        "canonical_changes": 0,
+        "left_hand_bitwise_preserved": true
+      },
+      "rolled_wrong_caption": {
+        "clips": 128,
+        "rotation_max_deg": 1.1073106873456218e-05,
+        "gauge_reconstruction_max_abs": 3.5762786865234375e-07,
+        "gauge_bound_max": 0.3498326539993286,
+        "minimum_nonzero_vector_norm": 0.07531234431595867,
+        "canonical_changes": 0,
+        "left_hand_bitwise_preserved": true
+      }
+    }
+  },
+  "official_converter_float64_max_abs_difference": 4.440892098500626e-16,
+  "ranking_decodes_verified": 20544,
+  "canonical_generated_gauge_pairs": 7704,
+  "ranking_rotation_error_max_deg": 3.1257087704055284e-05,
+  "sampler_replay_DEV_clips": 16,
+  "sampler_replay_bitwise_equal": true,
+  "generation_condition": "text and reference duration capped300; no reference poses, glosses, or anchors",
+  "external_BT_native_contract_verified": true,
+  "external_BT_6D_vulnerability_replicated": false,
+  "prior_frozen_reports": {
+    "cvpr_physical_semantic_ddpm_20261010": {
+      "verified_files": 57,
+      "manifest_sha256": "49177190d7d6c00ee56f45214f82f7c8e42497d2787047508ae7a83cd7f0835e"
+    },
+    "cvpr_fixed_prefix_diffusion_20261010": {
+      "verified_files": 81,
+      "manifest_sha256": "3e90774d597632bf233ad9675e066e033ad2e4e9bad37f63711580e4f5fbd866"
+    },
+    "cvpr_motion_path_diffusion_20261010": {
+      "verified_files": 75,
+      "manifest_sha256": "905c2a3b11347dabb0b8e3d24bfd71158c5247b907a84eb44c144beaf236c67b"
+    },
+    "cvpr_local_path_diffusion_20261011": {
+      "verified_files": 81,
+      "manifest_sha256": "46b4e92fc63751e235fe9319339625a19c3fcda745258ef164943b693830277f"
+    },
+    "cvpr_signspark_gauge_full_dev_20261010": {
+      "verified_files": 59,
+      "manifest_sha256": "c74340f8d4b0ca46450f7a4177c8263bfb1cc3c70e3be8b4edbd869d0dca2efb"
+    }
+  },
+  "native_BT_input_files_SHA_checked": 8,
+  "protocol_SHA256_verified": true,
+  "root_status_snapshots_verified": true,
+  "new_scripts_compile_passed": 9,
+  "all_producer_sessions_finished_before_freeze": true,
+  "How2Sign_canonical_accuracy_post_result_analysis": "full split inconclusive; registered subset declines; not suppressed",
+  "TEST_cannot_be_reused_for_new_model_selection_claimed_as_confirmation": true,
+  "candidate_manuscript_written": true,
+  "conference_submission_sent": false
+}

@@ -1,0 +1,27 @@
+{
+  "producers": [
+    "run_motion_reward_release",
+    "complete_motion_release_verification"
+  ],
+  "import_closure": [
+    "complete_motion_release_verification",
+    "freeze_motion_release_studies",
+    "motion_release_audit_common",
+    "motion_release_native_adapters",
+    "run_motion_release_audit",
+    "run_motion_reward_release",
+    "verify_motion_prevalence"
+  ],
+  "all_archived_scripts_match_live": true,
+  "verified_registered_inputs_and_sources": {
+    "models/motion_release_audit/motionrft_base/pretrain/mld/mld_humanml_v1.ckpt": "61b4062ddc01236e482de782d872ed4850e27df402f1eb103e54c52d4231de4e",
+    "models/motion_release_audit/motionrft_checkpoint/RFT_MLD/checkpoints/rft_mld/best.ckpt": "9d20abeceb43981e863736da551bd1f49316d89bba38a6cb47309e4978695f3c",
+    "external/MotionRFT/RFT_MLD/mld/models/modeltype/mld.py": "6b407881125f1edf671ba9c1c93b9390ff30930043f44c6a76ae224f176f076b",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motion_reward_release.py": "343508afa9f8374b168dbf24b4aeebdf5ad0acc99e200bdb4b70e995b577c88a",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277"
+  },
+  "historical_executed_sources_if_any": "producer_revisions/; preserved separately from current closure",
+  "freeze_code_sha256": "1269727af1f5fb4b131b4dd1f19a16bf7d503716691b94d8670de0d913039eae",
+  "completed_date": "2026-10-13"
+}

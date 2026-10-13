@@ -1,0 +1,179 @@
+{
+  "replicates": 2000,
+  "seed": 42,
+  "unit": "DEV clip, not signer",
+  "exploratory": true,
+  "multiple_testing_adjustment": false,
+  "comparisons": {
+    "semantic_raw minus geometry": {
+      "raw_bleu4": {
+        "delta": 0.2848521250878946,
+        "ci95": [
+          -0.3122676840174213,
+          0.9153560563961416
+        ]
+      },
+      "raw_independent_wer": {
+        "delta_wer_points": -1.5981735159817352,
+        "ci95": [
+          -2.7941650526997184,
+          -0.34440213122032876
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "canonical_bleu4": {
+        "delta": 0.19671046485499666,
+        "ci95": [
+          -0.6669801178128206,
+          1.103049680526237
+        ]
+      },
+      "canonical_independent_wer": {
+        "delta_wer_points": -0.91324200913242,
+        "ci95": [
+          -2.2146464646464645,
+          0.3674948035888036
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    },
+    "semantic_physical minus geometry": {
+      "raw_bleu4": {
+        "delta": -0.13337905203769562,
+        "ci95": [
+          -0.6173971680181346,
+          0.2922096693298702
+        ]
+      },
+      "raw_independent_wer": {
+        "delta_wer_points": -0.91324200913242,
+        "ci95": [
+          -1.9407502899595623,
+          0.11455082127431505
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "canonical_bleu4": {
+        "delta": 0.2891177939071792,
+        "ci95": [
+          -0.5136987670453486,
+          1.1290308388290275
+        ]
+      },
+      "canonical_independent_wer": {
+        "delta_wer_points": -0.228310502283105,
+        "ci95": [
+          -1.4625239859723416,
+          0.9871710526315771
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    },
+    "semantic_physical minus semantic_raw": {
+      "raw_bleu4": {
+        "delta": -0.4182311771255902,
+        "ci95": [
+          -1.0500703282384012,
+          0.16447320995935524
+        ]
+      },
+      "raw_independent_wer": {
+        "delta_wer_points": 0.684931506849315,
+        "ci95": [
+          -0.23754382988349731,
+          1.6520279130988054
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "canonical_bleu4": {
+        "delta": 0.09240732905218252,
+        "ci95": [
+          -0.6053932984709517,
+          0.7574820090486137
+        ]
+      },
+      "canonical_independent_wer": {
+        "delta_wer_points": 0.684931506849315,
+        "ci95": [
+          -0.12136660524886023,
+          1.5819656415369274
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    },
+    "semantic_physical_shuffled minus semantic_physical": {
+      "raw_bleu4": {
+        "delta": -6.071360167584954,
+        "ci95": [
+          -9.257706581021608,
+          -3.568643437269901
+        ]
+      },
+      "raw_independent_wer": {
+        "delta_wer_points": 4.908675799086758,
+        "ci95": [
+          3.2555148015191717,
+          6.759977827050998
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      },
+      "canonical_bleu4": {
+        "delta": -5.734373619669542,
+        "ci95": [
+          -8.394678867112912,
+          -3.4906853036703316
+        ]
+      },
+      "canonical_independent_wer": {
+        "delta_wer_points": 4.908675799086758,
+        "ci95": [
+          3.218467729347114,
+          6.651573430133693
+        ],
+        "replicates": 2000,
+        "seed": 42,
+        "unit": "DEV clip, not signer",
+        "exploratory": true
+      }
+    }
+  },
+  "geometry_diagnostics": {
+    "geometry": {
+      "mean_frame_rotation_change_deg": 3.781587228139129,
+      "mean_raw_first_vector_norm_error": 0.09059676856850274
+    },
+    "semantic_raw": {
+      "mean_frame_rotation_change_deg": 3.827774357865698,
+      "mean_raw_first_vector_norm_error": 0.09203437369433232
+    },
+    "semantic_physical": {
+      "mean_frame_rotation_change_deg": 3.8486932732395163,
+      "mean_raw_first_vector_norm_error": 0.09239964801236056
+    },
+    "semantic_physical_shuffled": {
+      "mean_frame_rotation_change_deg": 3.8650627274421803,
+      "mean_raw_first_vector_norm_error": 0.09273532938095741
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "corpora": [
+    "How2Sign",
+    "CSL-Daily"
+  ],
+  "arms": {
+    "text_raw": [
+      42,
+      123,
+      777
+    ],
+    "motion_raw": [
+      42
+    ],
+    "text_canonical": [
+      42
+    ]
+  },
+  "epochs": 20,
+  "bound": 0.35,
+  "batch_size": 64,
+  "optimizer": "AdamW lr.001 wd.0001 clip1",
+  "source": "native real TRAIN motion, not generated; raw reoptimized representation retained",
+  "coefficient_architecture": "same 128-wide temporal Conv/MHA stack as PHOENIX layer, head zero initialized, left joints10:25 fixed",
+  "text_encoder": "native frozen public-reader word embeddings, trained linear512to128 and two-layer128 Transformer; no compatible generator text checkpoint available",
+  "text_is_source_input": true,
+  "interpretation": "designed caption-conditioned amortized attack on real motions; not spontaneous ordinary generator exploitation",
+  "selection": "last epoch; no score-based selection",
+  "splits": "TRAIN fit, full DEV confirmation",
+  "no_TEST_use": true,
+  "checks": "TRAIN/DEV disjoint clip IDs, canonical hypotheses, matrix reconstruction, native word/character BLEU",
+  "inputs": {
+    "reports/cvpr_canonical_readers_20261011/manifest_sha256.json": "76336e84098e6d69c26ee3610624e52052b234e69c322b2ec188f46741bc3fff",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/best.ckpt": "acf8794c594f9b58701c85c390264cf30807d89f399960768f30c7a9e637e01f",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/best.ckpt": "5ea787537b11d7b3e14e6a5c3ae711931b8abf939f6a7f25e5a9b8dd3e91a2c0"
+  },
+  "code_sha256": "b824194af75e3a7147c2efa047c777eda8e5922ab0773f9c4beb8abb3640a663"
+}

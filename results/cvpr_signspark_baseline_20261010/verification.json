@@ -1,0 +1,9 @@
+{
+  "source_download_hashes_checked": 10,
+  "conditions_per_corpus": 16,
+  "decoded_sentences": 34704,
+  "native_metric_sufficient_statistics_verified_in_analysis": true,
+  "no_TEST_task_scores": true,
+  "no_generator_training": true,
+  "no_rendered_meshes": true
+}

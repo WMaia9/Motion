@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "PHOENIX-2014T": {
+      "correct_caption": {
+        "verified_poses": 64,
+        "rotation_error_max_deg_independent": 5.396577709329617e-06,
+        "bounded_gauge_coefficient_max": 0.34887710213661194,
+        "canonical_changed_sentences": 0,
+        "steps_per_batch": 80,
+        "left_hand_bitwise_preserved": false
+      },
+      "rolled_wrong_caption": {
+        "verified_poses": 64,
+        "rotation_error_max_deg_independent": 5.284314538818037e-06,
+        "bounded_gauge_coefficient_max": 0.3491460382938385,
+        "canonical_changed_sentences": 0,
+        "steps_per_batch": 80,
+        "left_hand_bitwise_preserved": false
+      }
+    },
+    "How2Sign": {
+      "correct_caption": {
+        "verified_poses": 64,
+        "rotation_error_max_deg_independent": 5.446940794616673e-06,
+        "bounded_gauge_coefficient_max": 0.3497529625892639,
+        "canonical_changed_sentences": 0,
+        "steps_per_batch": 80,
+        "left_hand_bitwise_preserved": false
+      },
+      "rolled_wrong_caption": {
+        "verified_poses": 64,
+        "rotation_error_max_deg_independent": 7.76043091408265e-06,
+        "bounded_gauge_coefficient_max": 0.34984320402145386,
+        "canonical_changed_sentences": 0,
+        "steps_per_batch": 80,
+        "left_hand_bitwise_preserved": false
+      }
+    }
+  },
+  "two_datasets_one_reader_architecture": true,
+  "oracle_target_captions_explicit": true,
+  "TEST_used": false,
+  "new_generator": false,
+  "mesh_rendered": false
+}

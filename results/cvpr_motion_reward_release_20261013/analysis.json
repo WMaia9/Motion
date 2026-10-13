@@ -1,0 +1,128 @@
+{
+  "readers": {
+    "common_MDM_checkpoint": {
+      "base": {
+        "FID": {
+          "raw_mean": 0.572557630721397,
+          "canonical_mean": 0.588772357889215,
+          "paired_raw_minus_canonical": -0.016214727167817956,
+          "paired_family_CI95": [
+            -0.039013294113648726,
+            0.006583839778012815
+          ],
+          "family_size": 8,
+          "replications": 5
+        },
+        "R1": {
+          "raw_mean": 0.434375,
+          "canonical_mean": 0.434375,
+          "paired_raw_minus_canonical": 0.0,
+          "paired_family_CI95": [
+            -0.00812349845629405,
+            0.00812349845629405
+          ],
+          "family_size": 8,
+          "replications": 5
+        }
+      },
+      "reward_finetuned": {
+        "FID": {
+          "raw_mean": 0.26441621370723,
+          "canonical_mean": 0.22806520483222242,
+          "paired_raw_minus_canonical": 0.03635100887500755,
+          "paired_family_CI95": [
+            0.027617806383291997,
+            0.0450842113667231
+          ],
+          "family_size": 8,
+          "replications": 5
+        },
+        "R1": {
+          "raw_mean": 0.5140625,
+          "canonical_mean": 0.5142578125,
+          "paired_raw_minus_canonical": -0.0001953125,
+          "paired_family_CI95": [
+            -0.012717099742822905,
+            0.012326474742822906
+          ],
+          "family_size": 8,
+          "replications": 5
+        }
+      },
+      "finetuned_minus_base": {
+        "raw": {
+          "FID": -0.30814141701416703,
+          "R1": 0.0796875
+        },
+        "canonical": {
+          "FID": -0.3607071530569925,
+          "R1": 0.0798828125
+        }
+      }
+    },
+    "official_GPT_checkpoint": {
+      "base": {
+        "FID": {
+          "raw_mean": 0.46326746288936815,
+          "canonical_mean": 0.4663119247416489,
+          "paired_raw_minus_canonical": -0.003044461852280733,
+          "paired_family_CI95": [
+            -0.009758247409573822,
+            0.003669323705012356
+          ],
+          "family_size": 8,
+          "replications": 5
+        },
+        "R1": {
+          "raw_mean": 0.5044921875,
+          "canonical_mean": 0.5044921875,
+          "paired_raw_minus_canonical": 0.0,
+          "paired_family_CI95": [
+            -0.009882662404976175,
+            0.009882662404976175
+          ],
+          "family_size": 8,
+          "replications": 5
+        }
+      },
+      "reward_finetuned": {
+        "FID": {
+          "raw_mean": 0.16605795334875495,
+          "canonical_mean": 0.13778828536393348,
+          "paired_raw_minus_canonical": 0.028269667984821466,
+          "paired_family_CI95": [
+            0.00809135436542074,
+            0.04844798160422219
+          ],
+          "family_size": 8,
+          "replications": 5
+        },
+        "R1": {
+          "raw_mean": 0.5869140625,
+          "canonical_mean": 0.5857421875,
+          "paired_raw_minus_canonical": 0.001171875,
+          "paired_family_CI95": [
+            -0.009026270616679193,
+            0.011370020616679192
+          ],
+          "family_size": 8,
+          "replications": 5
+        }
+      },
+      "finetuned_minus_base": {
+        "raw": {
+          "FID": -0.2972095095406132,
+          "R1": 0.082421875
+        },
+        "canonical": {
+          "FID": -0.32852363937771545,
+          "R1": 0.08125
+        }
+      }
+    }
+  },
+  "same_architecture_two_distinct_checkpoints": true,
+  "not_native20_repetition_protocol": true,
+  "all_endpoints_retained": true,
+  "analysis_code_sha256": "382fec47b98774a95af636a1e20a85436a61d7939b93df1062ad9ea95ad467e6"
+}

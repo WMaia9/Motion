@@ -1,0 +1,191 @@
+{
+  "scope": "post-hoc diagnostic after positive TEST attack scores; no new attack optimization or TEST-fitted threshold; not pristine confirmation",
+  "statistics": {
+    "circle_correct_step200": {
+      "canonical_RMS": {
+        "DEV_balanced_accuracy": 0.5078125,
+        "threshold": 0.0454538641055512,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5,
+        "TEST_source_false_positive_rate": 0.9922118380062306,
+        "TEST_attack_detection_rate": 0.9922118380062306,
+        "TEST_AUC_with_DEV_orientation": 0.5003154084296542,
+        "TEST_best_orientation_AUC_diagnostic": 0.5003154084296542
+      },
+      "mean_squared_6D_norm": {
+        "DEV_balanced_accuracy": 0.5078125,
+        "threshold": 1.9911025751988316,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5,
+        "TEST_source_false_positive_rate": 0.9719626168224299,
+        "TEST_attack_detection_rate": 0.9719626168224299,
+        "TEST_AUC_with_DEV_orientation": 0.5000970487475859,
+        "TEST_best_orientation_AUC_diagnostic": 0.5000970487475859
+      },
+      "mean_abs_tau": {
+        "DEV_balanced_accuracy": 0.5625,
+        "threshold": 0.027900269525921194,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5210280373831775,
+        "TEST_source_false_positive_rate": 0.4719626168224299,
+        "TEST_attack_detection_rate": 0.514018691588785,
+        "TEST_AUC_with_DEV_orientation": 0.5210959715064878,
+        "TEST_best_orientation_AUC_diagnostic": 0.5210959715064878
+      },
+      "mean_abs_rho_minus_sigma": {
+        "DEV_balanced_accuracy": 0.5625,
+        "threshold": 0.027087319941521616,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5109034267912772,
+        "TEST_source_false_positive_rate": 0.6448598130841121,
+        "TEST_attack_detection_rate": 0.6666666666666666,
+        "TEST_AUC_with_DEV_orientation": 0.5301360623441155,
+        "TEST_best_orientation_AUC_diagnostic": 0.5301360623441155
+      },
+      "mean_rho": {
+        "DEV_balanced_accuracy": 0.5390625,
+        "threshold": 1.0484871512758893,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5085669781931464,
+        "TEST_source_false_positive_rate": 0.6012461059190031,
+        "TEST_attack_detection_rate": 0.618380062305296,
+        "TEST_AUC_with_DEV_orientation": 0.5108257877932085,
+        "TEST_best_orientation_AUC_diagnostic": 0.5108257877932085
+      },
+      "mean_sigma": {
+        "DEV_balanced_accuracy": 0.53125,
+        "threshold": 1.0359645407878635,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5038940809968847,
+        "TEST_source_false_positive_rate": 0.5124610591900312,
+        "TEST_attack_detection_rate": 0.5202492211838006,
+        "TEST_AUC_with_DEV_orientation": 0.51047155986452,
+        "TEST_best_orientation_AUC_diagnostic": 0.51047155986452
+      },
+      "std_rho": {
+        "DEV_balanced_accuracy": 0.5546875,
+        "threshold": 0.11808928544740145,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5132398753894081,
+        "TEST_source_false_positive_rate": 0.6199376947040498,
+        "TEST_attack_detection_rate": 0.6464174454828661,
+        "TEST_AUC_with_DEV_orientation": 0.5238278937510311,
+        "TEST_best_orientation_AUC_diagnostic": 0.5238278937510311
+      },
+      "std_sigma": {
+        "DEV_balanced_accuracy": 0.5390625,
+        "threshold": 0.1393871441382918,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5038940809968847,
+        "TEST_source_false_positive_rate": 0.46417445482866043,
+        "TEST_attack_detection_rate": 0.4719626168224299,
+        "TEST_AUC_with_DEV_orientation": 0.5124974524703758,
+        "TEST_best_orientation_AUC_diagnostic": 0.5124974524703758
+      },
+      "std_tau": {
+        "DEV_balanced_accuracy": 0.5546875,
+        "threshold": 0.06833582476630262,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5132398753894081,
+        "TEST_source_false_positive_rate": 0.5249221183800623,
+        "TEST_attack_detection_rate": 0.5514018691588785,
+        "TEST_AUC_with_DEV_orientation": 0.5119369959530673,
+        "TEST_best_orientation_AUC_diagnostic": 0.5119369959530673
+      }
+    },
+    "sphere_correct_step200": {
+      "canonical_RMS": {
+        "DEV_balanced_accuracy": 0.5078125,
+        "threshold": 0.04545386407838661,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5,
+        "TEST_source_false_positive_rate": 0.9922118380062306,
+        "TEST_attack_detection_rate": 0.9922118380062306,
+        "TEST_AUC_with_DEV_orientation": 0.5007375704816529,
+        "TEST_best_orientation_AUC_diagnostic": 0.5007375704816529
+      },
+      "mean_squared_6D_norm": {
+        "DEV_balanced_accuracy": 0.625,
+        "threshold": 2.0983156897949717,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5957943925233644,
+        "TEST_source_false_positive_rate": 0.23052959501557632,
+        "TEST_attack_detection_rate": 0.4221183800623053,
+        "TEST_AUC_with_DEV_orientation": 0.6358755252763464,
+        "TEST_best_orientation_AUC_diagnostic": 0.6358755252763464
+      },
+      "mean_abs_tau": {
+        "DEV_balanced_accuracy": 0.7734375,
+        "threshold": 0.03751409415297277,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.7538940809968848,
+        "TEST_source_false_positive_rate": 0.2757009345794392,
+        "TEST_attack_detection_rate": 0.7834890965732088,
+        "TEST_AUC_with_DEV_orientation": 0.8399035335448995,
+        "TEST_best_orientation_AUC_diagnostic": 0.8399035335448995
+      },
+      "mean_abs_rho_minus_sigma": {
+        "DEV_balanced_accuracy": 0.8203125,
+        "threshold": 0.03597245331637927,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.8014018691588785,
+        "TEST_source_false_positive_rate": 0.31931464174454827,
+        "TEST_attack_detection_rate": 0.9221183800623053,
+        "TEST_AUC_with_DEV_orientation": 0.8774201531429237,
+        "TEST_best_orientation_AUC_diagnostic": 0.8774201531429237
+      },
+      "mean_rho": {
+        "DEV_balanced_accuracy": 0.65625,
+        "threshold": 1.0263934482225592,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.6557632398753894,
+        "TEST_source_false_positive_rate": 0.3333333333333333,
+        "TEST_attack_detection_rate": 0.6448598130841121,
+        "TEST_AUC_with_DEV_orientation": 0.7003983851088402,
+        "TEST_best_orientation_AUC_diagnostic": 0.7003983851088402
+      },
+      "mean_sigma": {
+        "DEV_balanced_accuracy": 0.6640625,
+        "threshold": 1.03325748917768,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.6238317757009346,
+        "TEST_source_false_positive_rate": 0.45638629283489096,
+        "TEST_attack_detection_rate": 0.7040498442367601,
+        "TEST_AUC_with_DEV_orientation": 0.6627483234828855,
+        "TEST_best_orientation_AUC_diagnostic": 0.6627483234828855
+      },
+      "std_rho": {
+        "DEV_balanced_accuracy": 0.53125,
+        "threshold": 0.2688651277330819,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.5038940809968847,
+        "TEST_source_false_positive_rate": 0.07476635514018691,
+        "TEST_attack_detection_rate": 0.08255451713395638,
+        "TEST_AUC_with_DEV_orientation": 0.4806436272939898,
+        "TEST_best_orientation_AUC_diagnostic": 0.5193563727060102
+      },
+      "std_sigma": {
+        "DEV_balanced_accuracy": 0.5546875,
+        "threshold": 0.12636291592490906,
+        "direction": -1,
+        "TEST_balanced_accuracy": 0.5272585669781932,
+        "TEST_source_false_positive_rate": 0.35669781931464173,
+        "TEST_attack_detection_rate": 0.411214953271028,
+        "TEST_AUC_with_DEV_orientation": 0.5368494094583709,
+        "TEST_best_orientation_AUC_diagnostic": 0.5368494094583709
+      },
+      "std_tau": {
+        "DEV_balanced_accuracy": 0.7265625,
+        "threshold": 0.08334839856859914,
+        "direction": 1,
+        "TEST_balanced_accuracy": 0.6861370716510904,
+        "TEST_source_false_positive_rate": 0.3348909657320872,
+        "TEST_attack_detection_rate": 0.7071651090342679,
+        "TEST_AUC_with_DEV_orientation": 0.7599838899079008,
+        "TEST_best_orientation_AUC_diagnostic": 0.7599838899079008
+      }
+    }
+  },
+  "all_features_reported": true,
+  "thresholds_not_fit_on_TEST": true
+}

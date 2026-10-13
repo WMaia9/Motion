@@ -1,0 +1,48 @@
+{
+  "cohorts": [
+    {
+      "cohort": "original",
+      "generation_seed": 42,
+      "FID": {
+        "identity": 0.38385375429853597,
+        "canonical": 0.3799402661145651,
+        "blind_OT_bound010": 0.20989127279846825,
+        "blind_OT_bound035": 1.085035042445307,
+        "canonical_reader_OT_bound035": 0.3838544070722155,
+        "random_bound035_seed42": 0.3525708873664379
+      }
+    },
+    {
+      "cohort": "cohort_1",
+      "generation_seed": 4242,
+      "previous_blind_group_overlap": 494,
+      "FID": {
+        "identity": 0.3762174626497908,
+        "canonical": 0.3730353438761326,
+        "blind_OT_bound010": 0.176133084057223,
+        "blind_OT_bound035": 1.147749442928407,
+        "canonical_reader_OT_bound035": 0.3762183579979622,
+        "random_bound035_seed42": 0.323142890011372
+      },
+      "verification": true
+    },
+    {
+      "cohort": "cohort_2",
+      "generation_seed": 7777,
+      "previous_blind_group_overlap": 496,
+      "FID": {
+        "identity": 0.32675750017222477,
+        "canonical": 0.32437825626693045,
+        "blind_OT_bound010": 0.1986784987439526,
+        "blind_OT_bound035": 1.429231983827405,
+        "canonical_reader_OT_bound035": 0.3267578695141845,
+        "random_bound035_seed42": 0.3010645720677641
+      },
+      "verification": true
+    }
+  ],
+  "source_group_overlap_between_new_cohorts": 493,
+  "not_independent_clip_samples_or_global_unseen_TEST": true,
+  "both_fixed_bounds_in_all_cohorts": true,
+  "same_TRAIN_reference": true
+}

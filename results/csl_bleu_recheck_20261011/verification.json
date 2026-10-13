@@ -1,0 +1,13 @@
+{
+  "fresh_predictions_match": 768,
+  "independent_metric_implementation": "standard library Counter/math; no metric-library imports",
+  "teacher_forced_forward_disabled": true,
+  "feature_only_batch_input_asserted": true,
+  "no_new_training_or_attack_optimization": true,
+  "prior_verified_files": 188,
+  "prior_manifest_sha256": "e2f1ee0d7cad334e2aa58c21d15a0dc3828d3db95a2de367e95a720c7359b3f5",
+  "baseline_raw_bleu4": 7.395495785155346,
+  "correct_attack_bleu4": 38.270596106021614,
+  "wrong_attack_vs_target_bleu4": 32.44336078340086,
+  "wrong_attack_vs_actual_bleu4": 1.258558478853544
+}

@@ -1,0 +1,121 @@
+{
+  "purpose": "test ordinary generator training when motion loss is invariant to redundant rotation coordinates",
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "none",
+      "CE_weight": 0.0,
+      "tag": "geodesic_none_w0"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "raw",
+      "CE_weight": 0.02,
+      "tag": "geodesic_raw_w0.02"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "raw",
+      "CE_weight": 0.1,
+      "tag": "geodesic_raw_w0.1"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "raw",
+      "CE_weight": 0.3,
+      "tag": "geodesic_raw_w0.3"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "tag": "geodesic_raw_w1"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "canonical",
+      "CE_weight": 0.1,
+      "tag": "geodesic_canonical_w0.1"
+    },
+    {
+      "motion_loss": "geodesic",
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "tag": "geodesic_canonical_w1"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "none",
+      "CE_weight": 0.0,
+      "tag": "mse_none_w0"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "raw",
+      "CE_weight": 0.02,
+      "tag": "mse_raw_w0.02"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "raw",
+      "CE_weight": 0.1,
+      "tag": "mse_raw_w0.1"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "raw",
+      "CE_weight": 0.3,
+      "tag": "mse_raw_w0.3"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "tag": "mse_raw_w1"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "canonical",
+      "CE_weight": 0.1,
+      "tag": "mse_canonical_w0.1"
+    },
+    {
+      "motion_loss": "mse",
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "tag": "mse_canonical_w1"
+    }
+  ],
+  "epochs": {
+    "all_arms": 5,
+    "geodesic_none_w0_and_geodesic_raw_w1_and_geodesic_canonical_w1": 20
+  },
+  "primary_endpoint": "20-epoch geodesic raw CE weight1 versus geodesic no CE and matched canonical CE weight1",
+  "secondary": "5-epoch full motion-loss/CE-weight sweep; all conditions reported; no best-DEV selection",
+  "batch_size": 64,
+  "semantic_batch_limit": 16,
+  "semantic_timesteps": "t<=800 and no caption dropout",
+  "optimizer": "AdamW lr1e-4 wd1e-4 clip1",
+  "caption_drop": 0.1,
+  "motion_geodesic": "mean squared SO(3) angle in radians, atan2(skew norm,trace); no raw-feature MSE term",
+  "full_denoiser_trainable": true,
+  "additional_gauge_module": false,
+  "init": "same frozen shared canonical-MSE pretrained DDPM",
+  "sampling": "full DEV519, DDIM50 CFG3 seed102, source text and reference duration; no reference poses",
+  "checkpoint_selection": "predeclared epoch5 and epoch20; last epochs, no score selection",
+  "uncertainty": "paired clip bootstrap and three fine-tuning seeds; not independent pretraining",
+  "interpretation": "raw-minus-canonical gain contrasts; physical motions may differ across fitted models; only raw/canonical encodings of one output share rotations",
+  "no_new_TEST_use": true,
+  "inputs": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/shared_best.pt": "abdddac25d5e63887242e9af08ac440c2929617f26cff947b5a2a023f3bc8ae1",
+    "reports/cvpr_physical_semantic_ddpm_20261010/normalization.npz": "bfe5912b57a1b0cfc46c981ae1b7545c1700bfa59b25c980fdea7c39a8f9ee00",
+    "reports/cvpr_physical_semantic_ddpm_20261010/data_audit.json": "708cf93f2f531c9b7698c7c128da6c940a6c90bde3c3717dc7e5dbcab9cf1342",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279"
+  },
+  "code_sha256": "9c443063ddc3820c39056a0bf64c7314d0d783417228164cd50ab483efceac4f"
+}

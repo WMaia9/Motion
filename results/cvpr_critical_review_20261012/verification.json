@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "new_frozen_studies_verified": 4,
+  "new_study_files_verified": 452,
+  "independent_geometry_pairs_from_verified_studies": 58336,
+  "standalone_BLEU_sentence_evaluations_from_verified_studies": 154040,
+  "strict_left_hand_bitwise_pairs_from_audit": 21184,
+  "guarded_diagnostic_input_hashes_verified": true,
+  "all_delivery_JSON_values_finite": true,
+  "reviewed_PDF_fingerprints_verified": true,
+  "all_19_pages_visually_reviewed": true,
+  "source_ZIP_CRC_and_exact_source_bytes_verified": true,
+  "all_39_reference_keys_cited": true,
+  "prior_frozen_studies_unchanged": true,
+  "no_external_submission_or_commit": true
+}

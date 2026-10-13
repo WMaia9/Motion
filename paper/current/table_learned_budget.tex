@@ -1,0 +1,10 @@
+\begin{table*}[t]
+\centering\small
+\caption{Small-bound PHOENIX TEST layers, all three seeds; baseline 6.3905. RMS is distance to canonical features. Detector AUC uses the better threshold orientation against the same raw generator. At 0.05 the seed-sensitive gain interval includes zero.}
+\label{tab:smallbudget}
+\begin{tabular}{rrrrrrr}\toprule
+Bound&Raw&Gain&Paired95\%&Seed+clip95\%&RMS&AUC range\\\midrule
+0.01&6.44&0.05&$[-0.20,0.29]$&$[-0.22,0.32]$&0.0056&1.000--1.000\\
+0.05&7.24&0.85&$[0.48,1.23]$&$[-0.01,1.68]$&0.0274&1.000--1.000\\
+0.1&8.04&1.65&$[1.15,2.16]$&$[0.32,2.81]$&0.0548&0.917--0.941\\
+\bottomrule\end{tabular}\end{table*}

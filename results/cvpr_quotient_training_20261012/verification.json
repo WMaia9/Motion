@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "ordinary_generator_fits": 42,
+  "raw_canonical_rotation_pairs": 26469,
+  "max_rotation_error_deg": 3.497792289573921e-06,
+  "standalone_BLEU_sentence_evaluations": 52938,
+  "raw_canonical_hypotheses_may_differ": true,
+  "physical_motions_may_change_across_fits": true,
+  "input_and_checkpoint_contract_checked": true,
+  "no_TEST_use": true
+}

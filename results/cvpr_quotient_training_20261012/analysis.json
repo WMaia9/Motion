@@ -1,0 +1,507 @@
+{
+  "DEV_clips": 519,
+  "replicates": 20000,
+  "bootstrap_seed": 42,
+  "training_seeds": [
+    42,
+    123,
+    777
+  ],
+  "systems": {
+    "geodesic_none_w0/epoch5": {
+      "raw_per_seed": [
+        4.53791554122159,
+        5.706233591610004,
+        5.5914529995004365
+      ],
+      "canonical_per_seed": [
+        4.930071659737491,
+        5.256186073972483,
+        5.232876822909767
+      ],
+      "raw_mean": 5.278534044110677,
+      "canonical_mean": 5.139711518873248,
+      "raw_minus_canonical": 0.13882252523742977,
+      "gap_ci95_conditional": [
+        -0.3236468212148066,
+        0.6178304693054792
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.0,
+      "mean_canonical_gain_vs_matched_motion_only": 0.0,
+      "excess_raw_gain": 0.0,
+      "excess_gain_ci95_conditional": [
+        0.0,
+        0.0
+      ]
+    },
+    "geodesic_none_w0/epoch20": {
+      "raw_per_seed": [
+        2.4286801260472837,
+        2.84119264084667,
+        2.1707760072882576
+      ],
+      "canonical_per_seed": [
+        4.537334987853212,
+        4.849823249898613,
+        3.9923987800786724
+      ],
+      "raw_mean": 2.480216258060737,
+      "canonical_mean": 4.459852339276832,
+      "raw_minus_canonical": -1.9796360812160951,
+      "gap_ci95_conditional": [
+        -2.950694082356753,
+        -1.0528447769383171
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.0,
+      "mean_canonical_gain_vs_matched_motion_only": 0.0,
+      "excess_raw_gain": 0.0,
+      "excess_gain_ci95_conditional": [
+        0.0,
+        0.0
+      ]
+    },
+    "geodesic_raw_w0.02/epoch5": {
+      "raw_per_seed": [
+        5.9654420875043055,
+        5.780550467642253,
+        5.7653293063584865
+      ],
+      "canonical_per_seed": [
+        6.205771538165089,
+        6.511336029544689,
+        5.9434167412778205
+      ],
+      "raw_mean": 5.837107287168348,
+      "canonical_mean": 6.220174769662532,
+      "raw_minus_canonical": -0.38306748249418465,
+      "gap_ci95_conditional": [
+        -0.9198966146477376,
+        0.1514192991772099
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.5585732430576714,
+      "mean_canonical_gain_vs_matched_motion_only": 1.080463250789286,
+      "excess_raw_gain": -0.5218900077316144,
+      "excess_gain_ci95_conditional": [
+        -1.173719424852568,
+        0.10980449820693243
+      ]
+    },
+    "geodesic_raw_w0.1/epoch5": {
+      "raw_per_seed": [
+        7.253967808519715,
+        6.214913578605748,
+        4.7570303151996285
+      ],
+      "canonical_per_seed": [
+        6.479248491453901,
+        6.18398171166663,
+        4.7327061278617215
+      ],
+      "raw_mean": 6.0753039007750305,
+      "canonical_mean": 5.79864544366075,
+      "raw_minus_canonical": 0.2766584571142798,
+      "gap_ci95_conditional": [
+        -0.160111762189064,
+        0.7082241022888881
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.7967698566643536,
+      "mean_canonical_gain_vs_matched_motion_only": 0.6589339247875037,
+      "excess_raw_gain": 0.13783593187684998,
+      "excess_gain_ci95_conditional": [
+        -0.4669621994656964,
+        0.7303157564620913
+      ]
+    },
+    "geodesic_raw_w0.3/epoch5": {
+      "raw_per_seed": [
+        5.6006226331210955,
+        3.9844299526922113,
+        5.0829689733621155
+      ],
+      "canonical_per_seed": [
+        5.263440229883462,
+        4.392431214101869,
+        4.82377215321234
+      ],
+      "raw_mean": 4.889340519725141,
+      "canonical_mean": 4.8265478657325565,
+      "raw_minus_canonical": 0.06279265399258405,
+      "gap_ci95_conditional": [
+        -0.4117003739310729,
+        0.5368077691815093
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.389193524385536,
+      "mean_canonical_gain_vs_matched_motion_only": -0.3131636531406903,
+      "excess_raw_gain": -0.07602987124484573,
+      "excess_gain_ci95_conditional": [
+        -0.7118694276951943,
+        0.5475131398590876
+      ]
+    },
+    "geodesic_raw_w1/epoch5": {
+      "raw_per_seed": [
+        6.009743511889243,
+        4.049741864669496,
+        5.698324874715728
+      ],
+      "canonical_per_seed": [
+        4.816202346243048,
+        4.342133782481439,
+        4.341443674963105
+      ],
+      "raw_mean": 5.252603417091489,
+      "canonical_mean": 4.499926601229197,
+      "raw_minus_canonical": 0.7526768158622916,
+      "gap_ci95_conditional": [
+        0.27524892494004155,
+        1.2412938307186399
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.025930627019187764,
+      "mean_canonical_gain_vs_matched_motion_only": -0.6397849176440497,
+      "excess_raw_gain": 0.6138542906248619,
+      "excess_gain_ci95_conditional": [
+        -0.052823806163057915,
+        1.2679783113980159
+      ]
+    },
+    "geodesic_raw_w1/epoch20": {
+      "raw_per_seed": [
+        6.557166717551577,
+        4.803831518727531,
+        4.944617369378495
+      ],
+      "canonical_per_seed": [
+        5.008966594019586,
+        3.775791577681894,
+        4.607202063465275
+      ],
+      "raw_mean": 5.435205201885868,
+      "canonical_mean": 4.463986745055585,
+      "raw_minus_canonical": 0.9712184568302824,
+      "gap_ci95_conditional": [
+        0.41119466924939996,
+        1.5589774053070744
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 2.9549889438251307,
+      "mean_canonical_gain_vs_matched_motion_only": 0.004134405778752755,
+      "excess_raw_gain": 2.9508545380463773,
+      "excess_gain_ci95_conditional": [
+        1.9536403833348435,
+        4.005847968185594
+      ]
+    },
+    "geodesic_canonical_w0.1/epoch5": {
+      "raw_per_seed": [
+        5.580486884311063,
+        5.7496611102460164,
+        4.485202450145431
+      ],
+      "canonical_per_seed": [
+        5.336343585950588,
+        5.67134039681228,
+        3.4444429663861076
+      ],
+      "raw_mean": 5.271783481567504,
+      "canonical_mean": 4.8173756497163245,
+      "raw_minus_canonical": 0.45440783185117856,
+      "gap_ci95_conditional": [
+        0.0060523785478593575,
+        0.9229401837701763
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.006750562543173189,
+      "mean_canonical_gain_vs_matched_motion_only": -0.322335869156922,
+      "excess_raw_gain": 0.3155853066137488,
+      "excess_gain_ci95_conditional": [
+        -0.3559519916494118,
+        1.0030551525857534
+      ]
+    },
+    "geodesic_canonical_w1/epoch5": {
+      "raw_per_seed": [
+        6.030971031816269,
+        4.025358241663353,
+        3.8633113170893516
+      ],
+      "canonical_per_seed": [
+        6.17969373619217,
+        3.272835719234838,
+        2.3489938330786706
+      ],
+      "raw_mean": 4.639880196856325,
+      "canonical_mean": 3.93384109616856,
+      "raw_minus_canonical": 0.706039100687765,
+      "gap_ci95_conditional": [
+        0.1446569811863358,
+        1.284681346101542
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.6386538472543523,
+      "mean_canonical_gain_vs_matched_motion_only": -1.2058704227046875,
+      "excess_raw_gain": 0.5672165754503352,
+      "excess_gain_ci95_conditional": [
+        -0.20734671180039035,
+        1.3710484785086208
+      ]
+    },
+    "geodesic_canonical_w1/epoch20": {
+      "raw_per_seed": [
+        3.422566232444666,
+        2.042495163822711,
+        3.21806399177671
+      ],
+      "canonical_per_seed": [
+        3.811803762601265,
+        1.945913414807451,
+        4.2569135132014075
+      ],
+      "raw_mean": 2.894375129348029,
+      "canonical_mean": 3.3382102302033747,
+      "raw_minus_canonical": -0.44383510085534555,
+      "gap_ci95_conditional": [
+        -1.0189025096326172,
+        0.10172617923450282
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.41415887128729195,
+      "mean_canonical_gain_vs_matched_motion_only": -1.1216421090734578,
+      "excess_raw_gain": 1.5358009803607497,
+      "excess_gain_ci95_conditional": [
+        0.5198452379244377,
+        2.5983386766020202
+      ]
+    },
+    "mse_none_w0/epoch5": {
+      "raw_per_seed": [
+        6.4808945749779765,
+        6.019307388618363,
+        6.2643983045203315
+      ],
+      "canonical_per_seed": [
+        6.087748769454651,
+        5.367971758705757,
+        5.970146989929375
+      ],
+      "raw_mean": 6.25486675603889,
+      "canonical_mean": 5.808622506029927,
+      "raw_minus_canonical": 0.44624425000896295,
+      "gap_ci95_conditional": [
+        0.029624705221307456,
+        0.8777312408807841
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.0,
+      "mean_canonical_gain_vs_matched_motion_only": 0.0,
+      "excess_raw_gain": 0.0,
+      "excess_gain_ci95_conditional": [
+        0.0,
+        0.0
+      ]
+    },
+    "mse_raw_w0.02/epoch5": {
+      "raw_per_seed": [
+        6.227020501541072,
+        6.477673966136383,
+        6.576351113845981
+      ],
+      "canonical_per_seed": [
+        6.030076176992348,
+        5.896503839248336,
+        6.397856198200253
+      ],
+      "raw_mean": 6.427015193841146,
+      "canonical_mean": 6.108145404813645,
+      "raw_minus_canonical": 0.3188697890274999,
+      "gap_ci95_conditional": [
+        -0.13641621582236857,
+        0.7671117182352719
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.17214843780225517,
+      "mean_canonical_gain_vs_matched_motion_only": 0.2995228987837182,
+      "excess_raw_gain": -0.12737446098146302,
+      "excess_gain_ci95_conditional": [
+        -0.5557577475347797,
+        0.2800565719145462
+      ]
+    },
+    "mse_raw_w0.1/epoch5": {
+      "raw_per_seed": [
+        6.3093585833906305,
+        6.705562941583122,
+        5.726332685002428
+      ],
+      "canonical_per_seed": [
+        6.613065956653802,
+        6.657071685007587,
+        5.838267120645831
+      ],
+      "raw_mean": 6.247084736658727,
+      "canonical_mean": 6.369468254102407,
+      "raw_minus_canonical": -0.12238351744367974,
+      "gap_ci95_conditional": [
+        -0.4570609286964547,
+        0.20469136652376807
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.007782019380163281,
+      "mean_canonical_gain_vs_matched_motion_only": 0.5608457480724794,
+      "excess_raw_gain": -0.5686277674526427,
+      "excess_gain_ci95_conditional": [
+        -1.0262861086187374,
+        -0.11869794574952072
+      ]
+    },
+    "mse_raw_w0.3/epoch5": {
+      "raw_per_seed": [
+        7.065395144570856,
+        6.842193224049602,
+        6.409509814344397
+      ],
+      "canonical_per_seed": [
+        6.541511840789452,
+        6.521734581814714,
+        5.832408495030903
+      ],
+      "raw_mean": 6.772366060988285,
+      "canonical_mean": 6.2985516392116905,
+      "raw_minus_canonical": 0.4738144217765952,
+      "gap_ci95_conditional": [
+        0.05200143836037717,
+        0.8847834247730965
+      ],
+      "mean_raw_gain_vs_matched_motion_only": 0.5174993049493949,
+      "mean_canonical_gain_vs_matched_motion_only": 0.48992913318176257,
+      "excess_raw_gain": 0.027570171767632285,
+      "excess_gain_ci95_conditional": [
+        -0.56554141439647,
+        0.6133568359312511
+      ]
+    },
+    "mse_raw_w1/epoch5": {
+      "raw_per_seed": [
+        6.435316988433704,
+        5.892091701335638,
+        6.288640708482917
+      ],
+      "canonical_per_seed": [
+        6.180521270796231,
+        5.991362996556362,
+        5.678600584125648
+      ],
+      "raw_mean": 6.205349799417419,
+      "canonical_mean": 5.950161617159414,
+      "raw_minus_canonical": 0.2551881822580058,
+      "gap_ci95_conditional": [
+        -0.22650711454799627,
+        0.734221021957468
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.0495169566214706,
+      "mean_canonical_gain_vs_matched_motion_only": 0.1415391111294865,
+      "excess_raw_gain": -0.1910560677509571,
+      "excess_gain_ci95_conditional": [
+        -0.8809392957652972,
+        0.5035905152113024
+      ]
+    },
+    "mse_canonical_w0.1/epoch5": {
+      "raw_per_seed": [
+        5.6079811725768005,
+        6.525725056439799,
+        5.726342628456526
+      ],
+      "canonical_per_seed": [
+        6.1603816837176,
+        5.965454665879809,
+        6.074062705574872
+      ],
+      "raw_mean": 5.953349619157708,
+      "canonical_mean": 6.06663301839076,
+      "raw_minus_canonical": -0.11328339923305197,
+      "gap_ci95_conditional": [
+        -0.4993820557729969,
+        0.23734186474727736
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.3015171368811818,
+      "mean_canonical_gain_vs_matched_motion_only": 0.2580105123608331,
+      "excess_raw_gain": -0.5595276492420149,
+      "excess_gain_ci95_conditional": [
+        -1.04251656211992,
+        -0.09905018067000447
+      ]
+    },
+    "mse_canonical_w1/epoch5": {
+      "raw_per_seed": [
+        6.832258470373915,
+        5.233421096128922,
+        5.921099288190067
+      ],
+      "canonical_per_seed": [
+        6.180066046066438,
+        5.548842396161153,
+        4.384377294992967
+      ],
+      "raw_mean": 5.995592951564301,
+      "canonical_mean": 5.371095245740186,
+      "raw_minus_canonical": 0.6244977058241155,
+      "gap_ci95_conditional": [
+        0.2504368394326272,
+        1.0314059837577223
+      ],
+      "mean_raw_gain_vs_matched_motion_only": -0.25927380447458886,
+      "mean_canonical_gain_vs_matched_motion_only": -0.43752726028974137,
+      "excess_raw_gain": 0.1782534558151525,
+      "excess_gain_ci95_conditional": [
+        -0.4189292570088279,
+        0.7973082988164697
+      ]
+    }
+  },
+  "primary_epoch20": {
+    "raw_vs_no_CE": {
+      "mean_difference_of_raw_canonical_gaps": 2.9508545380463773,
+      "paired_clip_ci95": [
+        1.9536403833348435,
+        4.005847968185594
+      ],
+      "seed_and_clip_ci95": [
+        1.6720828757725579,
+        4.3667259760296355
+      ],
+      "family_ci_three_primary_contrasts": [
+        1.7551968924703265,
+        4.252951249393291
+      ]
+    },
+    "raw_vs_canonical_CE": {
+      "mean_difference_of_raw_canonical_gaps": 1.4150535576856278,
+      "paired_clip_ci95": [
+        0.6107773657169158,
+        2.246746197784349
+      ],
+      "seed_and_clip_ci95": [
+        0.4182551981265016,
+        2.641957857081724
+      ],
+      "family_ci_three_primary_contrasts": [
+        0.42809773891037406,
+        2.4162690723425735
+      ]
+    },
+    "raw_gap_absolute": {
+      "mean_gap": 0.9712184568302824,
+      "paired_clip_ci95": [
+        0.41119466924939996,
+        1.5589774053070744
+      ],
+      "family_ci_three_primary_contrasts": [
+        0.2951732365283205,
+        1.6794970961108944
+      ]
+    }
+  },
+  "interpretation": {
+    "ordinary_denoiser_no_added_gauge_head": true,
+    "motions_can_change_across_fits": true,
+    "raw_canonical_of_one_output_preserve_rotations": true,
+    "all_sweep_conditions_reported": true,
+    "DEV_exploratory_not_pristine": true,
+    "no_TEST_use": true,
+    "one_shared_pretraining_init": true,
+    "primary_positive_conditional": true
+  }
+}

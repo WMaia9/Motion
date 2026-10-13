@@ -1,0 +1,42 @@
+{
+  "natural_release_FID_and_R1": {
+    "source": "reports/cvpr_motion_prevalence_20261012/analysis.json",
+    "main": "table_motion_releases.tex",
+    "supplement": "table_motion_release_readers.tex",
+    "scope": "20native repetitions5methods; primarypairedfamily10; secondcheckpoint samearchitecture, separatefamily10"
+  },
+  "fixed_real_native20": {
+    "source": "reports/cvpr_motion_prevalence_20261012/real20_summary.json",
+    "figure": "figures/motion_release_controls.pdf",
+    "scope": "4640 native entries/reference; all directional/small/random controls retained"
+  },
+  "targeted_retrieval": {
+    "source": "reports/cvpr_humanml3d_audit_20261012/test_analysis.json",
+    "main": "table_humanml.tex",
+    "scope": "1024fixedfullcaptionclips5candidatepermutations; targetavailable; distinctsubsetprotocol"
+  },
+  "caption_blind_repetition": {
+    "source": "reports/cvpr_humanml_blind_repetitions_20261012/analysis.json",
+    "supplement": "table_blind_repetitions.tex",
+    "scope": "960each3cohorts with overlapping sourcegroups; original conditionalbootstrap not pooled"
+  },
+  "ordinary_reward_negative": {
+    "source": "reports/cvpr_humanml_reward_pilot_20261012/summary.json",
+    "supplement": "table_motion_reward_pilot.tex",
+    "scope": "9fits onecommongen seed; x0reward notrollout"
+  },
+  "published_reward_weights": {
+    "source": "reports/cvpr_motion_reward_release_20261013/analysis.json",
+    "supplement": "table_motion_reward_release.tex",
+    "scope": "2relatedcheckpoints5seeds2readers; gains survive C, noMotionReward hackingclaim"
+  },
+  "sign_language_and_adaptive_controls": {
+    "sources": [
+      "reports/cvpr_learned_confirmation_20261012/analysis.json",
+      "reports/cvpr_second_review_confirmation_20261012/analysis.json",
+      "reports/cvpr_adaptive_distance_confirmation_20261012/analysis.json",
+      "reports/cvpr_seed_dose_response_20261012/analysis.json"
+    ],
+    "scope": "previous frozen outcomes retained; learned attacks explicit source access, ordinaryendpoint unconfirmed"
+  }
+}

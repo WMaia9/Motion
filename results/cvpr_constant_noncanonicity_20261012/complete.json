@@ -1,0 +1,15 @@
+{
+  "fits": 9,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "arms": [
+    "text_raw",
+    "motion_raw",
+    "text_canonical"
+  ],
+  "all_first_epoch_batches_match_original_study": true,
+  "no_TEST_use": true
+}

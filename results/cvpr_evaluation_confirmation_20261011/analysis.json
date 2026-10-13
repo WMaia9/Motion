@@ -1,0 +1,541 @@
+{
+  "seed": 42,
+  "replicates": 2000,
+  "multiple_testing_adjustment": false,
+  "train_seed_count": 1,
+  "TEST_used_for_new_model_selection": false,
+  "rankings": {
+    "clips": 642,
+    "systems": [
+      "geometry",
+      "velocity",
+      "physical_ce",
+      "physical_generated_near"
+    ],
+    "scores": {
+      "raw": {
+        "geometry": 6.624441829538485,
+        "velocity": 6.708179737015896,
+        "physical_ce": 6.542037611823929,
+        "physical_generated_near": 6.581835136368171
+      },
+      "canonical": {
+        "geometry": 6.390467225796576,
+        "velocity": 6.206373533521002,
+        "physical_ce": 6.625434973029831,
+        "physical_generated_near": 6.587408848907608
+      },
+      "gauge_scale090": {
+        "geometry": 6.082295113749099,
+        "velocity": 6.150548477096854,
+        "physical_ce": 6.234813366954363,
+        "physical_generated_near": 5.922650339703676
+      },
+      "gauge_scale110": {
+        "geometry": 6.525613788111718,
+        "velocity": 6.7867600266529635,
+        "physical_ce": 6.624838587595951,
+        "physical_generated_near": 6.778086920789841
+      },
+      "gauge_shear010": {
+        "geometry": 6.558352838548704,
+        "velocity": 6.8711405025985295,
+        "physical_ce": 6.81759429901623,
+        "physical_generated_near": 6.822096378508032
+      }
+    },
+    "orders": {
+      "raw": [
+        "velocity",
+        "geometry",
+        "physical_generated_near",
+        "physical_ce"
+      ],
+      "canonical": [
+        "physical_ce",
+        "physical_generated_near",
+        "geometry",
+        "velocity"
+      ],
+      "gauge_scale090": [
+        "physical_ce",
+        "velocity",
+        "geometry",
+        "physical_generated_near"
+      ],
+      "gauge_scale110": [
+        "velocity",
+        "physical_generated_near",
+        "physical_ce",
+        "geometry"
+      ],
+      "gauge_shear010": [
+        "velocity",
+        "physical_generated_near",
+        "physical_ce",
+        "geometry"
+      ]
+    },
+    "pairwise_comparisons": {
+      "geometry minus velocity": {
+        "raw": {
+          "delta_bleu4": -0.08373790747741072,
+          "ci95": [
+            -0.4457518604700554,
+            0.23408787207286202
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": 0.18409369227557448,
+          "ci95": [
+            -0.14512961307688735,
+            0.5209093201486328
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": -0.06825336334775489,
+          "ci95": [
+            -0.4564231262345624,
+            0.2638701010075339
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": -0.2611462385412455,
+          "ci95": [
+            -0.6529143745911649,
+            0.07305477887321803
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": -0.31278766404982505,
+          "ci95": [
+            -0.6522572035840891,
+            0.017558553301844516
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": 0.2678315997529852,
+          "ci95": [
+            -0.17663556284592,
+            0.7320258161376885
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      },
+      "geometry minus physical_ce": {
+        "raw": {
+          "delta_bleu4": 0.08240421771455608,
+          "ci95": [
+            -0.3174573157958779,
+            0.5227935687706672
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": -0.23496774723325498,
+          "ci95": [
+            -0.6207124277092384,
+            0.12620712678895615
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": -0.15251825320526358,
+          "ci95": [
+            -0.5177924598974745,
+            0.1994247016523025
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": -0.09922479948423302,
+          "ci95": [
+            -0.4373715176967158,
+            0.23667037673476113
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": -0.2592414604675257,
+          "ci95": [
+            -0.6836506379431032,
+            0.15382645104713782
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": -0.31737196494781106,
+          "ci95": [
+            -0.8386287554895533,
+            0.13257249855155062
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical",
+          "gauge_scale090",
+          "gauge_scale110",
+          "gauge_shear010"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      },
+      "geometry minus physical_generated_near": {
+        "raw": {
+          "delta_bleu4": 0.04260669317031418,
+          "ci95": [
+            -0.4202111978337102,
+            0.5380255692167905
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": -0.19694162311103192,
+          "ci95": [
+            -0.7342328771885853,
+            0.2797010350397638
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": 0.15964477404542343,
+          "ci95": [
+            -0.25165046860943613,
+            0.5982925785413372
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": -0.2524731326781229,
+          "ci95": [
+            -0.6493767659800932,
+            0.15195058796737634
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": -0.26374353995932776,
+          "ci95": [
+            -0.6914028655755103,
+            0.16029742034168482
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": -0.2395483162813461,
+          "ci95": [
+            -0.8096300954324748,
+            0.29927217987414617
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical",
+          "gauge_scale110",
+          "gauge_shear010"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      },
+      "velocity minus physical_ce": {
+        "raw": {
+          "delta_bleu4": 0.1661421251919668,
+          "ci95": [
+            -0.3056341952248275,
+            0.6524290067227617
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": -0.41906143950882946,
+          "ci95": [
+            -0.8367701707425784,
+            -0.04118706095590435
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": -0.08426488985750868,
+          "ci95": [
+            -0.508364616272225,
+            0.36106100034522043
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": 0.1619214390570125,
+          "ci95": [
+            -0.16931708209224086,
+            0.5186749773779362
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": 0.053546203582299334,
+          "ci95": [
+            -0.4425824507255238,
+            0.5482238293309613
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": -0.5852035647007963,
+          "ci95": [
+            -1.2256273266860431,
+            -0.014486963009001147
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical",
+          "gauge_scale090"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      },
+      "velocity minus physical_generated_near": {
+        "raw": {
+          "delta_bleu4": 0.1263446006477249,
+          "ci95": [
+            -0.39903549650816067,
+            0.6751504329253489
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": -0.3810353153866064,
+          "ci95": [
+            -0.8977214485313696,
+            0.09376075382848686
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": 0.22789813739317832,
+          "ci95": [
+            -0.26422762791703897,
+            0.7914066511591531
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": 0.008673105863122643,
+          "ci95": [
+            -0.465441896192577,
+            0.48736774426443646
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": 0.0490441240904973,
+          "ci95": [
+            -0.43722996376419315,
+            0.5611685682149887
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": -0.5073799160343313,
+          "ci95": [
+            -1.1627391625986367,
+            0.07928780268248282
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      },
+      "physical_ce minus physical_generated_near": {
+        "raw": {
+          "delta_bleu4": -0.0397975245442419,
+          "ci95": [
+            -0.3663412880564344,
+            0.300310734430474
+          ]
+        },
+        "canonical": {
+          "delta_bleu4": 0.03802612412222306,
+          "ci95": [
+            -0.42272978785951576,
+            0.47670707005723634
+          ]
+        },
+        "gauge_scale090": {
+          "delta_bleu4": 0.312163027250687,
+          "ci95": [
+            -0.023223078714699256,
+            0.6935166321087506
+          ]
+        },
+        "gauge_scale110": {
+          "delta_bleu4": -0.15324833319388986,
+          "ci95": [
+            -0.49126857652516676,
+            0.1993236911980099
+          ]
+        },
+        "gauge_shear010": {
+          "delta_bleu4": -0.004502079491802036,
+          "ci95": [
+            -0.3591259170513825,
+            0.3587431340555325
+          ]
+        },
+        "raw_to_canonical_change_in_pairwise_gap": {
+          "delta_gap": 0.07782364866646496,
+          "ci95": [
+            -0.4560203977689775,
+            0.5726065277439797
+          ]
+        },
+        "point_ranking_flips_vs_raw": [
+          "canonical",
+          "gauge_scale090"
+        ],
+        "opposite_pairwise_ci_supported_rankings_vs_raw": []
+      }
+    },
+    "same_motion_in_all_representations": true,
+    "new_generated_clips": 2568,
+    "not_a_comparison_of_four_independent_published_generators": true
+  },
+  "attacks": {
+    "PHOENIX-2014T": {
+      "full_real_TEST_clips": 642,
+      "full_real_raw_bleu4": 14.999500446009456,
+      "full_real_canonical_bleu4": 14.999500446009456,
+      "full_real_changed_sentences": 0,
+      "subset_conditions": {
+        "correct_caption": {
+          "baseline_target_bleu4": 13.952164389079227,
+          "attacked_target_bleu4": 90.5114524836252,
+          "attacked_actual_reference_bleu4": 90.5114524836252,
+          "target_gain": {
+            "delta_bleu4": 76.55928809454598,
+            "ci95": [
+              71.5986455565428,
+              81.21158865560429
+            ]
+          },
+          "actual_reference_change": {
+            "delta_bleu4": 76.55928809454598,
+            "ci95": [
+              71.5986455565428,
+              81.21158865560429
+            ]
+          },
+          "max_rotation_error_deg": 5.1537921205839326e-06,
+          "canonical_changes": 0,
+          "criterion_A_pass": true
+        },
+        "rolled_wrong_caption": {
+          "baseline_target_bleu4": 0.0,
+          "attacked_target_bleu4": 85.18576735601953,
+          "attacked_actual_reference_bleu4": 0.0,
+          "target_gain": {
+            "delta_bleu4": 85.18576735601953,
+            "ci95": [
+              80.03990727959246,
+              90.00503985336859
+            ]
+          },
+          "actual_reference_change": {
+            "delta_bleu4": -13.952164389079227,
+            "ci95": [
+              -17.338725028896423,
+              -10.556507019226897
+            ]
+          },
+          "max_rotation_error_deg": 5.397056124701529e-06,
+          "canonical_changes": 0,
+          "criterion_A_pass": true
+        }
+      },
+      "bootstrap_unit": "clip; How2Sign VIDEO_ID cluster sensitivity separately reported"
+    },
+    "How2Sign": {
+      "full_real_TEST_clips": 2183,
+      "full_real_raw_bleu4": 3.4778651049853475,
+      "full_real_canonical_bleu4": 3.484024341098461,
+      "full_real_changed_sentences": 1438,
+      "subset_conditions": {
+        "correct_caption": {
+          "baseline_target_bleu4": 5.4850128323987155,
+          "attacked_target_bleu4": 56.179904539222775,
+          "attacked_actual_reference_bleu4": 56.179904539222775,
+          "target_gain": {
+            "delta_bleu4": 50.69489170682406,
+            "ci95": [
+              45.283771507542056,
+              56.196022757081195
+            ]
+          },
+          "actual_reference_change": {
+            "delta_bleu4": 50.69489170682406,
+            "ci95": [
+              45.283771507542056,
+              56.196022757081195
+            ]
+          },
+          "max_rotation_error_deg": 5.215689653437936e-06,
+          "canonical_changes": 0,
+          "criterion_A_pass": true
+        },
+        "rolled_wrong_caption": {
+          "baseline_target_bleu4": 1.2273571622094954,
+          "attacked_target_bleu4": 47.33688856258323,
+          "attacked_actual_reference_bleu4": 0.0,
+          "target_gain": {
+            "delta_bleu4": 46.10953140037374,
+            "ci95": [
+              40.56963516473952,
+              52.470996135691855
+            ]
+          },
+          "actual_reference_change": {
+            "delta_bleu4": -5.4850128323987155,
+            "ci95": [
+              -7.9332093691962475,
+              -3.334718491879723
+            ]
+          },
+          "max_rotation_error_deg": 1.1073106873456218e-05,
+          "canonical_changes": 0,
+          "criterion_A_pass": true
+        }
+      },
+      "bootstrap_unit": "clip; How2Sign VIDEO_ID cluster sensitivity separately reported"
+    }
+  },
+  "actual_external_BT_replication": {
+    "repository": "/mnt/datasets/PHOENIX-2014-T/external/SLRTP_Evaluation_20261011",
+    "commit": "db35105a94e126feb04619d56f6103ba8369d382",
+    "native_input_dimensions": 534,
+    "6D_input_dimensions_audited_elsewhere": 240,
+    "official_DEV_BLEU4": 13.378651856913775,
+    "reproduced_DEV_BLEU4": 13.378651856913775,
+    "absolute_difference": 0.0,
+    "native_format_validation_passed": true,
+    "same_BT_checkpoint_as_SignSparK": false,
+    "same_published_architecture_family_SignLanguageTransformers": true,
+    "6D_gauge_vulnerability_replication": false,
+    "reason": "XYZ input does not expose the redundant 6D coordinates; no licensed mesh/validated corresponding conversion available",
+    "TEST_scored_with_external_BT": false,
+    "results": {
+      "ground_truth": {
+        "bleu": {
+          "bleu1": 35.64289683751959,
+          "bleu2": 23.060216602791453,
+          "bleu3": 16.907030146272817,
+          "bleu4": 13.378651856913775
+        },
+        "clips": 515
+      },
+      "progressive_transformer": {
+        "bleu": {
+          "bleu1": 15.709580632595015,
+          "bleu2": 4.514958474148895,
+          "bleu3": 1.3823969304114618,
+          "bleu4": 0.0
+        },
+        "clips": 515
+      }
+    }
+  },
+  "external_public_PT_zero_bleu_diagnostic": {
+    "counts_1_to_4": [
+      1161,
+      88,
+      8,
+      0
+    ],
+    "totals_1_to_4": [
+      6253,
+      5738,
+      5223,
+      4708
+    ],
+    "empty_hypotheses": 0,
+    "BLEU4": 0.0,
+    "ground_truth_native_score_reproduced_exactly": true,
+    "not_claimed_as_independent_SOTA_generator_reproduction": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "RESULTADOS.md": "24f6321abc5a8f57d762d36455612852c689a12a9e01841cefb23ebe221d9b67",
+  "decoded.json": "bae44a0cbb887830dd99ec1dcb0eb40322b579f5591ac385423500683c031ca0",
+  "native_inference_source.py": "3d216fad715b227c267f1bfd2fd32b97e350ee7e157194b52790a4babfd30645",
+  "replay.log": "515781ebdab95a93431d3d009f0cddeb4f15cf23ed63e590bc938dfe581e0e1b",
+  "results.json": "38aedf7ce551c0b32aa46b2437d236dec0be86da5a71e2219f235e462c5db08f",
+  "scripts/recheck_csl_bleu.py": "d7d0b473f95e2a9b84551bc89aaf1eab98c9773258d17980f2c4f76983f655cf",
+  "verification.json": "267f19daadebb7bdc890d79b3ca080d0e89f62f6a609ea088ff2e7a78e1d3214"
+}

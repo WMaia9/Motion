@@ -1,0 +1,10 @@
+{
+  "scope": "secondary distinct official GPT evaluator checkpoint, same architecture; all five methods20reps, no model/condition selection",
+  "sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/score_motion_release_second_reader.py": "af4332e8e93c7d0922fcae682f26b694fcc0819812e31a1c396eca38730165cd",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "models/motion_release_audit/gpt_evaluator/t2m/text_mot_match/model/finest.tar": "881e45bea6fb84b15eca6e7cdd75d602b58a72f2038c223ee96ab75d4f684ada"
+  },
+  "primary_reader_unchanged": true,
+  "native_normalizations_numerically_identical_verified": true
+}

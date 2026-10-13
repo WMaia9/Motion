@@ -1,0 +1,42 @@
+{
+  "scope": "Prospective supplemental released reward-trained model audit and author-linked base; five matched generation seeds, not a full20repetition leaderboard reproduction",
+  "registered_after_negative_own_reward_pilot": true,
+  "checkpoints": {
+    "base": "models/motion_release_audit/motionrft_base/pretrain/mld/mld_humanml_v1.ckpt",
+    "reward_finetuned": "models/motion_release_audit/motionrft_checkpoint/RFT_MLD/checkpoints/rft_mld/best.ckpt"
+  },
+  "HF_revisions": {
+    "txf0620/MotionRFT_Models": "2931fda962875d8c258cc57f5d5446c4487f2812",
+    "txf0620/MotionRFT_Checkpoints": "61457e92aeb68a86778be1601569fe89a3fe04fc"
+  },
+  "replications": 5,
+  "generation_seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105
+  ],
+  "conditioning": "native1024-output cohorts0-4 from primary MDM audit; captions and duration only",
+  "reference": "full4640 native TEST draws0-4 from primary audit",
+  "sampler": "native MotionRFT reverse method, DDIM50, CFG7.5, epsilon, scale_factor1, Sentence-T5-large",
+  "generation_batch": 128,
+  "metric_candidate_batch": 32,
+  "conditions": [
+    "raw",
+    "canonical"
+  ],
+  "readers": [
+    "common_MDM_checkpoint",
+    "official_GPT_checkpoint"
+  ],
+  "not_proof_of_intentional_hacking_or_vulnerability_of_MotionReward": true,
+  "inputs_and_sources_sha256": {
+    "models/motion_release_audit/motionrft_base/pretrain/mld/mld_humanml_v1.ckpt": "61b4062ddc01236e482de782d872ed4850e27df402f1eb103e54c52d4231de4e",
+    "models/motion_release_audit/motionrft_checkpoint/RFT_MLD/checkpoints/rft_mld/best.ckpt": "9d20abeceb43981e863736da551bd1f49316d89bba38a6cb47309e4978695f3c",
+    "external/MotionRFT/RFT_MLD/mld/models/modeltype/mld.py": "6b407881125f1edf671ba9c1c93b9390ff30930043f44c6a76ae224f176f076b",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motion_reward_release.py": "343508afa9f8374b168dbf24b4aeebdf5ad0acc99e200bdb4b70e995b577c88a",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277"
+  }
+}

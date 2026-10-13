@@ -1,0 +1,15 @@
+{
+  "weights_sha256": {
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_42/mse_only/final.pt": "7b77ec30668053d763895eaef96afd20e939ba16fe9c8df91e8dcc47628affcf",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_42/raw_reward/final.pt": "352b605b860e692dc205ab81b3d526f7707de279411244c0d84fd94c34347632",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_42/canonical_reward/final.pt": "e23a1cbf6ec5245667634e68e9a0b6d61999e1bed66701d45a960e0151da0466",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_123/mse_only/final.pt": "97e66658180b99fb645c7ff209701082689c6bfc1dba316355987418ec4175fd",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_123/raw_reward/final.pt": "40e731511c6939afe09ad953c9f99f28c40f49773b52800521b4521fb86ddfe7",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_123/canonical_reward/final.pt": "ca3941958b723d484563fb5e00974af234389fc6a2f18708018f480bada68c7f",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_777/mse_only/final.pt": "e221287b5d186097943ffec29e0ae1e923b48ad4f1852ea31d1564bdb4b1928d",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_777/raw_reward/final.pt": "00bf7272e6f26326838ccb5fa643e50b151fba81d8afc66ec3cc761af22b2174",
+    "reports/cvpr_humanml_reward_pilot_20261012/seed_777/canonical_reward/final.pt": "edaafcc46a602494f1445aa5472993bde4a6bbdab5399516b45ddd98d3781251"
+  },
+  "all9weights_complete": true,
+  "pilot_TEST_generation_not_started": true
+}

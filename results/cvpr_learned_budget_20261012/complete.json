@@ -1,0 +1,16 @@
+{
+  "fits": 9,
+  "all_first_epoch_batches_match_bound035": true,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "bounds": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "DEV_clips": 519,
+  "no_TEST_use": true
+}

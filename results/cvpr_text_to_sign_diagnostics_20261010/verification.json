@@ -1,0 +1,103 @@
+{
+  "generated_clips": 1536,
+  "projection_jvp_proof": {
+    "random_nondegenerate_rotations": 512,
+    "max_physical_jvp_difference": 5.5067062021407764e-14,
+    "max_vertical_jvp": 5.37882318268963e-14,
+    "horizontal_vertical_orthogonal": true,
+    "seed": 2027,
+    "dtype": "float64"
+  },
+  "checks": {
+    "PHOENIX-2014T": {
+      "cfg0": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg1": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg5": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3_shuffled": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3_horizontal": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      }
+    },
+    "How2Sign": {
+      "cfg0": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg1": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg5": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3_shuffled": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      },
+      "cfg3_horizontal": {
+        "clips": 128,
+        "no_keyframe_inputs": true,
+        "all_finite": true,
+        "native_hand_body_ids_lengths_match": true,
+        "rotation_preserved_by_canonicalization": true
+      }
+    }
+  },
+  "TEST_used": false,
+  "mesh_rendered": false
+}

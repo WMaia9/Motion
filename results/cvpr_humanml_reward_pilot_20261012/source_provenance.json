@@ -1,0 +1,33 @@
+{
+  "producers": [
+    "run_humanml_reward_pilot",
+    "score_humanml_reward_pilot",
+    "verify_humanml_reward_pilot"
+  ],
+  "import_closure": [
+    "freeze_motion_release_studies",
+    "motion_release_audit_common",
+    "motion_release_native_adapters",
+    "run_humanml_reward_pilot",
+    "run_motion_release_audit",
+    "score_humanml_reward_pilot",
+    "verify_humanml_reward_pilot",
+    "verify_motion_prevalence"
+  ],
+  "all_archived_scripts_match_live": true,
+  "verified_registered_inputs_and_sources": {
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_00/conditioning.npz": "4355ff087d866daa46d90c1e08dc078afbfbdbd06422a8d97c209318b319df7a",
+    "reports/cvpr_motion_prevalence_20261012/mdm50/rep_00/reference_embeddings.npy": "98db00b3f72f75205c36c5f282270742b8f4cc75f4ffbb544b5590c48278eef3",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_humanml_reward_pilot.py": "018b286631fdcd277c5d7b6460a1502e010c0aed8183f32308c24791c332328a",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/score_humanml_reward_pilot.py": "1d38307d38f23224f0cfb2bb35575ae152df4f741d4a91485ae51dba4d0962bf"
+  },
+  "historical_executed_sources_if_any": "producer_revisions/; preserved separately from current closure",
+  "freeze_code_sha256": "1269727af1f5fb4b131b4dd1f19a16bf7d503716691b94d8670de0d913039eae",
+  "completed_date": "2026-10-13"
+}

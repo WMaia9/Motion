@@ -1,0 +1,12 @@
+{
+  "requested": 128,
+  "generated": 128,
+  "scores": {
+    "generated_raw": 9.322671160387584,
+    "generated_canonical": 9.123124602675997,
+    "stitched_raw": 8.980044676487447,
+    "real_raw": 6.854133496677619
+  },
+  "no_true_DEV_keyframes": true,
+  "source_release_precludes_original_paper_BT_reproduction_claim": true
+}

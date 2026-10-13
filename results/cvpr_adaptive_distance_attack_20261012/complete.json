@@ -1,0 +1,7 @@
+{
+  "conditions": 16,
+  "clips": 64,
+  "new_TEST_use": false,
+  "per_clip_target_optimization": true,
+  "not_amortized_or_ordinary_training": true
+}

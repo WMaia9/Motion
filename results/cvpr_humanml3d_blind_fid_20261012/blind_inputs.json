@@ -1,0 +1,9 @@
+{
+  "captions_used_by_attack": false,
+  "TEST_reference_used_by_attack": false,
+  "reference_distribution": "TRAIN motions only",
+  "TRAIN_clips": 2048,
+  "TEST_output_clips": 960,
+  "transport_targets_sha256": "b4d19734e091b8bba44838d2b076c07908d319184a425431daaf1f7089e299c1",
+  "code_sha256": "4b0bbac4d192e7fb77adf0be163684a1448be6620363e92ae05df1abb155f66d"
+}

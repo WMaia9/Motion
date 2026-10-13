@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "left_hand_float32_bitwise_pairs_checked": {
+    "cvpr_adaptive_distance_attack_20261012": 1024,
+    "cvpr_adaptive_distance_confirmation_20261012": 7704,
+    "cvpr_dose_transplant_20261012": 12456
+  },
+  "total": 21184
+}

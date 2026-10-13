@@ -1,0 +1,35 @@
+{
+  "studies": {
+    "cvpr_adaptive_distance_attack_20261012": {
+      "manifest_sha256": "0c8d08e7894d3165e660000c924a0bea9335ffbfc634365f0e26b55714f41916",
+      "analysis": "reports/cvpr_adaptive_distance_attack_20261012/analysis.json",
+      "verification": "reports/cvpr_adaptive_distance_attack_20261012/verification.json"
+    },
+    "cvpr_adaptive_distance_confirmation_20261012": {
+      "manifest_sha256": "78664a66f84f5f6f35ee2793d34ca72b8cd56dbb1779434a96e4d4d0d651df85",
+      "analysis": "reports/cvpr_adaptive_distance_confirmation_20261012/analysis.json",
+      "verification": "reports/cvpr_adaptive_distance_confirmation_20261012/verification.json"
+    },
+    "cvpr_seed_dose_response_20261012": {
+      "manifest_sha256": "5f61ab8ce9250c49c8eb35d45a6dd0a5dbc870a8d96564d52b768575464bd9e9",
+      "analysis": "reports/cvpr_seed_dose_response_20261012/analysis.json",
+      "verification": "reports/cvpr_seed_dose_response_20261012/verification.json"
+    },
+    "cvpr_dose_transplant_20261012": {
+      "manifest_sha256": "39cc3d6e5186f60d4fa3ff8124baf8f796ae30902c2daf609500c3dc4b089433",
+      "analysis": "reports/cvpr_dose_transplant_20261012/analysis.json",
+      "verification": "reports/cvpr_dose_transplant_20261012/verification.json"
+    }
+  },
+  "main_claims": {
+    "conditional_learned_layers": "reports/cvpr_learned_confirmation_20261012/analysis.json and reports/cvpr_second_review_confirmation_20261012/analysis.json",
+    "new_adaptive_statistics": "reports/cvpr_adaptive_distance_confirmation_20261012/analysis.json",
+    "seed_extension_and_stress": "reports/cvpr_seed_dose_response_20261012/analysis.json",
+    "inconclusive_caption_mechanism": "reports/cvpr_dose_transplant_20261012/analysis.json",
+    "posthoc_scalar_detectors": "detector_audit.json",
+    "posthoc_prefix_cluster_sensitivity": "phoenix_cluster_sensitivity.json"
+  },
+  "all_primary_and_exploratory_conditions_retained": true,
+  "same_output_gap_not_no_CE_recovery_is_primary": true,
+  "not_pristine_public_TEST": true
+}

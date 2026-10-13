@@ -1,0 +1,34 @@
+{
+  "declared_after": "All 64 random DEV pilot attacks; exploratory followup, before fullDEV optimized attacks",
+  "purpose": "Targeted evaluation stress test, not generation, cryptography, anonymization or SOTA. Attack explicitly sees target captions on DEV. No TEST.",
+  "datasets": [
+    "PHOENIX-2014T",
+    "How2Sign"
+  ],
+  "sampling": "All519 PHOENIX DEV and all1650 How2Sign released DEV. No TEST files downloaded for these studies.",
+  "targets": [
+    "correct_caption",
+    "rolled_wrong_caption"
+  ],
+  "steps": 80,
+  "optimizer": "Adam lr0.1",
+  "batch_size": 32,
+  "initialization": "zero learnable [T,40,3] gauge parameters",
+  "gauge": "alpha=exp(0.35*tanh(u)), beta=exp(0.35*tanh(v)), gamma=0.35*tanh(w). a_new=alpha*a, b_new=beta*b+gamma*a. Same canonical rotations mathematically. Padding untouched.",
+  "objective": "Teacher forced cross entropy in fixed released reader. Network weights frozen. No decoder checkpoint selection. Output after exactly80 updates.",
+  "evaluation": [
+    "raw reader decoded BLEU/chrF/ROUGE vs target and actual reference",
+    "canonicalized reader before/after attack",
+    "official row6D rotation max angle",
+    "changed translation sentences",
+    "float parameter deltas"
+  ],
+  "limits": [
+    "White-box target captions explicitly used, not generation",
+    "Two dataset-specific weights from same reader architecture, not two independent model families",
+    "No meshes rendered, full canonical rotations checked against official conversion",
+    "Canonical gate is a standard normalization, not a new math primitive"
+  ],
+  "pipeline_contract": "Original left hand canonicalized to reproduce native sample-dump loader unflip. Gauge attack allowed on body and right hand only (25 joints); left hand unchanged. Native sample loader checked on first8 clips including flip/unflip, for original and both targeted attacks.",
+  "max_rotation_error_acceptance_deg": 0.01
+}

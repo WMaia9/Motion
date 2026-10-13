@@ -1,0 +1,29 @@
+{
+  "producers": [
+    "run_adaptive_distance_attack",
+    "analyze_review_replication",
+    "freeze_review_replication"
+  ],
+  "import_closure": [
+    "analyze_review_replication",
+    "analyze_second_review_results",
+    "analyze_signspark_geometry_dev",
+    "audit_reviewed_manuscript_evidence",
+    "freeze_learned_reader_studies",
+    "freeze_review_replication",
+    "run_adaptive_distance_attack",
+    "run_constant_distance_sphere",
+    "run_constant_noncanonicity_layer",
+    "run_evaluation_heldout",
+    "run_learned_equivalence",
+    "run_motion_ctc_confirmation",
+    "run_physical_semantic_ddpm",
+    "run_reviewer_attack_ablation",
+    "run_reviewer_training",
+    "run_signspark_gauge_attack",
+    "run_signspark_geometry_dev",
+    "verify_representation_paper",
+    "verify_signspark_studies"
+  ],
+  "all_archived_scripts_match_live": true
+}

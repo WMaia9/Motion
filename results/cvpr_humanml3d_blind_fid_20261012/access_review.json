@@ -1,0 +1,20 @@
+{
+  "scope": "source-level access review, not a runtime syscall sandbox",
+  "attack_array_inputs": [
+    "train_real.npz",
+    "test_mdm.npz"
+  ],
+  "caption_content_numerically_used": false,
+  "TEST_real_reference_numerically_used": false,
+  "text_encoder_called_by_attack": false,
+  "input_hash_checks_read_bytes_of_heldout_files": true,
+  "preflight_digest_checks_do_not_deserialize_or_encode_heldout_content": true,
+  "attack_output_seal_precedes_reference_encoding": true,
+  "all_evaluator_parameters_frozen_by_shared_helper": true,
+  "all_optimizer_parameters_are_per_clip_coefficients": true,
+  "source_files_sha256": {
+    "scripts/run_humanml_blind_fid.py": "4b0bbac4d192e7fb77adf0be163684a1448be6620363e92ae05df1abb155f66d",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b",
+    "scripts/score_humanml_blind_fid.py": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2"
+  }
+}

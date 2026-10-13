@@ -1,0 +1,99 @@
+{
+  "purpose": "resource scheduling only; original process parked within its active fit; unchanged objective, seeds, settings and source; independent future jobs partitioned across three processes; parent resumes after workers complete",
+  "original_pid": 3161797,
+  "paused_active_job": [
+    {
+      "seed": 2027,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    }
+  ],
+  "partitions": [
+    [
+      {
+        "seed": 2718,
+        "reader_input": "raw",
+        "CE_weight": 1.0,
+        "epochs": 20
+      },
+      {
+        "seed": 31415,
+        "reader_input": "canonical",
+        "CE_weight": 1.0,
+        "epochs": 20
+      },
+      {
+        "seed": 42,
+        "reader_input": "raw",
+        "CE_weight": 10.0,
+        "epochs": 40
+      },
+      {
+        "seed": 123,
+        "reader_input": "raw",
+        "CE_weight": 10.0,
+        "epochs": 40
+      },
+      {
+        "seed": 777,
+        "reader_input": "raw",
+        "CE_weight": 10.0,
+        "epochs": 40
+      }
+    ],
+    [
+      {
+        "seed": 2718,
+        "reader_input": "canonical",
+        "CE_weight": 1.0,
+        "epochs": 20
+      },
+      {
+        "seed": 42,
+        "reader_input": "raw",
+        "CE_weight": 1.0,
+        "epochs": 40
+      },
+      {
+        "seed": 123,
+        "reader_input": "raw",
+        "CE_weight": 1.0,
+        "epochs": 40
+      },
+      {
+        "seed": 777,
+        "reader_input": "raw",
+        "CE_weight": 1.0,
+        "epochs": 40
+      }
+    ],
+    [
+      {
+        "seed": 31415,
+        "reader_input": "raw",
+        "CE_weight": 1.0,
+        "epochs": 20
+      },
+      {
+        "seed": 42,
+        "reader_input": "raw",
+        "CE_weight": 3.0,
+        "epochs": 40
+      },
+      {
+        "seed": 123,
+        "reader_input": "raw",
+        "CE_weight": 3.0,
+        "epochs": 40
+      },
+      {
+        "seed": 777,
+        "reader_input": "raw",
+        "CE_weight": 3.0,
+        "epochs": 40
+      }
+    ]
+  ],
+  "no_scientific_endpoint_changes": true
+}

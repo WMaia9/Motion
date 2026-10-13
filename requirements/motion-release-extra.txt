@@ -1,0 +1,7 @@
+# Isolated optional inference target; preserve requirements/main.txt environment.
+# Install with --no-deps --target external/motion_lcm_python.
+diffusers==0.25.0
+huggingface_hub==0.25.2
+sentence-transformers==2.2.2
+sentencepiece==0.2.1
+nltk==3.9.1

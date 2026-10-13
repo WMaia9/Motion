@@ -1,0 +1,1484 @@
+{
+  "DEV": {
+    "split": "val",
+    "clips": 128,
+    "native_mirror_groups": 123,
+    "replicates": 10000,
+    "R1_candidate_count": 32,
+    "R1_repetition_count": 5,
+    "grouping": "strip leading M from native clip ID; not verified actor identity",
+    "candidate_pool_fixed_within_each_repetition": true,
+    "uncertainty_conditional_on_five_candidate_permutations": true,
+    "FID_descriptive_only": true,
+    "family_six_adaptive_source_target_endpoints": true,
+    "results": {
+      "real": {
+        "identity": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.45937500000000003,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0355300903320312,
+          "MM_distance_change": 0.0,
+          "MM_distance_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "actual_R1_after": 0.45937500000000003,
+          "FID_before": 0.0,
+          "FID_after": 0.0,
+          "canonical_embedding_max_absolute_change": 0.0,
+          "canonical_embedding_mean_L2_change": 0.0,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.45937500000000003,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0355300903320312,
+          "MM_distance_change": -1.909211277961731e-08,
+          "MM_distance_change_group_ci95": [
+            -6.433517213851686e-08,
+            2.468004822731018e-08
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -7.963251499902633e-08,
+            3.832841038307873e-08
+          ],
+          "actual_R1_after": 0.45937500000000003,
+          "FID_before": 0.0,
+          "FID_after": 0.0,
+          "canonical_embedding_max_absolute_change": 3.5762786865234375e-07,
+          "canonical_embedding_mean_L2_change": 1.228471319336677e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus005": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.46406250000000004,
+          "R1_change": 0.0046875,
+          "R1_change_group_ci95": [
+            -0.009448818897637797,
+            0.019847328244274806
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.014173228346456694,
+            0.025
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0364441871643066,
+          "MM_distance_change": 0.0009138896130025387,
+          "MM_distance_change_group_ci95": [
+            -0.015502465427672769,
+            0.01772339585037805
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.020977853704347033,
+            0.023379193128376406
+          ],
+          "actual_R1_after": 0.46406250000000004,
+          "FID_before": 0.0,
+          "FID_after": 0.01720198555858118,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3099117950332584e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus005": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.45625000000000004,
+          "R1_change": -0.0031249999999999997,
+          "R1_change_group_ci95": [
+            -0.014065268208661417,
+            0.008
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.018368173810921897,
+            0.013953488372093021
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0403895378112793,
+          "MM_distance_change": 0.00485951779410243,
+          "MM_distance_change_group_ci95": [
+            -0.01349482493892882,
+            0.023065756548661737
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.019238831485572906,
+            0.029409081105592493
+          ],
+          "actual_R1_after": 0.45625000000000004,
+          "FID_before": 0.0,
+          "FID_after": 0.02278081498134494,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3157184639567276e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus010": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.4515625,
+          "R1_change": -0.0078125,
+          "R1_change_group_ci95": [
+            -0.029037220843672457,
+            0.012598425196850392
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.03709677419354839,
+            0.01984732824427481
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0455658435821533,
+          "MM_distance_change": 0.010035677812993526,
+          "MM_distance_change_group_ci95": [
+            -0.02972508802544326,
+            0.04943771409237478
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.04212060004624257,
+            0.06293939738003117
+          ],
+          "actual_R1_after": 0.4515625,
+          "FID_before": 0.0,
+          "FID_after": 0.08119103441465664,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3137207588442834e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus010": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.45781250000000007,
+          "R1_change": -0.0015625000000000014,
+          "R1_change_group_ci95": [
+            -0.024193548387096774,
+            0.02096774193548387
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.03264398619186047,
+            0.02923076923076923
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0531163215637207,
+          "MM_distance_change": 0.017586207017302513,
+          "MM_distance_change_group_ci95": [
+            -0.026569622357105766,
+            0.06256689545869286
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.03981385737424716,
+            0.07948322468620578
+          ],
+          "actual_R1_after": 0.45781250000000007,
+          "FID_before": 0.0,
+          "FID_after": 0.12336185917139182,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3298370049596997e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus035": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.3890625,
+          "R1_change": -0.0703125,
+          "R1_change_group_ci95": [
+            -0.11162790697674418,
+            -0.0303030303030303
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.1268815331010453,
+            -0.015584120639534928
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.540893077850342,
+          "MM_distance_change": 0.5053626298904419,
+          "MM_distance_change_group_ci95": [
+            0.2997463694072905,
+            0.7089473329839252
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.2286559278912252,
+            0.7682911189911249
+          ],
+          "actual_R1_after": 0.3890625,
+          "FID_before": 0.0,
+          "FID_after": 2.324737348214656,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.314435166932526e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus035": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.3921875,
+          "R1_change": -0.06718750000000001,
+          "R1_change_group_ci95": [
+            -0.12444871794871792,
+            -0.0094488188976378
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.14406279069767441,
+            0.011053149606299181
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.699477195739746,
+          "MM_distance_change": 0.6639469861984253,
+          "MM_distance_change_group_ci95": [
+            0.43391826898559926,
+            0.8983526222918384
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.36690752223761036,
+            0.9923987074485469
+          ],
+          "actual_R1_after": 0.3921875,
+          "FID_before": 0.0,
+          "FID_after": 4.2362047080922505,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3190847312216647e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "random035_seed42": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 0.46562500000000007,
+          "R1_change": 0.006249999999999999,
+          "R1_change_group_ci95": [
+            -0.006299212598425198,
+            0.020799999999999996
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.010606060606060605,
+            0.0265625
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 3.0614840984344482,
+          "MM_distance_change": 0.02595389634370804,
+          "MM_distance_change_group_ci95": [
+            -0.005779594633299445,
+            0.05588870078428959
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.016484035094794455,
+            0.06575365956112299
+          ],
+          "actual_R1_after": 0.46562500000000007,
+          "FID_before": 0.0,
+          "FID_after": 0.04314363069473843,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3059650427749148e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "target_caption": {
+          "R1_before": 0.45937500000000003,
+          "R1_after": 1.0,
+          "R1_change": 0.5406249999999999,
+          "R1_change_group_ci95": [
+            0.4744142001409443,
+            0.6061550387596898
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.45079365079365075,
+            0.6313330462598425
+          ],
+          "MM_distance_before": 3.0355300903320312,
+          "MM_distance_after": 0.5978970527648926,
+          "MM_distance_change": -2.4376332759857178,
+          "MM_distance_change_group_ci95": [
+            -2.717832036788789,
+            -2.1815053260383195
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -2.824249366451488,
+            -2.0946456841374816
+          ],
+          "actual_R1_after": 1.0,
+          "FID_before": 0.0,
+          "FID_after": 1.15629042422917,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.299296854995191e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "shifted_caption": {
+          "R1_before": 0.015625,
+          "R1_after": 0.8015625,
+          "R1_change": 0.7859375,
+          "R1_change_group_ci95": [
+            0.7240254706533776,
+            0.8451650705645161
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.7017829236040151,
+            0.8652960234333392
+          ],
+          "MM_distance_before": 9.244736671447754,
+          "MM_distance_after": 1.2822761535644531,
+          "MM_distance_change": -7.962460517883301,
+          "MM_distance_change_group_ci95": [
+            -8.46147241815338,
+            -7.466852093594415
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -8.628877639195403,
+            -7.307366980707653
+          ],
+          "actual_R1_after": 0.028125000000000004,
+          "FID_before": 0.0,
+          "FID_after": 1.5161883261665858,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3170874808565713e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical_reader_shifted_caption": {
+          "R1_before": 0.015625,
+          "R1_after": 0.015625,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 9.244736671447754,
+          "MM_distance_after": 9.245373725891113,
+          "MM_distance_change": 0.0006373133510351181,
+          "MM_distance_change_group_ci95": [
+            0.0005662015173584223,
+            0.0007119942601625021
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0005432862149891466,
+            0.0007358463191050452
+          ],
+          "actual_R1_after": 0.45937500000000003,
+          "FID_before": 0.0,
+          "FID_after": 0.0,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2660286756727146e-06,
+          "readout_is_on_same_physical_motion": true
+        }
+      },
+      "mdm": {
+        "identity": {
+          "R1_before": 0.409375,
+          "R1_after": 0.409375,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.622131109237671,
+          "MM_distance_change": 0.0,
+          "MM_distance_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "actual_R1_after": 0.409375,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.1526797185327653,
+          "canonical_embedding_max_absolute_change": 0.0,
+          "canonical_embedding_mean_L2_change": 0.0,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical": {
+          "R1_before": 0.409375,
+          "R1_after": 0.409375,
+          "R1_change": -8.673617379884035e-19,
+          "R1_change_group_ci95": [
+            -0.006299212598425199,
+            0.00625
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.00802177419354839,
+            0.007936507936507936
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.6188106536865234,
+          "MM_distance_change": -0.0033204052597284317,
+          "MM_distance_change_group_ci95": [
+            -0.010582447982471824,
+            0.0028719246858557616
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.013691461123458405,
+            0.004532797225835023
+          ],
+          "actual_R1_after": 0.409375,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.1508108401235724,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3113640306983143e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus005": {
+          "R1_before": 0.409375,
+          "R1_after": 0.40625,
+          "R1_change": -0.0031250000000000006,
+          "R1_change_group_ci95": [
+            -0.024,
+            0.016666666666666663
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.031746031746031744,
+            0.022900763358778626
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.617098808288574,
+          "MM_distance_change": -0.0050323414616286755,
+          "MM_distance_change_group_ci95": [
+            -0.02098451949829279,
+            0.01092098312718527
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.0264197688218134,
+            0.016347139728320505
+          ],
+          "actual_R1_after": 0.40625,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.185220690873488,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2951259122928604e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus005": {
+          "R1_before": 0.409375,
+          "R1_after": 0.4046875,
+          "R1_change": -0.0046875,
+          "R1_change_group_ci95": [
+            -0.015748031496062992,
+            0.006201550387596899
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.02063492063492063,
+            0.009474128233970728
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.6232995986938477,
+          "MM_distance_change": 0.0011685369536280632,
+          "MM_distance_change_group_ci95": [
+            -0.017223565996162534,
+            0.019335393820490133
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.0238022562120642,
+            0.02517870657964093
+          ],
+          "actual_R1_after": 0.4046875,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.1270871072696602,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2943573892698623e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus010": {
+          "R1_before": 0.409375,
+          "R1_after": 0.403125,
+          "R1_change": -0.006250000000000002,
+          "R1_change_group_ci95": [
+            -0.035937500000000004,
+            0.02121212121212121
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.047244094488188976,
+            0.031007751937984496
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.615826368331909,
+          "MM_distance_change": -0.006304856389760971,
+          "MM_distance_change_group_ci95": [
+            -0.0420146464280412,
+            0.02872073470160018
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.055015535408165304,
+            0.042578372466626706
+          ],
+          "actual_R1_after": 0.403125,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.2444641838140893,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3053038401267258e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus010": {
+          "R1_before": 0.409375,
+          "R1_after": 0.3984375,
+          "R1_change": -0.0109375,
+          "R1_change_group_ci95": [
+            -0.031007751937984496,
+            0.009230769230769232
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.0390625,
+            0.015544755329457321
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.6335835456848145,
+          "MM_distance_change": 0.011452491395175457,
+          "MM_distance_change_group_ci95": [
+            -0.0341403014077915,
+            0.05656585436640674
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.04705654615600498,
+            0.07212016757735765
+          ],
+          "actual_R1_after": 0.3984375,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.1268474173500453,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3134458640706725e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus035": {
+          "R1_before": 0.409375,
+          "R1_after": 0.340625,
+          "R1_change": -0.06875,
+          "R1_change_group_ci95": [
+            -0.1171875,
+            -0.02343295784883727
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.134375,
+            -0.007812499999999999
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 4.013171195983887,
+          "MM_distance_change": 0.3910403251647949,
+          "MM_distance_change_group_ci95": [
+            0.19528105480933755,
+            0.5816608991273096
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.12684887593738572,
+            0.6445126837049484
+          ],
+          "actual_R1_after": 0.340625,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 3.113281494429734,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3025724001636263e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus035": {
+          "R1_before": 0.409375,
+          "R1_after": 0.35468750000000004,
+          "R1_change": -0.054687500000000014,
+          "R1_change_group_ci95": [
+            -0.11297709923664123,
+            0.0046875000000000016
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.13560331569881887,
+            0.02387380952380945
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 4.012325286865234,
+          "MM_distance_change": 0.3901941776275635,
+          "MM_distance_change_group_ci95": [
+            0.16250119374266692,
+            0.6179636832883976
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.09611298015858276,
+            0.7087500617366566
+          ],
+          "actual_R1_after": 0.35468750000000004,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 3.3817438072026595,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3031792605033843e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "random035_seed42": {
+          "R1_before": 0.409375,
+          "R1_after": 0.4,
+          "R1_change": -0.009375,
+          "R1_change_group_ci95": [
+            -0.025396825396825393,
+            0.004799999999999999
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.03152403646912557,
+            0.009600000000000001
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 3.6317248344421387,
+          "MM_distance_change": 0.009593678638339043,
+          "MM_distance_change_group_ci95": [
+            -0.019008427889551965,
+            0.03809599810912859
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.02851564517588399,
+            0.047579170235776944
+          ],
+          "actual_R1_after": 0.4,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.127862964929517,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3124858924129512e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "target_caption": {
+          "R1_before": 0.409375,
+          "R1_after": 0.990625,
+          "R1_change": 0.58125,
+          "R1_change_group_ci95": [
+            0.5129001940334706,
+            0.6480620155038759
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.48923076923076925,
+            0.6704993540846456
+          ],
+          "MM_distance_before": 3.622131109237671,
+          "MM_distance_after": 0.6427578926086426,
+          "MM_distance_change": -2.9793732166290283,
+          "MM_distance_change_group_ci95": [
+            -3.337354762091209,
+            -2.6430182131343525
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -3.4711277862361896,
+            -2.527019528810097
+          ],
+          "actual_R1_after": 0.990625,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.1726664335349297,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3125143141223816e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "shifted_caption": {
+          "R1_before": 0.018750000000000003,
+          "R1_after": 0.759375,
+          "R1_change": 0.7406250000000001,
+          "R1_change_group_ci95": [
+            0.6730121816168327,
+            0.80647550776583
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.6493445950070195,
+            0.82659765625
+          ],
+          "MM_distance_before": 9.229825973510742,
+          "MM_distance_after": 1.707279086112976,
+          "MM_distance_change": -7.522546291351318,
+          "MM_distance_change_group_ci95": [
+            -8.032518465821143,
+            -7.021427747235187
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -8.208304797295273,
+            -6.850176759935707
+          ],
+          "actual_R1_after": 0.025,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.6118575614778963,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3109852261550259e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical_reader_shifted_caption": {
+          "R1_before": 0.018750000000000003,
+          "R1_after": 0.018750000000000003,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 9.229825973510742,
+          "MM_distance_after": 9.229833602905273,
+          "MM_distance_change": 8.723698556423187e-06,
+          "MM_distance_change_group_ci95": [
+            3.046583011944807e-06,
+            1.4846690865450128e-05
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            1.037521843812359e-06,
+            1.704219607285379e-05
+          ],
+          "actual_R1_after": 0.409375,
+          "FID_before": 1.1526797185327653,
+          "FID_after": 1.152680352221275,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.304051238548709e-06,
+          "readout_is_on_same_physical_motion": true
+        }
+      }
+    },
+    "source_code_sha256": "f4df797d234408133bb14cb7417488c88d863af0a92d927bff2220bf3ee09160"
+  },
+  "TEST": {
+    "split": "test",
+    "clips": 1024,
+    "native_mirror_groups": 911,
+    "replicates": 10000,
+    "R1_candidate_count": 32,
+    "R1_repetition_count": 5,
+    "grouping": "strip leading M from native clip ID; not verified actor identity",
+    "candidate_pool_fixed_within_each_repetition": true,
+    "uncertainty_conditional_on_five_candidate_permutations": true,
+    "FID_descriptive_only": true,
+    "family_six_adaptive_source_target_endpoints": true,
+    "results": {
+      "real": {
+        "identity": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.4623046875,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.1996002197265625,
+          "MM_distance_change": 0.0,
+          "MM_distance_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "actual_R1_after": 0.4623046875,
+          "FID_before": 0.0,
+          "FID_after": 0.0,
+          "canonical_embedding_max_absolute_change": 0.0,
+          "canonical_embedding_mean_L2_change": 0.0,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.4623046875,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.1996002197265625,
+          "MM_distance_change": 5.005858838558197e-09,
+          "MM_distance_change_group_ci95": [
+            -1.1328511151535549e-08,
+            2.131664085625888e-08
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -1.6714898243479768e-08,
+            2.6381454553213668e-08
+          ],
+          "actual_R1_after": 0.4623046875,
+          "FID_before": 0.0,
+          "FID_after": 4.961267572440274e-10,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.234547653439222e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus005": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.45703125,
+          "R1_change": -0.0052734375,
+          "R1_change_group_ci95": [
+            -0.010495626822157433,
+            -7.536615846822904e-19
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.012237021993263326,
+            0.0015574441941429429
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.1959776878356934,
+          "MM_distance_change": -0.0036226208321750164,
+          "MM_distance_change_group_ci95": [
+            -0.010837848225825623,
+            0.00371272871667236
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.013193241371367887,
+            0.0061101391406013904
+          ],
+          "actual_R1_after": 0.45703125,
+          "FID_before": 0.0,
+          "FID_after": 0.012896599230785868,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3102335287840106e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus005": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.4591796875,
+          "R1_change": -0.003125,
+          "R1_change_group_ci95": [
+            -0.008382270717444015,
+            0.002163225172074729
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.01038885562173743,
+            0.003917727717923604
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.2117018699645996,
+          "MM_distance_change": 0.012101677246391773,
+          "MM_distance_change_group_ci95": [
+            0.004607304660226509,
+            0.01957318107445888
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0023841038980382556,
+            0.021880510682300368
+          ],
+          "actual_R1_after": 0.4591796875,
+          "FID_before": 0.0,
+          "FID_after": 0.014597916463329835,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3220244454714702e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus010": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.45859375,
+          "R1_change": -0.0037109375,
+          "R1_change_group_ci95": [
+            -0.01142317798368137,
+            0.0041016627336876825
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.014131702238417488,
+            0.006583258944097937
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.2078046798706055,
+          "MM_distance_change": 0.008204737678170204,
+          "MM_distance_change_group_ci95": [
+            -0.006464881703243135,
+            0.02323576539635625
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.011190755173270627,
+            0.028018244705773743
+          ],
+          "actual_R1_after": 0.45859375,
+          "FID_before": 0.0,
+          "FID_after": 0.0615669184420496,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3276579693410895e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus010": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.4564453125,
+          "R1_change": -0.005859375000000002,
+          "R1_change_group_ci95": [
+            -0.013854335645995756,
+            0.002171928298456696
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.016579862314988175,
+            0.004924721352292386
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.2377381324768066,
+          "MM_distance_change": 0.03813807666301727,
+          "MM_distance_change_group_ci95": [
+            0.021279623234783482,
+            0.0548167956994794
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.016148958293636467,
+            0.06087728513084894
+          ],
+          "actual_R1_after": 0.4564453125,
+          "FID_before": 0.0,
+          "FID_after": 0.08073963851610855,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3283304269862128e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus035": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.40078125,
+          "R1_change": -0.0615234375,
+          "R1_change_group_ci95": [
+            -0.0798837928697612,
+            -0.04302262510893996
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.08644967718794835,
+            -0.0358418292535666
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.6673710346221924,
+          "MM_distance_change": 0.4677708148956299,
+          "MM_distance_change_group_ci95": [
+            0.40107555048203,
+            0.5377994367953286
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.38013617519707293,
+            0.5593924366624177
+          ],
+          "actual_R1_after": 0.40078125,
+          "FID_before": 0.0,
+          "FID_after": 2.0321450686470532,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.327093741565477e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus035": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.3759765625,
+          "R1_change": -0.086328125,
+          "R1_change_group_ci95": [
+            -0.10670553935860055,
+            -0.06679306716338962
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.11451683257064678,
+            -0.060596393329598895
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.8497767448425293,
+          "MM_distance_change": 0.6501768231391907,
+          "MM_distance_change_group_ci95": [
+            0.563082722549311,
+            0.7386944268733059
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.5289172904646444,
+            0.770772887061941
+          ],
+          "actual_R1_after": 0.3759765625,
+          "FID_before": 0.0,
+          "FID_after": 3.5466808236557483,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3146843684808118e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "random035_seed42": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.4560546875,
+          "R1_change": -0.006250000000000001,
+          "R1_change_group_ci95": [
+            -0.01262140709676184,
+            0.0001962756737893583
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.015072162426614476,
+            0.002729083305440599
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 3.21860408782959,
+          "MM_distance_change": 0.019004032015800476,
+          "MM_distance_change_group_ci95": [
+            0.008584322669853596,
+            0.029135077967247406
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.004887935257822762,
+            0.032441535075277264
+          ],
+          "actual_R1_after": 0.4560546875,
+          "FID_before": 0.0,
+          "FID_after": 0.026508735229343085,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3267130043459474e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "target_caption": {
+          "R1_before": 0.4623046875,
+          "R1_after": 0.99609375,
+          "R1_change": 0.5337890624999999,
+          "R1_change_group_ci95": [
+            0.5100588884799409,
+            0.5577508017660955
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.5026389961334888,
+            0.5666340181307419
+          ],
+          "MM_distance_before": 3.1996002197265625,
+          "MM_distance_after": 0.6131253242492676,
+          "MM_distance_change": -2.586474895477295,
+          "MM_distance_change_group_ci95": [
+            -2.6888349328211745,
+            -2.486454574614804
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -2.725127433065577,
+            -2.4582442004680227
+          ],
+          "actual_R1_after": 0.99609375,
+          "FID_before": 0.0,
+          "FID_after": 1.3106046181462905,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.325935613749607e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "shifted_caption": {
+          "R1_before": 0.0283203125,
+          "R1_after": 0.8390625,
+          "R1_change": 0.8107421874999999,
+          "R1_change_group_ci95": [
+            0.7898689789725114,
+            0.8313919913221148
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.7816683369776481,
+            0.8380079897263961
+          ],
+          "MM_distance_before": 9.597870826721191,
+          "MM_distance_after": 1.4788861274719238,
+          "MM_distance_change": -8.11898422241211,
+          "MM_distance_change_group_ci95": [
+            -8.306710148612483,
+            -7.940409271591069
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -8.373270970595673,
+            -7.870148355781976
+          ],
+          "actual_R1_after": 0.030468750000000003,
+          "FID_before": 0.0,
+          "FID_after": 2.2467477779468914,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3310261692822678e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical_reader_shifted_caption": {
+          "R1_before": 0.0283203125,
+          "R1_after": 0.0283203125,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 9.597870826721191,
+          "MM_distance_after": 9.598564147949219,
+          "MM_distance_change": 0.0006940593011677265,
+          "MM_distance_change_group_ci95": [
+            0.0006548769212095621,
+            0.0007356610164623718
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0006438560909477267,
+            0.000752809437571674
+          ],
+          "actual_R1_after": 0.462109375,
+          "FID_before": 0.0,
+          "FID_after": 3.140677719522863e-07,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2984301065444015e-06,
+          "readout_is_on_same_physical_motion": true
+        }
+      },
+      "mdm": {
+        "identity": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.397265625,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.582486867904663,
+          "MM_distance_change": 0.0,
+          "MM_distance_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "actual_R1_after": 0.397265625,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.36916672638140746,
+          "canonical_embedding_max_absolute_change": 0.0,
+          "canonical_embedding_mean_L2_change": 0.0,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.398046875,
+          "R1_change": 0.0007812499999999994,
+          "R1_change_group_ci95": [
+            -0.0019607843137254915,
+            0.003636625370790434
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.002944062806673209,
+            0.004678362573099415
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.5804200172424316,
+          "MM_distance_change": -0.002066792454570532,
+          "MM_distance_change_group_ci95": [
+            -0.00422450381763269,
+            1.6976638255337875e-05
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.005055112451414743,
+            0.0007073999850254021
+          ],
+          "actual_R1_after": 0.398046875,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.36551770833165076,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.3177930213714717e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus005": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.401171875,
+          "R1_change": 0.00390625,
+          "R1_change_group_ci95": [
+            -0.000984251968503936,
+            0.008823745886971076
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.002737951766895646,
+            0.010869720856587127
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.578733205795288,
+          "MM_distance_change": -0.0037536313757300377,
+          "MM_distance_change_group_ci95": [
+            -0.010322755546287055,
+            0.002790651602197729
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.012828593622942244,
+            0.005077131628011861
+          ],
+          "actual_R1_after": 0.401171875,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.39060041728796535,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.2985715329705272e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus005": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.39609375,
+          "R1_change": -0.0011718750000000004,
+          "R1_change_group_ci95": [
+            -0.006201550387596899,
+            0.0038352752856746788
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.00790777729559822,
+            0.005337749674528798
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.5880346298217773,
+          "MM_distance_change": 0.005547551903873682,
+          "MM_distance_change_group_ci95": [
+            -0.0017135397591349895,
+            0.012809850900380577
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.004175653331768456,
+            0.01563226031576961
+          ],
+          "actual_R1_after": 0.39609375,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.34602415729419883,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3027221257289057e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus010": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.403125,
+          "R1_change": 0.005859375,
+          "R1_change_group_ci95": [
+            -0.0011811023622047235,
+            0.013009708737864075
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.003669149739801913,
+            0.015715915382706117
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.581899881362915,
+          "MM_distance_change": -0.0005869010929018259,
+          "MM_distance_change_group_ci95": [
+            -0.014151139260628701,
+            0.01279697496415724
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.019098714188511175,
+            0.01765222680748625
+          ],
+          "actual_R1_after": 0.403125,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.42399608526920235,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.294452658839873e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus010": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.3921875,
+          "R1_change": -0.005078125,
+          "R1_change_group_ci95": [
+            -0.012941318556408071,
+            0.0027424766184632526
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.01559967669852137,
+            0.005313265617507302
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.59951114654541,
+          "MM_distance_change": 0.017024414613842964,
+          "MM_distance_change_group_ci95": [
+            0.000986037319743014,
+            0.0334636688467229
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.004120625919490004,
+            0.03992796418705988
+          ],
+          "actual_R1_after": 0.3921875,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.34694119761693126,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2938162399223074e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_plus035": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.36464843750000003,
+          "R1_change": -0.032617187500000006,
+          "R1_change_group_ci95": [
+            -0.04921882599708171,
+            -0.01586664570139261
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.054969327018540605,
+            -0.010018974453905986
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.9044952392578125,
+          "MM_distance_change": 0.32200825214385986,
+          "MM_distance_change_group_ci95": [
+            0.2575987413274594,
+            0.3843318611402331
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.23295553156263477,
+            0.40670077594229775
+          ],
+          "actual_R1_after": 0.36464843750000003,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 2.124585135421593,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.3100427622703137e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "global_minus035": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.3369140625,
+          "R1_change": -0.0603515625,
+          "R1_change_group_ci95": [
+            -0.07741359689316889,
+            -0.04315260882678196
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.08317143206256108,
+            -0.03673174455312328
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 4.051821231842041,
+          "MM_distance_change": 0.4693344533443451,
+          "MM_distance_change_group_ci95": [
+            0.3798376466952115,
+            0.5599227002492814
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            0.3451977765408083,
+            0.5925161074266778
+          ],
+          "actual_R1_after": 0.3369140625,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 3.4325597893487307,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.3050498637312558e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "random035_seed42": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.3888671875,
+          "R1_change": -0.0083984375,
+          "R1_change_group_ci95": [
+            -0.014090019569471623,
+            -0.0027370478983382214
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            -0.016062683643486775,
+            -0.0007820056321893944
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 3.582101345062256,
+          "MM_distance_change": -0.0003854223759844899,
+          "MM_distance_change_group_ci95": [
+            -0.009448446985449369,
+            0.00894948953155273
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -0.01266815584133745,
+            0.012062039679358016
+          ],
+          "actual_R1_after": 0.3888671875,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.3179591254826102,
+          "canonical_embedding_max_absolute_change": 5.960464477539062e-07,
+          "canonical_embedding_mean_L2_change": 1.2995252518521738e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "target_caption": {
+          "R1_before": 0.397265625,
+          "R1_after": 0.9927734375,
+          "R1_change": 0.5955078125,
+          "R1_change_group_ci95": [
+            0.5726106349956138,
+            0.6194743234500691
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.5645354721966912,
+            0.6271831917412548
+          ],
+          "MM_distance_before": 3.582486867904663,
+          "MM_distance_after": 0.6593661308288574,
+          "MM_distance_change": -2.9231207370758057,
+          "MM_distance_change_group_ci95": [
+            -3.0432145831410686,
+            -2.8080835630053995
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -3.0853663845095833,
+            -2.7640693723528056
+          ],
+          "actual_R1_after": 0.9927734375,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 1.2874493760684713,
+          "canonical_embedding_max_absolute_change": 7.152557373046875e-07,
+          "canonical_embedding_mean_L2_change": 1.304832494497532e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "shifted_caption": {
+          "R1_before": 0.0326171875,
+          "R1_after": 0.7875000000000001,
+          "R1_change": 0.7548828125,
+          "R1_change_group_ci95": [
+            0.7317064668156642,
+            0.7779749276898376
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.7237119604752669,
+            0.7869651984450791
+          ],
+          "MM_distance_before": 9.740495681762695,
+          "MM_distance_after": 1.8208153247833252,
+          "MM_distance_change": -7.919680118560791,
+          "MM_distance_change_group_ci95": [
+            -8.103677612389859,
+            -7.738354065098781
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            -8.169414425273889,
+            -7.6666248762958595
+          ],
+          "actual_R1_after": 0.0357421875,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 2.351747369318872,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2986176898266422e-06,
+          "readout_is_on_same_physical_motion": true
+        },
+        "canonical_reader_shifted_caption": {
+          "R1_before": 0.0326171875,
+          "R1_after": 0.0326171875,
+          "R1_change": 0.0,
+          "R1_change_group_ci95": [
+            0.0,
+            0.0
+          ],
+          "R1_change_group_family_ci95_six_endpoints": [
+            0.0,
+            0.0
+          ],
+          "MM_distance_before": 9.740495681762695,
+          "MM_distance_after": 9.740507125854492,
+          "MM_distance_change": 1.1975876986980438e-05,
+          "MM_distance_change_group_ci95": [
+            1.0232077685248401e-05,
+            1.3843151928351015e-05
+          ],
+          "MM_distance_change_group_family_ci95_six_endpoints": [
+            9.644318172876927e-06,
+            1.4545488481594825e-05
+          ],
+          "actual_R1_after": 0.397265625,
+          "FID_before": 0.36916672638140746,
+          "FID_after": 0.36917139451448183,
+          "canonical_embedding_max_absolute_change": 4.76837158203125e-07,
+          "canonical_embedding_mean_L2_change": 1.2983707620151108e-06,
+          "readout_is_on_same_physical_motion": true
+        }
+      }
+    },
+    "source_code_sha256": "f4df797d234408133bb14cb7417488c88d863af0a92d927bff2220bf3ee09160"
+  },
+  "no_native_sort_metric_differences": true,
+  "not_a_leaderboard_reproduction": true
+}

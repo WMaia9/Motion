@@ -1,0 +1,33 @@
+{
+  "declared_after": "Primary reconstruction and fixed gauge PHOENIX/How2Sign controls inspected; before optimized attack metrics",
+  "purpose": "Targeted evaluation stress test, not generation, cryptography, anonymization or SOTA. Attack explicitly sees target captions on DEV. No TEST.",
+  "datasets": [
+    "PHOENIX-2014T",
+    "How2Sign"
+  ],
+  "sampling": "numpy default_rng(20261010), choose64 distinct fullDEV clips without metric-based selection; sorted indices; per-corpus same seed",
+  "targets": [
+    "correct_caption",
+    "rolled_wrong_caption"
+  ],
+  "steps": 80,
+  "optimizer": "Adam lr0.1",
+  "batch_size": 8,
+  "initialization": "zero learnable [T,40,3] gauge parameters",
+  "gauge": "alpha=exp(0.35*tanh(u)), beta=exp(0.35*tanh(v)), gamma=0.35*tanh(w). a_new=alpha*a, b_new=beta*b+gamma*a. Same canonical rotations mathematically. Padding untouched.",
+  "objective": "Teacher forced cross entropy in fixed released reader. Network weights frozen. No decoder checkpoint selection. Output after exactly80 updates.",
+  "evaluation": [
+    "raw reader decoded BLEU/chrF/ROUGE vs target and actual reference",
+    "canonicalized reader before/after attack",
+    "official row6D rotation max angle",
+    "changed translation sentences",
+    "float parameter deltas"
+  ],
+  "limits": [
+    "Public gradient access and oracle target captions",
+    "64 sampled DEV per corpus, not full official benchmark",
+    "Backtranslation proxies only, no human assessment",
+    "Meshes not rendered; same rotations verified numerically with official parameter conversion",
+    "Canonical defense is classic normalization, not a new mathematical primitive"
+  ]
+}

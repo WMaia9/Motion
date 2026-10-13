@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-10",
+  "scope": "Sign languages generally: DGS PHOENIX and ASL How2Sign. Brazilian Libras is additional evidence.",
+  "protocol": "Frozen before any DEV decoder metrics. Full released DEV, no TEST downloaded or used. Existing released evaluator, no parameter training/tuning.",
+  "conditions": [
+    "original",
+    "so3_roundtrip",
+    "fp16_roundtrip",
+    "reverse_time",
+    "identity_hands",
+    "sparse_stride10_linear6d",
+    "sparse_stride10_projected6d",
+    "sparse_stride10_slerp"
+  ],
+  "primary_question": "Does geodesic SO(3) interpolation between identical sparse reference anchors preserve reader semantics better than Euclidean 6D interpolation?",
+  "anchors": "Every 10 frames, plus last frame, of reference DEV motion. Oracle reference anchors and original duration; this is densification/reconstruction, NOT text-only generation.",
+  "projection": "Gram-Schmidt row6D convention will be checked against actual source feature norms before scores.",
+  "metrics": [
+    "native corpus BLEU1-4",
+    "chrF",
+    "ROUGE",
+    "reader hypotheses",
+    "rotation orthogonality/validity"
+  ],
+  "limits": [
+    "Released reader ignores face",
+    "Reader scores are proxies, not human comprehensibility",
+    "No identity or anonymity experiment",
+    "SMPL-H geometry unavailable, user confirmed no model",
+    "Scores not comparable to UniSign 13.39 or paper original unreoptimized reader"
+  ],
+  "code_revision": "8dd7cdf533cd0ee5021c2c350ab4a54e6d2f4cf4",
+  "data_revision": "9fe7e04ef59204c787cd6094c747f889efff6ba0",
+  "weights_revision": "0ced459f6c24d453893809eeca87e9ec80b70198"
+}

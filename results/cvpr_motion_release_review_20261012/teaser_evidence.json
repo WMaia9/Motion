@@ -1,0 +1,19 @@
+{
+  "source_clip": "004652",
+  "illustration_index": 0,
+  "selection": "first fixed TEST item, not chosen by an attack result",
+  "caption": "a person walks straight forward.",
+  "rendering": "native RIC skeleton from saved MDM features, no avatar/mesh model",
+  "RIC_positions_bitwise_equal": true,
+  "scores_are_cohort_aggregate_not_per_clip": true,
+  "cohort_clips": 1024,
+  "R1_before": 0.397265625,
+  "R1_after": 0.9927734375,
+  "inputs_sha256": {
+    "reports/cvpr_humanml3d_audit_20261012/test_mdm.npz": "5a26bb85902ae906f3c746cf795907f63bafa1401aefacd8408eebe9fe797579",
+    "reports/cvpr_humanml3d_audit_20261012/test/mdm/target_caption.npz": "f760acc7b75026e78cc753ed0d04cf304100beb03b25a8731f39365625d4551d",
+    "reports/cvpr_humanml3d_audit_20261012/test_analysis.json": "2a6f5d978b0ccac63cec84a86cdf7ac635cac6eb05c8ff9354b2e2f7e7523546"
+  },
+  "figure_sha256": "9f135af55c21b0030633b27c7de4df3d5aa0194eb98f612bd3ae3715b51bd8fe",
+  "producer_sha256": "108ac9329e45f939f691590a96dde5a6afadd41056c8771680175e835a669f51"
+}

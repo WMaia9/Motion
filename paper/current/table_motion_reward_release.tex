@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{\textbf{Released MotionRFT and its author-linked base.} Five matched generation seeds; 1,024 outputs and 4,640 real-reference embeddings per repetition, two official readers. Eight raw$-C$ endpoints share one interval family. This supplemental diagnostic is separate from the 20-repetition audit and published leaderboard numbers. Retrieval gains survive canonicalization.}
+\label{tab:rewardrelease}
+\begin{tabular}{llrrrrrr}\toprule
+Reader&Release&Raw FID&$C$ FID&FID gap interval&Raw R1&$C$ R1&R1 gap interval\\\midrule
+MDM reader&Linked base&0.573&0.589&$[-0.0390,+0.0066]$&0.4344&0.4344&$[-0.0081,+0.0081]$\\
+MDM reader&Reward-tuned&0.264&0.228&$[+0.0276,+0.0451]$&0.5141&0.5143&$[-0.0127,+0.0123]$\\
+GPT reader&Linked base&0.463&0.466&$[-0.0098,+0.0037]$&0.5045&0.5045&$[-0.0099,+0.0099]$\\
+GPT reader&Reward-tuned&0.166&0.138&$[+0.0081,+0.0484]$&0.5869&0.5857&$[-0.0090,+0.0114]$\\
+\bottomrule\end{tabular}\end{table*}

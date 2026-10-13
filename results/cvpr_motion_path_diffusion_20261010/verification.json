@@ -1,0 +1,27 @@
+{
+  "new_training_arms": 5,
+  "epochs_per_arm": 5,
+  "train_dev_overlap": 0,
+  "new_generated_clips": 768,
+  "baseline_weights_bitwise_replayed": true,
+  "baseline_hypotheses_exactly_replayed_in_both_readers": true,
+  "first_epoch_stochastic_audits_equal": true,
+  "TRAIN_only_scales_count_verified": true,
+  "math_checks": {
+    "numpy_signature_max_error": 1.3322676295501878e-15,
+    "numpy_time_signature_max_error": 1.3322676295501878e-15,
+    "finite_gauge_invariance_max_error": 1.199040866595169e-14,
+    "vertical_signature_jvp_max_error": 8.46974487954046e-15,
+    "closed_reversed_loop_same_endpoints_and_velocity_energy": true,
+    "closed_loop_area_difference_norm": 0.9985082207222966,
+    "polygonal_subdivision_max_error": 8.881784197001252e-16,
+    "subdivision_is_embedding_polyline_not_SO3_geodesic": true,
+    "truncated_signature_does_not_uniquely_identify_signs": true,
+    "dtype": "float64",
+    "seed": 2027
+  },
+  "no_reader_or_gloss_used_in_training": true,
+  "TEST_used": false,
+  "multiple_train_seeds": false,
+  "mesh_rendered": false
+}

@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "all_five_releases20repetitions": true,
+  "methods": {
+    "mdm50": {
+      "clips": 20480,
+      "max_rotation_error_deg": 3.414075715559671e-06,
+      "max_native_converter_error": 2.294778823852539e-06,
+      "saved_metric_error": 0.0,
+      "minimum_valid_a_norm": 0.01956742439884057,
+      "minimum_valid_b_orthogonal_norm": 0.0020218932442982065
+    },
+    "mld": {
+      "clips": 92800,
+      "max_rotation_error_deg": 3.5005286915177914e-06,
+      "max_native_converter_error": 8.165836334228516e-06,
+      "saved_metric_error": 0.0,
+      "minimum_valid_a_norm": 0.0027323785923236716,
+      "minimum_valid_b_orthogonal_norm": 0.0008841603926169268
+    },
+    "motionlcm_v1": {
+      "clips": 92800,
+      "max_rotation_error_deg": 3.5632501728685297e-06,
+      "max_native_converter_error": 1.9937753677368164e-05,
+      "saved_metric_error": 0.0,
+      "minimum_valid_a_norm": 0.007691261250922582,
+      "minimum_valid_b_orthogonal_norm": 0.0003362143435286851
+    },
+    "t2mgpt": {
+      "clips": 92800,
+      "max_rotation_error_deg": 3.5239047351513006e-06,
+      "max_native_converter_error": 4.351139068603516e-06,
+      "saved_metric_error": 0.0,
+      "minimum_valid_a_norm": 0.008391629771264722,
+      "minimum_valid_b_orthogonal_norm": 0.001058487262356709
+    },
+    "t2m": {
+      "clips": 92800,
+      "max_rotation_error_deg": 3.5189766565272764e-06,
+      "max_native_converter_error": 4.231929779052734e-06,
+      "saved_metric_error": 0.0,
+      "minimum_valid_a_norm": 0.006094817971523646,
+      "minimum_valid_b_orthogonal_norm": 0.0004174911746838105
+    }
+  },
+  "native_FK_pairs": 200,
+  "max_native_FK_position_error": 9.5367431640625e-07,
+  "max_rotation_error_deg": 3.5632501728685297e-06,
+  "protected_channels_bitwise_equal": true,
+  "native_saved_embedding_metrics_recomputed": true,
+  "geometry_check_code_sha256": "1161475565707978649c9b413085c91a6d3e131061f5e26c4a6134888dc94f16",
+  "not_a_human_quality_or_intentional_exploitation_test": true
+}

@@ -1,0 +1,216 @@
+{
+  "layout": {
+    "main": {
+      "pdf_sha256": "3d6125644d9d88d5e7c5fa1c744dc1047507b33ae5c258b9f4a910ac7d3e877f",
+      "total_pages": 8,
+      "content_pages": 7,
+      "reference_pages": 1,
+      "body_words_checked_for_margin_overflow": 4624,
+      "all_fonts_embedded": true,
+      "Times_text_font_from_unmodified_CVPR_style": true,
+      "no_Type3_fonts": true,
+      "no_font_substitution_or_missing_glyphs": true,
+      "ghostscript_integrity_passed": true,
+      "latex_reference_and_box_checks_passed": true
+    },
+    "supplement": {
+      "pdf_sha256": "5d8f37ccb4c6599f039d60e31f96aa9d3e31af37a0d7bd180e3bcaae4bafaabe",
+      "total_pages": 6,
+      "content_pages": 5,
+      "reference_pages": 1,
+      "body_words_checked_for_margin_overflow": 3234,
+      "all_fonts_embedded": true,
+      "Times_text_font_from_unmodified_CVPR_style": true,
+      "no_Type3_fonts": true,
+      "no_font_substitution_or_missing_glyphs": true,
+      "ghostscript_integrity_passed": true,
+      "latex_reference_and_box_checks_passed": true
+    },
+    "visual_inspection": "All 8 main and 6 supplement pages rendered and reviewed; final hash wrapping checked separately.",
+    "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+    "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404"
+  },
+  "references": {
+    "references": {
+      "zhou2019": {
+        "title_and_author_order_match": true,
+        "source": "zhou2019.html",
+        "year": "2019",
+        "pages_match_when_metadata_available": true
+      },
+      "camgoz2018": {
+        "title_and_author_order_match": true,
+        "source": "camgoz2018.html",
+        "year": "2018",
+        "pages_match_when_metadata_available": true
+      },
+      "camgoz2020": {
+        "title_and_author_order_match": true,
+        "source": "camgoz2020.html",
+        "year": "2020",
+        "pages_match_when_metadata_available": true
+      },
+      "duarte2021": {
+        "title_and_author_order_match": true,
+        "source": "duarte2021.html",
+        "year": "2021",
+        "pages_match_when_metadata_available": true
+      },
+      "zhou2021": {
+        "title_and_author_order_match": true,
+        "source": "zhou2021.html",
+        "year": "2021",
+        "pages_match_when_metadata_available": true
+      },
+      "low2026": {
+        "title_and_author_order_match": true,
+        "source": "signspark.html",
+        "year": "2026",
+        "pages_match_when_metadata_available": true
+      },
+      "imai2025": {
+        "title_and_author_order_match": true,
+        "source": "silver.html",
+        "year": "2025",
+        "pages_match_when_metadata_available": true
+      },
+      "cory2026": {
+        "title_and_author_order_match": true,
+        "source": "bt2.html",
+        "year": "2026",
+        "pages_match_when_metadata_available": true
+      },
+      "symeonidis2026": {
+        "title_and_author_order_match": true,
+        "source": "m3t.html",
+        "year": "2026",
+        "pages_match_when_metadata_available": true
+      },
+      "ho2020": {
+        "title_and_author_order_match": true,
+        "source": "ddpm.html",
+        "year": "2020",
+        "pages_match_when_metadata_available": true
+      },
+      "song2021": {
+        "title_and_author_order_match": true,
+        "source": "ddim.html",
+        "year": "2021",
+        "pages_match_when_metadata_available": true
+      },
+      "ho2022": {
+        "title_and_author_order_match": true,
+        "source": "cfg.html",
+        "year": "2022",
+        "pages_match_when_metadata_available": true
+      },
+      "saunders2020": {
+        "title_and_author_order_match": true,
+        "source": "progressive.html",
+        "year": "2020",
+        "pages_match_when_metadata_available": true
+      },
+      "liu2024": {
+        "title_and_author_order_match": true,
+        "source": "liu2024.html",
+        "year": "2024",
+        "pages_match_when_metadata_available": true
+      },
+      "yin2024": {
+        "title_authors_year_DOI_pages_match": true,
+        "source": "t2sgpt.bib"
+      },
+      "papineni2002": {
+        "title_authors_year_DOI_pages_match": true,
+        "source": "bleu.bib"
+      },
+      "post2018": {
+        "title_authors_year_DOI_pages_match": true,
+        "source": "sacrebleu.bib"
+      },
+      "li2023": {
+        "title_authors_match_author_PDF": true,
+        "venue_year_pages_DOI_checked_university_record": true,
+        "sources": [
+          "li2023.txt",
+          "li2023.html"
+        ]
+      },
+      "graves2006": {
+        "full_title_matches_author_PDF": true,
+        "authors_year_pages_DOI_match_publisher_supplied_registry": true,
+        "sources": [
+          "graves2006.txt",
+          "ctc_crossref.json"
+        ],
+        "publisher_page_HTTP403_preserved": true
+      },
+      "walsh2025": {
+        "full_title_and_all_22_authors_match_CVF_PDF": true,
+        "source": "walsh2025.txt"
+      },
+      "signsparkbt": {
+        "source": "BT_modelcard.md",
+        "attribution": "published hub owner account LionelLow; no inferred personal attribution",
+        "revision_pinned": true
+      },
+      "m3trepo": {
+        "source": "m3t_README.md",
+        "attribution": "M3T contributors",
+        "availability_claim_checked": true
+      },
+      "slrtprepo": {
+        "source": "official repository linked by SLRTP2025 paper; frozen native execution records",
+        "attribution": "Harry Walsh",
+        "status": "software citation, not another scientific result"
+      }
+    },
+    "total_entries": 23,
+    "all_entries_cited": true,
+    "primary_sources_archived": true,
+    "DOI_typo_caught_before_revision_build": "Progressive Transformers resolved to publisher title; correct DOI 10.1007/978-3-030-58621-8_40",
+    "novelty_scope": "adversarial sign recognition and learned-score attacks precede this audit; no global-first priority claim"
+  },
+  "evidence": {
+    "prior_reports_verified": {
+      "reports/cvpr_evaluation_confirmation_20261011": {
+        "files": 174,
+        "manifest_sha256": "40dde2d262a58516238a1a69e27079f50097a4ece5b75e08ccc3eff8157f5baf"
+      },
+      "reports/cvpr_representation_paper_20261011": {
+        "files": 188,
+        "manifest_sha256": "e2f1ee0d7cad334e2aa58c21d15a0dc3828d3db95a2de367e95a720c7359b3f5"
+      },
+      "reports/csl_bleu_recheck_20261011": {
+        "files": 7,
+        "manifest_sha256": "4916e091e9e33749764b4b72207f96b9f8ac27ef1baa8acb654e2585e8007b58"
+      },
+      "reports/cvpr_motion_consistency_confirmation_20261010": {
+        "files": 163,
+        "manifest_sha256": "f8aa74559b2f76d2af01d935d7a6a19b577cb23ec346901d0a176b50f1fb0889"
+      }
+    },
+    "standalone_BLEU_sentence_evaluations_recomputed": 33126,
+    "independent_WER_sentence_evaluations_recomputed": 3336,
+    "canonical_attack_pairs": 1024,
+    "generated_decodes_verified": 20544,
+    "main_numeric_tables_verified": [
+      "real baselines",
+      "six attacks and confidence intervals",
+      "four raw/canonical generators"
+    ],
+    "supplement_generated_tables_data_derived": true,
+    "CSL_replay_verified": 768,
+    "accuracy_intervals_match_immutable_results": true,
+    "checkpoint_hashes_verified": 9,
+    "new_training_runs": 0,
+    "new_model_inference_runs": 0,
+    "scope": "manuscript revision and saved-evidence audit only"
+  },
+  "source_zip_sha256": "e315a40b8ad2a381373b2f3d5f7863020d494d84183ac645beda710c91407604",
+  "scripts_archived": 15,
+  "prior_reports_preserved": true,
+  "new_training_or_model_inference": false,
+  "no_submission_or_publication": true,
+  "all_writers_closed_before_manifest": true
+}

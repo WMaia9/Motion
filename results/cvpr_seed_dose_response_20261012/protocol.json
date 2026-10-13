@@ -1,0 +1,311 @@
+{
+  "purpose": "post-review replication of same-model raw-minus-canonical gap, not recovery relative to collapsed no-CE training",
+  "primary_new_seeds": [
+    11,
+    97,
+    909,
+    1337,
+    2027,
+    2718,
+    31415
+  ],
+  "historical_seeds": [
+    42,
+    123,
+    777
+  ],
+  "primary_endpoint": "raw CE1/geodesic/20epochs on seven new seeds; pooled ten seeds is a separately labelled extension",
+  "matched_control": "canonical CE1/geodesic/20epochs on the same seven new seeds",
+  "exploratory_dose_grid": {
+    "seeds": [
+      42,
+      123,
+      777
+    ],
+    "CE_weights": [
+      1.0,
+      3.0,
+      10.0
+    ],
+    "epochs": [
+      20,
+      40
+    ],
+    "fits_from_shared_init": true,
+    "all_conditions_reported": true
+  },
+  "jobs": [
+    {
+      "seed": 11,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 11,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 97,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 97,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 909,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 909,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 1337,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 1337,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 2027,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 2027,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 2718,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 2718,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 31415,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 31415,
+      "reader_input": "canonical",
+      "CE_weight": 1.0,
+      "epochs": 20
+    },
+    {
+      "seed": 42,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    },
+    {
+      "seed": 42,
+      "reader_input": "raw",
+      "CE_weight": 3.0,
+      "epochs": 40
+    },
+    {
+      "seed": 42,
+      "reader_input": "raw",
+      "CE_weight": 10.0,
+      "epochs": 40
+    },
+    {
+      "seed": 123,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    },
+    {
+      "seed": 123,
+      "reader_input": "raw",
+      "CE_weight": 3.0,
+      "epochs": 40
+    },
+    {
+      "seed": 123,
+      "reader_input": "raw",
+      "CE_weight": 10.0,
+      "epochs": 40
+    },
+    {
+      "seed": 777,
+      "reader_input": "raw",
+      "CE_weight": 1.0,
+      "epochs": 40
+    },
+    {
+      "seed": 777,
+      "reader_input": "raw",
+      "CE_weight": 3.0,
+      "epochs": 40
+    },
+    {
+      "seed": 777,
+      "reader_input": "raw",
+      "CE_weight": 10.0,
+      "epochs": 40
+    }
+  ],
+  "batch_size": 64,
+  "semantic_batch_limit": 16,
+  "semantic_timesteps": "t<=800 and no caption dropout",
+  "caption_drop": 0.1,
+  "optimizer": "AdamW lr1e-4 wd1e-4 clip1",
+  "sampling": "DDIM50 CFG3 seed102, full DEV519 and TEST642; source caption and reference duration only",
+  "selection": "fixed epochs; no outcome-dependent early stopping, seed removal or best TEST dose",
+  "inference_order": "all weights saved and hashed before any new TEST inference",
+  "statistics": "20000 paired clip and joint seed+clip bootstrap draws; primary seven-new-seed gap, pooled ten-seed gap separately; all six exploratory endpoints and five contrasts multiplicity-adjusted; leave-one-seed-out sensitivity",
+  "limits": "one shared pretrained generator, one PHOENIX public reader; more seeds do not validate independent pretraining or guarantee venue acceptance",
+  "prior_TEST_use": "same public TEST already inspected; this is prospective model replication after observed initial outcomes, not a pristine external holdout",
+  "inputs_sha256": {
+    "reports/cvpr_physical_semantic_ddpm_20261010/shared_best.pt": "abdddac25d5e63887242e9af08ac440c2929617f26cff947b5a2a023f3bc8ae1",
+    "reports/cvpr_physical_semantic_ddpm_20261010/normalization.npz": "bfe5912b57a1b0cfc46c981ae1b7545c1700bfa59b25c980fdea7c39a8f9ee00",
+    "reports/cvpr_physical_semantic_ddpm_20261010/data_audit.json": "708cf93f2f531c9b7698c7c128da6c940a6c90bde3c3717dc7e5dbcab9cf1342",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279",
+    "reports/cvpr_quotient_training_20261012/manifest_sha256.json": "d0725a7a9ec3e886fae423e448518620b3aa9418772c9b64e15c9e3fd5dcf37f",
+    "reports/cvpr_second_review_confirmation_20261012/manifest_sha256.json": "13cba96adaa39b1478d32bcf1f3d70422da5435b083a286c931947554e3b3aba"
+  },
+  "scientific_sources_sha256": {
+    "scripts/run_text_sign_diagnostics.py": "38de0dd6ad8aaef4afba1b83001ae9ef4325cd11c926c1f2e21436fd4334d12f",
+    "scripts/freeze_learned_reader_studies.py": "52b162a0cccb684f029002d1a9a433c18cbcaf8af49cb650581040c70993333e",
+    "scripts/download_evaluation_confirmation.py": "5c6dc16d08dfb8a4735ce08af98cedec6092ce3c42852a1f7dbbae592d67005b",
+    "scripts/extend_second_review_research.py": "68bb4b1dc259db13bff0bc8130bd920a5926ae45b66c71885f2bd65d0482bb74",
+    "scripts/verify_local_path_diffusion.py": "1ec33649cdb9657143b78eb37da714fcf0b118d410f4523935ea37fbe991c549",
+    "scripts/compare_generated_real_scores.py": "36ccea7061fa8d8927b258b8296a06501758c9ef9a09e489406a334517361d90",
+    "scripts/probe_ddpm_semantic_reader.py": "db346dfd88a78c64bec500ac5c34649aeb993147e4b065eeb26d7dffab66fd07",
+    "scripts/download_representation_csl.py": "f43ed1102e9044f97e5819de46b3ebe39e7493655e87ccfe9cb5156d98903098",
+    "scripts/build_training_objectives_tables.py": "d4a6dbb7df811d6b74d739c9a5dffbc0f5fb78cb835f322012cad9b5aa9bcb71",
+    "scripts/audit_training_objectives_evidence.py": "679bd2c6c6fec5e3359525d3e217b0ff863e619a2fec9e62afdf0806633abd73",
+    "scripts/evaluate_learned_public_transfer.py": "4c214a0c3ab476c0d4c3e3c61b368c2df4338f492b02e1fc71668f5a3a462360",
+    "scripts/run_reviewer_reader_attack.py": "729d0211ccc44db0463ae7cc0e42edbae8d8b24e2fc5fb03d5bd8fb010ec86ff",
+    "scripts/run_local_path_diffusion.py": "76fcf4a72aed7684eb43b3d0c8bed787efeeed783648d0d8b2e62f74e6e71e5c",
+    "scripts/analyze_canonical_readers.py": "daa57ba48c8a0eba5dbeefcc0e2eb360b2c87c8ce9500bafb222585a428f789c",
+    "scripts/sample_signspark_confirmation.py": "fbb56412398d2b3dc6aee882fccb72c935209e2baf59b49141b5f675088e0199",
+    "scripts/plot_reviewed_manuscript.py": "42e3a14e0a28e63982679c537a7565703b9143fff3a10168f803b567637c7b31",
+    "scripts/sign_physical_guidance.py": "bbbee99e15de23e60c30d2037d27250488bdc8193f966979d9c55e4bc49e2bcc",
+    "scripts/profile_rotation_representations.py": "dbb277bb2cf88c1f7f2967db4f8b268cae99510b5e4b880ea5a066fe79a90b5a",
+    "scripts/run_constant_distance_sphere.py": "388fa4a8c1e5fc39f9654291117275bf279fc88a61c248cec0c131b83309c3ae",
+    "scripts/download_motion_confirmation.py": "622f8236461b32ee472e3a1685cee307799295523553095c99557f8636c13502",
+    "scripts/run_learned_confirmation.py": "33113eb622ba14ff98d111777a9baeb78bf8feb3b263b93584a526f36bdcc1c2",
+    "scripts/audit_training_objectives_layout.py": "a22ca2feb26f6ad05b48a4c6461eff0e95a95f745181f4455af9e217ef640f5a",
+    "scripts/analyze_fixed_prefix_diffusion.py": "7bc1669cd9620836e9195d329c2c0df82733cade4bc249fd8470ece9209bca2b",
+    "scripts/run_representation_csl_test.py": "7d8f8e48e1daec02433615db6f6234b1343b7fd606d42a954c5891b5ca834f13",
+    "scripts/run_learned_budget.py": "99b9d2855ecc2947bd8d01645ba08a066dde7b12f88c0eb097be181e116cc6ce",
+    "scripts/audit_reviewed_manuscript_evidence.py": "82aeb5e02b64f69a39ff08af0d62ff2ba07846ae90621cd6ce102a0e3991145e",
+    "scripts/run_fixed_prefix_diffusion.py": "54665840b605d1ebdd1fc6627794d9394c85870e6bc464314c0a34b4cc4aee65",
+    "scripts/run_reviewer_attack_ablation.py": "c50eff8ee1808eb54f9b0cc30293bd2e7440f2c3632ef6905627a4c0d825bbd1",
+    "scripts/run_motion_ctc_confirmation.py": "690800b7773b0e1b79f547ba1a967729b13aaea6ae3cd43be07ce33817a64dd8",
+    "scripts/plot_training_objectives.py": "167bde7882a5ac1ae63ad9c093abf85a665c132038800d6421b056c959710030",
+    "scripts/analyze_second_review_results.py": "94653b44f98536a500ecec2ce7d176e4ace38af85d3723169565a4e9ec8810de",
+    "scripts/check_local_path_math.py": "338e9404022f6571f8e6f18efec8f1e648fd059ce9b38c8bc6b0a150139f5460",
+    "scripts/fetch_manuscript_review_sources.py": "a643d6e34f43ef4742deb37794c79ffe5bd2517775cfc766b33e6632ab206250",
+    "scripts/verify_representation_math.py": "4d6ef09ffda4b593f36c3c9beb386d18778be24354a76c33ecefd1501386ffca",
+    "scripts/freeze_second_review_confirmation.py": "ddcef0ce7a9d69d24ecbb4599ae3fee5007e18b50cdad50777a58f7341c4c7b5",
+    "scripts/plot_paper_story.py": "b8f93d12d34090c70fa47b8972930d0eebcde57204626cee458856a91bfd2286",
+    "scripts/run_motion_path_diffusion.py": "d1c57eecd4484e0413f05bb37cd7a961536b453854495a806d1c14c58d95240a",
+    "scripts/audit_paper_story_layout.py": "89e38eed471683e52d68439a2c221ca8264997c7e8e28683ee67818ed0c77998",
+    "scripts/sample_text_sign_diagnostic.py": "d59d4cd3a151e8e09794a077945ad2f29be2a089bd5980cce02279b152a8471d",
+    "scripts/build_paper_story_tables.py": "292d35bcdbb20b9a3ba234120d61a2f29eeb776b75b1404b8cce903a06899c3c",
+    "scripts/freeze_learned_confirmation.py": "ae23c26dcb98b37090371d6d707585fb3d776e38c4b7decb990aae6b83e0f51e",
+    "scripts/finalize_reviewer_followup.py": "d8ad29298621050d1dbb0dd7b70b0a46980176f1af873b99b39d65a6c3e1f018",
+    "scripts/fetch_awarded_paper_study.py": "99febe42d48d51c9af3216be307a2eb5c6dc5fafbb198887251cccb060c95393",
+    "scripts/fetch_second_review_research.py": "9aa122c98ac67e669278e3aa093fb2883a5ba01211f6f00562bfaaa4f4993da5",
+    "scripts/verify_generation_pilots.py": "ef7e18406d729f4f057603f5e0a35c1a4bf97e8a1ae70870dad770c457acb1b3",
+    "scripts/verify_frozen_research.py": "b887ae1a9234cc74ce51064a85e8f1d9b6155380b2bff53a449a94c18e7a9ac1",
+    "scripts/audit_paper_story_evidence.py": "75cc4494a28cfd3e09233fa8c8f146e3c37c4ac82457ccbace633ff6980d8d47",
+    "scripts/analyze_learned_budget.py": "f03d0968687edb796f5c10b14162aceff756cee32721f686ef602693bb47f908",
+    "scripts/cluster_evaluation_confirmation.py": "3119d1dcdd18890b014499263943525d05545214b726d8fdc6e71c4805d5cbf8",
+    "scripts/verify_motion_confirmation.py": "e916bb2a04825b8a90fbf68ab08a1ee9628a1a990d0c40cd2ab3d850e61d9154",
+    "scripts/analyze_real_motion_layers.py": "919ccae7b96fcf0aa1dab7447015efd84499e602b20e7f0e4fa6939c8cc1e3ec",
+    "scripts/run_signspark_adaptive_dev.py": "34c4d03f343a35fcabffa3df96cdb4b1601de1b3ff026c85038cf66b4757821b",
+    "scripts/freeze_second_review_studies.py": "be63cb5d6073a821c5c47e5703d87ccbbe0d46162110eff78ae8a693b5491af8",
+    "scripts/build_reviewed_manuscript_tables.py": "45b312c7d7b1f41a9d60146518c42dc7ffe791fb42ab1a32aba42458977c060e",
+    "scripts/run_constant_noncanonicity_layer.py": "fe6325c77939d14a3c86a62eb93adebb682a8003b997b2f3c9608edc56966ab0",
+    "scripts/analyze_signspark_geometry_dev.py": "982a9292d5e799a086a0a209d26043abd7c7429bc5d127dcd9ea5817f8fdb1ff",
+    "scripts/audit_evaluation_confirmation.py": "0522b970a33239541002e35af8967780097e3327c261c1578786166ad374c3fd",
+    "scripts/run_signspark_gauge_attack.py": "f3fac85308bee46cb852d97fe29ed8a14e7f0672b0f94cee7786c9acef67fbc5",
+    "scripts/verify_evaluation_confirmation.py": "6690740071638811d96c8c9cc74aef765cd4f1c708b24009040f365a81d801a2",
+    "scripts/verify_representation_paper.py": "882267bdb057f654ae38eb2f39b78284fb8a8db76c84db72ff574cd255daa745",
+    "scripts/analyze_learned_confirmation.py": "74f6e36ce896c5e054be2088465275c42e1aa07d24538d328fc0f4ed7b0c308e",
+    "scripts/run_ordinary_coordinate_transplant.py": "482ad23a275238bcee69b0b48504dc744294347bc8ff4b41cd4ead5f55c87d66",
+    "scripts/verify_signspark_studies.py": "8239348c83442d006ae1e9dfb2d20e7fed301127c81318ec9022192d6e8ebb50",
+    "scripts/run_seed_dose_response.py": "a4a1b015a4a4b97545de5248b16095b1885112acd68e2f2875a4890baff6a17f",
+    "scripts/audit_paper_story_references.py": "1906640762b414527ee4e6c6b3c526f9d20dfd2aa5267d77ed918301dee81a62",
+    "scripts/confirm_retrieval_layer_transfer.py": "15b17ab1038b5504cfa1558effb8cf5bac5fd56645bbf0d90a9e77024f6221b7",
+    "scripts/run_physical_semantic_ddpm.py": "cb8af1e8fb78ac12433fae50b14bcee1c66545217966cff6e6e48c92c6a34b88",
+    "scripts/analyze_quotient_training.py": "420499444ffce8cd3be04128bac912a2d286cd6055d5ffe7186704b5cb6d1948",
+    "scripts/analyze_constant_distance_sphere.py": "ec1c4281a0fe9b92bfe6f9b83aab21e594cf4d9c25bee95b3a9c4abba593f02a",
+    "scripts/run_external_slrtp_bt_confirmation.py": "5ae4636ba852725aa72cc7eb29821b4f4a22f0c651c245eb7c56638a1b00ded6",
+    "scripts/build_second_review_references.py": "c22da6d1dad28048ef9c30e1e798b3629b3baf9a5a3fa4f2cb0e843a32d3f880",
+    "scripts/run_signspark_generator_confirmation.py": "80fc039b2125e1e02dcfa817f392dd04eee723869d04dfcc5e440d1243db1742",
+    "scripts/analyze_local_path_diffusion.py": "6225e56d3765b901de6ba0e428732515886c6816a020ad49f05988ab02e0def9",
+    "scripts/analyze_learned_equivalence.py": "28da42ad0cc287eec740fcf87a50673c57f0a3d161bfd820bf2344df374692f5",
+    "scripts/finalize_representation_report.py": "a756a712dc9125dadc6d6d858b35040678ca9bd144563e1d4f2424a250998c68",
+    "scripts/verify_fixed_prefix_diffusion.py": "26078079a21620db930ac5817fc55568d128a1ffddf5529c3f9f587e5b25f0d4",
+    "scripts/finalize_manuscript_review.py": "26d2d5c418a755413374c08058767a3ce0a328b9ecf3e118b19a20ee000e1458",
+    "scripts/verify_motion_path_diffusion.py": "9bb5d1b8024f7dbf1db3398d13615edcfc8dbbf035c8b0bf62dc39ab7a408c89",
+    "scripts/run_signspark_gauge_dev.py": "e65e643fd43563a0e3c735a443d2b7235e26146d4dd4cd15cd03d1ced433cd0f",
+    "scripts/run_signspark_geometry_dev.py": "6e0901ead12b14d8b5fc8ae78651f2ba4d3833466dfc3394a54030c808c36bdc",
+    "scripts/rotation_equivalence.py": "f5fb3ed2eba4a093fec5e91f7c0a66b03ab92041393a9ab85f4720d36cca5bbb",
+    "scripts/analyze_canonical_preservation.py": "fc13300674f02fa45f1892453e8fe27ff2205bbd488ee5504b4fd6ae29a15d87",
+    "scripts/audit_reviewed_manuscript_layout.py": "1008d87d5775f12d77ee31da58529abe13a50c31058bcf0bf4f79f2c96d96307",
+    "scripts/run_retrieval_transfer.py": "aa3408067bfdadc269a7e390904cd9b15280cee0cba22d4341f614cb54f45041",
+    "scripts/audit_representation_native_contract.py": "7977a8acac91265cee52a134fae66b6588d4e24afec148ee7d011e63ca93d353",
+    "scripts/audit_reviewed_references.py": "cd37b63272041179ee54b2f4ab6ab129b87d65cd3966c926ce26714e591f6931",
+    "scripts/analyze_reviewer_followup.py": "2a64543c6e906da92d3627ab4b087061bd008ca45348c4d4f44c5556096ab1ea",
+    "scripts/analyze_reviewer_training.py": "dfd0c0329e842ce2395f79e111bec204a1a27764da0cd7b0a07f65fa3a25c381",
+    "scripts/analyze_physical_semantic_ddpm.py": "441ea6aa7eade120a948492e4f5a123d411ef7079de16a2d10fe2dbec420195f",
+    "scripts/run_evaluation_heldout.py": "386e79520335cabdf46627764e98aa2fd69e391067f38218cada28782b28f9ea",
+    "scripts/download_signspark_baseline.py": "14317e8c4e760362f56fb924ace287b573af93c9dba1d41e554054933f8c0793",
+    "scripts/run_canonical_readers.py": "d8dc98303c828ff4eebbee3830da516607457638d616111cf519a625b2dbf747",
+    "scripts/plot_evaluation_confirmation.py": "92ddbdabf8e4253291a66cd4c4ad2bc1bf1509a6e0d2e4d2bcfadcbfebbccf0f",
+    "scripts/run_signspark_gauge_full_dev.py": "8f9ddad745f6957c9f87ac544152aa7dae1fd55f684c45c668fb20f95d90aa3f",
+    "scripts/run_second_review_confirmation.py": "b31d307118f2604bfd87571b4860f25381d8fe984608bbda22063ff8676fcf54",
+    "scripts/download_canonical_reader_training.py": "b8faec7df495c3d492033f38fc3668a9799175926869920c431033101e0a7cd7",
+    "scripts/run_representation_ctc_test.py": "636efc685df3b3e99bfdad8f6dad643b8b465b5c8cc540bf437bdfd99617ef22",
+    "scripts/run_learned_equivalence.py": "1c1cf3ede70cf1f0705cd3ce15a106a46729979d295744c23495b9cd6bbaba91",
+    "scripts/run_quotient_training.py": "9c443063ddc3820c39056a0bf64c7314d0d783417228164cd50ab483efceac4f",
+    "scripts/analyze_motion_confirmation.py": "0d06756ade1f47e4ae17ffd8d255153041581f538f1c1d41b919901aaea277db",
+    "scripts/analyze_signspark_gauge_full_dev.py": "dc08f06b9de452c12cdbf42a6428951b5bc746612e5b9ec36e3f8d7d1d84b337",
+    "scripts/analyze_constant_noncanonicity.py": "a7d08f939e253d351821c4f4f832e3c09511d328985fcaafb78ad361574e0041",
+    "scripts/build_representation_supplement.py": "efbd4b74208282094c8975e0d2c1cf7fca5b5965dae14c35b820a03e8fd8cec0",
+    "scripts/run_reviewer_training.py": "bb28b91259feb3483f70bf4e73ae4b721d923ea4516fb1fc6db0e93023fa4bf2",
+    "scripts/finalize_paper_story.py": "7a40feb013fd4cae7fb22f01275055e0f60f340e432c28181478a7e4d0837c68",
+    "scripts/audit_representation_manuscript.py": "a376eb087f0f9570ec0a8c3535e84bffe9063e30963541434d64c2979e888950",
+    "scripts/check_motion_path_math.py": "d42215467c3a9403141be4d745b0406fa7d78d458f2efe9aae886312635a535b",
+    "scripts/analyze_evaluation_confirmation.py": "9a04a168adfdc6c372be101c21a0228c6cba648e5c0aa4badaaae40647d4fcfb",
+    "scripts/recheck_csl_bleu.py": "d7d0b473f95e2a9b84551bc89aaf1eab98c9773258d17980f2c4f76983f655cf",
+    "scripts/analyze_text_sign_diagnostics.py": "98190832d3c48ea9ce0b8fc41f0548ce2d15ba0f4f034dfc52e7e1b88fb6ef3d",
+    "scripts/analyze_motion_path_diffusion.py": "0083834d411202f34941565796e227c09f9c0b6f37d1691112bed92cefcb166c",
+    "scripts/run_real_motion_layers.py": "b824194af75e3a7147c2efa047c777eda8e5922ab0773f9c4beb8abb3640a663",
+    "scripts/plot_representation_paper.py": "846cf0a5c544e04fd196e4782d7b8660feba190cc10aab7d262053fa2f93319a"
+  }
+}

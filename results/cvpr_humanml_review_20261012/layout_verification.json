@@ -1,0 +1,73 @@
+{
+  "main": {
+    "total_pages": 10,
+    "content_pages": 8,
+    "reference_pages": 2,
+    "no_overfull_underfull_or_undefined_references": true,
+    "no_Type3_fonts": true,
+    "page_character_counts": [
+      5605,
+      8009,
+      8396,
+      7397,
+      8983,
+      7656,
+      8226,
+      5831,
+      9555,
+      6095
+    ],
+    "PDF_sha256": "a09e3a621326a1fa2f78dc664a9783a03883d058a860f79de786b9039cb3159f",
+    "visual_review": {
+      "all_pages_reviewed": true,
+      "pages_reviewed": 10,
+      "contact_sheet": "preview/main_contact.png",
+      "scope": "All rendered pages inspected; scientific checks separately frozen."
+    }
+  },
+  "supplement": {
+    "total_pages": 13,
+    "content_pages": 12,
+    "reference_pages": 1,
+    "no_overfull_underfull_or_undefined_references": true,
+    "no_Type3_fonts": true,
+    "page_character_counts": [
+      6651,
+      10102,
+      7672,
+      8223,
+      7019,
+      7979,
+      7563,
+      7933,
+      8728,
+      9313,
+      6568,
+      2921,
+      5105
+    ],
+    "PDF_sha256": "7cfd7e9e395c1457ec2f9f954bd1461bf8732eb2adf7821c327061eed0333363",
+    "visual_review": {
+      "all_pages_reviewed": true,
+      "pages_reviewed": 13,
+      "contact_sheet": "preview/supplement_contact.png",
+      "scope": "All rendered pages inspected; scientific checks separately frozen."
+    }
+  },
+  "references": {
+    "entries": 43,
+    "cited_union": 43,
+    "new_verified_keys": [
+      "guo2022",
+      "tevet2023",
+      "alertmotion2025",
+      "bhatia2017"
+    ]
+  },
+  "format": {
+    "style": "unmodified official CVPR2026 kit; target2027 provisional",
+    "authors": "anonymous",
+    "submission_ID": "DRAFT",
+    "no_external_submission": true
+  }
+}

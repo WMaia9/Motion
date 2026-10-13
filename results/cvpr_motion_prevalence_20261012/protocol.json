@@ -1,0 +1,80 @@
+{
+  "scope": "Paired raw/canonical audit of five accessible released generators, with20replications and full native ground-truth loader; no post-hoc model selection",
+  "primary": "same-output raw-minus-canonical FID and R1, across20independently materialized native repetitions, not invented attacks or intentional prevalence",
+  "release_candidates": {
+    "mdm50": "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt",
+    "mld": "models/motion_release_audit/mld.ckpt",
+    "motionlcm_v1": "models/motion_release_audit/extracted/experiments_t2m/motionlcm_humanml/motionlcm_humanml_v1.ckpt",
+    "t2mgpt": "models/motion_release_audit/extracted/VQTransformer_corruption05/net_best_fid.pth",
+    "t2m": "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/model/latest.tar"
+  },
+  "unavailable_candidate": "MoMask author Drive quota; no weights substituted",
+  "native_dataset_entries": 4648,
+  "batch_size": 32,
+  "replications": 20,
+  "replication_seeds": [
+    1234,
+    1235,
+    1236,
+    1237,
+    1238,
+    1239,
+    1240,
+    1241,
+    1242,
+    1243,
+    1244,
+    1245,
+    1246,
+    1247,
+    1248,
+    1249,
+    1250,
+    1251,
+    1252,
+    1253
+  ],
+  "native_preprocessing": "unmodified MDM Text2MotionDatasetV2 including subcaption segments, random caption draws, random multiple-of-four single/double crop, full native TEST, drop_last32",
+  "mdm_official_cap": "native wo_mm nominal1000 actually1024outputs; full TEST reference and20replications",
+  "other_generators": "full native TEST inputs per repetition; model-specific public inference configurations and native output-length rules; paired audit, not an assertion of exact published-score reproduction",
+  "conditions": [
+    "raw",
+    "canonical"
+  ],
+  "real_fixed_encoding_controls": [
+    "identity",
+    "canonical",
+    "global_plus010",
+    "global_minus010",
+    "global_plus035",
+    "global_minus035",
+    "random035_seed42"
+  ],
+  "additional_model_audit_not_automatic_reward_exploitation_evidence": true,
+  "summary": "native mean±1.96*std/sqrt20 plus paired raw-canonical t19 intervals; all generators retained; paired metrics adjusted across10generator/metric endpoints",
+  "source_directions": "fixed encoding coefficients=(b,-b,b); alpha=exp(b),beta=exp(-b),eta=b in unnormalized features; random seeded independently of captions",
+  "data_mirror_limitations": "same pinned numerical-compatible public mirror as prior frozen study; original full byte identity not proved",
+  "inputs_sha256": {
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/motion_release_audit/mld.ckpt": "757bea86d97f9e7ab434ebc1a074c4f9d457b0b24fb0d72d50ae3a6e08574914",
+    "models/motion_release_audit/extracted/experiments_t2m/motionlcm_humanml/motionlcm_humanml_v1.ckpt": "40b5a2db36f05d9be0388301bacf6884266b97d777fd44a3e17a3a95d9155128",
+    "models/motion_release_audit/extracted/VQTransformer_corruption05/net_best_fid.pth": "297716615cedec3bbbcd7697938fdcede99b1ca72fdf689d415d1e77af4cf9b7",
+    "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/model/latest.tar": "bc213a109b257c3da93e60f39cf364c8e93f808f6c22b403579398423397a67b",
+    "models/humanml3d_audit/data/HumanML3D/test.txt": "b89bc7df558df6246840702d0976a5d37ecbc4f055642b5c99e509a2d85ac12e",
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "external/MDM/dataset/t2m_mean.npy": "0bdb5ba69a3a9e34d71990db15bc535ebc024c8d95ddb5574196f96058faa7d3",
+    "external/MDM/dataset/t2m_std.npy": "6a5f7d60301c9465972fc225f8ad0ee8f957e7720431189123eb6d15873a9557"
+  },
+  "native_revisions": {
+    "external/MDM": "ef8edce6a53c6ab19e53b4d4dcf15bc0bc60a778",
+    "external/MLD": "081ce3152e5a95b14a4495fb2d32939c257c6216",
+    "external/MotionLCM": "81c06368c17b056713deef2e9f6483f3172eea42",
+    "external/T2M_GPT": "b1446f1239f0fce579f922b5b10dd1b1103669cc",
+    "external/HumanML3D_Evaluator": "72df96ec453edea2fbe9603b1d58a955eaf71636",
+    "external/MotionRFT": "d148b32133bd451ae3043b85535c2cd851be31eb"
+  },
+  "producer_sha256": {
+    "scripts/prepare_motion_release_audit.py": "8c22d7b01c5f798a7adafa0c3ef61e31d84bccb30cec9731f59b2be5a9fc4e35",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514"
+  }
+}

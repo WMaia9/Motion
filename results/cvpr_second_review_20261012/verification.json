@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "new_fits": 79,
+  "fixed_TEST_conditions": 28,
+  "references": 36,
+  "primary_sources_researched": 14,
+  "main_content_pages": 7,
+  "supplement_content_pages": 6,
+  "all_negative_outcomes_preserved": true,
+  "old_manuscripts_unchanged": true,
+  "reviewed_source_ZIP_CRC_passed": true,
+  "all_pages_rendered_and_inspected": true,
+  "fonts_margins_and_official_style_unchanged": true,
+  "no_external_submission": true
+}

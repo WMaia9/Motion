@@ -1,0 +1,96 @@
+{
+  "sources": [
+    {
+      "name": "SLRTP_Evaluation_20261011",
+      "path": "external/SLRTP_Evaluation_20261011",
+      "url": "https://github.com/walsharry/SLRTP-Sign-Production-Evaluation.git",
+      "revision": "db35105a94e126feb04619d56f6103ba8369d382",
+      "license_file": null
+    },
+    {
+      "name": "SignSparK",
+      "path": "external/SignSparK",
+      "url": "https://github.com/JianHe0628/SignSparK",
+      "revision": "916402d0ecd6322fb4a9e5f513229a94a57bf4b6",
+      "license_file": "external/SignSparK/LICENSE"
+    },
+    {
+      "name": "SignSparK_BT",
+      "path": "external/SignSparK_BT",
+      "url": "https://github.com/JianHe0628/SignSparK_BT",
+      "revision": "8dd7cdf533cd0ee5021c2c350ab4a54e6d2f4cf4",
+      "license_file": "external/SignSparK_BT/LICENSE"
+    },
+    {
+      "name": "SignSparK_Retrieval_20261012",
+      "path": "external/SignSparK_Retrieval_20261012",
+      "url": "https://github.com/JianHe0628/SignSparK_Retrieval.git",
+      "revision": "b1ed92705cafd2c9ff0c72a89df14b0a9ee62258",
+      "license_file": "external/SignSparK_Retrieval_20261012/LICENSE"
+    },
+    {
+      "name": "HumanML3D_Evaluator",
+      "path": "external/HumanML3D_Evaluator",
+      "url": "https://github.com/EricGuo5513/text-to-motion.git",
+      "revision": "72df96ec453edea2fbe9603b1d58a955eaf71636",
+      "license_file": "external/HumanML3D_Evaluator/LICENSE"
+    },
+    {
+      "name": "MDM",
+      "path": "external/MDM",
+      "url": "https://github.com/GuyTevet/motion-diffusion-model.git",
+      "revision": "ef8edce6a53c6ab19e53b4d4dcf15bc0bc60a778",
+      "license_file": "external/MDM/LICENSE"
+    },
+    {
+      "name": "HumanML3D",
+      "path": "external/HumanML3D",
+      "url": "https://github.com/EricGuo5513/HumanML3D.git",
+      "revision": "9176e8fb446b71c7d2a725eb5cf6fec1ae3b3c23",
+      "license_file": "external/HumanML3D/LICENSE"
+    },
+    {
+      "name": "CLIP",
+      "path": "external/CLIP",
+      "url": "https://github.com/openai/CLIP.git",
+      "revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+      "license_file": "external/CLIP/LICENSE"
+    },
+    {
+      "name": "MLD",
+      "path": "external/MLD",
+      "url": "https://github.com/ChenFengYe/motion-latent-diffusion.git",
+      "revision": "081ce3152e5a95b14a4495fb2d32939c257c6216",
+      "license_file": "external/MLD/LICENSE"
+    },
+    {
+      "name": "MotionLCM",
+      "path": "external/MotionLCM",
+      "url": "https://github.com/Dai-Wenxun/MotionLCM.git",
+      "revision": "81c06368c17b056713deef2e9f6483f3172eea42",
+      "license_file": "external/MotionLCM/LICENSE"
+    },
+    {
+      "name": "T2M_GPT",
+      "path": "external/T2M_GPT",
+      "url": "https://github.com/Mael-zys/T2M-GPT.git",
+      "revision": "b1446f1239f0fce579f922b5b10dd1b1103669cc",
+      "license_file": "external/T2M_GPT/LICENSE"
+    },
+    {
+      "name": "MoMask",
+      "path": "external/MoMask",
+      "url": "https://github.com/EricGuo5513/momask-codes.git",
+      "revision": "94a6636c9c463b7a9414c3401a6f1b67e6c51824",
+      "license_file": "external/MoMask/LICENSE"
+    },
+    {
+      "name": "MotionRFT",
+      "path": "external/MotionRFT",
+      "url": "https://github.com/Xiaofeng-Tan/MotionRFT.git",
+      "revision": "d148b32133bd451ae3043b85535c2cd851be31eb",
+      "license_file": null
+    }
+  ],
+  "policy": "pin commits; check existing worktrees without resetting or overwriting them"
+}

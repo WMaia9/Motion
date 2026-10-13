@@ -1,0 +1,46 @@
+{
+  "method": "t2mgpt",
+  "sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motion_release_gpt_batched.py": "8843181a4e1e9fdd3cf37bc378e4e9d45d74e41a43fd7467d1671e77f30a2813",
+    "scripts/motion_release_fast_adapters.py": "9819ce41c260585ebbcc57de867aa50dcbdf14a286d798234743066c4f14ae6b",
+    "scripts/motion_release_native_adapters.py": "7247fcc0829f360bbe0789b0c0855edb7fedb2e82f6dd87f15c7da82bbc7a04e",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514"
+  },
+  "remaining_generation_batch_size": 128,
+  "evaluation_batch_size": 32,
+  "conditional_sampling_law_and_EOS_unchanged": true,
+  "RNG_draw_order_and_float32_batching_change": true,
+  "purpose": "GPU throughput, no condition or valid repetition selected/removed",
+  "initial_valid_batch32_repetitions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "initial_generated_batch32_repetitions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "revision_history": [
+    {
+      "executed_source": "producer_revisions/run_motion_release_gpt_batched_executed.py",
+      "executed_source_sha256": "a1e4af48f67fc6bacaed879b8835ceec1a4dcd4df0ddbd4e237ee711db55d49e",
+      "current_source_sha256": "8843181a4e1e9fdd3cf37bc378e4e9d45d74e41a43fd7467d1671e77f30a2813",
+      "reason": "Resume guard ignored preserved execution metadata; comparison now strips history/count fields. Inference code unchanged; fix after all20repetitions completed."
+    }
+  ]
+}

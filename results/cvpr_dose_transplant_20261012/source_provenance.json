@@ -1,0 +1,26 @@
+{
+  "producers": [
+    "run_dose_coordinate_transplant",
+    "analyze_dose_transplant",
+    "freeze_dose_transplant"
+  ],
+  "import_closure": [
+    "analyze_dose_transplant",
+    "analyze_second_review_results",
+    "analyze_signspark_geometry_dev",
+    "audit_reviewed_manuscript_evidence",
+    "freeze_dose_transplant",
+    "freeze_learned_reader_studies",
+    "run_dose_coordinate_transplant",
+    "run_evaluation_heldout",
+    "run_motion_ctc_confirmation",
+    "run_physical_semantic_ddpm",
+    "run_quotient_training",
+    "run_reviewer_training",
+    "run_signspark_gauge_attack",
+    "run_signspark_geometry_dev",
+    "verify_representation_paper",
+    "verify_signspark_studies"
+  ],
+  "all_archived_scripts_match_live": true
+}

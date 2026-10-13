@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "new_frozen_studies_verified": 2,
+  "new_frozen_study_files_verified": 212,
+  "independent_physical_pairs": 33408,
+  "native_FK_pairs": 432,
+  "source_PDF_bytes_copied_from_paper_current_and_final_build": true,
+  "all_23_pages_visually_reviewed": true,
+  "all_43_reference_keys_cited": true,
+  "no_overfull_underfull_undefined_references_or_Type3_fonts": true,
+  "official_style_and_BST_unchanged": true,
+  "source_ZIP_CRC_and_exact_bytes_verified": true,
+  "historical_studies_not_modified": true,
+  "no_new_working_paper_directory": true,
+  "no_external_submission_or_commit": true
+}

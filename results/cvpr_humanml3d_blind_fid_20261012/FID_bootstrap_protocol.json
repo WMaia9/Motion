@@ -1,0 +1,20 @@
+{
+  "scope": "post-hoc sensitivity after point FIDs inspected, not registered primary inference; no new attack or selection",
+  "replicates": 200,
+  "seed": 20261012,
+  "grouping": "native source clip ID without mirror prefix, not actor IDs",
+  "paired_cohort_and_reference_resampling": true,
+  "conditions": [
+    "identity",
+    "blind_OT_bound010",
+    "blind_OT_bound035"
+  ],
+  "family_size": 2,
+  "one_MDM_generation_seed": true,
+  "inputs_sha256": {
+    "reports/cvpr_humanml3d_blind_fid_20261012/analysis.json": "f3832d9b3bd070ebc83cf7b345b2717cadfd076e628404ef5cb8ab4c5bc28d14",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attack_outputs_before_TEST_scoring.json": "5c304c5081cf22ecebe613b177d04220713b8d8c8917dd0c2c2365242cf63edb",
+    "reports/cvpr_humanml3d_blind_fid_20261012/withheld_TEST_reference_embeddings.npz": "584b1a27ace2aefa192a6d4e9922d1cfb99bcc233e75f4b46071dcf1ff6c5e2a",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/bootstrap_humanml_blind_fid.py": "fd81efbffddd57c42a8a371a27a655d8334513f04e5b9d8b29f91e8f3bda6676"
+  }
+}

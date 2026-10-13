@@ -1,0 +1,218 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[review]{cvpr}
+\usepackage[T1]{fontenc}
+\usepackage{xurl}
+\usepackage{graphicx,amsmath,amssymb,booktabs,capt-of}
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\hfuzz=0pt
+\vfuzz=0pt
+\def\paperID{DRAFT}
+\def\confName{CVPR}
+\def\confYear{2027}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\G}{\mathcal{G}}
+\input{results_macros}
+\input{new_results_macros}
+\title{Same Motion, Different Scores:\\ Auditing Representation Consistency}
+\author{Anonymous authors}
+\setcounter{dbltopnumber}{3}
+\begin{document}
+\raggedbottom
+\twocolumn[{
+\begin{@twocolumnfalse}
+\maketitle
+\centering
+\includegraphics[width=\textwidth]{figures/teaser.pdf}
+\captionof{figure}{\textbf{The motion stays fixed while retrieval approaches perfection.} Three native skeleton frames illustrate the first fixed HumanML3D TEST item. Original and recoded positions overlap; all represented rotations are preserved. Scores aggregate 1,024 released MDM outputs, not this single clip. The caption-targeted attack changes only redundant 6D coordinates; canonicalization gives both descriptions the same embedding.}
+\label{fig:teaser}
+\end{@twocolumnfalse}
+}]
+
+
+\begin{abstract}
+Motion scores should depend on movement rather than its redundant numerical description. We audit this requirement for the continuous 6D rotation features used by learned evaluators. Across 20 native HumanML3D TEST repetitions, fixed, target-independent recodings change real-motion FID from 0.001 to 2.00 or 3.64 without changing positions or rotations. Directional coefficients of magnitude 0.35 cause these large effects; smaller and random recodings have smaller effects. The inconsistency also appears naturally in five released generators: canonicalizing identical outputs changes T2M-GPT FID by 18.6\% and MotionLCM-v1 by 5.5\%. Controlled attacks isolate the channel: caption-targeted MDM retrieval rises from 0.397 to 0.993, and caption-blind FID falls by 39--53\% across three cohorts. Learned attacks extend the failure to sign-language backtranslation on three corpora, including a 2.64-BLEU gain on real How2Sign motion. An adaptive attack preserves distance and feature norm. Converter-based canonicalization closes this channel; accuracy is assessed separately. Released-output audits establish practical representation dependence, without attributing intentional score manipulation or improved motion to these changes.
+\end{abstract}
+
+\section{Introduction}
+A motion benchmark can assign different scores to identical movement. Across 20 native HumanML3D TEST repetitions, fixed recodings change real-motion FID from 0.001 to 2.00 or 3.64, without a caption target, optimization, or changed positions and rotations. Directional coefficients of magnitude 0.35 cause these large shifts; smaller and random recodings have smaller effects. This is also a practical evaluation issue: five released generators produce outputs whose FID changes after canonicalization, including an 18.6\% change for T2M-GPT. \Cref{fig:teaser} isolates the complementary retrieval failure: a caption-targeted recoding raises MDM top-1 retrieval from 0.397 to 0.993 for unchanged motion.
+
+BT is widely used in sign-language production: a sign-to-text model reads generated motion, and a text metric compares its prediction with the source sentence~\cite{saunders2020,walsh2025,signsparkbt}. Differentiable evaluation objectives can also guide generation~\cite{tan2026}. The proxy affects both reporting and optimization. Its consistency with the representation's physical meaning matters independently of its linguistic accuracy.
+
+The continuous 6D encoding~\cite{zhou2019} makes this issue testable. A known normalization and orthogonalization maps six coordinates to a rotation. Positive scales and a shear change coordinates while preserving that rotation. We use this established equivalence as a controlled intervention: represented rotations, timing and protected parameters remain fixed while the reader receives a different array. 
+
+Our central question is whether evaluation rewards motion or its redundant description. We audit public HumanML3D evaluators~\cite{guo2022} and sign-language BT. Paired raw/canonical scoring exposes natural representation dependence in released MDM, MLD, MotionLCM, T2M-GPT and T2M outputs~\cite{tevet2023,mld2023,motionlcm2024,t2mgpt2023,guo2022}. Fixed recodings and controlled attacks isolate its cause. A separate attack targeting only TRAIN motion statistics reduces FID without captions. On PHOENIX, a source-text-conditioned layer raises BLEU from 6.39 to 15.21 while canonical hypotheses stay identical; real-motion layers replicate the failure on How2Sign/CSL. None of these same-motion score changes establishes better movement.
+
+Attack construction is a valid capability test with antecedents in generative perturbation networks~\cite{gap2018,atn2018}. It does not establish routine exploitation by production systems. We therefore separate three questions: whether a constructed layer can exploit the channel, whether the effect survives explicit detector-statistic constraints, and whether an ordinary generator's objective learns it. Each has its own controls and inference limits. Increased BT at fixed represented rotations diagnoses evaluator inconsistency; it cannot indicate improved physical signing.
+
+Our contributions are:
+\begin{itemize}
+\item A representation-consistency audit of five public generators over 20 native TEST repetitions, complemented by two released evaluator checkpoints and fixed recoding controls.
+\item Controlled caption-targeted and caption-blind attacks at unchanged motion, extended to learned layers on three sign-language corpora and an adaptive detector-statistic constraint.
+\item Converter-based channel closure, with paired reader adaptation and ordinary/reward-training tests separating accuracy, natural score dependence and deliberate exploitation.
+\end{itemize}
+
+\section{Related work}
+\paragraph{Production and evaluation.}
+PHOENIX-2014T, How2Sign and CSL-Daily support continuous-sign research~\cite{camgoz2018,duarte2021,zhou2021}. Progressive Transformers introduced production BT~\cite{saunders2020}, using recognition/translation models~\cite{camgoz2020}. T2S-GPT, SignSparK and M$^3$T study parameterized production~\cite{yin2024,low2026,symeonidis2026}. SiLVERScore and BackTranslation2.0 study semantic, prosodic and human-rated evaluation~\cite{imai2025,cory2026}. We test a necessary representation property; closing the channel does not replace linguistic evaluation. Learned image-generation metrics have analogous limitations as proxies for human judgments~\cite{stein2023}.
+
+\paragraph{Text-to-motion evaluation.}
+HumanML3D~\cite{guo2022} supplies a learned text--motion embedding evaluator used with generators including MDM~\cite{tevet2023}. Its representation combines positions, velocities and redundant 6D rotations. MLD~\cite{mld2023}, MotionLCM~\cite{motionlcm2024} and T2M-GPT~\cite{t2mgpt2023} provide diffusion, consistency and discrete-token generators for the released-output audit. ALERT-Motion~\cite{alertmotion2025} attacks generation through textual prompts; our intervention keeps both represented rotations and position channels fixed. We audit the released evaluator, without equating retrieval or distributional similarity with human-rated motion quality.
+
+\paragraph{Amortized and universal attacks.}
+Universal perturbations~\cite{uap2017} and generative perturbation networks~\cite{gap2018,atn2018} precede learned attacks in one pass. Universal attacks also target vision-language systems~\cite{fang2025}; skeleton-based sign recognition admits adversarial manipulation~\cite{li2023}. Image-quality and text metrics have robustness failures~\cite{liu2024,huang2023}. Our caption-conditioned layer is not a fixed universal perturbation. Its distinguishing constraint is converter equivalence, maintained throughout fitting and inference; attack amortization itself is established. Available source/target text defines its capability, rather than demonstrating ordinary generator behavior.
+
+\paragraph{Reward optimization and geometry.}
+DRaFT fine-tunes diffusion with differentiable rewards~\cite{draft2024}; EasyTune optimizes motion rewards~\cite{tan2026}, and SoliReward studies reward hacking in video evaluation~\cite{solireward2026}. These motivate testing objectives used to train a generator. MotionRFT extends reward optimization across motion representations~\cite{motionrft2026}; its semantic/plausibility tradeoffs differ from changing only an equivalent encoding. Geodesic supervision appears in animation methods such as RigMo~\cite{rigmo2026}; its full composite objective need not leave this channel unconstrained. Rotation projections~\cite{zhou2019,levinson2020}, manifold diffusion~\cite{rsgm2022} and quotient-space diffusion~\cite{xu2026} already address geometry and redundant descriptions. We introduce neither a rotation encoding nor an intrinsic diffusion process: our experiment changes denoised-output losses in an existing Euclidean DDPM.
+
+\section{Representation consistency and training}
+\subsection{Equivalent encodings as a physical control}
+
+For one joint, write $d=(a,b)\in\R^6$, where $a\ne 0$ and $b$ is not collinear with $a$. The audited converter uses
+\begin{align}
+u&=a/\|a\|,\qquad b_\perp=b-(u^Tb)u,\\
+v&=b_\perp/\|b_\perp\|,\qquad R (d)=[u;v;u\times v].
+\label{eq:rotation}
+\end{align}
+Rows follow the sign-reader implementation; HumanML3D uses the same two vectors as columns. We retain each native convention. Its canonical 6D encoding is $\C (d)=(u,v)$. For $\alpha,\beta>0$ and $\eta\in\R$, define
+\begin{equation}
+\G_{\alpha,\beta,\eta}(a,b)=(\alpha a,\beta b+\eta a).
+\label{eq:transform}
+\end{equation}
+The normalized first vector is unchanged. Removing the second vector's component along $u$ leaves $\beta b_\perp$; positive normalization gives the same $v$. Hence
+\begin{equation}
+R (\G (d))=R (d),\quad \C (\G (d))=\C (d).
+\label{eq:invariance}
+\end{equation}
+Every encoding of fixed canonical rows $(u,v)$ has $a=\rho u$, $b=\sigma v+\tau u$, with $\rho,\sigma>0$. Thus these transformations span the nondegenerate equivalence class, rather than a neighborhood of approximately similar rotations. This follows from the established conversion, not new geometric theory.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/motion_consistency_contract.pdf}
+\caption{\textbf{The audit separates movement from its description.} Positive scales and shear alter only redundant rotation coordinates. The native converter returns the same rotations; HumanML3D root, position, velocity and contact features stay fixed. Fixed recodings and constructed attacks isolate this channel, while raw/canonical pairs measure its presence in released outputs. A raw evaluator sees different arrays for identical motion. Canonicalization maps them to one input before normalization and reading. This closes the tested channel without assuming evaluator accuracy.}\label{fig:contract}\end{figure*}
+
+The intervention preserves all 40 represented body/hand rotations and timing. A deterministic geometry pipeline then returns the same represented motion when shape, translation and other parameters are fixed. We verify matrices directly; face and unrepresented parameters are outside the audit. Noncanonical features remain nondegenerate converter inputs accepted by the released reader. A canonical-only interface removes this surface. Floating-point matrix residuals and decoded hypotheses are checked separately; equivalence alone does not establish human comprehension.
+
+\subsection{A constrained learned attack}
+
+Let $x=g (c,\ell)$ be the canonical encoding of a frozen generator's motion for source text $c$ and duration $\ell$. Our output layer $h_\theta (x,c)$ produces bounded coefficients at each frame/joint:
+\begin{equation}
+\alpha=e^{0.35\tanh q_1},\quad
+\beta=e^{0.35\tanh q_2},\quad
+\eta=0.35\tanh q_3.
+\label{eq:bounds}
+\end{equation}
+With $y_\theta=\G_{h_\theta (x,c)}(x)$, every parameter setting satisfies $R (y_\theta)=R (x)$. Only $\theta$ is fitted. The motion generator and BT reader $f$ remain frozen. We minimize TRAIN caption loss
+\begin{equation}
+\mathcal{L}(\theta)=-\sum_k\log p_f (c_k\mid c_{<k},y_\theta).
+\label{eq:learnedloss}
+\end{equation}
+Teacher forcing is used only to optimize TRAIN loss. Evaluation decodes from features, masks, and lengths; source text enters the generator/layer as the production task's input, not as an extra input to the evaluation reader.
+
+
+
+The PHOENIX layer has 299,384 trainable parameters: motion projection, cross-attention, three temporal convolutions and a zero-initialized coefficient head, with the generator text encoder frozen. Left-hand joints 10--24 are identity. No clip ID or reference pose enters the layer. Final BT decoding receives only motion features, masks and lengths; the source caption reaches it through the array rather than an extra textual input. Matched motion-only and canonical-loss controls separate source-text influence from learned representative selection. Changing only its text at fixed motion tests whether predictions follow that conditioning. This is a constructed amortized attack, not ordinary generator training; transfer is evaluated separately.
+
+For real How2Sign/CSL motion, the same temporal coefficient stack uses native reader word embeddings and a fitted projection/Transformer. This is a corpus-specific source encoder, not the frozen PHOENIX generator encoder or cross-language transfer. These layers receive raw real TRAIN features without a motion generator. They extend constructed-attack coverage, not spontaneous-exploitation evidence.
+
+\subsection{A detector-aware geometric control}
+A high RMS-detector AUC on bounded layers does not establish robustness against an attacker targeting that statistic~\cite{tramer2020adaptive}. For raw generator features, let $s=(\rho-1,\sigma-1,\tau)$. The squared distance to canonical rows and squared feature norm satisfy
+\begin{equation}
+E=\|s\|^2,\qquad N-E=2(\rho+\sigma)-2.
+\end{equation}
+Rotating $s$ about $(1,1,0)/\sqrt 2$ preserves both $E$ and $N$ per frame/joint; an arbitrary auxiliary rotation preserves only $E$. These are rotations of redundant scalars, not physical joints. The sphere/plane intersection leaves a circle of representatives. It collapses at canonical input: zero distance leaves no such channel. Where $\|s\|\ge0.95$ we retain the identity, ensuring positive scales elsewhere. Left-hand features remain protected.
+
+We test both learned layers and per-clip optimization on these surfaces. The latter has explicit target captions and iterative reader gradients; it is a stronger, separate access model. Holding two detector statistics fixed does not imply indistinguishability to every detector, and cannot establish ordinary-generator behavior. Canonicalization remains constant on the entire rotation fiber, independently of these statistics.
+
+\subsection{Closing the channel and measuring the cost}
+For a deterministic reader,
+\begin{equation}
+(f\circ\C)(\G (x))=(f\circ\C)(x).
+\label{eq:closure}
+\end{equation}
+Canonicalization makes the input constant within each equivalence class. It does not make a reader linguistically accurate: a constant predictor would also be invariant. Real How2Sign/CSL features are noncanonical, so applying $\C$ after raw-input training can cause distribution shift. Matched raw/canonical reader fine-tuning measures accuracy separately from closure.
+
+
+
+\section{Experimental protocol}
+\paragraph{HumanML3D releases and protocol.}
+The 263-dimensional representation contains 21 6D rotations in channels 67--192. The public evaluator reads 259 channels without canonicalizing rotations. We change only this block before normalization, preserving every root, position, velocity and contact value. The primary audit uses the MDM-linked evaluator, native caption/crop draws and 20 TEST repetitions. MDM's nominal 1,000-sample limit emits 1,024; other generators and the independent real reference use all 4,640 eligible native loader entries after dropping the last incomplete batch. Candidate batches contain 32. Paired $t_{19}$ intervals adjust ten primary FID/R1 endpoints. A distinct official T2M-GPT checkpoint repeats all comparisons on the same outputs; it shares the evaluator architecture. This paired audit uses public inference components, not an exact reproduction of each published leaderboard score. Adapter checks, source pins, batch sizes and processed-data mirror limitations are in the supplement.
+
+\paragraph{Sign-language data and evaluators.}
+Released re-optimized features contain 240 values per frame: ten body joints and fifteen per hand. Native vocabularies, normalization, decoding and the 300-frame cap are retained. TEST counts are 642 PHOENIX,2,183 How2Sign and 1,162 CSL; real-motion raw BLEU is 15.00,3.48 and 6.89. The readers share one Sign Language Transformer family~\cite{camgoz2020}. A local Conv/BiGRU/CTC recognizer~\cite{graves2006} supplies another architecture and gloss task, with 50.11\% real TEST WER and a fixed-rotation wrong-target attack (supplement). It is not an independently published strong BT checkpoint.
+
+\paragraph{Layers.}
+PHOENIX layers use 7,096 generated TRAIN motions, seeds 42/123/777,20 epochs, batch 64, AdamW learning rate 0.001 and the final checkpoint. Sampling uses DDIM 50~\cite{song2021}, CFG 3~\cite{ho2022}, seed 102, source text and prescribed reference duration; no reference poses or gloss anchors enter the sampler. Bounds 0.01/0.05/0.1 repeat the complete protocol alongside 0.35. Real-motion layers use all 29,630 valid How2Sign and 18,201 valid CSL TRAIN clips, the same fitting schedule, three primary text-conditioned seeds and one seed each for motion-only/canonical-loss controls. All weights are frozen before full TEST inference.
+
+\paragraph{Controls and uncertainty.}
+Wrong-caption attacks use 128 fixed TEST clips per corpus,80 Adam steps, learning rate 0.1 and bound 0.35, optimizing circularly shifted captions. Separate 64-clip DEV controls vary bound, steps and granularity with random comparators. These differ from one-pass layer inference.
+
+Native BLEU-4~\cite{papineni2002,post2018} uses words on PHOENIX/How2Sign and characters on CSL, not a common cross-language scale. Standalone code recomputes scores. New intervals use 20,000 paired bootstrap samples; How2Sign resamples official VIDEO\_ID groups (149 TEST), other corpora resample clips. Fixed-model intervals average seed-specific differences; sensitivity intervals also resample the training seeds. Initial studies use three fine-tuning seeds per shared initialization. The new denoiser replication reports seven new seeds and the pooled ten separately; the stress grid retains three seeds and adjusts eleven endpoints/contrasts. Seed requirements depend on effect and variance, rather than a universal run count~\cite{colas2018}. Fitting uses disjoint TRAIN IDs. All sign-language TEST splits had already been inspected in the project; present-model settings are fixed before inference, rather than constituting pristine external validation.
+
+
+
+
+
+\section{Results}
+\subsection{HumanML3D evaluation at unchanged motion}
+\input{table_motion_releases}
+\input{table_humanml}
+
+\textbf{Representation dependence occurs in released outputs.} No attack or fitting is needed in \cref{tab:releases}. All five primary FID gap intervals exclude zero. Canonicalization reduces T2M-GPT FID by 18.6\% of its raw value, whereas canonicalization increases MotionLCM FID by 5.5\% of its raw value. Thus canonicalization does not uniformly improve scores. Two R1 gaps are positive but small; the primary mean FID ordering remains unchanged. The second official checkpoint confirms nonzero FID gaps for four releases, with a direction change for T2M. It supplies weight-level replication, not an independent evaluator architecture or reliable ranking reversal.
+
+\textbf{Fixed recoding alone dominates the generator--data distance.} On the full native reference protocol, identical real motion has mean FID 0.001 before recoding and 2.003/3.639 after fixed $\pm0.35$ directional recodings (\cref{fig:motioncontrols}). These shifts exceed MDM's raw FID 0.455 by factors 4.4/8.0. Direction matters: fixed $\pm0.1$ gives 0.061/0.083, and random 0.35 gives 0.026. These are sensitivity controls, not evidence that the largest recodings occur naturally. Canonicalization leaves the real-motion baseline unchanged. Native conversion verifies all 391,680 released raw/canonical pairs, plus sampled real controls; RIC positions are bitwise fixed, and 200 sampled release FK pairs differ by at most $9.6\times10^{-7}$.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/motion_release_controls.pdf}
+\caption{\textbf{Score changes without changed movement.} Left: fixed encodings of real motion, 20 native TEST repetitions and native 95\% mean intervals. Large directional encodings change FID substantially; smaller and random controls have smaller effects. Right: caption-blind MDM attacks at both retained bounds in three 960-output cohorts. Bound 0.1 helps each cohort; 0.35 hurts each. Cohorts overlap in source groups and are not independent clip samples.}\label{fig:motioncontrols}\end{figure*}
+
+\textbf{Retrieval can approach perfection at unchanged motion.} Using the frozen official evaluator and MDM50 release, 80-step target-caption attacks raise TEST R-precision from 0.397 to 0.993 for generated motion and 0.462 to 0.996 for real motion (\cref{tab:humanml}). The audit selects 1,024 full-caption TEST clips before scoring, with five fixed 32-candidate permutations. Intervals resample native original/mirrored clip groups and adjust six attack endpoints. This is a subset consistency audit, not a reproduction of full leaderboard scores.
+
+\textbf{The attack redirects the evaluator rather than improving movement.} With shifted target text, R-precision rises from 0.033 to 0.788 on MDM and 0.028 to 0.839 on real motion; actual-caption retrieval collapses. Canonicalized embeddings remain fixed within $7.2\times10^{-7}$. Canonical-reader gradient controls do not redirect retrieval. Target-caption MM-distance falls from 3.58 to 0.66 on MDM, while FID worsens from 0.37 to 1.29 against a fixed real reference. Disagreement among metrics at unchanged motion reinforces the representation failure. Target captions and evaluator gradients are available to this attack; random/fixed encodings and all VAL outcomes appear in the supplement.
+
+\textbf{Captions are not necessary to manipulate a distribution score.} Regularized Gaussian transport targets~\cite{bhatia2017} use 2,048 TRAIN motion embeddings; optimization consumes no caption content or TEST real-motion embeddings. At bound 0.1, FID falls 0.384$\to$0.210, 0.376$\to$0.176 and 0.327$\to$0.199 across three 960-output cohorts (39--53\%). Bound 0.35 worsens every cohort; canonical-gradient controls remain at baseline. The original grouped sensitivity interval is $[-0.268,-0.049]$, adjusted over two bounds and conditional on that cohort. The two new cohorts have separate generation seeds but overlap each other and the original in source groups; this is repetition, not independent clip validation. Every attack is saved before its reference scoring. Full access, overlap and control details are in the supplement.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/adaptive_statistics.pdf}
+\caption{\textbf{Adaptive attacks on full TEST at fixed represented rotations.} Left: actual-caption BLEU and four-comparison-adjusted gain intervals, anchored at the raw-generator baseline. Right: distribution of per-clip reduction in target-normalized token edit error for the circle attack; positive values mean closer to the target. This is a presentation diagnostic, not sentence BLEU. The circle preserves distance and squared 6D norm per joint/frame. Canonical hypotheses are unchanged. This tests the tested scalar statistics, not general detector evasion or spontaneous training.}\label{fig:adaptivestats}\end{figure*}
+
+\input{table_learned}
+\input{table_real_layers}
+\subsection{Conditional layers across three corpora}
+
+The PHOENIX layer changes mean TEST raw BLEU from 6.39 to 15.21, with gain 8.81 and interval $[7.82,9.87]$(\cref{tab:learned}). Canonical hypotheses and rotations remain fixed. The difference from real-motion BLEU15.00 is 0.21, interval $[-0.85,1.24]$; better signing is not established.
+
+Motion-only training gains 1.21; canonical-loss training gains $-0.13$, interval $[-0.32,0.04]$. Removing 32 exact TRAIN-caption matches leaves 610 TEST clips and gain 8.37; this is unseen full captions, not unseen vocabulary or signers. Changing only layer text raises wrong-caption BLEU from 0.83 to 9.60 while actual BLEU drops to 4.26; canonical predictions stay identical. Source-caption information is central to this conditional attack.
+
+
+
+
+Layers fitted to real How2Sign/CSL motion extend the controlled failure to two additional corpora (\cref{tab:reallayers}). DEV gains are 2.84/0.85, intervals $[2.46,3.24]$/$[0.32,1.43]$; TEST gains are 2.64 and 0.54, with intervals $[2.27,3.03]$ and $[0.14,0.97]$, using the same frozen weights. These are native encoders/readers, not cross-language transfer. Canonical hypotheses stay identical. Weak readers and one-seed exploratory controls remain limitations.
+
+\input{table_readers}
+\subsection{An adaptive attack preserves detector statistics}
+Learned circle/sphere layers gave no reliable DEV gain, even though they preserved the prescribed statistics. This does not establish that the reader resists per-clip optimization. We fix a stronger target-aware protocol after DEV64 development: Adam learning rate 0.1, zero initialization and the final 200 steps, with all four circle/sphere and actual/shifted-caption endpoints on TEST642. Every shifted target differs. The circle has the same phase bound as the learned control; the sphere has a larger auxiliary angular budget. Neither adds a trained module to the generator.
+
+The circle preserves $E$ and $N$ per frame/joint and increases actual-caption raw BLEU from 6.62 to 10.72, gain 4.09, family-adjusted interval $[3.04,5.24]$ (\cref{fig:adaptivestats}). Wrong-target BLEU rises from 1.25 to 3.35, gain 2.10, interval $[1.22,3.12]$. Canonical hypotheses remain identical. The sphere, which fixes $E$ but allows $N$ to change, reaches 33.07 actual-caption and 22.51 wrong-target BLEU. All four target-gain intervals exclude zero; random and canonical-reader-gradient controls do not support positive wrong-target gain.
+
+
+
+The circle's clip RMS is 0.102 before and after, with threshold-detector AUC 0.5003. Independent reconstruction checks the invariants and protected features; floating-point residuals are reported separately. The tested RMS threshold therefore misses a successful attack whose squared 6D norm is also fixed. An exploratory nine-statistic audit gives circle AUCs 0.500--0.530; temporal and learned multivariate detectors remain untested. Canonicalization closes the full fiber regardless of attacker access, whereas the negative learned fixed-statistic controls remain negative. Complete endpoints, controls and DEV outcomes appear in the supplement.
+
+\subsection{Closure without assuming free accuracy}
+
+Matched raw/canonical TRAIN adaptation, three seeds and five epochs, separates accuracy from invariance (\cref{tab:readers}). TEST canonical-minus-raw differences are +0.10 How2Sign/$-0.02$ CSL. Seed-plus-group intervals are $[-0.03,0.25]$/$[-0.23,0.19]$. An exploratory 0.2-BLEU margin does not establish How2Sign noninferiority to the original reader under this uncertainty. Fresh attacks preserve all 384 canonical-reader DEV hypotheses; fixed equivalent encodings preserve all 10,035 TEST hypotheses. Accuracy still depends on reader and data.
+
+\subsection{Ordinary training and bounded layers}
+Ordinary training remains distinct from an output attack. An MDM reward pilot (three seeds per MSE/raw-reward/canonical-reward arm) gives raw/canonical R1 0.358/0.364 for the raw-reward arm, with worse FID than MSE. This tests one-step denoising rewards, not rollout reinforcement learning. In a separate five-seed audit of released MotionRFT~\cite{motionrft2026}, retrieval gains over its linked base survive canonicalization in both evaluators (supplement). Neither supports attributing its gains to this channel. In sign-language generation, ten geodesic/raw-CE1 runs give a same-output gap of 0.20, interval $[-0.43,0.80]$. Stronger CE gives 5.39 raw versus 3.40 canonical BLEU, partly through worse canonical performance. It does not establish improved generation or routine caption transmission. Complete training, budget, detection and transfer results appear in the supplement.
+
+\section{Discussion and limitations}
+Released HumanML3D outputs establish practical score dependence on redundant coordinates; controlled attacks isolate the available channel. This is broader than a constructed-adversary demonstration, but does not show intentional exploitation. Primary mean rankings remain stable. The negative MDM reward pilot and surviving MotionRFT gains prevent generalizing attack capability to reward-trained production systems. In sign-language training, the original CE1 endpoint remains unconfirmed; stronger-weight gaps do not establish routine caption coding.
+
+The HumanML3D study adds an independent public evaluation architecture and motion domain. Sign-language BTs still share one family with weak How2Sign/CSL scores; CTC is local. Human/avatar validation is absent. The separate SLRTP XYZ control~\cite{slrtprepo} does not expose this 6D channel. Canonicalization closes only the tested 6D fiber; positional/velocity redundancies, physical-motion attacks and linguistic/facial errors remain outside its guarantee.
+
+A practical evaluation contract should declare the converter/valid domain, canonicalize consistently in supervision and inference, and measure adapted-reader accuracy. An invariant inaccurate reader would still be inadequate; linguistic and human assessment remain necessary.
+
+\section{Conclusion}
+Raw-feature motion evaluators can reward a redundant description rather than changed movement. Conditional layers demonstrate the failure across three corpora; a per-clip attack retains positive TEST gain even when canonical distance and feature norm are fixed. The public HumanML3D evaluator reproduces the inconsistency at fixed positions and rotations, including a distribution-score attack that uses no caption content. Canonicalization closes this converter-equivalent channel, with evaluator accuracy assessed separately. Natural score dependence is measured in released outputs; deliberate exploitation during ordinary training remains unconfirmed. Representation consistency is necessary alongside linguistic validity in motion evaluation.
+
+\clearpage
+{\small\bibliographystyle{ieeenat_fullname}\bibliography{references}}
+\end{document}

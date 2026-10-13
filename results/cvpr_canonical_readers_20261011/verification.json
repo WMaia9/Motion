@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "fresh_attack_pairs_reconstructed": 768,
+  "max_rotation_error_deg_independent": 8.607369087398117e-06,
+  "maximum_reconstruction_error": 4.76837158203125e-07,
+  "standalone_BLEU_sentence_evaluations": 34104,
+  "all_canonical_attacks_leave_hypotheses_unchanged": true,
+  "TRAIN_DEV_clip_overlap": 0,
+  "source_download_and_checkpoint_hashes_match": true,
+  "no_TEST_use": true
+}

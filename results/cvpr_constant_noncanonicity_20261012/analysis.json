@@ -1,0 +1,108 @@
+{
+  "DEV_clips": 519,
+  "baseline_raw": 6.532810661220202,
+  "baseline_canonical": 6.087092588914921,
+  "arms": {
+    "text_raw": {
+      "raw_per_seed": [
+        6.702622260738151,
+        6.51593819670844,
+        6.574552221970805
+      ],
+      "raw_mean": 6.597704226472466,
+      "raw_gain": 0.0648935652522642,
+      "canonical_score": 6.087092588914921,
+      "paired_gain_ci95": [
+        -0.3859946844415946,
+        0.5296766893825385
+      ],
+      "seed_and_clip_gain_ci95": [
+        -0.4066527753266889,
+        0.5693385704454672
+      ],
+      "RMS_mean_per_seed": [
+        0.1049936259011083,
+        0.10499362575755183,
+        0.10499362548479454
+      ],
+      "max_6D_norm_squared_difference": 1.3669061749155276e-06,
+      "max_canonical_distance_squared_difference": 1.1390294138990953e-06,
+      "max_rotation_error_deg": 2.4748572036215916e-05,
+      "simple_RMS_detector_best_AUC_per_seed": [
+        0.5000501186140532,
+        0.5000371248992987,
+        0.5000037124899299
+      ],
+      "canonical_changes": 0
+    },
+    "motion_raw": {
+      "raw_per_seed": [
+        6.685089757258635,
+        6.598119414357089,
+        6.922907167665967
+      ],
+      "raw_mean": 6.735372113093898,
+      "raw_gain": 0.202561451873696,
+      "canonical_score": 6.087092588914921,
+      "paired_gain_ci95": [
+        -0.20378148003225308,
+        0.6323476375669972
+      ],
+      "seed_and_clip_gain_ci95": [
+        -0.2419902439635288,
+        0.7120116824451427
+      ],
+      "RMS_mean_per_seed": [
+        0.10499362570012925,
+        0.10499362570730707,
+        0.10499362575755183
+      ],
+      "max_6D_norm_squared_difference": 1.3355579264739958e-06,
+      "max_canonical_distance_squared_difference": 1.3194160579654834e-06,
+      "max_rotation_error_deg": 2.494467579750473e-05,
+      "simple_RMS_detector_best_AUC_per_seed": [
+        0.5000241311845441,
+        0.5000315561644039,
+        0.5000352686543338
+      ],
+      "canonical_changes": 0
+    },
+    "text_canonical": {
+      "raw_per_seed": [
+        6.571247327375126,
+        6.511613714085868,
+        6.346990343797864
+      ],
+      "raw_mean": 6.476617128419619,
+      "raw_gain": -0.0561935328005827,
+      "canonical_score": 6.087092588914921,
+      "paired_gain_ci95": [
+        -0.3609915110564412,
+        0.23090613487483735
+      ],
+      "seed_and_clip_gain_ci95": [
+        -0.4199012843371436,
+        0.2993788366241107
+      ],
+      "RMS_mean_per_seed": [
+        0.10499362541301632,
+        0.10499362578626313,
+        0.1049936255924619
+      ],
+      "max_6D_norm_squared_difference": 6.653765431963166e-07,
+      "max_canonical_distance_squared_difference": 4.2331558502972655e-07,
+      "max_rotation_error_deg": 9.797247781293687e-06,
+      "simple_RMS_detector_best_AUC_per_seed": [
+        0.500001856244965,
+        0.500029699919439,
+        0.5000148499597195
+      ],
+      "canonical_changes": 0
+    }
+  },
+  "replicates": 20000,
+  "budget_invariants": "total 6D norm and distance to canonical at every represented frame/joint; floating-point residuals reported",
+  "no_general_detector_or_security_claim": true,
+  "source_is_raw_frozen_generator": true,
+  "no_TEST_use": true
+}

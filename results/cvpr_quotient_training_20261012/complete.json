@@ -1,0 +1,12 @@
+{
+  "fits": 42,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "DEV_clips": 519,
+  "TRAIN_clips": 7096,
+  "all_first_epoch_stochastic_inputs_matched": true,
+  "no_TEST_use": true
+}

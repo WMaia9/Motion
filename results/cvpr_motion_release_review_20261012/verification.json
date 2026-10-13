@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "completed_four_scientific_archives": true,
+  "layout_passed": true,
+  "visual_review_passed": true,
+  "generated_result_tables_match_complete_endpoints": true,
+  "all46bibliographic_keys_cited_and_available": true,
+  "teaser_geometry_and_aggregate_scope_checked": true,
+  "claim_limits_reviewed": true,
+  "current_style_unmodified_and_main_within8pages": true,
+  "finalizer_code_sha256": "39a67071665ecb974899a9974a912c3e87c3bfb4037f9e76622a936f11460f66"
+}

@@ -1,0 +1,7 @@
+{
+  "args_diffusion_steps": 50,
+  "respacing_from_native_model_util": "[steps] with steps50; all50timesteps retained",
+  "direct_x0_forward_matches_native_timestep_map_identity": true,
+  "model_util_sha256": "ef7eb235bdcbfbcdbf4cb03c6368dca20d163e07df8562fe2e5216c296dc5103",
+  "respace_sha256": "b03f25982836781ee56ee33834f3f5d312a103747b19d02ab7bcde62b36d458d"
+}

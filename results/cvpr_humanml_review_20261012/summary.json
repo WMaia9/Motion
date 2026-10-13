@@ -1,0 +1,50 @@
+{
+  "title": "Same Motion, Different Scores: Auditing Representation Consistency",
+  "target_aware_HumanML3D": {
+    "passed": true,
+    "real_TEST_clips": 1024,
+    "MDM_TEST_clips": 1024,
+    "DEV_clips_per_source": 128,
+    "conditions_per_source_per_split": 12,
+    "evaluator_public_native_and_frozen": true,
+    "no_new_model_fitting": true,
+    "representation_slice": [
+      67,
+      193
+    ],
+    "real_R1_before": 0.4623046875,
+    "real_R1_after": 0.99609375,
+    "MDM_R1_before": 0.397265625,
+    "MDM_R1_after": 0.9927734375,
+    "rotation_and_bitwise_physical_pairs": 27648,
+    "FID_does_not_improve_under_caption_target_attack": true,
+    "caption_and_gradient_access_explicit": true,
+    "data_mirror_is_not_full_byte_verified_against_original": true
+  },
+  "caption_blind_FID": {
+    "passed": true,
+    "TEST_clips": 960,
+    "TRAIN_reference_clips": 2048,
+    "attack_uses_no_caption_content": true,
+    "TEST_reference_moments_not_used_by_attack": true,
+    "integrity_checks_hash_heldout_files_without_numerical_deserialization": true,
+    "conditions": 6,
+    "FID_source": 0.38385375429853597,
+    "FID_bound010": 0.20989127279846825,
+    "FID_bound035": 1.085035042445307,
+    "relative_FID_reduction_bound010": 0.45319989592903975,
+    "posthoc_FID_change_family_ci_two_bounds_bound010": [
+      -0.2680679682911412,
+      -0.04941609688371385
+    ],
+    "one_generation_seed_no_quality_improvement_claim": true
+  },
+  "current_paper_path": "paper/current",
+  "main_content_pages": 8,
+  "supplement_content_pages": 12,
+  "references": 43,
+  "new_verified_physical_pairs": 33408,
+  "new_native_FK_pairs": 432,
+  "not_better_motion_or_ordinary_training_confirmation": true,
+  "no_external_submission_or_commit": true
+}

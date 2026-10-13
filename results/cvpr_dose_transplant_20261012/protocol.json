@@ -1,0 +1,67 @@
+{
+  "purpose": "caption-coordinate mechanism diagnostic for every dose endpoint, distinct from same-output score inflation",
+  "registered_before_new_dose_BLEU_results": true,
+  "seeds": [
+    42,
+    123,
+    777
+  ],
+  "conditions": [
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w1",
+      "epoch": 20
+    },
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w1",
+      "epoch": 40
+    },
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w3",
+      "epoch": 20
+    },
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w3",
+      "epoch": 40
+    },
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w10",
+      "epoch": 20
+    },
+    {
+      "root": "reports/cvpr_seed_dose_response_20261012",
+      "arm": "geodesic_raw_w10",
+      "epoch": 40
+    },
+    {
+      "root": "reports/cvpr_quotient_training_20261012",
+      "arm": "geodesic_none_w0",
+      "epoch": 20
+    },
+    {
+      "root": "reports/cvpr_quotient_training_20261012",
+      "arm": "geodesic_canonical_w1",
+      "epoch": 20
+    }
+  ],
+  "source": "full DEV519, saved source outputs of each fixed model",
+  "alternative": "same sampler seed and source duration, next caption in fixed DEV ordering",
+  "operation": "keep source canonical u,v, replace rho/sigma/tau with alternate output scalars; original left stream protected",
+  "no_added_trained_module": true,
+  "no_per_clip_gradient_optimization": true,
+  "no_TEST_use": true,
+  "all_grid_endpoints_reported": true,
+  "statistics": "20000 paired clip and seed+clip bootstrap, family eight aggregate conditions",
+  "inputs_sha256": {
+    "reports/cvpr_seed_dose_response_20261012/protocol.json": "9287777c50b27a4b37492419331078fd9c36b691523d4c443783b24f3ed33ac4",
+    "reports/cvpr_physical_semantic_ddpm_20261010/shared_best.pt": "abdddac25d5e63887242e9af08ac440c2929617f26cff947b5a2a023f3bc8ae1",
+    "reports/cvpr_physical_semantic_ddpm_20261010/normalization.npz": "bfe5912b57a1b0cfc46c981ae1b7545c1700bfa59b25c980fdea7c39a8f9ee00",
+    "reports/cvpr_physical_semantic_ddpm_20261010/data_audit.json": "708cf93f2f531c9b7698c7c128da6c940a6c90bde3c3717dc7e5dbcab9cf1342",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/PHOENIX-2014T/best.ckpt": "80c67168ddadcc6f0517ea995dd9340da6c4f3e424bb667197d9282ce4774279",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_dose_coordinate_transplant.py": "200221c56a3f8c0a74e1eecf9a9826e897ce6071d34a9c0da9e197499c0dd778"
+  }
+}

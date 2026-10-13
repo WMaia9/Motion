@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "independently_reconstructed_pairs": 4671,
+  "max_rotation_error_deg": 5.281813760621336e-06,
+  "max_reconstruction_error": 2.384185791015625e-07,
+  "standalone_BLEU_sentence_evaluations": 9342,
+  "all_canonical_hypotheses_unchanged": true,
+  "simple_RMS_detection_reported": true,
+  "three_seed_sensitivity_reported": true,
+  "no_TEST_use": true
+}

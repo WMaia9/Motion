@@ -1,0 +1,33 @@
+{
+  "pilot_gaps": [
+    -0.009497066971944967,
+    1.0776413288520614,
+    -0.029717826315902585
+  ],
+  "pilot_mean": 0.3461421451880713,
+  "pilot_seed_SD": 0.6335775497545069,
+  "pilot_seed_count": 3,
+  "illustrative_projections": [
+    {
+      "seeds": 7,
+      "illustrative_two_sided_power_assuming_pilot_effect_and_SD": 0.23097573831647633,
+      "illustrative_half_width_seed_only_t": 0.5859615031202178
+    },
+    {
+      "seeds": 10,
+      "illustrative_two_sided_power_assuming_pilot_effect_and_SD": 0.3393149998691634,
+      "illustrative_half_width_seed_only_t": 0.4532340756960576
+    },
+    {
+      "seeds": 20,
+      "illustrative_two_sided_power_assuming_pilot_effect_and_SD": 0.6400543621478957,
+      "illustrative_half_width_seed_only_t": 0.29652342086933614
+    },
+    {
+      "seeds": 30,
+      "illustrative_two_sided_power_assuming_pilot_effect_and_SD": 0.8243339468113612,
+      "illustrative_half_width_seed_only_t": 0.23658174519049321
+    }
+  ],
+  "warning": "Illustration only: three-seed SD unstable, normal/equal-distribution assumptions unverified, not design-quality calibrated power; extra clip sampling not included, no change to registered sample size."
+}

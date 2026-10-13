@@ -1,0 +1,98 @@
+{
+  "scope": "Frozen evaluator consistency audit, not a new generator or leaderboard reproduction. Previously unused public HumanML3D subset. No training.",
+  "dataset": "HumanML3D263",
+  "rotation_slice": [
+    67,
+    193
+  ],
+  "rotation_joint_count": 21,
+  "evaluator_channels": 259,
+  "column_rotation_convention": true,
+  "real_example_numerically_matches_author_within_2_5e_minus5": true,
+  "real_example_byte_identical": false,
+  "processed_motion_source": "third-party public HF mirror with LFS SHA256, same byte count as MDM author-linked Drive; author example numerically checked with float32/float64 differences, not byte identical",
+  "eligible_counts": {
+    "val": 1400,
+    "test": 4198
+  },
+  "clips": {
+    "val": 128,
+    "test": 1024
+  },
+  "selection_seed": 20261012,
+  "selection": "uniform without replacement from full-caption clips with 40<=frames<200; fixed first-caption draw and multiple-of-four crop; both mirrored and native samples possible",
+  "generation": {
+    "model": "official MDM50step encoder checkpoint",
+    "steps": 50,
+    "CFG": 2.5,
+    "seed": 42,
+    "source_text_and_duration": true,
+    "reference_poses_supplied": false,
+    "batch_size": 32
+  },
+  "fixed_conditions": [
+    "identity",
+    "canonical",
+    "global_plus005",
+    "global_minus005",
+    "global_plus010",
+    "global_minus010",
+    "global_plus035",
+    "global_minus035",
+    "random035_seed42"
+  ],
+  "global_coefficients": "(b,-b,b), signed b; alpha=exp(c0), beta=exp(c1), eta=c2 in UNNORMALIZED 6D coordinates",
+  "adaptive_conditions": [
+    "target_caption",
+    "shifted_caption",
+    "canonical_reader_shifted_caption"
+  ],
+  "adaptive": "per-clip Adam lr0.1, 80 fixed final steps, zero initialized; c=0.35*tanh(parameters), masked padded frames; squared text/motion embedding distance, no model fitting",
+  "target_access": "source-caption target embeddings and frozen evaluator gradients; no claim of target-blind or spontaneous optimization",
+  "TEST_rule": "same fixed complete conditions after DEV, no selection of best bound/checkpoint; no TEST optimization of global coefficients",
+  "primary": "paired top1 R-precision change averaged five fixed 32-candidate permutations; MM-distance paired secondary; FID descriptive against fixed real reference embeddings",
+  "R_precision_seeds": [
+    11,
+    97,
+    909,
+    1337,
+    2027
+  ],
+  "grouping": "native clip ID stripping leading M for mirror pairs; not verified actor IDs",
+  "uncertainty": "10000 paired source-group bootstrap draws on R1 and MM-distance; family adjustment across 6 source/adaptive target endpoints; fixed transformations descriptive consistency controls",
+  "invariance": "native continuous6D converter plus independent float64 reconstruction, root/positions/velocity/contact unchanged bitwise, native recover_from_ric unchanged, canonicalized embeddings unchanged",
+  "inputs_sha256": {
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/meta/mean.npy": "0bdb5ba69a3a9e34d71990db15bc535ebc024c8d95ddb5574196f96058faa7d3",
+    "models/humanml3d_audit/extracted/t2m/Comp_v6_KLD01/meta/std.npy": "6a5f7d60301c9465972fc225f8ad0ee8f957e7720431189123eb6d15873a9557",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/args.json": "924adeca8b21dbf2779101ae2dd896f2187715d4a184449230f74508ceffbeae",
+    "external/HumanML3D/HumanML3D/Mean.npy": "26e136555dab04c94a129d446c26e6b9939cbf045fbf77bcf5462c1fb5a2001c",
+    "external/HumanML3D/HumanML3D/Std.npy": "6565a65ed9b31e23c328829a309e1c482be8b85fd23b43d65451a9b19a917f40",
+    "external/HumanML3D/HumanML3D/test.txt": "b89bc7df558df6246840702d0976a5d37ecbc4f055642b5c99e509a2d85ac12e",
+    "external/HumanML3D/HumanML3D/val.txt": "effa9e866f7c2bd3e5bb518600f95a5fd780a2dcf72c3cdb1e0caf5c93051e17",
+    "reports/cvpr_humanml3d_audit_20261012/val_selection.json": "8d55fd1a03558991b406ef2bb4d64cfa0bff34c6221d240d95ed45a1770ea402",
+    "reports/cvpr_humanml3d_audit_20261012/val_real.npz": "c32bfaa46b969503e298c820da55b4b3b4f32e137a2905d92f540295a339b744",
+    "reports/cvpr_humanml3d_audit_20261012/test_selection.json": "6ff5139515900cd97fcde0db7f3048131f569b4cf7a658312ac84805d12efb6d",
+    "reports/cvpr_humanml3d_audit_20261012/test_real.npz": "f509dd248e34b2f70bd97b7365e29cee54caa603509f41eaaea52f7f9ef03bd9"
+  },
+  "scientific_sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/prepare_humanml_audit.py": "e3c56fbbf7b0ef0aabf30c7108add7d85bbba91acf9077deaaee9cb514f9f3f4",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b",
+    "scripts/run_humanml_audit.py": "89a28692b6b299908b13c48fce2ec9f48ccaa0c86fe7f241fc0fcf2c62480c11",
+    "scripts/generate_humanml_mdm.py": "994a6bc54eb121c1fdd1e80dfa23d35000e7b759cf543203f8c8675bb43bbdab"
+  },
+  "external_revisions": {
+    "external/MDM": "ef8edce6a53c6ab19e53b4d4dcf15bc0bc60a778",
+    "external/HumanML3D_Evaluator": "72df96ec453edea2fbe9603b1d58a955eaf71636",
+    "external/HumanML3D": "9176e8fb446b71c7d2a725eb5cf6fec1ae3b3c23",
+    "external/CLIP": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6"
+  },
+  "implementation_revision": {
+    "prior_protocol": "initial_execution/protocol_v1.json",
+    "reason": "cuDNN eval-mode RNN backward unavailable; enable no-dropout GRU flag only during input gradients, check forward parity and restore eval for scoring",
+    "first_fixed_VAL_outputs_preserved": true,
+    "no_adaptive_or_TEST_evaluator_results_observed_before_fix": true,
+    "all_planned_conditions_and_hyperparameters_unchanged": true
+  }
+}

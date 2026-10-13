@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "designed_real_motion_layer_fits": 10,
+  "primary_seeds": 3,
+  "exploratory_control_seeds": 1,
+  "independently_reconstructed_pairs": 13570,
+  "max_rotation_error_deg": 0.00011654080857619946,
+  "max_reconstruction_error": 4.76837158203125e-07,
+  "standalone_BLEU_sentence_evaluations": 27140,
+  "all_canonical_hypotheses_unchanged": true,
+  "no_TEST_use": true,
+  "source_caption_available_by_design": true
+}
