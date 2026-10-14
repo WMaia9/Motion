@@ -1,0 +1,35 @@
+{
+  "scope": "no optimization against destination reader; all sealed fixed blind conditions, both budgets, all four cohorts",
+  "reader": "distinct released T2M-GPT checkpoint of same Guo architecture",
+  "attacks_already_sealed_before_destination_scoring": true,
+  "primary_attack_access": "TRAIN motion statistics and source-reader gradients, no caption/reference consumed before seal",
+  "retrieval_orders": [
+    11,
+    97,
+    909,
+    1337,
+    2027
+  ],
+  "repetitions_are_overlapping_TEST_sources_not_independent_samples": true,
+  "source_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/score_blind_cross_reader.py": "aa8d3220884920ad69b22dbd145ea3963b7fc8db49d7825f15531d7642c81838",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b",
+    "models/motion_release_audit/gpt_evaluator/t2m/text_mot_match/model/finest.tar": "881e45bea6fb84b15eca6e7cdd75d602b58a72f2038c223ee96ab75d4f684ada",
+    "reports/cvpr_humanml3d_blind_fid_20261012/attack_outputs_before_TEST_scoring.json": "5c304c5081cf22ecebe613b177d04220713b8d8c8917dd0c2c2365242cf63edb",
+    "reports/cvpr_humanml3d_blind_fid_20261012/protocol.json": "adc25044773e7078f52242d120f49c4a076a45ed8df62f940640ab00d7974b02",
+    "reports/cvpr_humanml3d_blind_fid_20261012/test_selection.json": "307b921bb33752b202a4ad35edbba917d9b6911315a6643c99058f700b608bbe",
+    "reports/cvpr_humanml3d_blind_fid_20261012/test_real.npz": "2ae6e95bcff778e7fb9ef270feb53121169205b45db2fd43f6f10c4189ef42ff",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/attack_outputs_before_TEST_scoring.json": "18a7136d3efc897f502096eda686035e0df098b4e1b807dd87479772c0e26a8e",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/protocol.json": "9d663c79b361f1e3aa7ce0640c4e0e0db73d26bda09a52827fa6592682e84821",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/test_selection.json": "88deadd13c2e51bd18a78b7133e7a040312f14da672b8519449bf392b56094cc",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_1/test_real.npz": "1003e2985fbf8c36f87e7256f411603ad83bf399efa6e68dfe10ecbbe0363f12",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_2/attack_outputs_before_TEST_scoring.json": "df1b0316022a08e325717b01d7cf03eba96903d006e2fd44e3546e10dd9fcad1",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_2/protocol.json": "01e081a71ab69530e1f57c8cc25a1c4196c0bd26aefa59bcdd4ad5c177c7a09a",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_2/test_selection.json": "a166b6e45228645bc5fb844b0880d4ce2a65a78318642fc87a8e7576126c1182",
+    "reports/cvpr_humanml_blind_repetitions_20261012/cohort_2/test_real.npz": "2fba1867569866237f185223e4c1a320b93e0aacf906a6fb90f32e7d83f01b17",
+    "reports/cvpr_blind_transfer_20261013/mld/attack_outputs_before_TEST_scoring.json": "55f7e0b6715e0e6596fb326050c937a0cd2b1de1878924d9c5fdf5e3948d8dcb",
+    "reports/cvpr_blind_transfer_20261013/mld/protocol.json": "1e5d9fe2a53748e42e4b687619cbc928080f15b28781cea2ba87e52fb84864d1",
+    "reports/cvpr_blind_transfer_20261013/mld/test_selection.json": "5daef9094e8b5d5badd5463977f9d2b06bdd7c80676b5edb80c9eb80b5e16104",
+    "reports/cvpr_blind_transfer_20261013/mld/test_real.npz": "0bd4e2028ef1598080ced106b20e2da4d553899c5b33f574a71beb4846cd41ce"
+  }
+}

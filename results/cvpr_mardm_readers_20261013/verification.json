@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "registered_input_hashes_verified": true,
+  "native_model_parameters_strictly_loaded_and_CLIP_state_bitwise_verified": true,
+  "all640_native_saved_metric_cells_recomputed": true,
+  "first_and_last_draw_native_forward_and_invariance_fixture_clips": 512,
+  "native_forward_max_difference": 0.0,
+  "all20_structural_invariance_records_checked": true,
+  "all_32_intervals_and_rankings_recomputed": true,
+  "CLIP_FID_is_descriptive_not_official_leaderboard_metric": true,
+  "verifier_sha256": "39053cbbbc998aa6b920453ee8b0c5b1dddaa23d29d6704923bcaf756b433b8d"
+}

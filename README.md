@@ -14,13 +14,20 @@ The active manuscript always lives in **`paper/current/`**. Edit its
 `main.tex`, `supplement.tex`, tables and figures there. New revisions keep this
 same path; dated manuscript directories are historical local copies.
 
+The [current review](docs/coherence-review.md) adds time-fixed directions in
+every non-null block and restores natural real-input sign-language evidence.
+All twenty Guo/TMR draws and independent checks are complete. The paper stays
+in the same working directory; the
+[previous MARDM round](docs/mardm-followup-review.md) is an immutable record.
+`reviewed/` contains the checked eight-page paper and its supplement.
+
 ## Results and scope
 
 The paired audit completes **20 native TEST repetitions for five public
 HumanML3D generators**: MDM50, MLD, MotionLCM-v1, T2M-GPT and T2M.
 Canonicalizing identical outputs changes all five primary FID means, with
-family-adjusted intervals excluding zero. T2M-GPT changes by **18.6%** and
-MotionLCM-v1 by **5.5%** of raw FID; the primary mean ranking stays unchanged.
+family-adjusted intervals excluding zero. T2M-GPT has a raw-minus-canonical FID gap of **+0.034** and
+MotionLCM-v1 **−0.031**; the primary mean ranking stays unchanged.
 Two official evaluator checkpoints share an architecture and have different
 weights. This establishes natural representation dependence, not intentional
 score manipulation. See the [completed review](docs/motion-release-review.md).
@@ -63,10 +70,38 @@ and controls remain reported. The processed-data mirror's origin and numerical
 differences are explicit; full leaderboard reproduction is not claimed.
 See the [HumanML3D study and review](docs/humanml-review.md).
 
+The completed extension adds MoMask, prefix-conditioned DiP and MotionDiffuse
+to HumanML3D, plus MoMask and MotionDiffuse on native KIT. All five additional
+FID gaps have adjusted intervals excluding zero; their signs vary, and their
+R-precision gaps remain inconclusive. TMR supplies a different evaluator
+architecture: on 1,024 fixed MDM clips, target-aware R1 changes **0.578 → 0.993**
+without changing represented motion; canonical R1 stays **0.580** before and
+after. Real-motion R1 changes **0.688 → 1.000**. Wrong-target, canonical-gradient
+and generic adversarial controls are retained.
+
+Equal L2 does not match temporal structure. With time-fixed directions in all
+blocks, Guo FID changes reach **1.189 for positions** and **0.476 for velocities**,
+above the **0.117 rotation-fiber maximum** at the larger budget. Random velocity
+and position noise also exceed random fiber coefficients. The fiber's distinction
+is preserving rotations and every nonrotation feature; there is no claim that
+it is the most influential feature block.
+
+Without an attack or layer, canonicalizing real native-preprocessed inputs changes
+**1,438/2,183 How2Sign** and **464/1,162 CSL** decoded sentences; PHOENIX changes
+**0/642**. How2Sign BLEU changes only 3.4779 → 3.4840. The shared original
+left-hand preprocessing and native token conventions are explicit. This exposes
+natural encoding dependence, without establishing better or worse semantics.
+
+Public MARDM essential readers are invariant by excluding rotation features.
+Our defense retains rotations, which matters for the rotation-only sign inputs.
+Neither reader rankings nor the eight-release RMS analysis refute MARDM’s full
+mechanism. See the [complete analysis](docs/coherence-review.md).
+
 Earlier replication adds 23 fine-tunes and adaptive/mechanism controls. Positive
-and negative outcomes are preserved. The manuscript has 46 references.
-A nine-fit MDM reward pilot does not inflate retrieval; a separate audit of
-released MotionRFT weights shows that retrieval gains survive canonicalization.
+and negative outcomes are preserved. The bibliography contains 52 entries; 40 are cited in the main paper.
+The failed MDM reward pilot and eight-fit DEV calibration do not establish
+exploitation during successful reward training. Released MotionRFT retrieval
+gains survive canonicalization.
 See the [independent critique analysis](docs/critical-review.md)
 and the [scientific status](docs/research-status.md).
 

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "clip_pairs": 92800,
+  "native_FK_pairs": 40,
+  "saved_metric_endpoints": 40,
+  "max_rotation_error_deg": 3.512772792942607e-06,
+  "max_matrix_error": 5.1744164980549456e-08,
+  "max_native_float32_matrix_error": 2.473592758178711e-06,
+  "max_native_FK_error_m": 7.152557373046875e-07,
+  "protected_features_and_padding_bitwise_equal": true,
+  "max_saved_FID_error": 8.071765478234738e-11,
+  "portable_projection_used_independently": true,
+  "source_and_asset_hashes_passed": true,
+  "verifier_sha256": "2a9c8372bb36cbda31b7fcf0ba78211eec5d3fa65c51249bec17325c121539da"
+}

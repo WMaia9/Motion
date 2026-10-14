@@ -1,0 +1,60 @@
+{
+  "scope": "finite DEV-only reward calibration; no TEST model or score selection",
+  "grid": [
+    {
+      "learning_rate": 1e-06,
+      "reward_weight": 0.0
+    },
+    {
+      "learning_rate": 1e-06,
+      "reward_weight": 0.001
+    },
+    {
+      "learning_rate": 1e-06,
+      "reward_weight": 0.01
+    },
+    {
+      "learning_rate": 1e-06,
+      "reward_weight": 0.1
+    },
+    {
+      "learning_rate": 3e-06,
+      "reward_weight": 0.0
+    },
+    {
+      "learning_rate": 3e-06,
+      "reward_weight": 0.001
+    },
+    {
+      "learning_rate": 3e-06,
+      "reward_weight": 0.01
+    },
+    {
+      "learning_rate": 3e-06,
+      "reward_weight": 0.1
+    }
+  ],
+  "training_seed": 42,
+  "steps": 500,
+  "batch": 16,
+  "optimizer": "AdamW wd1e-4, clipping1",
+  "MSE_control_each_lr": true,
+  "reward": "one denoised x0 cosine InfoNCE temperature0.1; frozen259-feature standard evaluator incl126rotationchannels",
+  "native_dropout_and_condition_drop_retained": true,
+  "DEV_selection": "fixed512native VAL outputs, fullnative VAL reference, common generation seed20261101",
+  "acceptance_criterion": "DEV R1 improvement at least0.005 over matched-lr MSE, and DEV FID <=1.10*matched-lr MSE; reward CE last100mean < first100mean",
+  "if_valid": "choose maximal qualifying DEV R1, tie smallerFID then smallerrewardweight; freeze before any new TEST fits; matched MSE/raw/canonical reward at3new declared seeds",
+  "if_invalid": "no TEST claim from a failed optimization; one-step pilot did not improve retrieval",
+  "public_VAL_already_inspected": true,
+  "inputs_and_sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_reward_dev_search.py": "9efb4e18da117cb1d47563667f4d1a6647e0bfd56ffb2796acf08e2177f74b20",
+    "scripts/run_humanml_reward_pilot.py": "018b286631fdcd277c5d7b6460a1502e010c0aed8183f32308c24791c332328a",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "models/humanml3d_audit/data/HumanML3D/val.txt": "effa9e866f7c2bd3e5bb518600f95a5fd780a2dcf72c3cdb1e0caf5c93051e17"
+  }
+}

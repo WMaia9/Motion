@@ -1,0 +1,50 @@
+{
+  "method": "dip",
+  "dataset": "humanml",
+  "repetitions": 20,
+  "draw_seeds": [
+    1234,
+    1235,
+    1236,
+    1237,
+    1238,
+    1239,
+    1240,
+    1241,
+    1242,
+    1243,
+    1244,
+    1245,
+    1246,
+    1247,
+    1248,
+    1249,
+    1250,
+    1251,
+    1252,
+    1253
+  ],
+  "generation_seed_offset": 400000,
+  "conditions": [
+    "raw",
+    "canonical"
+  ],
+  "candidate_pool": 32,
+  "reference": "full native drop_last32; HumanML saved independently drawn reference from frozen20rep study; KIT new native reference seed+100000",
+  "outputs": "full native test for MoMask and KIT,1024 HumanML for MotionDiffuse/DiP",
+  "generation_batch": 128,
+  "inference": "MoMask18masksteps CFG4 topk0.9 temp1 residualCFG5; MotionDiffuse native1000 DDPM steps linear EPS/FIXED_SMALL; DiP10 native autoregressive steps context20 predict40 CFG7.5 model200000 EMA",
+  "DiP_source_motion_prefix_conditioning": true,
+  "DiP_prefix": "first20frames of each saved cropped source motion; no future source frames passed; prefix excluded from generated output, not a text-only comparison",
+  "not_exact_published_score_reproduction": true,
+  "paired_audit_not_generator_quality_or_reward_exploitation": true,
+  "KIT_TMR263_AMASS_checkpoint_not_applied_to251_MMM_features": true,
+  "source_and_assets_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_additional_motion_audit.py": "cdba7969ede7a91763e622e7372d663aab28ba2cc6b5609e7e847011e552b325",
+    "scripts/additional_motion_adapters.py": "6c529ea0cd5c9284ceb204211ab46fa68a28c5c94c3d3fd630c8d058030a496a",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "models/generalization_audit/dip/checkpoints/dip/DiP_no-target_10steps_context20_predict40/args.json": "daa7f59050525ca5070e7e5426445ad178cf826c026348b4fd92214e3efb56da",
+    "models/generalization_audit/dip/checkpoints/dip/DiP_no-target_10steps_context20_predict40/model000200000.pt": "9d667b9124e57a5906a3fd3ce45934a2df0e475bc57395dd63bb76e3641491b3",
+    "reports/cvpr_motion_prevalence_20261012/manifest_sha256.json": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1"
+  }
+}

@@ -4,7 +4,7 @@
 \usepackage{graphicx,amsmath,amssymb,booktabs}
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
-\hfuzz=0pt\vfuzz=0pt
+\hfuzz=0 pt\vfuzz=0 pt
 \def\paperID{DRAFT}\def\confName{CVPR}\def\confYear{2027}
 \newcommand{\C}{\mathcal{C}}
 \newcommand{\G}{\mathcal{G}}
@@ -15,57 +15,7 @@
 \begin{document}\raggedbottom\maketitle
 \setcounter{section}{0}\renewcommand{\thesection}{S\arabic{section}}
 
-\section{Native HumanML3D released-output audit}
-\paragraph{Native loader, repeats and sample counts.}
-This audit uses the public Text2MotionDatasetV2, including subcaption segments, random caption choice, and native single/double crops to multiples of four. There are 4,648 cached TEST entries and 4,640 after dropping the incomplete 32-item batch. Entry counts include segments and mirrored motions, rather than 4,640 independent recordings. Twenty seeds 1234--1253 control caption/crop draws; independent full real-reference draws use seed plus 100,000. Generation uses seed plus 200,000. MDM's native nominal 1,000 limit emits 1,024 outputs; other methods emit 4,640. Metrics use the same 32-candidate batches in raw/canonical comparisons. Unchanged outputs, captions and reference embeddings are shared between each pair.
-
-\paragraph{Five public methods and inference parity.}
-MDM50~\cite{tevet2023} uses 50 native steps, CFG 2.5 and CLIP-B/32. MLD~\cite{mld2023} uses DDIM50, CFG 7.5 and CLIP-L/14; MotionLCM-v1~\cite{motionlcm2024} uses one LCM step, CFG 7.5 and Sentence-T5-large. T2M-GPT~\cite{t2mgpt2023} uses native categorical/EOS sampling, 512 VQ entries, block length 51 and the released net\_last decoder. Original T2M~\cite{guo2022} uses its recurrent prior and native duration estimator. Native component classes and strict states are retained. Throughput batching grows from 32 to 128 for MLD and GPT; the random draw order can differ, while evaluation batches remain 32. T2M batches share both motion and caption length because its attention does not mask padded caption positions. All valid repetitions remain included; no settings were chosen by TEST scores.
-
-Synthetic native/batched checks give exact decoder/reverse agreement for MLD/LCM, at most $6.5\times10^{-5}$ normalized mean-prior difference for the correct T2M grouping, and $5.7\times10^{-4}$ for GPT convolution decoding. Batched floating-point arithmetic is not claimed bit-identical. Pinned author code, weight hashes, executed source versions and parity fixtures are included with the artifacts.
-
-\paragraph{Metric uncertainty and reader replication.}
-The primary reader is the official MDM-linked T2M evaluator. The official T2M-GPT download contains distinct encoder weights of the same architecture; native normalization arrays are equal. The secondary reader reuses every saved output and independent reference draw. Native mean intervals use $1.96\,\mathrm{std}_{0}/\sqrt{20}$. Paired gap intervals use $t_{19}$ with ten FID/R1 comparisons per reader; MM-distance is a separate five-comparison family. The two readers' families are reported separately. The repetitions describe generation and native draw variability on this public split, not independent corpora or pretraining uncertainty. No exact published-score reproduction is claimed.
-
-\input{table_motion_release_readers}
-All five primary FID gap intervals exclude zero. Primary raw/canonical mean ordering is T2M-GPT, MLD, MDM, MotionLCM, T2M. Four secondary FID intervals exclude zero; MLD is inconclusive and T2M's gap changes direction. Secondary mean MLD/MotionLCM order differs across encodings by a small amount, but reliable ranking reversal was not established. All secondary R1 gap intervals include zero. This is score sensitivity across official weights, not a claim that canonicalization always improves metrics.
-
-\paragraph{Full native fixed controls and physical verification.}
-Across 20 full reference repetitions, mean real-motion FID is 0.000990 before recoding and 0.000990 after canonicalization. Fixed directional $+0.1/-0.1$ gives 0.06129/0.08336, $+0.35/-0.35$ gives 2.00261/3.63852, and random 0.35 gives 0.02628. The real draws are independent in crop/caption order, explaining the nonzero baseline; these numbers are distinct from the paired-subset FID-zero controls below. Strong directional shifts do not imply natural prevalence at that magnitude.
-
-Independent native conversion checks all 391,680 release raw/canonical pairs; maximum double-precision angle is $3.6\times10^{-6}$ degrees, while the largest native float32 matrix residual is $2.0\times10^{-5}$ for near-degenerate features. Every nonrotation channel is bitwise unchanged. Two native FK pairs per release/repetition give 200 sampled pairs and maximum position error $9.6\times10^{-7}$. The complete saved-embedding FID/R1 endpoints are recomputed independently. Real fixed-control geometry receives additional native checks; it is not inferred from embedding equality.
-
-\section{HumanML3D reward-training controls}
-\paragraph{Own ordinary MDM pilot.}
-We update the existing MDM50 denoiser, without a coefficient head, on the common 2,048-motion TRAIN snapshot. Three seeds 42/123/777 cross MSE-only, raw-reward and canonical-reward arms. Training uses 1,000 steps, batch 16, AdamW $10^{-5}$, weight decay $10^{-4}$ and clipping 1. A uniform native 50-step timestep is drawn; the loss combines normalized coordinate MSE and weight-1 cosine InfoNCE (temperature 0.1) between one denoised prediction and the TRAIN caption, using the frozen standard evaluator. The canonical arm projects only the predicted rotations before reward computation. CLIP remains frozen. All nine final weights are hashed before any pilot TEST generation. Sampling uses one common seed 20261031 and the first fixed 1,024-output native cohort, with the full 4,640-reference draw. This is a controlled denoised-prediction objective; it does not reproduce EasyTune or MotionRFT rollout optimization~\cite{tan2026,motionrft2026}.
-
-\input{table_motion_reward_pilot}
-Raw-reward mean R1 is 0.35775 raw/0.36393 canonical, below MSE's 0.41048/0.40820. Every raw-reward seed has a negative same-output retrieval gap. Mean FID is 3.320/2.804, versus MSE 0.602/0.602. Both reward arms worsen these sampled metrics. Six-comparison seed-only $t_2$ intervals are wide: raw-reward R1 gap $[-0.03519,0.02282]$, FID gap $[-0.06014,1.09308]$. They do not establish retrieval inflation, nor rule it out for other rewards, durations or rollout methods. All fits and numerical outcomes remain included.
-
-\paragraph{Released reward-trained weights.}
-A separate audit uses author-linked MotionRFT base and released reward-finetuned checkpoints~\cite{motionrft2026}, with strict VAE/denoiser loading, Sentence-T5-large, native DDIM50, CFG 7.5 and pure-Gaussian initialization. We execute the native TEST reverse method; reference poses are not generation inputs. Five matched seeds 2101--2105 use native cohorts/reference draws 0--4 from the primary audit. The two official evaluators score 1,024 outputs and 4,640 reference embeddings each. These related checkpoints add a reward-trained comparison, not a sixth independent generator architecture or a 20-repetition leaderboard replication.
-
-\input{table_motion_reward_release}
-With the primary reader, R1 rises from 0.43438 to 0.51406 raw and to 0.51426 canonical. With the secondary reader it rises from 0.50449 to 0.58691 raw/0.58574 canonical. FID also improves in both paths. The gains therefore survive removal of this 6D channel. Eight raw/canonical endpoint intervals are reported jointly; attribution of differences between training procedures is outside this supplemental diagnostic. MotionRFT's training reward reads decoded features through its own MotionReward network, not our frozen standard T2M reader. We neither test that reward network's vulnerability nor attribute the released model's gains to hacking.
-
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/attack_budget.pdf}
-\caption{\textbf{Per-clip optimization budget on 64 PHOENIX DEV clips.} Wrong-target BLEU depends on bound, steps and parameter granularity. Random controls are target-independent. These target-aware searches differ from learned-layer inference; all 60 conditions are retained.}\label{fig:attackbudget}\end{figure*}
-
-\section{Scope, data and evaluation contracts}
-Constructed layers receive source text; ordinary denoisers use it as production conditioning. Final BT inference consumes only features, lengths and masks. Raw/canonical evaluation of one output preserves rotations; between-generator comparisons do not. A successful conditional layer is not spontaneous-exploitation evidence.
-
-\paragraph{Release and sample counts.}
-We use SignSparK-BT code revision\path{8dd7cdf533cd0ee5021c2c350ab4a54e6d2f4cf4}, rotation conversion from SignSparK\path{916402d0ecd6322fb4a9e5f513229a94a57bf4b6}, BT weights revision\path{0ced459f6c24d453893809eeca87e9ec80b70198}, and re-optimized data revision\path{9fe7e04ef59204c787cd6094c747f889efff6ba0}. Motion contains 240 raw 6D features per frame: body 60, left hand 90 and right hand 90. Left-hand features 60--149 are protected during attacks. The physical converter uses normalized orthogonal rows, not SVD projection.
-
-Native valid TRAIN/DEV/TEST counts are 7,096/519/642 PHOENIX,29,630/1,650/2,183 How2Sign, and 18,201/1,064/1,162 CSL. Counts reflect the released loader, its 300-frame cap and filtering, not universal dataset sizes. Native text vocabularies, tokenization, normalization, beam search and punctuation are retained. CSL reader conditioning uses native segmented tokens; reported BLEU uses characters after removing spaces, preserving punctuation. Recognition supervision is disabled in BT fine-tunes; missing How2Sign pseudo-gloss files are therefore not inputs.
-
-\paragraph{External evaluator scope.}
-All public BTs share one Sign Language Transformer architecture. Whole-split real TEST raw scores are 14.9995004460,3.4778651050 and 6.8907036392, versus release-card 15.00/3.53/6.98. Only PHOENIX matches after rounding. Replaying native/prepared features yields the same hypotheses; the cause of the other small differences is unresolved and decoding was not retuned to chase card scores.
-
-SLRTP2025~\cite{walsh2025,slrtprepo} consumes 178 XYZ joints,534 features. Its 515-clip DEV archive reproduces real-motion BLEU 13.378651856913775 at the native temporal rate. The provided Progressive Transformer artifact has matched n-grams 1,161/88/8/0 at orders 1--4 and BLEU-4 zero despite nonempty predictions. This does not reproduce competitive production. XYZ does not expose this raw 6D channel; incompatible features are not passed to it. M$^3$T~\cite{symeonidis2026,m3trepo} describes rotational/facial production, but its official repository still marks code/checkpoints as unreleased at the recorded check. Neither supplies another compatible independent BT attack.
-
-\paragraph{Fitting and validation scope.}
-Clip IDs are disjoint between fitting TRAIN and evaluated DEV/TEST. Last-epoch selection applies to new layer and denoiser fits. All development weights, outcomes and configurations are frozen before the fixed confirmation's inference, with no new fitting or TEST-based checkpoint selection. These public TEST splits had already been evaluated during the project; we do not claim project-wide untouched holdouts. Exploratory diagnostics are labeled and do not choose the fixed 20-epoch primary denoiser settings.
+This supplement gives the equivalence proof, full public-motion audits, physical calibration and attack controls, followed by sign-language ablations and training diagnostics. All tested bounds, target conditions and unsuccessful optimization outcomes are included.
 
 \section{Equivalence, numerical checks and constrained geometry}
 For nonzero $a$ and noncollinear $b$, set $u=a/\|a\|$, $b_\perp=b-(u^Tb)u$, $v=b_\perp/\|b_\perp\|$. Under $a'=\alpha a$, $b'=\beta b+\eta a$ with positive $\alpha,\beta$, the perpendicular vector is $\beta b_\perp$, so the physical matrix $[u;v;u\times v]$ is fixed. Conversely, every feature in this fiber has unique $a=\rho u$, $b=\sigma v+\tau u$, with $\rho,\sigma>0$. This established property of the 6D converter~\cite{zhou2019} supplies the intervention, not a new rotation representation.
@@ -78,129 +28,117 @@ The inverse is $(\alpha^{-1},\beta^{-1},-\eta/(\alpha\beta))$. Negative scales c
 
 Canonical input equality guarantees deterministic predictions or identical stochastic output distributions. Tiny floating-point changes can affect a nearly tied decoder. Every experimental hypothesis-equality claim is therefore checked against saved strings separately from matrix equivalence. Relative-rotation angles use SciPy rotation magnitude in double precision rather than trace/arccos near zero. Source/coefficient/output arrays allow independent reconstruction.
 
-\paragraph{Fixed-distance and fixed-norm controls.}
-For fixed rows $u,v$, write $s=(\rho-1,\sigma-1,\tau)$. Squared distance to canonical features is
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/motion_consistency_contract.pdf}
+\caption{\textbf{Canonicalization separates movement from encoding.} Only redundant rotation coordinates change. The native converter returns the same rotations, and root, position, velocity and contact channels remain fixed. A raw learned reader can distinguish the arrays. Canonicalization before evaluator normalization maps them to a common input while retaining their rotations.}\label{fig:contract}\end{figure*}
+
+\input{coherence_review_supplement}
+\input{mardm_followup_supplement}
+\input{generalization_supplement}
+\section{Native HumanML3D released-output audit}
+\paragraph{Native loader, repeats and sample counts.}
+This audit uses the public Text2MotionDatasetV2, including subcaption segments, random caption choice, and native single/double crops to multiples of four. There are 4,648 cached TEST entries and 4,640 after dropping the incomplete 32-item batch. Entry counts include segments and mirrored motions, rather than 4,640 independent recordings. Twenty seeds 1234--1253 control caption/crop draws; independent full real-reference draws use seed plus 100,000. Generation uses seed plus 200,000. MDM's native nominal 1,000 limit emits 1,024 outputs; other methods emit 4,640. Metrics use the same 32-candidate batches in raw/canonical comparisons. Unchanged outputs, captions and reference embeddings are shared between each pair.
+
+\paragraph{Five public methods and inference parity.}
+MDM50~\cite{tevet2023} uses 50 native steps, CFG 2.5 and CLIP-B/32. MLD~\cite{mld2023} uses DDIM 50, CFG 7.5 and CLIP-L/14; MotionLCM-v1~\cite{motionlcm2024} uses one LCM step, CFG 7.5 and Sentence-T5-large. T2M-GPT~\cite{t2mgpt2023} uses native categorical/EOS sampling, 512 VQ entries, block length 51 and the released net\_last decoder. Original T2M~\cite{guo2022} uses its recurrent prior and native duration estimator. Native component classes and strict states are retained. Throughput batching grows from 32 to 128 for MLD and GPT; the random draw order can differ, while evaluation batches remain 32. T2M batches share both motion and caption length because its attention does not mask padded caption positions. All valid repetitions remain included; no settings were chosen by TEST scores.
+
+Synthetic native/batched checks give exact decoder/reverse agreement for MLD/LCM, at most $6.5\times 10^{-5}$ normalized mean-prior difference for the correct T2M grouping, and $5.7\times 10^{-4}$ for GPT convolution decoding. Batched floating-point arithmetic is not claimed bit-identical. Pinned author code, weight hashes, executed source versions and parity fixtures are included with the artifacts.
+
+\paragraph{Metric uncertainty and reader replication.}
+The primary reader is the official MDM-linked T2M evaluator. The official T2M-GPT download contains distinct encoder weights of the same architecture; native normalization arrays are equal. The secondary reader reuses every saved output and independent reference draw. Native mean intervals use $1.96\,\mathrm{std}_{0}/\sqrt{20}$. Paired gap intervals use $t_{19}$ with ten FID/R1 comparisons per reader; MM-distance is a separate five-comparison family. The two readers' families are reported separately. The repetitions describe generation and native draw variability on this public split, not independent corpora or pretraining uncertainty. No exact published-score reproduction is claimed.
+
+\input{table_motion_release_readers}
+All five primary FID gap intervals exclude zero. Primary raw/canonical mean ordering is T2M-GPT, MLD, MDM, MotionLCM, T2M. Four secondary FID intervals exclude zero; MLD is inconclusive and T2M's gap changes direction. Secondary mean MLD/MotionLCM order differs across encodings by a small amount, but reliable ranking reversal was not established. All secondary R1 gap intervals include zero. This is score sensitivity across official weights, not a claim that canonicalization always improves metrics.
+
+\paragraph{Full native fixed controls and physical verification.}
+Across 20 full reference repetitions, mean real-motion FID is 0.000990 before recoding and 0.000990 after canonicalization. Fixed directional $+0.1/-0.1$ gives 0.06129/0.08336, $+0.35/-0.35$ gives 2.00261/3.63852, and random 0.35 gives 0.02628. The real draws are independent in crop/caption order, explaining the nonzero baseline; these numbers are distinct from the paired-subset FID-zero controls below. Strong directional shifts do not imply natural prevalence at that magnitude.
+
+Independent native conversion checks all 391,680 release raw/canonical pairs; maximum double-precision angle is $3.6\times 10^{-6}$ degrees, while the largest native float32 matrix residual is $2.0\times 10^{-5}$ for near-degenerate features. Every nonrotation channel is bitwise unchanged. Two native FK pairs per release/repetition give 200 sampled pairs and maximum position error $9.6\times 10^{-7}$. The complete saved-embedding FID/R1 endpoints are recomputed independently. Real fixed-control geometry receives additional native checks; it is not inferred from embedding equality.
+
+\section{HumanML3D caption-targeted controls}
+\paragraph{Representation and native inference.}
+HumanML3D~\cite{guo2022} has root features 0--3, relative positions 4--66, 21 continuous rotations 67--192, velocities 193--258 and foot contacts 259--262. Its native converter uses the first two matrix columns. The released movement encoder consumes features 0--258 without a rotation projection. We alter only 67--192 before normalization, then use the released evaluation mean/std and remask padded frames. Position-based reconstruction ignores the altered block; native FK additionally verifies rotation-based reconstruction. Other feature channels are checked bitwise, separately from floating-point matrix equality.
+
+Public T2M weights come from the MDM evaluator download script; all three frozen encoder states load strictly into the author architecture. The native MDM evaluation wrapper and our ordering-preserving adapter agree within $4.8\times 10^{-7}$ on validation fixtures. Native R-precision, MM-distance and FID match saved metrics. The encoder reads 259 channels, not a canonicalized or position-only replacement. Source hash inventories identify the pinned author code and checkpoints.
+
+\paragraph{Data origin and fixed subsets.}
+The MDM-linked processed-motion Drive archive exceeded its public download quota. We use a public mirror pinned by revision and SHA256; its 4,297,557,992-byte size matches the author-linked inventory. The mirror's 012314 example is float64 while the author Git example is float32: maximum/RMS differences are $1.94\times 10^{-5}$/$7.67\times 10^{-7}$. This is numerical compatibility, not proof of byte identity for the full archive. Author text/split files and normalization are used. All motion matrices and physical controls are checked on the actual saved inputs.
+
+Eligible full-caption clips have 40--199 frames. Selection seed 20261012 samples 128 VAL and 1,024 TEST clips without replacement, with fixed caption draws and crops to multiples of four. These are subset audits, not full-score leaderboard reproductions. Real and generated inputs use the same captions and durations. MDM50~\cite{tevet2023} uses the official encoder checkpoint, 50 native sampling steps, CFG 2.5 and seed 42. No reference poses enter generation. Its eager unused mesh constructor is replaced with a converter that raises if called; denoiser/CLIP/diffusion operations and parameters are unchanged. This enables tensor sampling without claiming licensed mesh rendering.
+
+\paragraph{Attack and scoring.}
+Nine fixed controls include identity, canonicalization, signed global bounds 0.05/0.1/0.35 and seeded random coefficients. Per-clip attacks optimize actual or shifted-caption embedding distance using 80 final Adam steps, learning rate 0.1, zero initialization and coefficient bound 0.35. A third control applies the loss after canonicalization. Evaluator weights remain frozen. A no-dropout recurrent flag enables input gradients; forward parity is checked and final scoring uses eval mode. Shifted text changes the optimization target without changing motion.
+
+R-precision top 1 averages five fixed 32-candidate permutations (seeds 11/97/909/1337/2027). FID always compares motion embeddings with a fixed real-reference subset. The target-caption objective improves retrieval and MM-distance while worsening FID; no metric is interpreted as a human-quality gain at unchanged physical motion. All fixed controls and both splits are in \cref{tab:humanmlfixed}; TEST attack/control endpoints are in \cref{tab:humanmlfull}. Original/mirrored IDs are grouped for 10,000 paired bootstrap draws; six source/attack endpoints are adjusted together. These intervals condition on the five fixed candidate pools and one generator seed, not unseen evaluators or pretraining variability.
+
+\input{table_humanml_full}
+\input{table_humanml_fixed}
+
+Wrong-target R1 changes are 0.028 to 0.839 for real motion and 0.033 to 0.788 for MDM, adjusted intervals $[0.782,0.838]$/$[0.724,0.787]$ for gains. Actual-caption retrieval falls to 0.030/0.036. Canonical-gradient wrong-target controls preserve their baseline R1. Across all 27,648 encoding pairs, maximum independent rotation error is $3.8\times 10^{-5}$ degrees, native RIC positions are exactly unchanged, and 384 sampled native FK pairs differ by at most $9.6\times 10^{-7}$ in coordinate units. Canonical embeddings differ by at most $7.2\times 10^{-7}$.
+
+\section{Caption-blind FID manipulation using TRAIN motion}
+\paragraph{Access and fresh source groups.}
+This study follows the target-aware audit but excludes every previously evaluated TEST source ID and its mirror. Seed 20261013 selects 960 eligible TEST clips and 2,048 TRAIN motions; there is no TRAIN/TEST source-group overlap. The same native MDM50 settings generate a fresh cohort. The attack numerically consumes only its generated arrays, TRAIN motion embeddings and the frozen evaluator. It never invokes the text encoder or deserializes/encodes real TEST references. Integrity preflight hashes held-out files, which is a byte-level read but supplies no caption, pose or embedding target. All attack outputs and hashes are saved before the evaluator consumes TEST reference content.
+
+\paragraph{Regularized Gaussian transport targets.}
+Let $\mu_s,\Sigma_s$ be the generated cohort's embedding moments and $\mu_t,\Sigma_t$ those of TRAIN real motion. The standard Gaussian transport construction~\cite{bhatia2017} gives the symmetric map
 \begin{equation}
-E=\|d-C (d)\|^2=\|s\|^2.
+T=\Sigma_s^{-1/2}\bigl(\Sigma_s^{1/2}\Sigma_t\Sigma_s^{1/2}\bigr)^{1/2}\Sigma_s^{-1/2}.
 \end{equation}
-Any auxiliary rotation $Q$ of $s$ preserves $E$. If $\|s\|<0.95$, reconstructed $\rho',\sigma'>0.05$; otherwise the layer returns the identity. This auxiliary rotation changes redundant scalars, not physical joint rotations.
+Targets are $\mu_t+(e_i-\mu_s)T$. Our numerical version symmetrizes matrices and floors eigenvalues in each root at $10^{-4}\operatorname{tr}(\Sigma)/512$. It is a regularized transport-based target, not a new transport theorem or an exact unregularized optimum. Per-clip coefficients minimize squared distance to these fixed targets for 80 Adam steps at learning rate 0.1. Both coefficient bounds 0.1/0.35 and canonical-gradient/random controls are fixed before scoring; FID does not choose an iterate.
 
-Squared 6D norm $N=\rho^2+\sigma^2+\tau^2$ obeys
-\begin{equation}
-N-E=2 (\rho+\sigma)-2.
-\end{equation}
-A rotation around $(1,1,0)/\sqrt 2$ additionally preserves $\rho+\sigma$, hence both $N$ and $E$ per frame/joint. The circle layer predicts a bounded phase. The sphere layer predicts three bounded axis-angle coordinates and preserves $E$ but not $N$. Its experiment was registered after the circle's negative result; both remain reported. Positive-scale safety, padding and left-hand protection apply to both.
+\input{table_humanml_blind}
 
-The auxiliary-coordinate geometry is distinct from physical joint rotation or an intrinsic diffusion process.
+\paragraph{Results and interpretation.}
+Bound 0.1 reduces FID from 0.3839 to 0.2099 against the withheld TEST real reference, while actual R1 is 0.4133/0.4113. Bound 0.35 instead increases FID to 1.0850. The canonical-gradient control has FID 0.3838544, compared with source 0.3838538; random coefficients give 0.3526. Therefore success is not monotonic in bound, and both endpoints remain reported. Canonical FID remains 0.3799403 across equivalent encodings. This demonstrates a caption-blind score change for one fixed cohort, not generator improvement or routine exploitation.
 
-\input{table_constrained_layers}
-The circle's text-conditioned DEV gain 0.0649 has paired interval $[-0.3860,0.5297]$; the sphere's $-0.0525$ has $[-0.4955,0.3909]$. RMS-detector AUC is approximately 0.50, but there is no reliable gain. Motion-only and canonical-loss controls are included. Independent reconstruction verifies 4,671 pairs in each study. Maximum circle errors in $E/N$ are $1.32\times 10^{-6}$/$1.37\times 10^{-6}$; sphere $E$ error is $8.17\times 10^{-7}$, while $N$ can change by 4.08. These are successful invariant controls and unsuccessful attacks, not evidence of detector evasion with useful score inflation.
+Independent reconstruction checks all 5,760 encoding pairs and 48 sampled native FK pairs. Maximum rotation error is $1.5\times 10^{-5}$ degrees; RIC positions and nonrotation channels are bitwise unchanged, native FK error is at most $6.0\times 10^{-7}$ and canonical embedding error at most $7.2\times 10^{-7}$. Gaussian targets and native metrics are independently recomputed. FID is a registered descriptive endpoint. A post-hoc 200-draw paired original/mirror-group sensitivity gives two-bound-adjusted intervals for the FID change of $[-0.268,-0.049]$ at bound 0.1 and $[0.404,1.166]$ at bound 0.35. The bootstrap holds the generated cohort and evaluator fixed; it does not estimate generation-seed variability, and its tail precision is limited by 200 draws.
 
-\section{Adaptive per-clip detector-statistic tests}
-The fixed-statistic learned layers and iterative per-clip attacks have different access and fitting requirements. DEV64 is selected uniformly with seed 20261012 before the new per-clip optimization; it uses the frozen generator's raw DEV outputs. Both 80- and 200-step endpoints are retained. Full TEST642 confirmation fixes the final 200-step endpoint and four geometry/target conditions before inference. Source motions come from the existing raw generator archive; no real reference pose is used to generate them. Baselines differ from the canonical-input learned layer: raw source BLEU is 6.62, versus 6.39 after canonicalization, for the same represented motion.
+\section{Caption-blind repetition details}
+\input{table_blind_repetitions}
+The same TRAIN embeddings, transport regularization, 80-step Adam optimizer and two fixed bounds are used in all cohorts. New selection seeds 20261021/20261022 and generation seeds 4242/7777 produce two further 960-output cohorts. They exclude the original caption-targeted audit's source/mirror groups, but overlap the first blind cohort by 494/496 groups and each other by 493. The public native release audit also uses this TEST split; project-wide untouched TEST validation is not claimed. Neither overlap nor caption metadata is used to optimize the attack.
 
-Optimization uses Adam 0.1, zero-initialized per-frame/joint coefficients and frozen BT weights. A scalar $q$ predicts circle phase $\pi\tanh q$, bounded by $\pi$, identical to the learned circle's phase domain. Sphere coordinates are $(\pi/\sqrt 3)\tanh q_i$, giving auxiliary rotation magnitude at most $\pi$; the learned sphere used coordinate bound 1. Thus sphere success is not an isolated test of amortization at the identical angular budget. Radius $\ge0.95$ remains identity, and left-hand joints 10--24 remain byte-identical. Target captions are either the original source or the fixed circular shift; all 642 TEST shifts differ. No decoded-score checkpoint selection occurs.
+At bound 0.1, FID reductions are 45.3\%, 53.2\% and 39.2\%; bound 0.35 worsens all three cohorts. Canonical-gradient controls remain at baseline. The repeats demonstrate sensitivity to generation/selection draws, not monotonicity or independent population validation. Each new cohort verifies 5,760 encoding pairs and 48 sampled native FK pairs, bitwise protected channels and independently reconstructed TRAIN transport targets. Attack arrays precede their own TEST reference scoring; no real TEST embedding or caption target enters attack optimization.
 
-\input{table_adaptive_statistics}
+\section{HumanML3D reward-training controls}
+\paragraph{Own ordinary MDM pilot.}
+We update the existing MDM50 denoiser, without a coefficient head, on the common 2,048-motion TRAIN snapshot. Three seeds 42/123/777 cross MSE-only, raw-reward and canonical-reward arms. Training uses 1,000 steps, batch 16, AdamW $10^{-5}$, weight decay $10^{-4}$ and clipping 1. A uniform native 50-step timestep is drawn; the loss combines normalized coordinate MSE and weight-1 cosine InfoNCE (temperature 0.1) between one denoised prediction and the TRAIN caption, using the frozen standard evaluator. The canonical arm projects only the predicted rotations before reward computation. CLIP remains frozen. All nine final weights are hashed before any pilot TEST generation. Sampling uses one common seed 20261031 and the first fixed 1,024-output native cohort, with the full 4,640-reference draw. This is a controlled denoised-prediction objective; it does not reproduce EasyTune or MotionRFT rollout optimization~\cite{tan2026,motionrft2026}.
 
-On DEV64, circle actual-caption BLEU is 6.59 to 10.06 at 200 steps, gain 3.46; its eight-endpoint-adjusted interval is $[1.15,6.49]$. Circle wrong-target gain is 2.82, with lower adjusted endpoint zero. Sphere actual/wrong-target gains are 26.79/20.72, with adjusted intervals $[17.09,37.53]$/$[11.93,31.93]$. These DEV results motivated prospective fixed TEST confirmation; they are not pristine validation.
+\input{table_motion_reward_pilot}
+Raw-reward mean R1 is 0.35775 raw/0.36393 canonical, below MSE's 0.41048/0.40820. Every raw-reward seed has a negative same-output retrieval gap. Mean FID is 3.320/2.804, versus MSE 0.602/0.602. Both reward arms worsen these sampled metrics. Six-comparison seed-only $t_2$ intervals are wide: raw-reward R1 gap $[-0.03519,0.02282]$, FID gap $[-0.06014,1.09308]$. Because reward training failed to improve free-sampling retrieval, this negative gap is not a valid test of successful reward optimization. It establishes neither exploitation nor its absence under a functioning reward objective. All fits and numerical outcomes remain included.
 
-TEST circle gains are 4.09 actual and 2.10 shifted, with four-comparison-adjusted intervals $[3.04,5.24]$/$[1.22,3.12]$. Sphere gains are 26.45/21.27, intervals $[23.46,29.52]$/$[18.50,24.22]$. Random coefficient controls use prespecified seeds 42/123/777 per surface. Canonical-reader CE optimization is run for 200 steps per surface. Their wrong-target gain intervals do not exclude zero on the positive side. Every source/target, full loss trace and output array is retained; randomization seeds are not independent training seeds.
+\paragraph{Released reward-trained weights.}
+A separate audit uses author-linked MotionRFT base and released reward-finetuned checkpoints~\cite{motionrft2026}, with strict VAE/denoiser loading, Sentence-T5-large, native DDIM 50, CFG 7.5 and pure-Gaussian initialization. We execute the native TEST reverse method; reference poses are not generation inputs. Five matched seeds 2101--2105 use native cohorts/reference draws 0--4 from the primary audit. The two official evaluators score 1,024 outputs and 4,640 reference embeddings each. These related checkpoints add a reward-trained comparison, not a sixth independent generator architecture or a 20-repetition leaderboard replication.
 
-RMS threshold AUC is 0.5003 for the circle and 0.5007 for the sphere. The circle preserves both statistics; the sphere does not preserve feature norm and may be detectable by it. Preservation of $E,N$ is not indistinguishability of all redundant-coordinate distributions. Geometric invariants, decoded canonical strings, finite values and reconstruction are verified independently. Complete numerical residuals and source hashes accompany the results.
+\input{table_motion_reward_release}
+With the primary reader, R1 rises from 0.43438 to 0.51406 raw and to 0.51426 canonical. With the secondary reader it rises from 0.50449 to 0.58691 raw/0.58574 canonical. FID also improves in both paths. The gains therefore survive removal of this 6D channel. Eight raw/canonical endpoint intervals are reported jointly; attribution of differences between training procedures is outside this supplemental diagnostic. MotionRFT's own MotionReward reads 263 decoded features through its projection without canonicalizing. The released projection has nonzero 6D rotation columns (Frobenius norm 6.63), including in its LoRA branch. It therefore sees this channel, although it is not our frozen Guo reader. We neither test that reward network's vulnerability nor attribute the released model's gains to hacking.
 
-\paragraph{Other fixed-rotation attack capabilities.}
-\input{table_wrong_targets}
-Wrong-caption optimization reaches 85.19 PHOENIX BLEU against an incorrect target and zero against the actual caption (\cref{tab:wrongtargets}). How2Sign/CSL show the same failure with different token conventions. Three CSL targets duplicate actual captions and remain included. These are attack capability scores, not production quality.
-
-The CTC model's wrong-target WER falls from 118.07\% to 3.76\%, while actual-reference WER reaches 121.58\%. Reversal or identity hands raises full TEST WER from 50.11\% to 91.48\% or 93.95\%. It responds to physical changes and redundant coordinates. All 1,024 BT/CTC attack pairs preserve canonical hypotheses.
-
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/attack_budget.pdf}
+\caption{\textbf{Per-clip optimization budget on 64 PHOENIX DEV clips.} Wrong-target BLEU depends on bound, steps and parameter granularity. Random controls are target-independent. These target-aware searches differ from learned-layer inference; all 60 conditions are retained.}\label{fig:attackbudget}\end{figure*}
 
 
+\paragraph{Finite DEV-only calibration.}
+A separate finite grid crosses learning rates$10^{-6}/3\times 10^{-6}$ and weights 0/0.001/0.01/0.1, with 500 steps, seed 42, batch 16 and a matched MSE control per learning rate. A fixed 512-output native VAL cohort and 1,504-output reference are scored with common sampling. Qualification requires raw R1 improvement at least 0.005, FID at most 1.10 times matched MSE and reduced training reward CE. Parameters and criteria precede the grid's inference; no TEST score chooses a configuration.
+\input{table_reward_dev_grid}
+No configuration qualifies. At the lower learning rate, the largest R1 gain is 0.0039; at the higher rate, the best R1 gain is 0.0020. Weight 0.1 degrades FID and fails qualification. The grid is not extended and no conditional TEST validation is run. Some settings improve FID, but that does not satisfy the retrieval criterion. The conclusion remains that this finite one-step pilot failed to improve retrieval sufficiently, not that successful reward optimization cannot exploit the channel.
+\section{Scope, data and evaluation contracts}
+Constructed layers receive source text; ordinary denoisers use it as production conditioning. Final BT inference consumes only features, lengths and masks. Raw/canonical evaluation of one output preserves rotations; between-generator comparisons do not. A successful conditional layer is not spontaneous-exploitation evidence.
 
-\paragraph{Additional scalar detectors and the limit of statistic matching.}
-After observing the attack outcomes, an exploratory diagnostic fits scalar thresholds on DEV64 source/attacked clips and applies their fixed orientation/threshold to TEST642. All nine statistics are reported: canonical RMS, mean squared 6D norm, means of $|\tau|$, $|\rho-\sigma|$, $\rho$, $\sigma$, and standard deviations of $\rho,\sigma,\tau$. Circle TEST AUCs span 0.500--0.530 with DEV-fitted orientation; TEST balanced accuracies span 0.500--0.521. Sphere statistics are more informative: $|\rho-\sigma|$ AUC is 0.877 and balanced accuracy 0.801, with source false-positive rate 0.319 and attack detection rate 0.922. These post-hoc diagnostics are not independently validated security guarantees, and do not cover temporal, joint-wise or learned multivariate detectors.
+\paragraph{Release and sample counts.}
+We use the native SignSparK/SignSparK-BT converter, code, author BT checkpoints and released re-optimized motion. Pinned revisions and input fingerprints accompany the artifacts. Motion contains 240 raw 6D features per frame: body 60, left hand 90 and right hand 90. Left-hand features 60--149 are protected during attacks. The physical converter uses normalized orthogonal rows, not SVD projection.
 
-For fixed canonical rows, the full Gram matrix of $(a,b)$ is
-\begin{equation}
-\begin{pmatrix}\rho^2&\rho\tau\\\rho\tau&\sigma^2+\tau^2\end{pmatrix}.
-\end{equation}
-Fixing all three entries determines positive $\rho,\sigma$ and $\tau$, hence the original features. Thus preserving $E,N$ leaves a circle, whereas fixing the entire Gram matrix at unchanged rotation leaves no channel. This elementary limit prevents interpreting two-statistic matching as general invisibility. It does not prove a practical detector's performance without evaluating that detector.
+Native valid TRAIN/DEV/TEST counts are 7,096/519/642 PHOENIX,29,630/1,650/2,183 How2Sign, and 18,201/1,064/1,162 CSL. Counts reflect the released loader, its 300-frame cap and filtering, not universal dataset sizes. Native text vocabularies, tokenization, normalization, beam search and punctuation are retained. CSL reader conditioning uses native segmented tokens; reported BLEU uses characters after removing spaces, preserving punctuation. Recognition supervision is disabled in BT fine-tunes; missing How2Sign pseudo-gloss files are therefore not inputs.
 
-\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/learned_budget.pdf}
-\caption{\textbf{Learned-layer budget on full PHOENIX TEST.} Left: mean raw gains, paired 95\% intervals and individual seeds. Right: RMS distance to canonical features, against the same raw generator's natural output. A scalar RMS detector separates most attacked outputs. Rotations/canonical hypotheses stay fixed; smaller magnitude is not undetectability.}\label{fig:learnedbudget}\end{figure*}
+\paragraph{External evaluator scope.}
+All public BTs share one Sign Language Transformer architecture. Whole-split real TEST raw scores are 14.9995, 3.4779 and 6.8907, versus release-card 15.00/3.53/6.98. Only PHOENIX matches after rounding. Replaying native/prepared features yields the same hypotheses; the cause of the other small differences is unresolved and decoding was not retuned to chase card scores.
 
-\section{Ordinary denoiser training and diagnostics}
-\subsection{An ordinary generator under two motion objectives}
-For a denoised prediction $\hat x_\phi$, we compare standardized coordinate MSE with mean squared geodesic angle:
-\begin{equation}
-\mathcal L_{\rm geo}=\frac 1{TJ}\sum_{t,j}\theta\big (R (\hat x_{\phi,tj})^TR (x_{tj})\big)^2.
-\label{eq:geodesic}
-\end{equation}
-Angles use stable atan2, in radians. Because this loss factors through $R$, its derivative vanishes along $(a,0),(0,b),(0,a)$; coordinate MSE generally penalizes these directions. This follows from the chain rule; we verify it numerically instead of claiming new geometry.
+SLRTP2025~\cite{walsh2025,slrtprepo} consumes 178 XYZ joints, 534 features. Its 515-clip DEV archive reproduces real-motion BLEU 13.3787 at the native temporal rate. The provided Progressive Transformer artifact has matched n-grams 1,161/88/8/0 at orders 1--4 and BLEU-4 zero despite nonempty predictions. This does not reproduce competitive production. XYZ does not expose this raw 6D channel; incompatible features are not passed to it. M$^3$T~\cite{symeonidis2026,m3trepo} describes rotational/facial production, but its official repository still marks code/checkpoints as unreleased at the recorded check. Neither supplies another compatible independent BT attack.
 
-The ordinary denoiser has no coefficient head or constrained layer. All weights are fine-tuned with
-\begin{equation}
-\mathcal L=\mathcal L_{\rm motion}+\lambda\mathcal L_{\rm CE}(f (\hat x_\phi),c),
-\label{eq:ordinary}
-\end{equation}
-or with $f (\C (\hat x_\phi))$ as the matched semantic control. Motion-only training omits CE. Physical rotations can differ across models. Only raw/canonical evaluation of one saved output is a fixed-rotation comparison.
-
-Writing $S_r,S_c$ for raw/canonical corpus BLEU, we report the absolute gap $S_r-S_c$ and its contrast against a control:
-\begin{equation}
-E=(S_r-S_c)_{\rm rawCE}-(S_r-S_c)_{\rm control}.
-\label{eq:excess}
-\end{equation}
-Positive $E$ identifies a representation-dependent change relative to that control. Alone it does not prove caption transmission: it can reflect coordinate drift in motion-only training. Absolute gaps, canonical-CE training and coordinate-transplant controls test stronger interpretations.
-
-
-\input{table_ordinary}
-\paragraph{Shared generator.}
-The local denoiser has 128-dimensional token/position embeddings, a two-layer text Transformer (four heads, feed-forward 512, dropout 0.1), six temporal Conv1d blocks with dilations 1/2/4/8/16/32, GroupNorm, and cross-attention in blocks 3/6. It predicts 240 features, supports 300 frames and 64 tokens, and receives diffusion-time embeddings. Canonically converted TRAIN targets are standardized by TRAIN mean/std with std floor 0.05. A cosine schedule has 1,000 steps and $x_0$ prediction~\cite{ho2020}. The shared initialization was trained 20 epochs at learning rate 0.0003 and selected by fixed-noise DEV reconstruction loss.
-
-\paragraph{Objective study.}
-All 42 fits start from that same shared checkpoint. Within each seed, first-epoch batches, diffusion noise and timesteps are matched across objectives. Every objective runs five epochs; geodesic no-CE/raw-CE 1/canonical-CE 1 reach 20 epochs with fixed endpoint selection. AdamW uses learning rate $10^{-4}$, weight decay $10^{-4}$, batch 64, clipping 1 and caption dropout 0.1. Raw/canonical teacher weights are frozen. Auxiliary CE uses at most 16 nonnull-caption examples with $t\le 800$ per batch, averaging per-clip token losses. Both motion losses use all valid joints/frames. Geodesic loss is mean squared angle in radians; coordinate loss is standardized 6D MSE. Their units and gradient scales differ, so equal CE weights are not asserted as equal physical/semantic influence.
-
-The stable angle computation uses atan2 of skew magnitude and trace, with finite gradients at identical rotations. Unit tests check identity, equivalent-feature invariance and directional derivatives. First-batch gradient norms, CE-to-motion norm ratios and redundant-direction contractions are archived. For coordinate MSE, the output gradient is differentiated with respect to the standardized prediction and rescaled to the original feature units. Execution diagnostics and version records accompany the released artifacts.
-
-\input{table_ordinary_sweep}
-All arms and endpoints appear in \cref{tab:ordinarysweep}; weights are not selected on BLEU. The three primary 20-epoch contrasts are raw-CE gap minus no-CE gap, raw-CE gap minus canonical-CE gap, and raw-CE absolute gap. Their family-adjusted percentile tails use 0.8333\%/99.1667\%. DEV supports all three; TEST supports only the first. A positive contrast over no-CE does not isolate caption coding from no-CE coordinate drift. TEST raw/canonical means 5.13/4.79 versus 2.64/5.10 produce excess 2.80, but absolute gap 0.35 and canonical-CE contrast 0.48 have intervals containing zero. Full per-seed values are included below.
-
-\input{table_ordinary_seeds}
-\paragraph{Coordinate transplantation.}
-After freezing the objective study, each of its nine primary DEV models generates another-caption motion with the same source duration/noise. For each output pair we retain source canonical rows and insert the other output's $\rho,\sigma,\tau$, keeping the original left-hand stream. This has no fitting, per-clip gradients or added network. Rotations are preserved and all 4,671 canonical predictions remain identical. Wrong-caption BLEU gains are 0.0652 (no CE),0.1644 (raw CE) and 0.1035 (canonical CE), with paired intervals $[-0.3790,0.5476]$, $[-0.0524,0.4994]$ and $[-0.3190,0.4793]$. This exploratory control does not confirm strong source-caption transmission by the ordinary denoiser.
-
-\paragraph{Target-independent representations.}
-Four frozen local diffusion variants also generate 642 TEST motions each. Raw, canonical, fixed scales 0.9/1.1 and shear 0.1 are equivalent encodings with protected left hands, independent of captions. In the generated-near variant, scale 0.9 minus raw is $-0.6592$, family interval $[-1.2267,-0.0949]$; scale 1.1 minus 0.9 is +0.8554, family interval $[0.1734,1.5347]$. These 20-contrast,20,000-resample results establish within-system representation effects. Between-generator opposite rank orderings are not supported as a primary claim. Geometry/velocity/reader-CE/generated-near variant definitions and raw arrays remain in the machine-readable evidence map.
-
-\paragraph{New-seed replication and stronger-CE stress grid.}
-Seven new fitting seeds 11/97/909/1337/2027/2718/31415 repeat geodesic/raw CE1 for 20 epochs, with seven matched canonical-CE fits. The seven-new-seed gap is the primary replication; pooling the three historical runs produces a separate ten-seed extension. None is discarded or selected on BLEU. All share the original pretrained generator. The raw/canonical cohort gap and canonical-CE contrast remain inconclusive on TEST; the full per-seed extension is in \cref{tab:seedextension}.
-
-\input{table_ordinary_replication}
-\input{table_seed_extension}
-\input{table_dose_grid}
-
-Nine fresh fits cross the historical seeds with CE weights 1/3/10 through epoch40, storing checkpoints at 20/40. They start from the shared pretrained weights; they do not silently continue old checkpoints missing optimizer/RNG states. New checkpoints retain optimizer and RNG states. Resource scheduling partitions exclusive jobs across processes without changing the fitting loop. All new weights are saved and hashed before inference, and the historical weight1/epoch20 replay gives identical DEV/TEST BLEU. Batch/noise/timestep/caption-drop arrays match across each seed's paired conditions.
-
-For TEST, larger weights 3/10 have positive same-output gaps at both 20/40 endpoints after adjustment across six endpoints and five contrasts. Their canonical scores fall relative to weight1. Weight3-minus-weight1 and weight10-minus-weight3 differences at each duration, plus the mean duration difference, all have adjusted intervals containing zero. This does not establish monotonicity, independent-pretraining replication, better motion, or caption coding. Units/gradient-scale effects remain confounded with geometry. Bootstrap seed sensitivity and seed-only $t$ intervals are reported; neither makes ten runs a universal adequacy threshold~\cite{colas2018}.
-
-\paragraph{Complete dose-coordinate transplant diagnostic.}
-The mechanism diagnostic is registered before the new dose BLEU results and uses full DEV519. It covers all six raw-CE dose/epoch combinations plus original no-CE and canonical-CE20 controls, each at seeds 42/123/777. Another caption is the fixed circular shift, generated with the source duration and sampler seed. Source canonical rows are retained; alternate $\rho,\sigma,\tau$ are inserted outside the protected left-hand stream. No extra model is fitted and no reader-gradient attack is applied. All 12,456 canonical predictions remain identical. Gains at weights1/3/10 and epochs20/40 are 0.164/0.277,0.233/0.082,0.528/0.180; every eight-condition-adjusted seed-plus-clip interval includes zero. The new stress gaps therefore do not confirm the semantic mechanism. Arrays and all condition intervals accompany the artifacts.
-
-\paragraph{Cluster sensitivity.}
-A post-hoc audit groups the 642 PHOENIX TEST IDs by the native name prefix before the final sentence suffix, yielding 331 groups. This is a source-name clustering sensitivity, not independently verified signer/video metadata. Circle actual/shifted gains retain positive four-comparison-adjusted intervals $[2.99,5.23]$/$[1.19,3.12]$. New-seven/pooled-ten seed-plus-group gap intervals remain $[-0.55,0.80]$/$[-0.43,0.79]$. Stress weight3/10 at epoch40 retains positive eleven-comparison-adjusted seed-plus-group intervals $[0.23,3.59]$/$[0.54,3.55]$. Registered clip intervals remain the primary analysis; the clustering is disclosed as sensitivity rather than post-hoc replacement.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/learned_method.pdf}
-\caption{\textbf{Learning changes the evaluation while the rotations stay fixed.} Source text and frozen generated motion condition a bounded output layer. TRAIN caption loss updates only that layer. At evaluation it performs one pass, with no per-clip search. The raw reader can respond to its coefficients; canonicalization removes them before reading. The three layer objectives use matched batches and initialization.}
-\label{fig:learnedmethod}
-\end{figure*}
-
-\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figures/learned_results.pdf}
-\caption{\textbf{A learned channel on DEV.} Bars average three seeds; dots show seeds. Whiskers are paired 95\% raw-gain intervals anchored at the fixed baseline. Canonical hypotheses are identical. TEST confirmation is reported in the main paper.}\label{fig:learnedresults}\end{figure}
+\paragraph{Fitting and validation scope.}
+Clip IDs are disjoint between fitting TRAIN and evaluated DEV/TEST. Last-epoch selection applies to new layer and denoiser fits. All development weights, outcomes and configurations are frozen before the fixed confirmation's inference, with no new fitting or TEST-based checkpoint selection. These public TEST splits had already been evaluated during the project; we do not claim project-wide untouched holdouts. Exploratory diagnostics are labeled and do not choose the fixed 20-epoch primary denoiser settings.
 
 \section{Conditional output layers and budgets}
+\input{table_learned}
 \paragraph{Generated PHOENIX motion.}
 A frozen geometry generator produces 7,096 TRAIN and 519 DEV motions using text, capped reference duration, DDIM 50~\cite{song2021}, CFG 3~\cite{ho2022}, seed 102 and inference batch 16. No reference poses, glosses or anchors enter the sampler. Canonical outputs are cached; fixed TEST reuses 642 saved outputs of the same generator.
 
@@ -225,14 +163,60 @@ Sixty DEV conditions cross four bounds, four iteration counts and three paramete
 
 \input{tables_hashes}
 
-\section{Public generation replay and no-fit transfer}
-A PHOENIX text-plus-duration replay without ground-truth keyframes has canonical BLEU 0.7381; the PHOENIX layer reaches mean 12.6456. This weak replay is supplementary capability evidence. The released SignSparK checkpoint is explicitly not trained on PHOENIX. The paper's gloss-free/sign-retrieval T2P table does not report comparable BT scores, so matching a published number would not validate this setup.
+\section{Adaptive per-clip detector-statistic tests}
+\paragraph{Fixed-distance and fixed-norm controls.}
+For fixed rows $u,v$, write $s=(\rho-1,\sigma-1,\tau)$. Squared distance to canonical features is
+\begin{equation}
+E=\|d-C (d)\|^2=\|s\|^2.
+\end{equation}
+Any auxiliary rotation $Q$ of $s$ preserves $E$. If $\|s\|<0.95$, reconstructed $\rho',\sigma'>0.05$; otherwise the layer returns the identity. This auxiliary rotation changes redundant scalars, not physical joint rotations.
 
-The corrected native CSL replay uses official retrieval code revision\path{b1ed92705cafd2c9ff0c72a89df14b0a9ee62258}, public assets revision\path{a883bc2d13a5d7f85e64591b32bae4cb48950b97}, released DEV text-to-gloss predictions and a TRAIN-only isolated-sign dictionary. A uniform 128-clip DEV subset is fixed with seed 2027 before scoring. Same-signer retrieval uses release metadata where available; no DEV pose anchors or ground-truth glosses are used. The dictionary has 18201 available TRAIN videos;200 additional annotated videos are unavailable in the release. Official no-embedding exact/fuzzy OOV handling is used, with all mappings/drop counts saved. First/middle/last retrieved TRAIN keyframes condition CFM completion; generated face is outside the 240-feature reader.
+Squared 6D norm $N=\rho^2+\sigma^2+\tau^2$ obeys
+\begin{equation}
+N-E=2 (\rho+\sigma)-2.
+\end{equation}
+A rotation around $(1,1,0)/\sqrt 2$ additionally preserves $\rho+\sigma$, hence both $N$ and $E$ per frame/joint. The circle layer predicts a bounded phase. The sphere layer predicts three bounded axis-angle coordinates and preserves $E$ but not $N$. Its experiment was registered after the circle's negative result; both remain reported. Positive-scale safety, padding and left-hand protection apply to both.
 
-Body/hand CFM weights are the public frozen release. Generation uses 50 ODE steps, native CFG-off, batch 16, one candidate, seq\_len 304, and feature cap 300. The sampler uses global seed 102. The complete sampler configuration and generated filenames are included with the artifacts. The archived wrapper initializes XLM-Roberta locally before loading the full text encoder and strict EMA states; weights match release bytes, but RNG initialization consumption need not be byte-identical to the native online loader. Left hands use the official flip conversion and original retrieved keyframes are pasted back. This is a release-pipeline replay, not published-SOTA reproduction.
+The auxiliary-coordinate geometry is distinct from physical joint rotation or an intrinsic diffusion process.
 
-All 128 clips generate valid outputs. Raw/canonical BT is 9.3227/9.1231; stitched motion scores 8.9800 and native real motion on the same subset 6.8541. None establishes better signing. Applying all three frozen real-CSL layers without fitting gives 9.7504/9.4424/9.2348, mean gain 0.1532, paired interval $[-0.8588,1.1519]$ and seed-plus-clip interval $[-0.9052,1.2270]$. Canonical hypotheses remain identical. Transfer is inconclusive. Source hashes, complete configurations and generated arrays accompany the replay artifacts.
+\input{table_constrained_layers}
+The circle's text-conditioned DEV gain 0.0649 has paired interval $[-0.3860,0.5297]$; the sphere's $-0.0525$ has $[-0.4955,0.3909]$. RMS-detector AUC is approximately 0.50, but there is no reliable gain. Motion-only and canonical-loss controls are included. Independent reconstruction verifies 4,671 pairs in each study. Maximum circle errors in $E/N$ are $1.32\times 10^{-6}$/$1.37\times 10^{-6}$; sphere $E$ error is $8.17\times 10^{-7}$, while $N$ can change by 4.08. These are successful invariant controls and unsuccessful attacks, not evidence of detector evasion with useful score inflation.
+
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/adaptive_statistics.pdf}
+\caption{\textbf{Adaptive attack at fixed detector statistics.} Left: PHOENIX actual-caption BLEU and family-adjusted gain intervals. Right: per-clip reduction in target-normalized token edit error. The circle preserves canonical distance and squared feature norm per joint/frame while canonical hypotheses remain fixed. The sphere preserves distance alone. These are target-aware capability tests, not general stealth.}\label{fig:supadaptivestatistics}\end{figure*}
+The fixed-statistic learned layers and iterative per-clip attacks have different access and fitting requirements. DEV 64 is selected uniformly with seed 20261012 before the new per-clip optimization; it uses the frozen generator's raw DEV outputs. Both 80- and 200-step endpoints are retained. Full TEST 642 confirmation fixes the final 200-step endpoint and four geometry/target conditions before inference. Source motions come from the existing raw generator archive; no real reference pose is used to generate them. Baselines differ from the canonical-input learned layer: raw source BLEU is 6.62, versus 6.39 after canonicalization, for the same represented motion.
+
+Optimization uses Adam 0.1, zero-initialized per-frame/joint coefficients and frozen BT weights. A scalar $q$ predicts circle phase $\pi\tanh q$, bounded by $\pi$, identical to the learned circle's phase domain. Sphere coordinates are $(\pi/\sqrt 3)\tanh q_i$, giving auxiliary rotation magnitude at most $\pi$; the learned sphere used coordinate bound 1. Thus sphere success is not an isolated test of amortization at the identical angular budget. Radius $\ge 0.95$ remains identity, and left-hand joints 10--24 remain byte-identical. Target captions are either the original source or the fixed circular shift; all 642 TEST shifts differ. No decoded-score checkpoint selection occurs.
+
+\input{table_adaptive_statistics}
+
+On DEV 64, circle actual-caption BLEU is 6.59 to 10.06 at 200 steps, gain 3.46; its eight-endpoint-adjusted interval is $[1.15,6.49]$. Circle wrong-target gain is 2.82, with lower adjusted endpoint zero. Sphere actual/wrong-target gains are 26.79/20.72, with adjusted intervals $[17.09,37.53]$/$[11.93,31.93]$. These DEV results motivated prospective fixed TEST confirmation; they are not pristine validation.
+
+TEST circle gains are 4.09 actual and 2.10 shifted, with four-comparison-adjusted intervals $[3.04,5.24]$/$[1.22,3.12]$. Sphere gains are 26.45/21.27, intervals $[23.46,29.52]$/$[18.50,24.22]$. Random coefficient controls use fixed seeds 42/123/777 per surface. Canonical-reader CE optimization is run for 200 steps per surface. Their wrong-target gain intervals do not exclude zero on the positive side. Every source/target, full loss trace and output array is retained; randomization seeds are not independent training seeds.
+
+RMS threshold AUC is 0.5003 for the circle and 0.5007 for the sphere. The circle preserves both statistics; the sphere does not preserve feature norm and may be detectable by it. Preservation of $E,N$ is not indistinguishability of all redundant-coordinate distributions. Geometric invariants, decoded canonical strings, finite values and reconstruction are verified independently. Complete numerical residuals and source hashes accompany the results.
+
+\paragraph{Other fixed-rotation attack capabilities.}
+\input{table_wrong_targets}
+Wrong-caption optimization reaches 85.19 PHOENIX BLEU against an incorrect target and zero against the actual caption (\cref{tab:wrongtargets}). How2Sign/CSL show the same failure with different token conventions. Three CSL targets duplicate actual captions and remain included. These are attack capability scores, not production quality.
+
+The CTC model's wrong-target WER falls from 118.07\% to 3.76\%, while actual-reference WER reaches 121.58\%. Reversal or identity hands raises full TEST WER from 50.11\% to 91.48\% or 93.95\%. It responds to physical changes and redundant coordinates. All 1,024 BT/CTC attack pairs preserve canonical hypotheses.
+
+
+
+
+\paragraph{Additional scalar detectors and the limit of statistic matching.}
+After observing the attack outcomes, an exploratory diagnostic fits scalar thresholds on DEV 64 source/attacked clips and applies their fixed orientation/threshold to TEST 642. All nine statistics are reported: canonical RMS, mean squared 6D norm, means of $|\tau|$, $|\rho-\sigma|$, $\rho$, $\sigma$, and standard deviations of $\rho,\sigma,\tau$. Circle TEST AUCs span 0.500--0.530 with DEV-fitted orientation; TEST balanced accuracies span 0.500--0.521. Sphere statistics are more informative: $|\rho-\sigma|$ AUC is 0.877 and balanced accuracy 0.801, with source false-positive rate 0.319 and attack detection rate 0.922. These post-hoc diagnostics are not independently validated security guarantees, and do not cover temporal, joint-wise or learned multivariate detectors.
+
+For fixed canonical rows, the full Gram matrix of $(a,b)$ is
+\begin{equation}
+\begin{pmatrix}\rho^2&\rho\tau\\\rho\tau&\sigma^2+\tau^2\end{pmatrix}.
+\end{equation}
+Fixing all three entries determines positive $\rho,\sigma$ and $\tau$, hence the original features. Thus preserving $E,N$ leaves a circle, whereas fixing the entire Gram matrix at unchanged rotation leaves no channel. This elementary limit prevents interpreting two-statistic matching as general invisibility. It does not prove a practical detector's performance without evaluating that detector.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/learned_budget.pdf}
+\caption{\textbf{Learned-layer budget on full PHOENIX TEST.} Left: mean raw gains, paired 95\% intervals and individual seeds. Right: RMS distance to canonical features, against the same raw generator's natural output. A scalar RMS detector separates most attacked outputs. Rotations/canonical hypotheses stay fixed; smaller magnitude is not undetectability.}\label{fig:learnedbudget}\end{figure*}
 
 \section{Canonical-reader adaptation and independent recognizer}
 \paragraph{Reader adaptation.}
@@ -248,59 +232,91 @@ The 2,562,867-parameter recognizer has a 1075-entry gloss vocabulary, two 128-ch
 \paragraph{Per-clip attack and feature-only decoding.}
 BT minimizes target-token CE and CTC minimizes gloss CTC loss, with model weights frozen. Coefficients begin at zero and use bound 0.35. Selections are uniform without replacement, seed 2027, sorted by dataset index. CSL has three shifted-caption collisions retained. Final BT uses autoregressive decoding, not teacher forcing. A separate 768-hypothesis CSL replay forbids teacher-forced forward, asserts exactly features/lengths/masks at inference, and loads references only after predictions; every hypothesis matches the saved result. This is an input-contract check, not another independent performance experiment.
 
-\section{HumanML3D: an independent public evaluator}
-\paragraph{Representation and native inference.}
-HumanML3D~\cite{guo2022} has root features 0--3, relative positions 4--66, 21 continuous rotations 67--192, velocities 193--258 and foot contacts 259--262. Its native converter uses the first two matrix columns. The released movement encoder consumes features 0--258 without a rotation projection. We alter only 67--192 before normalization, then use the released evaluation mean/std and remask padded frames. Position-based reconstruction ignores the altered block; native FK additionally verifies rotation-based reconstruction. Other feature channels are checked bitwise, separately from floating-point matrix equality.
-
-Public T2M weights come from the MDM evaluator download script; all three frozen encoder states load strictly into the author architecture. The native MDM evaluation wrapper and our ordering-preserving adapter agree within $4.8\times10^{-7}$ on validation fixtures. Native R-precision, MM-distance and FID match saved metrics. The encoder reads 259 channels, not a canonicalized or position-only replacement. Source hash inventories identify the pinned author code and checkpoints.
-
-\paragraph{Data origin and fixed subsets.}
-The MDM-linked processed-motion Drive archive exceeded its public download quota. We use a public mirror pinned by revision and SHA256; its 4,297,557,992-byte size matches the author-linked inventory. The mirror's 012314 example is float64 while the author Git example is float32: maximum/RMS differences are $1.94\times10^{-5}$/$7.67\times10^{-7}$. This is numerical compatibility, not proof of byte identity for the full archive. Author text/split files and normalization are used. All motion matrices and physical controls are checked on the actual saved inputs.
-
-Eligible full-caption clips have 40--199 frames. Selection seed 20261012 samples 128 VAL and 1,024 TEST clips without replacement, with fixed caption draws and crops to multiples of four. These are subset audits, not full-score leaderboard reproductions. Real and generated inputs use the same captions and durations. MDM50~\cite{tevet2023} uses the official encoder checkpoint, 50 native sampling steps, CFG 2.5 and seed 42. No reference poses enter generation. Its eager unused SMPL constructor is replaced with a converter that raises if called; denoiser/CLIP/diffusion operations and parameters are unchanged. This enables tensor sampling without claiming licensed mesh rendering.
-
-\paragraph{Attack and scoring.}
-Nine fixed controls include identity, canonicalization, signed global bounds 0.05/0.1/0.35 and seeded random coefficients. Per-clip attacks optimize actual or shifted-caption embedding distance using 80 final Adam steps, learning rate 0.1, zero initialization and coefficient bound 0.35. A third control applies the loss after canonicalization. Evaluator weights remain frozen. A no-dropout recurrent flag enables input gradients; forward parity is checked and final scoring uses eval mode. Shifted text changes the optimization target without changing motion.
-
-R-precision top1 averages five fixed 32-candidate permutations (seeds 11/97/909/1337/2027). FID always compares motion embeddings with a fixed real-reference subset. The target-caption objective improves retrieval and MM-distance while worsening FID; no metric is interpreted as a human-quality gain at unchanged physical motion. All fixed controls and both splits are in \cref{tab:humanmlfixed}; TEST attack/control endpoints are in \cref{tab:humanmlfull}. Original/mirrored IDs are grouped for 10,000 paired bootstrap draws; six source/attack endpoints are adjusted together. These intervals condition on the five fixed candidate pools and one generator seed, not unseen evaluators or pretraining variability.
-
-\input{table_humanml_full}
-\input{table_humanml_fixed}
-
-Wrong-target R1 changes are 0.028 to 0.839 for real motion and 0.033 to 0.788 for MDM, adjusted intervals $[0.782,0.838]$/$[0.724,0.787]$ for gains. Actual-caption retrieval falls to 0.030/0.036. Canonical-gradient wrong-target controls preserve their baseline R1. Across all 27,648 encoding pairs, maximum independent rotation error is $3.8\times10^{-5}$ degrees, native RIC positions are exactly unchanged, and 384 sampled native FK pairs differ by at most $9.6\times10^{-7}$ in coordinate units. Canonical embeddings differ by at most $7.2\times10^{-7}$.
-
-\section{Caption-blind FID manipulation using TRAIN motion}
-\paragraph{Access and fresh source groups.}
-This study follows the target-aware audit but excludes every previously evaluated TEST source ID and its mirror. Seed 20261013 selects 960 eligible TEST clips and 2,048 TRAIN motions; there is no TRAIN/TEST source-group overlap. The same native MDM50 settings generate a fresh cohort. The attack numerically consumes only its generated arrays, TRAIN motion embeddings and the frozen evaluator. It never invokes the text encoder or deserializes/encodes real TEST references. Integrity preflight hashes held-out files, which is a byte-level read but supplies no caption, pose or embedding target. All attack outputs and hashes are saved before the evaluator consumes TEST reference content.
-
-\paragraph{Regularized Gaussian transport targets.}
-Let $\mu_s,\Sigma_s$ be the generated cohort's embedding moments and $\mu_t,\Sigma_t$ those of TRAIN real motion. The standard Gaussian transport construction~\cite{bhatia2017} gives the symmetric map
+\section{Ordinary denoiser training and diagnostics}
+\subsection{An ordinary generator under two motion objectives}
+For a denoised prediction $\hat x_\phi$, we compare standardized coordinate MSE with mean squared geodesic angle:
 \begin{equation}
-T=\Sigma_s^{-1/2}\bigl(\Sigma_s^{1/2}\Sigma_t\Sigma_s^{1/2}\bigr)^{1/2}\Sigma_s^{-1/2}.
+\mathcal L_{\rm geo}=\frac 1{TJ}\sum_{t,j}\theta\big (R (\hat x_{\phi,tj})^TR (x_{tj})\big)^2.
+\label{eq:geodesic}
 \end{equation}
-Targets are $\mu_t+(e_i-\mu_s)T$. Our numerical version symmetrizes matrices and floors eigenvalues in each root at $10^{-4}\operatorname{tr}(\Sigma)/512$. It is a regularized transport-based target, not a new transport theorem or an exact unregularized optimum. Per-clip coefficients minimize squared distance to these fixed targets for 80 Adam steps at learning rate 0.1. Both coefficient bounds 0.1/0.35 and canonical-gradient/random controls are fixed before scoring; FID does not choose an iterate.
+Angles use stable atan 2, in radians. Because this loss factors through $R$, its derivative vanishes along $(a,0),(0,b),(0,a)$; coordinate MSE generally penalizes these directions. This follows from the chain rule; we verify it numerically instead of claiming new geometry.
 
-\input{table_humanml_blind}
+The ordinary denoiser has no coefficient head or constrained layer. All weights are fine-tuned with
+\begin{equation}
+\mathcal L=\mathcal L_{\rm motion}+\lambda\mathcal L_{\rm CE}(f (\hat x_\phi),c),
+\label{eq:ordinary}
+\end{equation}
+or with $f (\C (\hat x_\phi))$ as the matched semantic control. Motion-only training omits CE. Physical rotations can differ across models. Only raw/canonical evaluation of one saved output is a fixed-rotation comparison.
 
-\paragraph{Results and interpretation.}
-Bound 0.1 reduces FID from 0.3839 to 0.2099 against the withheld TEST real reference, while actual R1 is 0.4133/0.4113. Bound 0.35 instead increases FID to 1.0850. The canonical-gradient control has FID 0.3838544, compared with source 0.3838538; random coefficients give 0.3526. Therefore success is not monotonic in bound, and both endpoints remain reported. Canonical FID remains 0.3799403 across equivalent encodings. This demonstrates a caption-blind score change for one fixed cohort, not generator improvement or routine exploitation.
+Writing $S_r,S_c$ for raw/canonical corpus BLEU, we report the absolute gap $S_r-S_c$ and its contrast against a control:
+\begin{equation}
+E=(S_r-S_c)_{\rm rawCE}-(S_r-S_c)_{\rm control}.
+\label{eq:excess}
+\end{equation}
+Positive $E$ identifies a representation-dependent change relative to that control. Alone it does not prove caption transmission: it can reflect coordinate drift in motion-only training. Absolute gaps, canonical-CE training and coordinate-transplant controls test stronger interpretations.
 
-Independent reconstruction checks all 5,760 encoding pairs and 48 sampled native FK pairs. Maximum rotation error is $1.5\times10^{-5}$ degrees; RIC positions and nonrotation channels are bitwise unchanged, native FK error is at most $6.0\times10^{-7}$ and canonical embedding error at most $7.2\times10^{-7}$. Gaussian targets and native metrics are independently recomputed. FID is a registered descriptive endpoint. A post-hoc 200-draw paired original/mirror-group sensitivity gives two-bound-adjusted intervals for the FID change of $[-0.268,-0.049]$ at bound 0.1 and $[0.404,1.166]$ at bound 0.35. The bootstrap holds the generated cohort and evaluator fixed; it does not estimate generation-seed variability, and its tail precision is limited by 200 draws.
+
+\input{table_ordinary}
+\paragraph{Shared generator.}
+The local denoiser has 128-dimensional token/position embeddings, a two-layer text Transformer (four heads, feed-forward 512, dropout 0.1), six temporal Conv1d blocks with dilations 1/2/4/8/16/32, GroupNorm, and cross-attention in blocks 3/6. It predicts 240 features, supports 300 frames and 64 tokens, and receives diffusion-time embeddings. Canonically converted TRAIN targets are standardized by TRAIN mean/std with std floor 0.05. A cosine schedule has 1,000 steps and $x_0$ prediction~\cite{ho2020}. The shared initialization was trained 20 epochs at learning rate 0.0003 and selected by fixed-noise DEV reconstruction loss.
+
+\paragraph{Objective study.}
+All 42 fits start from that same shared checkpoint. Within each seed, first-epoch batches, diffusion noise and timesteps are matched across objectives. Every objective runs five epochs; geodesic no-CE/raw-CE 1/canonical-CE 1 reach 20 epochs with fixed endpoint selection. AdamW uses learning rate $10^{-4}$, weight decay $10^{-4}$, batch 64, clipping 1 and caption dropout 0.1. Raw/canonical teacher weights are frozen. Auxiliary CE uses at most 16 nonnull-caption examples with $t\le 800$ per batch, averaging per-clip token losses. Both motion losses use all valid joints/frames. Geodesic loss is mean squared angle in radians; coordinate loss is standardized 6D MSE. Their units and gradient scales differ, so equal CE weights are not asserted as equal physical/semantic influence.
+
+The stable angle computation uses atan 2 of skew magnitude and trace, with finite gradients at identical rotations. Unit tests check identity, equivalent-feature invariance and directional derivatives. First-batch gradient norms, CE-to-motion norm ratios and redundant-direction contractions are archived. For coordinate MSE, the output gradient is differentiated with respect to the standardized prediction and rescaled to the original feature units. Execution diagnostics and version records accompany the released artifacts.
+
+\input{table_ordinary_sweep}
+All arms and endpoints appear in \cref{tab:ordinarysweep}; weights are not selected on BLEU. The three primary 20-epoch contrasts are raw-CE gap minus no-CE gap, raw-CE gap minus canonical-CE gap, and raw-CE absolute gap. Their family-adjusted percentile tails use 0.8333\%/99.1667\%. DEV supports all three; TEST supports only the first. A positive contrast over no-CE does not isolate caption coding from no-CE coordinate drift. TEST raw/canonical means 5.13/4.79 versus 2.64/5.10 produce excess 2.80, but absolute gap 0.35 and canonical-CE contrast 0.48 have intervals containing zero. Full per-seed values are included below.
+
+\input{table_ordinary_seeds}
+\paragraph{Coordinate transplantation.}
+After freezing the objective study, each of its nine primary DEV models generates another-caption motion with the same source duration/noise. For each output pair we retain source canonical rows and insert the other output's $\rho,\sigma,\tau$, keeping the original left-hand stream. This has no fitting, per-clip gradients or added network. Rotations are preserved and all 4,671 canonical predictions remain identical. Wrong-caption BLEU gains are 0.0652 (no CE),0.1644 (raw CE) and 0.1035 (canonical CE), with paired intervals $[-0.3790,0.5476]$, $[-0.0524,0.4994]$ and $[-0.3190,0.4793]$. This exploratory control does not confirm strong source-caption transmission by the ordinary denoiser.
+
+\paragraph{Target-independent representations.}
+Four frozen local diffusion variants also generate 642 TEST motions each. Raw, canonical, fixed scales 0.9/1.1 and shear 0.1 are equivalent encodings with protected left hands, independent of captions. In the generated-near variant, scale 0.9 minus raw is $-0.6592$, family interval $[-1.2267,-0.0949]$; scale 1.1 minus 0.9 is +0.8554, family interval $[0.1734,1.5347]$. These 20-contrast,20,000-resample results establish within-system representation effects. Between-generator opposite rank orderings are not supported as a primary claim. Geometry/velocity/reader-CE/generated-near variant definitions and raw arrays remain in the machine-readable evidence map.
+
+\paragraph{Seed replication and stronger-CE dose tests.}
+Seven new fitting seeds 11/97/909/1337/2027/2718/31415 repeat geodesic/raw CE1 for 20 epochs, with seven matched canonical-CE fits. The seven-new-seed gap is the primary replication; pooling the three historical runs produces a separate ten-seed extension. None is discarded or selected on BLEU. All share the original pretrained generator. The raw/canonical cohort gap and canonical-CE contrast remain inconclusive on TEST; the full per-seed extension is in \cref{tab:seedextension}.
+
+\input{table_ordinary_replication}
+\input{table_seed_extension}
+\input{table_dose_grid}
+
+Nine fresh fits cross the historical seeds with CE weights 1/3/10 through epoch 40, storing checkpoints at 20/40. They start from the shared pretrained weights; they do not silently continue old checkpoints missing optimizer/RNG states. New checkpoints retain optimizer and RNG states. Resource scheduling partitions exclusive jobs across processes without changing the fitting loop. All new weights are saved and hashed before inference, and the historical weight 1/epoch 20 replay gives identical DEV/TEST BLEU. Batch/noise/timestep/caption-drop arrays match across each seed's paired conditions.
+
+For TEST, larger weights 3/10 have positive same-output gaps at both 20/40 endpoints after adjustment across six endpoints and five contrasts. Their canonical scores fall relative to weight 1. Weight 3-minus-weight 1 and weight 10-minus-weight 3 differences at each duration, plus the mean duration difference, all have adjusted intervals containing zero. This does not establish monotonicity, independent-pretraining replication, better motion, or caption coding. Units/gradient-scale effects remain confounded with geometry. Bootstrap seed sensitivity and seed-only $t$ intervals are reported; neither makes ten runs a universal adequacy threshold~\cite{colas2018}.
+
+\paragraph{Complete dose-coordinate transplant diagnostic.}
+The mechanism diagnostic is registered before the new dose BLEU results and uses full DEV 519. It covers all six raw-CE dose/epoch combinations plus original no-CE and canonical-CE20 controls, each at seeds 42/123/777. Another caption is the fixed circular shift, generated with the source duration and sampler seed. Source canonical rows are retained; alternate $\rho,\sigma,\tau$ are inserted outside the protected left-hand stream. No extra model is fitted and no reader-gradient attack is applied. All 12,456 canonical predictions remain identical. Gains at weights 1/3/10 and epochs 20/40 are 0.164/0.277,0.233/0.082,0.528/0.180; every eight-condition-adjusted seed-plus-clip interval includes zero. The new stress gaps therefore do not confirm the semantic mechanism. Arrays and all condition intervals accompany the artifacts.
+
+\paragraph{Cluster sensitivity.}
+A post-hoc audit groups the 642 PHOENIX TEST IDs by the native name prefix before the final sentence suffix, yielding 331 groups. This is a source-name clustering sensitivity, not independently verified signer/video metadata. Circle actual/shifted gains retain positive four-comparison-adjusted intervals $[2.99,5.23]$/$[1.19,3.12]$. New-seven/pooled-ten seed-plus-group gap intervals remain $[-0.55,0.80]$/$[-0.43,0.79]$. Stress weight 3/10 at epoch 40 retains positive eleven-comparison-adjusted seed-plus-group intervals $[0.23,3.59]$/$[0.54,3.55]$. Registered clip intervals remain the primary analysis; the clustering is disclosed as sensitivity rather than post-hoc replacement.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/learned_method.pdf}
+\caption{\textbf{Learning changes the evaluation while the rotations stay fixed.} Source text and frozen generated motion condition a bounded output layer. TRAIN caption loss updates only that layer. At evaluation it performs one pass, with no per-clip search. The raw reader can respond to its coefficients; canonicalization removes them before reading. The three layer objectives use matched batches and initialization.}
+\label{fig:learnedmethod}
+\end{figure*}
+
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figures/learned_results.pdf}
+\caption{\textbf{A learned channel on DEV.} Bars average three seeds; dots show seeds. Whiskers are paired 95\% raw-gain intervals anchored at the fixed baseline. Canonical hypotheses are identical. TEST confirmation is reported in the main paper.}\label{fig:learnedresults}\end{figure}
+
+\section{Public generation replay and no-fit transfer}
+A PHOENIX text-plus-duration replay without ground-truth keyframes has canonical BLEU 0.7381; the PHOENIX layer reaches mean 12.6456. This weak replay is supplementary capability evidence. The released SignSparK checkpoint is explicitly not trained on PHOENIX. The paper's gloss-free/sign-retrieval T2P table does not report comparable BT scores, so matching a published number would not validate this setup.
+
+The native CSL replay uses pinned official retrieval code and public assets, released DEV text-to-gloss predictions and a TRAIN-only isolated-sign dictionary. Revisions and hashes accompany the artifacts. A uniform 128-clip DEV subset is fixed with seed 2027 before scoring. Same-signer retrieval uses release metadata where available; no DEV pose anchors or ground-truth glosses are used. The dictionary has 18201 available TRAIN videos; 200 additional annotated videos are unavailable in the release. Official no-embedding exact/fuzzy OOV handling is used, with all mappings/drop counts saved. First/middle/last retrieved TRAIN keyframes condition CFM completion; generated face is outside the 240-feature reader.
+
+Body/hand CFM weights are the public frozen release. Generation uses 50 ODE steps, native CFG-off, batch 16, one candidate, seq\_len 304, and feature cap 300. The sampler uses global seed 102. The complete sampler configuration and generated filenames are included with the artifacts. The archived wrapper initializes XLM-Roberta locally before loading the full text encoder and strict EMA states; weights match release bytes, but RNG initialization consumption need not be byte-identical to the native online loader. Left hands use the official flip conversion and original retrieved keyframes are pasted back. This is a release-pipeline replay, not published-SOTA reproduction.
+
+All 128 clips generate valid outputs. Raw/canonical BT is 9.3227/9.1231; stitched motion scores 8.9800 and native real motion on the same subset 6.8541. None establishes better signing. Applying all three frozen real-CSL layers without fitting gives 9.7504/9.4424/9.2348, mean gain 0.1532, paired interval $[-0.8588,1.1519]$ and seed-plus-clip interval $[-0.9052,1.2270]$. Canonical hypotheses remain identical. Transfer is inconclusive. Source hashes, complete configurations and generated arrays accompany the replay artifacts.
 
 \section{Statistics, presentation and reproducibility}
 Corpus BLEU is recomputed from clipped 1--4 gram counts, native tokenization and brevity penalty~\cite{papineni2002,post2018}. CSL removes spaces and preserves punctuation. A standard-library Counter implementation reproduces saved scores to $10^{-10}$. WER is verified by full-matrix edit distance and micro aggregation. Attack scores against wrong captions remain separate from actual-reference scores.
 
 New intervals use 20000 paired bootstrap draws, seed 42, recomputing corpus metrics from sufficient statistics. How2Sign uses official VIDEO\_ID groups (115 DEV/149 TEST), not verified signer identity. Within each sampled unit set, model-specific scores are computed separately before averaging differences across seeds. Sensitivity analysis resamples the three training seeds, all sharing one initialization; it does not estimate pretraining variation. One-seed controls have no seed uncertainty. Ordinary-generator family intervals cover three fixed contrasts, while target-independent representation intervals cover 20. Layer/budget/transfer intervals are nominal per contrast. Shifted-caption mappings remain fixed during resampling. Target-aware 128-clip audit intervals use 2000 draws and do not estimate training-seed variability.
 
-The 15.2053 learned PHOENIX score minus 14.9995 real-motion score is 0.2058, paired 642-clip interval $[-0.8454,1.2357]$. This comparison is not statistically supported superiority and does not assess human signing quality. The teaser uses three unaltered original RGB frames of\path{04January_2010_Monday_heute-7395}, chosen after outputs for illustration. English explanations do not replace German metric references. These are source photographs, not before/after avatar renderings; rotation equality is checked numerically.
-
-Frozen inputs and all outcomes are retained. Experiments use Python 3.10.13, PyTorch 2.11.0+cu128, CUDA 12.8 and RTX PRO 6000 Blackwell Max-Q. Geometry and hypotheses are verified separately.
-
-\section{Caption-blind repetition details}
-\input{table_blind_repetitions}
-The same TRAIN embeddings, transport regularization, 80-step Adam optimizer and two fixed bounds are used in all cohorts. New selection seeds 20261021/20261022 and generation seeds 4242/7777 produce two further 960-output cohorts. They exclude the original caption-targeted audit's source/mirror groups, but overlap the first blind cohort by 494/496 groups and each other by 493. The public native release audit also uses this TEST split; project-wide untouched TEST validation is not claimed. Neither overlap nor caption metadata is used to optimize the attack.
-
-At bound 0.1, FID reductions are 45.3\%, 53.2\% and 39.2\%; bound 0.35 worsens all three cohorts. Canonical-gradient controls remain at baseline. The repeats demonstrate sensitivity to generation/selection draws, not monotonicity or independent population validation. Each new cohort verifies 5,760 encoding pairs and 48 sampled native FK pairs, bitwise protected channels and independently reconstructed TRAIN transport targets. Attack arrays precede their own TEST reference scoring; no real TEST embedding or caption target enters attack optimization.
+The 15.2053 learned PHOENIX score minus 14.9995 real-motion score is 0.2058, paired 642-clip interval $[-0.8454,1.2357]$. This comparison is not statistically supported superiority and does not assess human signing quality. The teaser uses the first fixed HumanML3D MDM record and procedural body geometry from native RIC positions. Original/recoded body pixels match exactly under the same camera and radii; rotations are verified numerically. Its retrieval values summarize 1,024 clips rather than the illustration.
 
 \clearpage
 {\small\bibliographystyle{ieeenat_fullname}\bibliography{references}}

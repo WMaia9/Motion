@@ -162,6 +162,57 @@ def check() -> None:
 
 
 def summary() -> None:
+    coherent_path = ROOT / 'results/cvpr_coherent_blocks_20261014/guo/analysis.json'
+    if coherent_path.is_file():
+        controls = read(coherent_path)['conditions']
+        print('Fixed-direction controls: twenty paired draws; numerical L2 matched; '
+              'coherence is temporal, not cross-block physical consistency.')
+        for block in ['rotation', 'velocity', 'contact', 'position']:
+            values = [controls[f'{block}_fixed_{sign}_r3']['FID']['mean_change']
+                      for sign in ['plus', 'minus']]
+            print(f'Guo/{block}, kappa3 fixed +/−: FID '
+                  f'{values[0]:+.5f}/{values[1]:+.5f}')
+        natural = read(ROOT / 'results/cvpr_sign_natural_restoration_20261014/analysis.json')
+        for name, row in natural['results'].items():
+            print(f'Natural sign/{name}: {row["changed_hypotheses"]}/'
+                  f'{row["clips"]} hypotheses change without attack; BLEU '
+                  f'{row["BLEU4"]["raw"]:.4f}/{row["BLEU4"]["canonical"]:.4f}')
+    full_tmr = ROOT / 'results/cvpr_tmr1024_controls_20261013/analysis.json'
+    generalization = full_tmr if full_tmr.is_file() else ROOT / 'results/cvpr_tmr_attack_20261013/analysis.json'
+    tmr_count = 1024 if full_tmr.is_file() else 128
+    if generalization.is_file():
+        for source, values in read(generalization).items():
+            before = values['identity']['R_precision'][0]
+            after = values['actual']['actual']['R_precision'][0]
+            closed = values['actual']['canonical']['R_precision'][0]
+            print(f'TMR/{source}: target-aware R1 {before:.4f} -> {after:.4f}; '
+                  f'canonical attack {closed:.4f}; fixed {tmr_count} clips, native cosine')
+        additional = read(ROOT / 'results/cvpr_additional_motion_audit_20261013/analysis.json')
+        for source, values in additional['completed_methods'].items():
+            metric = values['FID']
+            print(f'Additional/{source}: FID {metric["raw"]:.5f}/'
+                  f'{metric["canonical"]:.5f}; raw-C {metric["delta"]:+.5f}; 20 draws')
+        motiondiffuse = read(ROOT / 'results/cvpr_motiondiffuse_compiled_20261013/analysis.json')
+        for source, values in motiondiffuse['completed_methods'].items():
+            metric = values['FID']
+            print(f'Additional/{source}: FID {metric["raw"]:.5f}/'
+                  f'{metric["canonical"]:.5f}; raw-C {metric["delta"]:+.5f}; 20 draws')
+        qualified = read(ROOT / 'results/cvpr_reward_dev_search_20261013/selection.json')
+        print(f'Reward DEV: {qualified["qualified"]} qualifying configurations; '
+              'failed qualification cannot test successful reward optimization.')
+    mechanism_path = ROOT / 'results/cvpr_rotation_mechanism_20261013/analysis.json'
+    if mechanism_path.is_file():
+        mechanism = read(mechanism_path)
+        print('Rotation-only mechanism: eight release means; descriptive, not family causality.')
+        for family, row in mechanism['family_descriptive_means'].items():
+            print(f'{family}: mean signed FID gap {row["mean_signed_gap"]:+.5f}')
+        essential = read(ROOT / 'results/cvpr_mardm_readers_20261013/analysis.json')
+        print(f'MARDM essential readers: Kendall versus canonical Guo '
+              f'{essential["Kendall_vs_canonical_Guo"]}; invariance by feature exclusion.')
+        for reader in ['guo', 'tmr']:
+            controls = read(ROOT / f'results/cvpr_matched_blocks_20261013/{reader}/analysis.json')
+            print(f'Equal-L2 {reader}: 20 draws, both radii, all14 conditions; '
+                  'paired real-reference FID-zero baseline is by construction.')
     releases = read(ROOT / 'results/cvpr_motion_prevalence_20261012/analysis.json')
     print('HumanML3D released outputs: 20 native repetitions, same motion raw/C.')
     for name, result in releases['methods'].items():
@@ -181,7 +232,8 @@ def summary() -> None:
     pilot = read(ROOT / 'results/cvpr_humanml_reward_pilot_20261012/summary.json')
     metric = pilot['conditions']['raw_reward']['R1']
     print(f'Ordinary MDM reward pilot: raw/C R1 '
-          f'{metric["raw_mean"]:.3f}/{metric["canonical_mean"]:.3f}; no retrieval inflation.')
+              f'{metric["raw_mean"]:.3f}/{metric["canonical_mean"]:.3f}; '
+              'retrieval optimization failed; does not test a successful reward fine-tune.')
     reward = read(ROOT / 'results/cvpr_motion_reward_release_20261013/analysis.json')
     for name, result in reward['readers'].items():
         metric = result['reward_finetuned']['R1']
@@ -295,6 +347,9 @@ def help_text() -> None:
           'make vendor-check   Check pinned external repositories\n'
           'make vendor         Clone missing pinned external repositories\n'
           'make paper          Build current LaTeX into ignored .build/paper\n'
+          'make test-canonicalize Test portable NumPy rotation consistency\n'
+          'make test-matched-blocks Check equal-norm geometry/protected frames\n'
+          'make test-coherent-blocks Check time-fixed directions and equal norms\n'
           'make verify-archive Verify full local archive (requires reports/)')
 
 

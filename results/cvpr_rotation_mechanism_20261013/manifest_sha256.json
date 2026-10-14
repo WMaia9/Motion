@@ -1,0 +1,19 @@
+{
+  "analysis.json": "94c80a6d7de203f4560cf81dfc5cb8e01363c8ece2000acb69bfaa2582a36f63",
+  "complete.json": "eeca0d0876cb9413d88e357494329a6d5095ec1b39d1e84a1e23c2913c36f37e",
+  "configs/external_sources.json": "ec68a387487c00e382198236d558e631d835620dc8cc154e9ea8f00b921ee296",
+  "docs/evaluation-contract.md": "8f191dad951d09f7309749c8150a94567054c09b7869f18ca87c7a2fdecd19d6",
+  "docs/mardm-followup-plan.md": "9c7f96d535025afbdaaec405089d5f982396463f42b1e53371061dd590fda340",
+  "logs/cvpr_rotation_mechanism_v2_20261013.log": "e38e44febcedeb213c3695a6c0c5b65e56bc23d08e844d86eea99712c9f97ee7",
+  "logs/cvpr_rotation_mechanism_verify_20261013.log": "5f1eeba16f6cfd913d92d9415ac60c20b51b8f90018ba1ae89f12ed95961fbda",
+  "protocol.json": "6746450f8cbaf9c805f6a71fdd0197bdca4e81b4849a248a98a4b6e105197f49",
+  "scripts/analyze_rotation_mechanism.py": "2a8476070f1e3c3d5d21f7507f2664f00be0ef44ce2a46d841194e1aaee3fcbd",
+  "scripts/freeze_generalization_studies.py": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "scripts/freeze_mardm_followup_studies.py": "c1f30461053e5d27d0846090297780a5df139b62ac7bc99f21d10c390181c9e0",
+  "scripts/freeze_motion_release_studies.py": "1269727af1f5fb4b131b4dd1f19a16bf7d503716691b94d8670de0d913039eae",
+  "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+  "scripts/verify_rotation_mechanism.py": "9f8f3b40f485d2dea69c6eccbd6b8a50ff7ca2c820d6a1d645b16ae5e7f0d3fe",
+  "source_provenance.json": "d57c58a83952611bf88b2d0e7bef8093641819de1d680642ae4fe2f5a20d9bd6",
+  "tools/canonicalize_motion.py": "c453f8e976d5fa43452627518fb5b70ae3659982fc625b529e5c813a12b65316",
+  "verification.json": "36d394948bfffe66d1b81eccc43498547b83fa98f0cf2dd4787147a2a3cab90e"
+}

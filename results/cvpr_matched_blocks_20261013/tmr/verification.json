@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "native_saved_metric_cells": 440,
+  "norm_arrays_all_clips_all_draws_checked": true,
+  "independently_reconstructed_fixture_pairs": 2240,
+  "native_FK_sampled_pairs": 120,
+  "sample_L2_max_relative_error": 2.3091044761836042e-07,
+  "sample_rotation_matrix_max_change": 4.7373803643835366e-08,
+  "sample_native_FK_max_change_m": 7.152557373046875e-07,
+  "sample_native_forward_max_difference": 7.62939453125e-06,
+  "all_28_interval_endpoints_recomputed": true,
+  "full_unsaved_geometry_replay_claimed": false,
+  "verifier_sha256": "537b758e4d0ecac5a2ea632926e9f9b8d96066b31f0680b4f50da0ce3232bd0c"
+}

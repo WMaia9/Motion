@@ -1,0 +1,33 @@
+{
+  "producers": [
+    "run_tmr_targeted_controls",
+    "verify_tmr_consistency_audits"
+  ],
+  "import_closure": [
+    "freeze_generalization_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "motion_release_audit_common",
+    "run_tmr_targeted_controls",
+    "score_humanml_blind_fid",
+    "tmr_audit_common",
+    "verify_tmr_consistency_audits"
+  ],
+  "verified_registered_inputs_and_assets": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_tmr_targeted_controls.py": "e4a5d21109f52a8acd1ebdee8b5e7bda4c1db873243894546a5d8ffa3ec4e3f1",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/config.json": "37f696adbc6adcbf5d51e6dfdb0bd313a76e09b20ef9775e8d0929600dd96443",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/motion_encoder.pt": "16805518259140d983753e7dd26bb6b0b16566977441fcf323bb60473a4894cc",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/text_encoder.pt": "17615140d20bb991347ffbc0ead8fb1e8762afbb435bb23316a3de6ee6f7e43d",
+    "reports/cvpr_humanml3d_audit_20261012/test_real.npz": "f509dd248e34b2f70bd97b7365e29cee54caa603509f41eaaea52f7f9ef03bd9",
+    "reports/cvpr_humanml3d_audit_20261012/test_mdm.npz": "5a26bb85902ae906f3c746cf795907f63bafa1401aefacd8408eebe9fe797579",
+    "reports/cvpr_humanml3d_audit_20261012/test_selection.json": "6ff5139515900cd97fcde0db7f3048131f569b4cf7a658312ac84805d12efb6d"
+  },
+  "verified_historical_producer_fingerprints": {},
+  "registered_sources_and_assets_match": true,
+  "portable_utility_sha256": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+  "freeze_source_sha256": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "historical_executed_verifiers": "verification_revisions/ where present; preserved without replacing scientific outputs",
+  "excluded_attempts": "Incomplete eager MotionDiffuse attempts are execution records, never final study endpoints",
+  "human_authors_and_registration_deferred": true
+}

@@ -1,0 +1,23 @@
+{
+  "analysis.json": "e6fe79b2b48017975e2c175e251c159c95e579b5b0a497e941e6caa87d9b81bd",
+  "complete.json": "0a6f4a924c446e5b8af7337fbbf819c52c8d587efe5047236416531bf3104034",
+  "configs/external_sources.json": "049c5d925581d03f2843c12eb528a52ad4be8fcb4a1d77985b9b23470344aa6e",
+  "docs/evaluation-contract.md": "195045d204c5d98d535801287614d81ac9184a6415e4c179ee4a7332bfd76e91",
+  "docs/generalization-plan.md": "709472314c29f874076713362d8c3eaa3b2b6837330ac2393cf799ae20de6013",
+  "logs/cvpr_generalization_controls_verification_20261013.log": "972d1f1db47ccfe26530bb39715121fb3ec6222076a69355c0b818c20a336671",
+  "logs/cvpr_reward_dev_validation_20261013.log": "d7d0ec5fbdb7721a3141f1174e621de0c9612d811c034f7f24d810ef645e6461",
+  "protocol.json": "40bb29213feb13c46424a5a3a5f6a69ffbd1d0ced87c71af937121c227149fb4",
+  "scripts/additional_motion_adapters.py": "6c529ea0cd5c9284ceb204211ab46fa68a28c5c94c3d3fd630c8d058030a496a",
+  "scripts/freeze_generalization_studies.py": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "scripts/freeze_motion_release_studies.py": "1269727af1f5fb4b131b4dd1f19a16bf7d503716691b94d8670de0d913039eae",
+  "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+  "scripts/motion_release_native_adapters.py": "7247fcc0829f360bbe0789b0c0855edb7fedb2e82f6dd87f15c7da82bbc7a04e",
+  "scripts/run_additional_motion_audit.py": "cdba7969ede7a91763e622e7372d663aab28ba2cc6b5609e7e847011e552b325",
+  "scripts/run_humanml_reward_pilot.py": "018b286631fdcd277c5d7b6460a1502e010c0aed8183f32308c24791c332328a",
+  "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+  "scripts/run_reward_dev_validation.py": "2ce43a6cde658821fc61732ffb8c07ff762a1df437f638d82de1edc1d34fe273",
+  "scripts/verify_generalization_controls.py": "2b5ba72672d41058922a455a809cd3d2429e8d8bfbe1c5c137de056e0a5ff9e6",
+  "source_provenance.json": "08c6b161be1e1c505b22b9b0c72c3c93153c792e199a80dceedd01f2b1b926b6",
+  "tools/canonicalize_motion.py": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+  "verification.json": "d89c1eeb5aa1ac5a5dc9f44b56670223486282a2ea07fdb714163f6ba25d72d4"
+}

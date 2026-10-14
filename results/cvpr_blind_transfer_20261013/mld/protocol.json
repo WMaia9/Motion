@@ -1,0 +1,44 @@
+{
+  "scope": "Caption-blind transfer to MLD native saved outputs; group-excluded source prefix selection, previously inspected TEST overall",
+  "TRAIN_reference_clips": 2048,
+  "TEST_clips": 960,
+  "selection_seed": 20261013,
+  "TEST_group_overlap_with_previous_audit": 0,
+  "TRAIN_TEST_group_overlap": 0,
+  "generation": {
+    "model": "MLD public50DDIM CFG7.5 frozenrep0",
+    "saved_generation_seed": 201234,
+    "no_new_generator_fitting": true,
+    "caption_supplied_only_to_original_generator": true
+  },
+  "attack_access": "Generated motion arrays, frozen evaluator gradients and 2048 TRAIN motion embeddings. No captions, tokens, text embeddings, TEST real poses or TEST real embeddings accessed by attack.",
+  "target_map": "Gaussian optimal-transport affine map between generated-output and TRAIN-reference embedding means/covariances; fixed ridge 1e-4 * trace(cov)/512; no TEST reference moments.",
+  "conditions": [
+    "identity",
+    "canonical",
+    "blind_OT_bound010",
+    "blind_OT_bound035",
+    "canonical_reader_OT_bound035",
+    "random_bound035_seed42"
+  ],
+  "optimizer": "Zero initialized per-clip coefficients, c=b*tanh(q), 80 Adam steps lr0.1, fixed final iterate; no FID-based iterate selection.",
+  "primary": "FID against withheld TEST real embeddings after attack arrays and hashes are saved. Two bound endpoints, descriptive dataset-level FID (no calibrated fitting-seed CI).",
+  "secondary": "R1/MM actual captions only after attack; canonicalized embedding invariance, position and rotation controls.",
+  "generator_and_attack_frozen_without_TEST_score_selection": true,
+  "not_natural_generator_training": true,
+  "not_general_detector_evasion": true,
+  "inputs_sha256": {
+    "reports/cvpr_blind_transfer_20261013/mld/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "reports/cvpr_blind_transfer_20261013/mld/test_real.npz": "0bd4e2028ef1598080ced106b20e2da4d553899c5b33f574a71beb4846cd41ce",
+    "reports/cvpr_blind_transfer_20261013/mld/test_mdm.npz": "7b25b55fc0a189752bfb295fb972320c2c2046dc07b7ef0cad0d3205f4ca934b",
+    "reports/cvpr_blind_transfer_20261013/mld/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "reports/cvpr_blind_transfer_20261013/mld/test_selection.json": "5daef9094e8b5d5badd5463977f9d2b06bdd7c80676b5edb80c9eb80b5e16104"
+  },
+  "scientific_sources_sha256": {
+    "scripts/run_humanml_blind_fid.py": "4b0bbac4d192e7fb77adf0be163684a1448be6620363e92ae05df1abb155f66d",
+    "scripts/score_humanml_blind_fid.py": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2",
+    "scripts/humanml_audit_common.py": "9b81eaa9d897f483dcfbad234a64b45c51fe74febb150e41daad88d6894ceb6b"
+  },
+  "one_MDM_generation_seed": false,
+  "not_globally_uninspected_TEST": true
+}

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "README.md": "83984273ba5b1dfdbf9d06caebdd5fbdbad99eb9c3549a6282f3d0bad20e1589",
+    "docs/evaluation-contract.md": "8f191dad951d09f7309749c8150a94567054c09b7869f18ca87c7a2fdecd19d6",
+    "requirements.txt": "b73ec2dda9534089084eab9c2b6f9d3b7f01370f1416d13058520a09c029009b",
+    "scripts/test_canonicalize_motion.py": "c93eb42e2a9208a3cdd554635d3e0da5df293a3d26eaa48ef7f335579ee5296c",
+    "tools/canonicalize_motion.py": "c453f8e976d5fa43452627518fb5b70ae3659982fc625b529e5c813a12b65316"
+  },
+  "zip_sha256": "9b0c61817b60aec5c27294137b3700fc73ea6d93c141005e2fda912033e9cd95",
+  "utility_tests_passed": true,
+  "checked_for_workspace_paths_and_known_local_identity": true,
+  "licensed_assets_and_dataset_arrays_not_included": true,
+  "scope": "portable evaluation utility only; manuscript and complete repository anonymity not asserted",
+  "not_submitted_or_published": true,
+  "tests_passed": 4,
+  "nonfinite_computed_norm_guard_checked": true
+}

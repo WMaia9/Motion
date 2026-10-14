@@ -1,0 +1,316 @@
+{
+  "reader": "tmr",
+  "conditions": {
+    "null_plus_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6784913793103449,
+        "mean_change": 7.543103448275357e-05,
+        "family28_CI95": [
+          -0.0009337041118300429,
+          0.00108456618079555
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5243510752916336,
+        "mean_change": -0.0001776665449142456,
+        "family28_CI95": [
+          -0.00025706388060873846,
+          -9.826920921975276e-05
+        ],
+        "all20_draws": true
+      }
+    },
+    "null_minus_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6782435344827586,
+        "mean_change": -0.00017241379310344861,
+        "family28_CI95": [
+          -0.0013305950509162562,
+          0.0009857674647093591
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5236471354961395,
+        "mean_change": -0.0008816063404083252,
+        "family28_CI95": [
+          -0.0009635921331749308,
+          -0.0007996205476417195
+        ],
+        "all20_draws": true
+      }
+    },
+    "null_random_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6785021551724139,
+        "mean_change": 8.620689655172153e-05,
+        "family28_CI95": [
+          -0.0005716274338530356,
+          0.0007440412269564788
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5245893985033036,
+        "mean_change": 6.065666675567627e-05,
+        "family28_CI95": [
+          4.49344898326516e-05,
+          7.637884367870094e-05
+        ],
+        "all20_draws": true
+      }
+    },
+    "rotation_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6785344827586207,
+        "mean_change": 0.00011853448275860878,
+        "family28_CI95": [
+          -0.0002805913166051756,
+          0.0005176602821223931
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5246300220489502,
+        "mean_change": 0.00010128021240234375,
+        "family28_CI95": [
+          8.593872362063795e-05,
+          0.00011662170118404955
+        ],
+        "all20_draws": true
+      }
+    },
+    "velocity_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6784051724137932,
+        "mean_change": -1.0775862068962416e-05,
+        "family28_CI95": [
+          -0.0006152350670677663,
+          0.0005936833429298414
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5245483130216598,
+        "mean_change": 1.9571185111999513e-05,
+        "family28_CI95": [
+          4.83953787091481e-06,
+          3.4302832353084214e-05
+        ],
+        "all20_draws": true
+      }
+    },
+    "contact_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6784267241379311,
+        "mean_change": 1.0775862068962416e-05,
+        "family28_CI95": [
+          -0.0008085259042764848,
+          0.0008300776284144096
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5246038317680359,
+        "mean_change": 7.50899314880371e-05,
+        "family28_CI95": [
+          4.2332552655416724e-05,
+          0.00010784731032065749
+        ],
+        "all20_draws": true
+      }
+    },
+    "position_r1": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6785991379310345,
+        "mean_change": 0.0001831896551724166,
+        "family28_CI95": [
+          -0.0003706784778943767,
+          0.0007370577882392099
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5246222853660584,
+        "mean_change": 9.354352951049805e-05,
+        "family28_CI95": [
+          6.20458623897831e-05,
+          0.000125041196631213
+        ],
+        "all20_draws": true
+      }
+    },
+    "null_plus_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6774137931034482,
+        "mean_change": -0.00100215517241381,
+        "family28_CI95": [
+          -0.002332033217383977,
+          0.0003277228725563567
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5209959000349045,
+        "mean_change": -0.0035328418016433716,
+        "family28_CI95": [
+          -0.0037672824593067535,
+          -0.0032984011439799897
+        ],
+        "all20_draws": true
+      }
+    },
+    "null_minus_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6760991379310346,
+        "mean_change": -0.0023168103448275856,
+        "family28_CI95": [
+          -0.003955389314983782,
+          -0.0006782313746713886
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5182564079761505,
+        "mean_change": -0.006272333860397339,
+        "family28_CI95": [
+          -0.006527360465685497,
+          -0.006017307255109181
+        ],
+        "all20_draws": true
+      }
+    },
+    "null_random_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6785237068965518,
+        "mean_change": 0.00010775862068964636,
+        "family28_CI95": [
+          -0.000956089337980736,
+          0.0011716065793600287
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5250423520803451,
+        "mean_change": 0.0005136102437973023,
+        "family28_CI95": [
+          0.00045859500293543955,
+          0.000568625484659165
+        ],
+        "all20_draws": true
+      }
+    },
+    "rotation_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6786422413793104,
+        "mean_change": 0.0002262931034482718,
+        "family28_CI95": [
+          -0.0005650207883490595,
+          0.001017606995245603
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5253786116838455,
+        "mean_change": 0.0008498698472976685,
+        "family28_CI95": [
+          0.0008011239087618894,
+          0.0008986157858334476
+        ],
+        "all20_draws": true
+      }
+    },
+    "velocity_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6784051724137931,
+        "mean_change": -1.0775862068956865e-05,
+        "family28_CI95": [
+          -0.0011784745393384913,
+          0.0011569228152005777
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5245642960071564,
+        "mean_change": 3.555417060852051e-05,
+        "family28_CI95": [
+          -2.785660719695462e-05,
+          9.896494841399564e-05
+        ],
+        "all20_draws": true
+      }
+    },
+    "contact_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6760668103448276,
+        "mean_change": -0.0023491379310344785,
+        "family28_CI95": [
+          -0.004083209778726043,
+          -0.0006150660833429138
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5233084797859192,
+        "mean_change": -0.001220262050628662,
+        "family28_CI95": [
+          -0.001352519861038375,
+          -0.001088004240218949
+        ],
+        "all20_draws": true
+      }
+    },
+    "position_r3": {
+      "R1": {
+        "source_mean": 0.6784159482758622,
+        "perturbed_mean": 0.6787176724137931,
+        "mean_change": 0.00030172413793103645,
+        "family28_CI95": [
+          -0.0008351321913103699,
+          0.0014385804671724427
+        ],
+        "all20_draws": true
+      },
+      "matched_cosine": {
+        "source_mean": 0.5245287418365479,
+        "perturbed_mean": 0.5252282947301865,
+        "mean_change": 0.0006995528936386108,
+        "family28_CI95": [
+          0.0006037236503219548,
+          0.0007953821369552668
+        ],
+        "all20_draws": true
+      }
+    }
+  },
+  "twenty_draws_complete": true,
+  "paired_source_baseline_zero_by_construction": true,
+  "L2_before_reader_feature_selection": true
+}

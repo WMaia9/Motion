@@ -1,0 +1,132 @@
+{
+  "scope": "representation inconsistency, not better motion or systematic score inflation",
+  "new_studies": {
+    "cvpr_tmr_audit_20261013": "3cbab5882f6811065aae6ac8cc953974b83cb03e0c0fefe96c9aab0da78acc0c",
+    "cvpr_tmr_attack_20261013": "e6cce49d1863f8d6fcadc8fd1bf37241aabf36730de192fd7192649fc7e3e191",
+    "cvpr_physical_calibration_20261013": "a3a28a8bde22125f5ccaa85819a4ef669345d55da10626af652dee70b3529ebc",
+    "cvpr_reward_dev_search_20261013": "1dcd0f8979bf9fbc36b106afa23040b276d383c4f6c9f5c7c30644ec56ff9935",
+    "cvpr_reward_dev_validation_20261013": "dd9c411d67a3d47b61cc6cc211c0f599ed86a0d2f296d6eb4bd4dd8c1c1eaa44",
+    "cvpr_blind_transfer_20261013": "dc0c795bfb8865c6b8c343fd9c592bfcb47bb18c9b87e29b056b24d63f15c0c5",
+    "cvpr_motion_defense_cost_20261013": "25cfb759417e4addc2f46b61a36e25aa11ba93e384b924a1935cc0af77e8fd5f",
+    "cvpr_additional_motion_audit_20261013": "71303c35249f664457d974057fb9e541b77bd9c3e8ab9babceaf806e4f2dc7d2",
+    "cvpr_motiondiffuse_compiled_20261013": "10b2ae7eda0d8c2395754249f37ef5365ce1d8d35203e0e3eafd2a97b20ffedb"
+  },
+  "additional_methods": {
+    "additional_methods": {
+      "humanml/momask": {
+        "FID": {
+          "raw": 0.06770196711972716,
+          "canonical": 0.06439771633092875,
+          "delta": 0.0033042507887984128,
+          "family10_CI95": [
+            0.0027885235851672456,
+            0.00381997799242958
+          ]
+        },
+        "R1": {
+          "raw": 0.4632112068965517,
+          "canonical": 0.4625646551724138,
+          "delta": 0.0006465517241379364,
+          "family10_CI95": [
+            -0.0010456974273699237,
+            0.0023388008756457966
+          ]
+        }
+      },
+      "humanml/dip": {
+        "FID": {
+          "raw": 0.3665069743419352,
+          "canonical": 0.3649698270495826,
+          "delta": 0.0015371472923526141,
+          "family10_CI95": [
+            4.35670599351005e-05,
+            0.003030727524770128
+          ]
+        },
+        "R1": {
+          "raw": 0.451806640625,
+          "canonical": 0.4517578125,
+          "delta": 4.8828125e-05,
+          "family10_CI95": [
+            -0.002227324789328009,
+            0.0023249810393280086
+          ]
+        }
+      },
+      "humanml/motiondiffuse": {
+        "FID": {
+          "raw": 0.976603627818902,
+          "canonical": 0.9806702493819663,
+          "delta": -0.004066621563064388,
+          "family10_CI95": [
+            -0.007371085633132039,
+            -0.000762157492996737
+          ]
+        },
+        "R1": {
+          "raw": 0.427734375,
+          "canonical": 0.427294921875,
+          "delta": 0.000439453125,
+          "family10_CI95": [
+            -0.0017575835421868534,
+            0.0026364897921868535
+          ]
+        }
+      },
+      "kit/momask": {
+        "FID": {
+          "raw": 0.3511563729396485,
+          "canonical": 0.3648730177113976,
+          "delta": -0.013716644771749031,
+          "family10_CI95": [
+            -0.02472957923022594,
+            -0.0027037103132721216
+          ]
+        },
+        "R1": {
+          "raw": 0.4174715909090909,
+          "canonical": 0.4181107954545455,
+          "delta": -0.0006392045454545441,
+          "family10_CI95": [
+            -0.0070186485814810184,
+            0.00574023949057193
+          ]
+        }
+      },
+      "kit/motiondiffuse": {
+        "FID": {
+          "raw": 1.7794437307584374,
+          "canonical": 1.8158625651319995,
+          "delta": -0.03641883437356199,
+          "family10_CI95": [
+            -0.04281726827074318,
+            -0.030020400476380802
+          ]
+        },
+        "R1": {
+          "raw": 0.4125,
+          "canonical": 0.4115767045454546,
+          "delta": 0.000923295454545453,
+          "family10_CI95": [
+            -0.001739235326429064,
+            0.00358582623551997
+          ]
+        }
+      }
+    },
+    "comparison_family": 10,
+    "original_five_study_unchanged": true,
+    "all20repetitions": true,
+    "not_exact_leaderboard_reproduction": true,
+    "MotionDiffuse_final_registered_execution": "reports/cvpr_motiondiffuse_compiled_20261013",
+    "source_sha256": "a3e8a8421aab9644ed5c69a5cca5adca1c39d6bc42ecfc814a3b2ccea2935994"
+  },
+  "main_content_pages": 7,
+  "supplement_content_pages": 19,
+  "reference_entries": 52,
+  "no_qualified_reward_pilot": true,
+  "routine_training_exploitation_unconfirmed": true,
+  "authors_registration_and_human_cold_review_deferred": true,
+  "format_2027_provisional_official_2026_kit": true,
+  "submission_or_publication": false
+}

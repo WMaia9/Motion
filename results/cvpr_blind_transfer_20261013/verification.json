@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "secondary_native_metric_endpoints": 48,
+  "max_saved_FID_error": 2.53952581186212e-10,
+  "MLD_geometry_verification": {
+    "passed": true,
+    "pairs": 5760,
+    "native_FK_pairs": 48,
+    "max_rotation_error_deg": 0.00010684858982000381,
+    "max_rotation_matrix_error": 1.5424343179359923e-06,
+    "max_coefficient_reconstruction_error": 3.2657587345497063e-07,
+    "native_RIC_positions_bitwise_unchanged": true,
+    "other_feature_channels_bitwise_unchanged": true,
+    "max_native_FK_position_error": 5.960464477539062e-07,
+    "max_canonical_embedding_change": 7.152557373046875e-07,
+    "transport_targets_reconstructed_independently": true,
+    "native_metrics_verified": true,
+    "attack_arrays_hashed_before_TEST_reference_encoding": true,
+    "TEST_group_overlap_with_previous_audit": 0,
+    "TRAIN_TEST_group_overlap": 0,
+    "preflight_hash_only_reads_of_TEST_files_disclosed": true,
+    "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2"
+  },
+  "seal_and_protocol_source_hashes_verified": true,
+  "no_destination_reoptimization": true,
+  "verifier_sha256": "2b5ba72672d41058922a455a809cd3d2429e8d8bfbe1c5c137de056e0a5ff9e6"
+}

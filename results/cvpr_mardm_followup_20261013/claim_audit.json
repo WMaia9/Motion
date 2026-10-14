@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "abstract_numbers": [
+    "3.57",
+    "0.397",
+    "0.993",
+    "2.64"
+  ],
+  "checkpoint_transfer_same_architecture_explicit": true,
+  "rotation_only_domains_foregrounded": true,
+  "canonical_real_data_sanity_not_accuracy_cost": true,
+  "TMR1024_canonical_baseline_separate_from_raw": true,
+  "all_block_conditions_and_noncoherence_disclosed": true,
+  "no_full_MARDM_refutation_or_family_causality_claim": true,
+  "eight_release_descriptive_RMS_analysis": true,
+  "all_generated_assets_match_evidence_map": true,
+  "audit_source_sha256": "50f7128d87bc0a933dbbc3a36b0cc1db44b691764a4cf879c11bfeb8fd6fd9b5"
+}

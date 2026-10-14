@@ -1,0 +1,26 @@
+{
+  "current_working_manuscript": "paper/current",
+  "snapshot_is_archive_not_another_working_location": true,
+  "import_closure": [
+    "assemble_mardm_followup_delivery",
+    "audit_current_motion_layout",
+    "audit_mardm_followup_claims",
+    "audit_mardm_motion_layout",
+    "build_editorial_presentation",
+    "build_mardm_followup_presentation",
+    "freeze_generalization_studies",
+    "freeze_mardm_followup_studies",
+    "freeze_motion_release_studies",
+    "motion_release_audit_common",
+    "verify_signspark_studies"
+  ],
+  "assembly_source_sha256": "ceb39485bd477237db9eb7864b77d240b53c87bc50de410a78cf4046e6696805",
+  "new_frozen_study_manifests": {
+    "cvpr_tmr1024_controls_20261013": "73aed8415c15fd6a368bbd988e043bacd1df238a905b3a5f20d36adc0c2745e8",
+    "cvpr_rotation_mechanism_20261013": "4d589a64123fdd4cc548fd84d68548ec12c482fd5c28b3560e1b055331165f62",
+    "cvpr_matched_blocks_20261013": "ffe6d26ef42fdec8900c57138d2d276c0c9cf842f983a2f78879c1b4c4a790ef",
+    "cvpr_mardm_readers_20261013": "8676d3f74584366c3a71adf5f3d16a09281aa6b25cae351a3017cc88f7efae82"
+  },
+  "previous_editorial_manifest_sha256": "b1f7838eba59a49fed48c890890d5f1aa89a3e686842667f9dbf0be856f4fd44",
+  "portable_utility_sha256": "c453f8e976d5fa43452627518fb5b70ae3659982fc625b529e5c813a12b65316"
+}

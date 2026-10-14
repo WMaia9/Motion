@@ -1,0 +1,34 @@
+{
+  "producers": [
+    "run_reward_dev_search",
+    "verify_generalization_controls"
+  ],
+  "import_closure": [
+    "freeze_generalization_studies",
+    "freeze_motion_release_studies",
+    "motion_release_audit_common",
+    "motion_release_native_adapters",
+    "run_humanml_reward_pilot",
+    "run_motion_release_audit",
+    "run_reward_dev_search",
+    "verify_generalization_controls"
+  ],
+  "verified_registered_inputs_and_assets": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_reward_dev_search.py": "9efb4e18da117cb1d47563667f4d1a6647e0bfd56ffb2796acf08e2177f74b20",
+    "scripts/run_humanml_reward_pilot.py": "018b286631fdcd277c5d7b6460a1502e010c0aed8183f32308c24791c332328a",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_real.npz": "cb521619b2f18d29edf74f3ad405f72516dc76d45ca1a34da8ffaaeb59536a4c",
+    "reports/cvpr_humanml3d_blind_fid_20261012/train_selection.json": "223a7f6399b1663bade8427256f30614687357474f144309d545e4dbe75a23a7",
+    "models/humanml3d_audit/extracted/humanml_enc_512_50steps/model000750000.pt": "0fbdc8547c8f262b8838645586790b55f983d90db3bb7ed58e4b5d49429587ca",
+    "models/humanml3d_audit/extracted/t2m/text_mot_match/model/finest.tar": "43e43d198f07b7e080749d1709326783d2bfb5810f56ed0c56c68951ee961d0d",
+    "models/humanml3d_audit/data/HumanML3D/val.txt": "effa9e866f7c2bd3e5bb518600f95a5fd780a2dcf72c3cdb1e0caf5c93051e17"
+  },
+  "verified_historical_producer_fingerprints": {},
+  "registered_sources_and_assets_match": true,
+  "portable_utility_sha256": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+  "freeze_source_sha256": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "historical_executed_verifiers": "verification_revisions/ where present; preserved without replacing scientific outputs",
+  "excluded_attempts": "Incomplete eager MotionDiffuse attempts are execution records, never final study endpoints",
+  "human_authors_and_registration_deferred": true
+}

@@ -1,0 +1,48 @@
+{
+  "completed_methods": {
+    "humanml/motiondiffuse": {
+      "FID": {
+        "raw": 0.976603627818902,
+        "canonical": 0.9806702493819663,
+        "delta": -0.004066621563064388,
+        "family10_CI95": [
+          -0.007371085633132039,
+          -0.000762157492996737
+        ]
+      },
+      "R1": {
+        "raw": 0.427734375,
+        "canonical": 0.427294921875,
+        "delta": 0.000439453125,
+        "family10_CI95": [
+          -0.0017575835421868534,
+          0.0026364897921868535
+        ]
+      }
+    },
+    "kit/motiondiffuse": {
+      "FID": {
+        "raw": 1.7794437307584374,
+        "canonical": 1.8158625651319995,
+        "delta": -0.03641883437356199,
+        "family10_CI95": [
+          -0.04281726827074318,
+          -0.030020400476380802
+        ]
+      },
+      "R1": {
+        "raw": 0.4125,
+        "canonical": 0.4115767045454546,
+        "delta": 0.000923295454545453,
+        "family10_CI95": [
+          -0.001739235326429064,
+          0.00358582623551997
+        ]
+      }
+    }
+  },
+  "comparison_family": 10,
+  "all20repetitions_each": true,
+  "MotionDiffuse_eager_partial_attempts_excluded": false,
+  "source_sha256": "9c13a57e42da4138ababfec17026d32cbcee171756e87709769b66e61e94eebd"
+}

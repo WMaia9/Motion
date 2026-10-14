@@ -1,0 +1,20 @@
+{
+  "notes": [
+    {
+      "scope": "Metadata clarification only; immutable source evidence and all metrics unchanged",
+      "source": "cvpr_motiondiffuse_compiled_20261013/analysis.json",
+      "source_sha256": "cfe08317b1fccb6791acafd2738c482b1584e572fd9560e93076259e8c09c4aa",
+      "field": "MotionDiffuse_eager_partial_attempts_excluded",
+      "archived_value": false,
+      "correct_interpretation": true,
+      "reason": "The archived verifier keyed this label to study==additional rather than excluding incomplete eager attempts in both roots. Compiled registration for each dataset explicitly excludes those attempts. The analysis uses only the twenty compiled rep_00..rep_19 records per dataset.",
+      "supporting_protocols": [
+        "cvpr_motiondiffuse_compiled_20261013/humanml_compiled_registration.json",
+        "cvpr_motiondiffuse_compiled_20261013/kit_compiled_registration.json"
+      ],
+      "metrics_recomputed_or_changed": false,
+      "historical_json_preserved": true,
+      "working_verifier_label_corrected": true
+    }
+  ]
+}

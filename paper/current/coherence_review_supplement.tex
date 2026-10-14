@@ -1,0 +1,26 @@
+\section{Fixed-direction controls at equal numerical budget}
+Equal total L2 does not match temporal structure. We supplement the original random block interventions with fixed directions in each non-null block, using the same twenty saved cohorts, crop lengths, masks, normalization, reader weights and reference embeddings. Both signs and both radii are retained, without captions, gradients or score-selected directions.
+
+For positions and velocities, the local unit direction $(1,1,1)/\sqrt3$ is repeated across joints and valid frames in unnormalized coordinates. Contacts use four equal entries. Rotations are right-multiplied by a local SO(3) change around the same signed axis, with a per-clip angle solved from the input norm and bounded by $\pi/2$. The directions are constant in time; the remaining blocks are protected. This is temporal coherence of the intervention, not consistency of an entire motion-feature vector. In particular, position changes do not update velocities, and rotation changes do not update positions. Continuous contact offsets can leave their binary domain; Guo does not consume that block.
+
+The norm remains $\|D_r^{-1}(y-x)\|_2=\kappa\sqrt L$ per clip, before feature selection. Float32 contact offsets have coarser relative quantization on binary values: their realized norm tolerance is $2\times10^{-5}$, versus $5\times10^{-6}$ elsewhere. These limits concern relative input-norm error, not evaluator scores. The chosen directions and both budgets are fixed independently of the metric.
+
+\input{table_coherent_guo_fixed}
+\input{table_coherent_tmr_fixed}
+\input{table_coherent_guo_contrast}
+\input{table_coherent_tmr_contrast}
+
+Each reader's primary family contains 32 endpoints: four blocks, two signs, two radii and two scores. Separate secondary 32-endpoint families compare each fixed intervention with its original random block control on the same cohorts. Paired $t_{19}$ intervals use Bonferroni adjustment within each family. The historical null/random family remains 28 endpoints; the two phases are not presented as one prospective test. Matched-reference real-data FID starts at zero by construction. Numerically negligible nonzero contact FID can arise in the distance computation despite bitwise-identical Guo embeddings.
+
+All metric cells, primary intervals and fixed-minus-random contrasts are recomputed independently. Every saved per-clip norm is checked, and the first eight fixtures per condition/draw are reconstructed using separate formulas and SciPy rotations. Native forward checks verify the saved embeddings, including Guo's caption/length reordering. Protected channels and padding are compared bitwise; the non-null rotation controls must change represented matrices. These checks do not claim complete geometry replay of unsaved arrays.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/matched_blocks_random.pdf}
+\caption{\textbf{The original random/null controls, both radii.} All twenty draws; the historical 28-endpoint intervals remain unchanged. Here $\kappa$ denotes the numerical budget and $\rho$ remains the positive scale in the rotation fiber. Random position/velocity noise has a larger Guo FID effect than random fiber coefficients at the larger budget. This plot is distinct from the additional fixed-direction controls in the main paper.}\label{fig:randomblocks}
+\end{figure*}
+
+\section{Real sign inputs without an attack}
+\input{table_sign_natural}
+The same frozen raw reader decodes each real input and its canonical representative. There is no learned layer, source-caption conditioning, per-clip optimization or new model fitting. The restored results use the saved full native TEST hypotheses rather than a newly selected subset. Both paths share the original native preprocessing, including projection of left-hand channels 60:150 before decoding. Thus ``raw'' denotes the audit input under that shared preprocessing, not untouched bytes of the public release.
+
+Independent code compares all 3,987 pairs of saved strings and recalculates the six corpus BLEUs from clipped n-gram counts and brevity penalties. PHOENIX changes 0/642 hypotheses; How2Sign changes 1,438/2,183; CSL changes 464/1,162. Scores use word tokens for PHOENIX/How2Sign and characters with punctuation retained for CSL. The full changed fractions are 0\%, 65.9\% and 39.9\%. Small corpus-score differences do not imply sentence-level invariance, improved semantics or an accuracy-free defense. Reader adaptation on noncanonical inputs is reported separately.

@@ -1,0 +1,342 @@
+{
+  "real": {
+    "identity": {
+      "R_precision": [
+        0.6953125,
+        0.84375,
+        0.8671875
+      ],
+      "matched_cosine": 0.5436858534812927,
+      "clips": 128,
+      "candidate_pool": 32,
+      "native_cosine_and_sample_mean": true,
+      "not_official_full_TMR_annotation_protocol": true
+    },
+    "canonical": {
+      "R_precision": [
+        0.6953125,
+        0.84375,
+        0.8671875
+      ],
+      "matched_cosine": 0.543685793876648,
+      "clips": 128,
+      "candidate_pool": 32,
+      "native_cosine_and_sample_mean": true,
+      "not_official_full_TMR_annotation_protocol": true
+    },
+    "actual": {
+      "actual": {
+        "R_precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.9439530372619629,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.0,
+          0.0703125,
+          0.109375
+        ],
+        "matched_cosine": 0.02330363728106022,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6953125,
+          0.84375,
+          0.8671875
+        ],
+        "matched_cosine": 0.543685793876648,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 4.76837158203125e-06
+    },
+    "wrong": {
+      "actual": {
+        "R_precision": [
+          0.0234375,
+          0.265625,
+          0.375
+        ],
+        "matched_cosine": 0.1754940152168274,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.96875,
+          0.984375,
+          0.9921875
+        ],
+        "matched_cosine": 0.818595290184021,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6953125,
+          0.84375,
+          0.8671875
+        ],
+        "matched_cosine": 0.543685793876648,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 4.76837158203125e-06
+    },
+    "canonical_gradient": {
+      "actual": {
+        "R_precision": [
+          0.6953125,
+          0.84375,
+          0.8671875
+        ],
+        "matched_cosine": 0.5434933304786682,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.0078125,
+          0.0859375,
+          0.109375
+        ],
+        "matched_cosine": 0.022808976471424103,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6953125,
+          0.84375,
+          0.8671875
+        ],
+        "matched_cosine": 0.543685793876648,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 4.76837158203125e-06
+    },
+    "generic_L2": {
+      "actual": {
+        "R_precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.9916910529136658,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.957793116569519,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "standardizedL2_bound_verified_in_separate_verifier": true
+    }
+  },
+  "mdm": {
+    "identity": {
+      "R_precision": [
+        0.6328125,
+        0.734375,
+        0.8046875
+      ],
+      "matched_cosine": 0.44832929968833923,
+      "clips": 128,
+      "candidate_pool": 32,
+      "native_cosine_and_sample_mean": true,
+      "not_official_full_TMR_annotation_protocol": true
+    },
+    "canonical": {
+      "R_precision": [
+        0.6328125,
+        0.7265625,
+        0.796875
+      ],
+      "matched_cosine": 0.4480443298816681,
+      "clips": 128,
+      "candidate_pool": 32,
+      "native_cosine_and_sample_mean": true,
+      "not_official_full_TMR_annotation_protocol": true
+    },
+    "actual": {
+      "actual": {
+        "R_precision": [
+          0.9921875,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.9182194471359253,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.0,
+          0.0625,
+          0.1171875
+        ],
+        "matched_cosine": 0.024825090542435646,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6328125,
+          0.7265625,
+          0.796875
+        ],
+        "matched_cosine": 0.4480443596839905,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 4.76837158203125e-06
+    },
+    "wrong": {
+      "actual": {
+        "R_precision": [
+          0.0234375,
+          0.2421875,
+          0.4140625
+        ],
+        "matched_cosine": 0.17965775728225708,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.9609375,
+          0.984375,
+          0.9921875
+        ],
+        "matched_cosine": 0.768282413482666,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6328125,
+          0.7265625,
+          0.796875
+        ],
+        "matched_cosine": 0.4480443298816681,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 5.7220458984375e-06
+    },
+    "canonical_gradient": {
+      "actual": {
+        "R_precision": [
+          0.6328125,
+          0.734375,
+          0.8046875
+        ],
+        "matched_cosine": 0.4483252763748169,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "wrong": {
+        "R_precision": [
+          0.015625,
+          0.078125,
+          0.1171875
+        ],
+        "matched_cosine": 0.012694871053099632,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          0.6328125,
+          0.7265625,
+          0.796875
+        ],
+        "matched_cosine": 0.4480443596839905,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical_embedding_max_change": 4.76837158203125e-06
+    },
+    "generic_L2": {
+      "actual": {
+        "R_precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.9911221861839294,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "canonical": {
+        "R_precision": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "matched_cosine": 0.9528201222419739,
+        "clips": 128,
+        "candidate_pool": 32,
+        "native_cosine_and_sample_mean": true,
+        "not_official_full_TMR_annotation_protocol": true
+      },
+      "standardizedL2_bound_verified_in_separate_verifier": true
+    }
+  }
+}

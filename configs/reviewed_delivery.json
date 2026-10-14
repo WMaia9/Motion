@@ -1,9 +1,10 @@
 {
   "review_date": "2026-10-13",
-  "report": "reports/cvpr_motion_release_review_20261012",
-  "paper_source": "reports/cvpr_motion_release_review_20261012/manuscript",
+  "report": "reports/cvpr_mardm_followup_20261013",
+  "paper_source": "reports/cvpr_mardm_followup_20261013/manuscript",
   "documents": {
-    "motion-release-review.md": "motion-release-review.md"
+    "mardm-followup-review.md": "mardm-followup-review.md",
+    "mardm-followup-plan.md": "mardm-followup-plan.md"
   },
   "additional_metadata": {
     "cvpr_critical_review_20261012": [
@@ -102,7 +103,119 @@
       "evidence_map.json",
       "teaser_evidence.json",
       "presentation_evidence.json"
+    ],
+    "cvpr_tmr_audit_20261013": [
+      "source_provenance.json",
+      "native_contract.json"
+    ],
+    "cvpr_tmr_attack_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_physical_calibration_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_reward_dev_search_20261013": [
+      "source_provenance.json",
+      "selection.json",
+      "prepared.json"
+    ],
+    "cvpr_reward_dev_validation_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_blind_transfer_20261013": [
+      "source_provenance.json",
+      "cross_reader_analysis.json",
+      "cross_reader_protocol.json",
+      "cross_reader_complete.json",
+      "mld/protocol.json",
+      "mld/analysis.json",
+      "mld/verification.json"
+    ],
+    "cvpr_motion_defense_cost_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_additional_motion_audit_20261013": [
+      "source_provenance.json",
+      "humanml/momask/protocol.json",
+      "humanml/momask/verification.json",
+      "humanml/dip/protocol.json",
+      "humanml/dip/verification.json",
+      "kit/momask/protocol.json",
+      "kit/momask/verification.json",
+      "kit/real_controls/protocol.json",
+      "kit/real_controls/verification.json"
+    ],
+    "cvpr_motiondiffuse_compiled_20261013": [
+      "source_provenance.json",
+      "humanml_compiled_registration.json",
+      "kit_compiled_registration.json",
+      "humanml/motiondiffuse/protocol.json",
+      "humanml/motiondiffuse/verification.json",
+      "kit/motiondiffuse/protocol.json",
+      "kit/motiondiffuse/verification.json"
+    ],
+    "cvpr_generalization_review_20261013": [
+      "source_provenance.json",
+      "primary_sources.json",
+      "layout_verification.json",
+      "visual_review.json",
+      "evidence_map.json",
+      "teaser_evidence.json",
+      "additional_methods_analysis.json",
+      "completed_studies.json",
+      "anonymous_utility_verification.json"
+    ],
+    "cvpr_editorial_review_20261013": [
+      "source_provenance.json",
+      "primary_sources.json",
+      "layout_verification.json",
+      "visual_review.json",
+      "evidence_map.json",
+      "teaser_evidence.json",
+      "additional_methods_analysis.json",
+      "completed_studies.json",
+      "anonymous_utility_verification.json",
+      "writing_sources.json",
+      "editorial_change_map.json",
+      "editorial_presentation_evidence.json",
+      "editorial_claim_audit.json",
+      "manuscript_anonymity_check.json"
+    ],
+    "cvpr_tmr1024_controls_20261013": [
+      "source_provenance.json",
+      "generic_geometry.json"
+    ],
+    "cvpr_rotation_mechanism_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_matched_blocks_20261013": [
+      "source_provenance.json",
+      "guo/analysis.json",
+      "guo/verification.json",
+      "guo/complete.json",
+      "guo/normalizer.json",
+      "tmr/analysis.json",
+      "tmr/verification.json",
+      "tmr/complete.json",
+      "tmr/normalizer.json"
+    ],
+    "cvpr_mardm_readers_20261013": [
+      "source_provenance.json"
+    ],
+    "cvpr_mardm_followup_20261013": [
+      "source_provenance.json",
+      "primary_sources.json",
+      "layout_verification.json",
+      "visual_review.json",
+      "evidence_map.json",
+      "presentation_evidence.json",
+      "claim_audit.json",
+      "frozen_integrity.json",
+      "new_study_integrity.json",
+      "presentation_corrections.json",
+      "manuscript_anonymity_check.json",
+      "anonymous_utility_verification.json"
     ]
   },
-  "figure_scope": "Native HumanML3D RIC skeleton from saved original/attacked MDM features; aggregate retrieval scores; no avatar or mesh rendering"
+  "figure_scope": "Procedural native RIC body rendering; represented rotations/FK verified separately; aggregate target-aware retrieval, no licensed mesh or human quality claim"
 }

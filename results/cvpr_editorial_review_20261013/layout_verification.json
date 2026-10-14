@@ -1,0 +1,32 @@
+{
+  "main": {
+    "pdf_sha256": "867f66d71de160f8231d6e8d391d429d413dbab1893d3fe0821e6884cf798e9a",
+    "total_pages": 9,
+    "content_pages": 7,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 5522,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "supplement": {
+    "pdf_sha256": "3ed7ff75606111a808904d2e5027d0e170e042b65d7ce69629960685ac0fafdc",
+    "total_pages": 22,
+    "content_pages": 20,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 13272,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "visual_inspection": "Completed: all 31 final rendered pages inspected; conclusion is whole on final body page; revision comparisons verify final rendered pages.",
+  "teaser_caption_warning": "hypcap is unavailable for captionof outside floats; hyperlink target checked, layout unaffected",
+  "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+  "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404"
+}

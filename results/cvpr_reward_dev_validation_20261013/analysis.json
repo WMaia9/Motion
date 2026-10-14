@@ -1,0 +1,5 @@
+{
+  "DEV_grid_qualified": false,
+  "no_TEST_training_or_inference": true,
+  "interpretation": "finite one-step reward calibration failed to meet DEV retrieval/FID/optimization criteria; no inference about successful reward exploitation"
+}

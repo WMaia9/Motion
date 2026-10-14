@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{\textbf{Sealed blind attacks on both generators and checkpoints.} FID for 960 outputs/cohort; both budgets, canonical-gradient and random controls. Destination checkpoint supplies no gradients. MDM groups overlap, so there is no pooled independent-clip interval.}\label{tab:blindtransfer}
+\begin{tabular}{@{}llrrrrr@{}}\toprule
+Cohort&Reader&Original&Bound0.1&Bound0.35&$C$ grad.&Random\\\midrule
+mdm42&Source&0.3839&0.2099&1.0850&0.3839&0.3526\\
+mdm42&Transfer&0.4083&0.3338&0.9718&0.4083&0.4965\\
+mdm4242&Source&0.3762&0.1761&1.1477&0.3762&0.3231\\
+mdm4242&Transfer&0.3710&0.3030&0.8555&0.3710&0.3790\\
+mdm7777&Source&0.3268&0.1987&1.4292&0.3268&0.3011\\
+mdm7777&Transfer&0.3793&0.2839&0.7786&0.3793&0.4319\\
+mld&Source&0.7064&0.2886&1.6108&0.7064&0.6698\\
+mld&Transfer&0.6594&0.5786&1.3452&0.6594&0.8104\\
+\bottomrule\end{tabular}\end{table*}

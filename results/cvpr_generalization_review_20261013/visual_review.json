@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "all_final_pages_inspected": true,
+  "main_pdf_sha256": "582888fe7db900506d28a37f5dff99271645a7f27adcd3f0c9c8a517b09db035",
+  "supplement_pdf_sha256": "cc60a0c7450a8acda85b47c59a9c62c0c95754780044eecd395271a239da8b6c",
+  "main_pages": 9,
+  "supplement_pages": 21,
+  "review_scope": "All final rendered pages checked for layout, readable figures/tables, equation placement, citations and overlap. Main9 + supplement1-18 pixel-identical to inspected first build; final supplement19-21 inspected after removing orphan environment paragraph.",
+  "rendered_revision_comparison": "rendered_revision_comparison.json",
+  "limitations": "Not a human cold review or acceptance assessment; reference verification and scientific endpoint checks are separate records."
+}

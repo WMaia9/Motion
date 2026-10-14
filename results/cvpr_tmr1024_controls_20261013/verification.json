@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "protocol_hashes_verified": true,
+  "independently_recomputed_metric_cells": 26,
+  "geometry_clip_pairs": 6144,
+  "native_FK_pairs": 48,
+  "maxima": {
+    "matrix": 3.435614804800369e-07,
+    "native_matrix": 4.172325134277344e-07,
+    "angle_deg": 1.970158048911099e-05,
+    "FK_m": 9.5367431640625e-07,
+    "native_embedding": 7.62939453125e-06,
+    "text": 0.0,
+    "canonical_embedding": 6.67572021484375e-06
+  },
+  "conditions": {
+    "real": {
+      "actual": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "wrong": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 6.67572021484375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "canonical_gradient": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "generic_L2": {
+        "standardized_L2_max_excess": 3.0517578125e-05,
+        "contacts_and_padding_preserved": true,
+        "not_a_physically_consistent_motion_intervention": true
+      }
+    },
+    "mdm": {
+      "actual": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "wrong": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "canonical_gradient": {
+        "all1024_rotation_pairs_verified": true,
+        "protected_features_and_padding_bitwise_equal": true,
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "native_FK_sampled_clips": 8
+      },
+      "generic_L2": {
+        "standardized_L2_max_excess": 3.0517578125e-05,
+        "contacts_and_padding_preserved": true,
+        "not_a_physically_consistent_motion_intervention": true
+      }
+    }
+  },
+  "verifier_sha256": "074f26cd9ea493e90f289a4b7d00b28e893ad395ec2ddb6eb455ff72be7516ff"
+}

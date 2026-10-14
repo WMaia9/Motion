@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "saved_metric_cells": 840,
+  "native_embedding_recompute_max": 3.814697265625e-06,
+  "batch_serial_max": 5.7220458984375e-06,
+  "native_text_recompute_max": 0.0,
+  "parent_frozen_manifest_sha256": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1",
+  "protocol_source_hashes_passed": true,
+  "verifier_sha256": "c01cf7b7b55cfb72eae29c79d0116afbfb49cd99bc677057cd5302178b228a9b"
+}

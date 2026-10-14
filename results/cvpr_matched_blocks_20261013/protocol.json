@@ -1,0 +1,45 @@
+{
+  "cohorts": 20,
+  "clips_each": 4640,
+  "sources": "all saved original real_controls cohorts, unchanged captions/crops/masks",
+  "blocks": {
+    "null": "positive scale/shear only, rotation equivalence fiber",
+    "rotation": "canonical 6D of actual local SO(3) rotation changes, other blocks fixed",
+    "velocity": "193:259 (66)",
+    "contact": "259:263 (4)",
+    "position": "4:67 (63), root four channels held fixed"
+  },
+  "conditions": [
+    "null_plus",
+    "null_minus",
+    "null_random",
+    "rotation",
+    "velocity",
+    "contact",
+    "position"
+  ],
+  "radii": [
+    1.0,
+    3.0
+  ],
+  "matching": "per clip ||(y-x)/native_reader_std||_2 = radius*sqrt(valid_frames), before reader feature selection; no per-dimension noise amplitude matching",
+  "reader_specific_normalization": true,
+  "Guo_discards_contacts": "Contact budget is matched in full pre-selection263 normalized representation; consumed Guo budget is zero by native architecture",
+  "contacts": "continuous input ablation; values may leave binary/physical domain",
+  "non_null_controls": "block-only interventions can be inconsistent with unchanged remaining features; this is input sensitivity, not coherent physical-motion calibration",
+  "random_fields": "20261013+10000*rep+clipindex, shared across radii/readers; independent Gaussian fields; fixed null signs both retained",
+  "null_matching": "positive exponential scales and shear; root solved from norm, never from evaluator scores",
+  "outside_rotation_matching": "local isotropic axis and angle solved from norm; angle <=pi/2",
+  "primary_family": "28 endpoints per reader:14 conditions x (GuoFID,R1 or TMRR1,matchedCosine), Bonferroni t19 mean intervals",
+  "closure_diagnostics": "all null outputs canonicalized and encoded, separate numerical diagnostics, no additional significance claims",
+  "FID_reference": "paired original real cohort; zero baseline by construction, not real-world generation quality",
+  "not_official_full_TMR_annotation_protocol": true,
+  "no_new_generators_training_or_reward_fits": true,
+  "producer_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_matched_block_audit.py": "2ff64dad600fd13c5efa8e62252c91d1321c3413b5b10c84b442f2a161b464a5",
+    "scripts/matched_motion_blocks.py": "412b15f9062008b0fe046a56eacb3319e59da9c0612f47ec1a56ad656d84bba9",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514"
+  },
+  "source_manifest_sha256": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1"
+}

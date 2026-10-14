@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\centering\small
+\caption{\textbf{Natural inputs and learned layers expose representation dependence.} Full native TEST, three layer-fitting seeds; source text is available to each corpus-specific layer. Raw BLEU changes while canonical hypotheses remain identical before/after the layer. Intervals condition on the fitted seeds, with VIDEO\_ID resampling on How2Sign; language tokenizations differ. The last row independently compares raw and canonical real-input hypotheses without a layer.}\label{tab:editorialsign}
+\begin{tabular}{@{}llrrrrr@{}}\toprule
+Corpus&Motion&Source raw&Layer raw&$\C$ before/after&Gain&95\% gain interval\\\midrule
+PHOENIX&Generated&6.39&15.21&6.39&8.81&$[7.82,9.87]$\\
+How2Sign&Real&3.48&6.11&3.48&2.64&$[2.27,3.03]$\\
+CSL-Daily&Real&6.89&7.43&7.07&0.54&$[0.14,0.97]$\\
+\midrule
+\multicolumn{7}{@{}l@{}}{Real raw/$\C$ hypothesis changes: PHOENIX 0/642; How2Sign 1,438/2,183; CSL 464/1,162.}\\
+\bottomrule\end{tabular}\end{table*}

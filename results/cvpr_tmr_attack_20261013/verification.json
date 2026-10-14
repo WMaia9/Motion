@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "geometry_clip_pairs": 768,
+  "native_FK_pairs": 48,
+  "max_rotation_error_deg": 1.9470359319461e-05,
+  "max_rotation_matrix_difference": 2.611377309946761e-07,
+  "max_native_rotation_matrix_difference": 3.5762786865234375e-07,
+  "max_native_FK_error_m": 9.5367431640625e-07,
+  "conditions": {
+    "real": {
+      "actual": {
+        "canonical_embedding_max_change": 4.76837158203125e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "wrong": {
+        "canonical_embedding_max_change": 4.76837158203125e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "canonical_gradient": {
+        "canonical_embedding_max_change": 4.76837158203125e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "generic_L2": {
+        "standardized_L2_max_excess": 1.52587890625e-05,
+        "standardized_L2_mean_gauge_budget": 151.4929962158203,
+        "standardized_L2_generic_mean": 151.29769897460938,
+        "mean_rotation_change_deg": 25.019427339957268,
+        "max_rotation_change_deg": 179.97395285185996,
+        "mean_native_RIC_position_change_m": 0.7823004126548767,
+        "contacts_and_padding_bitwise_preserved": true,
+        "physical_consistency_between_all_feature_blocks_not_guaranteed": true
+      }
+    },
+    "mdm": {
+      "actual": {
+        "canonical_embedding_max_change": 4.76837158203125e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "wrong": {
+        "canonical_embedding_max_change": 5.7220458984375e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "canonical_gradient": {
+        "canonical_embedding_max_change": 4.76837158203125e-06,
+        "positions_and_protected_channels_bitwise_equal": true,
+        "native_FK_sampled_clips": 8
+      },
+      "generic_L2": {
+        "standardized_L2_max_excess": 3.0517578125e-05,
+        "standardized_L2_mean_gauge_budget": 155.9707489013672,
+        "standardized_L2_generic_mean": 155.92344665527344,
+        "mean_rotation_change_deg": 25.700971738169333,
+        "max_rotation_change_deg": 179.93960136769957,
+        "mean_native_RIC_position_change_m": 0.9627046585083008,
+        "contacts_and_padding_bitwise_preserved": true,
+        "physical_consistency_between_all_feature_blocks_not_guaranteed": true
+      }
+    }
+  },
+  "native_score_recompute_and_protocol_hashes_passed": true,
+  "verifier_sha256": "c01cf7b7b55cfb72eae29c79d0116afbfb49cd99bc677057cd5302178b228a9b"
+}

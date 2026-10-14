@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "abstract_word_count": 157,
+  "abstract_numeric_values": [
+    "3.57",
+    "0.397",
+    "0.993",
+    "2.64"
+  ],
+  "all_ten_natural_FID_settings_present": true,
+  "signed_effects_and_small_positive_DiP_interval_preserved": true,
+  "all_generated_tables_and_figures_match_frozen_inputs": true,
+  "separate_explicit_conclusion": true,
+  "secondary_ablations_and_adaptive_figure_present_in_supplement": true,
+  "target_access_and_cohort_sizes_explicit": true,
+  "checkpoint_transfer_not_mislabeled_cross_architecture": true,
+  "routine_training_claim_absent_and_negative_controls_preserved": true,
+  "MARDM_precedent_credited": true,
+  "paired_reference_and_normalization_order_explicit": true,
+  "no_new_fits_or_selected_scientific_endpoints": true,
+  "human_cold_review_not_performed": true,
+  "caption_blind_source_gradients_explicit": true,
+  "normalization_contract_distinguished_from_fixed_reference_audit": true,
+  "main_cited_references": 40,
+  "supplement_cited_references": 28,
+  "unique_cited_references": 47,
+  "main_pdf_sha256": "867f66d71de160f8231d6e8d391d429d413dbab1893d3fe0821e6884cf798e9a",
+  "supplement_pdf_sha256": "3ed7ff75606111a808904d2e5027d0e170e042b65d7ce69629960685ac0fafdc"
+}

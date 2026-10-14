@@ -1,0 +1,38 @@
+{
+  "producers": [
+    "run_tmr_release_audit",
+    "verify_tmr_consistency_audits"
+  ],
+  "import_closure": [
+    "freeze_generalization_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "motion_release_audit_common",
+    "motion_release_native_adapters",
+    "run_motion_release_audit",
+    "run_tmr_release_audit",
+    "score_humanml_blind_fid",
+    "tmr_audit_common",
+    "verify_tmr_consistency_audits"
+  ],
+  "verified_registered_inputs_and_assets": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_tmr_release_audit.py": "c00fb485f98c8d6c402f04ddc57282657957e5aaa86ff4c6552a8cc79aa4eca4",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/config.json": "37f696adbc6adcbf5d51e6dfdb0bd313a76e09b20ef9775e8d0929600dd96443",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/motion_encoder.pt": "16805518259140d983753e7dd26bb6b0b16566977441fcf323bb60473a4894cc",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/text_encoder.pt": "17615140d20bb991347ffbc0ead8fb1e8762afbb435bb23316a3de6ee6f7e43d",
+    "external/TMR/src/model/actor.py": "8d8b1a2e270e6f9df680e0af0fbdcabe05522f44cb544ad8b1d9413baeb62fb7",
+    "external/TMR/src/model/temos.py": "bcf783fbf73209b99959d144fa40307b67b2b442d7f49ba56c6e0d181b3280ec",
+    "external/TMR/src/model/tmr.py": "cf8106c0cafc0aeacbaee56e8618397da2f41f358cf078c75cec903a3ea93404",
+    "external/TMR/stats/humanml3d/guoh3dfeats/mean.pt": "04cd69a11591da2de1b338b98181ac431566c26ea529b121640c7269b3992127",
+    "external/TMR/stats/humanml3d/guoh3dfeats/std.pt": "12a8facff81c515f6f95d76a584f9e21d65c4d070d420706d79b6d0200bc1fae",
+    "reports/cvpr_generalization_review_20261013/download_distilbert.json": "bf252eac74de9d022d75f97133b569510359b9297f95cd3e4327e71a6f3a57c1"
+  },
+  "verified_historical_producer_fingerprints": {},
+  "registered_sources_and_assets_match": true,
+  "portable_utility_sha256": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+  "freeze_source_sha256": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "historical_executed_verifiers": "verification_revisions/ where present; preserved without replacing scientific outputs",
+  "excluded_attempts": "Incomplete eager MotionDiffuse attempts are execution records, never final study endpoints",
+  "human_authors_and_registration_deferred": true
+}

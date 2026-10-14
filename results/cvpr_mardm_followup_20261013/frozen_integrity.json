@@ -1,0 +1,7 @@
+{
+  "previous_manifests_unchanged": true,
+  "previous_root_count": 51,
+  "scope": "previous manifest files verified against start-of-follow-up inventory; old complete archive file checks remain in prior delivery validation",
+  "previous_full_archive_validation": "maintenance/editorial_final_validation_20261013.json",
+  "no_unregistered_previous_archive_mutations": true
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "real data raw/C R1 cost, all20saved native cohorts; no attacks or reader fitting",
+  "readers": [
+    "Guo_primary",
+    "Guo_secondary",
+    "TMR"
+  ],
+  "KIT_reader": "own251-feature Guo, no incompatible263TMRKIT",
+  "candidate_pool": 32,
+  "primary": "canonical-minus-raw retrieval difference",
+  "source_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/measure_motion_defense_cost.py": "4a0cf2620148bc466e1d7f600fd3af717e527ce319bd558cb642946f1bc9551a",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "models/motion_release_audit/gpt_evaluator/t2m/text_mot_match/model/finest.tar": "881e45bea6fb84b15eca6e7cdd75d602b58a72f2038c223ee96ab75d4f684ada",
+    "reports/cvpr_motion_prevalence_20261012/manifest_sha256.json": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1",
+    "reports/cvpr_tmr_audit_20261013/complete.json": "1c917ce0c49bc070643b758893a7cad7cc49f0b9fda07de45756078b0005b983",
+    "reports/cvpr_additional_motion_audit_20261013/kit/real_controls/complete.json": "c0b4538ba2f63b71a783202a86cebb27f7cb7b9b011514dc5d80ac9b797a8e13"
+  }
+}

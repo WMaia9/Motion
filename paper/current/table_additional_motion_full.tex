@@ -1,0 +1,11 @@
+\begin{table*}[t]
+\centering\footnotesize
+\caption{\textbf{Additional releases and KIT.} All 20 draws, own native evaluator normalization, same-output raw/C. Intervals for raw$-C$ adjust ten FID/R1 comparisons. HumanML MoMask uses 4,640 outputs; MotionDiffuse/DiP use 1,024 with full reference. KIT uses 704 outputs/reference. DiP is prefix-conditioned; published-score reproduction is not claimed.}\label{tab:additionalfull}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+Data/release&Raw FID&$C$ FID&FID gap interval&Raw R1&$C$ R1&R1 gap interval\\\midrule
+humanml/MoMask&0.0677&0.0644&$[+0.00279,+0.00382]$&0.4632&0.4626&$[-0.0010,+0.0023]$\\
+humanml/DiP (prefix)&0.3665&0.3650&$[+0.00004,+0.00303]$&0.4518&0.4518&$[-0.0022,+0.0023]$\\
+humanml/MotionDiffuse&0.9766&0.9807&$[-0.00737,-0.00076]$&0.4277&0.4273&$[-0.0018,+0.0026]$\\
+kit/MoMask&0.3512&0.3649&$[-0.02473,-0.00270]$&0.4175&0.4181&$[-0.0070,+0.0057]$\\
+kit/MotionDiffuse&1.7794&1.8159&$[-0.04282,-0.03002]$&0.4125&0.4116&$[-0.0017,+0.0036]$\\
+\bottomrule\end{tabular}\end{table*}

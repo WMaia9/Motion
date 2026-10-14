@@ -1,0 +1,41 @@
+{
+  "scope": "paired independent ACTOR Transformer/DistilBERT architecture audit; all old saved outputs, no model fitting or sample selection",
+  "methods": [
+    "real_controls",
+    "mdm50",
+    "mld",
+    "motionlcm_v1",
+    "t2mgpt",
+    "t2m"
+  ],
+  "replications": 20,
+  "conditions": [
+    "raw",
+    "canonical",
+    "global_plus010",
+    "global_minus010",
+    "global_plus035",
+    "global_minus035",
+    "random035_seed42"
+  ],
+  "primary": "same-output raw-minus-canonical R1 and matched cosine, family12 paired t19 intervals",
+  "fixed_conditions": "all listed controls retained, descriptive diagnostics",
+  "TMR_native": "strict author weights, author normalizer eps1e-12, ACTOR6layers, VAEmean token, native cosine retrieval",
+  "sample_count": "MDM1024; other generators and real4640; unchanged native candidate cohorts from old audit",
+  "not_official_full_TMR_dataset_protocol": "author AMASS segment annotations and filtering differ; compatible Guo263 representation and native inference used on our fixed existing cohorts",
+  "processed_data_mirror_limitations_retained": true,
+  "reference_captions_only_for_scoring": true,
+  "input_and_source_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_tmr_release_audit.py": "c00fb485f98c8d6c402f04ddc57282657957e5aaa86ff4c6552a8cc79aa4eca4",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/config.json": "37f696adbc6adcbf5d51e6dfdb0bd313a76e09b20ef9775e8d0929600dd96443",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/motion_encoder.pt": "16805518259140d983753e7dd26bb6b0b16566977441fcf323bb60473a4894cc",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/text_encoder.pt": "17615140d20bb991347ffbc0ead8fb1e8762afbb435bb23316a3de6ee6f7e43d",
+    "external/TMR/src/model/actor.py": "8d8b1a2e270e6f9df680e0af0fbdcabe05522f44cb544ad8b1d9413baeb62fb7",
+    "external/TMR/src/model/temos.py": "bcf783fbf73209b99959d144fa40307b67b2b442d7f49ba56c6e0d181b3280ec",
+    "external/TMR/src/model/tmr.py": "cf8106c0cafc0aeacbaee56e8618397da2f41f358cf078c75cec903a3ea93404",
+    "external/TMR/stats/humanml3d/guoh3dfeats/mean.pt": "04cd69a11591da2de1b338b98181ac431566c26ea529b121640c7269b3992127",
+    "external/TMR/stats/humanml3d/guoh3dfeats/std.pt": "12a8facff81c515f6f95d76a584f9e21d65c4d070d420706d79b6d0200bc1fae",
+    "reports/cvpr_generalization_review_20261013/download_distilbert.json": "bf252eac74de9d022d75f97133b569510359b9297f95cd3e4327e71a6f3a57c1"
+  }
+}

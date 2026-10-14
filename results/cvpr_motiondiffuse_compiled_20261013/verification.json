@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "studies": {
+    "humanml/motiondiffuse": {
+      "passed": true,
+      "clip_pairs": 20480,
+      "native_FK_pairs": 40,
+      "saved_metric_endpoints": 40,
+      "max_rotation_error_deg": 3.4497986452383983e-06,
+      "max_matrix_error": 5.0163342285580725e-08,
+      "max_native_float32_matrix_error": 2.0265579223632812e-06,
+      "max_native_FK_error_native_units": 9.5367431640625e-07,
+      "max_native_FK_error_divided_by_mean_body_height": 5.799139552668872e-07,
+      "coordinate_units": "m",
+      "protected_features_and_padding_bitwise_equal": true,
+      "max_saved_FID_error": 4.5432102524500806e-11,
+      "portable_projection_used_independently": true,
+      "source_and_asset_hashes_passed": true,
+      "verifier_sha256": "9c13a57e42da4138ababfec17026d32cbcee171756e87709769b66e61e94eebd"
+    },
+    "kit/motiondiffuse": {
+      "passed": true,
+      "clip_pairs": 14080,
+      "native_FK_pairs": 40,
+      "saved_metric_endpoints": 40,
+      "max_rotation_error_deg": 3.299624544070335e-06,
+      "max_matrix_error": 4.9010648373037924e-08,
+      "max_native_float32_matrix_error": 5.662441253662109e-07,
+      "max_native_FK_error_native_units": 0.0009765625,
+      "max_native_FK_error_divided_by_mean_body_height": 1.2968934376705719e-06,
+      "coordinate_units": "native_processed_KIT_units_not_assumed_m",
+      "protected_features_and_padding_bitwise_equal": true,
+      "max_saved_FID_error": 8.248548510891851e-10,
+      "portable_projection_used_independently": true,
+      "source_and_asset_hashes_passed": true,
+      "verifier_sha256": "9c13a57e42da4138ababfec17026d32cbcee171756e87709769b66e61e94eebd",
+      "executed_portable_utility_sha256": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+      "executed_utility_archived": "verification_revisions/kit_executed_utility.py"
+    }
+  },
+  "all_completed_cells_verified": true,
+  "verifier_sha256": "9c13a57e42da4138ababfec17026d32cbcee171756e87709769b66e61e94eebd"
+}

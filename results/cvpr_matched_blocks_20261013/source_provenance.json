@@ -1,0 +1,32 @@
+{
+  "producers": [
+    "run_matched_block_audit",
+    "verify_matched_block_audit",
+    "test_matched_motion_blocks"
+  ],
+  "import_closure": [
+    "freeze_generalization_studies",
+    "freeze_mardm_followup_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "matched_motion_blocks",
+    "motion_release_audit_common",
+    "run_matched_block_audit",
+    "score_humanml_blind_fid",
+    "test_matched_motion_blocks",
+    "tmr_audit_common",
+    "verify_matched_block_audit",
+    "verify_tmr1024_controls"
+  ],
+  "verified_current_registration": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_matched_block_audit.py": "2ff64dad600fd13c5efa8e62252c91d1321c3413b5b10c84b442f2a161b464a5",
+    "scripts/matched_motion_blocks.py": "412b15f9062008b0fe046a56eacb3319e59da9c0612f47ec1a56ad656d84bba9",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514"
+  },
+  "verified_historical_registration": {},
+  "executed_verifier_sha256": null,
+  "freeze_source_sha256": "c1f30461053e5d27d0846090297780a5df139b62ac7bc99f21d10c390181c9e0",
+  "no_new_generation_or_training": true,
+  "partial_failed_attempts_excluded_from_final_endpoints": true
+}

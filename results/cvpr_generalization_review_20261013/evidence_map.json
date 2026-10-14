@@ -1,0 +1,83 @@
+{
+  "manuscript": "paper/current",
+  "reviewed_PDFs_still_previous_delivery": false,
+  "completed_claim_evidence": [
+    {
+      "claim": "TMR natural sensitivity",
+      "aggregate_result": "reports/cvpr_tmr_audit_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_tmr_audit_20261013/verification.json",
+      "manifest_sha256": "3cbab5882f6811065aae6ac8cc953974b83cb03e0c0fefe96c9aab0da78acc0c",
+      "verification_passed": true
+    },
+    {
+      "claim": "TMR target and matched-L2 controls",
+      "aggregate_result": "reports/cvpr_tmr_attack_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_tmr_attack_20261013/verification.json",
+      "manifest_sha256": "e6cce49d1863f8d6fcadc8fd1bf37241aabf36730de192fd7192649fc7e3e191",
+      "verification_passed": true
+    },
+    {
+      "claim": "Coherent physical calibration",
+      "aggregate_result": "reports/cvpr_physical_calibration_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_physical_calibration_20261013/verification.json",
+      "manifest_sha256": "a3a28a8bde22125f5ccaa85819a4ef669345d55da10626af652dee70b3529ebc",
+      "verification_passed": true
+    },
+    {
+      "claim": "DEV reward qualification, no valid reward pilot",
+      "aggregate_result": "reports/cvpr_reward_dev_search_20261013/selection.json",
+      "independent_verification": "reports/cvpr_reward_dev_search_20261013/verification.json",
+      "manifest_sha256": "1dcd0f8979bf9fbc36b106afa23040b276d383c4f6c9f5c7c30644ec56ff9935",
+      "verification_passed": true
+    },
+    {
+      "claim": "No conditional TEST reward fits",
+      "aggregate_result": "reports/cvpr_reward_dev_validation_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_reward_dev_validation_20261013/verification.json",
+      "manifest_sha256": "dd9c411d67a3d47b61cc6cc211c0f599ed86a0d2f296d6eb4bd4dd8c1c1eaa44",
+      "verification_passed": true
+    },
+    {
+      "claim": "MLD and untargeted checkpoint blind transfer",
+      "aggregate_result": "reports/cvpr_blind_transfer_20261013/cross_reader_analysis.json",
+      "independent_verification": "reports/cvpr_blind_transfer_20261013/verification.json",
+      "manifest_sha256": "dc0c795bfb8865c6b8c343fd9c592bfcb47bb18c9b87e29b056b24d63f15c0c5",
+      "verification_passed": true
+    },
+    {
+      "claim": "Measured real-motion accuracy cost",
+      "aggregate_result": "reports/cvpr_motion_defense_cost_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_motion_defense_cost_20261013/verification.json",
+      "manifest_sha256": "25cfb759417e4addc2f46b61a36e25aa11ba93e384b924a1935cc0af77e8fd5f",
+      "verification_passed": true
+    },
+    {
+      "claim": "Additional MoMask/DiP/KIT releases",
+      "aggregate_result": "reports/cvpr_additional_motion_audit_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_additional_motion_audit_20261013/verification.json",
+      "manifest_sha256": "71303c35249f664457d974057fb9e541b77bd9c3e8ab9babceaf806e4f2dc7d2",
+      "verification_passed": true
+    },
+    {
+      "claim": "Native MotionDiffuse HumanML/KIT, twenty draws per dataset",
+      "aggregate_result": "reports/cvpr_motiondiffuse_compiled_20261013/analysis.json",
+      "independent_verification": "reports/cvpr_motiondiffuse_compiled_20261013/verification.json",
+      "manifest_sha256": "10b2ae7eda0d8c2395754249f37ef5365ce1d8d35203e0e3eafd2a97b20ffedb",
+      "verification_passed": true
+    }
+  ],
+  "excluded_from_final_claims_until_complete": {},
+  "interpretation_limits": [
+    "No better physical/human motion inferred from evaluator score",
+    "Natural effects are small and signed; original generator mean ranking unchanged",
+    "Source-caption-aware capability is separate from caption-blind attack and natural outputs",
+    "Reward optimization qualification failed; this cannot test successful reward optimization",
+    "TMR uses a different architecture but not its full annotation/filter protocol",
+    "Blind MDM source cohorts overlap",
+    "DiP is source-prefix conditioned",
+    "MARDM previously established redundancy-related evaluator bias"
+  ],
+  "portable_utility_archive": "anonymous_utility.zip",
+  "final_delivery_review_in_progress": false,
+  "final_visual_review_passed": true
+}

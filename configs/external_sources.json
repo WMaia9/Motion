@@ -90,6 +90,27 @@
       "url": "https://github.com/Xiaofeng-Tan/MotionRFT.git",
       "revision": "d148b32133bd451ae3043b85535c2cd851be31eb",
       "license_file": null
+    },
+    {
+      "name": "TMR",
+      "path": "external/TMR",
+      "url": "https://github.com/Mathux/TMR.git",
+      "revision": "6d74688730d15d43b0a755ce2b0e1f2d76138fc1",
+      "license_file": "external/TMR/LICENSE"
+    },
+    {
+      "name": "MotionDiffuse",
+      "path": "external/MotionDiffuse",
+      "url": "https://github.com/mingyuan-zhang/MotionDiffuse.git",
+      "revision": "aba848edd22133919ca96b67f4908399c67685b1",
+      "license_file": "external/MotionDiffuse/LICENSE"
+    },
+    {
+      "name": "MARDM",
+      "path": "external/MARDM",
+      "url": "https://github.com/neu-vi/MARDM.git",
+      "revision": "9b05ad867be916afb9fcbff663b42a03f933014a",
+      "license_file": "external/MARDM/LICENSE.txt"
     }
   ],
   "policy": "pin commits; check existing worktrees without resetting or overwriting them"

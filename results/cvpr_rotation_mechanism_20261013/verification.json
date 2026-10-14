@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "independent_raw_RMS_recomputations": 65,
+  "all60_new_release_draws_and_original_five_first_draws": true,
+  "maximum_RMS_recompute_difference": 9.020562075079397e-17,
+  "all8_means_signed_deltas_families_and_exact_correlations_verified": true,
+  "historical_old_RMS_draws_previously_verified_and_frozen": true,
+  "no_population_or_causal_inference": true,
+  "verifier_sha256": "9f8f3b40f485d2dea69c6eccbd6b8a50ff7ca2c820d6a1d645b16ae5e7f0d3fe"
+}

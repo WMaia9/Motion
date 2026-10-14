@@ -1,0 +1,27 @@
+{
+  "removed_from_main_not_deleted": [
+    "ordinary/reward-training numeric history",
+    "PHOENIX comparison to real motion",
+    "TMR natural-output table (full table remains in supplement)",
+    "adaptive detector-statistic figure and detailed geometry",
+    "sign-layer ablation table"
+  ],
+  "core_results_preserved_in_main": [
+    "all eight HumanML3D and two KIT natural FID signs",
+    "fixed +/-0.1 and +/-0.35 plus random recodings",
+    "physical scale and zero reconstruction cost",
+    "target access and Guo/TMR cohort sizes",
+    "both bounds in all blind source and destination cohorts",
+    "three sign corpora and canonical equality",
+    "defense cost and limited guarantee"
+  ],
+  "scope_limitations_preserved": [
+    "no routine training exploitation claim",
+    "MARDM prior diagnosis credited",
+    "BT evaluator strength/family",
+    "TMR compatible cohort rather than full protocol",
+    "public TEST development exposure",
+    "MDM source group overlap",
+    "DiP source-prefix conditioning"
+  ]
+}

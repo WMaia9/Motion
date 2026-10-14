@@ -1,0 +1,26 @@
+{
+  "producers": [
+    "analyze_rotation_mechanism",
+    "verify_rotation_mechanism"
+  ],
+  "import_closure": [
+    "analyze_rotation_mechanism",
+    "freeze_generalization_studies",
+    "freeze_mardm_followup_studies",
+    "freeze_motion_release_studies",
+    "motion_release_audit_common",
+    "verify_rotation_mechanism"
+  ],
+  "verified_current_registration": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/analyze_rotation_mechanism.py": "2a8476070f1e3c3d5d21f7507f2664f00be0ef44ce2a46d841194e1aaee3fcbd",
+    "tools/canonicalize_motion.py": "c453f8e976d5fa43452627518fb5b70ae3659982fc625b529e5c813a12b65316",
+    "reports/cvpr_motion_prevalence_20261012/manifest_sha256.json": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1",
+    "reports/cvpr_additional_motion_audit_20261013/manifest_sha256.json": "71303c35249f664457d974057fb9e541b77bd9c3e8ab9babceaf806e4f2dc7d2",
+    "reports/cvpr_motiondiffuse_compiled_20261013/manifest_sha256.json": "10b2ae7eda0d8c2395754249f37ef5365ce1d8d35203e0e3eafd2a97b20ffedb"
+  },
+  "verified_historical_registration": {},
+  "executed_verifier_sha256": "9f8f3b40f485d2dea69c6eccbd6b8a50ff7ca2c820d6a1d645b16ae5e7f0d3fe",
+  "freeze_source_sha256": "c1f30461053e5d27d0846090297780a5df139b62ac7bc99f21d10c390181c9e0",
+  "no_new_generation_or_training": true,
+  "partial_failed_attempts_excluded_from_final_endpoints": true
+}

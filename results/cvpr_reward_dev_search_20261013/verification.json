@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "all_eight_DEV_fits_retained": true,
+  "qualification_recomputed_from_all_outcomes": true,
+  "qualified": 0,
+  "no_grid_extension": true,
+  "no_TEST_sampling_in_driver": true,
+  "weight_and_source_hashes_verified": true,
+  "verifier_sha256": "2b5ba72672d41058922a455a809cd3d2429e8d8bfbe1c5c137de056e0a5ff9e6"
+}

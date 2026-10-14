@@ -1,4 +1,36 @@
-# Estado científico — 13 de outubro de 2026
+# Estado científico — 14 de outubro de 2026
+
+A rodada pós-MARDM fechou os quatro reparos do parecer: direções fixas em todos
+os blocos, evidência natural em sinais no corpo, orçamento `kappa` separado da
+escala de fibra `rho`, e abstract com um resultado sem alvo. Todos os vinte draws
+Guo/TMR e suas verificações independentes estão completos. Veja a
+[revisão atual](coherence-review.md). Os PDFs ativos continuam em
+`paper/current/reviewed/`; o arquivo MARDM anterior permanece imutável.
+
+O controle adicional confirma que L2 igual não basta para atribuir o efeito à
+redundância. Direções fixas de posições e velocidades chegam a 1,189 e 0,476 FID,
+acima do máximo nulo de 0,117. Coeficientes nulos aleatórios também têm resposta
+menor que ruído aleatório de posições/velocidades. O texto retira a leitura de
+preferência por redundância; a particularidade da fibra é preservar todas as
+rotações e os demais canais. Constância temporal não implica consistência
+física entre blocos, que permanecem protegidos nesses controles.
+
+Sem ataque, camada ou nova inferência, as hipóteses salvas confirmam mudanças
+em 1.438/2.183 How2Sign e 464/1.162 CSL, contra 0/642 PHOENIX. Os seis BLEUs foram
+recalculados independentemente; How2Sign varia somente 3,4779 → 3,4840. Esses
+inputs compartilham o pré-processamento nativo original, inclusive da mão esquerda.
+Mudanças de frases não estabelecem melhora/piora semântica nem custo zero da defesa.
+
+A [rodada MARDM](mardm-followup-review.md) anterior mantém a análise de oito
+releases, os leitores essenciais públicos e TMR com 1.024 clipes por fonte.
+A canonicalização mantém as rotações disponíveis; a auditoria não refuta o
+mecanismo completo do MARDM.
+
+A rodada anterior acrescentou TMR, calibração física coerente, ataque cego no MLD
+com transferência, MoMask/DiP/MotionDiffuse HumanML3D e MoMask/MotionDiffuse KIT.
+A igualdade de scores no dado real já canônico é uma checagem da implementação,
+sem estabelecer custo zero em dados não canônicos. Veja a
+[generalização anterior](generalization-review.md).
 
 O resultado principal agora é uma inconsistência de representação em avaliadores
 de movimento: scores mudam para posições e rotações idênticas. A extensão
@@ -10,12 +42,12 @@ natural de codificação, não exploração intencional de recompensas.
 
 O ataque sem legenda foi repetido em três coortes: bound 0,1 reduz FID em
 39–53%, e 0,35 piora todas. As coortes têm sobreposição de grupos, explicitada
-nos resultados. O piloto de recompensa MDM foi negativo para inflação de
-retrieval; os ganhos dos pesos públicos MotionRFT sobrevivem à canonicalização.
+nos resultados. O piloto de recompensa MDM piorou retrieval/FID e não testa exploração em
+otimização bem-sucedida. A grade DEV não qualificou ajustes para TEST; os ganhos dos pesos públicos MotionRFT sobrevivem à canonicalização.
 Veja [a rodada completa e sua análise](motion-release-review.md).
 
 O manuscrito único é [paper/current/](../paper/current/README.md), com oito
-páginas de conteúdo e duas de referências; suplemento com quinze mais uma.
+páginas de conteúdo e duas de referências; suplemento com vinte e seis mais duas.
 Os resultados anteriores de língua de sinais e seus limites permanecem:
 
 | Camada aprendida, TEST completo, três seeds | BLEU antes | BLEU após | Ganho | IC pareado 95% |
@@ -84,7 +116,7 @@ Todos os protocolos, positivos, negativos, pesos, arrays e hipóteses foram
 preservados em relatórios congelados. A checagem independente cobre 58.336
 pares geométricos da rodada e 21.184 comparações bit a bit do fluxo esquerdo.
 A primeira extensão HumanML3D acrescentou 48 condições de auditoria e seis
-sem captions, verificando 33.408 pares. A rodada atual completa 100 células
+sem captions, verificando 33.408 pares. A rodada anterior de releases completa 100 células
 gerador/repetição em dois checkpoints oficiais, 140 controles reais fixos,
 duas coortes cegas adicionais, nove fits de recompensa MDM e dez gerações
 dos checkpoints MotionRFT/base. Sua checagem geométrica principal cobre
@@ -92,12 +124,13 @@ dos checkpoints MotionRFT/base. Sua checagem geométrica principal cobre
 O Git contém somente código, manuscrito e metadados compactos.
 
 O paper incorpora a auditoria ampliada no mesmo caminho `paper/current/`; o suplemento
-contém os controles completos. São 46 referências.
+contém os controles completos. A bibliografia tem 52 entradas; o principal cita 40.
+A [revisão editorial](editorial-review.md) reorganiza essa evidência sem novos treinos.
 O kit oficial disponível é o de 2026, com conformidade 2027 ainda provisória.
 Não houve submissão externa nem commit automático.
 
 A avaliação de língua de sinais continua limitada a uma família de leitores BT
-fracos em How2Sign/CSL, embora HumanML3D agora forneça um avaliador independente
+fracos em How2Sign/CSL, embora HumanML3D agora forneça duas arquiteturas de avaliação
 em outro domínio. Um leitor forte independente e/ou avaliação linguística
 ampliaria a evidência. Não há criptografia, anonimização, furtividade geral ou
 probabilidade de aceite demonstradas.

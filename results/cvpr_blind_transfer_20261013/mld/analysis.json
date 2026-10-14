@@ -1,0 +1,203 @@
+{
+  "clips": 960,
+  "TRAIN_reference_clips": 2048,
+  "TEST_original_mirror_groups": 725,
+  "fresh_TEST_group_overlap": 0,
+  "conditions": {
+    "identity": {
+      "raw": {
+        "R_precision_top1": 0.436875,
+        "R_precision_repetitions": [
+          0.42916666666666664,
+          0.45208333333333334,
+          0.446875,
+          0.428125,
+          0.428125
+        ],
+        "MM_distance": 3.5003697872161865,
+        "FID": 0.7064485521663868,
+        "mean_embedding_distance_to_reference_clip": 3.407578945159912
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162601637676864,
+        "mean_embedding_distance_to_reference_clip": 3.410290241241455
+      },
+      "canonical_embedding_max_abs_change": 0.0,
+      "FID_change": 0.0,
+      "relative_FID_reduction": 0.0
+    },
+    "canonical": {
+      "raw": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162601637676864,
+        "mean_embedding_distance_to_reference_clip": 3.410290241241455
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162601802444819,
+        "mean_embedding_distance_to_reference_clip": 3.410290002822876
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": 0.009811611601299619,
+      "relative_FID_reduction": -0.013888642805214069
+    },
+    "blind_OT_bound010": {
+      "raw": {
+        "R_precision_top1": 0.44312500000000005,
+        "R_precision_repetitions": [
+          0.44479166666666664,
+          0.4479166666666667,
+          0.45,
+          0.42604166666666665,
+          0.446875
+        ],
+        "MM_distance": 3.4410910606384277,
+        "FID": 0.2885826829928553,
+        "mean_embedding_distance_to_reference_clip": 3.4497525691986084
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.716260017442107,
+        "mean_embedding_distance_to_reference_clip": 3.410290002822876
+      },
+      "canonical_embedding_max_abs_change": 5.960464477539062e-07,
+      "FID_change": -0.4178658691735315,
+      "relative_FID_reduction": 0.5915021948762
+    },
+    "blind_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.4375,
+        "R_precision_repetitions": [
+          0.44375,
+          0.44166666666666665,
+          0.45,
+          0.4197916666666667,
+          0.4322916666666667
+        ],
+        "MM_distance": 3.627309560775757,
+        "FID": 1.6107898052259262,
+        "mean_embedding_distance_to_reference_clip": 3.725003957748413
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162600999332225,
+        "mean_embedding_distance_to_reference_clip": 3.410290002822876
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": 0.9043412530595394,
+      "relative_FID_reduction": -1.280123301670443
+    },
+    "canonical_reader_OT_bound035": {
+      "raw": {
+        "R_precision_top1": 0.436875,
+        "R_precision_repetitions": [
+          0.42916666666666664,
+          0.45208333333333334,
+          0.446875,
+          0.428125,
+          0.428125
+        ],
+        "MM_distance": 3.5003697872161865,
+        "FID": 0.7064492922123815,
+        "mean_embedding_distance_to_reference_clip": 3.407578945159912
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162601480972407,
+        "mean_embedding_distance_to_reference_clip": 3.410290241241455
+      },
+      "canonical_embedding_max_abs_change": 4.76837158203125e-07,
+      "FID_change": 7.40045994707117e-07,
+      "relative_FID_reduction": -1.047558229716472e-06
+    },
+    "random_bound035_seed42": {
+      "raw": {
+        "R_precision_top1": 0.4306249999999999,
+        "R_precision_repetitions": [
+          0.421875,
+          0.4395833333333333,
+          0.44375,
+          0.415625,
+          0.4322916666666667
+        ],
+        "MM_distance": 3.5065155029296875,
+        "FID": 0.6698476612930969,
+        "mean_embedding_distance_to_reference_clip": 3.408499240875244
+      },
+      "canonical": {
+        "R_precision_top1": 0.43583333333333335,
+        "R_precision_repetitions": [
+          0.425,
+          0.453125,
+          0.4479166666666667,
+          0.421875,
+          0.43125
+        ],
+        "MM_distance": 3.5044829845428467,
+        "FID": 0.7162600725976994,
+        "mean_embedding_distance_to_reference_clip": 3.410290002822876
+      },
+      "canonical_embedding_max_abs_change": 7.152557373046875e-07,
+      "FID_change": -0.03660089087328988,
+      "relative_FID_reduction": 0.051809704699726566
+    }
+  },
+  "FID_descriptive_only": true,
+  "not_generator_quality_improvement": true,
+  "not_training_exploitation": true,
+  "attack_caption_content_and_TEST_reference_not_numerically_used": true,
+  "source_code_sha256": "55462a95c94df2d41372719c1047952825b10d67ab5bd20fc00c923987d702b2",
+  "generator": "MLD official released50DDIM CFG7.5",
+  "saved_generation_seed": 201234,
+  "source_repetition": 0,
+  "hardcoded_MDM_scorer_label_corrected_without_metric_changes": true
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "native_physical_clip_pairs": 240,
+  "saved_metric_endpoints_checked": 380,
+  "maximum_saved_FID_error": 1.1615952644206118e-10,
+  "errors": {
+    "native_RIC_FK_max_m": 8.344650268554688e-07,
+    "native_FK_vs_construction_max_m": 8.344650268554688e-07,
+    "angular_dose_max_error_deg": 7.999878040010344e-06,
+    "velocity_max_error": 6.463378667831421e-07,
+    "saved_zero_regeneration_max": 0.0
+  },
+  "contacts_and_root_and_padding_checked": true,
+  "native_SO3_angle_and_RIC_FK_and_velocity_checks": true,
+  "producer_input_hashes_passed": true,
+  "verifier_sha256": "5a14d79beeb4c939e29406789e3eb49a05df985595e6e1dba954203995f891ff"
+}

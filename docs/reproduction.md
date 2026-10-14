@@ -87,8 +87,11 @@ Download helpers are `download_motion_release_audit.py` and
 public assets and pinned HF revisions; preparation registers hashes before
 inference. The download helper is an acquisition recipe; the executed download
 records and post-run asset inventory separately identify the actual bytes used.
-A quota failure leaves MoMask without an evaluated checkpoint. It is not counted
-among the five methods. Licensed meshes are not required for native RIC/FK.
+The historical five-method round could not download MoMask because of a quota
+failure. The new generalization round acquired official MoMask HumanML/KIT
+weights and completed their audits; those form a separate study and do not
+rewrite the original five-method results. Licensed meshes are not required
+for native RIC/FK or the current procedural teaser.
 
 The primary protocol uses 20 seeds, batch-32 metric candidate pools and a
 4,640-entry native reference draw. MDM's nominal 1,000 cap emits 1,024; other
@@ -121,6 +124,47 @@ fresh directories, and register the changed sources before preparation or
 inference. Existing results are never overwritten as part of reproduction.
 The same rule applies to figure/table scripts: they target the active manuscript
 and a new, unfrozen presentation delivery, not an immutable past report.
+
+## Generalization studies
+
+See [generalization-review.md](generalization-review.md) for outcomes and
+[generalization-plan.md](generalization-plan.md) for the finite protocol scope.
+Existing frozen roots must not be used as writing destinations. Restore the
+archived sources into a fresh checkout and register fresh study paths first.
+
+| Study | Producer | Independent verification |
+|---|---|---|
+| TMR natural outputs | `run_tmr_release_audit.py` | `verify_tmr_consistency_audits.py` |
+| TMR targeted and matched-L2 attacks | `run_tmr_targeted_controls.py` | `verify_tmr_consistency_audits.py` |
+| Coherent angular noise | `run_physical_rotation_calibration.py` | `verify_physical_calibration.py` |
+| DEV reward calibration and conditional validation | `run_reward_dev_search.py`, `run_reward_dev_validation.py` | `verify_generalization_controls.py` |
+| Blind MLD and checkpoint transfer | Preserved blind producer, `score_blind_cross_reader.py` | `verify_generalization_controls.py` |
+| Real-motion defense accuracy | `measure_motion_defense_cost.py` | `verify_generalization_controls.py` |
+| MoMask, DiP, native KIT | `run_additional_motion_audit.py` | `verify_additional_motion_audits.py additional` |
+| Native MotionDiffuse, float32 compiled | `run_motiondiffuse_compiled_audit.py humanml` / `kit` | `verify_additional_motion_audits.py motiondiffuse` |
+
+Each generator runs in a fresh process to isolate upstream module namespaces.
+Official assets are recorded by `download_generalization_assets.py` and
+`download_kit_native.py`; acquisition does not imply a valid run. TMR uses its
+own normalization and cosine retrieval, without claiming its full annotated
+retrieval benchmark. DiP uses a real prefix. KIT remains in native units and
+its own 251-feature evaluator; the incompatible TMR 263-feature KIT model is unused.
+
+Completed studies are frozen with `freeze_generalization_studies.py` only after
+their registered source/input hashes and independent verification pass.
+`export_generalization_evidence.py` exports compact metadata while preserving
+active paper edits and previous reviewed PDFs. The general reviewed-delivery
+exporter also copies paper sources, so it must be used only after final review.
+
+The portable evaluation utility requires NumPy; test it with
+`make test-canonicalize`. It operates on unnormalized native rotation channels,
+rejects undefined/numerically near-collinear valid inputs and preserves padding.
+It is an evaluation/export tool, not a differentiable training implementation.
+
+`finalize_pending_motiondiffuse.py` waits for both registered twenty-repetition
+workers, verifies/freezes their outputs, includes all endpoints in tables and
+builds PDFs. It does not replace reviewed PDFs or submit a paper. The latest
+build still requires a final visual inspection and reviewed-delivery export.
 
 The critical-review round adds these separately frozen studies:
 
@@ -208,3 +252,73 @@ make verify-archive PYTHON=venv_mska/bin/python
 This reads original manifests and checks every archived file. `make check`
 validates only the compact export and repository. It does not rerun model fits,
 recompute missing pose geometry or substitute for independent full-archive checks.
+
+## Editorial revision from frozen results
+
+The preceding presentation is documented in [editorial-review.md](editorial-review.md).
+`scripts/build_editorial_presentation.py` derives the focused tables and figures
+from immutable aggregate JSONs, checking their recorded fingerprints. It creates
+no new experimental endpoints and refuses to write into a frozen delivery.
+For another revision, use a fresh evidence archive while editing the same
+`paper/current/` sources. The delivery assembler accepts explicit `--delivery`
+and `--review-document` arguments; `--editorial` requires its claim audit and
+final visual checks before exporting reviewed PDFs.
+
+## MARDM follow-up
+
+The finite protocol is in [mardm-followup-plan.md](mardm-followup-plan.md).
+It adds no generation or model fitting. Restore the archived import closure into
+a fresh checkout and register fresh study paths before rerunning drivers. Writing
+to a completed frozen study is rejected. The original 128-clip TMR study stays
+archived; the current full-cohort study has 1,024 clips per source.
+
+| Study | Producer | Independent verification |
+|---|---|---|
+| Equal-L2 blocks, Guo/TMR | `run_matched_block_audit.py --reader guo` / `tmr` | `verify_matched_block_audit.py --reader guo` / `tmr` |
+| Natural families and rotation RMS | `analyze_rotation_mechanism.py` | `verify_rotation_mechanism.py` |
+| Public MARDM GRU/CLIP readers | `run_mardm_reader_audit.py` | `verify_mardm_reader_audit.py` |
+| Full targeted TMR controls | `run_tmr_targeted_controls.py --clips 1024 --output <fresh-root>` | `verify_tmr1024_controls.py` |
+
+`measure_tmr1024_generic_geometry.py` measures the already saved generic-L2
+comparator, without a new attack. `make test-matched-blocks` checks equal norm,
+exact null geometry, reproducibility and protected frames/channels on CPU.
+The producer validates every output budget; the independent verifier reconstructs
+first-eight fixtures of each condition/draw and checks all saved metric/norm
+arrays. A full geometry replay of unsaved block arrays is not claimed.
+
+MARDM is pinned in `configs/external_sources.json`. Its author-linked checkpoint
+archive is recorded by revision and LFS SHA256; native models load strict states
+and use their own 67-feature normalization. The constructor-only CLIP placeholder
+is overwritten by the public state before inference, including exact comparison
+of all contrast-model parameters. Run native MARDM/Guo loader environments in
+separate processes to avoid conflicting upstream `utils` namespaces. No dataset,
+checkpoint or third-party research PDF enters Git.
+
+`build_mardm_followup_presentation.py` reads frozen verified inputs and builds
+tables/figures in `paper/current`. `audit_mardm_followup_claims.py` checks their
+fingerprints and key claim boundaries. `assemble_mardm_followup_delivery.py`
+requires the exact final PDF layout/visual checks before freezing and exporting
+the new reviewed manuscript. Authors and external submission remain deferred.
+
+## Fixed-direction follow-up
+
+The [finite plan](coherence-review-plan.md) records the additional matched-L2
+controls and the restoration of natural sign evidence. Both readers retain all
+20 frozen real cohorts, both signs and both radii. No model training or generation
+is added.
+
+| Study | Driver | Independent check |
+|---|---|---|
+| Time-fixed non-null blocks, Guo/TMR | `run_coherent_block_audit.py` | `verify_coherent_block_audit.py` |
+| Natural real sign hypotheses | `restore_sign_natural_evidence.py` | All pairs and six BLEUs recomputed with independent Counters |
+
+`make test-coherent-blocks` checks matched norms, fixed temporal directions,
+changed rotations and protected channels/padding. Existing study roots are
+immutable; reproduction must register a fresh root before either driver runs.
+The protocol is provided by `run_coherent_block_audit.registration()`. Redirect
+its module-level `R` and the verifier's `R` to the same fresh directory; preserve
+the old `INPUT`/`PREVIOUS` sources and register the protocol before scoring.
+Original null/random intervals use family28; prospective fixed controls and
+fixed-minus-random contrasts use separate family32 intervals. The contact-only
+float32 norm tolerance is explicit. The [review](coherence-review.md) explains
+why temporal coherence does not imply a consistent full-motion feature edit.

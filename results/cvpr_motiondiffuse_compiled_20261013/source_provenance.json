@@ -1,0 +1,48 @@
+{
+  "producers": [
+    "run_motiondiffuse_compiled_audit",
+    "run_motiondiffuse_vectorized_audit",
+    "motiondiffuse_vectorized_adapter",
+    "verify_additional_motion_audits"
+  ],
+  "import_closure": [
+    "additional_motion_adapters",
+    "build_generalization_presentation",
+    "freeze_generalization_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "motion_release_audit_common",
+    "motiondiffuse_vectorized_adapter",
+    "run_additional_motion_audit",
+    "run_motiondiffuse_compiled_audit",
+    "run_motiondiffuse_vectorized_audit",
+    "score_humanml_blind_fid",
+    "verify_additional_motion_audits"
+  ],
+  "verified_registered_inputs_and_assets": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motiondiffuse_vectorized_audit.py": "3623656a2f88ef6cc3ab6bbd11f8210ca2c296a43e5e9a4245b08c8c8d6979f6",
+    "scripts/motiondiffuse_vectorized_adapter.py": "c68174ef9e626a4db1f2eea7ddad4d7289e592f46a226613673ce0bb96791376",
+    "scripts/additional_motion_adapters.py": "6c529ea0cd5c9284ceb204211ab46fa68a28c5c94c3d3fd630c8d058030a496a",
+    "scripts/run_additional_motion_audit.py": "cdba7969ede7a91763e622e7372d663aab28ba2cc6b5609e7e847011e552b325",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "external/MotionDiffuse/text2motion/models/transformer.py": "a35a361c1c0eb3e721c301e7293981693cb0ed659daa9d4b6dda687617d9fb64",
+    "external/MotionDiffuse/text2motion/models/gaussian_diffusion.py": "a4845d9de6a2dfef48f50e2c2d4c470475e2ed494a75e8864b3a6537c8363fb3",
+    "models/generalization_audit/motiondiffuse_humanml/t2m/t2m_motiondiffuse/opt.txt": "f8d859382702944b4b28b3156c2b79d4b78d937a86126e76f8e0c234eac99eb2",
+    "models/generalization_audit/motiondiffuse_humanml/t2m/t2m_motiondiffuse/model/latest.tar": "60a8b95aa5d190a95a6b3c20515301f72d70646b7a0d7f927c7167b968fa1222",
+    "models/generalization_audit/motiondiffuse_humanml/t2m/t2m_motiondiffuse/meta/mean.npy": "ebc7c543b4e27e886dba7e1bcde8fc0149f12a981586a548df98977b4b7c1a6a",
+    "models/generalization_audit/motiondiffuse_humanml/t2m/t2m_motiondiffuse/meta/std.npy": "9a91111b5b44b2b6785cedf426ede6f8bc412ecb995914563e2810738de179e4",
+    "models/generalization_audit/motiondiffuse_kit/kit/kit_motiondiffuse/opt.txt": "2fab002eec954fb94ff6275ed388059258e73aa7a46c7aa8ad7121a382457e95",
+    "models/generalization_audit/motiondiffuse_kit/kit/kit_motiondiffuse/model/latest.tar": "c013e605ee9d8488cac9b8382b5a267be451d8e6580a8a38dfbd9ac8abb52644",
+    "models/generalization_audit/motiondiffuse_kit/kit/kit_motiondiffuse/meta/mean.npy": "9e23fac51db2215ab5666324226be48f27efd6a6e7b22ebd17c28e0f056a7c22",
+    "models/generalization_audit/motiondiffuse_kit/kit/kit_motiondiffuse/meta/std.npy": "296a60656cea07e65ee64512d73d47c0412df0698b35194116330661be32fa90",
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motiondiffuse_compiled_audit.py": "fc156ebcc8f3f20357033071f715cc7c98f366241eb893b5719fe4ceec8c980c",
+    "scripts/run_motiondiffuse_vectorized_audit.py": "3623656a2f88ef6cc3ab6bbd11f8210ca2c296a43e5e9a4245b08c8c8d6979f6"
+  },
+  "verified_historical_producer_fingerprints": {},
+  "registered_sources_and_assets_match": true,
+  "portable_utility_sha256": "c453f8e976d5fa43452627518fb5b70ae3659982fc625b529e5c813a12b65316",
+  "freeze_source_sha256": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "historical_executed_verifiers": "verification_revisions/ where present; preserved without replacing scientific outputs",
+  "excluded_attempts": "Incomplete eager MotionDiffuse attempts are execution records, never final study endpoints",
+  "human_authors_and_registration_deferred": true
+}

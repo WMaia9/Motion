@@ -1,0 +1,32 @@
+{
+  "parent_editorial_delivery": {
+    "manifest_sha256": "b1f7838eba59a49fed48c890890d5f1aa89a3e686842667f9dbf0be856f4fd44",
+    "prior_geometry_calibration_and_sign_results_unchanged": true
+  },
+  "new_frozen_study_manifests": {
+    "cvpr_tmr1024_controls_20261013": "73aed8415c15fd6a368bbd988e043bacd1df238a905b3a5f20d36adc0c2745e8",
+    "cvpr_rotation_mechanism_20261013": "4d589a64123fdd4cc548fd84d68548ec12c482fd5c28b3560e1b055331165f62",
+    "cvpr_matched_blocks_20261013": "ffe6d26ef42fdec8900c57138d2d276c0c9cf842f983a2f78879c1b4c4a790ef",
+    "cvpr_mardm_readers_20261013": "8676d3f74584366c3a71adf5f3d16a09281aa6b25cae351a3017cc88f7efae82"
+  },
+  "block_controls": "cvpr_matched_blocks_20261013/{guo,tmr}/analysis.json",
+  "mechanism": "cvpr_rotation_mechanism_20261013/analysis.json",
+  "essential_readers": "cvpr_mardm_readers_20261013/analysis.json",
+  "TMR1024": "cvpr_tmr1024_controls_20261013/analysis.json",
+  "all_generated_table_figure_input_fingerprints": {
+    "reports/cvpr_tmr1024_controls_20261013/analysis.json": "10ccc7e2c508e3f2bfd1aab8c7a58ade0c88b4acff339574b77da3446949f0d2",
+    "reports/cvpr_humanml3d_audit_20261012/test_analysis.json": "2a6f5d978b0ccac63cec84a86cdf7ac635cac6eb05c8ff9354b2e2f7e7523546",
+    "reports/cvpr_rotation_mechanism_20261013/analysis.json": "94c80a6d7de203f4560cf81dfc5cb8e01363c8ece2000acb69bfaa2582a36f63",
+    "reports/cvpr_mardm_readers_20261013/analysis.json": "f07155bfce76fc7d3698170cf074e004ca9b3f54baf6b5e3d3910f15498d7c95",
+    "reports/cvpr_matched_blocks_20261013/guo/analysis.json": "5508a09a5251f7e842a66f31827e17230ad0bb73f45a3ddd661826a382837228",
+    "reports/cvpr_matched_blocks_20261013/tmr/analysis.json": "226aae5400abe644c614ce371fcfcef3bd24f9e03d210f9d870dcdc78d5ae3eb",
+    "reports/cvpr_tmr1024_controls_20261013/verification.json": "97a6912190e7f7fe83393f0220ab9c5f6eda29ef6985637b087c35626bc8ce3d",
+    "reports/cvpr_rotation_mechanism_20261013/verification.json": "36d394948bfffe66d1b81eccc43498547b83fa98f0cf2dd4787147a2a3cab90e",
+    "reports/cvpr_mardm_readers_20261013/verification.json": "0bf8273bfe0fc4cdb28bccb2ab950ae7f1cc444e236b65e499788052f1e8398a",
+    "reports/cvpr_matched_blocks_20261013/verification.json": "0370ce277d27e168e7c8183317fb6d7b449ef5d8f46751ad65ba509858528606",
+    "reports/cvpr_motion_prevalence_20261012/analysis.json": "c30bc1fd37397910ac8271b5c0413790696741c450046060b568790071627198",
+    "reports/cvpr_generalization_review_20261013/additional_methods_analysis.json": "e0e0cfe97194feb61e206cc54f289471ede444c5374140a643b2163f4cc177bc",
+    "reports/cvpr_editorial_review_20261013/manuscript/table_published_scale.tex": "9c0012e0dc431a6178a7beccadf86677430cea248a3b860d9405272f434a3084"
+  },
+  "published_margins": "previous frozen source-verified table; differing inference protocols, context only"
+}

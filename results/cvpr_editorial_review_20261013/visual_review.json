@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "all_final_pages_inspected": true,
+  "main_pdf_sha256": "867f66d71de160f8231d6e8d391d429d413dbab1893d3fe0821e6884cf798e9a",
+  "supplement_pdf_sha256": "3ed7ff75606111a808904d2e5027d0e170e042b65d7ce69629960685ac0fafdc",
+  "main_pages": 9,
+  "supplement_pages": 22,
+  "review_scope": "All 31 final pages visually checked: readable tables/figures, typography, mathematical expressions, captions and references. Final main6/main7 inspected after float barrier, with complete conclusion on final body page. Every other final page pixel-identical to inspected render.",
+  "parent_previous_reviewed_delivery": "reports/cvpr_generalization_review_20261013",
+  "not_human_cold_review": true
+}

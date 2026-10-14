@@ -1,0 +1,11 @@
+{
+  "scope": "presentation rounding only; saved endpoints unchanged",
+  "file": "paper/current/table_humanml_full.tex",
+  "endpoint": "MDM shifted-caption R1_after",
+  "source": "reports/cvpr_humanml3d_audit_20261012/test_analysis.json",
+  "source_sha256": "2a6f5d978b0ccac63cec84a86cdf7ac635cac6eb05c8ff9354b2e2f7e7523546",
+  "value": 0.7875000000000001,
+  "previous_display": "0.787",
+  "corrected_display": "0.788",
+  "all_other_final_pages_pixel_identical": true
+}

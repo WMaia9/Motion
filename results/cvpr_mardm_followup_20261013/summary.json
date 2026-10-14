@@ -1,0 +1,19 @@
+{
+  "scope": "exact rotation-equivalence consistency, retaining rotations in rotation-only domains",
+  "new_studies": {
+    "cvpr_tmr1024_controls_20261013": "73aed8415c15fd6a368bbd988e043bacd1df238a905b3a5f20d36adc0c2745e8",
+    "cvpr_rotation_mechanism_20261013": "4d589a64123fdd4cc548fd84d68548ec12c482fd5c28b3560e1b055331165f62",
+    "cvpr_matched_blocks_20261013": "ffe6d26ef42fdec8900c57138d2d276c0c9cf842f983a2f78879c1b4c4a790ef",
+    "cvpr_mardm_readers_20261013": "8676d3f74584366c3a71adf5f3d16a09281aa6b25cae351a3017cc88f7efae82"
+  },
+  "main_content_pages": 8,
+  "supplement_content_pages": 23,
+  "reference_entries": 52,
+  "no_new_training_reward_seeds_or_generators": true,
+  "does_not_refute_full_MARDM_mechanism": true,
+  "essential_reader_invariance_structural_not_accuracy_cost": true,
+  "routine_training_exploitation_unconfirmed": true,
+  "authors_registration_and_human_cold_review_deferred": true,
+  "format2027_provisional_available_official2026_kit": true,
+  "submission_or_publication": false
+}

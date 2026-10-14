@@ -1,0 +1,15 @@
+{
+  "dataset": "kit",
+  "change": "native float32 forward compiled; operator fusion may change floatingpoint rounding, no layer/state/distribution substitution",
+  "diffusion_steps": 1000,
+  "TF32": false,
+  "native_forward_parity_threshold": 0.0005,
+  "all20draws_and_both_raw_C_conditions": true,
+  "previous_incomplete_eager_attempts_excluded": true,
+  "source_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_motiondiffuse_compiled_audit.py": "fc156ebcc8f3f20357033071f715cc7c98f366241eb893b5719fe4ceec8c980c",
+    "scripts/run_motiondiffuse_vectorized_audit.py": "3623656a2f88ef6cc3ab6bbd11f8210ca2c296a43e5e9a4245b08c8c8d6979f6",
+    "scripts/motiondiffuse_vectorized_adapter.py": "c68174ef9e626a4db1f2eea7ddad4d7289e592f46a226613673ce0bb96791376",
+    "scripts/additional_motion_adapters.py": "6c529ea0cd5c9284ceb204211ab46fa68a28c5c94c3d3fd630c8d058030a496a"
+  }
+}

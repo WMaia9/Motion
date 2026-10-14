@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "file_count": 2912,
+  "studies": {
+    "cvpr_tmr1024_controls_20261013": {
+      "all_file_hashes_verified": true,
+      "file_count": 37,
+      "manifest_sha256": "73aed8415c15fd6a368bbd988e043bacd1df238a905b3a5f20d36adc0c2745e8"
+    },
+    "cvpr_rotation_mechanism_20261013": {
+      "all_file_hashes_verified": true,
+      "file_count": 17,
+      "manifest_sha256": "4d589a64123fdd4cc548fd84d68548ec12c482fd5c28b3560e1b055331165f62"
+    },
+    "cvpr_mardm_readers_20261013": {
+      "all_file_hashes_verified": true,
+      "file_count": 746,
+      "manifest_sha256": "8676d3f74584366c3a71adf5f3d16a09281aa6b25cae351a3017cc88f7efae82"
+    },
+    "cvpr_matched_blocks_20261013": {
+      "all_file_hashes_verified": true,
+      "file_count": 2112,
+      "manifest_sha256": "ffe6d26ef42fdec8900c57138d2d276c0c9cf842f983a2f78879c1b4c4a790ef"
+    }
+  }
+}

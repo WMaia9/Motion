@@ -1,0 +1,34 @@
+{
+  "scope": "different-architecture constructed attack and generic-L2 comparator",
+  "sources": [
+    "real",
+    "mdm"
+  ],
+  "clips_each": 128,
+  "selection": "first128fixed source items of previous1024targeted cohort, not chosen by results",
+  "steps": 80,
+  "optimizer": "Adam lr0.1 zero initialization, final iterate",
+  "gauge_bound": 0.35,
+  "targets": [
+    "actual caption",
+    "rolled wrong caption"
+  ],
+  "controls": [
+    "canonical-gradient",
+    "generic all259 continuous channels within perclip standardizedL2 radius of actual-caption gauge attack"
+  ],
+  "generic_budget": "L2 in native TMR-normalized units over valid frames; foot contacts fixed; projected each iteration",
+  "generic_inputs_may_be_physically_inconsistent": true,
+  "native_cosine_retrieval_32candidates": true,
+  "no_spontaneous_exploitation_claim": true,
+  "source_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_tmr_targeted_controls.py": "e4a5d21109f52a8acd1ebdee8b5e7bda4c1db873243894546a5d8ffa3ec4e3f1",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/config.json": "37f696adbc6adcbf5d51e6dfdb0bd313a76e09b20ef9775e8d0929600dd96443",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/motion_encoder.pt": "16805518259140d983753e7dd26bb6b0b16566977441fcf323bb60473a4894cc",
+    "models/tmr_audit/models/tmr_humanml3d_guoh3dfeats/last_weights/text_encoder.pt": "17615140d20bb991347ffbc0ead8fb1e8762afbb435bb23316a3de6ee6f7e43d",
+    "reports/cvpr_humanml3d_audit_20261012/test_real.npz": "f509dd248e34b2f70bd97b7365e29cee54caa603509f41eaaea52f7f9ef03bd9",
+    "reports/cvpr_humanml3d_audit_20261012/test_mdm.npz": "5a26bb85902ae906f3c746cf795907f63bafa1401aefacd8408eebe9fe797579",
+    "reports/cvpr_humanml3d_audit_20261012/test_selection.json": "6ff5139515900cd97fcde0db7f3048131f569b4cf7a658312ac84805d12efb6d"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "vggt2025",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.pdf",
+    "sha256": "b2e33f1040badf274373ad810c6ac0c272597195427ac6a0f171d5933b639a0e",
+    "award_confirmation": "https://www.thecvf.com/?page_id=413",
+    "analysis_scope": "writing structure and visual hierarchy; no scientific claims imported"
+  },
+  {
+    "name": "richhf2024",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liang_Rich_Human_Feedback_for_Text-to-Image_Generation_CVPR_2024_paper.pdf",
+    "sha256": "0b6ab8673d0396131c941dc33bbd774f1afefd0c25bbb4435ed2d4c9d9240d3f",
+    "award_confirmation": "https://www.thecvf.com/?page_id=413",
+    "analysis_scope": "writing structure and visual hierarchy; no scientific claims imported"
+  },
+  {
+    "name": "dynamics2024",
+    "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Generative_Image_Dynamics_CVPR_2024_paper.pdf",
+    "sha256": "1e5d3a415085fdecf652e89561542271f52d64574f58102fc104f455c8586447",
+    "award_confirmation": "https://www.thecvf.com/?page_id=413",
+    "analysis_scope": "writing structure and visual hierarchy; no scientific claims imported"
+  }
+]

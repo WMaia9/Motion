@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "conditions": {
+    "real": {
+      "clips": 1024,
+      "mean_rotation_change_deg": 25.21043841506577,
+      "max_rotation_change_deg": 179.97395285185996,
+      "mean_RIC_position_displacement_m": 0.8103966068155436,
+      "means_weight_all_valid_joint_frames": true,
+      "physically_inconsistent_cross_feature_attack": true,
+      "saved_source_sha256": "c20d1cd57f835ac5289bba27148f2ae3713d167cf94889d8393a3a8ff7e6e015",
+      "saved_generic_sha256": "834d9fe63aa91562eaad9630975f1782b951f64aabbaea10b1c34f7e926ca3ba"
+    },
+    "mdm": {
+      "clips": 1024,
+      "mean_rotation_change_deg": 25.72644547506553,
+      "max_rotation_change_deg": 179.99366183296013,
+      "mean_RIC_position_displacement_m": 0.8992554599996524,
+      "means_weight_all_valid_joint_frames": true,
+      "physically_inconsistent_cross_feature_attack": true,
+      "saved_source_sha256": "eef5fd9ed79095f7ad9f82bacb65afc527081183ccf591e748848fd58a62fde0",
+      "saved_generic_sha256": "120ade90bde54838a3de0e9a7e225b24cf287f0f483eecc81501a374b942fc7d"
+    }
+  },
+  "no_new_attack_or_training": true,
+  "measurement_source_sha256": "e7d9a395c81fd89eaa28aa14ebaa2f06c90fa9981d638e64eef4aa16cd0f080b"
+}

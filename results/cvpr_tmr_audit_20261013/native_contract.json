@@ -1,0 +1,9 @@
+{
+  "motion_projection_shape": [
+    256,
+    263
+  ],
+  "rotation_columns_nonzero": true,
+  "native_mu_equals_first_token": true,
+  "no_canonicalization_in_native_input": true
+}

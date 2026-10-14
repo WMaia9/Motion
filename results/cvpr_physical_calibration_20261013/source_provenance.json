@@ -1,0 +1,30 @@
+{
+  "producers": [
+    "run_physical_rotation_calibration",
+    "verify_physical_calibration"
+  ],
+  "import_closure": [
+    "freeze_generalization_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "motion_release_audit_common",
+    "motion_release_native_adapters",
+    "run_motion_release_audit",
+    "run_physical_rotation_calibration",
+    "score_humanml_blind_fid",
+    "verify_physical_calibration"
+  ],
+  "verified_registered_inputs_and_assets": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_physical_rotation_calibration.py": "f1cabc2ee358a1d753b4a9fff6b2048ceb7844882e2480219abb7cdb6b1f7d31",
+    "scripts/run_motion_release_audit.py": "472d1cd3bc930fd104c41b473bb7ab883c5d21f04393e7d43392b3e438c52277",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "reports/cvpr_motion_prevalence_20261012/manifest_sha256.json": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1"
+  },
+  "verified_historical_producer_fingerprints": {},
+  "registered_sources_and_assets_match": true,
+  "portable_utility_sha256": "8a763a69d3616122f806af92ff028f8641b7af4728c1a19aea6d7c0f8e1b27f3",
+  "freeze_source_sha256": "3664a9e924129a65bbd2289e5c7def6fc6a40a0566066ab9e04a9033d0840338",
+  "historical_executed_verifiers": "verification_revisions/ where present; preserved without replacing scientific outputs",
+  "excluded_attempts": "Incomplete eager MotionDiffuse attempts are execution records, never final study endpoints",
+  "human_authors_and_registration_deferred": true
+}

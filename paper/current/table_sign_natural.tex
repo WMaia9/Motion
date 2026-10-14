@@ -1,0 +1,9 @@
+\begin{table*}[t]
+\centering\small
+\caption{\textbf{Natural dependence in real sign inputs, no attack.} Full native TEST with common loader preprocessing and frozen raw reader; no source-conditioned layer, optimization or new decoding. The shared left-hand preprocessing precedes both paths. Hypothesis counts and six BLEUs are independently recomputed; the CSL score is character-level.}\label{tab:signnatural}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Corpus&Changed / clips&Changed \%&Raw BLEU&$\C$ BLEU&$\C-$raw\\\midrule
+PHOENIX&0/642&0.0\%&14.9995&14.9995&+0.0000\\
+How2Sign&1,438/2,183&65.9\%&3.4779&3.4840&+0.0062\\
+CSL-Daily&464/1,162&39.9\%&6.8907&7.0662&+0.1755\\
+\bottomrule\end{tabular}\end{table*}

@@ -1,0 +1,33 @@
+{
+  "source_clip": "004652",
+  "illustration_index": 0,
+  "caption": "a person walks straight forward.",
+  "selection": "first fixed TEST record, unchanged from previous teaser, no result selection",
+  "rendering": "procedural spheres/cylinders following native RIC joint positions, fixed camera/radii/colors; no SMPL/MANO model or licensed avatar asset",
+  "positions_bitwise_equal": true,
+  "renders": [
+    {
+      "frame": 30,
+      "fraction": 0.2,
+      "body_render_pixels_bitwise_equal": true
+    },
+    {
+      "frame": 75,
+      "fraction": 0.5,
+      "body_render_pixels_bitwise_equal": true
+    },
+    {
+      "frame": 120,
+      "fraction": 0.8,
+      "body_render_pixels_bitwise_equal": true
+    }
+  ],
+  "scores_scope": "aggregate1024 MDM outputs from original frozen target-aware study, not singleclip or TMR",
+  "inputs_sha256": {
+    "reports/cvpr_humanml3d_audit_20261012/test_mdm.npz": "5a26bb85902ae906f3c746cf795907f63bafa1401aefacd8408eebe9fe797579",
+    "reports/cvpr_humanml3d_audit_20261012/test/mdm/target_caption.npz": "f760acc7b75026e78cc753ed0d04cf304100beb03b25a8731f39365625d4551d",
+    "reports/cvpr_humanml3d_audit_20261012/test_analysis.json": "2a6f5d978b0ccac63cec84a86cdf7ac635cac6eb05c8ff9354b2e2f7e7523546"
+  },
+  "figure_sha256": "b1eb7f8a7f3e73503f992b921d67927076cc31f4710c330706905e8cba8533bb",
+  "producer_sha256": "64a46f700142f1adba5e52dc50080c069af3884242588b3a193d94853b6d962c"
+}

@@ -1,0 +1,53 @@
+{
+  "frozen_verified_studies": {
+    "cvpr_tmr_audit_20261013": {
+      "manifest_sha256": "3cbab5882f6811065aae6ac8cc953974b83cb03e0c0fefe96c9aab0da78acc0c",
+      "files": 1106,
+      "verification_passed": true
+    },
+    "cvpr_tmr_attack_20261013": {
+      "manifest_sha256": "e6cce49d1863f8d6fcadc8fd1bf37241aabf36730de192fd7192649fc7e3e191",
+      "files": 33,
+      "verification_passed": true
+    },
+    "cvpr_physical_calibration_20261013": {
+      "manifest_sha256": "a3a28a8bde22125f5ccaa85819a4ef669345d55da10626af652dee70b3529ebc",
+      "files": 459,
+      "verification_passed": true
+    },
+    "cvpr_reward_dev_search_20261013": {
+      "manifest_sha256": "1dcd0f8979bf9fbc36b106afa23040b276d383c4f6c9f5c7c30644ec56ff9935",
+      "files": 86,
+      "verification_passed": true
+    },
+    "cvpr_reward_dev_validation_20261013": {
+      "manifest_sha256": "dd9c411d67a3d47b61cc6cc211c0f599ed86a0d2f296d6eb4bd4dd8c1c1eaa44",
+      "files": 21,
+      "verification_passed": true
+    },
+    "cvpr_blind_transfer_20261013": {
+      "manifest_sha256": "dc0c795bfb8865c6b8c343fd9c592bfcb47bb18c9b87e29b056b24d63f15c0c5",
+      "files": 77,
+      "verification_passed": true
+    },
+    "cvpr_motion_defense_cost_20261013": {
+      "manifest_sha256": "25cfb759417e4addc2f46b61a36e25aa11ba93e384b924a1935cc0af77e8fd5f",
+      "files": 55,
+      "verification_passed": true
+    },
+    "cvpr_additional_motion_audit_20261013": {
+      "manifest_sha256": "71303c35249f664457d974057fb9e541b77bd9c3e8ab9babceaf806e4f2dc7d2",
+      "files": 671,
+      "verification_passed": true
+    },
+    "cvpr_motiondiffuse_compiled_20261013": {
+      "manifest_sha256": "10b2ae7eda0d8c2395754249f37ef5365ce1d8d35203e0e3eafd2a97b20ffedb",
+      "files": 298,
+      "verification_passed": true
+    }
+  },
+  "pending_study": null,
+  "not_final_delivery": false,
+  "all_nine_new_study_roots_frozen": true,
+  "all_scientific_endpoints_complete": true
+}

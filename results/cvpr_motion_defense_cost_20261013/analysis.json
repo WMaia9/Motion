@@ -1,0 +1,47 @@
+{
+  "real_data_R1": {
+    "HumanML_primary": {
+      "raw_R1": 0.4527478448275861,
+      "canonical_R1": 0.4527478448275861,
+      "canonical_minus_raw": 0.0,
+      "family4_t19_CI95": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 20
+    },
+    "HumanML_secondary": {
+      "raw_R1": 0.5122198275862068,
+      "canonical_R1": 0.5122198275862068,
+      "canonical_minus_raw": 0.0,
+      "family4_t19_CI95": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 20
+    },
+    "HumanML_TMR": {
+      "raw_R1": 0.6784159482758622,
+      "canonical_R1": 0.6784159482758622,
+      "canonical_minus_raw": 0.0,
+      "family4_t19_CI95": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 20
+    },
+    "KIT_primary": {
+      "raw_R1": 0.4244318181818182,
+      "canonical_R1": 0.4244318181818182,
+      "canonical_minus_raw": 0.0,
+      "family4_t19_CI95": [
+        0.0,
+        0.0
+      ],
+      "repetitions": 20
+    }
+  },
+  "secondary_embedding_max_change": 8.344650268554688e-07,
+  "different_architecture_TMR_native_cosine": true,
+  "no_free_accuracy_theorem": true
+}
