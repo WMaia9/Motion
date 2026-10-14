@@ -1,42 +1,16 @@
-# Current manuscript — the single working location
+# Manuscript
 
-**Same Motion, Different Scores: Auditing Representation Consistency**
+The active manuscript lives here and keeps this path across revisions.
 
-Read and edit the active manuscript in **this directory**. Every future revision
-keeps the same `paper/current/` path. Do not create another dated working paper
-directory. Dated directories under `paper/` are historical local copies, and
-frozen snapshots under `reports/` preserve evidence rather than serve as working
-manuscripts.
+| File | Contents |
+|---|---|
+| `main.tex`, `supplement.tex` | Paper and supplementary material |
+| `table_*.tex`, `figures/` | Tables and figures included by the two documents |
+| `references.bib` | Bibliography |
+| `cvpr.sty`, `ieeenat_fullname*.bst` | Unmodified official CVPR author-kit files |
+| `reviewed/` | Last reviewed PDFs |
+| `provenance.json` | SHA256 fingerprints of the reviewed sources, checked by `make check` |
 
-- [Main PDF](reviewed/main.pdf): eight content pages plus two reference pages.
-- [Supplement PDF](reviewed/supplement.pdf): twenty-eight content pages plus two reference pages.
-- `main.tex` / `supplement.tex`: standalone sources, with local tables and figures.
-- `provenance.json`: reviewed file fingerprints, upstream style revision and origin.
+Build from the repository root with `make paper` (Tectonic), or upload the directory to Overleaf (pdfLaTeX, main document `main.tex`; switch the main document to `supplement.tex` for the supplement). Every number in the text comes from the frozen evidence listed in [`docs/reproduction.md`](../../docs/reproduction.md).
 
-The reviewed PDFs come from the frozen sign-stability delivery selected by
-`configs/reviewed_delivery.json`. All 40 final PDF pages were visually inspected;
-layout, references, embedded fonts and evidence fingerprints were checked.
-The [current review](../../docs/sign-stability-review.md) explains the completed
-matched noise/physical controls, the within-rotation comparison and scientific limits. The
-[editorial review](../../docs/editorial-review.md) records the earlier writing
-study and its primary awarded-paper references.
-This README is the repository-facing build guide. The manuscript source ZIP and
-full scientific artifacts remain in the local frozen archive.
-
-Build from repository root with `make paper`. PDFs and logs are written to
-`.build/paper/`, leaving `reviewed/` unchanged. Tectonic must be available on PATH
-or in the workspace's ignored `.tools/tectonic` path. A standard LaTeX installation
-can also compile the standalone sources using the included unmodified style/BST.
-
-`reviewed/` contains the last reviewed PDFs; `.build/paper/` contains the latest
-local compilation. Source edits intentionally invalidate the reviewed hashes
-until a new review snapshot and provenance update are completed. Keep the old
-frozen snapshots intact during that update.
-
-The kit is the available official 2026 version. Target 2027 conformity is provisional
-until its final rules can be checked. Author metadata and ID remain anonymous/DRAFT.
-No external submission or publication has occurred.
-
-Numbers derive from the frozen evidence summarized in
-[results/](../../results/README.md); scientific limits are in
-[research-status.md](../../docs/research-status.md).
+The CVPR 2027 author kit was not yet available; the 2026 kit is used and must be rechecked against the final 2027 rules. Authors and paper ID are anonymous placeholders.

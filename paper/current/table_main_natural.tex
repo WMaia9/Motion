@@ -1,8 +1,8 @@
 \begin{table}[t]
 \centering\footnotesize\setlength{\tabcolsep}{4.2pt}
-\caption{\textbf{Public outputs receive different FID at identical movement.} $\Delta=\mathrm{raw}-\C$ on the same outputs, 20 native test draws per setting; every 95\% interval excludes zero. Published FID ($\pm$ the authors' 95\% margin) gives scale only, since protocols differ. $^\dagger$: $|\Delta|$ exceeds that margin. DiP is prefix-conditioned.}\label{tab:natural}
+\caption{\textbf{Canonicalizing released outputs changes their FID.} FID of the identical motion before (Raw) and after (Canonical) canonicalization; $\Delta=$ Raw $-$ Canonical, mean of 20 draws, and every 95\% interval excludes zero. The last column gives each paper's own reported FID with its 95\% margin, for scale only, since protocols differ. $^\dagger$: $|\Delta|$ exceeds that margin. DiP is conditioned on a short prefix.}\label{tab:natural}
 \begin{tabular}{@{}lrrrr@{}}\toprule
-Release&Raw&$\C$&$\Delta$&Published\\\midrule
+Release&Raw&Canonical&$\Delta$&Published\\\midrule
 \multicolumn{5}{@{}l}{\emph{HumanML3D}}\\
 MDM~\cite{tevet2023}&0.455&0.450&$+0.005$&$0.489\pm.047$\\
 MLD~\cite{mld2023}&0.445&0.449&$-0.004$&$0.473\pm.013$\\

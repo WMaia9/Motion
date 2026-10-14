@@ -4,8 +4,10 @@
 !/.gitattributes
 !/.editorconfig
 !/README.md
-!/CURRENT_RESEARCH.md
-!/RESEARCH_STATUS_AND_NEXT_EXPERIMENTS.md
+!/LICENSE
+!/pyproject.toml
+!/canon6d/
+!/tests/
 !/CONTRIBUTING.md
 !/NOTICE.md
 !/Makefile

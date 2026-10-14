@@ -1,0 +1,11 @@
+{
+  "checkpoint": "models/motion_release_audit/gpt_evaluator/t2m/text_mot_match/model/finest.tar",
+  "checkpoint_sha256": "881e45bea6fb84b15eca6e7cdd75d602b58a72f2038c223ee96ab75d4f684ada",
+  "clips": 1024,
+  "bound": 0.35,
+  "steps": 80,
+  "lr": 0.1,
+  "wrong_shift": 512,
+  "code_sha256": "3fb983facd69d75a2fe432d86f503bb216abb1c3b0ea0573ad2024cc680592b7",
+  "same_selection_orders_as": "reports/cvpr_humanml3d_audit_20261012"
+}

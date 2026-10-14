@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canon6d"
+version = "1.0.0"
+description = "Canonicalize 6D rotation features so motion metrics score movement, not encoding."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22"]
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+
+[tool.setuptools]
+packages = ["canon6d"]

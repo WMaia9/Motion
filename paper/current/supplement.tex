@@ -16,6 +16,8 @@
 
 This supplement contains the equivalence proof and verification (\cref{sec:proof}), equal-budget and physical controls (\cref{sec:budget,sec:physical}), the full public-output audit (\cref{sec:natural}), attack protocols (\cref{sec:attacks}), the sign-language experiments (\cref{sec:sign}) and statistical details (\cref{sec:stats}). Code, configurations, saved outputs and checkpoint hashes accompany the submission.
 
+HumanML3D~\cite{guo2022} and the KIT Motion-Language (KIT-ML) dataset~\cite{kit2016} pair 3D human motion sequences with text descriptions. We use Guo et al.'s text-to-motion (T2M) evaluator~\cite{guo2022} and Text-to-Motion Retrieval (TMR)~\cite{tmr2023}. R-Precision (R1 for top-1) measures retrieval of a paired caption among candidate descriptions; FID applies the Fr\'echet distribution distance from image evaluation~\cite{heusel2017} to motion embeddings~\cite{guo2022}.
+
 \section{Equivalence and verification}\label{sec:proof}
 \paragraph{Fiber.} For $a\ne0$ and $b$ not parallel to $a$, let $u=a/\|a\|$, $b_\perp=b-(u^\top b)u$ and $v=b_\perp/\|b_\perp\|$. Under $a'=\alpha a$, $b'=\beta b+\eta a$ with $\alpha,\beta>0$, the first vector normalizes to $u$ and $b'_\perp=\beta b_\perp$, so $v$ and $R=[u;v;u\times v]$ are unchanged. Conversely, every $d$ with representative $(u,v)$ is $a=\rho u$, $b=\sigma v+\tau u$ with $\rho,\sigma>0$, and any two such encodings are related by one recoding. Recodings compose as $(\alpha_2\alpha_1,\ \beta_2\beta_1,\ \beta_2\eta_1+\eta_2\alpha_1)$, with inverse $(\alpha^{-1},\beta^{-1},-\eta/(\alpha\beta))$. Negative scales can flip rows and are excluded.
 
@@ -39,7 +41,7 @@ Contact&0&0&0&$-0.24$&$-0.84$&$-2.32$\\
 Position&0.0183&0.3416&1.1890&$+0.03$&$-0.18$&$-0.08$\\
 \bottomrule\end{tabular}\end{table}
 
-Within the rotation block, the two fixed fiber directions change T2M FID 7.76$\times$ and 7.73$\times$ more than the fixed rotation directions of the same sign; at $\kappa=1$ the ratios are 8.07 and 7.68. Fixed directions in non-rotation blocks can have larger effects (\cref{tab:budget}). What distinguishes the fiber is that it changes no represented quantity, so no response to it is warranted.
+Within the rotation block, the two tested fixed fiber directions change T2M FID by 7.76$\times$ and 7.73$\times$ as much as the fixed rotation directions of the same sign; at $\kappa=1$ the ratios are 8.07 and 7.68. These are descriptive ratios for the tested directions, not a universal ordering: random fiber coefficients have smaller effects than random rotation changes, and fixed directions in non-rotation blocks can have larger effects (\cref{tab:budget}). What distinguishes the fiber is that it changes no represented quantity, so no response to it is warranted.
 
 \section{Physical calibration}\label{sec:physical}
 We rotate the 21 non-root joints of real HumanML3D motion by a local angle about a random axis, either fixed through the clip or redrawn per frame, and recompute rotations, positions, velocities and contacts with the native skeleton. All conditions are compared with the same zero-angle reconstruction, whose own FID to the original data is 0.020 (R1 0.451$\to$0.447).
@@ -55,7 +57,7 @@ Per-frame axis&0.350&10.24&38.98&75.17\\\midrule
 \bottomrule\end{tabular}\end{table}
 
 \section{Public-output audit}\label{sec:natural}
-\paragraph{Protocol.} We use the native HumanML3D test loader with its caption, crop and mirroring draws (4,640 entries after dropping the last incomplete batch of 32) and 20 seeds; the real reference is an independent draw. MDM, MotionDiffuse and DiP emit 1,024 outputs per draw and the others 4,640; KIT-ML uses 704. Native inference settings are kept: MDM 50 steps (CFG 2.5), MLD DDIM-50 (CFG 7.5), MotionLCM one step, T2M-GPT categorical sampling, T2M with its length estimator, MoMask 18 mask steps, MotionDiffuse 1,000-step DDPM, and DiP with a 20-frame prefix excluded from scoring. Raw and canonical scores share every output, caption, candidate batch and reference. Intervals are paired $t_{19}$, Bonferroni-adjusted over ten FID/R1 endpoints per study.
+\paragraph{Protocol.} We use the native HumanML3D test loader~\cite{guo2022} with its caption, crop and mirroring draws (4,640 entries after dropping the last incomplete batch of 32) and 20 seeds; the real reference is an independent draw. The Human Motion Diffusion Model (MDM)~\cite{tevet2023}, MotionDiffuse~\cite{motiondiffuse2024} and DiP~\cite{closd2025} emit 1,024 outputs per draw and the others 4,640; KIT-ML uses 704. Native inference settings are kept: MDM 50 steps (CFG 2.5), MLD~\cite{mld2023} DDIM-50 (CFG 7.5), MotionLCM~\cite{motionlcm2024} one step, T2M-GPT~\cite{t2mgpt2023} categorical sampling, T2M with its length estimator, MoMask~\cite{momask2024} 18 mask steps, MotionDiffuse 1,000-step DDPM, and DiP with a 20-frame prefix excluded from scoring. Raw and canonical scores share every output, caption, candidate batch and reference. Intervals are paired $t_{19}$, Bonferroni-adjusted over ten FID/R1 endpoints per study.
 
 \paragraph{Second checkpoint and retrieval.} \Cref{tab:readers2} repeats the original five releases with the distinct official T2M weights distributed with T2M-GPT. Four FID gaps exclude zero there; MLD's is inconclusive and T2M's changes sign. Retrieval gaps are small with both checkpoints and with TMR (\cref{tab:tmr}).
 
@@ -86,18 +88,30 @@ T2M-GPT&0.6703&$[-0.0006,+0.0017]$\\
 T2M&0.5626&$[+0.0003,+0.0028]$\\
 \bottomrule\end{tabular}\end{table}
 
+\paragraph{Ranking changes.} For every pair of releases we compute the per-draw FID and R-Precision difference under raw and under canonical inputs, which is paired because all releases share the same 20 caption draws and reference draws, and form $t_{19}$ intervals Bonferroni-adjusted over all pairs and both encodings (56 comparisons for the eight releases, 20 for the five scored by the second checkpoint). With the main checkpoint, the FID ranking of all eight releases is identical before and after canonicalization (Kendall $\tau=1$). With the second checkpoint, the means of MLD and MotionLCM swap (raw difference $+0.001$, interval $[-0.027, 0.030]$; canonical $-0.008$, $[-0.039, 0.024]$); the change in their difference, $0.009$ $[0.005, 0.013]$, excludes zero, but neither ordering is supported. For R-Precision, MDM and MLD swap in the means with both intervals containing zero. No pair has a supported ordering under one encoding and the opposite supported ordering under the other.
+
 \paragraph{Sign of the gap and model family.} \Cref{fig:mechanism} plots each release's gap against how far its raw rotations are from canonical. Three of four diffusion or consistency releases have negative gaps and both VQ releases positive ones; the distance itself does not predict the gap (Spearman $-0.10$ signed and $0.29$ absolute; exact permutation $p=0.84$ and $0.50$). Removing rotation non-canonicality therefore does not uniformly favor any model family.
 
 \begin{figure}[t]\centering
 \includegraphics[width=\columnwidth]{figures/rotation_mechanism.pdf}
 \caption{\textbf{Gap versus distance from canonical rotations} for the eight HumanML3D releases, with paired intervals. Blue: diffusion/consistency; orange: VQ; gray: VAE; green: prefix-conditioned.}\label{fig:mechanism}\end{figure}
 
-\paragraph{Essential-feature readers.} The public MARDM GRU and contrastive readers, which read only the 67 root and position features, are exactly invariant to rotation recoding. Their release rankings differ from that of canonical T2M by two adjacent swaps each (Kendall $\tau=0.857$ for both).
+\paragraph{Essential-feature readers.} The public MARDM~\cite{mardm2025} GRU and contrastive readers, which read only the 67 root and position features, are exactly invariant to rotation recoding. Their release rankings differ from that of canonical T2M by two adjacent swaps each (Kendall $\tau=0.857$ for both).
 
 \paragraph{Published margins.} Table~1 of the main paper compares gaps with author-reported 95\% margins. These margins describe different protocols and are used only for scale. We use MDM's corrected 0.489$\pm$0.047, T2M with estimated lengths, MoMask's final KIT table and MotionDiffuse's release preprint.
 
 \section{Attack protocols}\label{sec:attacks}
-\paragraph{Targeted recoding.} We sample 1,024 full-caption test clips (40--199 frames) once, with fixed captions and crops, and use them for real motion, MDM outputs and both evaluators. Per-frame, per-joint coefficients start at zero and are optimized for 80 Adam steps (learning rate 0.1, bound 0.35) to minimize embedding distance to the actual or a circularly shifted caption, with evaluator weights frozen. R-Precision averages five fixed 32-candidate permutations. Optimizing through a canonicalizing evaluator leaves every score at its baseline. For T2M, the actual-caption attack worsens FID (MDM 0.37$\to$1.29): it moves retrieval, not every metric.
+\paragraph{Targeted recoding.} We sample 1,024 full-caption test clips (40--199 frames) once, with fixed captions and crops, and use them for real motion, MDM outputs and both evaluators. Per-frame, per-joint coefficients start at zero and are optimized for 80 Adam steps (learning rate 0.1, bound 0.35) to minimize embedding distance to the actual or a circularly shifted caption, with evaluator weights frozen. R-Precision averages five fixed 32-candidate permutations. Optimizing through a canonicalizing evaluator leaves every score at its baseline. The main paper uses the T2M checkpoint released with T2M-GPT, whose real-motion scores match the published ones; \cref{tab:targeted} repeats the attack with the checkpoint distributed with MDM. Attacks against one checkpoint largely do not transfer to the other (MDM outputs attacked on the MDM-distributed checkpoint reach only 0.512 on the other), as expected for a per-clip attack with gradient access. FID moves in different directions for the two checkpoints, so the attack moves retrieval specifically rather than every metric.
+
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\caption{\textbf{Caption-targeted recoding with both T2M checkpoints}, 1,024 test clips. R1: top-1 R-Precision for the true caption, and for another clip's caption (\emph{other}). FID against the same real test clips. Real-motion R1 is 0.517 (T2M-GPT checkpoint) and 0.462 (MDM checkpoint); the published value is 0.511.}\label{tab:targeted}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Checkpoint&Motion&R1 before&R1 after&R1 other&FID before$\to$after\\\midrule
+T2M-GPT&MDM&0.457&0.997&0.916&0.497$\to$0.393\\
+T2M-GPT&Real&0.517&0.998&0.952&0.000$\to$0.385\\
+MDM&MDM&0.397&0.993&0.788&0.369$\to$1.287\\
+MDM&Real&0.462&0.996&0.839&0.000$\to$1.311\\
+\bottomrule\end{tabular}\end{table}
 
 \paragraph{Caption-blind recoding.} For 960 fresh MDM outputs whose source clips are disjoint from the targeted study, we compute embedding moments $(\mu_s,\Sigma_s)$ and those of 2,048 training motions $(\mu_t,\Sigma_t)$, and set per-clip targets $\mu_t+(e_i-\mu_s)T$ with the Gaussian transport map~\cite{bhatia2017}
 \begin{equation}
@@ -119,9 +133,44 @@ MLD&source&0.706&0.289&1.611\\
 &other&0.659&0.579&1.345\\
 \bottomrule\end{tabular}\end{table}
 
-\section{Sign language}\label{sec:sign}
-\paragraph{Data and readers.} We use the released SignSparK body and hand rotation features (240 per frame: 10 body and $2\times15$ hand joints) and the public backtranslation readers, one Sign Language Transformer per corpus, with native tokenization, beam search and 300-frame cap. Full test sets contain 642 PHOENIX-2014T, 2,183 How2Sign and 1,162 CSL-Daily clips; real-motion BLEU is 15.00, 3.48 and 6.89. Left-hand channels, which the released pipeline preprocesses canonically, are unchanged in every attack.
+\paragraph{Query-only recoding.} The attacker receives one scalar per query: the FID of its recoded outputs against the 2,048 training-motion embeddings of the primary evaluator. It sees no gradients, per-clip embeddings, captions or test reference. A (1+1) evolution strategy starts at the identity, proposes Gaussian steps of initial size $0.3b$ (multiplied by 1.5 after a success and 0.9 after a failure) and keeps a proposal only if it lowers the queried FID. It searches either 3 global coefficients or 3 coefficients per joint (63), shared across frames and clips. The best coefficients after a given number of queries are then scored once against the withheld test reference, with the primary evaluator and with the second official checkpoint, which the attacker never queried. Positions, velocities and contacts are bitwise unchanged, and canonical embeddings change by less than $10^{-6}$.
 
+\begin{table*}[t]\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Query-only recoding}, test FID after 300 queries (relative change from the original). \emph{Queried}: the evaluator that answered the queries; \emph{other}: the second checkpoint, never queried. \emph{Random}: mean of ten random coefficient vectors of the same bound on the queried evaluator.}\label{tab:blackbox}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Search&&MDM 42&MDM 4242&MDM 7777&MLD\\\midrule
+\multicolumn{6}{@{}l}{\emph{Original FID (queried / other)}: 0.384 / 0.408, 0.376 / 0.371, 0.327 / 0.379, 0.706 / 0.659}\\
+Per joint, $b=0.1$&queried&$-20\%$&$-27\%$&$-11\%$&$-57\%$\\
+&other&$-30\%$&$-4\%$&$-22\%$&$-41\%$\\
+&random&$+2\%$&$+3\%$&$+4\%$&$+4\%$\\
+Per joint, $b=0.35$&queried&$-29\%$&$-44\%$&$-30\%$&$-68\%$\\
+&other&$+51\%$&$+12\%$&$+57\%$&$+76\%$\\
+&random&$+89\%$&$+74\%$&$+97\%$&$+64\%$\\
+Global, $b=0.1$&queried&$-9\%$&$-11\%$&$-3\%$&$-30\%$\\
+&other&$+47\%$&$+31\%$&$+28\%$&$-18\%$\\
+\bottomrule\end{tabular}\end{table*}
+
+With per-joint coefficients and $b=0.1$, the queried FID falls in every cohort and the fall carries over to the unqueried checkpoint in every cohort (\cref{tab:blackbox}). Most of the gain is reached within 100 queries. The larger bound lowers the queried FID further but overshoots for the other checkpoint, as in the gradient-based caption-blind attack. Three global coefficients are much weaker. R-Precision stays within 0.41--0.44 throughout.
+
+\section{Sign language}\label{sec:sign}
+\paragraph{Data and readers.} We use the released SignSparK body and hand rotation features~\cite{low2026} (240 per frame: 10 body and $2\times15$ hand joints) and the public backtranslation readers~\cite{signsparkbt}, one Sign Language Transformer~\cite{camgoz2020} per corpus, with native tokenization, beam search and 300-frame cap. Full test sets contain 642 PHOENIX-2014T~\cite{camgoz2018}, 2,183 How2Sign~\cite{duarte2021} and 1,162 CSL-Daily~\cite{zhou2021} clips; real-motion BLEU is 15.00, 3.48 and 6.89. Left-hand channels, which the released pipeline preprocesses canonically, are unchanged in every attack.
+
+\subsection{Real-input stability controls}\label{sec:signstability}
+We decode the same full How2Sign and CSL-Daily test inputs under canonicalization, Gaussian noise and physical rotation changes, keeping input order, crops, reader weights, vocabularies and beam settings fixed. Every path shares native preprocessing. The reader receives only motion and valid lengths; captions are used only after decoding to compute BLEU. Canonicalization changes 1,438 How2Sign and 464 CSL-Daily hypotheses, while all 642 PHOENIX hypotheses remain unchanged.
+
+\paragraph{Matched input norms.} Each clip uses its actual canonicalization displacement $B=\|\C(x)-x\|_2$ over valid frames. Three fixed Gaussian fields on body/right-hand channels are individually rescaled to $B$, preserving the preprocessed left-hand stream. Their per-clip average is the primary Gaussian control; a secondary field perturbs all 240 channels. No field uses captions or evaluator gradients.
+
+Physical controls rotate both original three-vectors together about a per-joint isotropic axis fixed through time. This changes represented rotations while preserving the vectors' norms and inner product; the left hand remains fixed. The matched control solves a per-clip angle to reach the same $B$: mean angles are $2.623^\circ$ on How2Sign and $5.293^\circ$ on CSL-Daily, with maxima $5.470^\circ$ and $9.756^\circ$. A separate one-degree control has a different input norm. Realized matched-norm errors divided by $\max(B,1)$ are below $5\times10^{-8}$.
+
+\input{table_sign_stability_all}
+\input{table_sign_stability_intervals}
+\input{table_sign_stability_contrasts}
+
+\paragraph{Measurements and uncertainty.} Changed hypotheses compare decoded strings; edit distance uses words on How2Sign and characters with punctuation on CSL-Daily, without reference captions. Normalized edit distance (NED) divides Levenshtein distance by the larger output length, with minimum one; empty outputs remain included. Twenty thousand paired cluster bootstraps resample the 149 official How2Sign video identifiers or CSL-Daily clips, sharing resampling weights across conditions. Primary intervals adjust twenty endpoints (five summarized conditions, two corpora, two measures); canonical-minus-control contrasts adjust a separate eight-endpoint family. These intervals condition on the readers, test inputs and three noise fields rather than estimating model-training uncertainty.
+
+\paragraph{Results.} Canonicalization changes more hypotheses and yields larger NED than same-support Gaussian noise in both corpora; all four adjusted paired contrasts exclude zero. Matched physical changes have larger mean effects. Both How2Sign physical contrasts exclude zero; CSL-Daily's changed-fraction contrast includes zero, while its NED contrast does not. The controls establish encoding sensitivity relative to the tested Gaussian fields, alongside sensitivity to physical changes. They do not imply improved semantic accuracy or that small physical changes are linguistically irrelevant. \Cref{tab:signstabilityall,tab:signstabilityintervals,tab:signstabilitycontrasts} report every condition, the primary intervals and the paired contrasts.
+
+\subsection{Learned and per-clip recodings}
 \paragraph{Learned layers.} The PHOENIX layer (299k parameters) reads a frozen text-to-motion diffusion model's output and the source sentence, encoded by the generator's frozen text encoder, and predicts bounded coefficients with cross-attention and three dilated temporal convolutions. It is trained for 20 epochs on 7,096 training motions with the reader's caption cross-entropy; generator and reader are frozen and final checkpoints are used. The How2Sign and CSL-Daily layers (770k parameters) read real training motion and the reader's own word embeddings. \Cref{tab:layers} reports ablations: without the source sentence the gain is small, and with the loss computed after canonicalization it vanishes, as Eq.~(4) of the main paper predicts.
 
 \begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
@@ -146,5 +195,6 @@ CSL-Daily&text+motion / raw&7.43&0.54 [0.14, 0.97]\\
 \section{Statistics and reproducibility}\label{sec:stats}
 Motion audits use paired $t_{19}$ intervals over 20 native draws, Bonferroni-adjusted within each stated family. Sign-language intervals use 20,000 paired bootstrap resamples that recompute corpus BLEU from sufficient statistics, clustered by the 149 official How2Sign video identifiers; seed sensitivity additionally resamples the three fitting seeds. Corpus BLEU and WER are recomputed with independent implementations. Clip selections, seeds and bounds were fixed before scoring, and no checkpoint was selected on test scores. Experiments ran with PyTorch 2.11 and CUDA 12.8 on one RTX PRO 6000; exact floating-point decoding can depend on hardware.
 
-{\small\bibliographystyle{ieeenat_fullname}\bibliography{references}}
+\clearpage
+{\small\bibliographystyle{ieeenat_fullname_citation}\bibliography{references}}
 \end{document}

@@ -5,7 +5,16 @@ retain their existing module names and relative paths because scripts import
 each other and protocols record source SHA256s. Do not apply a tree-wide
 formatter or run producers against an existing frozen ROOT.
 
-## Current round
+## Latest additions (Oct 14, 2026)
+
+- `run_teaser_attack_calibrated.py`, `verify_teaser_attack.py`: caption-targeted attack on the T2M-GPT checkpoint (Fig. 1, Tab. 2) and an independent recomputation of both checkpoints' scores and geometry.
+- `plot_teaser_calibrated.py`: the Fig. 1 teaser.
+- `run_blackbox_fid_attack.py`: query-only attack (scalar FID per query, no gradients).
+- `analyze_ranking_reversal.py`: paired test of ranking changes between all release pairs.
+
+For a map from each paper result to its scripts, see [docs/reproduction.md](../docs/reproduction.md).
+
+## HumanML3D audit round
 
 - `download_humanml_audit.py`, `download_humanml_mirror.py`: author-linked assets and a transparently recorded processed-data mirror fallback.
 - `prepare_humanml_audit.py`, `generate_humanml_mdm.py`, `run_humanml_audit.py`: fixed HumanML3D/MDM subsets and all target-aware/fixed controls.

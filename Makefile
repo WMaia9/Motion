@@ -1,7 +1,13 @@
 PYTHON ?= $(if $(wildcard venv_mska/bin/python),venv_mska/bin/python,python3)
 PROFILE ?= main
 
-.PHONY: help check summary env vendor vendor-check paper verify-archive test-canonicalize test-matched-blocks test-coherent-blocks test-sign-stability
+.PHONY: help install test check summary env vendor vendor-check paper verify-archive test-canonicalize test-matched-blocks test-coherent-blocks test-sign-stability
+
+install:
+	@$(PYTHON) -m pip install -e .
+
+test:
+	@$(PYTHON) -m unittest discover -s tests -v
 
 help:
 	@$(PYTHON) tools/repository.py help

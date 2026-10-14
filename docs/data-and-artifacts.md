@@ -15,8 +15,8 @@ file with its original full-archive manifest.
 | `reports/<study>/` | Full frozen inputs, fitted checkpoints, arrays, decoded strings and source closures |
 | `external/` | External Git checkouts at pinned revisions |
 | `venv_mska/`, `.venv_signspark_confirmation/` | Separate original Python environments |
-| `paper/cvpr2027_*/` | Immutable original manuscript versions and compiler |
-| `maintenance/` | Local inventories, integrity checks and archived editorial scripts |
+| `paper/cvpr2027_*/`, `paper/archive/` | Earlier manuscript versions, compiler and retired manuscript files |
+| `maintenance/` | Local inventories, integrity checks, archived editorial scripts and internal review notes (`docs_history/`) |
 | `.build/` | Temporary manuscript compilation output |
 
 The preparation pass moved only one-off editorial/cleanup scripts into

@@ -1,0 +1,76 @@
+{
+  "real": {
+    "identity": {
+      "actual_R1": 0.5173828125,
+      "shifted_R1": 0.033203125,
+      "FID": 0.0,
+      "MM": 2.9409022331237793,
+      "canonical_actual_R1": 0.5173828125
+    },
+    "canonical": {
+      "actual_R1": 0.5173828125,
+      "shifted_R1": 0.033203125,
+      "FID": 0.0,
+      "MM": 2.9409022331237793,
+      "canonical_actual_R1": 0.5173828125
+    },
+    "target_caption": {
+      "actual_R1": 0.9978515625,
+      "shifted_R1": 0.025,
+      "FID": 0.3849239347340096,
+      "MM": 0.48701149225234985,
+      "canonical_actual_R1": 0.5173828125
+    },
+    "shifted_caption": {
+      "actual_R1": 0.0248046875,
+      "shifted_R1": 0.951953125,
+      "FID": 0.5320685833115745,
+      "MM": 9.432186126708984,
+      "canonical_actual_R1": 0.5173828125
+    },
+    "canonical_reader_shifted_caption": {
+      "actual_R1": 0.5173828125,
+      "shifted_R1": 0.033203125,
+      "FID": 9.633335743353469e-07,
+      "MM": 2.940977096557617,
+      "canonical_actual_R1": 0.5173828125
+    }
+  },
+  "mdm": {
+    "identity": {
+      "actual_R1": 0.4572265625,
+      "shifted_R1": 0.027734375,
+      "FID": 0.4972790257896852,
+      "MM": 3.350289821624756,
+      "canonical_actual_R1": 0.458203125
+    },
+    "canonical": {
+      "actual_R1": 0.458203125,
+      "shifted_R1": 0.028125,
+      "FID": 0.49374494395312873,
+      "MM": 3.348867654800415,
+      "canonical_actual_R1": 0.458203125
+    },
+    "target_caption": {
+      "actual_R1": 0.9974609375,
+      "shifted_R1": 0.025,
+      "FID": 0.392947893547722,
+      "MM": 0.5190104246139526,
+      "canonical_actual_R1": 0.458203125
+    },
+    "shifted_caption": {
+      "actual_R1": 0.0267578125,
+      "shifted_R1": 0.916015625,
+      "FID": 0.5637268923138564,
+      "MM": 9.256861686706543,
+      "canonical_actual_R1": 0.458203125
+    },
+    "canonical_reader_shifted_caption": {
+      "actual_R1": 0.4572265625,
+      "shifted_R1": 0.027734375,
+      "FID": 0.4972956710835977,
+      "MM": 3.3502957820892334,
+      "canonical_actual_R1": 0.458203125
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+ "clip_id": "004652",
+ "caption": "a person walks straight forward.",
+ "frames": [
+  30,
+  75,
+  120
+ ],
+ "joint_index_in_rotation_block": 12,
+ "frame_for_vectors": 75,
+ "R1": {
+  "original": 0.4572265625,
+  "rewritten": 0.9974609375,
+  "rewritten_canonicalized": 0.458203125
+ },
+ "positions_bitwise_equal": true,
+ "canonical_axes_max_diff": 4.2095585905954636e-09,
+ "vectors_original": [
+  [
+   0.515954315662384,
+   0.8565091490745544,
+   -0.032673388719558716
+  ],
+  [
+   -0.862034261226654,
+   0.513420820236206,
+   -0.014089614152908325
+  ]
+ ],
+ "vectors_rewritten": [
+  [
+   0.4826468527317047,
+   0.8012171387672424,
+   -0.03056415729224682
+  ],
+  [
+   -0.8581265211105347,
+   0.7776157855987549,
+   -0.023439493030309677
+  ]
+ ]
+}

@@ -2,7 +2,7 @@
   "export_date": "2026-10-14",
   "scope": "aggregate metadata only; full archive data and weights are not in Git",
   "full_manifests_are_inventories_not_complete_exports": true,
-  "report_count": 61,
+  "report_count": 64,
   "files": [
     {
       "path": "csl_bleu_recheck_20261011/verification.json",
@@ -2601,6 +2601,72 @@
       "sha256": "2878564592ea400e2ee9c9e653a28d7a996e53c2088962a0842926494cadd2b4",
       "original_path": "reports/cvpr_tmr_audit_20261013/native_contract.json",
       "original_manifest_sha256": "3cbab5882f6811065aae6ac8cc953974b83cb03e0c0fefe96c9aab0da78acc0c"
+    },
+    {
+      "path": "cvpr_ranking_reversal_20261014/analysis.json",
+      "sha256": "81164cfb820184007b4076c05cfedf8bf4c43bac279601ac2a05a3692c2ef6f0",
+      "original_path": "reports/cvpr_ranking_reversal_20261014/analysis.json",
+      "original_manifest_sha256": "80d5db22b7725bee8ec33a49b87b6ada9be80c8d66ae2d3c1cca7ccea5a30cd8"
+    },
+    {
+      "path": "cvpr_ranking_reversal_20261014/README.md",
+      "sha256": "8a420ae3e4acfd415d6780d691d87c5ee2aef95636f8eae503d15065b3d00951",
+      "original_path": "reports/cvpr_ranking_reversal_20261014/README.md",
+      "original_manifest_sha256": "80d5db22b7725bee8ec33a49b87b6ada9be80c8d66ae2d3c1cca7ccea5a30cd8"
+    },
+    {
+      "path": "cvpr_blackbox_attack_20261014/protocol.json",
+      "sha256": "e0a80b99f85c931fde53188ed96882ff7a7c825c8fe20593669fd1fae5065c04",
+      "original_path": "reports/cvpr_blackbox_attack_20261014/protocol.json",
+      "original_manifest_sha256": "353e43177fa61ee91d6f12af3a53fd2249f40989d06abfc8030d11eb48aeb861"
+    },
+    {
+      "path": "cvpr_blackbox_attack_20261014/results.json",
+      "sha256": "43196a3c0ed9c2a4a10473d3f1eda2518cf13492da9d27b3a602ec65a9692b72",
+      "original_path": "reports/cvpr_blackbox_attack_20261014/results.json",
+      "original_manifest_sha256": "353e43177fa61ee91d6f12af3a53fd2249f40989d06abfc8030d11eb48aeb861"
+    },
+    {
+      "path": "cvpr_blackbox_attack_20261014/complete.json",
+      "sha256": "f46db8f45bdc10bc8d26ba58bdf4bd876b558940ee47c775d79f8a3c629817eb",
+      "original_path": "reports/cvpr_blackbox_attack_20261014/complete.json",
+      "original_manifest_sha256": "353e43177fa61ee91d6f12af3a53fd2249f40989d06abfc8030d11eb48aeb861"
+    },
+    {
+      "path": "cvpr_blackbox_attack_20261014/README.md",
+      "sha256": "0d92dcc69db26f10337de8ce851105ebc51cf96fd3985507e306e3e69d253dde",
+      "original_path": "reports/cvpr_blackbox_attack_20261014/README.md",
+      "original_manifest_sha256": "353e43177fa61ee91d6f12af3a53fd2249f40989d06abfc8030d11eb48aeb861"
+    },
+    {
+      "path": "cvpr_teaser_audit_20261014/analysis.json",
+      "sha256": "7c2d30368e65d29cf673e854d951c4553c352fd60741e851346529bf40bbf22a",
+      "original_path": "reports/cvpr_teaser_audit_20261014/analysis.json",
+      "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
+    },
+    {
+      "path": "cvpr_teaser_audit_20261014/teaser_evidence.json",
+      "sha256": "e53b375ae51ab0b8ac74557bb07c8db302f36fa1c10637f3b81a46828e517cbd",
+      "original_path": "reports/cvpr_teaser_audit_20261014/teaser_evidence.json",
+      "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
+    },
+    {
+      "path": "cvpr_teaser_audit_20261014/calibrated_attack/protocol.json",
+      "sha256": "f96bc765c896bd33db59646d71d93f12cbf458628c8e54fdbb8365f0b7b153c2",
+      "original_path": "reports/cvpr_teaser_audit_20261014/calibrated_attack/protocol.json",
+      "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
+    },
+    {
+      "path": "cvpr_teaser_audit_20261014/calibrated_attack/results.json",
+      "sha256": "c110f31eb48e1ae889ac956a2c9e129681afce2a31176a41f9f5d91088b4b497",
+      "original_path": "reports/cvpr_teaser_audit_20261014/calibrated_attack/results.json",
+      "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
+    },
+    {
+      "path": "cvpr_teaser_audit_20261014/calibrated_attack/complete.json",
+      "sha256": "517c4337dc72fb19017cb4d837fcb8319fc674057a1d54052fadfee9ed5e4616",
+      "original_path": "reports/cvpr_teaser_audit_20261014/calibrated_attack/complete.json",
+      "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
     }
   ]
 }

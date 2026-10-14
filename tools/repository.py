@@ -13,11 +13,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / 'paper/current'
-ALLOWED_DIRS = {'.github', 'configs', 'docs', 'requirements', 'results', 'scripts', 'tools'}
+ALLOWED_DIRS = {'.github', 'canon6d', 'configs', 'docs', 'requirements', 'results', 'scripts', 'tests', 'tools'}
 ALLOWED_FILES = {
     '.gitignore', '.gitattributes', '.editorconfig', 'Makefile', 'README.md',
-    'CURRENT_RESEARCH.md', 'RESEARCH_STATUS_AND_NEXT_EXPERIMENTS.md',
-    'CONTRIBUTING.md', 'NOTICE.md',
+    'CONTRIBUTING.md', 'NOTICE.md', 'LICENSE', 'pyproject.toml',
 }
 FORBIDDEN_SUFFIXES = {
     '.pt', '.pth', '.ckpt', '.npy', '.npz', '.pkl', '.pickle', '.lmdb',
@@ -341,7 +340,11 @@ def build_paper() -> None:
     for name in ['main', 'supplement']:
         subprocess.run([compiler, '--keep-logs', '--outdir', str(output),
                         str(PAPER / (name + '.tex'))], cwd=ROOT, check=True)
-    print('Built PDFs in .build/paper; reviewed PDFs and frozen evidence were preserved.')
+    delivery = PAPER / 'reviewed'
+    delivery.mkdir(parents=True, exist_ok=True)
+    for name in ['main', 'supplement']:
+        shutil.copy2(output / (name + '.pdf'), delivery / (name + '.pdf'))
+    print('Updated paper/current/reviewed/main.pdf and paper/current/reviewed/supplement.pdf.')
 
 
 def verify_archive() -> None:
@@ -357,12 +360,14 @@ def _no_bytecode_environment() -> dict[str, str]:
 
 
 def help_text() -> None:
-    print('make check          Validate the lightweight Git tree and evidence hashes\n'
+    print('make install        Install the canon6d library (editable)\n'
+          'make test           Run the canon6d contract tests\n'
+          'make check          Validate the lightweight Git tree and evidence hashes\n'
           'make summary        Show aggregate TEST results, no data/GPU needed\n'
           'make env            Check observed main dependency versions\n'
           'make vendor-check   Check pinned external repositories\n'
           'make vendor         Clone missing pinned external repositories\n'
-          'make paper          Build current LaTeX into ignored .build/paper\n'
+          'make paper          Update the PDFs in paper/current/reviewed\n'
           'make test-canonicalize Test portable NumPy rotation consistency\n'
           'make test-matched-blocks Check equal-norm geometry/protected frames\n'
           'make test-coherent-blocks Check time-fixed directions and equal norms\n'

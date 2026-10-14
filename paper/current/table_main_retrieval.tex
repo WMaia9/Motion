@@ -1,12 +1,12 @@
 \begin{table}[t]
 \centering\footnotesize\setlength{\tabcolsep}{4.5pt}
-\caption{\textbf{Retrieval follows the encoding, not the movement.} R-Precision (top-1) on the same 1,024 test clips per source, before and after a caption-targeted recoding (80 steps, bound 0.35). \emph{Shifted}: the target is another clip's caption and R1 is measured against it; its \emph{before} value is the canonical-gradient control, which leaves the input unchanged. Canonicalization maps attacked and unattacked inputs to the same scores in every row.}\label{tab:retrieval}
+\caption{\textbf{Retrieval follows the encoding, not the movement.} Top-1 R-Precision on the same 1,024 test motions before and after a caption-targeted rewriting. \emph{True caption}: the target is the motion's own caption. \emph{Other caption}: the target is another clip's caption and R-Precision is measured against it; ``before'' means no attack. Canonicalized inputs return the original scores in every row. T2M uses the checkpoint released with T2M-GPT.}\label{tab:retrieval}
 \begin{tabular}{@{}llrrrr@{}}\toprule
-&&\multicolumn{2}{c}{Actual caption}&\multicolumn{2}{c}{Shifted caption}\\
+&&\multicolumn{2}{c}{True caption}&\multicolumn{2}{c}{Other caption}\\
 \cmidrule(lr){3-4}\cmidrule(l){5-6}
 Evaluator&Motion&Before&After&Before&After\\\midrule
-T2M~\cite{guo2022}&MDM&0.397&0.993&0.033&0.788\\
-T2M~\cite{guo2022}&Real&0.462&0.996&0.028&0.839\\
+T2M~\cite{guo2022}&MDM&0.457&0.997&0.028&0.916\\
+T2M~\cite{guo2022}&Real&0.517&0.998&0.033&0.952\\
 TMR~\cite{tmr2023}&MDM&0.578&0.993&0.017&0.946\\
 TMR~\cite{tmr2023}&Real&0.688&1.000&0.010&0.968\\
 \bottomrule\end{tabular}\end{table}

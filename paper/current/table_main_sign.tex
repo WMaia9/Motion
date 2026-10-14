@@ -1,8 +1,8 @@
 \begin{table}[t]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
-\caption{\textbf{Backtranslation changes while the signing does not.} BLEU-4 on full test sets for a learned recoding layer (mean of three fitting seeds; paired 95\% interval). The canonical reader's hypotheses are identical before and after the layer. CSL-Daily BLEU is character-level.}\label{tab:sign}
+\caption{\textbf{The backtranslation score rises while the signing does not change.} BLEU-4 on full test sets (higher is better). \emph{Raw}: reader on the original features; \emph{+Layer}: after the learned rewriting layer; \emph{Canonical}: reader on canonicalized input, which is identical before and after the layer. Gain is the mean of three seeds with its paired 95\% interval. CSL-Daily BLEU is character-level. Canonical need not equal Raw on real motion, because real sign features are not canonical; invariance is not the same as preserving the original score.}\label{tab:sign}
 \begin{tabular}{@{}llrrrr@{}}\toprule
-Corpus&Motion&Raw&+Layer&$\C$&Gain [95\% CI]\\\midrule
+Corpus&Motion&Raw&+Layer&Canonical&Gain [95\% CI]\\\midrule
 PHOENIX&Generated&6.39&15.21&6.39&8.81 [7.82, 9.87]\\
 How2Sign&Real&3.48&6.11&3.48&2.64 [2.27, 3.03]\\
 CSL-Daily&Real&6.89&7.43&7.07&0.54 [0.14, 0.97]\\
