@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "all_source_file_and_manifest_hashes_verified": true,
+  "all_hypothesis_pairs_counted": 3987,
+  "all_six_corpus_BLEUs_recomputed_from_saved_strings": true,
+  "source_sha256": "0a9100c059ccedcebd9cb1dec69f94818c4722ca556a38d2a7fc6bbfcfb2c3b1"
+}

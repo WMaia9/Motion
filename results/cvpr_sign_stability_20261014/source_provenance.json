@@ -1,0 +1,17 @@
+{
+  "import_closure": [
+    "analyze_sign_stability",
+    "freeze_motion_release_studies",
+    "freeze_sign_stability",
+    "motion_release_audit_common",
+    "restore_sign_natural_evidence",
+    "run_sign_stability_audit",
+    "run_signspark_geometry_dev",
+    "sign_stability_controls",
+    "test_sign_stability_controls",
+    "verify_sign_stability"
+  ],
+  "registered_sources_unchanged": true,
+  "independent_verifier_sha256": "10e5a938125a911eb0ccc1af1131473191bd1681dc42acb7df2a1b8c70162979",
+  "freeze_source_sha256": "7216f28e325d492d42c0f2f651af8f7d3fa5dba603a9ffcd6e81cd412dab0f4c"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "previous_manifest_files_unchanged": true,
+  "prior_manifest_count": 59,
+  "new_study_file_count": 64,
+  "all_new_file_hashes_checked": true,
+  "new_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100",
+  "historical_scope": "prior manifest boundaries checked; earlier full-file validations retained"
+}

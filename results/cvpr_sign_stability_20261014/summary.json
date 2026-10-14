@@ -1,0 +1,8 @@
+{
+  "scope": "real sign-decoder response to canonicalization, norm-matched Gaussian and gauge-preserving physical controls",
+  "all26760_full_TEST_decodes": true,
+  "same_raw_and_canonical_strings_as_prior_frozen_results": true,
+  "all28_adjusted_intervals_verified": true,
+  "no_general_encoding_specificity_or_human_semantic_accuracy_claim": true,
+  "no_training_new_generators_or_reward_fits": true
+}

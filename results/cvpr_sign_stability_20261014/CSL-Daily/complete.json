@@ -1,0 +1,5 @@
+{
+  "all8_conditions_full_nativeTEST": true,
+  "raw_and_canonical_hypotheses_match_frozen_baselines": true,
+  "no_inference_caption_input": true
+}

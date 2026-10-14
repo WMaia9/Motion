@@ -1,0 +1,8 @@
+{
+  "beam_size": 3,
+  "beam_alpha": -1,
+  "max_output_len": 30,
+  "eval": true,
+  "recognition": false,
+  "no_reference_or_caption_input": true
+}

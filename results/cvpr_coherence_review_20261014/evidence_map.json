@@ -1,0 +1,16 @@
+{
+  "parent_delivery": "reports/cvpr_mardm_followup_20261013",
+  "parent_manifest_sha256": "6845d3af5eadebb9de5683f9920d904605bed4173ad08661331468063c76ece5",
+  "new_studies": {
+    "reports/cvpr_coherent_blocks_20261014": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6",
+    "reports/cvpr_sign_natural_restoration_20261014": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+  },
+  "presentation_inputs": {
+    "reports/cvpr_coherent_blocks_20261014/guo/analysis.json": "c1220c6be90d2fd0ec24fe7c77a84f70eb8eaa787a6463ff289f49ba578ff9e8",
+    "reports/cvpr_coherent_blocks_20261014/tmr/analysis.json": "de7e9f47da69f16054907aa35d05341a998198c3ff0ee0d4553df2edda8da954",
+    "reports/cvpr_matched_blocks_20261013/guo/analysis.json": "5508a09a5251f7e842a66f31827e17230ad0bb73f45a3ddd661826a382837228",
+    "reports/cvpr_matched_blocks_20261013/tmr/analysis.json": "226aae5400abe644c614ce371fcfcef3bd24f9e03d210f9d870dcdc78d5ae3eb",
+    "reports/cvpr_sign_natural_restoration_20261014/analysis.json": "9baa5e95560bdff960f0468e956bbd6368feb7e22f1eba230099b344e95cf14f"
+  },
+  "all_prior_outcomes_retained_in_main_or_supplement": true
+}

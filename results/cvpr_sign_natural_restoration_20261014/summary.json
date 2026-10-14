@@ -1,0 +1,30 @@
+{
+  "scope": "real native-preprocessed sign inputs, no attack or learned layer",
+  "results": {
+    "PHOENIX-2014T": {
+      "clips": 642,
+      "changed_hypotheses": 0,
+      "BLEU4": {
+        "raw": 14.999500446009456,
+        "canonical": 14.999500446009456
+      }
+    },
+    "How2Sign": {
+      "clips": 2183,
+      "changed_hypotheses": 1438,
+      "BLEU4": {
+        "raw": 3.4778651049853475,
+        "canonical": 3.484024341098461
+      }
+    },
+    "CSL-Daily": {
+      "clips": 1162,
+      "changed_hypotheses": 464,
+      "BLEU4": {
+        "raw": 6.890703639155905,
+        "canonical": 7.0661958062795645
+      }
+    }
+  },
+  "no_new_decode_training_or_layer": true
+}

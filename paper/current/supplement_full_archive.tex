@@ -1,0 +1,393 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[review]{cvpr}
+\usepackage[T1]{fontenc}\usepackage{xurl}
+\usepackage{graphicx,amsmath,amssymb,booktabs}
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\hfuzz=0 pt\vfuzz=0 pt
+\def\paperID{DRAFT}\def\confName{CVPR}\def\confYear{2027}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\R}{\mathbb{R}}
+\input{new_results_macros}
+\title{Same Motion, Different Scores:\\ Supplementary Material}
+\author{Anonymous authors}
+\begin{document}\raggedbottom\maketitle
+\setcounter{section}{0}\renewcommand{\thesection}{S\arabic{section}}
+
+This supplement gives the equivalence proof and numerical checks; equal-budget block controls, the natural-output mechanism analysis and the essential-feature comparison; all HumanML3D/KIT-ML release audits, TMR results, physical calibration and caption-blind transfer; the HumanML3D targeted and caption-blind protocols; and the sign-language data, learned layers, adaptive attacks, reader adaptation and statistics. Each study lists all tested bounds, directions and controls.
+
+\section{Equivalence, numerical checks and constrained geometry}
+For nonzero $a$ and noncollinear $b$, set $u=a/\|a\|$, $b_\perp=b-(u^Tb)u$, $v=b_\perp/\|b_\perp\|$. Under $a'=\alpha a$, $b'=\beta b+\eta a$ with positive $\alpha,\beta$, the perpendicular vector is $\beta b_\perp$, so the physical matrix $[u;v;u\times v]$ is fixed. Conversely, every feature in this fiber has unique $a=\rho u$, $b=\sigma v+\tau u$, with $\rho,\sigma>0$. This established property of the 6D converter~\cite{zhou2019} supplies the intervention, not a new rotation representation.
+
+Composition of parameters is
+\begin{equation}
+(\alpha_2\alpha_1,\ \beta_2\beta_1,\ \beta_2\eta_1+\eta_2\alpha_1).
+\end{equation}
+The inverse is $(\alpha^{-1},\beta^{-1},-\eta/(\alpha\beta))$. Negative scales can alter rows and are excluded. Zero/collinear features lie outside the domain. The canonicalization $C (a,b)=(u,v)$ is idempotent and constant on fibers. Its derivative vanishes along $(a,0),(0,b),(0,a)$. A 4,096-sample double-precision test gives reconstruction error $4.61\times 10^{-15}$, canonical invariance $4.89\times 10^{-15}$ and directional derivatives below $3\times 10^{-14}$. Four degenerate cases are rejected. Independent normalization agrees with the official converter to $4.45\times 10^{-16}$.
+
+Canonical input equality guarantees deterministic predictions or identical stochastic output distributions. Tiny floating-point changes can affect a nearly tied decoder. Every experimental hypothesis-equality claim is therefore checked against saved strings separately from matrix equivalence. Relative-rotation angles use SciPy rotation magnitude in double precision rather than trace/arccos near zero. Source/coefficient/output arrays allow independent reconstruction.
+
+
+\section{Exact equivalence and equal-budget block sensitivity}
+MARDM's~\cite{mardm2025} additive/replacement noise experiment compares its essential and redundant feature groups. For HumanML3D, these have 67 and 196 dimensions: root/local positions versus 126 rotation, 66 velocity and four contact values. Noise in the redundant group need not preserve represented rotations. The checked arXiv revision includes Appendices A--G but does not specify the Table 3 noise amplitude there. Our test addresses a different question with explicit per-clip total norm: how do equal-budget interventions inside and outside the rotation equivalence class affect the same frozen readers?
+
+We use all twenty saved real-motion cohorts, each with 4,640 native entries and unchanged captions, crop lengths, masks and 32-candidate groups. For reader $r$ with its fixed native standard deviations $D_r$, the budget is
+\begin{equation}
+\left\|D_r^{-1}(y-x)\right\|_2=\kappa\sqrt L,\qquad\kappa\in\{1,3\}.
+\end{equation}
+The norm sums all valid frames and all 263 feature coordinates before feature selection, and is matched separately for every clip. Normalizers differ across readers, so a numerical radius is not interchangeable between T2M and TMR. Matching per-coordinate noise variance instead would allocate different total norm to blocks of different dimensions.
+
+\paragraph{Interventions.}
+Three null conditions use positive scales and shear: fixed coefficient directions $(1,-1,1)$ and its negative, and independent Gaussian coefficient directions per joint/frame. A per-clip scalar is solved from the input-space norm without evaluator scores. The rotation control uses independent isotropic axes, local SO(3) changes and canonical 6D output; its angle is solved from the same norm, with a maximum of $\pi/2$. Other block-only controls add Gaussian fields to velocities 193:259, contacts 259:263 and positions 4:67, holding root channels and all remaining blocks fixed. Registered seeds share fields across radii; padding and protected channels are restored bitwise.
+
+the T2M evaluator's native movement encoder drops contacts, so its consumed contact budget is zero. This is a feature-selection negative control, not evidence that its learned weights ignore a consumed input. TMR reads all 263 dimensions. Continuous contact perturbations may leave the binary domain; other non-null controls can be inconsistent with unchanged blocks. These are feature-input ablations, not coherent physical-motion perturbations. The separate angular calibration jointly updates the relevant feature blocks.
+
+\input{table_matched_blocks_full}
+\paragraph{Endpoints and uncertainty.}
+T2M reports FID against the same original real cohort, R1 and MM-distance; TMR reports native cosine retrieval and matched cosine. Paired-reference T2M FID has a zero baseline by construction. Twenty-draw paired $t_{19}$ intervals adjust 28 primary endpoints per reader, covering seven conditions, two radii and two scores. Null recodings additionally pass through canonicalization; their embedding and score closure is a numerical diagnostic. Fixed signs, random controls and both radii remain reported. Equal norm does not equalize physical information, direction, temporal coherence or neural sensitivity.
+
+\paragraph{Independent verification.}
+Every output's norm is checked during production. Independent checks recompute every saved metric and adjusted interval, check all per-clip norm arrays, and reconstruct the first eight raw fixtures of every condition/draw using separate formulas and SciPy rotations. They compare norms, represented matrices, native forward embeddings, protected channels and padding. Null conditions additionally receive one native FK pair per condition/draw. The checks do not claim a complete native geometry replay of unsaved arrays; protocols and scalar/seed records permit their reconstruction.
+
+
+\section{Fixed-direction controls at equal numerical budget}
+Equal total L2 does not match temporal structure. We supplement the original random block interventions with fixed directions in each non-null block, using the same twenty saved cohorts, crop lengths, masks, normalization, reader weights and reference embeddings. Both signs and both radii are retained, without captions, gradients or score-selected directions.
+
+For positions and velocities, the local unit direction $(1,1,1)/\sqrt3$ is repeated across joints and valid frames in unnormalized coordinates. Contacts use four equal entries. Rotations are right-multiplied by a local SO(3) change around the same signed axis, with a per-clip angle solved from the input norm and bounded by $\pi/2$. The directions are constant in time; the remaining blocks are protected. This is temporal coherence of the intervention, not consistency of an entire motion-feature vector. In particular, position changes do not update velocities, and rotation changes do not update positions. Continuous contact offsets can leave their binary domain; T2M does not consume that block.
+
+The norm remains $\|D_r^{-1}(y-x)\|_2=\kappa\sqrt L$ per clip, before feature selection. Float32 contact offsets have coarser relative quantization on binary values: their realized norm tolerance is $2\times10^{-5}$, versus $5\times10^{-6}$ elsewhere. These limits concern relative input-norm error, not evaluator scores. The chosen directions and both budgets are fixed independently of the metric.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/matched_blocks.pdf}
+\caption{\textbf{Equal-budget controls for every feature block.} Per-clip normalized $L_2$ change $\kappa\sqrt L$ with $\kappa=3$, using each evaluator's own normalization; random and both fixed signs over twenty draws. Only the fiber interventions preserve rotations and every other block; other block-only controls can be physically inconsistent with the unchanged blocks. The T2M evaluator excludes contacts. The axis label ``Guo'' denotes the T2M evaluator.}\label{fig:allblocks}\end{figure*}
+\input{table_coherent_guo_fixed}
+\input{table_coherent_tmr_fixed}
+\input{table_coherent_guo_contrast}
+\input{table_coherent_tmr_contrast}
+
+Each reader's primary family contains 32 endpoints: four blocks, two signs, two radii and two scores. Separate secondary 32-endpoint families compare each fixed intervention with its original random block control on the same cohorts. Paired $t_{19}$ intervals use Bonferroni adjustment within each family. The historical null/random family remains 28 endpoints; the two phases are not presented as one prospective test. Matched-reference real-data FID starts at zero by construction. Numerically negligible nonzero contact FID can arise in the distance computation despite bitwise-identical T2M embeddings.
+
+All metric cells, primary intervals and fixed-minus-random contrasts are recomputed independently. Every saved per-clip norm is checked, and the first eight fixtures per condition/draw are reconstructed using separate formulas and SciPy rotations. Native forward checks verify the saved embeddings, including the T2M evaluator's caption/length reordering. Protected channels and padding are compared bitwise; the non-null rotation controls must change represented matrices. These checks do not claim complete geometry replay of unsaved arrays.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/matched_blocks_random.pdf}
+\caption{\textbf{The original random/null controls, both radii.} All twenty draws; the historical 28-endpoint intervals remain unchanged. Here $\kappa$ denotes the numerical budget and $\rho$ remains the positive scale in the rotation fiber. Random position/velocity noise has a larger T2M FID effect than random fiber coefficients at the larger budget. The axis label ``Guo'' denotes the T2M evaluator. }\label{fig:randomblocks}
+\end{figure*}
+
+
+\section{Directional comparison within the rotation block}
+For $\kappa=3$, fixed positive/negative fiber directions have mean T2M FID changes 0.082295/0.116879, versus 0.010609/0.015118 for fixed physical-rotation directions. With the same sign, the ratios of these mean changes are 7.757 and 7.731. Both experiments use the same 126-dimensional rotation block, normalizer, real cohorts and matched per-clip L2. This is a descriptive arithmetic comparison of frozen results, not a new prospective hypothesis test or a universal ranking of rotation directions. In particular, random fiber coefficients produce less FID change than the original random physical-rotation control.
+
+
+
+\section{Native HumanML3D released-output audit}
+\paragraph{Native loader, repeats and sample counts.}
+This audit uses the public Text2MotionDatasetV2, including subcaption segments, random caption choice, and native single/double crops to multiples of four. There are 4,648 cached test entries and 4,640 after dropping the incomplete 32-item batch. Entry counts include segments and mirrored motions, rather than 4,640 independent recordings. Twenty seeds 1234--1253 control caption/crop draws; independent full real-reference draws use seed plus 100,000. Generation uses seed plus 200,000. MDM's native nominal 1,000 limit emits 1,024 outputs; other methods emit 4,640. Metrics use the same 32-candidate batches in raw/canonical comparisons. Unchanged outputs, captions and reference embeddings are shared between each pair.
+
+\paragraph{Five public methods and inference parity.}
+MDM50~\cite{tevet2023} uses 50 native steps, CFG 2.5 and CLIP-B/32. MLD~\cite{mld2023} uses DDIM 50, CFG 7.5 and CLIP-L/14; MotionLCM-v1~\cite{motionlcm2024} uses one LCM step, CFG 7.5 and Sentence-T5-large. T2M-GPT~\cite{t2mgpt2023} uses native categorical/EOS sampling, 512 VQ entries, block length 51 and the released net\_last decoder. Original T2M~\cite{guo2022} uses its recurrent prior and native duration estimator. Native component classes and strict states are retained. Throughput batching grows from 32 to 128 for MLD and GPT; the random draw order can differ, while evaluation batches remain 32. T2M batches share both motion and caption length because its attention does not mask padded caption positions. All valid repetitions remain included; no settings were chosen by test scores.
+
+Synthetic native/batched checks give exact decoder/reverse agreement for MLD/LCM, at most $6.5\times 10^{-5}$ normalized mean-prior difference for the correct T2M grouping, and $5.7\times 10^{-4}$ for GPT convolution decoding. Batched floating-point arithmetic is not claimed bit-identical. Pinned author code, weight hashes, executed source versions and parity fixtures are included with the artifacts.
+
+\paragraph{Metric uncertainty and reader replication.}
+The primary reader is the official MDM-linked T2M evaluator. The official T2M-GPT download contains distinct encoder weights of the same architecture; native normalization arrays are equal. The secondary reader reuses every saved output and independent reference draw. Native mean intervals use $1.96\,\mathrm{std}_{0}/\sqrt{20}$. Paired gap intervals use $t_{19}$ with ten FID/R1 comparisons per reader; MM-distance is a separate five-comparison family. The two readers' families are reported separately. The repetitions describe generation and native draw variability on this public split, not independent corpora or pretraining uncertainty. No exact published-score reproduction is claimed.
+
+\input{table_motion_release_readers}
+All five primary FID gap intervals exclude zero. Primary raw/canonical mean ordering is T2M-GPT, MLD, MDM, MotionLCM, T2M. Four secondary FID intervals exclude zero; MLD is inconclusive and T2M's gap changes direction. Secondary mean MLD/MotionLCM order differs across encodings by a small amount, but reliable ranking reversal was not established. All secondary R1 gap intervals include zero. This is score sensitivity across official weights, not a claim that canonicalization always improves metrics.
+
+\paragraph{Full native fixed controls and physical verification.}
+Across 20 full reference repetitions, mean real-motion FID is 0.000990 before recoding and 0.000990 after canonicalization. Fixed directional $+0.1/-0.1$ gives 0.06129/0.08336, $+0.35/-0.35$ gives 2.00261/3.63852, and random 0.35 gives 0.02628. The real draws are independent in crop/caption order, explaining the nonzero baseline; these numbers are distinct from the paired-subset FID-zero controls below. Strong directional shifts do not imply natural prevalence at that magnitude.
+
+Independent native conversion checks all 391,680 release raw/canonical pairs; maximum double-precision angle is $3.6\times 10^{-6}$ degrees, while the largest native float32 matrix residual is $2.0\times 10^{-5}$ for near-degenerate features. Every nonrotation channel is bitwise unchanged. Two native FK pairs per release/repetition give 200 sampled pairs and maximum position error $9.6\times 10^{-7}$. The complete saved-embedding FID/R1 endpoints are recomputed independently. Real fixed-control geometry receives additional native checks; it is not inferred from embedding equality.
+
+
+\section{Additional public releases and native KIT-ML}
+\input{table_additional_motion_full}
+MoMask~\cite{momask2024} uses the released residual VQ model, latest masked-transformer checkpoint and best-FID residual checkpoint. Inference uses 18 mask steps, CFG 4, temperature 1, top-k threshold 0.9, no Gumbel sampling, then residual CFG 5. The native decoder and its normalization remain unchanged. Prescribed durations are supplied; future source poses are not inputs. Both HumanML3D and native KIT use the full eligible test cohorts after dropping the incomplete 32-item batch, with 20 draws.
+
+MotionDiffuse~\cite{motiondiffuse2024} uses the author encoder and normalization, native linear 1000-step DDPM, epsilon prediction and fixed-small variance. Prescribed durations follow the native 40-frame HumanML/24-frame KIT minimum. An elementwise-equivalent device mask removes the upstream Python frame loop; mask/full-forward equality is checked. Compilation retains all native layers, weights and float32 operations with TF32 disabled. Operator fusion changes rounding slightly, so compiled/eager parity residuals are reported, rather than claiming bit identity. Inference batches are 128; HumanML outputs are capped at 1,024 with a full reference, and KIT uses the full 704-output cohort. These are paired consistency audits, not an exact reproduction of published scores.
+
+DiP~\cite{closd2025} uses the no-target author checkpoint at 200,000 steps with EMA, DistilBERT and native autoregressive sampling: context 20, prediction 40, 10 diffusion steps, CFG 7.5. The first 20 frames of each saved cropped source motion initialize its prefix, excluded from the generated output. No future source frames are passed. This prefix-conditioned setting differs from text-only generation and is not a claim that DiP constitutes an unrelated MDM architecture. Twenty 1,024-output draws use full real references.
+
+Native KIT~\cite{kit2016} uses the official processed MMM archive and its 251-feature T2M evaluator. Its 20 local 6D rotations occupy 64:184; the evaluator excludes the final four contact channels. Its real test reference and outputs contain 704 native entries per draw, including segment annotations. The separate TMR KIT AMASS model consumes 263 features and is incompatible with this archive. It is not substituted or padded to accept 251 features.
+
+All raw/canonical pairs share emitted arrays, captions, masks, candidate groups and reference. Additional-release uncertainty is analyzed jointly within its comparison family; absolute signed differences remain separate from published mean margins. Sources, archive hashes, native-component checks and complete output arrays accompany the artifacts. Native KIT coordinates differ in scale from HumanML meters, so its FK residuals are reported in native units and relative to body height; KIT inputs are never rescaled before evaluation.
+
+
+\section{Published-score scale context}
+\input{table_published_scale}
+Published FID margins contextualize the absolute representation changes (\cref{tab:publishedscale}). They estimate uncertainty of different means under different protocols; they are not uncertainties of our paired gaps. No cross-paper significance test follows. The T2M-GPT uniform-corruption, MLD and one-step MotionLCM rows come from their respective papers. T2M uses its estimated-length result, $1.087\pm0.021$; the separate real-length row is $1.067\pm0.002$.
+
+MoMask uses the final CVPR table, including KIT $0.204\pm0.011$ rather than the abstract's 0.228. MotionDiffuse scale values come from the 2022 author preprint associated with its public release (\url{https://arxiv.org/abs/2208.15001}); the bibliography cites its journal publication. DiP's corrected author table reports $0.228\pm0.027$. Our checkpoint and prefix setting are recorded separately. These numerical sources provide scale context, not proof that our inference settings reproduce each published experiment.
+
+MDM50's corrected $0.489\pm0.047$ comes from the authors' maintained results rather than the original 1000-step paper row. The pinned release includes the result at \url{https://github.com/GuyTevet/motion-diffusion-model/blob/ef8edce6a53c6ab19e53b4d4dcf15bc0bc60a778/assets/fixed_results.tex}; its revision and fingerprint are recorded with the artifacts. We do not mix the old paper margin with this 50-step checkpoint or interpret the published score as a reproduction target for our capped-output audit.
+
+
+\section{Natural rotation deviations and model-family mechanism}
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/rotation_mechanism.pdf}
+\caption{\textbf{Natural rotation deviations do not impose a uniform penalty.} Signed raw-minus-canonical T2M FID gaps against valid-frame raw-to-canonical rotation RMS for all eight HumanML3D release settings, with paired family-adjusted intervals. Blue: diffusion/consistency; orange: VQ; gray: VAE; green: prefix-conditioned. Family and conditioning are confounded; this is descriptive.}\label{fig:mechanism}\end{figure}
+
+All eight HumanML3D releases appear in the mechanism analysis. Four unconditioned diffusion/consistency releases are compared descriptively with two VQ releases; T2M's VAE and prefix-conditioned DiP are shown separately. RMS is the square root of mean squared raw-to-canonical change over all valid 126 rotation values, first aggregated within each draw and then across twenty draws. It is not full-feature RMS or a norm including padding. Newly added releases use all saved outputs; earlier verified geometric records supply the original five.
+
+Signed family means are $-0.00867$ FID for the four diffusion/consistency settings and $+0.01864$ for the two VQ settings. These are not estimates from independent model-family training replicas. T2M has the largest positive gap overall, $+0.04636$; prefix-conditioned DiP is separate. Three diffusion/consistency gaps are negative and one positive. Thus removing within-rotation noncanonicality does not uniformly favor diffusion in these releases.
+
+Across eight release means, Spearman correlation of RMS with signed gap is $-0.095$ and with absolute gap $0.286$. Exact two-sided permutation $p$ values are 0.840 and 0.501; both adjusted values are 1.0. This small, confounded release-level analysis supplies no evidence of a monotone relation and cannot establish independence. It concerns only the exact rotation fiber and neither tests velocity/contact errors nor refutes MARDM's full representation/distribution and diffusion-training mechanism. All per-draw RMS values and original score intervals are preserved with the artifacts.
+
+
+\section{Public essential-feature evaluator comparison}
+\input{table_mardm_reader_full}
+\input{table_mardm_rankings}
+The public MARDM~\cite{mardm2025} checkpoint contains a 67-feature GRU reader and a motion/text Transformer contrastive reader. Both use the author normalization for root/local position features. Native layers and public states are loaded strictly. The CLIP constructor's unused visual tower is avoided using only token/position embedding placeholders; the released state then overwrites every parameter, checked bitwise before inference. No forward operation or fitted weight is replaced.
+
+All eight saved releases and twenty original draws are evaluated without generation or training. A common saved real cohort is separately encoded by every reader. T2M scores are recomputed against the same real cohort rather than its original independent real-reference draw, so the values in \cref{tab:mardmfull} differ slightly from the original release audit. MDM, MotionDiffuse and DiP have 1,024 outputs; other releases have 4,640. DiP remains prefix-conditioned. Within each reader, rankings use twenty-draw mean embedding FID. Essential-CLIP FID is descriptive latent distance, not an official leaderboard metric, and its numerical scale cannot be compared with GRU/T2M FID.
+
+Changing only rotation coordinates leaves the first 67 input values bitwise fixed. Native repeated forwards on the first 32 outputs of every release/draw give exactly equal essential-reader embeddings. This expected structural invariance is not an accuracy-cost test. Canonical T2M retains rotations and has the same mean ordering as raw T2M here; essential GRU changes the DiP/T2M-GPT and T2M/MotionDiffuse ordering, while essential CLIP changes MDM/MotionLCM and T2M/MotionDiffuse. Both have Kendall agreement 0.857 with canonical T2M. The ranking differences combine feature selection, architecture and different fitted weights; they cannot be attributed solely to removal of rotation redundancy or interpreted as a reliable leaderboard reversal.
+
+All 640 saved metric cells, mean intervals and rankings are recomputed independently. Native parameter/state checks and first/last-draw inference fixtures verify the released computation. For the rotation-only sign-language representations, an essential-only input analogous to discarding HumanML3D rotations would remove all movement features. Canonicalization instead retains every represented joint rotation; its accuracy remains a separate empirical question.
+
+
+\section{TMR: an independent Transformer evaluator}
+\input{table_tmr_natural}
+TMR~\cite{tmr2023} uses author ACTOR motion/text encoders with six Transformer layers and 256 latent dimensions. Motion input has 263 features and the author mean/std with epsilon $10^{-12}$. Frozen DistilBERT supplies 768-dimensional token embeddings. Native deterministic inference takes the VAE mean token; similarity is normalized cosine. Author weights are loaded strictly and the archive's supplied MD5 is verified.
+
+The natural audit reuses the original five public generators and real-motion cohorts across 20 draws. Raw/canonical, fixed $\pm 0.1/\pm 0.35$ and random 0.35 are all scored. Random fields use seed 42 plus global clip index, independently per record, differing from the T2M fixed-control field. Twelve paired R1/cosine endpoints use family-adjusted$t_{19}$ intervals. We retain the compatible T2M-feature cohorts, candidate batches of 32 and their annotations rather than reproduce TMR's full AMASS annotation/semantic-filter protocol. In particular, no semantic-neighbor filter or full-gallery retrieval score is claimed.
+
+Natural R1 differences are small: MotionLCM and T2M have positive intervals; other generated-source intervals include zero. Matched cosine detects additional changes but is a separate endpoint. Real R1 is identical before/after canonicalization. Saved scores, native forward outputs and batch/serial motion embeddings are independently checked. DistilBERT padding/batch changes cause float32 text differences below $4.7\times 10^{-5}$; matching the producer's 64-caption cache batches reproduces saved vectors. This arithmetic diagnostic is not a new evaluation protocol.
+
+\input{table_tmr_capability_full}
+Capability tests use all 1,024 fixed clips per source of the fixed caption-targeted cohort, with real and MDM sources, 80 Adam steps, learning rate 0.1, bound 0.35 and final iterate. The reader remains frozen. Targets are actual or circularly shifted captions; the canonical-gradient control differentiates through canonical input. Every target/canonical endpoint is included. The source clips now match the T2M cohort; native cosine similarity and candidate permutations still differ, preventing an across-architecture accuracy ranking.
+
+Actual-target R1 changes 0.688 to 1.000 on real motion and 0.578 to 0.993 on MDM; wrong targets also redirect retrieval while actual-target agreement decreases. Canonical embeddings change by at most $6.7\times 10^{-6}$. Canonical MDM R1 is 0.580 both before and after recoding, distinct from source raw R1 0.578. Independent native checks cover 6,144 clip pairs and 48 FK samples: maximum angle $2.0\times 10^{-5}$ degrees, maximum FK displacement $9.6\times 10^{-7}$ m, bitwise protected channels and unchanged padding.
+
+\paragraph{Generic adversary at matched L2.}
+For each clip, we measure the actual-target rotation-fiber attack's L2 radius in TMR-normalized units over valid frames. A generic 80-step Adam attack changes all 259 continuous features, keeps contacts/padding fixed and projects onto that per-clip radius after every update. It reaches perfect retrieval and remains effective under canonicalization. Mean RIC position changes are 0.810 m real/0.899 m MDM, and mean rotation changes are 25.2/25.7 degrees. The features can be physically inconsistent across blocks. This comparison does not claim a smallest physical adversary; it demonstrates the distinct guarantee of zero physical change inside the rotation fiber. Verified radius excess is at most $3.1\times 10^{-5}$ normalized units.
+
+
+\section{Physical angular sensitivity}
+\input{table_physical_calibration}
+We perturb the 21 nonroot rotations using local SO(3) angles 0.1/0.3/1/3/10/30 degrees. Gaussian random axes are normalized per joint, either fixed throughout a clip or independently drawn at each frame. Axes share seeds across angle doses, with deterministic per-record indexing, and both noise modes use all 20 saved real test cohorts. No angle or clip is selected by a score.
+
+Forward kinematics uses the native skeleton and each clip's initial bone lengths. Root trajectory stays fixed. Rotations, RIC positions, root-local joint velocities and native foot-contact predicates are updated together. A common four-frame crop supplies next-frame positions for velocities. The reference is the paired coherent zero-angle reconstruction; its FID-zero baseline is therefore by construction. Original-to-reconstruction FID is 0.0201 and R1 changes 0.4510$\to$0.4474, so reconstruction cost is not hidden.
+
+On this same coherent reference, fixed $+0.35/-0.35$ recodings give FID 1.972/3.574 with zero physical change. These levels lie between the measured 1- and 3-degree frame-independent doses, but between 10 and 30 degrees with temporally fixed axes. These are brackets on the measured curves, not a universal degree equivalence, perceptual claim or result of new interpolated-dose experiments. Full FID/R1/MM curves, small/random recodings and nominal$t_{19}$ mean intervals are reported.
+
+Independent checks verify 240 physical clip cases, native SO(3) angles, RIC/FK agreement, recomputed local velocities/contacts, fixed roots and padding. Saved metric endpoints are recomputed against their exact references. The reconstruction follows native geometry conventions; it is not a licensed SMPL mesh or human-quality calibration.
+
+
+\section{HumanML3D caption-targeted controls}
+\paragraph{Representation and native inference.}
+HumanML3D~\cite{guo2022} has root features 0--3, relative positions 4--66, 21 continuous rotations 67--192, velocities 193--258 and foot contacts 259--262. Its native converter uses the first two matrix columns. The released movement encoder consumes features 0--258 without a rotation projection. We alter only 67--192 before normalization, then use the released evaluation mean/std and remask padded frames. Position-based reconstruction ignores the altered block; native FK additionally verifies rotation-based reconstruction. Other feature channels are checked bitwise, separately from floating-point matrix equality.
+
+Public T2M weights come from the MDM evaluator download script; all three frozen encoder states load strictly into the author architecture. The native MDM evaluation wrapper and our ordering-preserving adapter agree within $4.8\times 10^{-7}$ on validation fixtures. Native R-precision, MM-distance and FID match saved metrics. The encoder reads 259 channels, not a canonicalized or position-only replacement. Source hash inventories identify the pinned author code and checkpoints.
+
+\paragraph{Data origin and fixed subsets.}
+We use a public mirror of the processed motion pinned by revision and SHA256; its 4,297,557,992-byte size matches the author-linked inventory. The mirror's 012314 example is float64 while the author Git example is float32: maximum/RMS differences are $1.94\times 10^{-5}$/$7.67\times 10^{-7}$. This is numerical compatibility, not proof of byte identity for the full archive. Author text/split files and normalization are used. All motion matrices and physical controls are checked on the actual saved inputs.
+
+Eligible full-caption clips have 40--199 frames. Selection seed 20261012 samples 128 VAL and 1,024 test clips without replacement, with fixed caption draws and crops to multiples of four. These are subset audits, not full-score leaderboard reproductions. Real and generated inputs use the same captions and durations. MDM50~\cite{tevet2023} uses the official encoder checkpoint, 50 native sampling steps, CFG 2.5 and seed 42. No reference poses enter generation. An unused mesh constructor is disabled; denoiser, CLIP and diffusion operations and parameters are unchanged.
+
+\paragraph{Attack and scoring.}
+Nine fixed controls include identity, canonicalization, signed global bounds 0.05/0.1/0.35 and seeded random coefficients. Per-clip attacks optimize actual or shifted-caption embedding distance using 80 final Adam steps, learning rate 0.1, zero initialization and coefficient bound 0.35. A third control applies the loss after canonicalization. Evaluator weights remain frozen. A no-dropout recurrent flag enables input gradients; forward parity is checked and final scoring uses eval mode. Shifted text changes the optimization target without changing motion.
+
+R-precision top 1 averages five fixed 32-candidate permutations (seeds 11/97/909/1337/2027). FID always compares motion embeddings with a fixed real-reference subset. The target-caption objective improves retrieval and MM-distance while worsening FID; no metric is interpreted as a human-quality gain at unchanged physical motion. All fixed controls and both splits are in \cref{tab:humanmlfixed}; test attack/control endpoints are in \cref{tab:humanmlfull}. Original/mirrored IDs are grouped for 10,000 paired bootstrap draws; six source/attack endpoints are adjusted together. These intervals condition on the five fixed candidate pools and one generator seed, not unseen evaluators or pretraining variability.
+
+\input{table_humanml_full}
+\input{table_humanml_fixed}
+
+Wrong-target R1 changes are 0.028 to 0.839 for real motion and 0.033 to 0.788 for MDM, adjusted intervals $[0.782,0.838]$/$[0.724,0.787]$ for gains. Actual-caption retrieval falls to 0.030/0.036. Canonical-gradient wrong-target controls preserve their baseline R1. Across all 27,648 encoding pairs, maximum independent rotation error is $3.8\times 10^{-5}$ degrees, native RIC positions are exactly unchanged, and 384 sampled native FK pairs differ by at most $9.6\times 10^{-7}$ in coordinate units. Canonical embeddings differ by at most $7.2\times 10^{-7}$.
+
+
+\section{Caption-blind FID manipulation}
+\paragraph{Access and fresh source groups.}
+This study follows the target-aware audit but excludes every previously evaluated test source ID and its mirror. Seed 20261013 selects 960 eligible test clips and 2,048 training motions; there is no train/test source-group overlap. The same native MDM50 settings generate a fresh cohort. The attack numerically consumes only its generated arrays, training motion embeddings and the frozen evaluator. It never invokes the text encoder or deserializes/encodes real test references. Integrity preflight hashes held-out files, which is a byte-level read but supplies no caption, pose or embedding target. All attack outputs and hashes are saved before the evaluator consumes test reference content.
+
+\paragraph{Regularized Gaussian transport targets.}
+Let $\mu_s,\Sigma_s$ be the generated cohort's embedding moments and $\mu_t,\Sigma_t$ those of training real motion. The standard Gaussian transport construction~\cite{bhatia2017} gives the symmetric map
+\begin{equation}
+T=\Sigma_s^{-1/2}\bigl(\Sigma_s^{1/2}\Sigma_t\Sigma_s^{1/2}\bigr)^{1/2}\Sigma_s^{-1/2}.
+\end{equation}
+Targets are $\mu_t+(e_i-\mu_s)T$. Our numerical version symmetrizes matrices and floors eigenvalues in each root at $10^{-4}\operatorname{tr}(\Sigma)/512$. It is a regularized transport-based target, not a new transport theorem or an exact unregularized optimum. Per-clip coefficients minimize squared distance to these fixed targets for 80 Adam steps at learning rate 0.1. Both coefficient bounds 0.1/0.35 and canonical-gradient/random controls are fixed before scoring; FID does not choose an iterate.
+
+\input{table_humanml_blind}
+
+\paragraph{Results and interpretation.}
+Bound 0.1 reduces FID from 0.3839 to 0.2099 against the withheld test real reference, while actual R1 is 0.4133/0.4113. Bound 0.35 instead increases FID to 1.0850. The canonical-gradient control has FID 0.3838544, compared with source 0.3838538; random coefficients give 0.3526. Therefore success is not monotonic in bound, and both endpoints remain reported. Canonical FID remains 0.3799403 across equivalent encodings. This demonstrates a caption-blind score change for one fixed cohort, not generator improvement or routine exploitation.
+
+Independent reconstruction checks all 5,760 encoding pairs and 48 sampled native FK pairs. Maximum rotation error is $1.5\times 10^{-5}$ degrees; RIC positions and nonrotation channels are bitwise unchanged, native FK error is at most $6.0\times 10^{-7}$ and canonical embedding error at most $7.2\times 10^{-7}$. Gaussian targets and native metrics are independently recomputed. FID is a registered descriptive endpoint. A post-hoc 200-draw paired original/mirror-group sensitivity gives two-bound-adjusted intervals for the FID change of $[-0.268,-0.049]$ at bound 0.1 and $[0.404,1.166]$ at bound 0.35. The bootstrap holds the generated cohort and evaluator fixed; it does not estimate generation-seed variability, and its tail precision is limited by 200 draws.
+
+
+\section{Caption-blind repetition details}
+\input{table_blind_repetitions}
+The same training embeddings, transport regularization, 80-step Adam optimizer and two fixed bounds are used in all cohorts. New selection seeds 20261021/20261022 and generation seeds 4242/7777 produce two further 960-output cohorts. They exclude the original caption-targeted audit's source/mirror groups, but overlap the first blind cohort by 494/496 groups and each other by 493. The public native release audit also uses this test split; project-wide untouched test validation is not claimed. Neither overlap nor caption metadata is used to optimize the attack.
+
+At bound 0.1, FID reductions are 45.3\%, 53.2\% and 39.2\%; bound 0.35 worsens all three cohorts. Canonical-gradient controls remain at baseline. The repeats demonstrate sensitivity to generation/selection draws, not monotonicity or independent population validation. Each new cohort verifies 5,760 encoding pairs and 48 sampled native FK pairs, bitwise protected channels and independently reconstructed training transport targets. Attack arrays precede their own test reference scoring; no real test embedding or caption target enters attack optimization.
+
+
+\section{Caption-blind cross-generator and cross-reader transfer}
+\begin{figure*}[t]\centering
+\includegraphics[width=\textwidth]{figures/blind_checkpoint_transfer.pdf}
+\caption{\textbf{Caption-blind attacks transfer without destination gradients.} Every attacked output is sealed before reference scoring. Lines show FID divided by the same reader/cohort's original FID, for all tested bounds: source T2M weights on the left and another official checkpoint of the same architecture on the right. MLD supplies another generator; the three MDM cohorts overlap in source groups and are repetitions, not independent clip samples. Bound 0.1 helps every cohort; 0.35 harms every cohort.}\label{fig:blindtransfer}\end{figure*}
+
+\input{table_blind_transfer_full}
+MLD reuses the first 960 eligible outputs from native repetition 0 after excluding every original target-aware test source/mirror group. Selection is based on source identity, not scores. Segment names map to their underlying source before exclusion. The reference motion/captions are sealed separately; training targets, budgets 0.1/0.35 and 80-step final-iterate Adam match the MDM protocol. Native output durations, captions and reference crops remain paired. This is a new generator source but not a globally untouched test split.
+
+The MLD source-reader FID changes 0.7064$\to$0.2886 at 0.1 and worsens to 1.6108 at 0.35. Canonical-gradient controls remain at baseline. Native reconstruction verifies 5,760 equivalent pairs and 48 FK samples; position/contact/velocity features stay bitwise unchanged. Maximum FK difference is $6.0\times 10^{-7}$ m.
+
+All four sealed cohorts are then scored by the untargeted official T2M-GPT checkpoint, with the same architecture and normalization but distinct weights. No destination gradients, refitting or new target moments are used. At bound 0.1, MDM FID reductions are 18.2/18.3/25.1\%; MLD reduces 12.3\%. The larger budget worsens every cohort. Canonicalization closes the channel in the destination reader as well. These transfer changes are descriptive, not an independent-generator or population CI.
+
+The two further MDM cohorts have 769 and 761 unique source groups; their intersection is 493. Their overlap with the first blind cohort is 494/496. Shared training targets and source overlap are disclosed; no pooled independent-clip interval is reported. FID changes are evaluator effects at identical represented movement, not improved generator quality.
+
+
+\section{Canonical real-data sanity checks and portable implementation}
+\input{table_motion_defense_cost}
+Across 20 paired native draws, HumanML R1 raw/canonical is 0.45275/0.45275 for the primary T2M reader, 0.51222/0.51222 for the secondary reader and 0.67842/0.67842 for TMR. KIT real-motion R1 is 0.42443 in both paths. The paired R1 differences are exactly zero in these observations. Small floating-point embedding differences are measured separately. These real-motion rotations are already canonical. The unchanged retrieval therefore checks numerical implementation; it is not empirical evidence of a cost-free defense on noncanonical inputs. Matched sign-language reader adaptation is reported separately.
+
+A portable NumPy implementation canonicalizes the two consecutive 3-vectors before evaluator normalization, validates the nondegenerate domain and preserves every nonrotation channel and padded frame bitwise. Tests cover arbitrary positive scale/shear, idempotence, orthogonality, both native schemas and invalid rotations. The accompanying evaluation contract specifies converter convention, input normalization, masking and reader-fitting/inference agreement. It closes only the 6D fiber; generic physical or cross-feature attacks remain possible.
+
+
+\section{Sign-language data and readers}
+Learned layers receive source text; final backtranslation consumes only features, lengths and masks. Raw/canonical evaluation of one output preserves rotations; comparisons between different generators do not.
+
+\paragraph{Release and sample counts.}
+We use the native SignSparK/SignSparK-BT converter, code, author BT checkpoints and released re-optimized motion. Pinned revisions and input fingerprints accompany the artifacts. Motion contains 240 raw 6D features per frame: body 60, left hand 90 and right hand 90. Left-hand features 60--149 are protected during attacks. The physical converter uses normalized orthogonal rows, not SVD projection.
+
+Native valid train/dev/test counts are 7,096/519/642 PHOENIX, 29,630/1,650/2,183 How2Sign, and 18,201/1,064/1,162 CSL. Counts reflect the released loader, its 300-frame cap and filtering, not universal dataset sizes. Native text vocabularies, tokenization, normalization, beam search and punctuation are retained. CSL reader conditioning uses native segmented tokens; reported BLEU uses characters after removing spaces, preserving punctuation. Recognition supervision is disabled in BT fine-tunes; missing How2Sign pseudo-gloss files are therefore not inputs.
+
+\paragraph{External evaluator scope.}
+All public BTs share one Sign Language Transformer architecture. Whole-split real test raw scores are 14.9995, 3.4779 and 6.8907, versus release-card 15.00/3.53/6.98. Only PHOENIX matches after rounding. Replaying native/prepared features yields the same hypotheses; the cause of the other small differences is unresolved and decoding was not retuned to chase card scores.
+
+\paragraph{Fitting and validation scope.}
+Clip IDs are disjoint between fitting-split training and evaluated dev/test. Last-epoch selection applies to all fitted layers and readers. All development weights, outcomes and configurations are frozen before the fixed confirmation's inference, with no new fitting or test-based checkpoint selection. These public test splits had already been evaluated during the project; we do not claim project-wide untouched holdouts.
+
+
+\section{Conditional output layers and budgets}
+\input{table_learned}
+\paragraph{Generated PHOENIX motion.}
+A frozen geometry generator produces 7,096 train and 519 dev motions using text, capped reference duration, DDIM 50~\cite{song2021}, CFG 3~\cite{ho2022}, seed 102 and inference batch 16. No reference poses, glosses or anchors enter the sampler. Canonical outputs are cached; fixed test reuses 642 saved outputs of the same generator.
+
+The 299,384-parameter layer copies the generator's frozen 128-wide text encoder, including eval-mode dropout. Motion projection 240 to 128, frame embeddings 300, four-head cross-attention, and three residual temporal convolutions (dilations 1/2/4, kernel 3, GroupNorm 8) feed a zero-initialized 120-channel head. Padding is masked after blocks; text cap 64. Bounded coefficients $q=B\tanh h$ produce $(e^{q_1}a,e^{q_2}b+q_3 a)$. Joints 10--24 are identity. Nine original fits cross three seeds with text/raw loss, motion/raw loss and text/canonical loss; all use 20 epochs, batch 64, AdamW 0.001, weight decay 0.0001, clipping 1 and matched minibatches. Final checkpoints are used. Source text is available to this amortized attack~\cite{gap2018,atn2018}; final reader decoding receives no text prefix.
+
+Canonical-loss numerical drift is retained: raw gain 0.0058 dev/$-0.1347$ test, intervals containing zero. A circular text shift changes only layer conditioning; all 519 dev/642 test shifted captions differ. It raises agreement with that caption while lowering actual-caption BLEU, keeping canonical predictions identical. Exact train-caption overlaps are 25 dev/32 test; excluding them preserves positive gain, but does not test unseen vocabulary or signers.
+
+\paragraph{Real How2Sign/CSL motion.}
+Each corpus uses raw native real training features. The temporal stack is unchanged; source text uses native 512-wide reader embeddings (frozen), a fitted 512 to 128 projection and two 128-wide Transformer layers with dropout 0. Trainable parameters are 769,784. This is not the PHOENIX generator encoder or a language-transfer experiment. Caption tokens come from the native training input, capped at 64. Three seeds fit text/raw CE; one seed 42 fits each exploratory motion/raw and text/canonical control. The schedule matches the generated-motion layer.
+
+\input{table_real_layer_controls}
+Full test primary gains are 2.6363 How2Sign, VIDEO\_ID interval $[2.2654,3.0291]$, and 0.5426 CSL, clip interval $[0.1436,0.9719]$. Seed-plus-group intervals remain positive. All canonical hypotheses are unchanged across primary/control models. Controls have one seed and cannot estimate training-seed variability. Raw-source motion is retained, rather than canonicalized before fitting; baseline canonical scores consequently differ from raw scores.
+
+\paragraph{Small bounds and detectability.}
+Nine additional PHOENIX fits use bounds 0.01/0.05/0.1 with the original three seeds and identical epochs/batches. Natural RMS is computed on the same generator's raw features; attack input is its canonical encoding. For each clip, RMS is $\sqrt{\operatorname{mean}(x-C (x))^2}$. The detector is a single threshold on this statistic. AUC reports the better of the two orientations, not a separate trained detector or a general privacy guarantee.
+
+\input{table_learned_budget}
+Bound 0.05 has paired test gain interval $[0.4807,1.2343]$, but seed-plus-clip interval $[-0.0055,1.6770]$ includes zero. Bound 0.1 remains positive under seed sensitivity $[0.3189,2.8077]$. Test RMS-detector AUC is 1.00 at 0.01/0.05 and 0.917--0.941 at 0.1. The raw generator RMS is around 0.10; attacked RMS 0.027/0.055 can lie below it and still be separable. Lower norm distortion is not stealth.
+
+\paragraph{Per-clip target-aware budgets.}
+Sixty dev conditions cross four bounds, four iteration counts and three parameter granularities, with the available combinations retained exactly. Global coefficients, per-frame coefficients and per-frame/joint coefficients have sharply different capacity. Random transforms do not use targets. At 0.35/80 steps wrong-target BLEU is 0.9166/9.5845/83.3517 for global/frame/frame-joint; at 0.1 frame-joint gives 32.47. These searches use caption access at optimization time and are not production performance.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/learned_method.pdf}
+\caption{\textbf{Learning changes the evaluation while the rotations stay fixed.} Source text and frozen generated motion condition a bounded output layer. Training-caption loss updates only that layer. At evaluation it performs one pass, with no per-clip search. The raw reader can respond to its coefficients; canonicalization removes them before reading. The three layer objectives use matched batches and initialization.}
+\label{fig:learnedmethod}
+\end{figure*}
+
+\begin{figure}[t]\centering\includegraphics[width=\linewidth]{figures/learned_results.pdf}
+\caption{\textbf{A learned channel on dev.} Bars average three seeds; dots show seeds. Whiskers are paired 95\% raw-gain intervals anchored at the fixed baseline. Canonical hypotheses are identical. Test results are in the main paper.}\label{fig:learnedresults}\end{figure}
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/attack_budget.pdf}
+\caption{\textbf{Per-clip optimization budget on 64 PHOENIX dev clips.} Wrong-target BLEU depends on bound, steps and parameter granularity. Random controls are target-independent. These target-aware searches differ from learned-layer inference; all 60 conditions are retained.}\label{fig:attackbudget}\end{figure*}
+
+\paragraph{Fixed recodings of generated sign motion.}
+Four frozen local diffusion variants also generate 642 test motions each. Raw, canonical, fixed scales 0.9/1.1 and shear 0.1 are equivalent encodings with protected left hands, independent of captions. In the generated-near variant, scale 0.9 minus raw is $-0.6592$, family interval $[-1.2267,-0.0949]$; scale 1.1 minus 0.9 is +0.8554, family interval $[0.1734,1.5347]$. These 20-contrast, 20,000-resample results establish within-system representation effects. Between-generator opposite rank orderings are not supported as a primary claim. Geometry/velocity/reader-CE/generated-near variant definitions and raw arrays remain in the machine-readable evidence map.
+
+
+\input{tables_hashes}
+
+
+\section{Adaptive per-clip detector-statistic tests}
+\paragraph{Fixed-distance and fixed-norm surfaces.}
+For fixed rows $u,v$, write $s=(\rho-1,\sigma-1,\tau)$. Squared distance to canonical features is
+\begin{equation}
+E=\|d-C (d)\|^2=\|s\|^2.
+\end{equation}
+Any auxiliary rotation $Q$ of $s$ preserves $E$. If $\|s\|<0.95$, reconstructed $\rho',\sigma'>0.05$; otherwise the layer returns the identity. This auxiliary rotation changes redundant scalars, not physical joint rotations.
+
+Squared 6D norm $N=\rho^2+\sigma^2+\tau^2$ obeys
+\begin{equation}
+N-E=2 (\rho+\sigma)-2.
+\end{equation}
+A rotation around $(1,1,0)/\sqrt 2$ additionally preserves $\rho+\sigma$, hence both $N$ and $E$ per frame/joint: the representatives with fixed $E$ and $N$ form a circle. Rotations about arbitrary axes preserve $E$ only and form a sphere. Positive-scale safety, padding and left-hand protection apply to both.
+
+The auxiliary-coordinate geometry is distinct from physical joint rotation or an intrinsic diffusion process.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/adaptive_statistics.pdf}
+\caption{\textbf{Adaptive attack at fixed detector statistics.} Left: PHOENIX actual-caption BLEU and family-adjusted gain intervals. Right: per-clip reduction in target-normalized token edit error. The circle preserves canonical distance and squared feature norm per joint/frame while canonical hypotheses remain fixed. The sphere preserves distance alone. These are target-aware capability tests, not general stealth.}\label{fig:supadaptivestatistics}\end{figure*}
+Dev 64 is selected uniformly with seed 20261012 before the new per-clip optimization; it uses the frozen generator's raw dev outputs. Both 80- and 200-step endpoints are retained. Full test 642 confirmation fixes the final 200-step endpoint and four geometry/target conditions before inference. Source motions come from the existing raw generator archive; no real reference pose is used to generate them. Raw source BLEU is 6.62 here, versus 6.39 for the canonical input of the learned-layer study, for the same represented motion.
+
+Optimization uses Adam 0.1, zero-initialized per-frame/joint coefficients and frozen BT weights. A scalar $q$ predicts circle phase $\pi\tanh q$, bounded by $\pi$. Sphere coordinates are $(\pi/\sqrt 3)\tanh q_i$, giving auxiliary rotation magnitude at most $\pi$. Radius $\ge 0.95$ remains identity, and left-hand joints 10--24 remain byte-identical. Target captions are either the original source or the fixed circular shift; all 642 test shifts differ. No decoded-score checkpoint selection occurs.
+
+\input{table_adaptive_statistics}
+
+On dev 64, circle actual-caption BLEU is 6.59 to 10.06 at 200 steps, gain 3.46; its eight-endpoint-adjusted interval is $[1.15,6.49]$. Circle wrong-target gain is 2.82, with lower adjusted endpoint zero. Sphere actual/wrong-target gains are 26.79/20.72, with adjusted intervals $[17.09,37.53]$/$[11.93,31.93]$. These dev results motivated prospective fixed test confirmation; they are not pristine validation.
+
+Test circle gains are 4.09 actual and 2.10 shifted, with four-comparison-adjusted intervals $[3.04,5.24]$/$[1.22,3.12]$. Sphere gains are 26.45/21.27, intervals $[23.46,29.52]$/$[18.50,24.22]$. Random coefficient controls use fixed seeds 42/123/777 per surface. Canonical-reader CE optimization is run for 200 steps per surface. Their wrong-target gain intervals do not exclude zero on the positive side. Every source/target, full loss trace and output array is retained; randomization seeds are not independent training seeds.
+
+RMS threshold AUC is 0.5003 for the circle and 0.5007 for the sphere. The circle preserves both statistics; the sphere does not preserve feature norm and may be detectable by it. Preservation of $E,N$ is not indistinguishability of all redundant-coordinate distributions. Geometric invariants, decoded canonical strings, finite values and reconstruction are verified independently. Complete numerical residuals and source hashes accompany the results.
+
+\paragraph{Other fixed-rotation attack capabilities.}
+\input{table_wrong_targets}
+Wrong-caption optimization reaches 85.19 PHOENIX BLEU against an incorrect target and zero against the actual caption (\cref{tab:wrongtargets}). How2Sign/CSL show the same failure with different token conventions. Three CSL targets duplicate actual captions and remain included. These are attack capability scores, not production quality.
+
+The CTC model's wrong-target WER falls from 118.07\% to 3.76\%, while actual-reference WER reaches 121.58\%. Reversal or identity hands raises full test WER from 50.11\% to 91.48\% or 93.95\%. It responds to physical changes and redundant coordinates. All 1,024 BT/CTC attack pairs preserve canonical hypotheses.
+
+
+
+
+\paragraph{Additional scalar detectors and the limit of statistic matching.}
+An exploratory diagnostic fits scalar thresholds on dev 64 source/attacked clips and applies their fixed orientation/threshold to test 642. All nine statistics are reported: canonical RMS, mean squared 6D norm, means of $|\tau|$, $|\rho-\sigma|$, $\rho$, $\sigma$, and standard deviations of $\rho,\sigma,\tau$. Circle test AUCs span 0.500--0.530 with dev-fitted orientation; test balanced accuracies span 0.500--0.521. Sphere statistics are more informative: $|\rho-\sigma|$ AUC is 0.877 and balanced accuracy 0.801, with source false-positive rate 0.319 and attack detection rate 0.922. These post-hoc diagnostics are not independently validated security guarantees, and do not cover temporal, joint-wise or learned multivariate detectors.
+
+For fixed canonical rows, the full Gram matrix of $(a,b)$ is
+\begin{equation}
+\begin{pmatrix}\rho^2&\rho\tau\\\rho\tau&\sigma^2+\tau^2\end{pmatrix}.
+\end{equation}
+Fixing all three entries determines positive $\rho,\sigma$ and $\tau$, hence the original features. Thus preserving $E,N$ leaves a circle, whereas fixing the entire Gram matrix at unchanged rotation leaves no channel. This elementary limit prevents interpreting two-statistic matching as general invisibility. It does not prove a practical detector's performance without evaluating that detector.
+
+\begin{figure*}[t]\centering\includegraphics[width=\textwidth]{figures/learned_budget.pdf}
+\caption{\textbf{Learned-layer budget on full PHOENIX test.} Left: mean raw gains, paired 95\% intervals and individual seeds. Right: RMS distance to canonical features, against the same raw generator's natural output. A scalar RMS detector separates most attacked outputs. Rotations/canonical hypotheses stay fixed; smaller magnitude is not undetectability.}\label{fig:learnedbudget}\end{figure*}
+
+
+\section{Canonicalizing real sign inputs}
+\input{table_sign_natural}
+The same frozen raw reader decodes each real input and its canonical representative. There is no learned layer, source-caption conditioning, per-clip optimization or new model fitting. The results use the saved full native test hypotheses. Both paths share the original native preprocessing, including projection of left-hand channels 60:150 before decoding. Thus ``raw'' denotes the audit input under that shared preprocessing, not untouched bytes of the public release.
+
+Independent code compares all 3,987 pairs of saved strings and recalculates the six corpus BLEUs from clipped n-gram counts and brevity penalties. PHOENIX changes 0/642 hypotheses; How2Sign changes 1,438/2,183; CSL changes 464/1,162. Scores use word tokens for PHOENIX/How2Sign and characters with punctuation retained for CSL. The full changed fractions are 0\%, 65.9\% and 39.9\%. Small corpus-score differences do not imply sentence-level invariance, improved semantics or an accuracy-free defense. Reader adaptation on noncanonical inputs is reported separately.
+
+
+\section{Canonical-reader adaptation and independent recognizer}
+\paragraph{Reader adaptation.}
+Twelve fits cross How2Sign/CSL, three seeds and raw/canonical training input. Matched pairs share public initialization and batch/dropout choices. Five epochs, batch 64, AdamW $10^{-5}$, weight decay $10^{-4}$ and last-checkpoint selection apply. Both use translation CE, with recognition loss disabled. Canonical readers receive canonical features during training and decoding. Raw adaptation controls for the effect of fine-tuning itself.
+
+Dev canonical-minus-raw differences are $-0.0620$ How2Sign/+0.1577 CSL; seed-plus-group intervals $[-0.2646,0.1424]$/$[-0.1529,0.5316]$. test differences are +0.0991/$-0.0217$, intervals $[-0.0332,0.2493]$/$[-0.2261,0.1859]$. Exploratory margins 0.2/0.3 BLEU are sensitivity choices, not human-equivalence thresholds. How2Sign does not establish noninferiority to its original public reader under seed-plus-group uncertainty; closure is not uniformly free accuracy.
+
+Fresh 64-clip dev attacks per seed/arm/corpus use 80 Adam steps, learning rate 0.1 and bound 0.35. All 384 canonical-reader pairs preserve hypotheses; nonzero wrong-target BLEU can reflect shared n-grams in unchanged predictions. Independent reconstruction verifies 768 raw/canonical attack pairs. Fixed equivalent test encoding (scale 1.1, shear 0.1, protected left hand) preserves all 10,035 canonical-reader hypotheses.
+
+\paragraph{Local CTC architecture and inference.}
+The 2,562,867-parameter recognizer has a 1075-entry gloss vocabulary, two 128-channel temporal convolutions (kernel 5,stride 2), a two-layer bidirectional 256-unit GRU and greedy CTC head~\cite{graves2006}. Training normalization has std floor 0.05 and remasked padding. Training uses 7096 clips, batch 64, AdamW 0.001, cosine decay over 40 epochs, clipping 1 and seed 42; dev best WER is epoch 21. CuDNN is disabled consistently to support recurrent input gradients. Empty glosses retain insertion errors in micro-WER; one infeasible shifted CTC target is retained with zero-infinity loss, not removed.
+
+\paragraph{Per-clip attack and feature-only decoding.}
+BT minimizes target-token CE and CTC minimizes gloss CTC loss, with model weights frozen. Coefficients begin at zero and use bound 0.35. Selections are uniform without replacement, seed 2027, sorted by dataset index. CSL has three shifted-caption collisions retained. Final BT uses autoregressive decoding, not teacher forcing. A separate 768-hypothesis CSL replay forbids teacher-forced forward, asserts exactly features/lengths/masks at inference, and loads references only after predictions; every hypothesis matches the saved result. This is an input-contract check, not another independent performance experiment.
+
+
+\section{Statistics, presentation and reproducibility}
+Corpus BLEU is recomputed from clipped 1--4 gram counts, native tokenization and brevity penalty~\cite{papineni2002,post2018}. CSL removes spaces and preserves punctuation. A standard-library Counter implementation reproduces saved scores to $10^{-10}$. WER is verified by full-matrix edit distance and micro aggregation. Attack scores against wrong captions remain separate from actual-reference scores.
+
+New intervals use 20000 paired bootstrap draws, seed 42, recomputing corpus metrics from sufficient statistics. How2Sign uses official VIDEO\_ID groups (115 dev/149 test), not verified signer identity. Within each sampled unit set, model-specific scores are computed separately before averaging differences across seeds. Sensitivity analysis resamples the three training seeds, all sharing one initialization; it does not estimate pretraining variation. One-seed controls have no seed uncertainty. Target-independent representation intervals cover 20 contrasts. Layer and budget intervals are nominal per contrast. Shifted-caption mappings remain fixed during resampling. Target-aware 128-clip audit intervals use 2000 draws and do not estimate training-seed variability.
+
+The teaser uses the first fixed HumanML3D MDM record and procedural body geometry from native RIC positions. Original/recoded body pixels match exactly under the same camera and radii; rotations are verified numerically. Its retrieval values summarize 1,024 clips rather than the illustration.
+
+
+
+\clearpage
+{\small\bibliographystyle{ieeenat_fullname}\bibliography{references}}
+\end{document}

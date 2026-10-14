@@ -1,0 +1,78 @@
+{
+  "main": {
+    "pdf_sha256": "e3795b050356030376e4c60d38426f316ca9897207cb34a54fc71bccd3a4c7d2",
+    "total_pages": 10,
+    "content_pages": 8,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 6304,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "supplement": {
+    "pdf_sha256": "95419161ede43b430a2b3512353e8a4b914a9d4fff506fb891f7b281a731a7dd",
+    "total_pages": 30,
+    "content_pages": 28,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 17781,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "visual_inspection": "All40 final pages covered by direct review or exact pixel equality to reviewed parent; see visual_review.json.",
+  "teaser_caption_warning": "hypcap is unavailable for captionof outside floats; hyperlink target checked, layout unaffected",
+  "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+  "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404",
+  "Poppler_math_XML_extraction": {
+    "main_bbox.html": {
+      "control_word_count": 0,
+      "control_words": [],
+      "no_word_removed": true,
+      "original_export_sha256": "474154c9f4cdd1de2a84405f33389a6072c3f792501b10d9188ef9a7fc9b36ba"
+    },
+    "supplement_bbox.html": {
+      "control_word_count": 4,
+      "control_words": [
+        {
+          "word_tag": "<word xMin=\"463.043910\" yMin=\"173.677022\" xMax=\"467.606799\" yMax=\"186.628454\">",
+          "Poppler_control_codes": [
+            1
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"140.455100\" yMin=\"425.287122\" xMax=\"147.787603\" yMax=\"438.238554\">",
+          "Poppler_control_codes": [
+            18
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"201.033500\" yMin=\"425.287122\" xMax=\"208.366003\" yMax=\"438.238554\">",
+          "Poppler_control_codes": [
+            19
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"502.205510\" yMin=\"528.003982\" xMax=\"506.768399\" yMax=\"540.955414\">",
+          "Poppler_control_codes": [
+            1
+          ],
+          "bounding_box_retained": true
+        }
+      ],
+      "no_word_removed": true,
+      "original_export_sha256": "f2a75cbc32934dfd3c1acb1726bdd8334aec896cc22c0be56cb450e3ed39f4a7"
+    }
+  },
+  "all_original_word_bounding_boxes_checked": true,
+  "PDF_or_font_substitution_for_parser_issue": false,
+  "layout_verifier_sha256": "280f6f78e42021694693463f90007809b0464a02d4463fd3b427a2325d8107a9"
+}

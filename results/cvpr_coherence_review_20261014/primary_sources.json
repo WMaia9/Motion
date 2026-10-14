@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-10-13",
+  "paper": {
+    "url": "https://arxiv.org/pdf/2411.16575v2",
+    "revision": "v2, 2025-07-08",
+    "PDF_pages": 17,
+    "body_and_references": "1–13",
+    "supplement": "14–17, Appendices A–G",
+    "sha256": "801a0221bc33f39816fdbe3dddb2352851ce180dcc50a735db450237bc97b784",
+    "Tab3_noise_amplitude_specified_in_checked_supplement": false
+  },
+  "code": {
+    "url": "https://github.com/neu-vi/MARDM",
+    "revision": "9b05ad867be916afb9fcbff663b42a03f933014a",
+    "license": "MIT",
+    "native_input67_confirmed": true
+  },
+  "weights": {
+    "url": "https://huggingface.co/cr8br0ze/evaluators_humanml3d",
+    "revision": "592ff3cb511c477349ea5947623f289b35ee2cea",
+    "bytes": 698258777,
+    "sha256": "f4083617ae75493ffb0dbf2b86ffbaf52d1ad4bce466af9d6e5be86f0325a70a",
+    "matches_HF_pinned_LFS_hash": true,
+    "model_card_license": "MIT",
+    "redistributed_in_repository": false
+  },
+  "novelty_boundary": [
+    "Prior work diagnoses sensitivity to redundant feature blocks and retrains essential-only GRU/CLIP readers.",
+    "Our exact rotation-equivalence intervention preserves both represented rotations and all other blocks.",
+    "MARDM additive/replacement block noise is not an exact-equivalence control and does not register equal total L2 across unequal blocks.",
+    "Our signed natural deltas test within-rotation noncanonicality only, not all redundant feature errors or their diffusion-noise mechanism.",
+    "Rotation-only sign representations cannot discard the whole rotation block while retaining their movement input."
+  ],
+  "CVPR2027": {
+    "dates_url": "https://cvpr.thecvf.com/Conferences/2027/Dates",
+    "registration_AoE": "2026-11-10",
+    "paper_AoE": "2026-11-16",
+    "supplement_AoE": "2026-11-23",
+    "author_guidelines_url": "https://cvpr.thecvf.com/Conferences/2027/AuthorGuidelines",
+    "author_guidelines_HTTP": 404,
+    "format": "unchanged official available 2026 kit; 2027 provisional",
+    "call_for_papers_url": "https://cvpr.thecvf.com/Conferences/2027/CallForPapers",
+    "LLM_policy_scope": "still being finalized in official call; recheck before submission",
+    "submission_and_authorship_actions": false
+  }
+}

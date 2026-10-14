@@ -8,180 +8,102 @@
 \def\paperID{DRAFT}\def\confName{CVPR}\def\confYear{2027}
 \newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathcal{C}}\newcommand{\G}{\mathcal{G}}
 \input{results_macros}\input{new_results_macros}
-\title{Same Motion, Different Scores:\\ Auditing Representation Consistency}
+\title{Same Motion, Different Scores:\\ Learned Motion Evaluators Depend on Rotation Encoding}
 \author{Anonymous authors}
 \setcounter{dbltopnumber}{3}
 \begin{document}\raggedbottom
 \twocolumn[{\begin{@twocolumnfalse}
 \maketitle\centering
 \includegraphics[width=\textwidth]{figures/teaser.pdf}
-\captionof{figure}{\textbf{The movement stays fixed; the reported score changes.} Original and recoded features produce identical joint positions and represented rotations. The illustration renders the first fixed MDM example with the same procedural geometry and camera. Scores summarize a caption-targeted attack on 1,024 outputs, rather than this one clip. Canonicalization maps the two rotation encodings to the same representative.}\label{fig:teaser}
+\captionof{figure}{\textbf{The movement is identical; the score is not.} Both rows render the same joint positions and joint rotations of an MDM output; only the redundant coordinates of its 6D rotation features differ. A caption-targeted recoding of these coordinates raises the standard evaluator's top-1 R-Precision from 0.397 to 0.993 over 1,024 outputs. Canonicalizing rotations before evaluation gives both encodings the same embedding.}\label{fig:teaser}
 \end{@twocolumnfalse}}]
 
 \begin{abstract}
-Motion metrics should depend on represented movement, not on redundant coordinates of its encoding. We isolate a violation of this requirement in learned evaluators of continuous rotation features. Positive rescalings and shear preserve every joint rotation while positions, velocities, contacts and timing remain fixed. A fixed, caption-independent recoding changes HumanML3D FID by up to 3.57 at zero physical displacement. Public-output audits reveal smaller signed differences across HumanML3D and KIT-ML, whose direction varies by release and reader. Caption-targeted retrieval rises from 0.397 to 0.993; a distinct Transformer evaluator is also susceptible. Caption-blind attacks transfer between checkpoints of the same architecture. Without an attack, canonicalizing real How2Sign inputs changes 1,438 of 2,183 decoded sentences despite nearly unchanged BLEU. Source-conditioned layers also redirect backtranslation in three sign-language corpora. Unlike essential-feature evaluation, converter-based canonicalization retains every represented rotation, making it applicable to rotation-only domains. We provide controlled audits and a portable evaluation contract that make scores invariant to equivalent rotation encodings without claiming improved motion or universal evaluator accuracy.
+A motion metric should score movement, not the numbers chosen to write it down. We show that widely used learned motion evaluators violate this requirement. The continuous 6D rotation representation admits positive rescalings and shears that leave every joint rotation unchanged; we apply them while holding positions, velocities, contacts and timing fixed. A fixed, caption-independent recoding raises the FID of real HumanML3D motion from 0.001 to 3.64, eight times the FID of MDM, and at equal input norm a fixed redundant direction moves FID 7.7$\times$ more than a fixed genuine rotation. Released outputs of all ten audited generator settings score differently once canonicalized, in six cases by more than the margin their authors report. With access to the evaluator, recoding alone drives retrieval to near-perfect accuracy in two evaluator architectures, lowers FID by up to 53\% without captions, and raises sign-language backtranslation from 6.39 to 15.21 BLEU. Canonicalizing rotations before evaluation removes this dependence by construction while retaining all rotational information. We release an evaluation contract and a drop-in implementation.
 \end{abstract}
 
 \section{Introduction}
-Motion generation is compared through learned retrieval and distribution metrics. These scores should remain unchanged when the movement being evaluated remains unchanged. Yet a fixed rescaling and shear of rotation features can create a large FID difference between two copies of the same HumanML3D motion. With evaluator gradients, the same operation can push retrieval toward a chosen caption while leaving the generated movement untouched (\cref{fig:teaser}). The evaluator is responding to the representation as well as the movement.
+Generative motion models are compared by learned evaluators: a network embeds the generated motion, and retrieval accuracy or a Fr\'echet distance summarizes the embeddings~\cite{guo2022,tmr2023}. These scores decide which method is state of the art and, increasingly, which behavior a generator is fine-tuned toward~\cite{tan2026,motionrft2026}. They rest on an assumption so basic that it is rarely stated: two descriptions of the same movement receive the same score.
 
-This matters before considering an adversary. Learned text--motion embeddings underpin widely used scores for public generators~\cite{guo2022,tevet2023,mld2023,t2mgpt2023,motionlcm2024}. A representation-dependent score combines two effects: differences in the generated motion and differences in how that motion is encoded. These metrics are already imperfect proxies for human judgment~\cite{stein2023}; invariance to physically equivalent encodings is a separate, testable requirement. It can be checked without assuming that a metric perfectly captures human preferences.
+This assumption fails. \Cref{fig:teaser} shows MDM outputs written in two ways. The rendered body, every joint position and every joint rotation are identical, yet the standard HumanML3D evaluator ranks the correct caption first for 99.3\% of the recoded outputs instead of 39.7\%. Nothing about the movement changed.
 
-The source of the failure is simple. Continuous 6D rotation features~\cite{zhou2019} use two vectors whose normalization and orthogonalization determine a rotation. Positive scales and shear alter the vectors without altering that rotation. A renderer or forward-kinematics converter discards these redundant coordinates. A learned evaluator receiving the raw vectors need not discard them. We use this known equivalence to change only the rotation encoding, holding positions, root trajectory, velocities, contacts and timing fixed. Native geometry checks verify that the score changes occur at identical represented movement.
+The cause is a well-known property of the continuous 6D rotation representation~\cite{zhou2019}. Two three-dimensional vectors define a rotation through normalization and Gram--Schmidt orthogonalization, so scaling them by positive factors or adding a multiple of the first vector to the second leaves the rotation untouched. Forward kinematics and renderers discard these three redundant coordinates per joint. A learned evaluator that reads the raw vectors need not discard them, and we find that it does not.
 
-Meng et al.~\cite{mardm2025} identify redundancy-related evaluation bias and train HumanML3D readers on root motion and local positions. Their block-noise tests also change represented rotations and other features. Our question is more specific: \emph{can equivalent encodings of the same rotations receive different scores?} We isolate the converter's exact equivalence class, with equal-budget block controls and paired public-output audits.
+Image generation has faced the same class of problem. FID changes with the resizing filter and compression applied to the same images~\cite{parmar2022}, and it can be lowered without improving images by matching classifier statistics~\cite{kynkaanniemi2023}; such findings changed how scores are computed and reported. Motion evaluation has no corresponding audit of its input representation. MARDM~\cite{mardm2025} showed that HumanML3D evaluators weight redundant feature groups heavily and proposed readers that discard them. We ask a sharper question: \emph{can equivalent encodings of exactly the same rotations receive different scores?} Answering it requires interventions that change no represented quantity, and a remedy that keeps rotations, because some domains, such as the sign-language representations studied here, consist of rotations alone.
 
-The distinction determines which remedy is available. HumanML3D includes a position channel, so an essential-feature reader can discard rotations. The sign-language representations studied here contain only body and hand rotations: discarding that block discards their entire movement input. Even without an attack, canonicalizing real sign inputs changes many decoded sentences while aggregate BLEU barely moves. Canonicalization retains every represented rotation, testing a requirement that position-only evaluation cannot satisfy.
-
-We build the evidence in increasing order of access. Fixed recodings use neither captions nor evaluator gradients. Paired audits test unmodified public outputs, where the effects are smaller and change sign. Target-aware attacks measure channel capacity in two evaluator architectures. Caption-blind attacks use only TRAIN motion statistics and transfer to another checkpoint without its gradients. Finally, TRAIN-fitted layers redirect sign-language backtranslation on generated and real motion. These experiments address one question throughout: whether a reported score is determined by the movement or by its encoding.
-
-Canonicalization provides a direct remedy. Applying the evaluator's rotation converter before normalization gives every equivalent encoding the same representative. This closes the rotation channel without removing rotational information. We distinguish this invariance guarantee from accuracy and specify the converter, normalization and masking rules needed to implement it.
-
-Our contributions are:
+We answer the question at increasing levels of access to the evaluator:
 \begin{itemize}
-\item An exact-equivalence audit that isolates rotation-encoding dependence, with equal-budget controls and paired public-output tests on HumanML3D and KIT-ML.
-\item A demonstration of score manipulation at unchanged movement across two motion-evaluator architectures and three sign-language corpora, including caption-blind checkpoint transfer.
-\item A canonicalization contract that retains all rotations, including in rotation-only domains, supported by native geometry checks and physical-noise calibration.
+\item \textbf{No access.} A fixed recoding raises real-motion FID to eight times that of a published generator. At equal input norm, a fixed redundant direction moves FID 7.7$\times$ more than a fixed rotation of the joints.
+\item \textbf{Unmodified public outputs.} All ten audited release settings on HumanML3D and KIT-ML change FID when their rotations are canonicalized; in six, the change exceeds the 95\% margin reported by their authors.
+\item \textbf{Evaluator gradients.} Recoding alone reaches 99--100\% top-1 retrieval of the actual caption, and 79--97\% for an arbitrary other caption, in both the T2M~\cite{guo2022} and TMR~\cite{tmr2023} evaluators. Without any caption, it lowers FID by 39--53\%, and the gain carries over to a second official checkpoint.
+\item \textbf{Rotation-only domains.} A layer that recodes generated sign-language motion raises backtranslation BLEU on PHOENIX-2014T from 6.39 to 15.21, and the failure reproduces on real How2Sign and CSL-Daily motion.
 \end{itemize}
+Throughout, the movement is verified to be unchanged, so none of these score changes can reflect better or worse motion, and no perceptual study is needed to interpret them.
+
+The remedy is equally direct. Applying the converter's own canonicalization before feature normalization maps every equivalent encoding to one representative, so the score becomes a function of the represented movement. Unlike discarding rotations~\cite{mardm2025}, it retains them and applies to existing evaluators without retraining. It is the identity on canonical real motion, and on noncanonical sign-language inputs, readers adapted to canonical features perform within 0.1 BLEU of raw-input readers.
+
+\noindent Our contributions are:
+\begin{enumerate}
+\item an exact-equivalence audit of learned motion evaluators that isolates their dependence on rotation encoding, with physical calibration and equal-budget controls;
+\item evidence that this dependence is present in public generator outputs and can be exploited without changing motion, across two evaluator architectures, two motion-language datasets and three sign-language corpora;
+\item a canonical evaluation contract with a portable implementation that closes the channel while preserving rotational information.
+\end{enumerate}
 
 \section{Related work}
-\paragraph{Motion representation and evaluation.}
-Continuous rotation representations~\cite{zhou2019} and rotation projections~\cite{levinson2020} establish the geometric operations used here. HumanML3D's learned evaluator~\cite{guo2022} consumes positions, velocities and rotation features; TMR~\cite{tmr2023} learns retrieval with a Transformer. We audit public outputs from diffusion, consistency and token-based releases~\cite{tevet2023,mld2023,motionlcm2024,t2mgpt2023,momask2024,motiondiffuse2024,closd2025}. MARDM~\cite{mardm2025} perturbs redundant rotation, velocity and contact blocks and retrains GRU/CLIP readers using its 67 essential features. Those interventions need not preserve represented rotations. We isolate exact rotation equivalence and retain rotational information, including in domains lacking a separate position channel. Our audit addresses within-rotation encoding dependence rather than the whole redundancy mechanism or a new rotation representation.
+\paragraph{Pitfalls of generative evaluation.}
+Learned metrics are imperfect proxies for human judgment~\cite{jayasumana2024,stein2023,voas2023}, and implementation details can move them as much as model changes: image resizing and compression alter FID~\cite{parmar2022}, and FID can be lowered by matching class statistics rather than improving images~\cite{kynkaanniemi2023}. We identify an analogous failure in motion evaluation that is purely representational. Because the evaluated movement is fixed exactly, the failure does not depend on how well the metric agrees with people.
+
+\paragraph{Motion representations and evaluators.}
+The 6D representation~\cite{zhou2019} and related rotation projections~\cite{levinson2020} are standard in motion learning. HumanML3D and KIT-ML features~\cite{guo2022,kit2016} concatenate root motion, joint positions, velocities, 6D rotations and foot contacts, and are read by the T2M evaluator~\cite{guo2022} and TMR~\cite{tmr2023}. Critics trained on human preferences~\cite{wang2025motioncritic} and reward fine-tuning of diffusion models~\cite{draft2024} and motion generators~\cite{tan2026,motionrft2026} make the consistency of such evaluators matter for training as well as reporting. MARDM~\cite{mardm2025} perturbs or discards redundant feature groups and trains readers on root motion and positions; its perturbations change represented rotations. We keep all represented quantities fixed and preserve rotations in the remedy.
 
 \paragraph{Adversarial evaluation.}
-Universal perturbations and perturbation-generating networks demonstrate that neural predictions can be redirected~\cite{uap2017,gap2018,atn2018}. Related attacks target recognition, translation, learned image quality and motion prompts~\cite{li2023,liu2024,huang2023,alertmotion2025,fang2025}. Our constraint is stronger than a small numerical perturbation: decoded rotations and every nonrotation motion channel are preserved. Detector-aware controls~\cite{tramer2020adaptive} and physical perturbations help separate this representation channel from broader adversarial robustness. Reward fine-tuning motivates the distinction between a controllable evaluator and exploitation during generator training~\cite{draft2024,tan2026,motionrft2026,solireward2026}.
+Neural predictions can be redirected by universal or learned perturbations~\cite{uap2017,gap2018,atn2018}, including those of sign recognizers, image-quality models, translation metrics and text-to-motion systems~\cite{li2023,liu2024,huang2023,alertmotion2025}. Our perturbations need not be small: they are exactly invisible to the represented motion. This allows a defense that is exact rather than empirical, unlike detectors, which adaptive attacks can evade~\cite{tramer2020adaptive}.
 
-\paragraph{Sign-language backtranslation.}
-Production on PHOENIX-2014T, How2Sign and CSL-Daily~\cite{camgoz2018,duarte2021,zhou2021} is evaluated with motion-to-text readers~\cite{saunders2020,camgoz2020,walsh2025,signsparkbt}. SiLVERScore and BackTranslation 2.0 study richer semantic and prosodic evaluation~\cite{imai2025,cory2026}. We examine a representation requirement complementary to linguistic assessment. A source-conditioned layer serves as an amortized attack; it does not improve the signing or replace human evaluation.
+\paragraph{Sign-language production.}
+Production systems on PHOENIX-2014T, How2Sign and CSL-Daily~\cite{camgoz2018,duarte2021,zhou2021,low2026} are scored by backtranslation, in which a sign-to-text reader decodes the generated motion~\cite{saunders2020,camgoz2020,walsh2025}. Recent work adds semantic and linguistic assessment~\cite{imai2025,cory2026}. We study a complementary requirement on the reader's input, in a representation that contains only body and hand rotations.
 
-\section{An evaluation contract for rotations}
+\section{Evaluating movement, not coordinates}
 \subsection{The rotation equivalence class}
-For a joint, let $d=(a,b)\in\R^6$ with $a\ne0$ and $b$ noncollinear with $a$. The Gram--Schmidt converter computes
+For one joint, let $d=(a,b)\in\R^6$ with $a\ne0$ and $b$ not parallel to $a$. The converter computes
 \begin{align}
-u&=a/\|a\|,\qquad b_\perp=b-(u^Tb)u,\nonumber\\
-v&=b_\perp/\|b_\perp\|,\qquad R(d)=[u;v;u\times v].\label{eq:rotation}
+u&=a/\|a\|,\qquad b_\perp=b-(u^\top b)\,u,\nonumber\\
+v&=b_\perp/\|b_\perp\|,\qquad R(d)=[u;\,v;\,u\times v].\label{eq:rotation}
 \end{align}
-Sign-language implementations use rows; HumanML3D/KIT use these vectors as columns. Each audit retains the native convention. For $\alpha,\beta>0$ and $\eta\in\R$, define
+For $\alpha,\beta>0$ and $\eta\in\R$, define the recoding
 \begin{equation}
-\G_{\alpha,\beta,\eta}(a,b)=(\alpha a,\beta b+\eta a).\label{eq:transform}
+\G_{\alpha,\beta,\eta}(a,b)=(\alpha a,\;\beta b+\eta a).\label{eq:transform}
 \end{equation}
-The first normalized vector remains $u$; orthogonalizing the second gives $\beta b_\perp$. With $\C(d)=(u,v)$, exact arithmetic gives
+The first normalized vector is still $u$, and orthogonalization turns the second into $\beta b_\perp$. With the canonical representative $\C(d)=(u,v)$,
 \begin{equation}
-R(\G(d))=R(d),\quad \C(\G(d))=\C(d).\label{eq:invariance}
+R(\G(d))=R(d),\qquad \C(\G(d))=\C(d).\label{eq:invariance}
 \end{equation}
-Conversely, every encoding of $(u,v)$ has $a=\rho u$, $b=\sigma v+\tau u$, with $\rho,\sigma>0$. Thus the transformation spans the nondegenerate rotation fiber. This follows from the established converter~\cite{zhou2019}; the contribution is to audit and close the channel it exposes to evaluation.
+Conversely, any $d$ with canonical representative $(u,v)$ can be written $a=\rho u$, $b=\sigma v+\tau u$ with $\rho,\sigma>0$. The recodings therefore span the entire fiber of encodings of a rotation, a three-dimensional set per joint and frame, rather than a neighborhood of similar rotations. This is a direct consequence of the converter~\cite{zhou2019}; our contribution is to audit evaluators against it and to close it.
 
+\begin{figure*}[t]\centering
+\includegraphics[width=0.92\textwidth]{figures/motion_consistency_contract.pdf}
+\caption{\textbf{Auditing and closing the channel.} A recoding changes only the redundant coordinates of the 6D rotation features; the converter returns the same rotations, and positions, velocities, contacts and timing are untouched. A raw learned evaluator sees different inputs for the same movement. Canonicalizing before normalization gives every equivalent encoding one input.}\label{fig:contract}\end{figure*}
 
+We apply $\G$ only to valid rotation blocks (\cref{fig:contract}); every other channel and all padding is preserved bitwise. Rotation matrices, positions and forward kinematics are verified independently of any score (supplement). HumanML3D and KIT use the columns and the sign-language features the rows of $R$; each audit keeps the native convention.
 
-We apply $\G$ only to valid rotation blocks. Every other HumanML3D/KIT channel and padded frame is protected bitwise. For sign language, body/hand rotations, timing and other motion parameters remain fixed. Deterministic forward kinematics gives the same motion at fixed shape and translation. Native matrices, RIC positions and FK are checked independently of scores. Normalization clamps must remain inactive; finite-precision residuals and decoded hypothesis equality are verified separately.
+\subsection{Audits at increasing access}
+\paragraph{Fixed recodings} use one global coefficient direction, $(\log\alpha,\log\beta,\eta)=(b,-b,b)$ with $b\in\{\pm0.1,\pm0.35\}$, and random coefficients as a control. They use no caption, generator or evaluator gradient.
+\paragraph{Natural audits} compare each unmodified public output with its own canonical representative, so the represented movement is identical by construction.
+\paragraph{Targeted recodings} optimize per-frame, per-joint coefficients, bounded as $(\log\alpha,\log\beta,\eta)=b\tanh q$, toward an actual or a shifted caption through the frozen evaluator.
+\paragraph{Caption-blind recodings} use no caption content and no test reference. With the evaluator's gradients, they move generated embeddings toward Gaussian-transport targets~\cite{bhatia2017} computed from 2,048 training motions. Their outputs are frozen before any test-reference scoring, and a second official checkpoint that supplies no gradients also evaluates them.
+\paragraph{Learned layers} predict the same bounded coefficients from motion and the source sentence. Only the layer is trained, on training captions, with the generator and reader frozen. They are amortized attacks~\cite{gap2018,atn2018} that need no per-clip optimization at test time.
 
-\subsection{Auditing the channel at different access levels}
-\paragraph{Fixed recodings and natural outputs.}
-A fixed recoding uses $(\log\alpha,\log\beta,\eta)=(b,-b,b)$, independently of captions, with both signs and all tested magnitudes retained. Random recodings are another caption-independent control. Neither uses a trained attack or evaluator gradients. Natural-output audits instead compare each unmodified public output to its canonical representative.
-
-\paragraph{Target-aware and caption-blind attacks.}
-Per-clip attacks optimize coefficients with bounded parameterization
-\begin{equation}
-(\log\alpha,\log\beta,\eta)=b\tanh q.\label{eq:bounds}
-\end{equation}
-A caption-targeted attack minimizes frozen-reader loss toward an available caption. Circularly shifted captions test whether the reader follows an arbitrary target. Caption-blind attacks consume no caption content or TEST-reference embeddings: using source-evaluator gradients, regularized Gaussian transport~\cite{bhatia2017} maps generated motion embeddings toward statistics of TRAIN motion. Outputs are sealed before TEST-reference scoring. A different official checkpoint scores the sealed outputs without providing attack gradients or target statistics.
-
-\paragraph{Learned sign-language layers.}
-A layer $h_\theta(x,c)$ predicts the same bounded coefficients from motion $x$ and source caption $c$. Only the layer is fitted on TRAIN caption loss; generator and reader remain frozen. Final backtranslation receives features, lengths and masks. Source text is available to the layer, making this an amortized, target-aware attack. Motion-only and canonical-loss controls isolate the role of that source information.
-
-\subsection{Closing the channel}
-For a deterministic reader $f$, canonicalization satisfies
-\begin{equation}
-(f\circ\C)(\G(x))=(f\circ\C)(x).\label{eq:closure}
-\end{equation}
-The guarantee holds for every admissible scale and shear, independently of the attack target. It retains all represented rotations and closes the channel before the reader can use it. A detector, by contrast, must recognize an unfamiliar encoding. In the supplement, an adaptive attack preserves both canonical distance and squared 6D norm yet changes backtranslation, demonstrating the limitation of those detector statistics.
-
-The portable implementation applies $\C$ to unnormalized features, preserves padding and nonrotation channels, and rejects zero or collinear vectors on valid frames. Its evaluation contract specifies converter convention, normalization, masking and consistent reader fitting/inference. Invariance does not imply accuracy. Already canonical real-motion features provide an implementation sanity check; noncanonical sign-language data allow a separate matched reader-adaptation comparison.
-
-Normalization order matters. With feature normalization $\mathcal N$ and frame mask $m$, the defended interface is $f(\mathcal N(\C(x)),m)$. Projecting already standardized vectors generally does not implement the native rotation converter. Our paired audits keep evaluator weights, normalization statistics and reference embeddings fixed. A canonical evaluation protocol should apply the defended interface to both evaluated and reference motion; a newly fitted reader can learn on canonical inputs throughout. This makes the handling of equivalent encodings part of the evaluation interface, rather than a detector threshold. \Cref{fig:portable} gives a guarded input interface.
-
-\section{Experimental setup}
-\paragraph{Motion datasets and evaluators.}
-HumanML3D has 263 features, with 21 rotations in channels 67--192. Native KIT-ML~\cite{kit2016} has 251 features, with 20 rotations in 64--183. The Guo evaluator excludes only the four contact channels. Two official checkpoints share a Conv/BiGRU architecture with different weights. TMR uses an ACTOR Transformer, DistilBERT, its own normalization, deterministic VAE mean and cosine similarity. Its architecture differs from Guo's; our compatible-cohort audit does not reproduce TMR's full official annotation/filtering protocol. We use the native 251-feature KIT evaluator, not TMR's incompatible 263-feature KIT-AMASS model.
-
-\paragraph{Paired public-output audit.}
-Each release has 20 native TEST draws, with paired outputs, captions, candidate groups and reference. HumanML reference draws contain all 4,640 eligible segmented/mirrored entries after dropping an incomplete batch. MDM/MotionDiffuse/DiP emit 1,024 outputs; the other releases emit 4,640. KIT uses 704 outputs/reference. DiP receives 20 source prefix frames, excluded from the scored output, and is labeled as prefix-conditioned. These are consistency audits under recorded inference settings, not exact leaderboard reproductions. Paired $t_{19}$ intervals use separately specified comparison families; full FID/R1 results and published-error-bar context are in the supplement.
-
-\paragraph{Controlled tests and physical checks.}
-The targeted Guo study uses 1,024 fixed clips/source and five 32-candidate permutations. TMR uses the same 1,024 clips/source and native 32-candidate cosine retrieval. Both use 80 Adam steps and the final iterate. Fixed recodings retain both signs, smaller budgets and random controls. Angular calibration jointly updates rotations, FK positions, velocities and contacts, with fixed-per-clip and frame-independent axes. A common zero-angle reconstruction makes its comparisons coherent; its own score cost is reported. A generic TMR attack at matched numerical L2 is a supplemental physical-change control. Native geometry, saved metrics and canonical embeddings are independently verified.
-
-\paragraph{Equal-budget block controls.}
-All twenty saved real cohorts undergo rotation-fiber, outside-fiber rotation, velocity, contact and position interventions. We match $\|D_r^{-1}(y-x)\|_2=\kappa\sqrt L$ per clip, using reader $r$'s standard deviations $D_r$, valid length $L$ and radii $\kappa=1,3$. Each block has random controls and fixed directions with both signs. Non-null fixed directions use one local axis across joints and time; their scalars depend only on the input norm. Budgets include all 263 channels; Guo ignores contacts. Block-only controls can be physically inconsistent and differ from coherent angular calibration. Paired twenty-draw intervals adjust 28 original or 32 additional endpoints per reader, in separate families.
-
-\paragraph{Rotation-only sign-language domain.}
-Released 240-feature body/hand motion uses native filtering and backtranslation. Full TEST counts are 642 PHOENIX, 2,183 How2Sign and 1,162 CSL-Daily. BT readers share a Sign Language Transformer family~\cite{camgoz2020}; their real-motion BLEU is 15.00/3.48/6.89. Each learned layer uses three fitting seeds and final checkpoints. PHOENIX uses canonical generated motion; How2Sign/CSL use real motion. BLEU-4~\cite{papineni2002,post2018} is word-level on PHOENIX/How2Sign and character-level on CSL. Paired 20,000-sample intervals group How2Sign by 149 VIDEO\_IDs; seed-resampling sensitivity is separate~\cite{colas2018}. These public TEST splits were used during project development and are not project-wide untouched holdouts.
-
-\section{Results}
-\subsection{A fixed recoding changes FID without changing motion}
 \begin{figure*}[t]\centering
 \includegraphics[width=\textwidth]{figures/encoding_and_physical_scale.pdf}
-\caption{\textbf{A score difference needs no physical difference.} Left: fixed, caption-independent recodings of the same real HumanML3D motions; no optimization or gradients. Bars show means and 95\% $t_{19}$ intervals over 20 draws. Right: coherent angular perturbations on those motions, with two temporal noise structures. Both panels use the paired zero-angle reconstruction as reference; zero FID is by construction. Original-to-reconstruction FID is 0.0201. The recodings leave rotations and all nonrotation channels fixed.}\label{fig:encodingscale}\end{figure*}
+\caption{\textbf{A score change without a physical change, and its physical scale.} Left: fixed, caption-independent recodings of the same real HumanML3D motions, scored against those motions (no optimization or gradients; means and 95\% intervals over 20 draws). Right: genuine rotation perturbations of the same motions, propagated coherently to all feature blocks, with an axis fixed through time or drawn independently per frame; dashed lines mark the two largest recodings. Both panels use the same reconstructed reference, so FID is zero by construction at zero change; the reconstruction itself has FID 0.02 to the original data.}\label{fig:scale}\end{figure*}
 
-\textbf{A deterministic recoding is sufficient to expose inconsistency.} On real HumanML3D motion, signed fixed coefficients $\pm0.35$ produce FID 1.97/3.57 against the same reconstructed motions (\cref{fig:encodingscale}). Positions and rotations are unchanged. This test uses no caption, no evaluator gradients and no fitted attack. Direction matters: fixed $\pm0.1$ and random coefficients produce much smaller changes. All these controls are shown together, rather than interpreting the largest recoding as a typical natural output.
+\subsection{Closing the channel}
+For a deterministic reader $f$, composing with canonicalization gives
+\begin{equation}
+(f\circ\C)(\G(x))=(f\circ\C)(x)\label{eq:closure}
+\end{equation}
+for every admissible recoding, regardless of who chooses it or how. Detecting unusual encodings is weaker. In the supplement, a per-clip attack that preserves both the distance to the canonical encoding and the feature norm still raises PHOENIX backtranslation by 4.09 BLEU, while a threshold detector on that distance is at chance (AUC 0.50).
 
-\textbf{Physical calibration gives the score a measured scale.} The fixed-recoding FIDs lie between the measured 1- and 3-degree frame-independent perturbations, but between 10 and 30 degrees for temporally fixed axes. Updating all feature blocks requires coherent reconstruction, whose FID cost against the original data is 0.0201. Each comparison in the figure uses the same reconstructed motion and reference. The two curves show why there is no universal FID-to-degrees conversion; they contextualize evaluator sensitivity rather than human-perceived motion quality.
-
-\begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/matched_blocks.pdf}
-\caption{\textbf{Direction controls qualify equal-budget block sensitivity.} Per-clip normalized L2 is $\kappa\sqrt L$, here $\kappa=3$, using each reader's own normalization. Random and both fixed signs are shown over twenty draws; original/additional intervals adjust 28/32 endpoints separately. Only the fiber interventions preserve rotations and every other block. Non-null directions are constant in time but can be inconsistent with fixed features. Guo excludes contacts. Both radii and all endpoints are supplemental.}\label{fig:matchedblocks}\end{figure*}
-
-\textbf{Fixed directions can cause larger changes outside the fiber.} At $\kappa=3$, random velocity/position noise changes Guo FID by 0.016/0.018, exceeding random fiber coefficients (0.0024) and rotations (0.0035). Fixed position and fixed velocity directions reach 1.189 and 0.476, above the fixed fiber maximum of 0.117 (\cref{fig:matchedblocks}). Equal L2 alone does not establish a universal ranking of feature importance. The fiber's distinction is exact equivalence: only its interventions preserve rotations and every nonrotation feature.
-
-\textbf{Sensitivity also depends on the reader.} Guo excludes contacts and its embeddings are unchanged by contact offsets. TMR reads them: at $\kappa=3$, a fixed negative contact offset reduces R1 by 2.32 percentage points, versus 0.23 for the fixed negative fiber direction. These are block-input controls, including nonbinary contacts, not motion-quality comparisons. Both signs, radii and all retrieval/cosine endpoints remain supplemental.
-
-\subsection{The dependence also appears in public outputs}
-\input{table_editorial_natural}
-\textbf{Unmodified releases are measurably representation-dependent.} Canonicalizing identical public outputs changes FID in all eight HumanML3D release settings and both native KIT settings (\cref{tab:editorialnatural}). Each reported FID interval excludes zero within its study's comparison family. In the original five-release audit, absolute gaps are at most 0.047; signs vary and the mean ranking is unchanged. This is inconsistency, not a finding of systematic inflation or intentional manipulation.
-
-\textbf{Natural sensitivity depends on the reader.} Another official Guo checkpoint changes T2M's gap direction and makes MLD's FID gap inconclusive. TMR supplies a different architecture: its natural retrieval gaps are small, with positive intervals for MotionLCM and T2M and inconclusive intervals for the other audited releases. Thus the larger capacity demonstrated below should not be read as the prevalence of a large bias in existing generators. Full endpoints and intervals remain in the supplement.
-
-\begin{figure}[t]\centering
-\includegraphics[width=\columnwidth]{figures/rotation_mechanism.pdf}
-\caption{\textbf{Natural rotation deviations do not impose a uniform penalty.} Signed primary Guo FID gaps versus valid-frame raw-to-canonical rotation RMS for all eight release settings. Blue: diffusion/consistency; orange: VQ; gray: VAE; green: prefix-conditioned. Intervals are the original paired, family-adjusted gap intervals. Each point is one release's twenty-draw mean. Family and conditioning are confounded; this is a descriptive mechanism check.}\label{fig:rotationmechanism}\end{figure}
-
-\textbf{Rotation noncanonicality alone does not explain a uniform diffusion penalty.} Three of four diffusion/consistency releases have negative raw-minus-canonical gaps, while both VQ releases have positive gaps (\cref{fig:rotationmechanism}); T2M's VAE has the largest positive gap overall. RMS correlates weakly with signed and absolute gaps across the eight releases, with no significant exact-permutation result. This counterfactual concerns only the rotation fiber. It neither tests velocity/contact errors nor refutes MARDM's full explanation of representation and diffusion-training effects.
-
-\subsection{The channel can redirect two evaluator architectures}
-\input{table_editorial_retrieval}
-\textbf{Target-aware recoding can make retrieval nearly perfect at fixed motion.} Guo R1 rises from 0.397 to 0.993 on MDM and from 0.462 to 0.996 on real motion (\cref{tab:editorialretrieval}). TMR R1 rises from 0.578 to 0.993 on MDM and from 0.688 to 1.000 on real motion. Each attack has evaluator-gradient and caption access; native candidate permutations and similarity functions differ, so absolute scores should not be ranked across architectures. Native geometry remains fixed, while canonical embeddings change by at most $6.7\times10^{-6}$ in these targeted studies.
-
-\textbf{The reader follows the target rather than a change in movement.} Shifted-caption attacks improve retrieval toward the shifted text while reducing agreement with the actual caption. Canonical-reader-gradient attacks fail to redirect retrieval. These controls isolate a manipulable representation channel. Retrieval improvement need not improve another metric: the targeted Guo attack worsens FID, as reported in the full endpoint table.
-
-\subsection{Caption-blind manipulation transfers to another checkpoint}
-
-
-\textbf{TRAIN motion statistics supply the attack targets.} Using only 2,048 TRAIN motion embeddings as targets, bound 0.1 reduces source-reader MDM FID by 39--53\% across three 960-output cohorts. The same protocol changes MLD FID from 0.706 to 0.289. It never consumes caption content or TEST-reference embeddings during optimization. Rotations and nonrotation channels remain unchanged.
-
-\textbf{The effect survives a change in evaluator weights.} The sealed MLD attack changes FID from 0.659 to 0.579 in the destination checkpoint, which supplies no gradients or refitting. The MDM cohorts also improve there, with smaller gains than against the source reader (full curves are supplemental). The larger bound worsens every cohort in both checkpoints, showing that capacity does not imply a monotonic budget response. Canonical-gradient and random controls, and the cohort overlap counts, are reported in the supplement. This is checkpoint transfer within Guo's architecture, not transfer to TMR.
-
-\subsection{Representation dependence in sign language}
-\input{table_editorial_sign}
-\textbf{Real sign inputs show dependence without an attack.} Canonicalization changes 1,438/2,183 How2Sign and 464/1,162 CSL hypotheses, versus 0/642 on PHOENIX (\cref{tab:editorialsign}). BLEU changes only 3.4779 to 3.4840 and 6.8907 to 7.0662, respectively. These are paired decodes of real inputs under shared native preprocessing, with no layer, target caption or optimization; corpus BLEU can mask sentence-level changes.
-
-\textbf{A TRAIN-fitted layer redirects backtranslation without changing signing.} On PHOENIX, the source-conditioned layer raises raw BLEU from 6.39 to 15.21, with unchanged canonical hypotheses (\cref{tab:editorialsign}). How2Sign and CSL-Daily extend the result to real motion: their gains are 2.64 and 0.54 BLEU. The layers use their corpus-specific encoders and receive source text; these are target-aware attacks, not improved signing or cross-language transfer.
-
-\textbf{The effect depends on the representation channel.} Motion-only and canonical-loss ablations separate the role of source text from movement. Changing only the layer's text redirects the decoded caption while preserving physical rotations and canonical hypotheses. An adaptive per-clip attack further preserves canonical distance and squared 6D norm and still gains 4.09 BLEU on PHOENIX. Its full statistic-matching controls and failed learned variants remain in the supplement. Canonicalization closes the channel even when those scalar detectors do not detect it.
-
-\subsection{Canonicalization closes the channel while retaining rotations}
-\input{table_mardm_rankings}
-\textbf{Discarding rotations and canonicalizing them are different remedies.} Public MARDM essential-only GRU/CLIP readers ignore rotation recodings exactly. With a common real reference across twenty draws, their mean-FID rankings differ from Guo $\C$ (\cref{tab:mardmranks}), both with Kendall agreement 0.857. Different features, weights and architectures contribute to these differences; they do not identify a better evaluator. In our rotation-only sign-language inputs, dropping rotations would remove all movement features. Canonicalization retains them and requires no replacement architecture.
-
-\textbf{Equivalent encodings become equivalent evaluator inputs.} Applying $\C$ before normalization recovers the same canonical embeddings in the motion attacks and preserves every canonical decoded hypothesis in the sign-language attacks. The result follows from the converter contract, with native finite-precision checks verifying its implementation. A generic matched-L2 TMR attack that changes physical features remains effective after canonicalization; the defense targets equivalent encodings, not all adversarial perturbations.
-
-\textbf{Accuracy requires a separate test on noncanonical inputs.} Real HumanML3D/KIT rotations are already canonical: their unchanged retrieval is an implementation sanity check, not evidence of a cost-free defense. For noncanonical sign-language features, matched raw/canonical reader adaptation gives How2Sign/CSL TEST differences of $+0.10/-0.02$ BLEU, with seed-plus-group intervals containing zero. This empirical comparison is distinct from the invariance guarantee; adaptation details are supplemental.
-
-
-
-\section{Discussion}
-Our results identify a concrete evaluation failure: the tested readers can distinguish encodings that their motion converters identify as the same movement. Fixed recodings establish this without a target or optimization. Public-output audits establish smaller natural dependence, with signs that vary by release and reader. Target-aware and caption-blind attacks demonstrate capacity under distinct access models. Canonicalization closes the rotation fiber while retaining rotational information.
-
-\paragraph{Scope.}
-This is an evaluation-consistency claim, not evidence of routine exploitation during generator training. The supplement reports unsuccessful reward-optimization pilots, released reward-trained checkpoints and ordinary-generator controls. TMR adds a distinct architecture under compatible cohorts rather than its full annotation protocol. BT readers share one family and have weak How2Sign/CSL accuracy; linguistic and human/avatar assessment is outside this study. Canonicalization closes the rotation-encoding channel, not positional/velocity redundancy or attacks that change movement.
+The order of operations matters. With feature normalization $\mathcal N$ and frame mask $m$, the canonical interface is $f(\mathcal N(\C(x)),m)$. Canonicalization must act on unnormalized features, because projecting standardized vectors does not implement the native converter, and the same interface should be applied to generated and reference motion. \Cref{fig:portable} gives a guarded implementation that validates rotations, rejects degenerate vectors and preserves every non-rotation channel.
 
 \begin{figure}[t]
 \centering\begin{minipage}{\columnwidth}\footnotesize
@@ -198,13 +120,70 @@ def reader_input(raw, lengths, mu, sd):
     return z * m[..., None], m
 \end{verbatim}
 \end{minipage}
-\caption{\textbf{A guarded HumanML3D/KIT input interface.} Use unnormalized motion and the reader's fixed normalization. The helper validates rotations and preserves protected channels. Apply the same masked interface to evaluated and reference motion.}\label{fig:portable}
+\caption{\textbf{A canonical evaluator input for HumanML3D/KIT.} Pass unnormalized features and the evaluator's own normalization statistics; use the same function for generated and reference motion.}\label{fig:portable}
 \end{figure}
 
-\FloatBarrier
-\newpage
+\section{Experimental setup}
+\paragraph{Motion evaluators and data.}
+HumanML3D has 263 features per frame, with 21 joint rotations in channels 67--192; KIT-ML has 251, with 20 rotations in channels 64--183~\cite{guo2022,kit2016}. The T2M evaluator~\cite{guo2022} is a convolutional--recurrent motion encoder that reads all channels except foot contacts. We use its MDM-distributed weights and, as a replication, the distinct official weights released with T2M-GPT. TMR~\cite{tmr2023} is a Transformer with its own normalization that reads all 263 channels and scores by cosine similarity. For KIT-ML we use the native 251-feature T2M evaluator.
+
+\paragraph{Public generators.}
+We audit the released MDM~\cite{tevet2023}, MLD~\cite{mld2023}, MotionLCM~\cite{motionlcm2024}, T2M-GPT~\cite{t2mgpt2023}, T2M~\cite{guo2022}, MoMask~\cite{momask2024}, DiP~\cite{closd2025} (which receives a 20-frame prefix) and MotionDiffuse~\cite{motiondiffuse2024} on HumanML3D, and MoMask and MotionDiffuse on KIT-ML, with their native inference settings. Each setting uses 20 native test draws of captions, crops and 32-candidate batches. Raw and canonical scores share outputs, captions and references, and paired $t_{19}$ intervals are adjusted for multiple comparisons. These are consistency audits, not leaderboard reproductions.
+
+\paragraph{Targeted and blind recodings.}
+Targeted attacks use the same 1,024 test clips per source for both evaluators, 80 Adam steps and bound $b=0.35$. Caption-blind attacks were run at two preset bounds; we report $b=0.1$, on 960 MDM outputs for each of three generation seeds and on MLD, and give both bounds in the supplement. Equal-budget controls match the per-clip normalized change $\|D^{-1}(y-x)\|_2=\kappa\sqrt{L}$, with the evaluator's standard deviations $D$ and $L$ valid frames.
+
+\paragraph{Sign language.}
+We use the released 240-feature body and hand rotation features and the public SignSparK backtranslation readers~\cite{low2026,signsparkbt}, one Sign Language Transformer~\cite{camgoz2020} per corpus, on the full test sets of PHOENIX-2014T (642 clips), How2Sign (2,183) and CSL-Daily (1,162). PHOENIX layers recode the outputs of a frozen, locally trained text-to-motion diffusion model; How2Sign and CSL-Daily layers recode real motion. Each layer is fitted with three seeds and evaluated with BLEU-4~\cite{papineni2002,post2018}, word-level except on CSL-Daily, where it is character-level; paired bootstrap intervals are clustered by video on How2Sign.
+
+\section{Results}
+\subsection{Equivalent encodings change scores}
+\textbf{A fixed recoding is enough.} Real HumanML3D motion has FID 0.001 against an independent real reference. After the fixed recodings with $b=+0.35$ and $-0.35$, the same movement has FID 2.00 and 3.64: 4.4$\times$ and 8.0$\times$ the FID of MDM's generated motion (0.455) under the same protocol. No caption, optimization or gradient is involved. Direction matters: magnitude 0.1 gives 0.06--0.08 and random coefficients 0.03. \Cref{fig:scale} (left) shows the same pattern against a paired reference.
+
+\textbf{The scale is that of a physical change.} The two large recodings move FID as much as genuine rotation perturbations of 1--3$^\circ$ drawn independently per frame, or of 10--30$^\circ$ about a fixed axis (\cref{fig:scale}, right). An encoding change that leaves the movement untouched is scored like a physical change of several degrees.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/within_rotation_budget.pdf}
+\caption{\textbf{Equal budget, unequal response.} FID change of real HumanML3D motion for perturbations of the same 126 rotation channels with equal normalized $L_2$ norm $\kappa\sqrt{L}$, mean over 20 draws. Redundant directions change no rotation; genuine directions rotate the joints. Intervals are narrower than the bars.}\label{fig:within}\end{figure}
+
+\textbf{A fixed redundant direction outweighs a fixed rotation.} At an equal normalized budget ($\kappa=3$) within the same 126-dimensional rotation block, fixed recoding directions change FID by 0.082 and 0.117, against 0.011 and 0.015 for fixed directions that genuinely rotate the joints: 7.7$\times$ more response to coordinates that carry no movement, and 7.7--8.1$\times$ at the smaller budget (\cref{fig:within}). The supplement reports all feature blocks and budgets.
+
+\textbf{Why.} Real HumanML3D rotations are canonical, so the data on which these evaluators are trained never vary along a fiber. A recoding moves inputs off that distribution in directions the evaluator has never observed and was never trained to ignore. A fixed direction shifts every frame coherently and therefore moves the embedding statistics that FID compares, whereas random coefficients largely average out.
+
+\begin{figure*}[t]\centering
+\includegraphics[width=0.9\textwidth]{figures/sign_example.pdf}
+\caption{\textbf{A greeting becomes a weather forecast.} A real PHOENIX-2014T test clip (RGB frames shown for reference) and its released rotation features. A per-clip recoding toward another test sentence leaves every joint rotation unchanged, yet the backtranslation reader decodes the weather report; canonicalizing restores the original decoding for both encodings. The clip was chosen for illustration; aggregate results are in \cref{tab:sign}.}\label{fig:signexample}\end{figure*}
+\input{table_main_natural}
+\subsection{Public outputs are already affected}
+Generators do not produce exactly canonical rotations, so their reported scores already contain this dependence. Canonicalizing each output while keeping it otherwise identical changes FID in all ten settings (\cref{tab:natural}). The changes reach 0.046 and have both signs, including within diffusion models. They are comparable to differences that are reported as progress: in six of ten settings, the encoding-only change exceeds the 95\% margin that the authors report for their own FID. The mean ranking of the five original releases is unchanged, and the corresponding retrieval and TMR gaps are small (supplement). On public outputs, the effect is a measurable inconsistency rather than a reordering of the field.
+
+\subsection{Recoding alone can redirect evaluators}
+\input{table_main_retrieval}
+\textbf{Retrieval reaches its ceiling.} With evaluator gradients, recoding raises top-1 R-Precision from 0.397 to 0.993 for MDM outputs and from 0.462 to 0.996 for real motion with the T2M evaluator, and from 0.578 to 0.993 and from 0.688 to 1.000 with TMR (\cref{tab:retrieval}). The evaluators are not recognizing better movement: when the target is another clip's caption, retrieval of that wrong caption rises to 0.79--0.97 while the actual caption is lost. Attacks optimized through a canonicalizing evaluator do not move scores, and canonical embeddings change by at most $6.7\times10^{-6}$.
+
+\textbf{Captions are not needed to lower FID.} Using only statistics of training motion, caption-blind recoding lowers MDM FID from 0.384 to 0.210, from 0.376 to 0.176 and from 0.327 to 0.199 for three generation seeds (39--53\%), and MLD FID from 0.706 to 0.289. Scored by the second official T2M checkpoint, which supplied no gradients, the same frozen outputs still improve by 12--25\% (supplement). These reductions exceed the FID differences between several published generators (\cref{tab:natural}) and are obtained without moving a single joint.
+
+\subsection{Rotation-only domains: sign language}
+\input{table_main_sign}
+Sign-language features contain only rotations, so discarding them is not an option. A learned layer that recodes the PHOENIX-2014T generator's outputs from their source sentence raises backtranslation BLEU from 6.39 to 15.21, comparable to the 15.00 of real signing, while every canonical hypothesis is unchanged (\cref{tab:sign}). Changing only the sentence given to the layer moves the decoded output toward that sentence: BLEU against it rises from 0.83 to 9.60. On real How2Sign and CSL-Daily motion, the same construction raises BLEU by 2.64 and 0.54, with intervals excluding zero. Per-clip optimization exposes a larger channel still: on PHOENIX, the reader decodes an arbitrary other sentence at 85.19 BLEU (\cref{fig:signexample} and supplement).
+
+\subsection{Canonicalization closes the channel}
+\textbf{Exact closure.} Canonicalized inputs give identical embeddings and identical decoded hypotheses for every targeted, caption-blind and learned recoding above, as \cref{eq:closure} predicts; numerical checks bound the residuals (supplement). Readers that discard rotations~\cite{mardm2025} are also invariant, but they replace the evaluator and cannot apply to rotation-only inputs. Canonicalization keeps the evaluator, and its ranking of the eight HumanML3D releases agrees with that of the public essential-feature readers (Kendall $\tau=0.857$).
+
+\textbf{No measured accuracy cost.} Real HumanML3D and KIT rotations are canonical, so real-motion retrieval is unchanged by construction. Real sign-language features are not. Readers fine-tuned on canonical inputs reach How2Sign and CSL-Daily test BLEU within $+0.10$ and $-0.02$ of matched raw-input readers, with intervals containing zero.
+
+\section{Discussion}
+\paragraph{A consistency checklist.}
+Motion scores should be specified on represented movement. For any evaluator of rotation features we recommend four steps: (i) name the converter and its canonical representative; (ii) report each method's raw-minus-canonical score gap, since a nonzero gap shows that the evaluator reads the encoding; (iii) score generated and reference motion through the same interface $f(\mathcal N(\C(x)),m)$ (\cref{fig:portable}); and (iv) canonicalize learned rewards before their gradients reach a generator, because the redundant coordinates are exactly the directions a generator can change at no cost to its motion.
+
+\paragraph{Beyond 6D.}
+The audit relies only on a converter that maps many encodings to one rotation, so it applies unchanged to other parameterizations. Unnormalized quaternions are invariant to positive scale and to sign, 9D matrices projected by SVD~\cite{levinson2020} to their symmetric factor, and axis--angle vectors to full turns. In each case the test is the same: recode within the converter's fibers, compare scores, and canonicalize before reading.
+
+\paragraph{Scope.}
+Our claims concern evaluation. We do not claim that published results were manipulated or that standard training exploits the channel. Canonicalization removes rotation-encoding dependence; it does not make an evaluator accurate, and it does not address redundancy between positions and velocities or attacks that change the movement. The sign-language readers come from one released family, and their absolute accuracy on How2Sign and CSL-Daily is low.
+
 \section{Conclusion}
-The same movement can receive different scores when a learned evaluator reads redundant rotation coordinates. We isolate this failure with transformations that preserve both positions and rotations, show that it occurs in public outputs, and demonstrate a larger controllable channel across motion retrieval and sign-language backtranslation. Canonicalization gives equivalent encodings a common input while retaining rotational information, while keeping accuracy a separate empirical question. Our evaluation contract and portable implementation make this requirement directly testable: a motion score should be specified on represented movement, with the treatment of equivalent encodings made explicit.
+Learned motion evaluators assign different scores to the same movement when its rotations are written differently. The dependence is present in released generator outputs, can be as large as a physical change of several degrees, and can drive retrieval, FID and backtranslation without moving a joint. Canonicalizing rotations before evaluation removes it exactly and keeps all rotational information. As happened for image metrics, we hope that a precise statement of the evaluation interface becomes part of how motion results are computed and reported.
 
 \clearpage
 {\small\bibliographystyle{ieeenat_fullname}\bibliography{references}}

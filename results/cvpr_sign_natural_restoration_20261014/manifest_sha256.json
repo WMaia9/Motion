@@ -1,0 +1,10 @@
+{
+  "analysis.json": "9baa5e95560bdff960f0468e956bbd6368feb7e22f1eba230099b344e95cf14f",
+  "docs/coherence-review-plan.md": "a774e885618d5b3d5a26345a5c079cd2ec20ce49eb82177fd27d1a3dc0d7384e",
+  "scripts/freeze_coherence_studies.py": "002e6c2419a995091c137d2fe241fde081d62142c596fe90923d2037ec4f1eab",
+  "scripts/freeze_motion_release_studies.py": "1269727af1f5fb4b131b4dd1f19a16bf7d503716691b94d8670de0d913039eae",
+  "scripts/restore_sign_natural_evidence.py": "0a9100c059ccedcebd9cb1dec69f94818c4722ca556a38d2a7fc6bbfcfb2c3b1",
+  "source_provenance.json": "960c0991905c21f7f6eb6f9260b112f8c576d2822d63805c9cfaa7c88089cdb4",
+  "summary.json": "4a044404570373b98cd03902506f4cd6e1eaae089f64d560725f5b16f15de530",
+  "verification.json": "cbfacb0c872cf5883208ce78a1eef5776c7ea1e6f75ed4a8059e4d59a24bca6d"
+}

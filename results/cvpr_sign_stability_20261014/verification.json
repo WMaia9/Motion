@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "allclip_condition_reconstructions": 26760,
+  "all_saved_hypothesis_pairs_independently_scored": 26760,
+  "native_fixture_decodes_exact": 648,
+  "all28_adjusted_intervals_recomputed": true,
+  "interval_count": 28,
+  "geometry": {
+    "How2Sign": {
+      "all8_conditions_allclips_reconstructed": true,
+      "budget_error_scaled_by_max_B_1": 4.3153416728891614e-08,
+      "canonical_native_matrix_angle_max_deg": 3.3501169848868915e-06,
+      "physical_Gram_max_change": 1.529357187557423e-07,
+      "physical_angle_error_max_rad": 2.2093758461627644e-07
+    },
+    "CSL-Daily": {
+      "all8_conditions_allclips_reconstructed": true,
+      "budget_error_scaled_by_max_B_1": 1.3302134866241648e-08,
+      "canonical_native_matrix_angle_max_deg": 3.183053249929064e-06,
+      "physical_Gram_max_change": 2.3878637911423084e-07,
+      "physical_angle_error_max_rad": 6.428281074458142e-07
+    }
+  },
+  "ratio_same_sign_arithmetic_verified": true,
+  "source_sha256": "10e5a938125a911eb0ccc1af1131473191bd1681dc42acb7df2a1b8c70162979"
+}

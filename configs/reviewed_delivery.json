@@ -1,10 +1,10 @@
 {
-  "review_date": "2026-10-13",
-  "report": "reports/cvpr_mardm_followup_20261013",
-  "paper_source": "reports/cvpr_mardm_followup_20261013/manuscript",
+  "review_date": "2026-10-14",
+  "report": "reports/cvpr_sign_stability_review_20261014",
+  "paper_source": "reports/cvpr_sign_stability_review_20261014/manuscript",
   "documents": {
-    "mardm-followup-review.md": "mardm-followup-review.md",
-    "mardm-followup-plan.md": "mardm-followup-plan.md"
+    "sign-stability-plan.md": "sign-stability-plan.md",
+    "sign-stability-review.md": "sign-stability-review.md"
   },
   "additional_metadata": {
     "cvpr_critical_review_20261012": [
@@ -213,6 +213,54 @@
       "frozen_integrity.json",
       "new_study_integrity.json",
       "presentation_corrections.json",
+      "manuscript_anonymity_check.json",
+      "anonymous_utility_verification.json"
+    ],
+    "cvpr_coherent_blocks_20261014": [
+      "source_provenance.json",
+      "guo/normalizer.json",
+      "guo/analysis.json",
+      "guo/verification.json",
+      "guo/complete.json",
+      "tmr/normalizer.json",
+      "tmr/analysis.json",
+      "tmr/verification.json",
+      "tmr/complete.json"
+    ],
+    "cvpr_sign_natural_restoration_20261014": [
+      "source_provenance.json"
+    ],
+    "cvpr_coherence_review_20261014": [
+      "source_provenance.json",
+      "layout_verification.json",
+      "visual_review.json",
+      "primary_sources.json",
+      "claim_audit.json",
+      "evidence_map.json",
+      "presentation_evidence.json",
+      "archive_integrity.json",
+      "parent_assets.json",
+      "manuscript_anonymity_check.json",
+      "anonymous_utility_verification.json"
+    ],
+    "cvpr_sign_stability_20261014": [
+      "source_provenance.json",
+      "rotation_ratio.json",
+      "How2Sign/native_decoder.json",
+      "How2Sign/complete.json",
+      "CSL-Daily/native_decoder.json",
+      "CSL-Daily/complete.json"
+    ],
+    "cvpr_sign_stability_review_20261014": [
+      "source_provenance.json",
+      "layout_verification.json",
+      "visual_review.json",
+      "primary_sources.json",
+      "claim_audit.json",
+      "evidence_map.json",
+      "presentation_evidence.json",
+      "archive_integrity.json",
+      "parent_assets.json",
       "manuscript_anonymity_check.json",
       "anonymous_utility_verification.json"
     ]

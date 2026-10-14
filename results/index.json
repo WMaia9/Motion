@@ -1,8 +1,8 @@
 {
-  "export_date": "2026-10-13",
+  "export_date": "2026-10-14",
   "scope": "aggregate metadata only; full archive data and weights are not in Git",
   "full_manifests_are_inventories_not_complete_exports": true,
-  "report_count": 56,
+  "report_count": 61,
   "files": [
     {
       "path": "csl_bleu_recheck_20261011/verification.json",
@@ -243,6 +243,174 @@
       "sha256": "76336e84098e6d69c26ee3610624e52052b234e69c322b2ec188f46741bc3fff",
       "original_path": "reports/cvpr_canonical_readers_20261011/manifest_sha256.json",
       "original_manifest_sha256": "76336e84098e6d69c26ee3610624e52052b234e69c322b2ec188f46741bc3fff"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/summary.json",
+      "sha256": "50f575591bca91bbcaaa6c4e91b81fb275ac69d728cc9cba67ebfabbc5c91edd",
+      "original_path": "reports/cvpr_coherence_review_20261014/summary.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/verification.json",
+      "sha256": "213d8d57dffb5ba43814f95e79d3359446df989a8d0edca29a9d73dfbb6e917c",
+      "original_path": "reports/cvpr_coherence_review_20261014/verification.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/manifest_sha256.json",
+      "sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316",
+      "original_path": "reports/cvpr_coherence_review_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/source_provenance.json",
+      "sha256": "c9845b3c400b764b1132b1b599ce8d7281018b2adf6032dfc3cc42a925652e32",
+      "original_path": "reports/cvpr_coherence_review_20261014/source_provenance.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/layout_verification.json",
+      "sha256": "18ace1704cd49d12bcacd6f66228790bf98dc27c0c6819dbaddf4f4e7119c715",
+      "original_path": "reports/cvpr_coherence_review_20261014/layout_verification.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/visual_review.json",
+      "sha256": "b02d82fb0fe581db6fd19121a0e1c930fad29df8b46c4df2931ca41c99e829e2",
+      "original_path": "reports/cvpr_coherence_review_20261014/visual_review.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/primary_sources.json",
+      "sha256": "a71fd31f73520bfcb1cbee47343aeb304167f94141d9cc8df0d566fd6796d7d2",
+      "original_path": "reports/cvpr_coherence_review_20261014/primary_sources.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/claim_audit.json",
+      "sha256": "cac1c1d63edc940708d03f4f4c17d7e23f0b2ed80c306edc23f0b4031d61ea67",
+      "original_path": "reports/cvpr_coherence_review_20261014/claim_audit.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/evidence_map.json",
+      "sha256": "84b52f6adb537d87bc24a3a904b3eeef52f4d65f9380c15c7adec251246eb42a",
+      "original_path": "reports/cvpr_coherence_review_20261014/evidence_map.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/presentation_evidence.json",
+      "sha256": "d39d3755d282af376bc9bc4632ba4c80b8e12417030265c6ef701a605bf65ff4",
+      "original_path": "reports/cvpr_coherence_review_20261014/presentation_evidence.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/archive_integrity.json",
+      "sha256": "1a4b529a4797c4ac6a1c3fc8cbd2368829b49afaa994bd6f5fd9e9cd2b47052e",
+      "original_path": "reports/cvpr_coherence_review_20261014/archive_integrity.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/parent_assets.json",
+      "sha256": "57271cc4adb69fd24344fa1c4c0dbc69827a5881e87b9e374989ef9002a001ca",
+      "original_path": "reports/cvpr_coherence_review_20261014/parent_assets.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/manuscript_anonymity_check.json",
+      "sha256": "8c8b9c03cc867d92a6dbac3d23eabe2867843774d819f03d28c421b5908aefbb",
+      "original_path": "reports/cvpr_coherence_review_20261014/manuscript_anonymity_check.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherence_review_20261014/anonymous_utility_verification.json",
+      "sha256": "bbd7541816f598949ae4e48034936954aca4042ce36393881324d26c83a972c9",
+      "original_path": "reports/cvpr_coherence_review_20261014/anonymous_utility_verification.json",
+      "original_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/summary.json",
+      "sha256": "14b1b7d7e736bec1c9edd53953ccafc65dec14dfba62b488fd0b10987a169f1c",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/summary.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/verification.json",
+      "sha256": "80f0f4c31cc20f846a42f8a761025f1fb7a1f250b167098d37330d27429316cf",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/verification.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/protocol.json",
+      "sha256": "8a215480cb00ffd714b4e4cae33cafbfa06c76ea0188d2d7c305356da2723534",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/protocol.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/complete.json",
+      "sha256": "56a38094c8966143b7c17dc1f6603ff2b5c7c0a45530cdd05b71c6ac98786f49",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/complete.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/manifest_sha256.json",
+      "sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/source_provenance.json",
+      "sha256": "1bd3d2b259a06042f291033aa7fa4d232d93d14f2743e487ffb26d74054ece8b",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/source_provenance.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/guo/normalizer.json",
+      "sha256": "a339eedf60ba0fd07d5815bd160fe441d1dd13b1285c374d12b5c4050a3782e4",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/guo/normalizer.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/guo/analysis.json",
+      "sha256": "c1220c6be90d2fd0ec24fe7c77a84f70eb8eaa787a6463ff289f49ba578ff9e8",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/guo/analysis.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/guo/verification.json",
+      "sha256": "7d11a601fe62a750c0b85cc2206a1c2be31e7f109f1c2f83a7409ae23dcb9d83",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/guo/verification.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/guo/complete.json",
+      "sha256": "39265470bbb2e26c6eccee5aa854fb564a45d6e35c1ef473b7e777ad8d93f416",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/guo/complete.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/tmr/normalizer.json",
+      "sha256": "56f491c3c7393bffaf8fc8a4d538144dbb0d77075e3ffb6f4a325c637836786a",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/tmr/normalizer.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/tmr/analysis.json",
+      "sha256": "de7e9f47da69f16054907aa35d05341a998198c3ff0ee0d4553df2edda8da954",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/tmr/analysis.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/tmr/verification.json",
+      "sha256": "d0394d5e799f1e4f1839063fa5c6ad83be166fb0461e3ccca8404482e01fb848",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/tmr/verification.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    {
+      "path": "cvpr_coherent_blocks_20261014/tmr/complete.json",
+      "sha256": "39265470bbb2e26c6eccee5aa854fb564a45d6e35c1ef473b7e777ad8d93f416",
+      "original_path": "reports/cvpr_coherent_blocks_20261014/tmr/complete.json",
+      "original_manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
     },
     {
       "path": "cvpr_constant_distance_sphere_20261012/analysis.json",
@@ -2043,6 +2211,192 @@
       "sha256": "fd1e9ea8f2a6dab02b20e3cfa1d49cdbb583776e30cc8334bd14de3a271ecd68",
       "original_path": "reports/cvpr_seed_dose_response_20261012/source_provenance.json",
       "original_manifest_sha256": "5f61ab8ce9250c49c8eb35d45a6dd0a5dbc870a8d96564d52b768575464bd9e9"
+    },
+    {
+      "path": "cvpr_sign_natural_restoration_20261014/analysis.json",
+      "sha256": "9baa5e95560bdff960f0468e956bbd6368feb7e22f1eba230099b344e95cf14f",
+      "original_path": "reports/cvpr_sign_natural_restoration_20261014/analysis.json",
+      "original_manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    },
+    {
+      "path": "cvpr_sign_natural_restoration_20261014/summary.json",
+      "sha256": "4a044404570373b98cd03902506f4cd6e1eaae089f64d560725f5b16f15de530",
+      "original_path": "reports/cvpr_sign_natural_restoration_20261014/summary.json",
+      "original_manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    },
+    {
+      "path": "cvpr_sign_natural_restoration_20261014/verification.json",
+      "sha256": "cbfacb0c872cf5883208ce78a1eef5776c7ea1e6f75ed4a8059e4d59a24bca6d",
+      "original_path": "reports/cvpr_sign_natural_restoration_20261014/verification.json",
+      "original_manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    },
+    {
+      "path": "cvpr_sign_natural_restoration_20261014/manifest_sha256.json",
+      "sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5",
+      "original_path": "reports/cvpr_sign_natural_restoration_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    },
+    {
+      "path": "cvpr_sign_natural_restoration_20261014/source_provenance.json",
+      "sha256": "960c0991905c21f7f6eb6f9260b112f8c576d2822d63805c9cfaa7c88089cdb4",
+      "original_path": "reports/cvpr_sign_natural_restoration_20261014/source_provenance.json",
+      "original_manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/analysis.json",
+      "sha256": "1bdff987d124786603f5ac4fce2f1bf6ca104f41a7a0863b7a9af3e3c12e3ce6",
+      "original_path": "reports/cvpr_sign_stability_20261014/analysis.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/summary.json",
+      "sha256": "f32afb3bddbd9cf05fddc42c60bdebfbc2837c02acd6298609669575df6de353",
+      "original_path": "reports/cvpr_sign_stability_20261014/summary.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/verification.json",
+      "sha256": "9ddb001f0411c4d46d37f3859e5c30a26c5afe1e321988d23706997c3c5de3bf",
+      "original_path": "reports/cvpr_sign_stability_20261014/verification.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/protocol.json",
+      "sha256": "e783fd20a5762d67585ad46b466b7969c829b31923c18b0fbaa705ea2b0a623f",
+      "original_path": "reports/cvpr_sign_stability_20261014/protocol.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/complete.json",
+      "sha256": "35a053b72dd0fb8dc643484a8e9415dc9e07644a4c4318b10e2d2d3aa96f294f",
+      "original_path": "reports/cvpr_sign_stability_20261014/complete.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/manifest_sha256.json",
+      "sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100",
+      "original_path": "reports/cvpr_sign_stability_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/source_provenance.json",
+      "sha256": "7de528487aee96ea2a28541df7117226bf88cb1d9b34954cad3acca2b05a46bb",
+      "original_path": "reports/cvpr_sign_stability_20261014/source_provenance.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/rotation_ratio.json",
+      "sha256": "cf593dab68e10e3627f02a29ca326dd78f63659dac55e504639012c95a83683d",
+      "original_path": "reports/cvpr_sign_stability_20261014/rotation_ratio.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/How2Sign/native_decoder.json",
+      "sha256": "21146570835845b6b750590539e1ca5690ffb4e82ba5b64d2fc18c3a8f5ad6cc",
+      "original_path": "reports/cvpr_sign_stability_20261014/How2Sign/native_decoder.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/How2Sign/complete.json",
+      "sha256": "b14fb72ce7fe647fe2f76f25b75c88268dfabbf99d581077f37ca140fab5d944",
+      "original_path": "reports/cvpr_sign_stability_20261014/How2Sign/complete.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/CSL-Daily/native_decoder.json",
+      "sha256": "21146570835845b6b750590539e1ca5690ffb4e82ba5b64d2fc18c3a8f5ad6cc",
+      "original_path": "reports/cvpr_sign_stability_20261014/CSL-Daily/native_decoder.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_20261014/CSL-Daily/complete.json",
+      "sha256": "b14fb72ce7fe647fe2f76f25b75c88268dfabbf99d581077f37ca140fab5d944",
+      "original_path": "reports/cvpr_sign_stability_20261014/CSL-Daily/complete.json",
+      "original_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/summary.json",
+      "sha256": "f3af2bebdc8c5c31f9ab645d9f551e0bd12b1740a725d0818b7de0ae9632ab7b",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/summary.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/verification.json",
+      "sha256": "a6f8c3ed61794e0e489debfca97c13d39392c6635fcf71f1e9da907ff4c5e552",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/verification.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/manifest_sha256.json",
+      "sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/source_provenance.json",
+      "sha256": "94ac9e2e6b714d1382653f80f19d1ff34d852e47a7038f5cc622675813ec0f37",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/source_provenance.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/layout_verification.json",
+      "sha256": "1afd016e6a9b85f9ede3ab7aaa2302d303a4d47e99a0537aec5e0972fa66eb89",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/layout_verification.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/visual_review.json",
+      "sha256": "b8d7725ac027dbff5220ce7a16532ede32d722d8af61b75dd5ec2f5b334a2002",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/visual_review.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/primary_sources.json",
+      "sha256": "a71fd31f73520bfcb1cbee47343aeb304167f94141d9cc8df0d566fd6796d7d2",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/primary_sources.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/claim_audit.json",
+      "sha256": "8faeb23db32d9fceb88beedf4004fec3b0f99eac48b73d9899e861744d2a99b9",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/claim_audit.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/evidence_map.json",
+      "sha256": "cebbc9d76476d2efa5c8005a6841b71e7d36a78dda8429ffd5dc1ce84184d75b",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/evidence_map.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/presentation_evidence.json",
+      "sha256": "1307e3803ef49db355d7e38a434048519553b58fdf6cdaa9dc8cea48ef192b96",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/presentation_evidence.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/archive_integrity.json",
+      "sha256": "9f4373c47ac987671db362c66231bad3461df9f4a2a6893104edf05d372446bc",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/archive_integrity.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/parent_assets.json",
+      "sha256": "7bb955b81c57f040a49d25b2a50c3f8c1029ec846e1afa87ff848b3ecd1ed958",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/parent_assets.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/manuscript_anonymity_check.json",
+      "sha256": "6ad5f1a748a4253a07a713303715d15e5829177b1e787d966daeeb92bf05b801",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/manuscript_anonymity_check.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
+    },
+    {
+      "path": "cvpr_sign_stability_review_20261014/anonymous_utility_verification.json",
+      "sha256": "bbd7541816f598949ae4e48034936954aca4042ce36393881324d26c83a972c9",
+      "original_path": "reports/cvpr_sign_stability_review_20261014/anonymous_utility_verification.json",
+      "original_manifest_sha256": "78e5371fa10a68959e9d01f6aedac514f990998bbf4884e33701456cfef7774f"
     },
     {
       "path": "cvpr_signspark_baseline_20261010/analysis.json",

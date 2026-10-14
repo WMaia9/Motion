@@ -1,0 +1,8 @@
+{
+  "scope": "matched temporal-direction sensitivity, not full physical block consistency",
+  "primary_family_per_reader": 32,
+  "secondary_fixed_minus_random_family_per_reader": 32,
+  "all_old_controls_retained": "cvpr_matched_blocks_20261013",
+  "intervention_revision_only": "contact float32 budget tolerance; prior incomplete attempts retained",
+  "no_new_generators_training_model_seeds_or_reward_fits": true
+}

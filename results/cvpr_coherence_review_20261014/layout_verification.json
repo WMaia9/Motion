@@ -1,0 +1,78 @@
+{
+  "main": {
+    "pdf_sha256": "103633e65b85451e367d326051b2a403502fff21b5de16b1bb9eb7172aa457cb",
+    "total_pages": 10,
+    "content_pages": 8,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 6204,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "supplement": {
+    "pdf_sha256": "4db8b20eb6c0837fdcfc0791537ecaacea3b652a7789fc821b790f1b51c8939b",
+    "total_pages": 28,
+    "content_pages": 26,
+    "reference_pages": 2,
+    "body_words_checked_for_margin_overflow": 16664,
+    "all_fonts_embedded": true,
+    "Times_text_font_from_unmodified_CVPR_style": true,
+    "no_Type3_fonts": true,
+    "no_font_substitution_or_missing_glyphs": true,
+    "ghostscript_integrity_passed": true,
+    "latex_reference_and_box_checks_passed": true
+  },
+  "visual_inspection": "All38 final pages inspected; exact PDF/render SHA256 in visual_review.json. Changed main7 and supplement2\u20134 inspected again; other pages pixel-identical to inspected renders.",
+  "teaser_caption_warning": "hypcap is unavailable for captionof outside floats; hyperlink target checked, layout unaffected",
+  "remaining_external_warning": "lineno.sty:296 invalid UTF-8 comment in installed TeX package; no missing manuscript glyphs",
+  "format_scope": "Official available author-kit commit291758547e923160eb4d37079b7b9f0dfce82355, upstream2026; target2027 provisional, AuthorGuidelines HTTP404",
+  "Poppler_math_XML_extraction": {
+    "main_bbox.html": {
+      "control_word_count": 0,
+      "control_words": [],
+      "no_word_removed": true,
+      "original_export_sha256": "1f3b184a524a402121885f51ab15d22fb81ea803d5eb1c9ea5183def43efa5a5"
+    },
+    "supplement_bbox.html": {
+      "control_word_count": 4,
+      "control_words": [
+        {
+          "word_tag": "<word xMin=\"463.043910\" yMin=\"173.677022\" xMax=\"467.606799\" yMax=\"186.628454\">",
+          "Poppler_control_codes": [
+            1
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"140.455100\" yMin=\"425.287122\" xMax=\"147.787603\" yMax=\"438.238554\">",
+          "Poppler_control_codes": [
+            18
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"201.033500\" yMin=\"425.287122\" xMax=\"208.366003\" yMax=\"438.238554\">",
+          "Poppler_control_codes": [
+            19
+          ],
+          "bounding_box_retained": true
+        },
+        {
+          "word_tag": "<word xMin=\"502.205510\" yMin=\"528.003982\" xMax=\"506.768399\" yMax=\"540.955414\">",
+          "Poppler_control_codes": [
+            1
+          ],
+          "bounding_box_retained": true
+        }
+      ],
+      "no_word_removed": true,
+      "original_export_sha256": "1bf41df03e21b5b9ac2910ded4e30afa7d39e4cdfcf7904de28b2bb654ef2dd0"
+    }
+  },
+  "all_original_word_bounding_boxes_checked": true,
+  "PDF_or_font_substitution_for_parser_issue": false,
+  "layout_verifier_sha256": "280f6f78e42021694693463f90007809b0464a02d4463fd3b427a2325d8107a9"
+}

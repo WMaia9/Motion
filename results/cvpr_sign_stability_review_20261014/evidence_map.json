@@ -1,0 +1,11 @@
+{
+  "parent_delivery": "reports/cvpr_coherence_review_20261014",
+  "parent_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316",
+  "new_study_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100",
+  "presentation_inputs": {
+    "reports/cvpr_sign_stability_20261014/analysis.json": "1bdff987d124786603f5ac4fce2f1bf6ca104f41a7a0863b7a9af3e3c12e3ce6",
+    "reports/cvpr_sign_stability_20261014/rotation_ratio.json": "cf593dab68e10e3627f02a29ca326dd78f63659dac55e504639012c95a83683d",
+    "reports/cvpr_sign_stability_20261014/verification.json": "9ddb001f0411c4d46d37f3859e5c30a26c5afe1e321988d23706997c3c5de3bf"
+  },
+  "all_prior_outcomes_retained": true
+}

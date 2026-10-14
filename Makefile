@@ -1,7 +1,7 @@
 PYTHON ?= $(if $(wildcard venv_mska/bin/python),venv_mska/bin/python,python3)
 PROFILE ?= main
 
-.PHONY: help check summary env vendor vendor-check paper verify-archive test-canonicalize test-matched-blocks test-coherent-blocks
+.PHONY: help check summary env vendor vendor-check paper verify-archive test-canonicalize test-matched-blocks test-coherent-blocks test-sign-stability
 
 help:
 	@$(PYTHON) tools/repository.py help
@@ -35,3 +35,6 @@ test-matched-blocks:
 
 test-coherent-blocks:
 	@$(PYTHON) -m unittest scripts.test_coherent_motion_blocks -v
+
+test-sign-stability:
+	@$(PYTHON) -m unittest scripts.test_sign_stability_controls -v

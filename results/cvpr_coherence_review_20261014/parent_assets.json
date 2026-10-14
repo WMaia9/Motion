@@ -1,0 +1,10 @@
+{
+  "parent": "reports/cvpr_mardm_followup_20261013",
+  "checked_assets_sha256": {
+    "anonymous_utility.zip": "9b0c61817b60aec5c27294137b3700fc73ea6d93c141005e2fda912033e9cd95",
+    "anonymous_utility_verification.json": "bbd7541816f598949ae4e48034936954aca4042ce36393881324d26c83a972c9",
+    "primary_sources.json": "a71fd31f73520bfcb1cbee47343aeb304167f94141d9cc8df0d566fd6796d7d2",
+    "teaser_evidence.json": "08ceeb3564406503ce2961422d8d2ed594b88963a1fd068a6ec04c41c1e97d88",
+    "writing_sources.json": "dfcb77342458fa9e58d4455f51fd563958ebbed7124bcc73c0001bbf8a7310cb"
+  }
+}

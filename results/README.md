@@ -14,7 +14,10 @@ Core result sources:
 
 | Study | Aggregate results |
 |---|---|
-| Current direction-control manuscript | [summary](cvpr_coherence_review_20261014/summary.json), [claim audit](cvpr_coherence_review_20261014/claim_audit.json) |
+| Current sign-stability manuscript | [summary](cvpr_sign_stability_review_20261014/summary.json), [claim audit](cvpr_sign_stability_review_20261014/claim_audit.json) |
+| Matched Gaussian/physical real-sign controls | [analysis](cvpr_sign_stability_20261014/analysis.json), [verification](cvpr_sign_stability_20261014/verification.json) |
+| Same-sign within-rotation FID comparison | [ratio arithmetic and sources](cvpr_sign_stability_20261014/rotation_ratio.json) |
+| Previous direction-control manuscript | [summary](cvpr_coherence_review_20261014/summary.json), [claim audit](cvpr_coherence_review_20261014/claim_audit.json) |
 | Time-fixed directions, 20 repeats per reader | [Guo](cvpr_coherent_blocks_20261014/guo/analysis.json), [TMR](cvpr_coherent_blocks_20261014/tmr/analysis.json), [verification](cvpr_coherent_blocks_20261014/verification.json) |
 | Natural real sign inputs, restored without new inference | [analysis](cvpr_sign_natural_restoration_20261014/analysis.json), [verification](cvpr_sign_natural_restoration_20261014/verification.json) |
 | Previous MARDM follow-up manuscript | [summary](cvpr_mardm_followup_20261013/summary.json), [claim audit](cvpr_mardm_followup_20261013/claim_audit.json) |

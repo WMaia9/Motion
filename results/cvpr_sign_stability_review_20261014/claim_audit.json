@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "abstract_numbers": [
+    "3.57",
+    "0.397",
+    "0.993",
+    "1,438",
+    "2,183"
+  ],
+  "same_sign_direction_specific_ratio_checked": true,
+  "all_gaussian_fields_and_both_physical_controls_reported": true,
+  "changed_fraction_and_edit_distance_both_in_main": true,
+  "positive_Gaussian_contrasts_and_stronger_physical_effects_both_disclosed": true,
+  "CSL_inconclusive_physical_changed_fraction_contrast_disclosed": true,
+  "no_general_encoding_specificity_or_semantic_accuracy_claim": true,
+  "printed_portable_interface_smoke_test_passed": true,
+  "audit_sha256": "24f2363d10d180fd24c74a6c75cc1c553a0a27b41e8d330699551e49963ff48e"
+}

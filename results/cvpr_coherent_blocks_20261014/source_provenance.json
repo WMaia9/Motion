@@ -1,0 +1,25 @@
+{
+  "import_closure": [
+    "coherent_motion_blocks",
+    "freeze_coherence_studies",
+    "freeze_motion_release_studies",
+    "humanml_audit_common",
+    "matched_motion_blocks",
+    "motion_release_audit_common",
+    "run_coherent_block_audit",
+    "score_humanml_blind_fid",
+    "test_coherent_motion_blocks",
+    "tmr_audit_common",
+    "verify_coherent_block_audit",
+    "verify_tmr1024_controls"
+  ],
+  "verified_registered_sources": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_coherent_block_audit.py": "9a890acc270f531d332fa4d27bd79fe69504ed2c8058013caa20989883febb43",
+    "scripts/coherent_motion_blocks.py": "db04c3e1126f868b53ebc16097514a18b02cbcff9530b25d5b9e1834298508e1",
+    "scripts/matched_motion_blocks.py": "412b15f9062008b0fe046a56eacb3319e59da9c0612f47ec1a56ad656d84bba9",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945"
+  },
+  "freeze_source_sha256": "002e6c2419a995091c137d2fe241fde081d62142c596fe90923d2037ec4f1eab",
+  "prior_frozen_roots_untouched": true
+}

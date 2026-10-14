@@ -1,8 +1,8 @@
 \begin{table*}[t]
 \centering\small
-\caption{\textbf{Common-reference essential-reader comparison.} Mean embedding FID with nominal $t_{19}$ 95\% intervals over all twenty draws. The same saved real cohort is encoded separately by each reader; Guo is re-scored with this reference, which differs from its original independent-reference audit. FID scales differ across reader weights and architectures. E-CLIP FID is descriptive, not an official generation metric.}\label{tab:mardmfull}
+\caption{\textbf{Common-reference essential-reader comparison.} Mean embedding FID with nominal $t_{19}$ 95\% intervals over all twenty draws. The same saved real cohort is encoded separately by each reader; T2M is re-scored with this reference, which differs from its original independent-reference audit. FID scales differ across reader weights and architectures. E-CLIP FID is descriptive, not an official generation metric.}\label{tab:mardmfull}
 \begin{tabular}{@{}lrrrr@{}}\toprule
-Release&Guo raw&Guo $\C$&E-GRU&E-CLIP\\\midrule
+Release&T2M raw&T2M $\C$&E-GRU&E-CLIP\\\midrule
 MoMask&$0.0678\, [0.0651,0.0704]$&$0.0644\, [0.0618,0.0670]$&$0.0459\, [0.0432,0.0487]$&$0.0052\, [0.0050,0.0053]$\\
 T2M-GPT&$0.1829\, [0.1765,0.1893]$&$0.1489\, [0.1431,0.1547]$&$0.4013\, [0.3201,0.4826]$&$0.0079\, [0.0077,0.0080]$\\
 DiP (prefix)&$0.3665\, [0.3175,0.4155]$&$0.3650\, [0.3166,0.4133]$&$0.3299\, [0.2905,0.3693]$&$0.0160\, [0.0151,0.0169]$\\

@@ -1,0 +1,11 @@
+{
+  "main_content_pages": 8,
+  "supplement_content_pages": 28,
+  "directional_ratio_same_signs_verified": true,
+  "critical_real_sign_Gaussian_and_physical_controls_complete": true,
+  "all26760_decodes_verified": true,
+  "no_general_encoding_specificity_or_human_accuracy_claim": true,
+  "no_new_training_generators_or_reward_fits": true,
+  "authors_registration_and_human_cold_review_deferred": true,
+  "submission_or_publication": false
+}

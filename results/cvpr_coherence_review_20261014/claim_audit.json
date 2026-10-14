@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "abstract_numbers": [
+    "3.57",
+    "0.397",
+    "0.993",
+    "1,438",
+    "2,183"
+  ],
+  "fixed_and_random_each_block_both_signs_and_radii_retained": true,
+  "random_velocity_and_position_comparisons_restored": true,
+  "no_null_feature_priority_claim": true,
+  "no_target_natural_sign_evidence_in_abstract_body_table_and_supplement": true,
+  "shared_native_preprocessing_disclosed": true,
+  "kappa_budget_rho_fiber_notation_separated": true,
+  "all_generated_assets_match_frozen_inputs": true,
+  "same_architecture_checkpoint_transfer_preserved": true,
+  "no_accuracy_free_defense_or_full_MARDM_refutation": true,
+  "audit_source_sha256": "09c5348a1c27121e2868ed00215a098e98641b295569c5c52400dbdf8ee7671c"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "inputs_sha256": {
+    "reports/cvpr_sign_stability_20261014/analysis.json": "1bdff987d124786603f5ac4fce2f1bf6ca104f41a7a0863b7a9af3e3c12e3ce6",
+    "reports/cvpr_sign_stability_20261014/rotation_ratio.json": "cf593dab68e10e3627f02a29ca326dd78f63659dac55e504639012c95a83683d",
+    "reports/cvpr_sign_stability_20261014/verification.json": "9ddb001f0411c4d46d37f3859e5c30a26c5afe1e321988d23706997c3c5de3bf"
+  },
+  "generated_assets": {
+    "paper/current/table_sign_stability_all.tex": "3696407ef329206aef4e91caac9869882c47aa220a29377894d0d2cfe5cab39a",
+    "paper/current/table_sign_stability_intervals.tex": "60d70fe2829380a82c333b80cf14c82cc8fe1f07909f21ac6b4e169a232bfe49",
+    "paper/current/table_sign_stability_contrasts.tex": "6aa3f761e8292cae971d8d952d970d9667dc2ece577eb2506ab3ee04521180a7",
+    "paper/current/table_editorial_sign.tex": "e6c9b006b2108f03d4ffc25e16761ba4103f91478a9ea3e3a194fd36007242da"
+  },
+  "original_layer_rows_parent_sha256": "9e5fae33b86e7f3e9c8fc0f992298be6561a74066478bd39ad0d17afe1cfef7d",
+  "all8_conditions_both_corpora_in_supplement": true,
+  "changed_fraction_and_edit_distance_both_in_main_table": true,
+  "builder_sha256": "5c64dcc3f2bd64f9a0b9f3bbf7dd36e9bf6f02a546ea5f0285d745ca0f0c24b6"
+}

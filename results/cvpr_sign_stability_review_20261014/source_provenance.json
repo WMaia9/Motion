@@ -1,0 +1,20 @@
+{
+  "current_working_manuscript": "paper/current",
+  "snapshot_is_archive_only": true,
+  "import_closure": [
+    "assemble_sign_stability_delivery",
+    "audit_current_motion_layout",
+    "audit_mardm_motion_layout",
+    "audit_sign_stability_claims",
+    "audit_sign_stability_layout",
+    "build_sign_stability_presentation",
+    "freeze_motion_release_studies",
+    "freeze_sign_stability",
+    "motion_release_audit_common",
+    "sign_stability_controls",
+    "verify_signspark_studies"
+  ],
+  "new_study_manifest_sha256": "2135fae0178cd7772de9c7c18700435f58d28f0c502d359ec0f942c07e592100",
+  "parent_delivery_manifest_sha256": "152cbba240903c3e731fdccf5ccb70482e8a89beacaa2a6a0a3b6c1504f7a316",
+  "assembly_sha256": "fd42e667f7a8556112dad01efd1569d7a3161287a5b15bd2a96957b0353548e7"
+}

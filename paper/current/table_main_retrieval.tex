@@ -1,0 +1,12 @@
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{4.5pt}
+\caption{\textbf{Retrieval follows the encoding, not the movement.} R-Precision (top-1) on the same 1,024 test clips per source, before and after a caption-targeted recoding (80 steps, bound 0.35). \emph{Shifted}: the target is another clip's caption and R1 is measured against it; its \emph{before} value is the canonical-gradient control, which leaves the input unchanged. Canonicalization maps attacked and unattacked inputs to the same scores in every row.}\label{tab:retrieval}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+&&\multicolumn{2}{c}{Actual caption}&\multicolumn{2}{c}{Shifted caption}\\
+\cmidrule(lr){3-4}\cmidrule(l){5-6}
+Evaluator&Motion&Before&After&Before&After\\\midrule
+T2M~\cite{guo2022}&MDM&0.397&0.993&0.033&0.788\\
+T2M~\cite{guo2022}&Real&0.462&0.996&0.028&0.839\\
+TMR~\cite{tmr2023}&MDM&0.578&0.993&0.017&0.946\\
+TMR~\cite{tmr2023}&Real&0.688&1.000&0.010&0.968\\
+\bottomrule\end{tabular}\end{table}

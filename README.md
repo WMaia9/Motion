@@ -14,12 +14,11 @@ The active manuscript always lives in **`paper/current/`**. Edit its
 `main.tex`, `supplement.tex`, tables and figures there. New revisions keep this
 same path; dated manuscript directories are historical local copies.
 
-The [current review](docs/coherence-review.md) adds time-fixed directions in
-every non-null block and restores natural real-input sign-language evidence.
-All twenty Guo/TMR draws and independent checks are complete. The paper stays
-in the same working directory; the
-[previous MARDM round](docs/mardm-followup-review.md) is an immutable record.
-`reviewed/` contains the checked eight-page paper and its supplement.
+The [current review](docs/sign-stability-review.md) completes norm-matched
+Gaussian and gauge-preserving physical controls on the same real sign inputs.
+All 26,760 decodes and the independent geometry/edit/interval checks are complete.
+The active paper stays in `paper/current/`; earlier review rounds are immutable
+archives. `reviewed/` contains the checked eight-page paper and its supplement.
 
 ## Results and scope
 
@@ -88,9 +87,16 @@ it is the most influential feature block.
 
 Without an attack or layer, canonicalizing real native-preprocessed inputs changes
 **1,438/2,183 How2Sign** and **464/1,162 CSL** decoded sentences; PHOENIX changes
-**0/642**. How2Sign BLEU changes only 3.4779 → 3.4840. The shared original
-left-hand preprocessing and native token conventions are explicit. This exposes
-natural encoding dependence, without establishing better or worse semantics.
+**0/642**. Matched Gaussian controls change **41.9% / 22.3%**, versus canonical
+**65.9% / 39.9%**, with larger canonical edit distances and positive adjusted
+paired contrasts. Physical changes of equal norm also change many sentences
+(**70.3% / 44.3%**), so this does not isolate all sensitivity to encoding or
+establish semantic accuracy. All conditions and one-degree controls are retained.
+
+Within the same rotation block and normalizer, same-sign fixed fiber/physical
+mean-FID-change ratios are **7.757 / 7.731** at equal budget. This is specific to
+those directions; random fiber coefficients have a smaller effect than random
+rotation changes. See the [complete control review](docs/sign-stability-review.md).
 
 Public MARDM essential readers are invariant by excluding rotation features.
 Our defense retains rotations, which matters for the rotation-only sign inputs.

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "inputs_sha256": {
+    "reports/cvpr_coherent_blocks_20261014/guo/analysis.json": "c1220c6be90d2fd0ec24fe7c77a84f70eb8eaa787a6463ff289f49ba578ff9e8",
+    "reports/cvpr_coherent_blocks_20261014/tmr/analysis.json": "de7e9f47da69f16054907aa35d05341a998198c3ff0ee0d4553df2edda8da954",
+    "reports/cvpr_matched_blocks_20261013/guo/analysis.json": "5508a09a5251f7e842a66f31827e17230ad0bb73f45a3ddd661826a382837228",
+    "reports/cvpr_matched_blocks_20261013/tmr/analysis.json": "226aae5400abe644c614ce371fcfcef3bd24f9e03d210f9d870dcdc78d5ae3eb",
+    "reports/cvpr_sign_natural_restoration_20261014/analysis.json": "9baa5e95560bdff960f0468e956bbd6368feb7e22f1eba230099b344e95cf14f"
+  },
+  "generated_assets": {
+    "paper/current/figures/matched_blocks.pdf": "849f6861eabff405e773ced8e45d565134dc35228bf889084d11419ceaf1d0f8",
+    "paper/current/figures/matched_blocks_random.pdf": "de08202a834e852ea5036961da13f5b1a7d0e77371b1b9127a6d56e64813fc7c",
+    "paper/current/table_coherent_guo_fixed.tex": "772f843bec7ff5589d0d818bf8b7ce999aef505c384d6a69cad9893acc0922d2",
+    "paper/current/table_coherent_guo_contrast.tex": "7fdd95dd869d37b7384bbd7dfe633121e6d5afb4751aaacadc83acec9a544c07",
+    "paper/current/table_coherent_tmr_fixed.tex": "7547fb3e8d1144fa619f7559c6c0459c96d78c7c2dfb9e55c6a08b2f526ad49b",
+    "paper/current/table_coherent_tmr_contrast.tex": "02424764a0f0831434e1b339673760cc4e2ab9fc9923edda07a39bae863ebfcb",
+    "paper/current/table_sign_natural.tex": "391d72bcb86c5b7c58f4e29e6dce3009031ee26d9f7b72ca7bb835868873d1ae"
+  },
+  "plot_scope": "kappa3 primary; both radii and all prospective contrasts supplemental",
+  "old_family28_and_new_family32_separate": true,
+  "builder_sha256": "9c917c6263536042ced98c57f7fef371c0a8ff4ac500fc67468ab14cc731e305"
+}

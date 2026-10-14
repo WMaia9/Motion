@@ -162,6 +162,22 @@ def check() -> None:
 
 
 def summary() -> None:
+    stability_path = ROOT / 'results/cvpr_sign_stability_20261014/analysis.json'
+    if stability_path.is_file():
+        print('Real-sign stability: exact raw/canonical replay; matched per-clip '
+              'Gaussian fields and gauge-preserving physical changes.')
+        for name, row in read(stability_path)['results'].items():
+            q = row['primary_summary']
+            for condition in ['canonical', 'gaussian_support_mean', 'physical_matched']:
+                v = q[condition]
+                print(f'{name}/{condition}: changed '
+                      f'{100*v["token_changed_fraction"]:.1f}%; '
+                      f'normalized edit {v["mean_normalized_edit_distance"]:.3f}')
+        ratio = read(ROOT / 'results/cvpr_sign_stability_20261014/rotation_ratio.json')
+        print('Same-sign fixed fiber / physical FID changes: '
+              f'{ratio["directions"]["plus"]["ratio_of_mean_FID_changes"]:.3f}/'
+              f'{ratio["directions"]["minus"]["ratio_of_mean_FID_changes"]:.3f}; '
+              'direction-specific, no universal sensitivity claim.')
     coherent_path = ROOT / 'results/cvpr_coherent_blocks_20261014/guo/analysis.json'
     if coherent_path.is_file():
         controls = read(coherent_path)['conditions']
@@ -350,6 +366,7 @@ def help_text() -> None:
           'make test-canonicalize Test portable NumPy rotation consistency\n'
           'make test-matched-blocks Check equal-norm geometry/protected frames\n'
           'make test-coherent-blocks Check time-fixed directions and equal norms\n'
+          'make test-sign-stability Check norm/Gram-preserving physical controls\n'
           'make verify-archive Verify full local archive (requires reports/)')
 
 

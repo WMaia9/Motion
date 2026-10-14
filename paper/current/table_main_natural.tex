@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{4.2pt}
+\caption{\textbf{Public outputs receive different FID at identical movement.} $\Delta=\mathrm{raw}-\C$ on the same outputs, 20 native test draws per setting; every 95\% interval excludes zero. Published FID ($\pm$ the authors' 95\% margin) gives scale only, since protocols differ. $^\dagger$: $|\Delta|$ exceeds that margin. DiP is prefix-conditioned.}\label{tab:natural}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Release&Raw&$\C$&$\Delta$&Published\\\midrule
+\multicolumn{5}{@{}l}{\emph{HumanML3D}}\\
+MDM~\cite{tevet2023}&0.455&0.450&$+0.005$&$0.489\pm.047$\\
+MLD~\cite{mld2023}&0.445&0.449&$-0.004$&$0.473\pm.013$\\
+MotionLCM~\cite{motionlcm2024}&0.575&0.606&$-0.032^\dagger$&$0.467\pm.012$\\
+T2M-GPT~\cite{t2mgpt2023}&0.183&0.149&$+0.034^\dagger$&$0.141\pm.005$\\
+T2M~\cite{guo2022}&1.393&1.347&$+0.046^\dagger$&$1.087\pm.021$\\
+MoMask~\cite{momask2024}&0.068&0.064&$+0.003^\dagger$&$0.045\pm.002$\\
+DiP~\cite{closd2025}&0.367&0.365&$+0.002$&$0.228\pm.027$\\
+MotionDiffuse~\cite{motiondiffuse2024}&0.977&0.981&$-0.004^\dagger$&$0.630\pm.001$\\
+\midrule\multicolumn{5}{@{}l}{\emph{KIT-ML}}\\
+MoMask&0.351&0.365&$-0.014^\dagger$&$0.204\pm.011$\\
+MotionDiffuse&1.779&1.816&$-0.036$&$1.954\pm.062$\\
+\bottomrule\end{tabular}\end{table}

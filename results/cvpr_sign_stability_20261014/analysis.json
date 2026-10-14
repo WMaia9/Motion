@@ -1,0 +1,750 @@
+{
+  "passed": true,
+  "results": {
+    "How2Sign": {
+      "clips": 2183,
+      "bootstrap_groups": 149,
+      "all_matched_physical_clips_feasible": true,
+      "individual_conditions": {
+        "raw": {
+          "clips": 2183,
+          "string_changed_count": 0,
+          "token_changed_count": 0,
+          "string_changed_fraction": 0.0,
+          "token_changed_fraction": 0.0,
+          "mean_token_edit_distance": 0.0,
+          "mean_normalized_edit_distance": 0.0,
+          "BLEU4": 3.477865104985345,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9822,
+              1830,
+              655,
+              279
+            ],
+            "total_counts": [
+              36379,
+              34196,
+              32013,
+              29840
+            ],
+            "hypothesis_tokens": 36379,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "canonical": {
+          "clips": 2183,
+          "string_changed_count": 1438,
+          "token_changed_count": 1438,
+          "string_changed_fraction": 0.6587265231333028,
+          "token_changed_fraction": 0.6587265231333028,
+          "mean_token_edit_distance": 8.121392579019698,
+          "mean_normalized_edit_distance": 0.3966442837647133,
+          "BLEU4": 3.484024341098461,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9688,
+              1800,
+              652,
+              291
+            ],
+            "total_counts": [
+              36344,
+              34161,
+              31978,
+              29804
+            ],
+            "hypothesis_tokens": 36344,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "gaussian_support_20261014": {
+          "clips": 2183,
+          "string_changed_count": 900,
+          "token_changed_count": 900,
+          "string_changed_fraction": 0.4122766834631241,
+          "token_changed_fraction": 0.4122766834631241,
+          "mean_token_edit_distance": 5.001832340815391,
+          "mean_normalized_edit_distance": 0.2428806451233868,
+          "BLEU4": 3.5053297867169513,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9762,
+              1823,
+              661,
+              288
+            ],
+            "total_counts": [
+              36469,
+              34286,
+              32103,
+              29929
+            ],
+            "hypothesis_tokens": 36469,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "gaussian_support_20261015": {
+          "clips": 2183,
+          "string_changed_count": 939,
+          "token_changed_count": 939,
+          "string_changed_fraction": 0.43014200641319283,
+          "token_changed_fraction": 0.43014200641319283,
+          "mean_token_edit_distance": 5.169033440219881,
+          "mean_normalized_edit_distance": 0.2506669333492864,
+          "BLEU4": 3.549412618674936,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9810,
+              1836,
+              666,
+              297
+            ],
+            "total_counts": [
+              36412,
+              34229,
+              32046,
+              29872
+            ],
+            "hypothesis_tokens": 36412,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "gaussian_support_20261016": {
+          "clips": 2183,
+          "string_changed_count": 906,
+          "token_changed_count": 906,
+          "string_changed_fraction": 0.41502519468621163,
+          "token_changed_fraction": 0.41502519468621163,
+          "mean_token_edit_distance": 4.811726981218507,
+          "mean_normalized_edit_distance": 0.23464228175237536,
+          "BLEU4": 3.4851889991783103,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9755,
+              1826,
+              655,
+              284
+            ],
+            "total_counts": [
+              36316,
+              34133,
+              31950,
+              29775
+            ],
+            "hypothesis_tokens": 36316,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "gaussian_all_20261014": {
+          "clips": 2183,
+          "string_changed_count": 812,
+          "token_changed_count": 812,
+          "string_changed_fraction": 0.3719651855245076,
+          "token_changed_fraction": 0.3719651855245076,
+          "mean_token_edit_distance": 4.555657352267522,
+          "mean_normalized_edit_distance": 0.21971825130668454,
+          "BLEU4": 3.57633306457258,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9822,
+              1855,
+              676,
+              298
+            ],
+            "total_counts": [
+              36489,
+              34306,
+              32123,
+              29949
+            ],
+            "hypothesis_tokens": 36489,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "physical_1deg": {
+          "clips": 2183,
+          "string_changed_count": 991,
+          "token_changed_count": 991,
+          "string_changed_fraction": 0.4539624370132845,
+          "token_changed_fraction": 0.4539624370132845,
+          "mean_token_edit_distance": 5.207512597343106,
+          "mean_normalized_edit_distance": 0.25204718646802365,
+          "BLEU4": 3.6018022655096487,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9763,
+              1859,
+              681,
+              306
+            ],
+            "total_counts": [
+              36218,
+              34035,
+              31852,
+              29677
+            ],
+            "hypothesis_tokens": 36218,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        },
+        "physical_matched": {
+          "clips": 2183,
+          "string_changed_count": 1535,
+          "token_changed_count": 1535,
+          "string_changed_fraction": 0.7031607879065506,
+          "token_changed_fraction": 0.7031607879065506,
+          "mean_token_edit_distance": 8.634448007329363,
+          "mean_normalized_edit_distance": 0.42614429785789576,
+          "BLEU4": 3.5538324112828446,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              9739,
+              1840,
+              667,
+              300
+            ],
+            "total_counts": [
+              36164,
+              33981,
+              31798,
+              29622
+            ],
+            "hypothesis_tokens": 36164,
+            "reference_tokens": 42165
+          },
+          "empty_hypotheses": 0
+        }
+      },
+      "primary_summary": {
+        "canonical": {
+          "string_changed_fraction": 0.6587265231333028,
+          "token_changed_fraction": 0.6587265231333028,
+          "mean_token_edit_distance": 8.121392579019698,
+          "mean_normalized_edit_distance": 0.3966442837647133,
+          "token_changed_fraction_family20_CI95": [
+            0.6172106212846804,
+            0.6977189389489385
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.3660902034043305,
+            0.42884334691514275
+          ]
+        },
+        "gaussian_support_mean": {
+          "string_changed_fraction": 0.4191479615208429,
+          "token_changed_fraction": 0.4191479615208429,
+          "mean_token_edit_distance": 4.9941975874179265,
+          "mean_normalized_edit_distance": 0.2427299534083495,
+          "token_changed_fraction_family20_CI95": [
+            0.38869301820202096,
+            0.4499051051880191
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.22252959555674992,
+            0.26355132065121306
+          ]
+        },
+        "gaussian_all_20261014": {
+          "string_changed_fraction": 0.3719651855245076,
+          "token_changed_fraction": 0.3719651855245076,
+          "mean_token_edit_distance": 4.555657352267522,
+          "mean_normalized_edit_distance": 0.21971825130668454,
+          "token_changed_fraction_family20_CI95": [
+            0.33771011455139843,
+            0.4080629550233512
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.19674595833764685,
+            0.24369482618553617
+          ]
+        },
+        "physical_1deg": {
+          "string_changed_fraction": 0.4539624370132845,
+          "token_changed_fraction": 0.4539624370132845,
+          "mean_token_edit_distance": 5.207512597343106,
+          "mean_normalized_edit_distance": 0.25204718646802365,
+          "token_changed_fraction_family20_CI95": [
+            0.4186252379335878,
+            0.4914164074717304
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.2281891314327127,
+            0.2778130833378863
+          ]
+        },
+        "physical_matched": {
+          "string_changed_fraction": 0.7031607879065506,
+          "token_changed_fraction": 0.7031607879065506,
+          "mean_token_edit_distance": 8.634448007329363,
+          "mean_normalized_edit_distance": 0.42614429785789576,
+          "token_changed_fraction_family20_CI95": [
+            0.6657378433388615,
+            0.7411417827158224
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.3964994719978116,
+            0.4575784302049552
+          ]
+        }
+      },
+      "canonical_minus_control": {
+        "gaussian_support_mean": {
+          "token_changed_fraction": {
+            "canonical_minus_control": 0.2395785616124599,
+            "family8_CI95": [
+              0.21048957166853313,
+              0.26735275201649644
+            ]
+          },
+          "mean_normalized_edit_distance": {
+            "canonical_minus_control": 0.15391433035636376,
+            "family8_CI95": [
+              0.1328353076947179,
+              0.17400426722333337
+            ]
+          }
+        },
+        "physical_matched": {
+          "token_changed_fraction": {
+            "canonical_minus_control": -0.04443426477324782,
+            "family8_CI95": [
+              -0.07606728142076502,
+              -0.0131300507965828
+            ]
+          },
+          "mean_normalized_edit_distance": {
+            "canonical_minus_control": -0.029500014093182432,
+            "family8_CI95": [
+              -0.05336900184204122,
+              -0.006319346947578903
+            ]
+          }
+        }
+      },
+      "canonical_displacement": {
+        "clip_mean_RMS": 0.01698316325313174,
+        "frame_weighted_RMS": 0.017080810356227757,
+        "min_clip_RMS": 0.0072128316694891614,
+        "max_clip_RMS": 0.03610392759994033,
+        "mean_L2": 3.1231612949573573
+      },
+      "physical_geometry": {
+        "physical_1deg": {
+          "mean_active_joint_angle_deg": 1.0,
+          "median_angle_deg": 1.0,
+          "min_angle_deg": 1.0,
+          "max_angle_deg": 1.0,
+          "percentiles_5_95_deg": [
+            1.0,
+            1.0
+          ],
+          "mean_realized_L2": 1.2039630477844732
+        },
+        "physical_matched": {
+          "mean_active_joint_angle_deg": 2.622839102132136,
+          "median_angle_deg": 2.522666916944824,
+          "min_angle_deg": 1.064462359791566,
+          "max_angle_deg": 5.469824751942197,
+          "percentiles_5_95_deg": [
+            1.7743612450051593,
+            3.77136689807776
+          ],
+          "mean_realized_L2": 3.123161294979733
+        }
+      }
+    },
+    "CSL-Daily": {
+      "clips": 1162,
+      "bootstrap_groups": 1162,
+      "all_matched_physical_clips_feasible": true,
+      "individual_conditions": {
+        "raw": {
+          "clips": 1162,
+          "string_changed_count": 0,
+          "token_changed_count": 0,
+          "string_changed_fraction": 0.0,
+          "token_changed_fraction": 0.0,
+          "mean_token_edit_distance": 0.0,
+          "mean_normalized_edit_distance": 0.0,
+          "BLEU4": 6.890703639155905,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4889,
+              1520,
+              685,
+              381
+            ],
+            "total_counts": [
+              16914,
+              15754,
+              14594,
+              13434
+            ],
+            "hypothesis_tokens": 16914,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 2
+        },
+        "canonical": {
+          "clips": 1162,
+          "string_changed_count": 464,
+          "token_changed_count": 464,
+          "string_changed_fraction": 0.3993115318416523,
+          "token_changed_fraction": 0.3993115318416523,
+          "mean_token_edit_distance": 5.166953528399311,
+          "mean_normalized_edit_distance": 0.3039662658832098,
+          "BLEU4": 7.0661958062795645,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4985,
+              1576,
+              707,
+              386
+            ],
+            "total_counts": [
+              16817,
+              15656,
+              14495,
+              13334
+            ],
+            "hypothesis_tokens": 16817,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 1
+        },
+        "gaussian_support_20261014": {
+          "clips": 1162,
+          "string_changed_count": 266,
+          "token_changed_count": 266,
+          "string_changed_fraction": 0.2289156626506024,
+          "token_changed_fraction": 0.2289156626506024,
+          "mean_token_edit_distance": 2.9836488812392425,
+          "mean_normalized_edit_distance": 0.17328640669446588,
+          "BLEU4": 6.859524901477318,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4849,
+              1514,
+              683,
+              380
+            ],
+            "total_counts": [
+              16934,
+              15775,
+              14616,
+              13457
+            ],
+            "hypothesis_tokens": 16934,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 3
+        },
+        "gaussian_support_20261015": {
+          "clips": 1162,
+          "string_changed_count": 252,
+          "token_changed_count": 252,
+          "string_changed_fraction": 0.21686746987951808,
+          "token_changed_fraction": 0.21686746987951808,
+          "mean_token_edit_distance": 2.855421686746988,
+          "mean_normalized_edit_distance": 0.16474078838226328,
+          "BLEU4": 6.645576846810061,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4809,
+              1479,
+              659,
+              358
+            ],
+            "total_counts": [
+              16831,
+              15671,
+              14511,
+              13351
+            ],
+            "hypothesis_tokens": 16831,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 2
+        },
+        "gaussian_support_20261016": {
+          "clips": 1162,
+          "string_changed_count": 261,
+          "token_changed_count": 261,
+          "string_changed_fraction": 0.22461273666092943,
+          "token_changed_fraction": 0.22461273666092943,
+          "mean_token_edit_distance": 2.9156626506024095,
+          "mean_normalized_edit_distance": 0.16736096846755488,
+          "BLEU4": 6.706786063158952,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4807,
+              1486,
+              664,
+              367
+            ],
+            "total_counts": [
+              16819,
+              15659,
+              14499,
+              13339
+            ],
+            "hypothesis_tokens": 16819,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 2
+        },
+        "gaussian_all_20261014": {
+          "clips": 1162,
+          "string_changed_count": 238,
+          "token_changed_count": 238,
+          "string_changed_fraction": 0.20481927710843373,
+          "token_changed_fraction": 0.20481927710843373,
+          "mean_token_edit_distance": 2.6781411359724614,
+          "mean_normalized_edit_distance": 0.15641605433180875,
+          "BLEU4": 6.946987478560088,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4893,
+              1533,
+              692,
+              386
+            ],
+            "total_counts": [
+              16915,
+              15755,
+              14595,
+              13435
+            ],
+            "hypothesis_tokens": 16915,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 2
+        },
+        "physical_1deg": {
+          "clips": 1162,
+          "string_changed_count": 161,
+          "token_changed_count": 161,
+          "string_changed_fraction": 0.13855421686746988,
+          "token_changed_fraction": 0.13855421686746988,
+          "mean_token_edit_distance": 1.757314974182444,
+          "mean_normalized_edit_distance": 0.10155952336746223,
+          "BLEU4": 7.012313022972876,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4917,
+              1544,
+              699,
+              392
+            ],
+            "total_counts": [
+              16824,
+              15664,
+              14504,
+              13344
+            ],
+            "hypothesis_tokens": 16824,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 2
+        },
+        "physical_matched": {
+          "clips": 1162,
+          "string_changed_count": 515,
+          "token_changed_count": 515,
+          "string_changed_fraction": 0.44320137693631667,
+          "token_changed_fraction": 0.44320137693631667,
+          "mean_token_edit_distance": 5.922547332185887,
+          "mean_normalized_edit_distance": 0.3463115343837672,
+          "BLEU4": 6.576214468570043,
+          "BLEU_statistics": {
+            "clipped_counts": [
+              4725,
+              1439,
+              649,
+              365
+            ],
+            "total_counts": [
+              16637,
+              15478,
+              14319,
+              13160
+            ],
+            "hypothesis_tokens": 16637,
+            "reference_tokens": 19023
+          },
+          "empty_hypotheses": 3
+        }
+      },
+      "primary_summary": {
+        "canonical": {
+          "string_changed_fraction": 0.3993115318416523,
+          "token_changed_fraction": 0.3993115318416523,
+          "mean_token_edit_distance": 5.166953528399311,
+          "mean_normalized_edit_distance": 0.3039662658832098,
+          "token_changed_fraction_family20_CI95": [
+            0.35542168674698793,
+            0.4423407917383821
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.26915542743155557,
+            0.33940529826895777
+          ]
+        },
+        "gaussian_support_mean": {
+          "string_changed_fraction": 0.22346528973034993,
+          "token_changed_fraction": 0.22346528973034993,
+          "mean_token_edit_distance": 2.9182444061962136,
+          "mean_normalized_edit_distance": 0.16846272118142802,
+          "token_changed_fraction_family20_CI95": [
+            0.1959262048192771,
+            0.25157809810671294
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.14729376905615996,
+            0.19145372518663134
+          ]
+        },
+        "gaussian_all_20261014": {
+          "string_changed_fraction": 0.20481927710843373,
+          "token_changed_fraction": 0.20481927710843373,
+          "mean_token_edit_distance": 2.6781411359724614,
+          "mean_normalized_edit_distance": 0.15641605433180875,
+          "token_changed_fraction_family20_CI95": [
+            0.16953528399311532,
+            0.24182444061962136
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.12787339890673893,
+            0.185981547171841
+          ]
+        },
+        "physical_1deg": {
+          "string_changed_fraction": 0.13855421686746988,
+          "token_changed_fraction": 0.13855421686746988,
+          "mean_token_edit_distance": 1.757314974182444,
+          "mean_normalized_edit_distance": 0.10155952336746223,
+          "token_changed_fraction_family20_CI95": [
+            0.10757314974182444,
+            0.16953528399311532
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.07828712597022526,
+            0.1254626102529254
+          ]
+        },
+        "physical_matched": {
+          "string_changed_fraction": 0.44320137693631667,
+          "token_changed_fraction": 0.44320137693631667,
+          "mean_token_edit_distance": 5.922547332185887,
+          "mean_normalized_edit_distance": 0.3463115343837672,
+          "token_changed_fraction_family20_CI95": [
+            0.40017211703958694,
+            0.48709122203098104
+          ],
+          "mean_normalized_edit_distance_family20_CI95": [
+            0.3118945532765529,
+            0.38224089598846667
+          ]
+        }
+      },
+      "canonical_minus_control": {
+        "gaussian_support_mean": {
+          "token_changed_fraction": {
+            "canonical_minus_control": 0.17584624211130237,
+            "family8_CI95": [
+              0.13912794033275955,
+              0.2139988525530694
+            ]
+          },
+          "mean_normalized_edit_distance": {
+            "canonical_minus_control": 0.13550354470178183,
+            "family8_CI95": [
+              0.10568448627990165,
+              0.16700268978571808
+            ]
+          }
+        },
+        "physical_matched": {
+          "token_changed_fraction": {
+            "canonical_minus_control": -0.04388984509466437,
+            "family8_CI95": [
+              -0.08950086058519796,
+              0.0017211703958691649
+            ]
+          },
+          "mean_normalized_edit_distance": {
+            "canonical_minus_control": -0.04234526850055736,
+            "family8_CI95": [
+              -0.08021523559911832,
+              -0.005058303474489707
+            ]
+          }
+        }
+      },
+      "canonical_displacement": {
+        "clip_mean_RMS": 0.034236640413307894,
+        "frame_weighted_RMS": 0.034415171091120446,
+        "min_clip_RMS": 0.01793536673939651,
+        "max_clip_RMS": 0.060122219087420097,
+        "mean_L2": 5.865124560127792
+      },
+      "physical_geometry": {
+        "physical_1deg": {
+          "mean_active_joint_angle_deg": 1.0,
+          "median_angle_deg": 1.0,
+          "min_angle_deg": 1.0,
+          "max_angle_deg": 1.0,
+          "percentiles_5_95_deg": [
+            1.0,
+            1.0
+          ],
+          "mean_realized_L2": 1.1145633128135843
+        },
+        "physical_matched": {
+          "mean_active_joint_angle_deg": 5.2930277958597625,
+          "median_angle_deg": 5.192749874549995,
+          "min_angle_deg": 2.833496617725852,
+          "max_angle_deg": 9.75560814494001,
+          "percentiles_5_95_deg": [
+            3.949519187273594,
+            6.947704854917515
+          ],
+          "mean_realized_L2": 5.865124560537025
+        }
+      }
+    }
+  },
+  "raw_and_canonical_full_replay_exact": true,
+  "primary_family": 20,
+  "contrast_family": 8,
+  "bootstrap_draws": 20000,
+  "conditioned_on_test_inputs_frozen_reader_and_fixed_noise_fields": true,
+  "no_human_semantic_accuracy_or_general_robustness_claim": true,
+  "inputs_sha256": {
+    "reports/cvpr_sign_stability_20261014/How2Sign/raw.json": "0a00a85ed7c48a2a287e3eb49f807de29f9c708a2c3c64c1ee606d5f92f5bef5",
+    "reports/cvpr_sign_stability_20261014/How2Sign/canonical.json": "f7217d17427906e27abd808927d5e79e092740f43b6edde3131dddc67a11bef8",
+    "reports/cvpr_sign_stability_20261014/How2Sign/gaussian_support_20261014.json": "01e0890d37436cd3a3989cfde73082112aa6d27fc714965943628b438fbc581c",
+    "reports/cvpr_sign_stability_20261014/How2Sign/gaussian_support_20261015.json": "ad68265182236e841932201a27f6319eff5a10cec38c60bffde6aadd005d884a",
+    "reports/cvpr_sign_stability_20261014/How2Sign/gaussian_support_20261016.json": "9695822d5c245048edf8dc8bef5f35b2845753ad43f25fdab5800d630df2c0e9",
+    "reports/cvpr_sign_stability_20261014/How2Sign/gaussian_all_20261014.json": "28a23527bf93fc399d3bda615dd318a95138f01b17e82e6ea5ee78a9e8430872",
+    "reports/cvpr_sign_stability_20261014/How2Sign/physical_1deg.json": "971c0b1ad53c054de0913f261e18905b2897c3133347fe5b4431962d1c22118a",
+    "reports/cvpr_sign_stability_20261014/How2Sign/physical_matched.json": "f3d85c65891a55c4c304ac28f1a01596ff4139d5301115b89496feb756e7efd9",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/raw.json": "958b4a0328a21da55215f3b6e942343bc982d2a94c27469238729b5a99ebd6c8",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/canonical.json": "397a611caca6d696c8abbc802e403b8849eea255005f8b9d0a3877f6f2035c2c",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/gaussian_support_20261014.json": "e27534d751ec04d05cc6f6f65de741eb03ed53848d3ce70e88f38cc57f036946",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/gaussian_support_20261015.json": "7806cdbfd9cccdb677176e1a67b33837c5e464ae04840c389b5869b30e91dd78",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/gaussian_support_20261016.json": "ed053c90778c38c8456f3c33deedda502571d9d1225ec6aa1e8855ecd1479658",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/gaussian_all_20261014.json": "92e81da7a1580bac167b597f7e8c11462523d1e928a9bd435c989422018b8549",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/physical_1deg.json": "038e5458422cdd5461f5a6b3068d37b79cb311d8c966dbd61579ebc225844d9f",
+    "reports/cvpr_sign_stability_20261014/CSL-Daily/physical_matched.json": "176b146ec59ec6e32c13d388805151f5d1625971b0b0567544195393ae30a6f7"
+  },
+  "analysis_source_sha256": "f44e424da2214be883e0c73b51adfd5942d55c59f3dfe0bdf609ce5759c53dd8"
+}

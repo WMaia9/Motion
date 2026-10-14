@@ -322,3 +322,21 @@ Original null/random intervals use family28; prospective fixed controls and
 fixed-minus-random contrasts use separate family32 intervals. The contact-only
 float32 norm tolerance is explicit. The [review](coherence-review.md) explains
 why temporal coherence does not imply a consistent full-motion feature edit.
+
+## Real-sign stability control
+
+The [plan](sign-stability-plan.md) defines each clip's norm budget, all three
+Gaussian fields, the all-feature secondary field and two gauge-preserving SO3
+controls. `run_sign_stability_audit.py --prepare` registers a fresh experiment
+before either `--corpus How2Sign` or `--corpus CSL-Daily` inference job.
+`analyze_sign_stability.py` computes paired cluster summaries and
+`verify_sign_stability.py` independently reconstructs every input and recomputes
+edit distances, intervals and native first/last-batch decodes.
+
+The default study root is frozen; reproduction must redirect each module's `R`
+to the same fresh root before registration and scoring, preserving the original
+source/checkpoint paths. `make test-sign-stability` verifies norm matching,
+protected support, physical changes and Gram preservation. The same-sign
+rotation ratios are arithmetic on previously frozen results, not new generator
+runs or a prospective hypothesis test. See the
+[results and limits](sign-stability-review.md).

@@ -1,0 +1,24 @@
+{
+  "kappa": 3,
+  "same_reader_normalizer_source_cohorts_and_rotation126_block": true,
+  "directions": {
+    "plus": {
+      "fiber_mean_FID": 0.08229525649331038,
+      "physical_mean_FID": 0.010609405827155883,
+      "ratio_of_mean_FID_changes": 7.7568204887277545
+    },
+    "minus": {
+      "fiber_mean_FID": 0.1168791644367559,
+      "physical_mean_FID": 0.015118345916365428,
+      "ratio_of_mean_FID_changes": 7.7309492111988
+    }
+  },
+  "direction_specific_not_universal_sensitivity": true,
+  "not_a_new_prospective_hypothesis_test": true,
+  "inputs_sha256": {
+    "reports/cvpr_matched_blocks_20261013/guo/analysis.json": "5508a09a5251f7e842a66f31827e17230ad0bb73f45a3ddd661826a382837228",
+    "reports/cvpr_coherent_blocks_20261014/guo/analysis.json": "c1220c6be90d2fd0ec24fe7c77a84f70eb8eaa787a6463ff289f49ba578ff9e8",
+    "reports/cvpr_matched_blocks_20261013/guo/normalizer.json": "a339eedf60ba0fd07d5815bd160fe441d1dd13b1285c374d12b5c4050a3782e4",
+    "reports/cvpr_coherent_blocks_20261014/guo/normalizer.json": "a339eedf60ba0fd07d5815bd160fe441d1dd13b1285c374d12b5c4050a3782e4"
+  }
+}

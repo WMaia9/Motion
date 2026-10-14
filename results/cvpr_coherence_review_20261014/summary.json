@@ -1,0 +1,15 @@
+{
+  "closed_review_items": [
+    "time-fixed directions in non-null blocks, both signs and radii",
+    "natural real sign inputs without target or attack restored",
+    "kappa budget / rho fiber notation separated",
+    "abstract and motivation grounded in no-target sign evidence"
+  ],
+  "main_content_pages": 8,
+  "supplement_content_pages": 26,
+  "no_new_generators_training_model_seeds_or_reward_fits": true,
+  "no_null_feature_priority_claim": true,
+  "no_routine_training_exploitation_or_accuracy_improvement_claim": true,
+  "registration_authors_and_human_cold_review_deferred": true,
+  "submission_or_publication": false
+}

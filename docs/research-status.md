@@ -1,5 +1,20 @@
 # Estado científico — 14 de outubro de 2026
 
+O controle final de estabilidade está completo: oito condições em cada um dos
+2.183 clipes How2Sign e 1.162 CSL, com replay bruto/canônico idêntico ao arquivo
+anterior. A canonicalização muda 65,9%/39,9% das hipóteses, contra 41,9%/22,3%
+com Gaussianas de norma igual, e também tem maior edição normalizada. Os dois
+contrastes Gaussianos são positivos após ajuste. Entretanto, controles físicos
+de norma igual mudam 70,3%/44,3%; isso não demonstra sensibilidade exclusivamente
+à codificação ou acurácia semântica. A comparação física de frações CSL permanece
+inconclusiva; todos os controles e intervalos estão preservados.
+
+Dentro das rotações, os ratios fixo-nulo/fixo-físico com o mesmo sinal são
+7,757/7,731. A frase é direcional, sem preferência universal por redundância.
+Veja a [revisão atual](sign-stability-review.md) e os PDFs em
+`paper/current/reviewed/`. Foram verificados todos os 26.760 pares, 648 fixtures
+nativas e 28 intervalos. Nenhum treino ou novo gerador foi acrescentado.
+
 A rodada pós-MARDM fechou os quatro reparos do parecer: direções fixas em todos
 os blocos, evidência natural em sinais no corpo, orçamento `kappa` separado da
 escala de fibra `rho`, e abstract com um resultado sem alvo. Todos os vinte draws
@@ -47,7 +62,7 @@ otimização bem-sucedida. A grade DEV não qualificou ajustes para TEST; os gan
 Veja [a rodada completa e sua análise](motion-release-review.md).
 
 O manuscrito único é [paper/current/](../paper/current/README.md), com oito
-páginas de conteúdo e duas de referências; suplemento com vinte e seis mais duas.
+páginas de conteúdo e duas de referências; suplemento com vinte e oito mais duas.
 Os resultados anteriores de língua de sinais e seus limites permanecem:
 
 | Camada aprendida, TEST completo, três seeds | BLEU antes | BLEU após | Ganho | IC pareado 95% |

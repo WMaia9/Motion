@@ -1,0 +1,24 @@
+{
+  "current_working_manuscript": "paper/current",
+  "snapshot_is_archive_only": true,
+  "import_closure": [
+    "assemble_coherence_delivery",
+    "audit_coherence_claims",
+    "audit_coherence_motion_layout",
+    "audit_current_motion_layout",
+    "audit_mardm_motion_layout",
+    "build_coherence_presentation",
+    "coherent_motion_blocks",
+    "freeze_coherence_studies",
+    "freeze_motion_release_studies",
+    "matched_motion_blocks",
+    "motion_release_audit_common",
+    "verify_signspark_studies"
+  ],
+  "new_study_manifests": {
+    "cvpr_coherent_blocks_20261014": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6",
+    "cvpr_sign_natural_restoration_20261014": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+  },
+  "parent_delivery_manifest_sha256": "6845d3af5eadebb9de5683f9920d904605bed4173ad08661331468063c76ece5",
+  "assembly_source_sha256": "afefe8366ff5c77ea21ae58ad7eae5f722fa372e031eb359b2d5f2696c6d664c"
+}

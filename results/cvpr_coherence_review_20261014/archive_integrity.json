@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "previous_manifests_unchanged": true,
+  "previous_manifest_count": 56,
+  "new_studies": {
+    "cvpr_coherent_blocks_20261014": {
+      "file_count": 2145,
+      "all_file_hashes_verified": true,
+      "manifest_sha256": "846246c014781b2535d8375d06e325215e422f43812027ebf6aea53b38b3cfa6"
+    },
+    "cvpr_sign_natural_restoration_20261014": {
+      "file_count": 8,
+      "all_file_hashes_verified": true,
+      "manifest_sha256": "1a3d1174b57f5dcd4bef0c920999874f64f1f51801ef9bc59cb460ac4a9161b5"
+    }
+  },
+  "new_files_verified": 2153,
+  "historical_scope": "previous manifests compared with beginning-of-round snapshot; old full-array verification retained in earlier maintenance validations"
+}

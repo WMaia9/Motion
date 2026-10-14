@@ -1,0 +1,51 @@
+{
+  "cohorts": 20,
+  "clips_each": 4640,
+  "radii": [
+    1.0,
+    3.0
+  ],
+  "conditions": [
+    "rotation_fixed_plus",
+    "rotation_fixed_minus",
+    "velocity_fixed_plus",
+    "velocity_fixed_minus",
+    "contact_fixed_plus",
+    "contact_fixed_minus",
+    "position_fixed_plus",
+    "position_fixed_minus"
+  ],
+  "axis": [
+    0.5773502691896258,
+    0.5773502691896258,
+    0.5773502691896258
+  ],
+  "both_signs_retained": true,
+  "direction": "same unnormalized local unit axis for every joint and valid frame; contacts use all-ones vector",
+  "rotation": "right-multiply each local rotation by same per-clip SO3 change; signed axis fixed over joints/time; angle in [0,pi/2] solved from input norm",
+  "matching": "per clip ||(y-x)/native_reader_std||_2 = radius*sqrt(valid_frames) on all263 channels before selection",
+  "float32_relative_budget_tolerance": {
+    "contact": 2e-05,
+    "other_blocks": 5e-06
+  },
+  "scalar": "input geometry only, no evaluator gradients, captions, score selection or optimization",
+  "coherence_scope": "temporal direction only; held-fixed blocks can be physically inconsistent; not full coherent motion editing",
+  "paired_references": "identical source cohorts and original reader embeddings from previous frozen block audit",
+  "Guo_contacts": "excluded by architecture; consumed budget zero",
+  "contact_domain": "continuous changes may leave binary domain",
+  "primary_family": "32 endpoints per reader:8conditions x2radii x2scores; Bonferroni paired t19 CI",
+  "secondary_family": "32 fixed-minus-random changes per reader against previous corresponding rotation/velocity/contact/position controls, separate family32 paired t19 CI",
+  "old_null_results": "unchanged prior registered 28-endpoint family; no pooled family across historical and prospective phases",
+  "no_new_generators_training_model_seeds_or_reward_fits": true,
+  "source_manifests": {
+    "reports/cvpr_motion_prevalence_20261012": "06e45e42627f360b2693fb26fba9c414757acaafb5a8490f5d60a9357c30b6d1",
+    "reports/cvpr_matched_blocks_20261013": "ffe6d26ef42fdec8900c57138d2d276c0c9cf842f983a2f78879c1b4c4a790ef"
+  },
+  "producer_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_coherent_block_audit.py": "9a890acc270f531d332fa4d27bd79fe69504ed2c8058013caa20989883febb43",
+    "scripts/coherent_motion_blocks.py": "db04c3e1126f868b53ebc16097514a18b02cbcff9530b25d5b9e1834298508e1",
+    "scripts/matched_motion_blocks.py": "412b15f9062008b0fe046a56eacb3319e59da9c0612f47ec1a56ad656d84bba9",
+    "scripts/motion_release_audit_common.py": "249a66951e2345e135320b2acc297a07c187d1e2a11e91360f591a08b6ea4514",
+    "scripts/tmr_audit_common.py": "5e12278d975d3332d560ade2caf6400ffaa32a04de0a7d655cba35b80142f945"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "corpora": [
+    "How2Sign",
+    "CSL-Daily"
+  ],
+  "counts": {
+    "How2Sign": 2183,
+    "CSL-Daily": 1162
+  },
+  "conditions": [
+    "raw",
+    "canonical",
+    "gaussian_support_20261014",
+    "gaussian_support_20261015",
+    "gaussian_support_20261016",
+    "gaussian_all_20261014",
+    "physical_1deg",
+    "physical_matched"
+  ],
+  "no_caption_or_evaluator_gradient_in_interventions": true,
+  "inputs_sha256": {
+    "reports/cvpr_evaluation_confirmation_20261011/heldout/How2Sign/full_real_scores.json": "1f26fbad7d01053c28b13620b4368a62be6172c8dff81f425ff6e394ff391669",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/config.yaml": "db6864ed1cd685e9d3743e3fce3d24e49c2c8d254293b3b4b588474c2b5f7c29",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/best.ckpt": "acf8794c594f9b58701c85c390264cf30807d89f399960768f30c7a9e637e01f",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/txt.vocab": "c2f90af24488070d45116696a23025052e88e8a54c1d035b84a9819cd2cc6a77",
+    "reports/cvpr_signspark_baseline_20261010/checkpoints/How2Sign/gls.vocab": "80fb9d189d8f1549fb9edac5ab14ef7989a2c05eca168d72f42ac036f0dff745",
+    "reports/cvpr_representation_paper_20261011/CSL-Daily/full_real_scores.json": "800f25f191df66e9c08a262abd4acf84ccc41b97dde9c16358c4f38da37cc38e",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/config.yaml": "38bdc2716c03ef227d010ac9502ce7cc2009ec2401a8ea70c63aa8830622190c",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/best.ckpt": "5ea787537b11d7b3e14e6a5c3ae711931b8abf939f6a7f25e5a9b8dd3e91a2c0",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/txt.vocab": "3ccb64f2d058041c683dd819e0b120f23db5846a458cfab98fc09321bdffd361",
+    "reports/cvpr_representation_paper_20261011/checkpoints/CSL-Daily/gls.vocab": "e0d26783e1ecf9ca0670972f9eaa2e3dc954879971e161f643da820432bad4ef",
+    "reports/cvpr_evaluation_confirmation_20261011/sources/how2sign_test.csv": "ecc73526d01bfc56839c1ad09f804d1aa21c2616b42cffc066d03d01d67afc3e"
+  },
+  "scientific_sources_sha256": {
+    "/mnt/datasets/PHOENIX-2014-T/scripts/run_sign_stability_audit.py": "946198138a4a6c404dc756b9ac5696f9956750b05e4c663b63c17055513fc1ff",
+    "scripts/sign_stability_controls.py": "9a4b3e21e5be4a622537fed449c90b1f7625ca3fda8e2d67c4e8afc46bb00442",
+    "scripts/run_signspark_geometry_dev.py": "6e0901ead12b14d8b5fc8ae78651f2ba4d3833466dfc3394a54030c808c36bdc",
+    "external/SignSparK_BT/signspark_bt/inference.py": "7f2645326cf98b8ba81aef7dcdcb46e6e1bff3c0b3d83f9a8f859ed9c5df0901"
+  },
+  "source_manifest_sha256": {
+    "reports/cvpr_evaluation_confirmation_20261011": "40dde2d262a58516238a1a69e27079f50097a4ece5b75e08ccc3eff8157f5baf",
+    "reports/cvpr_representation_paper_20261011": "e2f1ee0d7cad334e2aa58c21d15a0dc3828d3db95a2de367e95a720c7359b3f5"
+  },
+  "source_inputs": "exact native full TEST IDs/order/crops; shared left-hand projection60:150 before every condition",
+  "decoder": "unchanged author weights/config/vocab/beam; eval; batch32, original order, no recognition; full raw/canonical replay must match frozen strings",
+  "budget": "each clip B=||canonical(x)-x||_2 over all valid240 features; no corpus-average RMS approximation; no evaluator normalizer added",
+  "Gaussian_support": "IID Gaussian on original body/right-hand150 channels; left90 protected; each clip rescaled to B; three preset fields averaged per clip for primary comparison",
+  "Gaussian_all": "secondary full240 Gaussian; first preset seed, rescaled per clip to B",
+  "Gaussian_seeds": [
+    20261014,
+    20261015,
+    20261016
+  ],
+  "field_index": "seed+1000000*corpus_index+clip_index; no score-selected seeds",
+  "physical_small": "1degree about per-joint isotropic axes fixed in time; rotate both original3-vectors together; preserve norms/dot products; left90 protected",
+  "physical_matched": "same axes, per-clip angle exactly solved from B in [0,pi]; original redundant coefficients retained; mark unreachable clips explicitly, never silently drop; report angle distribution, not assume all small",
+  "input_norm_tolerance": "5e-6*max(B,1) for float32 outputs, realized values retained",
+  "primary_endpoints": "metric-token changed fraction and mean normalized Levenshtein distance versus raw; wordsHow2Sign, charactersCSL preserving punctuation; raw string changed fraction and unnormalized edit count also retained",
+  "primary_interval_family": 20,
+  "primary_family_detail": "canonical, Gaussian-support seed-average, Gaussian-all, physical1deg, physicalmatched x2corpora x2endpoints; paired cluster bootstrap,20k draws, Bonferroni family20",
+  "contrast_interval_family": 8,
+  "contrast_family_detail": "canonical minus Gaussian-support-average or physicalmatched x2corpora x2endpoints; separate8endpoint paired bootstrap family",
+  "bootstrap_groups": "official VIDEO_ID149How2Sign, clipCSL; same weights across conditions; no independent-seed or untouchedTEST population claim",
+  "empty_hypotheses": "retained; normalized edit divisor=max(lengthraw,lengthvariant,1)",
+  "BLEU": "all original references evaluated after decoding; scores and per-seed outputs retained; no reference strings passed to decoder",
+  "no_training_new_generators_or_reward_fits": true
+}
