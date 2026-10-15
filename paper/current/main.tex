@@ -4,13 +4,19 @@
 \usepackage{graphicx,amsmath,amssymb,booktabs,capt-of,placeins}
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\usepackage{float,listings}
+\floatstyle{plaintop}\newfloat{algorithm}{t}{loa}\floatname{algorithm}{Algorithm}
+\lstset{basicstyle=\ttfamily\scriptsize,columns=fullflexible,keepspaces=true,language=Python,
+  commentstyle=\color{cvprblue},keywordstyle=\bfseries,showstringspaces=false,frame=tb,framesep=2pt,
+  aboveskip=2pt,belowskip=0pt}
 \hfuzz=0 pt\vfuzz=0 pt
 \def\paperID{DRAFT}\def\confName{CVPR}\def\confYear{2027}
 \newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathcal{C}}\newcommand{\G}{\mathcal{G}}
 \title{Same Motion, Different Scores:\\ How the Encoding of Rotations Changes Motion Metrics}
 \author{Anonymous authors}
 \setcounter{dbltopnumber}{3}
-\begin{document}\raggedbottom
+\begin{document}
+\crefname{algorithm}{Alg.}{Algs.}\Crefname{algorithm}{Algorithm}{Algorithms}\raggedbottom
 \twocolumn[{\begin{@twocolumnfalse}
 \maketitle\centering
 \includegraphics[width=\textwidth]{figures/teaser.pdf}
@@ -104,23 +110,25 @@ Canonicalization removes the freedom. For any deterministic evaluator $f$ and an
 \end{equation}
 no matter who chose the recoding or how. Detecting unusual inputs is weaker. In the supplement, an attack that keeps both the distance to the canonical form and the feature norm unchanged still adds 4.09 BLEU to a sign-language score, while a threshold detector on that distance performs at chance.
 
-Order matters: canonicalize the raw features first, then normalize them the way the evaluator expects. Canonicalizing numbers that were already normalized does not give the same rotation. The same interface should be used for generated and reference motion. \Cref{fig:portable} shows a complete version.
+Order matters: canonicalize the raw features first, then normalize them the way the evaluator expects. Canonicalizing numbers that were already normalized does not give the same rotation. The same interface should be used for generated and reference motion. \Cref{alg:canonical} shows the complete interface in eight lines.
 
-\begin{figure}[t]
-\centering\begin{minipage}{\columnwidth}\footnotesize
-\begin{verbatim}
-import numpy as np
-from canon6d import canonicalize
-def reader_input(raw, lengths, mu, sd):
-    x = canonicalize(raw, lengths)
-    m = np.arange(x.shape[1])[None, :]
-    m = m < lengths[:, None]
-    z = (x - mu) / sd
-    return z * m[..., None], m
-\end{verbatim}
-\end{minipage}
-\caption{\textbf{A canonical evaluator input.} Pass raw features and the evaluator's own normalization statistics. Use the same function for generated and reference motion.}\label{fig:portable}
-\end{figure}
+\begin{algorithm}[t]
+\caption{\textbf{Canonical evaluator input}, NumPy-like pseudocode. \texttt{norm}, \texttt{dot} and \texttt{cat} act on the last axis. Apply it to generated and reference motion and mask padded frames as usual; the released implementation adds input validation.}\label{alg:canonical}
+\begin{lstlisting}
+# raw: [N, T, D] unnormalized motion features
+# mean, std: the evaluator's own statistics
+# rot: rotation channels (67:193 in HumanML3D)
+def canonical_input(raw, mean, std, rot):
+    x = raw.copy()
+    d = x[..., rot].reshape(*x.shape[:-1], -1, 6)
+    a, b = d[..., :3], d[..., 3:]
+    u = a / norm(a)            # direction of a
+    v = b - dot(u, b) * u      # remove the a-component
+    v = v / norm(v)
+    x[..., rot] = cat([u, v]).reshape(*x.shape[:-1], -1)
+    return (x - mean) / std    # normalize last
+\end{lstlisting}
+\end{algorithm}
 
 \section{Experimental setup}
 \paragraph{Data and evaluators.}
@@ -178,7 +186,7 @@ Sign-language features consist only of rotations, so there is no position channe
 \textbf{We measure no accuracy cost.} Real HumanML3D and KIT-ML rotations are already canonical, so real-motion retrieval is unchanged by construction. Real sign-language features are not. Readers fine-tuned on canonical inputs reach test BLEU within $+0.10$ (How2Sign) and $-0.02$ (CSL-Daily) of matched readers fine-tuned on raw inputs, with intervals that contain zero.
 
 \section{Discussion}
-\paragraph{A checklist for motion evaluation.} Scores should be defined on the movement, not on its encoding. For any evaluator of rotation features we recommend: (i)~name the converter and its canonical form; (ii)~report each method's raw-minus-canonical score gap, since a nonzero gap means the evaluator reads the encoding; (iii)~score generated and reference motion through the same canonical interface (\cref{fig:portable}); and (iv)~canonicalize learned rewards before their gradients reach a generator, because the redundant numbers are exactly what a generator can change at no cost to its motion.
+\paragraph{A checklist for motion evaluation.} Scores should be defined on the movement, not on its encoding. For any evaluator of rotation features we recommend: (i)~name the converter and its canonical form; (ii)~report each method's raw-minus-canonical score gap, since a nonzero gap means the evaluator reads the encoding; (iii)~score generated and reference motion through the same canonical interface (\cref{alg:canonical}); and (iv)~canonicalize learned rewards before their gradients reach a generator, because the redundant numbers are exactly what a generator can change at no cost to its motion.
 
 \paragraph{Other rotation formats.}
 The audit needs only a converter that maps many writings to one rotation. Unnormalized quaternions are indifferent to positive scale and to sign, and axis--angle vectors to adding a full turn. We have not tested these formats, but the procedure is the same: rewrite within the converter's equivalence class, compare scores, and canonicalize before reading.
