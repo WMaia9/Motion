@@ -1,0 +1,20 @@
+{
+  "models": [
+    "pretrained",
+    "canonical_s123",
+    "gcanonical_s123",
+    "canonical_s42",
+    "gcanonical_s42",
+    "canonical_s777",
+    "gcanonical_s777",
+    "mse_s123",
+    "mse_s42",
+    "mse_s777",
+    "raw_s123",
+    "graw_s123",
+    "raw_s42",
+    "graw_s42",
+    "raw_s777",
+    "graw_s777"
+  ]
+}

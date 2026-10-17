@@ -2,7 +2,7 @@
   "export_date": "2026-10-14",
   "scope": "aggregate metadata only; full archive data and weights are not in Git",
   "full_manifests_are_inventories_not_complete_exports": true,
-  "report_count": 64,
+  "report_count": 65,
   "files": [
     {
       "path": "csl_bleu_recheck_20261011/verification.json",
@@ -2667,6 +2667,48 @@
       "sha256": "517c4337dc72fb19017cb4d837fcb8319fc674057a1d54052fadfee9ed5e4616",
       "original_path": "reports/cvpr_teaser_audit_20261014/calibrated_attack/complete.json",
       "original_manifest_sha256": "2d6bef467ba5cbe8a1a001e6898bc7ff86413e84e15aa6cd7c9492f83e1a830f"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/README.md",
+      "sha256": "083917756657e53e2822cb8bc950f1567c5f55f0c35e88175fff837f13b63d41",
+      "original_path": "reports/cvpr_reward_finetune_20261014/README.md",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/DEV_PROTOCOL.md",
+      "sha256": "ebe54edb7c9344b334d5b57c5e733257d7a4948885ea61a2fc94be5a8347cf6a",
+      "original_path": "reports/cvpr_reward_finetune_20261014/DEV_PROTOCOL.md",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/dev_summary.json",
+      "sha256": "969563437809fa4db5c8b179276dc880e6222651895ae844b235f1710fdb9143",
+      "original_path": "reports/cvpr_reward_finetune_20261014/dev_summary.json",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/test/protocol.json",
+      "sha256": "a07f9c23a2a7fdbba72d4fc79b9ad135a07773b39cf4c3cc03c6b6f8a20ed9c4",
+      "original_path": "reports/cvpr_reward_finetune_20261014/test/protocol.json",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/test/analysis.json",
+      "sha256": "fe4e91bd2a9348ce6eabfddfdddd14bcfb372af0a9505d45a95f752bdaa56924",
+      "original_path": "reports/cvpr_reward_finetune_20261014/test/analysis.json",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/test/complete.json",
+      "sha256": "861193764d643834bbe51d1623ffd21722aad38c19b4cc165ed17ee1be44f16e",
+      "original_path": "reports/cvpr_reward_finetune_20261014/test/complete.json",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/manifest_sha256.json",
+      "sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781",
+      "original_path": "reports/cvpr_reward_finetune_20261014/manifest_sha256.json",
+      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
     }
   ]
 }

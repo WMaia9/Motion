@@ -66,7 +66,13 @@ Each study directory records its protocol, source hashes and inputs before infer
 | Query-only (black-box) attack | `run_blackbox_fid_attack.py` | built-in checks (geometry, canonical invariance) | `cvpr_blackbox_attack_20261014` |
 | Teaser figure | `plot_teaser_calibrated.py` | asserts identical positions and rotation axes | `cvpr_teaser_audit_20261014` |
 
-### Sec. 5.4 — Sign language
+### Sec. 5.4 — Reward fine-tuning
+
+| Result | Producer | Analysis / verification | Study |
+|---|---|---|---|
+| Fine-tuning MDM on the T2M evaluator (Tab. 3, Tab. S8) | `reward_finetune_mdm.py` (protocol in `DEV_PROTOCOL.md`) | `eval_reward_finetune_test.py`, `analyze_reward_finetune_test.py` | `cvpr_reward_finetune_20261014` |
+
+### Sec. 5.5 — Sign language
 
 | Result | Producer | Analysis / verification | Study |
 |---|---|---|---|
@@ -77,7 +83,7 @@ Each study directory records its protocol, source hashes and inputs before infer
 | Per-clip wrong-sentence attacks, CTC recognizer | `run_signspark_gauge_attack.py`, `run_motion_ctc_confirmation.py` | `audit_evaluation_confirmation.py` | `cvpr_evaluation_confirmation_20261011` |
 | Attack with fixed detector statistics | `run_adaptive_distance_confirmation.py` | `analyze_adaptive_confirmation.py`, `audit_adaptive_detectors.py` | `cvpr_adaptive_distance_confirmation_20261012` |
 
-### Sec. 5.5 — Canonicalization
+### Sec. 5.6 — Canonicalization
 
 | Result | Producer | Analysis / verification | Study |
 |---|---|---|---|

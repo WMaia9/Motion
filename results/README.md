@@ -15,6 +15,7 @@ Core result sources:
 | Study | Aggregate results |
 |---|---|
 | Caption-targeted attack, T2M-GPT checkpoint (Fig. 1, Tab. 2) | [attack](cvpr_teaser_audit_20261014/calibrated_attack/results.json), [independent check of both checkpoints](cvpr_teaser_audit_20261014/analysis.json), [teaser evidence](cvpr_teaser_audit_20261014/teaser_evidence.json) |
+| Reward fine-tuning of MDM, three versions × three seeds × two reward checkpoints (Tab. 3) | [test analysis](cvpr_reward_finetune_20261014/test/analysis.json), [protocol](cvpr_reward_finetune_20261014/DEV_PROTOCOL.md), [validation runs](cvpr_reward_finetune_20261014/dev_summary.json) |
 | Query-only (black-box) attack, four cohorts | [results](cvpr_blackbox_attack_20261014/results.json), [protocol](cvpr_blackbox_attack_20261014/protocol.json) |
 | Ranking changes between release pairs | [analysis](cvpr_ranking_reversal_20261014/analysis.json) |
 | Current sign-stability manuscript | [summary](cvpr_sign_stability_review_20261014/summary.json), [claim audit](cvpr_sign_stability_review_20261014/claim_audit.json) |
