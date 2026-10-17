@@ -2670,45 +2670,57 @@
     },
     {
       "path": "cvpr_reward_finetune_20261014/README.md",
-      "sha256": "083917756657e53e2822cb8bc950f1567c5f55f0c35e88175fff837f13b63d41",
+      "sha256": "6378315ba837eb06239db7531d36585f364f3e8703876cab895935460b550a60",
       "original_path": "reports/cvpr_reward_finetune_20261014/README.md",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/DEV_PROTOCOL.md",
-      "sha256": "ebe54edb7c9344b334d5b57c5e733257d7a4948885ea61a2fc94be5a8347cf6a",
+      "sha256": "cb268389c5e83f62541be3d1aec3b696a93d5a5f2c832670f8759884d2c1673f",
       "original_path": "reports/cvpr_reward_finetune_20261014/DEV_PROTOCOL.md",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/dev_summary.json",
-      "sha256": "969563437809fa4db5c8b179276dc880e6222651895ae844b235f1710fdb9143",
+      "sha256": "66eca20bfb3d3011af1b808b5fe0723f0ab61228c8a65905b5db73a4378c63b0",
       "original_path": "reports/cvpr_reward_finetune_20261014/dev_summary.json",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/test/protocol.json",
       "sha256": "a07f9c23a2a7fdbba72d4fc79b9ad135a07773b39cf4c3cc03c6b6f8a20ed9c4",
       "original_path": "reports/cvpr_reward_finetune_20261014/test/protocol.json",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/test/analysis.json",
       "sha256": "fe4e91bd2a9348ce6eabfddfdddd14bcfb372af0a9505d45a95f752bdaa56924",
       "original_path": "reports/cvpr_reward_finetune_20261014/test/analysis.json",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/test/complete.json",
       "sha256": "861193764d643834bbe51d1623ffd21722aad38c19b4cc165ed17ee1be44f16e",
       "original_path": "reports/cvpr_reward_finetune_20261014/test/complete.json",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     },
     {
       "path": "cvpr_reward_finetune_20261014/manifest_sha256.json",
-      "sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781",
+      "sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c",
       "original_path": "reports/cvpr_reward_finetune_20261014/manifest_sha256.json",
-      "original_manifest_sha256": "df254a17854aace7c55ba215b936827fc78c45949ca8b223632149bdacfcd781"
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/test_mld/analysis.json",
+      "original_path": "reports/cvpr_reward_finetune_20261014/test_mld/analysis.json",
+      "sha256": "5e3cb0e67ac96dcc9de188d1becc68df92b125812d1f9916ab4e97c1948171d7",
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
+    },
+    {
+      "path": "cvpr_reward_finetune_20261014/motionrft_release_rms.json",
+      "original_path": "reports/cvpr_reward_finetune_20261014/motionrft_release_rms.json",
+      "sha256": "3da437291b23e4de93f277bcda00b9852b1e64437071e173cb551938b2ed7054",
+      "original_manifest_sha256": "c84170599d8b4182cedddf1f257f0619127127dfea7d868a018f34a4fa129a3c"
     }
   ]
 }

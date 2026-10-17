@@ -11,6 +11,7 @@
   aboveskip=2pt,belowskip=0pt}
 \hfuzz=0 pt\vfuzz=0 pt
 \def\paperID{DRAFT}\def\confName{CVPR}\def\confYear{2027}
+\newcommand{\new}[1]{\textcolor{blue}{#1}}% additions since the advisor's review
 \newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathcal{C}}\newcommand{\G}{\mathcal{G}}
 \title{Same Motion, Different Scores:\\ How the Encoding of Rotations Changes Motion Metrics}
 \author{Anonymous authors}
@@ -52,7 +53,7 @@ The remedy is simple. Before scoring, replace each pair of vectors by its canoni
 \noindent Our contributions are:
 \begin{enumerate}
 \item an audit that isolates how much learned motion evaluators depend on the way rotations are written, with controls showing that a change that moves no joint is scored like a 10--30$^\circ$ rotation;
-\item evidence that this dependence is present in public generator outputs and can be exploited without changing the motion, in two evaluators, two motion datasets and three sign-language corpora;
+\item evidence that this dependence is present in public generator outputs and can be exploited without changing the motion, in two evaluators, two motion datasets and three sign-language corpora\new{, and that reward fine-tuning can find it without an attacker};
 \item a canonical evaluation interface, with a portable implementation, that removes the dependence while keeping all rotational information.
 \end{enumerate}
 
@@ -188,11 +189,13 @@ Sign-language features consist only of rotations, so there is no position channe
 \section{Discussion}
 \paragraph{A checklist for motion evaluation.} Scores should be defined on the movement, not on its encoding. For any evaluator of rotation features we recommend: (i)~name the converter and its canonical form; (ii)~report each method's raw-minus-canonical score gap, since a nonzero gap means the evaluator reads the encoding; (iii)~score generated and reference motion through the same canonical interface (\cref{alg:canonical}); and (iv)~canonicalize learned rewards before their gradients reach a generator, because the redundant numbers are exactly what a generator can change at no cost to its motion.
 
+\new{\paragraph{Training against the evaluator.} We tested item (iv) in a study whose protocol was fixed before any test inference (supplement): MDM and MLD were fine-tuned with a standard reward method~\cite{xu2023imagereward,draft2024}, using the retrieval loss of an official T2M checkpoint as reward (each of the two for MDM, three seeds each). Rewarded on its raw output, MDM, which writes the feature vector directly, moved off canonical form in all six runs, to more than twice the pretrained level, and 0.8 to 0.9 points of the R-Precision it was trained to raise came from the encoding alone. Runs rewarded on canonicalized output stayed at the pretrained level. With MDM's checkpoint as reward, the same outputs score an FID of 0.75 raw and 0.28 canonicalized, on either side of the pretrained model's 0.33; with the other checkpoint the FID changes are smaller and of either sign. MLD, whose frozen decoder produces the features, moved off canonical form as much under canonical as under raw reward. Canonicalizing the reward removes the incentive to use the redundant numbers, but not every drift; canonicalizing the evaluation removes their effect on the score either way.}
+
 \paragraph{Other rotation formats.}
 The audit needs only a converter that maps many writings to one rotation. Unnormalized quaternions are indifferent to positive scale and to sign, and axis--angle vectors to adding a full turn. We have not tested these formats, but the procedure is the same: rewrite within the converter's equivalence class, compare scores, and canonicalize before reading.
 
 \paragraph{Scope.}
-Our claims concern evaluation. We do not claim that published results were manipulated, or that standard training exploits this channel. Our query-only attacker uses a simple search over 63 coefficients; we did not try stronger black-box strategies. Canonicalization removes the dependence on rotation encoding; it does not make an evaluator accurate, and it does not address redundancy between positions and velocities or attacks that change the movement. The sign-language readers come from one released family, and their accuracy on How2Sign and CSL-Daily is low.
+Our claims concern evaluation. We do not claim that published results were manipulated, or that standard training exploits this channel\new{; our fine-tuning study covers one reward method and two generators}. Our query-only attacker uses a simple search over 63 coefficients; we did not try stronger black-box strategies. Canonicalization removes the dependence on rotation encoding; it does not make an evaluator accurate, and it does not address redundancy between positions and velocities or attacks that change the movement. The sign-language readers come from one released family, and their accuracy on How2Sign and CSL-Daily is low.
 
 \section{Conclusion}
 Learned motion evaluators give different scores to the same movement when its rotations are written differently. The effect is present in released generator outputs, can be as large as a visible physical change, and can steer retrieval, FID and backtranslation without moving a joint. Canonicalizing rotations before scoring removes it exactly and keeps all rotational information. As happened for image metrics, we hope that a precise statement of the evaluation interface becomes part of how motion results are computed and reported.

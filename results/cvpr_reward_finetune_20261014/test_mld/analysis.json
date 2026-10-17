@@ -1,0 +1,258 @@
+{
+ "per_model": {
+  "pretrained": {
+   "rms": 0.04366884008049965,
+   "reward_raw_R1": 0.44062500000000004,
+   "reward_raw_FID": 0.48880519569073044,
+   "reward_canonical_R1": 0.4408203125,
+   "reward_canonical_FID": 0.5080394350418089,
+   "held_raw_R1": 0.5086914062500001,
+   "held_raw_FID": 0.3665039781915169,
+   "held_canonical_R1": 0.50390625,
+   "held_canonical_FID": 0.3770265643194364
+  },
+  "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s42": {
+   "rms": 0.04349452629685402,
+   "reward_raw_R1": 0.436328125,
+   "reward_raw_FID": 0.7505085634276867,
+   "reward_canonical_R1": 0.43740234375,
+   "reward_canonical_FID": 0.7724402045688521,
+   "held_raw_R1": 0.4982421875,
+   "held_raw_FID": 0.5184618134169199,
+   "held_canonical_R1": 0.49375,
+   "held_canonical_FID": 0.5349209233769017
+  },
+  "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s123": {
+   "rms": 0.04308173805475235,
+   "reward_raw_R1": 0.43994140625,
+   "reward_raw_FID": 0.7467175134805473,
+   "reward_canonical_R1": 0.4400390625,
+   "reward_canonical_FID": 0.7628380840476865,
+   "held_raw_R1": 0.50126953125,
+   "held_raw_FID": 0.49641130885271423,
+   "held_canonical_R1": 0.4978515625,
+   "held_canonical_FID": 0.5040276043543912
+  },
+  "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s777": {
+   "rms": 0.043046168982982635,
+   "reward_raw_R1": 0.4341796875,
+   "reward_raw_FID": 0.8033717469920276,
+   "reward_canonical_R1": 0.43564453125,
+   "reward_canonical_FID": 0.8278908604777087,
+   "held_raw_R1": 0.50205078125,
+   "held_raw_FID": 0.5461265860617885,
+   "held_canonical_R1": 0.5018554687500001,
+   "held_canonical_FID": 0.5601481190873727
+  },
+  "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s42": {
+   "rms": 0.06056710332632065,
+   "reward_raw_R1": 0.5538085937499999,
+   "reward_raw_FID": 0.17749500739085988,
+   "reward_canonical_R1": 0.5494140624999999,
+   "reward_canonical_FID": 0.15060870317945785,
+   "held_raw_R1": 0.55810546875,
+   "held_raw_FID": 0.2740175851239286,
+   "held_canonical_R1": 0.5555664062500001,
+   "held_canonical_FID": 0.23539389500814423
+  },
+  "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s123": {
+   "rms": 0.06032175570726395,
+   "reward_raw_R1": 0.5555664062500001,
+   "reward_raw_FID": 0.23767403560096056,
+   "reward_canonical_R1": 0.55244140625,
+   "reward_canonical_FID": 0.20263911378584964,
+   "held_raw_R1": 0.55380859375,
+   "held_raw_FID": 0.31817188062913715,
+   "held_canonical_R1": 0.5525390625,
+   "held_canonical_FID": 0.2696014839336982
+  },
+  "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s777": {
+   "rms": 0.06204918026924133,
+   "reward_raw_R1": 0.553515625,
+   "reward_raw_FID": 0.1827699265351157,
+   "reward_canonical_R1": 0.55234375,
+   "reward_canonical_FID": 0.15280367728325928,
+   "held_raw_R1": 0.5568359375,
+   "held_raw_FID": 0.2839219049028827,
+   "held_canonical_R1": 0.5548828125,
+   "held_canonical_FID": 0.23632516080004962
+  },
+  "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s42": {
+   "rms": 0.06077391281723976,
+   "reward_raw_R1": 0.55966796875,
+   "reward_raw_FID": 0.24508712594838755,
+   "reward_canonical_R1": 0.5573242187499999,
+   "reward_canonical_FID": 0.20923044537946112,
+   "held_raw_R1": 0.5575195312500001,
+   "held_raw_FID": 0.34307868111174855,
+   "held_canonical_R1": 0.55458984375,
+   "held_canonical_FID": 0.29309781783501876
+  },
+  "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s123": {
+   "rms": 0.0597662515938282,
+   "reward_raw_R1": 0.55009765625,
+   "reward_raw_FID": 0.24807491882441468,
+   "reward_canonical_R1": 0.5498046875,
+   "reward_canonical_FID": 0.21568776050965255,
+   "held_raw_R1": 0.559375,
+   "held_raw_FID": 0.339453595608191,
+   "held_canonical_R1": 0.558203125,
+   "held_canonical_FID": 0.28236088935852877
+  },
+  "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s777": {
+   "rms": 0.05873420462012291,
+   "reward_raw_R1": 0.5547851562499999,
+   "reward_raw_FID": 0.2124023535682369,
+   "reward_canonical_R1": 0.5546875,
+   "reward_canonical_FID": 0.18058335730727038,
+   "held_raw_R1": 0.556640625,
+   "held_raw_FID": 0.3031324700365303,
+   "held_canonical_R1": 0.55126953125,
+   "held_canonical_FID": 0.2611003419417841
+  }
+ },
+ "per_arm": {
+  "pretrained": {
+   "models": [
+    "pretrained"
+   ],
+   "rms": 0.04366884008049965,
+   "reward_raw_R1": 0.44062500000000004,
+   "reward_canonical_R1": 0.4408203125,
+   "reward_raw_FID": 0.48880519569073044,
+   "reward_canonical_FID": 0.5080394350418089,
+   "reward_R1_gap": -0.0001953124999999334,
+   "reward_R1_gap_CI95": [
+    -0.0030273437500000235,
+    0.0025415039062500065
+   ],
+   "reward_FID_gap": -0.019234239351078486,
+   "reward_FID_gap_CI95": [
+    -0.029594322975433584,
+    -0.009615029449414086
+   ],
+   "held_raw_R1": 0.5086914062500001,
+   "held_canonical_R1": 0.50390625,
+   "held_raw_FID": 0.3665039781915169,
+   "held_canonical_FID": 0.3770265643194364,
+   "held_R1_gap": 0.004785156250000089,
+   "held_R1_gap_CI95": [
+    0.0012695312499999556,
+    0.008398437500000022
+   ],
+   "held_FID_gap": -0.010522586127919453,
+   "held_FID_gap_CI95": [
+    -0.022849624678343616,
+    0.001853909632762544
+   ]
+  },
+  "mse": {
+   "models": [
+    "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s42",
+    "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s123",
+    "mld_mse_kl0.0_w1.0_lr1e-05_t10_rmdm_s777"
+   ],
+   "rms": 0.043207477778196335,
+   "reward_raw_R1": 0.43681640625,
+   "reward_canonical_R1": 0.4376953125,
+   "reward_raw_FID": 0.7668659413000872,
+   "reward_canonical_FID": 0.7877230496980824,
+   "reward_R1_gap": -0.0008789062499999778,
+   "reward_R1_gap_CI95": [
+    -0.0030924479166666487,
+    0.0015307617187500097
+   ],
+   "reward_FID_gap": -0.02085710839799515,
+   "reward_FID_gap_CI95": [
+    -0.03018212218114087,
+    -0.011789330047541693
+   ],
+   "held_raw_R1": 0.5005208333333333,
+   "held_canonical_R1": 0.4978190104166667,
+   "held_raw_FID": 0.5203332361104742,
+   "held_canonical_FID": 0.5330322156062218,
+   "held_R1_gap": 0.0027018229166665964,
+   "held_R1_gap_CI95": [
+    0.00029296874999999213,
+    0.005014648437500056
+   ],
+   "held_FID_gap": -0.012698979495747609,
+   "held_FID_gap_CI95": [
+    -0.024430127899942162,
+    -0.00046680469001465807
+   ]
+  },
+  "raw": {
+   "models": [
+    "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s42",
+    "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s123",
+    "mld_raw_kl0.0_w1.0_lr1e-05_t10_rmdm_s777"
+   ],
+   "rms": 0.06097934643427531,
+   "reward_raw_R1": 0.554296875,
+   "reward_canonical_R1": 0.5513997395833333,
+   "reward_raw_FID": 0.19931298984231205,
+   "reward_canonical_FID": 0.16868383141618892,
+   "reward_R1_gap": 0.0028971354166666963,
+   "reward_R1_gap_CI95": [
+    0.00039062499999993985,
+    0.0055013020833332895
+   ],
+   "reward_FID_gap": 0.030629158426123126,
+   "reward_FID_gap_CI95": [
+    0.010736168001630374,
+    0.05092921434518847
+   ],
+   "held_raw_R1": 0.55625,
+   "held_canonical_R1": 0.5543294270833333,
+   "held_raw_FID": 0.2920371235519828,
+   "held_canonical_FID": 0.24710684658063067,
+   "held_R1_gap": 0.0019205729166666963,
+   "held_R1_gap_CI95": [
+    -0.0009440104166666603,
+    0.004655761718750016
+   ],
+   "held_FID_gap": 0.04493027697135213,
+   "held_FID_gap_CI95": [
+    0.022467937549704685,
+    0.06926582646324643
+   ]
+  },
+  "canonical": {
+   "models": [
+    "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s42",
+    "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s123",
+    "mld_canonical_kl0.0_w1.0_lr1e-05_t10_rmdm_s777"
+   ],
+   "rms": 0.05975812301039696,
+   "reward_raw_R1": 0.5548502604166666,
+   "reward_canonical_R1": 0.5539388020833332,
+   "reward_raw_FID": 0.23518813278034637,
+   "reward_canonical_FID": 0.20183385439879467,
+   "reward_R1_gap": 0.0009114583333333925,
+   "reward_R1_gap_CI95": [
+    -0.0015299479166666083,
+    0.0034187825520834002
+   ],
+   "reward_FID_gap": 0.033354278381551694,
+   "reward_FID_gap_CI95": [
+    0.014349685208774332,
+    0.052699435142365185
+   ],
+   "held_raw_R1": 0.5578450520833333,
+   "held_canonical_R1": 0.5546875,
+   "held_raw_FID": 0.32855491558548994,
+   "held_canonical_FID": 0.2788530163784439,
+   "held_R1_gap": 0.003157552083333348,
+   "held_R1_gap_CI95": [
+    0.0006510416666666657,
+    0.005761718750000015
+   ],
+   "held_FID_gap": 0.04970189920704604,
+   "held_FID_gap_CI95": [
+    0.027517596170661088,
+    0.07324554975672724
+   ]
+  }
+ }
+}

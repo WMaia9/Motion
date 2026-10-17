@@ -70,7 +70,9 @@ Each study directory records its protocol, source hashes and inputs before infer
 
 | Result | Producer | Analysis / verification | Study |
 |---|---|---|---|
-| Fine-tuning MDM on the T2M evaluator (Tab. 3, Tab. S8) | `reward_finetune_mdm.py` (protocol in `DEV_PROTOCOL.md`) | `eval_reward_finetune_test.py`, `analyze_reward_finetune_test.py` | `cvpr_reward_finetune_20261014` |
+| Reward fine-tuning of MDM (Discussion, supplement S6) | `reward_finetune_mdm.py` (protocol in `DEV_PROTOCOL.md`) | `eval_reward_finetune_test.py`, `analyze_reward_finetune_test.py` | `cvpr_reward_finetune_20261014` |
+| Reward fine-tuning of MLD (supplement S6) | `reward_finetune_mld.py` | `reward_finetune_mld.py --test`, `analyze_reward_finetune_mld.py` | `cvpr_reward_finetune_20261014` |
+| Released MotionRFT off-canonical distance (supplement S6) | `run_motion_reward_release.py` | `motionrft_release_rms.py` | `cvpr_motion_reward_release_20261013`, `cvpr_reward_finetune_20261014` |
 
 ### Sec. 5.5 — Sign language
 

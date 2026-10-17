@@ -20,3 +20,9 @@ Replication with the T2M-GPT checkpoint as reward (runs `*_rgpt`, test keys `gra
 in test/analysis.json the keys `reward`/`held` always denote the MDM-linked/T2M-GPT checkpoints):
 off-canonical 0.040 (raw reward) vs 0.018; R1 gap by the reward checkpoint +0.009 [0.002, 0.016];
 its FID gap -0.031 [-0.118, 0.058]; the MDM-linked checkpoint as judge: FID gap -0.051 [-0.074, -0.027].
+
+Second generator, MLD (`scripts/reward_finetune_mld.py`, runs `mld_*`, test in `test_mld/`, analysis
+`scripts/analyze_reward_finetune_mld.py`): selected penalty weight 0. Off-canonical 0.061 (raw reward)
+vs 0.060 (canonical reward), 0.044 pretrained, 0.043 control; reward-checkpoint FID gap +0.031 [0.011, 0.051]
+(raw) vs +0.033 [0.014, 0.053] (canonical), -0.019 pretrained. No raw-specific drift.
+Released MotionRFT off-canonical RMS: `motionrft_release_rms.json` (`scripts/motionrft_release_rms.py`).
