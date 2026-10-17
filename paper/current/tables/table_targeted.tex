@@ -1,0 +1,9 @@
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\setlength{\tabcolsep}{2.8pt}\caption{\textbf{Caption-targeted recoding with both T2M checkpoints}, 1,024 test clips. R1: top-1 R-Precision for the true caption, and for another clip's caption (\emph{other}). FID against the same real test clips. Real-motion R1 is 0.517 (T2M-GPT checkpoint) and 0.462 (MDM checkpoint); the published value is 0.511.}\label{tab:targeted}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Checkpoint&Motion&R1 before&R1 after&R1 other&FID before$\to$after\\\midrule
+T2M-GPT&MDM&0.457&0.997&0.916&0.497$\to$0.393\\
+T2M-GPT&Real&0.517&0.998&0.952&0.000$\to$0.385\\
+MDM&MDM&0.397&0.993&0.788&0.369$\to$1.287\\
+MDM&Real&0.462&0.996&0.839&0.000$\to$1.311\\
+\bottomrule\end{tabular}\end{table}

@@ -1,4 +1,4 @@
-\begin{table}[!htbp]
+\begin{table*}[t]
 \centering\footnotesize
 \caption{\textbf{Real-sign stability controls}, full test sets, same frozen readers and inputs. \emph{Changed}: decoded sentences that differ from the raw input's; NED: normalized edit distance to the raw decoding. Gaussian: mean of three same-support noise fields rescaled to each clip's canonicalization displacement; \emph{all 240}: noise on every channel. Physical: real joint rotations, matched in input norm or fixed at $1^\circ$. Intervals: 20,000 paired cluster bootstraps, adjusted over twenty endpoints. Raw BLEU is 3.48 (How2Sign) and 6.89 (CSL-Daily).}\label{tab:signstability}
 \begin{tabular}{@{}llrrrrr@{}}\toprule
@@ -13,4 +13,4 @@ CSL-Daily&Canonical&39.9&$[35.5,44.2]$&0.304&$[0.269,0.339]$&7.07\\
 &Gaussian, all 240&20.5&$[17.0,24.2]$&0.156&$[0.128,0.186]$&6.95\\
 &Physical, matched&44.3&$[40.0,48.7]$&0.346&$[0.312,0.382]$&6.58\\
 &Physical, $1^\circ$&13.9&$[10.8,17.0]$&0.102&$[0.078,0.125]$&7.01\\
-\bottomrule\end{tabular}\end{table}
+\bottomrule\end{tabular}\end{table*}

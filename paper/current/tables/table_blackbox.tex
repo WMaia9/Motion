@@ -1,0 +1,14 @@
+\begin{table*}[t]\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Query-only recoding}, test FID after 300 queries (relative change from the original). \emph{Queried}: the evaluator that answered the queries; \emph{other}: the second checkpoint, never queried. \emph{Random}: mean of ten random coefficient vectors of the same bound on the queried evaluator.}\label{tab:blackbox}
+\begin{tabular}{@{}llrrrr@{}}\toprule
+Search&&MDM 42&MDM 4242&MDM 7777&MLD\\\midrule
+\multicolumn{6}{@{}l}{\emph{Original FID (queried / other)}: 0.384 / 0.408, 0.376 / 0.371, 0.327 / 0.379, 0.706 / 0.659}\\
+Per joint, $b=0.1$&queried&$-20\%$&$-27\%$&$-11\%$&$-57\%$\\
+&other&$-30\%$&$-4\%$&$-22\%$&$-41\%$\\
+&random&$+2\%$&$+3\%$&$+4\%$&$+4\%$\\
+Per joint, $b=0.35$&queried&$-29\%$&$-44\%$&$-30\%$&$-68\%$\\
+&other&$+51\%$&$+12\%$&$+57\%$&$+76\%$\\
+&random&$+89\%$&$+74\%$&$+97\%$&$+64\%$\\
+Global, $b=0.1$&queried&$-9\%$&$-11\%$&$-3\%$&$-30\%$\\
+&other&$+47\%$&$+31\%$&$+28\%$&$-18\%$\\
+\bottomrule\end{tabular}\end{table*}

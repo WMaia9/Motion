@@ -1,0 +1,13 @@
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\caption{\textbf{Caption-blind FID}, 960 outputs per cohort. \emph{Source}: evaluator whose gradients were used; \emph{other}: the second official T2M checkpoint, which supplied no gradients. Canonical-gradient controls stay at the original value.}\label{tab:blind}
+\begin{tabular}{@{}llrrr@{}}\toprule
+Cohort&Evaluator&Original&$b=0.1$&$b=0.35$\\\midrule
+MDM seed 42&source&0.384&0.210&1.085\\
+&other&0.408&0.334&0.972\\
+MDM seed 4242&source&0.376&0.176&1.148\\
+&other&0.371&0.303&0.856\\
+MDM seed 7777&source&0.327&0.199&1.429\\
+&other&0.379&0.284&0.779\\
+MLD&source&0.706&0.289&1.611\\
+&other&0.659&0.579&1.345\\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,12 @@
+\begin{table}[t]\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\caption{\textbf{Learned-layer ablations}, full test sets. Raw BLEU and gain over no layer with paired 95\% intervals; canonical hypotheses are unchanged in every row. How2Sign/CSL controls use one seed.}\label{tab:layers}
+\begin{tabular}{@{}llrr@{}}\toprule
+Corpus&Layer input / loss&Raw&Gain [95\% CI]\\\midrule
+PHOENIX&text+motion / raw&15.21&8.81 [7.82, 9.87]\\
+&motion only / raw&7.60&1.21 [0.66, 1.76]\\
+&text+motion / canonical&6.26&$-0.13$ [$-0.32$, 0.04]\\
+How2Sign&text+motion / raw&6.11&2.64 [2.27, 3.03]\\
+&text+motion / canonical&3.48&0.00 [$-0.18$, 0.20]\\
+CSL-Daily&text+motion / raw&7.43&0.54 [0.14, 0.97]\\
+&text+motion / canonical&6.79&$-0.10$ [$-0.40$, 0.09]\\
+\bottomrule\end{tabular}\end{table}
