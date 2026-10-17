@@ -15,16 +15,14 @@
     "figures/within_rotation_budget.pdf": "994e296f1e949204723bc67d7b221af791310c9945a614eccf244c992c62133a",
     "ieeenat_fullname.bst": "e38e6166bd7b1e6d23a1b79dcdb55c656e4fcdbe91bdf6b50d827e6b5d1aacfc",
     "ieeenat_fullname_citation.bst": "0be2d4ce5db49b0243f63835b6da70d3c9cd0cb3aa2658401e3fd3cc2e166493",
-    "main.tex": "2252365467a538c5fc9c034047708922687b2ce9663be1eb0c53b7eb3aa7cdd9",
+    "main.tex": "27cf7a83717cd687faed7781bc9ae73a28b2d7f84d724b6a448fbb5ac8c09f6e",
     "references.bib": "59df79550d13e708cf12c7086dc4c19a5f70ba2b3f8484a031d5a7115a2f89f4",
-    "reviewed/main.pdf": "45cd0b15fed2810ff9152e5c85ce9d8b7d9fa8c49c586f6eaa7bee36da4c858c",
-    "reviewed/supplement.pdf": "c22b105f539537e9f2cc043ca16cec6c1ace8e2de1f4fef5e160fdf8f458be3b",
-    "supplement.tex": "a1c1d93eee62b644ef6dd3808f7e751ab210baebfb9c1082fa85662c8bcc8aa6",
+    "reviewed/main.pdf": "36d234cc1466a771d214970a2af09ce9536ac47eefe42b3ee72c8aac529e0a6f",
+    "reviewed/supplement.pdf": "ceb68668eb16fb0dd6bbc0d4014d959fca53b1ec16f28187c0392b332cfbac85",
+    "supplement.tex": "bbdc0a92268af487f90a80ed51c1bffaffdd9c7c6aa1a01e41858eeacb082b84",
     "table_main_natural.tex": "1cbac8b24aa72fc3d29582cdabba68534f41c407c29f62dc908b09ce1ce639b6",
     "table_main_retrieval.tex": "28b45d307ae84daf0093b0fff4487c752052d443e3aab2d33b39f52a59faa0d8",
     "table_main_sign.tex": "b999552433fd6bc89fac081d9d0d9e09c69f33a0f40472cac1f138f68e4f4ea6",
-    "table_sign_stability_all.tex": "9ed10fc1ec8205c75645a96d95d0bb3d934f0eb66997b12999cc15589c63349a",
-    "table_sign_stability_contrasts.tex": "6aa3f761e8292cae971d8d952d970d9667dc2ece577eb2506ab3ee04521180a7",
-    "table_sign_stability_intervals.tex": "f424e84de6ef4e4390a1baaf172280860379b509ecbd8d3363720dea6decf3af"
+    "table_sign_stability.tex": "4ca5ea60cad5b3c911cfb935eb9adc5989deda76f8768ca3046b8435c539912b"
   }
 }

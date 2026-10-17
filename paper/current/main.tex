@@ -22,6 +22,7 @@
 \maketitle\centering
 \includegraphics[width=\textwidth]{figures/teaser.pdf}
 \captionof{figure}{\textbf{Same movement, different score.} (a) A generated motion from MDM~\cite{tevet2023}, rendered from its joint positions; its rewritten version has identical joint positions and rotations. (b) The left elbow of that motion (orange in a) in the middle frame. The six stored numbers change (vector lengths, and how far $b$ leans toward $a$), but the rotation they encode does not: the conversion keeps only the direction of the first vector ($u$) and the part of the second at right angles to it ($v$), and both versions give the same $u$ and $v$ (green).}\label{fig:teaser}
+\vspace{1.2em}
 \end{@twocolumnfalse}}]
 
 \begin{abstract}
@@ -195,8 +196,8 @@ Sign-language features consist only of rotations, so there is no position channe
 \paragraph{Other rotation formats.}
 The audit needs only a converter that maps many writings to one rotation. Unnormalized quaternions are indifferent to positive scale and to sign, and axis--angle vectors to adding a full turn. We have not tested these formats, but the procedure is the same: rewrite within the converter's equivalence class, compare scores, and canonicalize before reading.
 
-\paragraph{Scope.}
-Our claims concern evaluation. We do not claim that published results were manipulated, or that standard training exploits this channel\new{; our fine-tuning study covers one reward method and two generators}. Our query-only attacker uses a simple search over 63 coefficients; we did not try stronger black-box strategies. Canonicalization removes the dependence on rotation encoding; it does not make an evaluator accurate, and it does not address redundancy between positions and velocities or attacks that change the movement. The sign-language readers come from one released family, and their accuracy on How2Sign and CSL-Daily is low.
+\paragraph{\new{Limitations.}}
+\new{Our claims concern evaluation: we audit how scores are computed, not how published results were obtained, and our fine-tuning study covers one reward method and two generators. Canonicalization removes the dependence on how rotations are written; an evaluator can still be inaccurate, and redundancy between positions and velocities, or attacks that change the movement, are outside its reach. The sign-language readers come from one released family and are weak on How2Sign and CSL-Daily, so those results describe these readers.}
 
 \section{Conclusion}
 Learned motion evaluators give different scores to the same movement when its rotations are written differently. The effect is present in released generator outputs, can be as large as a visible physical change, and can steer retrieval, FID and backtranslation without moving a joint. Canonicalizing rotations before scoring removes it exactly and keeps all rotational information. As happened for image metrics, we hope that a precise statement of the evaluation interface becomes part of how motion results are computed and reported.
