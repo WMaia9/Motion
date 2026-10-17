@@ -5,7 +5,7 @@ The active manuscript lives here and keeps this path across revisions.
 | File | Contents |
 |---|---|
 | `main.tex`, `supplement.tex` | Paper and supplementary material |
-| `table_*.tex`, `figures/` | Tables and figures included by the two documents |
+| `tables/`, `figures/` | Tables and figures included by the two documents |
 | `references.bib` | Bibliography |
 | `cvpr.sty`, `ieeenat_fullname*.bst` | Unmodified official CVPR author-kit files |
 | `reviewed/` | Last reviewed PDFs |
