@@ -10,8 +10,9 @@ file with its original full-archive manifest.
 
 | Path in the original workspace | Purpose |
 |---|---|
-| `annotations/`, `features/`, `evaluation/`, `models/` | Original PHOENIX dataset resources |
-| `keypoints/`, `mp_models/` | Pose extraction data and resources |
+| `annotations/`, `evaluation/`, `models/` | Dataset metadata and the native datasets/models used by the current motion audits |
+| `features/fullFrame-210x260px/test/` | Original PHOENIX RGB test frames retained for figure reproduction |
+| `mp_models/` | Small original pose-extraction resources |
 | `reports/<study>/` | Full frozen inputs, fitted checkpoints, arrays, decoded strings and source closures |
 | `external/` | External Git checkouts at pinned revisions |
 | `venv_mska/`, `.venv_signspark_confirmation/` | Separate original Python environments |
@@ -23,6 +24,22 @@ The preparation pass moved only one-off editorial/cleanup scripts into
 `maintenance/repository_prepare_20261012/editorial_scripts/`, checking copied
 bytes before removing them from the active script directory. It did not delete
 datasets, models, scientific outcomes or any frozen report.
+
+## Storage cleanup
+
+The 22 October 2026 cleanup removed obsolete PHOENIX RGB train/dev frames and
+the old `keypoints/` directory. Current Rotation experiments consume the native
+rotation features preserved in `reports/` and `models/`, rather than those old
+extraction inputs. All TEST RGB frames used by the qualitative figure remain.
+Redundant ZIP/RAR downloads were removed only after their extracted payloads
+were checked. Scientific reports, their manifests and fitted model weights remain.
+
+Identical frozen files share hardlinks, and zero-only padding in large arrays
+uses sparse allocation. Their paths, logical sizes and bytes are unchanged.
+Never modify frozen files in place. When copying the complete local archive,
+`rsync -aHS` preserves both hardlinks and sparse allocation. See
+[storage-cleanup.md](storage-cleanup.md) for measured savings and the verification
+record. Local per-file cleanup receipts are under `maintenance/cleanup_20261022/`.
 
 ## Required scientific inputs
 

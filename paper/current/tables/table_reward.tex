@@ -1,5 +1,5 @@
 \begin{table*}[t]\centering\footnotesize\setlength{\tabcolsep}{4pt}
-\caption{\textbf{Reward fine-tuning}, 2,048 test captions, three seeds per version. \emph{Off-canonical}: RMS distance of the 6D rotation numbers from their canonical form (range over seeds). The other columns are raw-minus-canonical gaps of the same outputs, by the checkpoint that gave the reward and by the other one; means over seeds with 95\% intervals from 2,000 paired bootstrap resamples of clips, which do not include seed-to-seed variation. Pretrained MDM has one model, so no interval is given.}\label{tab:reward}
+\caption{\textbf{Reward fine-tuning}, 2,048 test captions, three seeds per version. \emph{Off-canonical}: RMS distance of the 6D rotation numbers from their canonical form (range over seeds). The other columns are raw-minus-canonical gaps of the same outputs, by the checkpoint that gave the reward and by the other one; means over seeds with 95\% intervals from 2,000 paired bootstrap resamples of clips, which do not include seed-to-seed variation. Intervals were not computed for the pretrained MDM rows.}\label{tab:reward}
 \begin{tabular}{@{}llrrrr@{}}\toprule
 &Model&Off-canonical&$\Delta$R1, reward ckpt.&$\Delta$FID, reward ckpt.&$\Delta$FID, other ckpt.\\\midrule
 \multicolumn{6}{@{}l}{\emph{MDM, reward from the MDM checkpoint}}\\

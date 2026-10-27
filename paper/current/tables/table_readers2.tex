@@ -1,5 +1,5 @@
 \begin{table*}[t]\centering\footnotesize
-\caption{\textbf{Raw minus canonical with two official T2M checkpoints}, 20 draws. Intervals adjust ten endpoints per checkpoint.}\label{tab:readers2}
+\caption{\textbf{Raw minus canonical for all ten audited settings}, 20 draws, with the MDM-linked T2M checkpoint (KIT-ML: its native evaluator) and, for five releases, the official T2M checkpoint distributed with T2M-GPT. Intervals adjust ten endpoints per study.}\label{tab:readers2}
 \begin{tabular}{llrrrrrr}\toprule
 Checkpoint&Release&Raw FID&$\C$ FID&FID gap 95\% CI&Raw R1&$\C$ R1&R1 gap 95\% CI\\\midrule
 MDM-linked&MDM&0.4550&0.4504&$[+0.0035,+0.0058]$&0.4115&0.4115&$[-0.0017,+0.0018]$\\
@@ -7,6 +7,12 @@ MDM-linked&MLD&0.4453&0.4491&$[-0.0052,-0.0024]$&0.4118&0.4105&$[+0.0003,+0.0023
 MDM-linked&MotionLCM&0.5747&0.6062&$[-0.0347,-0.0282]$&0.4374&0.4350&$[+0.0005,+0.0043]$\\
 MDM-linked&T2M-GPT&0.1828&0.1488&$[+0.0325,+0.0354]$&0.4226&0.4240&$[-0.0030,+0.0002]$\\
 MDM-linked&T2M&1.3935&1.3471&$[+0.0441,+0.0486]$&0.3933&0.3930&$[-0.0009,+0.0017]$\\
+MDM-linked&MoMask&0.0677&0.0644&$[+0.0028,+0.0038]$&0.4632&0.4626&$[-0.0010,+0.0023]$\\
+MDM-linked&DiP&0.3665&0.3650&$[+4\cdot10^{-5},+0.0030]$&0.4518&0.4518&$[-0.0022,+0.0023]$\\
+MDM-linked&MotionDiffuse&0.9766&0.9807&$[-0.0074,-0.0008]$&0.4277&0.4273&$[-0.0018,+0.0026]$\\
+KIT native&MoMask&0.3512&0.3649&$[-0.0247,-0.0027]$&0.4175&0.4181&$[-0.0070,+0.0057]$\\
+KIT native&MotionDiffuse&1.7794&1.8159&$[-0.0428,-0.0300]$&0.4125&0.4116&$[-0.0017,+0.0036]$\\
+\midrule
 T2M-GPT&MDM&0.5129&0.5104&$[+0.0012,+0.0040]$&0.4586&0.4584&$[-0.0015,+0.0019]$\\
 T2M-GPT&MLD&0.4206&0.4216&$[-0.0023,+0.0002]$&0.4669&0.4666&$[-0.0012,+0.0017]$\\
 T2M-GPT&MotionLCM&0.4195&0.4294&$[-0.0138,-0.0060]$&0.5042&0.5026&$[-0.0004,+0.0035]$\\
